@@ -3,9 +3,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Accordion
   document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+    const item = trigger.closest('.accordion-item');
+    trigger.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
     trigger.addEventListener('click', () => {
-      const item = trigger.closest('.accordion-item');
-      item.classList.toggle('open');
+      const open = item.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   });
 
@@ -14,11 +16,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = tabContainer.querySelectorAll('.tab-btn');
     const panels = tabContainer.querySelectorAll('.tab-panel');
     buttons.forEach((btn, i) => {
+      btn.setAttribute('role', 'tab');
+      btn.setAttribute('aria-selected', btn.classList.contains('active') ? 'true' : 'false');
+      btn.setAttribute('tabindex', btn.classList.contains('active') ? '0' : '-1');
       btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
+        buttons.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+          b.setAttribute('tabindex', '-1');
+        });
         panels.forEach(p => p.classList.remove('active'));
         btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        btn.setAttribute('tabindex', '0');
         panels[i].classList.add('active');
+      });
+      btn.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        const dir = e.key === 'ArrowRight' ? 1 : -1;
+        const next = buttons[(i + dir + buttons.length) % buttons.length];
+        next.focus();
+        next.click();
       });
     });
   });
