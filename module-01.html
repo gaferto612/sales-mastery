@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 1 · Foundations of Selling — Sales Mastery</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Process diagram */
+  .process-diagram {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin: 32px 0;
+  }
+  .process-step {
+    background: var(--ink);
+    border: 1px solid var(--line);
+    padding: 16px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .process-step:hover { background: var(--ink-soft); border-color: var(--orange); }
+  .process-step.active { background: var(--orange); border-color: var(--orange); color: var(--ink); }
+  .process-step.active .ps-num { color: var(--ink); }
+  .ps-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--orange);
+    margin-bottom: 8px;
+    letter-spacing: 0.1em;
+  }
+  .ps-label {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .process-detail {
+    min-height: 120px;
+    padding: 24px;
+    background: var(--ink);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--orange);
+    margin-top: 4px;
+  }
+  .process-detail h4 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--paper);
+    margin-bottom: 8px;
+  }
+  .process-detail p { color: var(--cream); font-size: 15px; margin: 0; }
+  
+  /* Triangle/levels diagram */
+  .levels-diagram {
+    margin: 32px 0;
+  }
+  .level-row {
+    display: grid;
+    grid-template-columns: 140px 1fr 2fr;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+  .level-row:last-child { border-bottom: none; }
+  .level-badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 2px;
+    display: inline-block;
+    text-align: center;
+  }
+  .level-badge.feature { background: rgba(107, 116, 128, 0.15); color: var(--muted); border: 1px solid var(--muted); }
+  .level-badge.benefit { background: rgba(212, 168, 67, 0.15); color: var(--gold); border: 1px solid var(--gold); }
+  .level-badge.outcome { background: rgba(255, 107, 53, 0.15); color: var(--orange); border: 1px solid var(--orange); }
+  .level-def {
+    font-family: var(--font-display);
+    font-size: 17px;
+    color: var(--cream);
+    font-weight: 500;
+  }
+  .level-example {
+    font-style: italic;
+    color: var(--paper);
+    font-size: 16px;
+  }
+  
+  /* Awareness levels visualizer */
+  .awareness-chart {
+    margin: 40px 0;
+  }
+  .aw-bar {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 16px;
+    margin-bottom: 12px;
+    align-items: center;
+  }
+  .aw-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream);
+  }
+  .aw-progress {
+    height: 36px;
+    background: var(--ink);
+    border: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .aw-fill {
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,107,53,0.3), var(--orange));
+    transition: width 0.8s ease;
+  }
+  .aw-pct {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--paper);
+  }
+  
+  /* Value levers */
+  .levers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 32px 0;
+  }
+  .lever {
+    background: var(--ink);
+    padding: 28px 20px;
+  }
+  .lever-icon {
+    font-family: var(--font-display);
+    font-size: 36px;
+    color: var(--orange);
+    margin-bottom: 12px;
+    font-style: italic;
+    font-weight: 300;
+  }
+  .lever-name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--paper);
+    margin-bottom: 8px;
+  }
+  .lever-desc { color: var(--muted); font-size: 14px; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-brand"><span class="dot"></span>Sales Mastery</a>
+    <div class="topbar-nav">
+      <a href="index.html">Home</a>
+      <a href="module-01.html" class="active">Modules</a>
+      <a href="exercises.html">Exercises</a>
+      <a href="case-studies.html">Cases</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="eyebrow"><span class="num">01</span>Foundations of Selling</div>
+  <h1 class="module-title">What selling <em>actually</em> is.</h1>
+  <p class="lede">Whether you're selling chewing gum at a kiosk or a €2M enterprise contract, the same mechanics apply. This module is the operating system every other module installs on top of.</p>
+  <div class="meta-strip">
+    <span>25 min read</span>
+    <span>Foundational</span>
+    <span>Required for all later modules</span>
+  </div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <div class="sidebar-title">In this module</div>
+    <ul>
+      <li><a href="#definition">What selling is</a></li>
+      <li><a href="#process">The 7-step process</a></li>
+      <li><a href="#fbo">Features · Benefits · Outcomes</a></li>
+      <li><a href="#journey">Buyer's journey</a></li>
+      <li><a href="#value">Price vs. value</a></li>
+      <li><a href="#currencies">Three currencies</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#exercises">Exercises</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+
+    <section id="definition">
+      <h2>What selling actually is</h2>
+      <p><strong>Selling is the process of helping another person decide to exchange something they have (usually money, time, or attention) for something you have (a product, service, or idea) such that both parties end up better off.</strong></p>
+      <p>Notice what this rules out:</p>
+      <ul>
+        <li>Tricking someone — that's fraud</li>
+        <li>Pressuring someone past their interest — that's manipulation</li>
+        <li>Hiding information — that's deception</li>
+      </ul>
+      <p>And what it requires:</p>
+      <ul>
+        <li>Genuine value on your side</li>
+        <li>Genuine need or want on theirs</li>
+        <li>A bridge of communication between the two</li>
+      </ul>
+      <p>If any of those three are missing, you're not selling. You're either failing or harming.</p>
+    </section>
+
+    <section id="process">
+      <h2>The 7-step universal process</h2>
+      <p>The time you spend in each step varies wildly — minutes at a kiosk, months in B2B — but the sequence is the same everywhere. Click each step to explore it.</p>
+
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">The Process Walker</div>
+          <div class="widget-tag">Interactive</div>
+        </div>
+        
+        <div class="process-diagram" id="processDiagram">
+          <div class="process-step active" data-step="1">
+            <div class="ps-num">01</div>
+            <div class="ps-label">Prospect</div>
+          </div>
+          <div class="process-step" data-step="2">
+            <div class="ps-num">02</div>
+            <div class="ps-label">Qualify</div>
+          </div>
+          <div class="process-step" data-step="3">
+            <div class="ps-num">03</div>
+            <div class="ps-label">Approach</div>
+          </div>
+          <div class="process-step" data-step="4">
+            <div class="ps-num">04</div>
+            <div class="ps-label">Discover</div>
+          </div>
+          <div class="process-step" data-step="5">
+            <div class="ps-num">05</div>
+            <div class="ps-label">Present</div>
+          </div>
+          <div class="process-step" data-step="6">
+            <div class="ps-num">06</div>
+            <div class="ps-label">Close</div>
+          </div>
+          <div class="process-step" data-step="7">
+            <div class="ps-num">07</div>
+            <div class="ps-label">Retain</div>
+          </div>
+        </div>
+
+        <div class="process-detail" id="processDetail">
+          <h4>01 · Prospect</h4>
+          <p>Finding people who <em>might</em> want what you sell. Sources include cold outreach, ads, referrals, content, foot traffic, marketplaces.</p>
+        </div>
+      </div>
+
+      <div class="pullquote">
+        Beginners obsess over step 6 (the close). Pros obsess over step 4 (discovery).
+      </div>
+    </section>
+
+    <section id="fbo">
+      <h2>Features → Benefits → Outcomes</h2>
+      <p>This is the single most important distinction in selling. Most salespeople sell features. Good ones sell benefits. Great ones sell outcomes.</p>
+
+      <div class="levels-diagram">
+        <div class="level-row">
+          <span class="level-badge feature">Feature</span>
+          <div class="level-def">A factual attribute of the product</div>
+          <div class="level-example">"18-volt lithium battery, ½-inch chuck"</div>
+        </div>
+        <div class="level-row">
+          <span class="level-badge benefit">Benefit</span>
+          <div class="level-def">What that does for the user</div>
+          <div class="level-example">"Drills through hardwood without slowing down"</div>
+        </div>
+        <div class="level-row">
+          <span class="level-badge outcome">Outcome</span>
+          <div class="level-def">The change in the user's life</div>
+          <div class="level-example">"Your shelves are up by Saturday and your spouse is impressed"</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Drill</div>
+        <p>Take any product near you and write all three levels for it. If you can't, you don't yet know how to sell it.</p>
+      </div>
+    </section>
+
+    <section id="journey">
+      <h2>The buyer's awareness journey</h2>
+      <p>Buyers don't go from "never heard of you" to "give me your credit card" in one leap. They move through stages — and your message must match the stage.</p>
+
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">Eugene Schwartz's Five Awareness Levels</div>
+          <div class="widget-tag">1960s · still bedrock</div>
+        </div>
+        <div class="awareness-chart">
+          <div class="aw-bar">
+            <div class="aw-label">Unaware</div>
+            <div class="aw-progress"><div class="aw-fill" style="width: 18%"></div><div class="aw-pct">Big audience · zero intent</div></div>
+          </div>
+          <div class="aw-bar">
+            <div class="aw-label">Problem-aware</div>
+            <div class="aw-progress"><div class="aw-fill" style="width: 36%"></div><div class="aw-pct">Knows pain, not solutions</div></div>
+          </div>
+          <div class="aw-bar">
+            <div class="aw-label">Solution-aware</div>
+            <div class="aw-progress"><div class="aw-fill" style="width: 56%"></div><div class="aw-pct">Comparing options</div></div>
+          </div>
+          <div class="aw-bar">
+            <div class="aw-label">Product-aware</div>
+            <div class="aw-progress"><div class="aw-fill" style="width: 78%"></div><div class="aw-pct">Knows your product</div></div>
+          </div>
+          <div class="aw-bar">
+            <div class="aw-label">Most aware</div>
+            <div class="aw-progress"><div class="aw-fill" style="width: 96%"></div><div class="aw-pct">Ready to buy · needs nudge</div></div>
+          </div>
+        </div>
+        <p style="margin-top: 24px; color: var(--muted); font-size: 14px;">Pitching product features to someone who doesn't know they have a problem will fail. Educating someone already ready to buy is wasted breath.</p>
+      </div>
+    </section>
+
+    <section id="value">
+      <h2>Price vs. value</h2>
+      <p><strong>Price</strong> is the number on the tag. <strong>Value</strong> is what the buyer believes they get for that number.</p>
+      <p>A €5,000 watch is "expensive" if value = telling the time. The same watch is "cheap" if value = signaling status to peers worth €50,000 in deals.</p>
+      <p>Your job is <em>not to drop the price</em> — it's to <em>raise the perceived value</em> until value &gt; price in the buyer's mind. When that gap is wide enough, the sale happens.</p>
+
+      <h3>The four levers of value</h3>
+      <div class="levers-grid">
+        <div class="lever">
+          <div class="lever-icon">i.</div>
+          <div class="lever-name">Outcome</div>
+          <div class="lever-desc">How big is the dream they get?</div>
+        </div>
+        <div class="lever">
+          <div class="lever-icon">ii.</div>
+          <div class="lever-name">Likelihood</div>
+          <div class="lever-desc">How sure are they they'll get it?</div>
+        </div>
+        <div class="lever">
+          <div class="lever-icon">iii.</div>
+          <div class="lever-name">Time</div>
+          <div class="lever-desc">How fast does the dream arrive?</div>
+        </div>
+        <div class="lever">
+          <div class="lever-icon">iv.</div>
+          <div class="lever-name">Effort</div>
+          <div class="lever-desc">How easy is it for them?</div>
+        </div>
+      </div>
+      <p>Improve any of these four and value goes up without changing the product.</p>
+    </section>
+
+    <section id="currencies">
+      <h2>The three currencies buyers spend</h2>
+      <p>Money is the obvious one. The other two are often more precious.</p>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-num">€</div>
+          <div class="stat-label">Money · The one most sellers fixate on</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">⌛</div>
+          <div class="stat-label">Time · Every minute they spend with you</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">◉</div>
+          <div class="stat-label">Attention · Finite, expensive, in 2026 priceless</div>
+        </div>
+      </div>
+      <p>Respect all three. Wasting a buyer's time or attention is how you lose them before they ever consider spending money.</p>
+    </section>
+
+    <section id="mistakes">
+      <h2>Common beginner mistakes</h2>
+      <ul>
+        <li>Talking more than listening</li>
+        <li>Pitching before discovering</li>
+        <li>Selling features instead of outcomes</li>
+        <li>Competing on price instead of value</li>
+        <li>Trying to convince instead of qualifying out</li>
+        <li>Assuming all buyers are the same</li>
+      </ul>
+    </section>
+
+    <section id="exercises">
+      <h2>Exercises</h2>
+      <ol>
+        <li><strong>Pick a product you own.</strong> Write its features, benefits, and outcomes. Show a friend and ask which level lands strongest for them.</li>
+        <li><strong>Audit a recent sales conversation</strong> (as buyer or seller). Map it onto the 7-step process. Where did it break down?</li>
+        <li><strong>Find an ad</strong> and identify which awareness level it's targeting. Is the targeting correct?</li>
+      </ol>
+
+      <div class="callout tip">
+        <div class="callout-label">Further reading</div>
+        <p><em>To Sell Is Human</em> — Daniel Pink · <em>The Psychology of Selling</em> — Brian Tracy · <em>Breakthrough Advertising</em> — Eugene Schwartz</p>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<nav class="module-nav">
+  <a href="module-00.html" class="prev">
+    <div class="dir">← Previous · Module 00</div>
+    <div class="next-title">Introduction</div>
+  </a>
+  <a href="module-02.html" class="next">
+    <div class="dir">Next · Module 02</div>
+    <div class="next-title">The Psychology of Selling</div>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  Sales Mastery · MIT License · <a href="index.html">Course index</a>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Process diagram interactivity
+  const processData = {
+    1: { title: '01 · Prospect', text: 'Finding people who <em>might</em> want what you sell. Sources include cold outreach, ads, referrals, content, foot traffic, marketplaces.' },
+    2: { title: '02 · Qualify', text: 'Determining if they <em>actually could</em> buy. BANT framework — Budget, Authority, Need, Timeline.' },
+    3: { title: '03 · Approach', text: 'The first meaningful contact. The goal here is permission to continue, not the sale.' },
+    4: { title: '04 · Discover', text: 'Understanding what they actually want, what they fear, what success looks like for them. <strong>The seller who asks the best questions usually wins.</strong>' },
+    5: { title: '05 · Present', text: 'Showing how your offer maps to what you discovered. Not a feature dump — a tailored solution narrative.' },
+    6: { title: '06 · Close', text: 'Asking for the decision. Includes objection handling and negotiation.' },
+    7: { title: '07 · Retain', text: 'Delivering on the promise, expanding the relationship, generating referrals. Often the highest-leverage step.' }
+  };
+  
+  document.querySelectorAll('.process-step').forEach(step => {
+    step.addEventListener('click', () => {
+      document.querySelectorAll('.process-step').forEach(s => s.classList.remove('active'));
+      step.classList.add('active');
+      const data = processData[step.dataset.step];
+      document.getElementById('processDetail').innerHTML = `<h4>${data.title}</h4><p>${data.text}</p>`;
+    });
+  });
+</script>
+</body>
+</html>

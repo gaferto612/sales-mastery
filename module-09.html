@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 9 · Closing Techniques — Sales Mastery</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .close-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 32px 0;
+  }
+  .close-card {
+    background: var(--ink);
+    padding: 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+    position: relative;
+  }
+  .close-card:hover { background: var(--ink-soft); }
+  .close-card.active {
+    background: var(--ink-soft);
+    border-left: 3px solid var(--orange);
+  }
+  .close-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--orange);
+    letter-spacing: 0.2em;
+    margin-bottom: 8px;
+  }
+  .close-name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--paper);
+    margin-bottom: 8px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .close-when {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .close-desc { font-size: 14px; color: var(--cream); line-height: 1.5; }
+  .close-script {
+    margin-top: 12px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--gold);
+    border-left: 2px solid var(--gold);
+    padding-left: 12px;
+  }
+  .close-card.ethics-warn { border-left: 3px solid var(--red); }
+  .close-card.ethics-warn .close-num { color: var(--red); }
+  
+  .matrix {
+    margin: 32px 0;
+    width: 100%;
+  }
+  .matrix table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .matrix th, .matrix td {
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    font-size: 14px;
+    text-align: left;
+  }
+  .matrix th {
+    background: var(--ink-soft);
+    color: var(--gold);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .matrix .col-context { color: var(--cream); font-weight: 500; }
+  .matrix .col-close { color: var(--orange); font-family: var(--font-mono); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-brand"><span class="dot"></span>Sales Mastery</a>
+    <div class="topbar-nav">
+      <a href="index.html">Home</a>
+      <a href="module-01.html" class="active">Modules</a>
+      <a href="exercises.html">Exercises</a>
+      <a href="case-studies.html">Cases</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="eyebrow"><span class="num">09</span>Closing Techniques</div>
+  <h1 class="module-title">Asking for the <em>decision.</em></h1>
+  <p class="lede">The close is not a moment — it's the natural conclusion of a conversation done well. If you've done the previous steps right, closing is just clarifying the next step.</p>
+  <div class="meta-strip">
+    <span>30 min read</span>
+    <span>17 named closes</span>
+    <span>Context-fit matrix</span>
+  </div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <div class="sidebar-title">In this module</div>
+    <ul>
+      <li><a href="#mindset">Closing mindset</a></li>
+      <li><a href="#when">When to close</a></li>
+      <li><a href="#the-ask">The actual ask</a></li>
+      <li><a href="#seventeen">The 17 closes</a></li>
+      <li><a href="#matrix">Context matrix</a></li>
+      <li><a href="#post">After the close</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#exercises">Exercises</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+
+    <section id="mindset">
+      <h2>The closing mindset</h2>
+      <p>Most failed closes aren't tactical failures — they're conviction failures. If you secretly think your product isn't worth the price, the buyer hears it.</p>
+      <ol>
+        <li><strong>Believe in the offer.</strong> If you don't think they should buy, why are you asking?</li>
+        <li><strong>The close is a service.</strong> You're helping them make a decision they're already considering.</li>
+        <li><strong>"No" is fine.</strong> A confident close that gets a no is better than a wishy-washy close that gets a "maybe" you'll chase for 3 months.</li>
+      </ol>
+
+      <div class="pullquote">
+        Beginners are afraid to ask for the close. Pros realize the close is what the buyer is waiting for.
+      </div>
+    </section>
+
+    <section id="when">
+      <h2>When to close</h2>
+      <p>Stop pitching the moment you see a buying signal. Continuing after the buyer is sold is the #1 way deals are lost.</p>
+      <ul>
+        <li>They start asking implementation questions</li>
+        <li>They switch from "if" to "when"</li>
+        <li>They ask about pricing details, delivery, guarantee</li>
+        <li>They reference future use ("when we have this...")</li>
+        <li>They go quiet and look like they're thinking</li>
+      </ul>
+      <p>When these appear: trial close, then full close.</p>
+
+      <h3>Trial closes (test the temperature)</h3>
+      <ul>
+        <li>"How does this sound so far?"</li>
+        <li>"If we could start next week, would that work for your timeline?"</li>
+        <li>"Based on what we've discussed, does this seem like a fit?"</li>
+      </ul>
+    </section>
+
+    <section id="the-ask">
+      <h2>The actual ask</h2>
+      <p>After the trial close gets a green light, ask for the decision. <strong>Then shut up.</strong></p>
+      <p>Whoever speaks first after "Are you ready to move forward?" usually loses. If you fill the silence, you'll often re-open a settled deal or offer a concession that wasn't needed.</p>
+      <div class="callout">
+        <div class="callout-label">Drill</div>
+        <p>Ask the close, count to 10 silently before speaking again. It feels like an eternity. It's not.</p>
+      </div>
+    </section>
+
+    <section id="seventeen">
+      <h2>The 17 closes</h2>
+      <p>Below are the most-used closes across selling. Some are powerful; some are dated; some are bordering on manipulative. Match the close to the context. Click a card for an example script.</p>
+
+      <div class="close-grid" id="closeGrid">
+
+        <div class="close-card" data-close="1">
+          <div class="close-num">01</div>
+          <div class="close-name">Direct Close</div>
+          <div class="close-when">When · obvious fit, mature buyer</div>
+          <div class="close-desc">Just ask. "Want to move forward?" The most underused close in sales.</div>
+          <div class="close-script">Are you ready to move forward?</div>
+        </div>
+
+        <div class="close-card" data-close="2">
+          <div class="close-num">02</div>
+          <div class="close-name">Assumptive Close</div>
+          <div class="close-when">When · strong buying signals shown</div>
+          <div class="close-desc">Skip to logistics. Assumes they've decided.</div>
+          <div class="close-script">Great — should we start the paperwork, or do you want to walk through it once more?</div>
+        </div>
+
+        <div class="close-card" data-close="3">
+          <div class="close-num">03</div>
+          <div class="close-name">Alternative Close</div>
+          <div class="close-when">When · multiple options exist</div>
+          <div class="close-desc">Offer two yeses instead of yes/no. Assumes the buy.</div>
+          <div class="close-script">Would you prefer the annual or monthly plan?</div>
+        </div>
+
+        <div class="close-card" data-close="4">
+          <div class="close-num">04</div>
+          <div class="close-name">Summary Close</div>
+          <div class="close-when">When · complex, multi-feature deals</div>
+          <div class="close-desc">Recap the value, then ask. Makes the yes feel earned.</div>
+          <div class="close-script">So we've agreed it'll save 10 hours a week, integrate with your stack, and ROI in 6 months. Want to start?</div>
+        </div>
+
+        <div class="close-card" data-close="5">
+          <div class="close-num">05</div>
+          <div class="close-name">Trial Close</div>
+          <div class="close-when">When · testing temperature</div>
+          <div class="close-desc">Soft probe before the real ask.</div>
+          <div class="close-script">If we could start Monday, would that work?</div>
+        </div>
+
+        <div class="close-card" data-close="6">
+          <div class="close-num">06</div>
+          <div class="close-name">Question Close</div>
+          <div class="close-when">When · they're 80% there</div>
+          <div class="close-desc">Ask what's left between them and yes.</div>
+          <div class="close-script">Is there anything else you need to know before we proceed?</div>
+        </div>
+
+        <div class="close-card" data-close="7">
+          <div class="close-num">07</div>
+          <div class="close-name">Silent Close</div>
+          <div class="close-when">When · price is on the table</div>
+          <div class="close-desc">State the offer, go silent. Pressure of silence does the work.</div>
+          <div class="close-script">The total is €4,800. [Wait.]</div>
+        </div>
+
+        <div class="close-card" data-close="8">
+          <div class="close-num">08</div>
+          <div class="close-name">Puppy Dog Close</div>
+          <div class="close-when">When · physical or trial product</div>
+          <div class="close-desc">Let them try it. Endowment effect closes for you.</div>
+          <div class="close-script">Take it home for a week. If you don't love it, bring it back.</div>
+        </div>
+
+        <div class="close-card" data-close="9">
+          <div class="close-num">09</div>
+          <div class="close-name">Takeaway Close</div>
+          <div class="close-when">When · they're being indecisive</div>
+          <div class="close-desc">Suggest they're not a fit. Often triggers them to convince <em>you</em>.</div>
+          <div class="close-script">Honestly — maybe this isn't the right fit for you. Should we hold off?</div>
+        </div>
+
+        <div class="close-card" data-close="10">
+          <div class="close-num">10</div>
+          <div class="close-name">Ben Franklin Close</div>
+          <div class="close-when">When · analytical buyers</div>
+          <div class="close-desc">Write pros and cons together. Helps logical decision-making.</div>
+          <div class="close-script">Let's write down the reasons for and against — together.</div>
+        </div>
+
+        <div class="close-card ethics-warn" data-close="11">
+          <div class="close-num">11</div>
+          <div class="close-name">Scarcity Close</div>
+          <div class="close-when">When · genuinely limited only</div>
+          <div class="close-desc">Use only when scarcity is real. Fake scarcity destroys trust.</div>
+          <div class="close-script">We have two spots left in this cohort. Should I save one?</div>
+        </div>
+
+        <div class="close-card ethics-warn" data-close="12">
+          <div class="close-num">12</div>
+          <div class="close-name">Urgency Close</div>
+          <div class="close-when">When · genuine deadline exists</div>
+          <div class="close-desc">Real time pressure works. Manufactured urgency feels gross fast.</div>
+          <div class="close-script">The Q4 pricing ends Friday. Worth deciding before then?</div>
+        </div>
+
+        <div class="close-card" data-close="13">
+          <div class="close-num">13</div>
+          <div class="close-name">Next-Step Close</div>
+          <div class="close-when">When · long B2B cycles</div>
+          <div class="close-desc">Not "buy now" — "what's the next step?" Always have one.</div>
+          <div class="close-script">What's the right next step from here?</div>
+        </div>
+
+        <div class="close-card" data-close="14">
+          <div class="close-num">14</div>
+          <div class="close-name">1-2-3 Close</div>
+          <div class="close-when">When · summarizing simple offer</div>
+          <div class="close-desc">Brain loves threes. Recap in 3 benefits, then ask.</div>
+          <div class="close-script">So: saves time, saves money, removes risk. Ready?</div>
+        </div>
+
+        <div class="close-card" data-close="15">
+          <div class="close-num">15</div>
+          <div class="close-name">Empathy Close</div>
+          <div class="close-when">When · sensitive or emotional buyers</div>
+          <div class="close-desc">Acknowledge how they're feeling, then ask.</div>
+          <div class="close-script">I can see this is a big decision. What feels right?</div>
+        </div>
+
+        <div class="close-card" data-close="16">
+          <div class="close-num">16</div>
+          <div class="close-name">Conditional Close</div>
+          <div class="close-when">When · objections remain</div>
+          <div class="close-desc">"If I can solve X, will you buy?" — surfaces real blockers.</div>
+          <div class="close-script">If we could include onboarding at no extra cost, would you sign today?</div>
+        </div>
+
+        <div class="close-card" data-close="17">
+          <div class="close-num">17</div>
+          <div class="close-name">Walk-Away Close</div>
+          <div class="close-when">When · the deal isn't a fit</div>
+          <div class="close-desc">Honestly walking away. Builds enormous long-term trust. Often closes anyway.</div>
+          <div class="close-script">I don't think we're the right fit. Let me suggest someone who might be.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="matrix">
+      <h2>Which close fits which situation?</h2>
+
+      <div class="matrix">
+        <table>
+          <thead>
+            <tr>
+              <th>Situation</th>
+              <th>Best close</th>
+              <th>Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-context">Simple consumer purchase</td>
+              <td class="col-close">Assumptive, Alternative</td>
+              <td>Reduces decision friction</td>
+            </tr>
+            <tr>
+              <td class="col-context">Long B2B cycle</td>
+              <td class="col-close">Summary, Next-Step</td>
+              <td>Anchors agreement, advances deal</td>
+            </tr>
+            <tr>
+              <td class="col-context">Analytical buyer</td>
+              <td class="col-close">Ben Franklin, Summary</td>
+              <td>Respects their decision style</td>
+            </tr>
+            <tr>
+              <td class="col-context">Indecisive prospect</td>
+              <td class="col-close">Takeaway, Direct</td>
+              <td>Forces a decision, removes "maybe"</td>
+            </tr>
+            <tr>
+              <td class="col-context">High-emotion (real estate, weddings)</td>
+              <td class="col-close">Empathy, Puppy Dog</td>
+              <td>Validates emotion, lets product sell itself</td>
+            </tr>
+            <tr>
+              <td class="col-context">Price objection lingering</td>
+              <td class="col-close">Conditional</td>
+              <td>Surfaces real blocker, trades cleanly</td>
+            </tr>
+            <tr>
+              <td class="col-context">Genuine deadline exists</td>
+              <td class="col-close">Urgency, Scarcity</td>
+              <td>Truthful time pressure works</td>
+            </tr>
+            <tr>
+              <td class="col-context">Not a fit</td>
+              <td class="col-close">Walk-Away</td>
+              <td>Right thing to do, plus often closes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warn">
+        <div class="callout-label">Ethics watch</div>
+        <p>Closes 11 (scarcity) and 12 (urgency) work only when they're <strong>true</strong>. Fake scarcity creates short-term sales and long-term distrust. If a customer ever finds out the deadline was manufactured, you've lost them and their referrals forever.</p>
+      </div>
+    </section>
+
+    <section id="post">
+      <h2>After the close</h2>
+      <p>The moment after "yes" is when most reps mess up.</p>
+      <ul>
+        <li><strong>Stop selling.</strong> Don't keep extolling features. Confirm and move to logistics.</li>
+        <li><strong>Reduce buyer's remorse.</strong> Briefly reinforce they made a great choice. Specific, not generic.</li>
+        <li><strong>Set expectations.</strong> What happens next: delivery, onboarding, first invoice, etc.</li>
+        <li><strong>Ask for referrals if appropriate.</strong> Buyers feel best about you right after the close.</li>
+        <li><strong>Follow through faster than they expect.</strong> Onboarding speed sets the tone for the whole relationship.</li>
+      </ul>
+    </section>
+
+    <section id="mistakes">
+      <h2>Common closing mistakes</h2>
+      <ul>
+        <li>Never actually asking for the sale</li>
+        <li>Asking and then immediately speaking again (the silent close fail)</li>
+        <li>Continuing to pitch after the buyer is sold</li>
+        <li>Closing too early (before discovery is done)</li>
+        <li>Closing too late (buyer has cooled)</li>
+        <li>Using high-pressure tactics on uncertain buyers</li>
+        <li>Conceding without trading</li>
+        <li>Forgetting to confirm the next step</li>
+      </ul>
+    </section>
+
+    <section id="exercises">
+      <h2>Exercises</h2>
+      <ol>
+        <li><strong>Close inventory.</strong> Pick 5 of the 17 closes that match your context. Write the exact script for each — in your own voice.</li>
+        <li><strong>Silent close drill.</strong> Today: in one conversation, state a price/proposal, then count 10 seconds silently. Track what happens.</li>
+        <li><strong>Trial close drill.</strong> Before any full close this week, use a trial close first. Notice the difference.</li>
+        <li><strong>Buying-signal log.</strong> For one week, log every buying signal you notice in any sales conversation (yours or others). Build the pattern recognition.</li>
+      </ol>
+
+      <div class="callout tip">
+        <div class="callout-label">Further reading</div>
+        <p><em>The Closer's Survival Guide</em> — Grant Cardone · <em>The Lost Art of Closing</em> — Anthony Iannarino · <em>Secrets of Closing the Sale</em> — Zig Ziglar (dated but classic)</p>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<nav class="module-nav">
+  <a href="module-08.html" class="prev">
+    <div class="dir">← Previous · Module 08</div>
+    <div class="next-title">Objection Handling</div>
+  </a>
+  <a href="module-10.html" class="next">
+    <div class="dir">Next · Module 10</div>
+    <div class="next-title">Customer Retention</div>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  Sales Mastery · MIT License · <a href="index.html">Course index</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

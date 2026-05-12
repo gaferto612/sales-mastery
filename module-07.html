@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 7 · Negotiation — Sales Mastery</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* BATNA / ZOPA visualizer */
+  .zopa-viz {
+    margin: 32px 0;
+    padding: 32px 24px;
+    background: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .zopa-bar {
+    position: relative;
+    height: 80px;
+    background: var(--ink-soft);
+    margin: 40px 0 32px;
+    border-radius: 4px;
+  }
+  .zopa-range {
+    position: absolute;
+    top: 0; bottom: 0;
+    background: linear-gradient(90deg, rgba(74,157,111,0.2), rgba(74,157,111,0.5));
+    border-left: 2px solid var(--green);
+    border-right: 2px solid var(--green);
+  }
+  .zopa-marker {
+    position: absolute;
+    top: -28px; bottom: -28px;
+    width: 2px;
+    background: var(--orange);
+  }
+  .zopa-marker.gold { background: var(--gold); }
+  .zopa-marker .lbl {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange);
+    white-space: nowrap;
+  }
+  .zopa-marker.gold .lbl { color: var(--gold); }
+  .zopa-marker .val {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--paper);
+    white-space: nowrap;
+  }
+  .zopa-zone-label {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-display);
+    font-size: 14px;
+    color: var(--green);
+    font-style: italic;
+  }
+  
+  /* Concession curve */
+  .concession-chart {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    margin: 24px 0;
+    align-items: center;
+  }
+  .conc-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .conc-bar {
+    height: 32px;
+    background: linear-gradient(90deg, var(--orange), var(--gold));
+    position: relative;
+  }
+  .conc-bar.bad {
+    background: linear-gradient(90deg, var(--red), var(--gold));
+  }
+  .conc-bar .val {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    right: 12px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  
+  /* Script accordion */
+  .script-block {
+    background: var(--ink);
+    border-left: 3px solid var(--gold);
+    padding: 18px 22px;
+    margin: 16px 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--cream);
+    line-height: 1.5;
+  }
+  .script-block::before {
+    content: '"';
+    font-size: 32px;
+    color: var(--gold);
+    line-height: 0;
+    position: relative;
+    top: 8px;
+    margin-right: 4px;
+  }
+  .script-block::after {
+    content: '"';
+    font-size: 32px;
+    color: var(--gold);
+    line-height: 0;
+    position: relative;
+    top: 8px;
+    margin-left: 4px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-brand"><span class="dot"></span>Sales Mastery</a>
+    <div class="topbar-nav">
+      <a href="index.html">Home</a>
+      <a href="module-01.html" class="active">Modules</a>
+      <a href="exercises.html">Exercises</a>
+      <a href="case-studies.html">Cases</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="eyebrow"><span class="num">07</span>Negotiation</div>
+  <h1 class="module-title">Bargaining <em>without losing.</em></h1>
+  <p class="lede">Negotiation isn't winning at the other side's expense. The best negotiators leave both parties feeling they got the deal they needed — and willing to work together again.</p>
+  <div class="meta-strip">
+    <span>30 min read</span>
+    <span>BATNA · ZOPA · anchoring</span>
+    <span>Voss · Fisher &amp; Ury</span>
+  </div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <div class="sidebar-title">In this module</div>
+    <ul>
+      <li><a href="#mindset">The mindset</a></li>
+      <li><a href="#batna">BATNA &amp; ZOPA</a></li>
+      <li><a href="#anchoring">Anchoring</a></li>
+      <li><a href="#concessions">Concession patterns</a></li>
+      <li><a href="#voss">Tactical empathy</a></li>
+      <li><a href="#scripts">Power scripts</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#exercises">Exercises</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+
+    <section id="mindset">
+      <h2>The negotiator's mindset</h2>
+      <p>Three internal shifts to make before any negotiation:</p>
+      <ol>
+        <li><strong>You're not adversaries.</strong> You're problem-solvers trying to find a deal that works for both. The other side isn't your enemy — the failed deal is.</li>
+        <li><strong>You can walk away.</strong> The single biggest source of leverage is being willing to leave. If you can't walk, you'll get walked on.</li>
+        <li><strong>It's not personal.</strong> Even if they push hard, their behavior is a tactic, not an attack on you.</li>
+      </ol>
+
+      <div class="pullquote">
+        He who needs the deal least, wins.
+      </div>
+    </section>
+
+    <section id="batna">
+      <h2>BATNA &amp; ZOPA — the two terms that matter</h2>
+      <p><strong>BATNA</strong> = Best Alternative To a Negotiated Agreement. What happens if this deal doesn't happen? Your BATNA is your leverage.</p>
+      <p><strong>ZOPA</strong> = Zone Of Possible Agreement. The range where both sides could plausibly say yes — between your walk-away and theirs.</p>
+
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">ZOPA Visualizer</div>
+          <div class="widget-tag">Where a deal is possible</div>
+        </div>
+        <div class="zopa-viz">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; font-size: 13px; color: var(--muted);">
+            <div>← <strong style="color: var(--paper);">Seller's side</strong> — you want higher</div>
+            <div style="text-align: right;"><strong style="color: var(--paper);">Buyer's side</strong> — they want lower →</div>
+          </div>
+          <div class="zopa-bar">
+            <div class="zopa-range" style="left: 35%; right: 30%;"></div>
+            <div class="zopa-zone-label" style="left: 50%;">ZOPA</div>
+            
+            <div class="zopa-marker" style="left: 15%;">
+              <span class="val">€8K</span>
+              <span class="lbl">Seller opens</span>
+            </div>
+            <div class="zopa-marker gold" style="left: 35%;">
+              <span class="val">€5K</span>
+              <span class="lbl">Seller walks</span>
+            </div>
+            <div class="zopa-marker gold" style="left: 70%;">
+              <span class="val">€7K</span>
+              <span class="lbl">Buyer walks</span>
+            </div>
+            <div class="zopa-marker" style="left: 90%;">
+              <span class="val">€3K</span>
+              <span class="lbl">Buyer opens</span>
+            </div>
+          </div>
+          <p style="font-size: 14px; color: var(--muted); margin-top: 40px;">If seller's minimum is €5K and buyer's maximum is €7K, the deal exists somewhere between. If both walk-aways flip (seller wants &gt;€7K, buyer maxes at €5K) — no ZOPA, no deal, save your breath.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Before any negotiation</div>
+        <p>Write down: (1) Your ideal outcome. (2) Your walk-away. (3) Your best guess at <em>their</em> walk-away. (4) Your BATNA. <strong>Without these you're negotiating blind.</strong></p>
+      </div>
+    </section>
+
+    <section id="anchoring">
+      <h2>Anchoring</h2>
+      <p>The first number in a negotiation pulls the final number toward it. <strong>Studies consistently show the anchor moves the outcome by 30–50%.</strong></p>
+
+      <h3>Who anchors first?</h3>
+      <ul>
+        <li><strong>You</strong> — if you have good info on the market and they don't</li>
+        <li><strong>Them</strong> — if you have no idea what's fair (let them reveal range)</li>
+      </ul>
+
+      <h3>Defending against their anchor</h3>
+      <ul>
+        <li><strong>Name it.</strong> "That's quite high — what's that based on?" — refuses to accept the anchor as legitimate</li>
+        <li><strong>Counter-anchor immediately.</strong> Don't accept; bring your own number</li>
+        <li><strong>Range, not point.</strong> "We typically see deals close between X and Y" — sets implicit anchor without committing</li>
+      </ul>
+    </section>
+
+    <section id="concessions">
+      <h2>The concession pattern</h2>
+      <p>How you give ground matters more than how much. <strong>Smaller, slower, more reluctant</strong> concessions signal you're near your limit.</p>
+
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">Concession Patterns Compared</div>
+          <div class="widget-tag">Same total · different signal</div>
+        </div>
+        
+        <h4 style="margin-top: 0; color: var(--green);">✓ Decreasing concessions — "I'm near my limit"</h4>
+        <div class="concession-chart">
+          <div class="conc-label">Round 1</div><div class="conc-bar" style="width: 80%;"><span class="val">€800 off</span></div>
+          <div class="conc-label">Round 2</div><div class="conc-bar" style="width: 50%;"><span class="val">€300 off</span></div>
+          <div class="conc-label">Round 3</div><div class="conc-bar" style="width: 30%;"><span class="val">€150 off</span></div>
+          <div class="conc-label">Round 4</div><div class="conc-bar" style="width: 15%;"><span class="val">€50 off</span></div>
+        </div>
+
+        <h4 style="margin-top: 32px; color: var(--red);">✗ Equal concessions — "Plenty more where that came from"</h4>
+        <div class="concession-chart">
+          <div class="conc-label">Round 1</div><div class="conc-bar bad" style="width: 60%;"><span class="val">€325 off</span></div>
+          <div class="conc-label">Round 2</div><div class="conc-bar bad" style="width: 60%;"><span class="val">€325 off</span></div>
+          <div class="conc-label">Round 3</div><div class="conc-bar bad" style="width: 60%;"><span class="val">€325 off</span></div>
+          <div class="conc-label">Round 4</div><div class="conc-bar bad" style="width: 60%;"><span class="val">€325 off</span></div>
+        </div>
+
+        <p style="margin-top: 32px; color: var(--muted); font-size: 14px;">Both total €1,300 off. The decreasing pattern tells the buyer they've already gotten most of what's possible. The flat pattern invites them to keep pushing.</p>
+      </div>
+
+      <h3>The trading rule</h3>
+      <p>Never give a concession without getting one. "I can do €X, but I'd need you to commit to a 2-year term." This:</p>
+      <ul>
+        <li>Trains them: every ask costs something</li>
+        <li>Lets you walk away while feeling fair</li>
+        <li>Often reveals what they <em>actually</em> care about</li>
+      </ul>
+    </section>
+
+    <section id="voss">
+      <h2>Tactical empathy (Chris Voss)</h2>
+      <p>Chris Voss, former FBI hostage negotiator, brought a different lens: emotion isn't an obstacle to negotiation — it's the medium. His core techniques:</p>
+
+      <h3>Labels</h3>
+      <p>Naming the emotion the other side is feeling. Reduces its intensity by ~50%.</p>
+      <div class="script-block">It sounds like you're worried this won't work for your team specifically.</div>
+      <div class="script-block">It seems like timing is the real issue here.</div>
+
+      <h3>Mirrors</h3>
+      <p>Repeat the last 1–3 words they said, with rising tone. Triggers them to elaborate.</p>
+      <p style="color: var(--muted); font-style: italic; margin-bottom: 8px;">Them: "We just don't have budget for this in Q3."</p>
+      <p style="color: var(--cream); font-style: italic;">You: "...budget in Q3?"</p>
+
+      <h3>Calibrated questions</h3>
+      <p>"How" and "what" questions that force them to think and solve <em>with</em> you. Avoid "why" — sounds accusatory.</p>
+      <div class="script-block">How am I supposed to do that?</div>
+      <div class="script-block">What about this is important to you?</div>
+      <div class="script-block">How would your team feel if we did it this way?</div>
+
+      <h3>The "No" reframe</h3>
+      <p>Most negotiators chase "yes." Voss says <strong>"no" is safer for the other side</strong> — they feel in control. Ask questions that invite "no" early:</p>
+      <div class="script-block">Is now a bad time to talk?</div>
+      <div class="script-block">Have you given up on solving this problem?</div>
+    </section>
+
+    <section id="scripts">
+      <h2>Power scripts</h2>
+      <p>Phrases that diffuse pressure and create space.</p>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">01</span> When they push hard on price</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="script-block">I hear that the price is a stretch. Let me ask — if price weren't an issue, would this be the right solution for you?</div>
+            <p>This separates two objections: <em>price</em> and <em>fit</em>. You can only solve one at a time.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">02</span> When they demand a discount</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="script-block">I appreciate you asking. What part of the offer would we adjust to bring the price down?</div>
+            <p>Forces a trade. Discounts without trade-offs train them to ask again.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">03</span> When they go silent</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="script-block">Just want to check — have you decided against moving forward? No is a perfectly fine answer.</div>
+            <p>Voss-style. Invites the no, often gets a "no, no, we're still thinking..." with the real reason.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">04</span> When they're stalling</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="script-block">It sounds like the timing isn't right. What would need to be true for this to move forward?</div>
+            <p>Names the stall + opens path. Don't push for "next week" — ask what changes their mind.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">05</span> When they invoke a competitor</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="script-block">That's a good option. Help me understand — what would have to be different here for you to choose us?</div>
+            <p>Respect competitor, ask what's missing. Often you can solve it.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">06</span> When you need to anchor</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="script-block">Most customers we work with at this size invest somewhere between €X and €Y per year. Where you land depends on...</div>
+            <p>Range anchor with conditional. Sets reference without committing.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">07</span> When walking away</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="script-block">It sounds like this isn't the right fit right now. I'd rather you wait until it is. Can I check back in three months?</div>
+            <p>Cleanest exit. Keeps the door open. Often triggers them to come back faster.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mistakes">
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Negotiating against yourself ("I could probably do €X... or even less")</li>
+        <li>Caving the moment they push back</li>
+        <li>Discounting without trading</li>
+        <li>Splitting the difference automatically (it's almost never optimal)</li>
+        <li>Letting emotion drive — yours, not theirs</li>
+        <li>Negotiating without writing down your walk-away first</li>
+        <li>Showing weakness early ("we really need this deal")</li>
+      </ul>
+    </section>
+
+    <section id="exercises">
+      <h2>Exercises</h2>
+      <ol>
+        <li><strong>BATNA audit.</strong> Pick a real upcoming negotiation. Write your BATNA, walk-away, and best guess at theirs. Do this <em>before</em> you talk.</li>
+        <li><strong>Labels drill.</strong> In your next 3 conversations, use one label ("It sounds like..."). Notice what happens.</li>
+        <li><strong>Silent close drill.</strong> After stating a price, count to 10 in your head before saying anything more. Practice the silence.</li>
+        <li><strong>Trade-not-give drill.</strong> Next ask for concession, respond with a trade. Track outcomes vs. just saying yes.</li>
+      </ol>
+
+      <div class="callout tip">
+        <div class="callout-label">Further reading</div>
+        <p><em>Never Split the Difference</em> — Chris Voss (essential) · <em>Getting to Yes</em> — Fisher &amp; Ury · <em>Bargaining for Advantage</em> — Richard Shell · <em>Pre-Suasion</em> — Cialdini</p>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<nav class="module-nav">
+  <a href="module-06.html" class="prev">
+    <div class="dir">← Previous · Module 06</div>
+    <div class="next-title">Copywriting &amp; Marketing</div>
+  </a>
+  <a href="module-08.html" class="next">
+    <div class="dir">Next · Module 08</div>
+    <div class="next-title">Objection Handling</div>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  Sales Mastery · MIT License · <a href="index.html">Course index</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

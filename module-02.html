@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 2 · Psychology of Selling — Sales Mastery</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Cialdini tabs styling - using shared tab styles */
+  .cialdini-icon {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 56px;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+  .cialdini-name {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: var(--paper);
+  }
+  .cialdini-warn {
+    color: var(--red);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 16px;
+  }
+  
+  /* Trust Equation visual */
+  .trust-equation {
+    background: var(--ink);
+    padding: 40px;
+    border: 1px solid var(--line);
+    margin: 32px 0;
+    text-align: center;
+  }
+  .eq-display {
+    font-family: var(--font-display);
+    font-size: 32px;
+    color: var(--cream);
+    margin: 24px 0;
+    line-height: 2;
+  }
+  .eq-display .num { color: var(--gold); font-weight: 500; }
+  .eq-display .den { color: var(--orange); font-weight: 500; }
+  .eq-display .bar {
+    display: inline-block;
+    width: 240px;
+    height: 2px;
+    background: var(--paper);
+    vertical-align: middle;
+    margin: 0 12px;
+  }
+  .eq-result {
+    font-family: var(--font-display);
+    font-size: 72px;
+    color: var(--orange);
+    font-weight: 500;
+    line-height: 1;
+    margin-top: 20px;
+  }
+  .eq-grade {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  .eq-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+    text-align: left;
+  }
+  
+  /* Bias cards */
+  .bias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 32px 0;
+  }
+  .bias-card {
+    background: var(--ink);
+    padding: 28px 24px;
+  }
+  .bias-name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--paper);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .bias-card p { font-size: 14px; color: var(--cream); margin: 0; }
+  
+  /* Buying signals split */
+  .signals-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 32px 0;
+  }
+  .signal-col { background: var(--ink); padding: 28px; }
+  .signal-header {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .signal-col.buying .signal-header { color: var(--green); }
+  .signal-col.resist .signal-header { color: var(--red); }
+  .signal-col ul { margin-left: 18px; }
+  .signal-col li { font-size: 15px; color: var(--cream); margin-bottom: 8px; }
+  
+  @media (max-width: 700px) {
+    .signals-split { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-brand"><span class="dot"></span>Sales Mastery</a>
+    <div class="topbar-nav">
+      <a href="index.html">Home</a>
+      <a href="module-01.html" class="active">Modules</a>
+      <a href="exercises.html">Exercises</a>
+      <a href="case-studies.html">Cases</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="eyebrow"><span class="num">02</span>Psychology of Selling</div>
+  <h1 class="module-title">Why buyers <em>actually</em> say yes.</h1>
+  <p class="lede">People buy with emotion and justify with logic. Every neuroscience study confirms it — the limbic system fires before the prefrontal cortex when a buying decision is made. This module is the engine room.</p>
+  <div class="meta-strip">
+    <span>30 min read</span>
+    <span>Foundational</span>
+    <span>Cialdini · Voss · Kahneman</span>
+  </div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <div class="sidebar-title">In this module</div>
+    <ul>
+      <li><a href="#emotion-logic">Emotion + logic</a></li>
+      <li><a href="#cialdini">Cialdini's 7 principles</a></li>
+      <li><a href="#biases">Cognitive biases</a></li>
+      <li><a href="#trust">The Trust Equation</a></li>
+      <li><a href="#signals">Buying signals</a></li>
+      <li><a href="#empathy">Tactical empathy</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#exercises">Exercises</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+
+    <section id="emotion-logic">
+      <h2>People buy with emotion, justify with logic</h2>
+      <p>This isn't a marketing cliché — it's a measurable neurological reality. The limbic system fires before the prefrontal cortex in buying decisions. Logic comes in <em>afterward</em> to justify what emotion already chose.</p>
+      <p>This doesn't mean logic is irrelevant. It means <strong>emotion opens the door and logic walks through it.</strong> A sale needs both.</p>
+      <div class="pullquote">Sell to the heart, then arm the head.</div>
+    </section>
+
+    <section id="cialdini">
+      <h2>Cialdini's 7 Principles of Influence</h2>
+      <p>Robert Cialdini spent decades studying what makes people say yes. His seven principles are the periodic table of persuasion. Click each to explore.</p>
+
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">The Seven Principles</div>
+          <div class="widget-tag">Tap to explore</div>
+        </div>
+        <div class="tabs">
+          <div class="tab-buttons">
+            <button class="tab-btn active">Reciprocity</button>
+            <button class="tab-btn">Commitment</button>
+            <button class="tab-btn">Social Proof</button>
+            <button class="tab-btn">Authority</button>
+            <button class="tab-btn">Liking</button>
+            <button class="tab-btn">Scarcity</button>
+            <button class="tab-btn">Unity</button>
+          </div>
+          
+          <div class="tab-panel active">
+            <div class="cialdini-icon">i.</div>
+            <div class="cialdini-name">Reciprocity</div>
+            <p>Humans feel obligated to return favors. Give first — value, information, samples, attention — and the buyer is psychologically inclined to give back.</p>
+            <p><strong>Application:</strong> Free trials, valuable content, genuine help before the pitch.</p>
+            <div class="cialdini-warn">⚠ Manipulative reciprocity (forced gifts to create guilt) breaks trust fast.</div>
+          </div>
+
+          <div class="tab-panel">
+            <div class="cialdini-icon">ii.</div>
+            <div class="cialdini-name">Commitment &amp; Consistency</div>
+            <p>Once people commit, especially publicly or in writing, they act consistently with that commitment.</p>
+            <p><strong>Application:</strong> Get small yeses first. Ask the buyer to articulate their own goals — they'll then resist contradicting themselves.</p>
+          </div>
+
+          <div class="tab-panel">
+            <div class="cialdini-icon">iii.</div>
+            <div class="cialdini-name">Social Proof</div>
+            <p>We look to others' behavior to decide our own, especially under uncertainty.</p>
+            <p><strong>Application:</strong> Testimonials, reviews, case studies, "10,000 customers," celebrity endorsements.</p>
+            <div class="cialdini-warn">⚠ Vague proof now hurts credibility. "Sarah, dentist in Aalborg, 6-month customer" &gt; "John D., satisfied customer".</div>
+          </div>
+
+          <div class="tab-panel">
+            <div class="cialdini-icon">iv.</div>
+            <div class="cialdini-name">Authority</div>
+            <p>People defer to credible experts.</p>
+            <p><strong>Application:</strong> Credentials, media features, expertise demonstrated through teaching, awards. Authority must be <em>shown</em>, not claimed — "as featured in" with real logos &gt; "industry-leading expert."</p>
+          </div>
+
+          <div class="tab-panel">
+            <div class="cialdini-icon">v.</div>
+            <div class="cialdini-name">Liking</div>
+            <p>We say yes to people we like. Liking is driven by: similarity, compliments, cooperation, attractiveness.</p>
+            <p><strong>Application:</strong> Find genuine common ground. Mirror language. Actually care about the person — fake liking is detected.</p>
+          </div>
+
+          <div class="tab-panel">
+            <div class="cialdini-icon">vi.</div>
+            <div class="cialdini-name">Scarcity</div>
+            <p>Things in short supply feel more valuable. Loss aversion is roughly <strong>twice</strong> as motivating as gain.</p>
+            <p><strong>Application:</strong> Limited inventory, time-bound offers, exclusive access.</p>
+            <div class="cialdini-warn">⚠ Fake scarcity destroys trust. Don't pretend a permanent product is "running out."</div>
+          </div>
+
+          <div class="tab-panel">
+            <div class="cialdini-icon">vii.</div>
+            <div class="cialdini-name">Unity</div>
+            <p>The strongest version of social proof: people don't just like or follow groups they belong to — they <em>identify</em> with them. "We" beats "they."</p>
+            <p><strong>Application:</strong> Build a community/identity around the product. "For founders," "for runners," "for parents like us."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="biases">
+      <h2>The big cognitive biases that drive buying</h2>
+      <p>Beyond Cialdini, these biases reliably affect decisions. Recognizing them in yourself first makes them easier to address in buyers.</p>
+
+      <div class="bias-grid">
+        <div class="bias-card">
+          <div class="bias-name">Loss Aversion</div>
+          <p>Losing €100 hurts roughly twice as much as gaining €100 feels good. Frame offers as preventing loss, not just adding gain.</p>
+        </div>
+        <div class="bias-card">
+          <div class="bias-name">Anchoring</div>
+          <p>The first number heard anchors all later ones. Show €5,000 first; €2,000 then feels reasonable.</p>
+        </div>
+        <div class="bias-card">
+          <div class="bias-name">Endowment Effect</div>
+          <p>Once people feel ownership, they overvalue. Test drives and free trials create pre-ownership.</p>
+        </div>
+        <div class="bias-card">
+          <div class="bias-name">Status Quo Bias</div>
+          <p>People prefer not changing. Your competition isn't always another product — it's often "do nothing."</p>
+        </div>
+        <div class="bias-card">
+          <div class="bias-name">Decoy Effect</div>
+          <p>Adding a slightly worse option makes the target option look better. Classic <em>Economist</em> subscription test.</p>
+        </div>
+        <div class="bias-card">
+          <div class="bias-name">Paradox of Choice</div>
+          <p>Too many options paralyze. 3 options beats 30. Tier complex offerings.</p>
+        </div>
+        <div class="bias-card">
+          <div class="bias-name">Peak-End Rule</div>
+          <p>People remember the peak emotional moment and the ending more than the middle. End every interaction strong.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="trust">
+      <h2>Trust: the master variable</h2>
+      <p>Without trust, no technique works. With trust, you barely need techniques. The <strong>Trust Equation</strong> (Maister, Green, Galford) breaks it down into measurable parts.</p>
+
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">The Trust Equation</div>
+          <div class="widget-tag">Interactive · score yourself</div>
+        </div>
+        <div class="trust-equation">
+          <div class="eq-display">
+            Trust =
+            <span style="display: inline-block; vertical-align: middle; text-align: center;">
+              <span class="num">Credibility + Reliability + Intimacy</span><br>
+              <span class="bar"></span><br>
+              <span class="den">Self-Orientation</span>
+            </span>
+          </div>
+          <div class="eq-inputs">
+            <div class="input-group">
+              <label>Credibility (1–10)</label>
+              <input type="range" id="cred" min="1" max="10" value="7" data-suffix="/10">
+              <div class="range-value"></div>
+            </div>
+            <div class="input-group">
+              <label>Reliability (1–10)</label>
+              <input type="range" id="rel" min="1" max="10" value="7" data-suffix="/10">
+              <div class="range-value"></div>
+            </div>
+            <div class="input-group">
+              <label>Intimacy (1–10)</label>
+              <input type="range" id="int" min="1" max="10" value="6" data-suffix="/10">
+              <div class="range-value"></div>
+            </div>
+            <div class="input-group">
+              <label>Self-orientation (1–10)</label>
+              <input type="range" id="self" min="1" max="10" value="4" data-suffix="/10">
+              <div class="range-value"></div>
+            </div>
+          </div>
+          <div class="eq-result" id="trustScore">5.0</div>
+          <div class="eq-grade" id="trustGrade">Trust score</div>
+        </div>
+        <p style="font-size: 14px; color: var(--muted); margin-top: 16px; margin-bottom: 0;">Self-orientation is in the denominator. The more you seem to be in it for yourself, the more it destroys everything else you've built.</p>
+      </div>
+    </section>
+
+    <section id="signals">
+      <h2>Reading the signals</h2>
+      <p>How do you know someone's getting close to "yes"? And what tells you they're pulling away? Watch for these.</p>
+
+      <div class="signals-split">
+        <div class="signal-col buying">
+          <div class="signal-header">→ Buying signals</div>
+          <ul>
+            <li>Switch from "if I bought this" to "when I have this"</li>
+            <li>Asking about delivery, setup, onboarding</li>
+            <li>Asking about pricing details a second time</li>
+            <li>"What's the next step?"</li>
+            <li>Asking about guarantees or returns</li>
+            <li>Leaning forward, picking up the product</li>
+            <li>Showing the offer to someone else nearby</li>
+            <li>Online: repeat visits to pricing page, time on testimonials</li>
+          </ul>
+        </div>
+        <div class="signal-col resist">
+          <div class="signal-header">← Resistance signals</div>
+          <ul>
+            <li>Crossed arms, leaning back, short answers</li>
+            <li>"Let me think about it"</li>
+            <li>Sudden price focus after agreeing on value</li>
+            <li>Bringing in objections they didn't have before</li>
+            <li>Going silent on email after engagement</li>
+            <li>Asking the same question twice (wasn't listening)</li>
+            <li>Checking phone/clock repeatedly</li>
+            <li>"Send me information" instead of meeting</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Critical</div>
+        <p>When you see buying signals, <strong>stop pitching and start closing</strong>. Continuing to sell after the buyer is sold is the #1 way to lose deals.</p>
+      </div>
+    </section>
+
+    <section id="empathy">
+      <h2>The empathy edge</h2>
+      <p>The single most underrated sales skill is <strong>tactical empathy</strong> — accurately reading and naming what the other person is feeling.</p>
+      <p>When you say to a buyer, "It sounds like you're worried this won't work for your team specifically," and you're right, three things happen:</p>
+      <ol>
+        <li>They feel understood</li>
+        <li>Their guard drops</li>
+        <li>They tell you what's <em>actually</em> going on</li>
+      </ol>
+      <p>Most sellers project. Empathetic sellers <em>receive</em>. Practice this and your close rate jumps without changing anything else.</p>
+    </section>
+
+    <section id="mistakes">
+      <h2>Common mistakes</h2>
+      <ul>
+        <li>Confusing pressure with persuasion</li>
+        <li>Using fake scarcity or fake social proof</li>
+        <li>Treating every buyer the same emotionally</li>
+        <li>Pitching before establishing trust</li>
+        <li>Continuing to talk past the buying signal</li>
+        <li>Ignoring the buyer's fear of looking stupid</li>
+      </ul>
+    </section>
+
+    <section id="exercises">
+      <h2>Exercises</h2>
+      <ol>
+        <li><strong>Cialdini audit.</strong> Take an ad or sales page you remember. Identify which of the 7 principles it uses. Which could it add?</li>
+        <li><strong>Trust score.</strong> Score yourself on credibility, reliability, intimacy, self-orientation in a recent sale. What's your weakest link?</li>
+        <li><strong>Empathy drill.</strong> In your next conversation, name the emotion you sense in the other person <em>out loud</em>. Notice what happens.</li>
+        <li><strong>Bias spotting.</strong> Find 3 examples of anchoring, decoy effect, or loss aversion in product pricing this week.</li>
+      </ol>
+
+      <div class="callout tip">
+        <div class="callout-label">Further reading</div>
+        <p><em>Influence</em> — Cialdini (mandatory) · <em>Pre-Suasion</em> — Cialdini · <em>Never Split the Difference</em> — Chris Voss · <em>Thinking, Fast and Slow</em> — Kahneman</p>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<nav class="module-nav">
+  <a href="module-01.html" class="prev">
+    <div class="dir">← Previous · Module 01</div>
+    <div class="next-title">Foundations of Selling</div>
+  </a>
+  <a href="module-03.html" class="next">
+    <div class="dir">Next · Module 03</div>
+    <div class="next-title">Online Selling</div>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  Sales Mastery · MIT License · <a href="index.html">Course index</a>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Trust equation live calc
+  function updateTrust() {
+    const c = +document.getElementById('cred').value;
+    const r = +document.getElementById('rel').value;
+    const i = +document.getElementById('int').value;
+    const s = +document.getElementById('self').value;
+    const score = ((c + r + i) / s).toFixed(1);
+    document.getElementById('trustScore').textContent = score;
+    let grade = 'Trust score';
+    if (score >= 6) grade = 'Excellent · buyers trust you deeply';
+    else if (score >= 4) grade = 'Strong · room to grow on intimacy';
+    else if (score >= 2.5) grade = 'Average · self-orientation may be too high';
+    else grade = 'Weak · buyers feel you\'re in it for yourself';
+    document.getElementById('trustGrade').textContent = grade;
+  }
+  document.querySelectorAll('#cred, #rel, #int, #self').forEach(el => el.addEventListener('input', updateTrust));
+  updateTrust();
+</script>
+</body>
+</html>

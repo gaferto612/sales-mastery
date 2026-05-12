@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 6 · Copywriting &amp; Marketing — Sales Mastery</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .framework-card {
+    background: var(--ink);
+    border: 1px solid var(--line);
+    padding: 28px;
+    margin: 24px 0;
+  }
+  .framework-name {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--paper);
+    margin-bottom: 8px;
+  }
+  .framework-letters {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .letter-box {
+    background: var(--ink-soft);
+    border: 1px solid var(--line);
+    padding: 12px 16px;
+    flex: 1;
+    min-width: 140px;
+  }
+  .letter-box .letter {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--orange);
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .letter-box .word {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .letter-box .desc { font-size: 13px; color: var(--cream); line-height: 1.4; }
+  
+  .headline-output {
+    background: var(--ink);
+    border: 2px dashed var(--orange);
+    padding: 32px;
+    margin: 16px 0;
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--paper);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  
+  .copy-example {
+    background: var(--ink-soft);
+    border-left: 3px solid var(--orange);
+    padding: 20px 24px;
+    margin: 16px 0;
+    font-family: var(--font-display);
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--cream);
+  }
+  .copy-example.bad { border-left-color: var(--red); }
+  .copy-example .label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .copy-example.bad .label { color: var(--red); }
+  
+  .trigger-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 32px 0;
+  }
+  .trigger {
+    background: var(--ink);
+    padding: 20px;
+    text-align: center;
+  }
+  .trigger-name {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--orange);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .trigger-desc { font-size: 12px; color: var(--muted); }
+  
+  /* Banned words */
+  .banned-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+  .banned {
+    background: rgba(193,85,74,0.15);
+    color: var(--red);
+    border: 1px solid var(--red);
+    padding: 6px 14px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: lowercase;
+    border-radius: 2px;
+    text-decoration: line-through;
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-brand"><span class="dot"></span>Sales Mastery</a>
+    <div class="topbar-nav">
+      <a href="index.html">Home</a>
+      <a href="module-01.html" class="active">Modules</a>
+      <a href="exercises.html">Exercises</a>
+      <a href="case-studies.html">Cases</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="eyebrow"><span class="num">06</span>Copywriting &amp; Marketing</div>
+  <h1 class="module-title">Salesmanship <em>in print.</em></h1>
+  <p class="lede">Copywriting is salesmanship in print — John E. Kennedy's 1904 definition, still the cleanest one. Every piece of marketing has the same goal as a salesperson in a conversation: move someone, one decision at a time.</p>
+  <div class="meta-strip">
+    <span>35 min read</span>
+    <span>AIDA · PAS · BAB · StoryBrand</span>
+    <span>Headlines · email · ads · content</span>
+  </div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <div class="sidebar-title">In this module</div>
+    <ul>
+      <li><a href="#one-person">Write to one person</a></li>
+      <li><a href="#hierarchy">Copy hierarchy</a></li>
+      <li><a href="#headlines">Headlines</a></li>
+      <li><a href="#frameworks">Core frameworks</a></li>
+      <li><a href="#triggers">Buying triggers</a></li>
+      <li><a href="#content">Content marketing</a></li>
+      <li><a href="#email">Email marketing</a></li>
+      <li><a href="#voice">Voice &amp; tone</a></li>
+      <li><a href="#exercises">Exercises</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+
+    <section id="one-person">
+      <h2>The single most important rule</h2>
+      <div class="pullquote">Write to one person.</div>
+      <p>Not "audiences." Not "users." Not "marketers aged 25–45." <strong>One specific human.</strong> Picture them. Name them. Imagine them reading.</p>
+
+      <div class="copy-example bad">
+        <span class="label">Generic marketing speak</span>
+        Our platform empowers teams to streamline workflows.
+      </div>
+      <div class="copy-example">
+        <span class="label">Written to one person</span>
+        If you've ever lost an hour finding a file someone Slacked you three weeks ago, you'll get why we built this.
+      </div>
+
+      <p>The second is also for everyone, but it feels <em>for someone</em>.</p>
+    </section>
+
+    <section id="hierarchy">
+      <h2>The hierarchy of copy</h2>
+      <p>Every piece of writing has parts that matter unequally:</p>
+      <ol>
+        <li><strong>Headline</strong> — 80% of the work. If the headline fails, the rest never gets read.</li>
+        <li><strong>Subhead / hook</strong> — confirms the promise, earns the next read</li>
+        <li><strong>Lead</strong> — sells the rest of the copy, not the product</li>
+        <li><strong>Body</strong> — proof, mechanism, benefits, story</li>
+        <li><strong>Offer</strong> — what they get, why now, risk reversal</li>
+        <li><strong>CTA</strong> — what to do next, exactly</li>
+      </ol>
+      <p>Amateurs spend 90% of effort on body. Pros spend 50% on headline and lead alone.</p>
+    </section>
+
+    <section id="headlines">
+      <h2>Headlines that work</h2>
+
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">Headline Formula Generator</div>
+          <div class="widget-tag">Click to cycle</div>
+        </div>
+        
+        <div class="headline-output" id="headlineOutput">How to wake up rested without going to bed early</div>
+        
+        <div class="tabs" style="margin-top: 24px;">
+          <div class="tab-buttons" id="headlineFormulas">
+            <button class="tab-btn active" data-formula="0">How to / without</button>
+            <button class="tab-btn" data-formula="1">Number ways to</button>
+            <button class="tab-btn" data-formula="2">The boring way to</button>
+            <button class="tab-btn" data-formula="3">What X knows about Y</button>
+            <button class="tab-btn" data-formula="4">Stop / start</button>
+            <button class="tab-btn" data-formula="5">Big result in short time</button>
+            <button class="tab-btn" data-formula="6">Why counterintuitive claim</button>
+          </div>
+        </div>
+        
+        <p style="margin-top: 24px; font-family: var(--font-mono); font-size: 13px; color: var(--muted);">
+          Click a formula above to see headlines in that style.
+        </p>
+      </div>
+
+      <div class="pullquote">
+        When you have written your headline, you have spent eighty cents of your dollar.
+        <cite>— David Ogilvy</cite>
+      </div>
+    </section>
+
+    <section id="frameworks">
+      <h2>The core copywriting frameworks</h2>
+
+      <div class="framework-card">
+        <div class="framework-name">AIDA</div>
+        <p style="color: var(--muted); margin-bottom: 16px;">The oldest, still works.</p>
+        <div class="framework-letters">
+          <div class="letter-box"><div class="letter">A</div><div class="word">Attention</div><div class="desc">Grab them</div></div>
+          <div class="letter-box"><div class="letter">I</div><div class="word">Interest</div><div class="desc">Make them want to keep reading</div></div>
+          <div class="letter-box"><div class="letter">D</div><div class="word">Desire</div><div class="desc">Make them want the outcome</div></div>
+          <div class="letter-box"><div class="letter">A</div><div class="word">Action</div><div class="desc">Tell them exactly what to do</div></div>
+        </div>
+      </div>
+
+      <div class="framework-card">
+        <div class="framework-name">PAS</div>
+        <p style="color: var(--muted); margin-bottom: 16px;">Devastatingly effective for direct response.</p>
+        <div class="framework-letters">
+          <div class="letter-box"><div class="letter">P</div><div class="word">Problem</div><div class="desc">Name the pain</div></div>
+          <div class="letter-box"><div class="letter">A</div><div class="word">Agitate</div><div class="desc">Make them feel it</div></div>
+          <div class="letter-box"><div class="letter">S</div><div class="word">Solve</div><div class="desc">Offer your solution</div></div>
+        </div>
+        <div class="copy-example" style="margin-top: 20px;">
+          Your invoices take 4 hours a week to chase.<br>
+          That's 200 hours a year. Time you'll never get back.<br>
+          Tally automates invoice chasing in 6 minutes a month.
+        </div>
+      </div>
+
+      <div class="framework-card">
+        <div class="framework-name">BAB</div>
+        <p style="color: var(--muted); margin-bottom: 16px;">Before-After-Bridge — perfect for transformation stories.</p>
+        <div class="framework-letters">
+          <div class="letter-box"><div class="letter">B</div><div class="word">Before</div><div class="desc">Their current sucky state</div></div>
+          <div class="letter-box"><div class="letter">A</div><div class="word">After</div><div class="desc">The dream state</div></div>
+          <div class="letter-box"><div class="letter">B</div><div class="word">Bridge</div><div class="desc">Your product is the bridge</div></div>
+        </div>
+      </div>
+
+      <div class="framework-card">
+        <div class="framework-name">The 4 Ps</div>
+        <div class="framework-letters">
+          <div class="letter-box"><div class="letter">P</div><div class="word">Promise</div><div class="desc">The outcome</div></div>
+          <div class="letter-box"><div class="letter">P</div><div class="word">Picture</div><div class="desc">Paint it vividly</div></div>
+          <div class="letter-box"><div class="letter">P</div><div class="word">Proof</div><div class="desc">Show it's real</div></div>
+          <div class="letter-box"><div class="letter">P</div><div class="word">Push</div><div class="desc">Call to action</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="triggers">
+      <h2>The big buying triggers</h2>
+      <p>Most copy is some combination of these emotional drivers:</p>
+      <div class="trigger-grid">
+        <div class="trigger"><div class="trigger-name">Greed</div><div class="trigger-desc">Make more</div></div>
+        <div class="trigger"><div class="trigger-name">Fear</div><div class="trigger-desc">Lose less</div></div>
+        <div class="trigger"><div class="trigger-name">Love</div><div class="trigger-desc">Belong, connect</div></div>
+        <div class="trigger"><div class="trigger-name">Status</div><div class="trigger-desc">Be admired</div></div>
+        <div class="trigger"><div class="trigger-name">Curiosity</div><div class="trigger-desc">Find out</div></div>
+        <div class="trigger"><div class="trigger-name">Convenience</div><div class="trigger-desc">Save effort</div></div>
+        <div class="trigger"><div class="trigger-name">Time</div><div class="trigger-desc">Save it, get more</div></div>
+        <div class="trigger"><div class="trigger-name">Health</div><div class="trigger-desc">Feel better, live longer</div></div>
+        <div class="trigger"><div class="trigger-name">Guilt</div><div class="trigger-desc">Fix something</div></div>
+        <div class="trigger"><div class="trigger-name">Identity</div><div class="trigger-desc">This is who I am</div></div>
+      </div>
+      <p>The best copy doesn't pretend the reader is noble. It speaks to the actual driver in plain language without shaming it.</p>
+    </section>
+
+    <section id="content">
+      <h2>Content marketing pyramid</h2>
+      <p>Instead of paying for attention, you earn it by publishing things people actually want to consume.</p>
+
+      <div class="formula" style="font-size: 18px; padding: 24px;">
+        <div style="margin-bottom: 12px;"><span class="var">1× Pillar piece</span> (long-form video, podcast, blog) per week</div>
+        <div style="margin-bottom: 12px; color: var(--muted);">↓ atomized into</div>
+        <div style="margin-bottom: 12px;"><span class="var">3–5× Mid-form</span> (threads, LinkedIn posts, carousels)</div>
+        <div style="margin-bottom: 12px; color: var(--muted);">↓ atomized into</div>
+        <div><span class="var">Daily Short-form</span> (tweets, reels, shorts, stories)</div>
+      </div>
+
+      <p>One pillar piece becomes 20 atomized posts. This is how solo creators look prolific.</p>
+
+      <div class="callout">
+        <div class="callout-label">Rules</div>
+        <p><strong>Solve &gt; sell</strong> · Teach for free, charge for done-for-you<br>
+        <strong>One topic per piece</strong> · Confusion kills<br>
+        <strong>Consistency &gt; virality</strong> · Show up weekly for a year before judging<br>
+        <strong>Distribution &gt; production</strong> · A great post no one sees doesn't exist<br>
+        <strong>Repurpose ruthlessly</strong> · Your audience doesn't see 80% of what you publish</p>
+      </div>
+    </section>
+
+    <section id="email">
+      <h2>Email marketing — the highest-ROI channel</h2>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-num">36×</div>
+          <div class="stat-label">Average reported email marketing ROI per €1 spent</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">80%</div>
+          <div class="stat-label">Healthy ratio of engagement emails to promotional</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5–7</div>
+          <div class="stat-label">Emails in a welcome sequence after signup</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">P.S.</div>
+          <div class="stat-label">Second-most-read line of any email. Use it.</div>
+        </div>
+      </div>
+
+      <h3>Anatomy of a high-performing email</h3>
+      <ul>
+        <li><strong>Subject line</strong> — 4–8 words, curiosity or specificity, no salesy hype</li>
+        <li><strong>Preview text</strong> — extends the subject, adds intrigue</li>
+        <li><strong>Opening line</strong> — relevant to <em>them</em>, not "Hope you're well"</li>
+        <li><strong>Single message</strong> — one idea, one CTA</li>
+        <li><strong>Plain text often beats HTML</strong> — people reply to emails that look like emails</li>
+      </ul>
+    </section>
+
+    <section id="voice">
+      <h2>Voice &amp; tone</h2>
+      <p>The single biggest copy differentiator in 2026 isn't tactics — it's voice.</p>
+
+      <h3>To find your voice</h3>
+      <ul>
+        <li>Write the way you actually talk</li>
+        <li>Read it out loud — if you wouldn't say it, don't write it</li>
+        <li>Use specific words, not corporate ones</li>
+        <li>Have opinions; bland is invisible</li>
+        <li>Repeat your phrases; consistency builds recognition</li>
+      </ul>
+
+      <h3>Words banned from sales copy</h3>
+      <div class="banned-list">
+        <span class="banned">innovative</span>
+        <span class="banned">solutions</span>
+        <span class="banned">cutting-edge</span>
+        <span class="banned">world-class</span>
+        <span class="banned">synergy</span>
+        <span class="banned">best-in-class</span>
+        <span class="banned">empowering</span>
+        <span class="banned">leverage</span>
+        <span class="banned">seamless</span>
+        <span class="banned">disruptive</span>
+      </div>
+      <p style="font-size: 14px; color: var(--muted);">Replace each with a <strong>specific</strong> claim and <strong>proof</strong>.</p>
+    </section>
+
+    <section id="exercises">
+      <h2>Exercises</h2>
+      <ol>
+        <li><strong>Headline drill.</strong> Pick a product. Write 25 headlines using different formulas. Pick the top 3 with a friend.</li>
+        <li><strong>PAS one-pager.</strong> Write a one-page PAS sales letter. Read it out loud — does it sound human?</li>
+        <li><strong>Email teardown.</strong> Subscribe to 5 brands you admire. Save their welcome sequences. What do they share?</li>
+        <li><strong>Voice audit.</strong> Write 100 words about something you care about. Then 100 words about a product. Bring them closer.</li>
+      </ol>
+
+      <div class="callout tip">
+        <div class="callout-label">Further reading</div>
+        <p><em>The Boron Letters</em> — Gary Halbert (free online) · <em>Cashvertising</em> — Drew Eric Whitman · <em>Ogilvy on Advertising</em> · <em>Breakthrough Advertising</em> — Eugene Schwartz · <em>$100M Offers</em> — Alex Hormozi</p>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<nav class="module-nav">
+  <a href="module-05.html" class="prev">
+    <div class="dir">← Previous · Module 05</div>
+    <div class="next-title">B2B Sales</div>
+  </a>
+  <a href="module-07.html" class="next">
+    <div class="dir">Next · Module 07</div>
+    <div class="next-title">Negotiation</div>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  Sales Mastery · MIT License · <a href="index.html">Course index</a>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  const headlines = [
+    ["How to wake up rested without going to bed early", "How to write a book without quitting your job", "How to lose 10kg without dieting", "How to get clients without cold calling"],
+    ["7 emails that closed €1.2M in deals", "12 ways to double your open rate", "5 questions that close 80% of demos", "23 cold email templates that actually work"],
+    ["The boring way to get rich", "The unsexy framework for building a brand", "The simple system top reps use to forecast", "The dull truth about viral growth"],
+    ["What enterprise CFOs know about SaaS pricing", "What top freelancers know about contracts", "What real estate pros know about cold calls", "What top YouTubers know about thumbnails"],
+    ["Stop coding alone. Start shipping.", "Stop chasing leads. Start qualifying.", "Stop discounting. Start trading.", "Stop pitching. Start listening."],
+    ["From idea to first sale in 14 days", "First €10K MRR in 90 days", "Closed deal in 3 calls", "Doubled conversion in one week"],
+    ["Why I stopped tracking my time (and earn more)", "Why your best customer is killing your business", "Why discounts cost more than they save", "Why most cold emails fail in the first 6 words"]
+  ];
+  
+  let currentFormula = 0;
+  let cycleIndex = 0;
+  const outputEl = document.getElementById('headlineOutput');
+  
+  document.querySelectorAll('#headlineFormulas .tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentFormula = +btn.dataset.formula;
+      cycleIndex = 0;
+      outputEl.textContent = headlines[currentFormula][cycleIndex];
+    });
+  });
+  
+  outputEl.addEventListener('click', () => {
+    cycleIndex = (cycleIndex + 1) % headlines[currentFormula].length;
+    outputEl.style.opacity = 0;
+    setTimeout(() => {
+      outputEl.textContent = headlines[currentFormula][cycleIndex];
+      outputEl.style.opacity = 1;
+    }, 200);
+  });
+  outputEl.style.cursor = 'pointer';
+  outputEl.style.transition = 'opacity 0.3s';
+  outputEl.title = 'Click for next example';
+</script>
+</body>
+</html>

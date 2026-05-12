@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Mastery — A Complete Course</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Hero-specific */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 32px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,107,53,0.12), transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 1100px; }
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--orange);
+  }
+  h1.hero-title {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(56px, 10vw, 140px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 32px;
+    color: var(--paper);
+  }
+  h1.hero-title em {
+    font-style: italic;
+    font-weight: 200;
+    color: var(--gold);
+    display: block;
+  }
+  .hero-lede {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(20px, 2.6vw, 28px);
+    line-height: 1.4;
+    max-width: 760px;
+    color: var(--cream);
+    margin-bottom: 48px;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 32px;
+    background: var(--orange);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,53,0.4); }
+  .hero-cta::after { content: '→'; font-size: 18px; }
+  .hero-meta {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 32px;
+    border-top: 1px solid var(--line);
+    padding-top: 32px;
+  }
+  .hero-meta-item {
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+  .hero-meta-num {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 400;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.03em;
+  }
+  .hero-meta-label {
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  
+  /* Modules grid */
+  .modules-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 32px;
+  }
+  .section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 24px;
+  }
+  .section-heading {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 64px;
+    color: var(--paper);
+    max-width: 800px;
+  }
+  .section-heading em { font-style: italic; color: var(--gold); }
+  
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .mod-card {
+    background: var(--ink);
+    padding: 40px 32px;
+    text-decoration: none;
+    color: var(--paper);
+    transition: background 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 280px;
+    position: relative;
+  }
+  .mod-card:hover { background: var(--ink-soft); }
+  .mod-card:hover .mod-arrow { transform: translateX(8px); color: var(--orange); }
+  .mod-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--orange);
+    text-transform: uppercase;
+  }
+  .mod-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--paper);
+  }
+  .mod-desc {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.55;
+    flex-grow: 1;
+  }
+  .mod-arrow {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    color: var(--muted);
+    transition: all 0.3s;
+    margin-top: auto;
+  }
+  
+  /* Pillars */
+  .pillars-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 32px;
+    border-top: 1px solid var(--line);
+  }
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 48px;
+    margin-top: 56px;
+  }
+  .pillar-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 72px;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -0.04em;
+  }
+  .pillar-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--paper);
+  }
+  .pillar-text { color: var(--muted); font-size: 15px; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-brand"><span class="dot"></span>Sales Mastery</a>
+    <div class="topbar-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="module-01.html">Modules</a>
+      <a href="exercises.html">Exercises</a>
+      <a href="case-studies.html">Cases</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">A complete course in 13 modules</div>
+    <h1 class="hero-title">
+      The art &amp; science<br>
+      <em>of selling.</em>
+    </h1>
+    <p class="hero-lede">
+      Every product, idea, job, or relationship — somebody had to sell it. This is a structured curriculum covering every major discipline of selling: online, offline, B2B, psychology, copywriting, negotiation, closing, and retention.
+    </p>
+    <a href="module-00.html" class="hero-cta">Start the course</a>
+    
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">13</div>
+        <div class="hero-meta-label">Modules</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">20</div>
+        <div class="hero-meta-label">Exercises</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">10</div>
+        <div class="hero-meta-label">Case studies</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">25K+</div>
+        <div class="hero-meta-label">Words</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="modules-section">
+  <div class="section-eyebrow">— The curriculum</div>
+  <h2 class="section-heading">Thirteen modules, built to teach <em>and</em> to learn from.</h2>
+  
+  <div class="modules-grid">
+    <a href="module-00.html" class="mod-card">
+      <div class="mod-num">00 · Introduction</div>
+      <div class="mod-title">The mindset before the method</div>
+      <div class="mod-desc">Why most beginners fail before they start, and the three shifts that change everything.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+    <a href="module-01.html" class="mod-card">
+      <div class="mod-num">01 · Foundations</div>
+      <div class="mod-title">What selling actually is</div>
+      <div class="mod-desc">The 7-step universal sales process, features vs. outcomes, price vs. value.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+    <a href="module-02.html" class="mod-card">
+      <div class="mod-num">02 · Psychology</div>
+      <div class="mod-title">Why buyers say yes</div>
+      <div class="mod-desc">Cialdini's 7 principles, cognitive biases, the trust equation, tactical empathy.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+    <a href="module-03.html" class="mod-card">
+      <div class="mod-num">03 · Online</div>
+      <div class="mod-title">Selling on the internet</div>
+      <div class="mod-desc">E-commerce, funnels, conversion math, traffic strategy, digital products.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+    <a href="module-04.html" class="mod-card">
+      <div class="mod-num">04 · Offline</div>
+      <div class="mod-title">Selling face to face</div>
+      <div class="mod-desc">Retail, door-to-door, events, field sales, body language, voice & pace.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+    <a href="module-05.html" class="mod-card">
+      <div class="mod-num">05 · B2B</div>
+      <div class="mod-title">Selling to businesses</div>
+      <div class="mod-desc">SPIN, MEDDIC, Challenger, discovery calls, demos, pipeline management.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+    <a href="module-06.html" class="mod-card">
+      <div class="mod-num">06 · Copywriting</div>
+      <div class="mod-title">Salesmanship in print</div>
+      <div class="mod-desc">Headlines, hooks, AIDA, PAS, content marketing, email, paid ads.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+    <a href="module-07.html" class="mod-card">
+      <div class="mod-num">07 · Negotiation</div>
+      <div class="mod-title">Bargaining without losing</div>
+      <div class="mod-desc">BATNA, anchoring, Voss-style empathy, silent close, trading variables.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+    <a href="module-08.html" class="mod-card">
+      <div class="mod-num">08 · Objections</div>
+      <div class="mod-title">The 7 universal "no"s</div>
+      <div class="mod-desc">Real vs. smokescreen objections, the 5-step framework, scripts for each.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+    <a href="module-09.html" class="mod-card">
+      <div class="mod-num">09 · Closing</div>
+      <div class="mod-title">Asking for the decision</div>
+      <div class="mod-desc">17 named closes, when each fits, ethical vs. manipulative, post-close.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+    <a href="module-10.html" class="mod-card">
+      <div class="mod-num">10 · Retention</div>
+      <div class="mod-title">Keeping what you won</div>
+      <div class="mod-desc">LTV math, onboarding, expansion, referrals, win-back, advocacy.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+    <a href="module-11.html" class="mod-card">
+      <div class="mod-num">11 · Ethics</div>
+      <div class="mod-title">Persuasion vs. manipulation</div>
+      <div class="mod-desc">Dark patterns, career-ending mistakes, the long game, walking away.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+    <a href="module-12.html" class="mod-card">
+      <div class="mod-num">12 · Tools</div>
+      <div class="mod-title">Stack, books, career</div>
+      <div class="mod-desc">Modern sales tech, 40+ book reading list, career ladder, 90-day plan.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<section class="pillars-section">
+  <div class="section-eyebrow">— What you'll learn</div>
+  <h2 class="section-heading">Skills that compound for a <em>decade.</em></h2>
+  
+  <div class="pillars-grid">
+    <div>
+      <div class="pillar-num">01</div>
+      <div class="pillar-title">Read the human</div>
+      <p class="pillar-text">Buying signals, body language, the psychology that fires before logic gets a vote.</p>
+    </div>
+    <div>
+      <div class="pillar-num">02</div>
+      <div class="pillar-title">Ask better questions</div>
+      <p class="pillar-text">SPIN, discovery frameworks, calibrated questions — the seller with the best questions wins.</p>
+    </div>
+    <div>
+      <div class="pillar-num">03</div>
+      <div class="pillar-title">Build the offer</div>
+      <p class="pillar-text">Outcomes over features, value over price, frames that make decisions feel obvious.</p>
+    </div>
+    <div>
+      <div class="pillar-num">04</div>
+      <div class="pillar-title">Handle the "no"</div>
+      <p class="pillar-text">Treat objections as data, address them structurally, prevent them in the first place.</p>
+    </div>
+    <div>
+      <div class="pillar-num">05</div>
+      <div class="pillar-title">Close cleanly</div>
+      <p class="pillar-text">Ask for the decision without pressure, recognize the moment, walk away when needed.</p>
+    </div>
+    <div>
+      <div class="pillar-num">06</div>
+      <div class="pillar-title">Keep them</div>
+      <p class="pillar-text">LTV, retention, referrals — where the actual business is, after the first sale.</p>
+    </div>
+  </div>
+</section>
+
+<section class="modules-section" style="border-top: 1px solid var(--line);">
+  <div class="section-eyebrow">— Also included</div>
+  <h2 class="section-heading">Drills and case studies.</h2>
+  
+  <div class="modules-grid" style="grid-template-columns: 1fr 1fr;">
+    <a href="exercises.html" class="mod-card">
+      <div class="mod-num">— Practice</div>
+      <div class="mod-title">20 exercises &amp; drills</div>
+      <div class="mod-desc">Practical reps tied to each module. Role-plays, scripts, audits, recordings.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+    <a href="case-studies.html" class="mod-card">
+      <div class="mod-num">— Examples</div>
+      <div class="mod-title">10 real-world case studies</div>
+      <div class="mod-desc">Broken-down stories of deals won and lost. Lessons mapped to modules.</div>
+      <div class="mod-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  Sales Mastery · MIT License · Built for trainers, sellers, and course creators
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

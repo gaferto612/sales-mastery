@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 5 · B2B Sales — Sales Mastery</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  .compare-table th, .compare-table td { vertical-align: top; }
+  .compare-table .col-label { font-family: var(--font-mono); font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; }
+  
+  /* MEDDIC scorecard */
+  .meddic-grid {
+    display: grid;
+    grid-template-columns: 1fr 60px;
+    gap: 12px 20px;
+    margin: 24px 0;
+  }
+  .meddic-row {
+    display: contents;
+  }
+  .meddic-label {
+    padding: 14px 16px;
+    background: var(--ink);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--orange);
+  }
+  .meddic-letter {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--orange);
+    font-weight: 500;
+    display: inline-block;
+    width: 32px;
+  }
+  .meddic-name {
+    font-family: var(--font-display);
+    font-size: 17px;
+    color: var(--paper);
+    font-weight: 500;
+  }
+  .meddic-desc {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .meddic-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .meddic-check input { width: 28px; height: 28px; cursor: pointer; accent-color: var(--orange); }
+  .meddic-result {
+    margin-top: 24px;
+    padding: 24px;
+    background: var(--ink);
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+  .meddic-score {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--orange);
+    line-height: 1;
+  }
+  
+  /* Stakeholder hex grid */
+  .stakeholder-list {
+    margin: 24px 0;
+  }
+  .stake-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+  .stake-name {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .stake-desc { color: var(--cream); font-size: 15px; line-height: 1.5; }
+  
+  /* Pipeline visualization */
+  .pipeline {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin: 24px 0;
+  }
+  .pipe-stage {
+    padding: 20px 12px;
+    background: var(--ink);
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+  .pipe-stage-name {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .pipe-stage-count {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--orange);
+    font-weight: 500;
+  }
+  
+  @media (max-width: 700px) {
+    .pipeline { grid-template-columns: repeat(2, 1fr); }
+    .stake-row { grid-template-columns: 1fr; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-brand"><span class="dot"></span>Sales Mastery</a>
+    <div class="topbar-nav">
+      <a href="index.html">Home</a>
+      <a href="module-01.html" class="active">Modules</a>
+      <a href="exercises.html">Exercises</a>
+      <a href="case-studies.html">Cases</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="eyebrow"><span class="num">05</span>B2B Sales</div>
+  <h1 class="module-title">Selling to <em>businesses.</em></h1>
+  <p class="lede">B2B isn't about convincing a buyer. It's about helping a coalition of buyers convince each other internally — often without you in the room.</p>
+  <div class="meta-strip">
+    <span>40 min read</span>
+    <span>SPIN · MEDDIC · Challenger</span>
+    <span>Enterprise · SaaS · services</span>
+  </div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <div class="sidebar-title">In this module</div>
+    <ul>
+      <li><a href="#different">How B2B differs</a></li>
+      <li><a href="#committee">The buying committee</a></li>
+      <li><a href="#frameworks">Big frameworks</a></li>
+      <li><a href="#meddic">MEDDIC scorecard</a></li>
+      <li><a href="#outbound">Outbound prospecting</a></li>
+      <li><a href="#discovery">The discovery call</a></li>
+      <li><a href="#pipeline">Pipeline management</a></li>
+      <li><a href="#exercises">Exercises</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+
+    <section id="different">
+      <h2>How B2B differs from B2C</h2>
+      <table class="compare-table">
+        <thead><tr><th>Dimension</th><th>B2C</th><th>B2B</th></tr></thead>
+        <tbody>
+          <tr><td class="col-label">Buyer</td><td>Individual, emotional</td><td>Committee, mostly rational</td></tr>
+          <tr><td class="col-label">Cycle</td><td>Minutes to days</td><td>Weeks to years</td></tr>
+          <tr><td class="col-label">Deal size</td><td>€1–€1,000</td><td>€1,000–€10M+</td></tr>
+          <tr><td class="col-label">Buyer count</td><td>1</td><td>3–10+ in enterprise</td></tr>
+          <tr><td class="col-label">Channels</td><td>Ads, content, retail</td><td>Outbound, content, events</td></tr>
+          <tr><td class="col-label">Decision drivers</td><td>Price, brand, emotion</td><td>ROI, fit, risk, politics</td></tr>
+          <tr><td class="col-label">Churn cost</td><td>Low per customer</td><td>Catastrophic</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="committee">
+      <h2>The B2B buying committee</h2>
+      <p>In any deal over ~€10K, you're never selling to one person. Map the committee or your deal will die from a stakeholder you didn't know existed.</p>
+
+      <div class="stakeholder-list">
+        <div class="stake-row">
+          <div class="stake-name">Champion</div>
+          <div class="stake-desc">Internal advocate. Believes in you. Sells on your behalf when you're not in the room.</div>
+        </div>
+        <div class="stake-row">
+          <div class="stake-name">Economic Buyer</div>
+          <div class="stake-desc">Controls the budget. VP, Director, CFO. Often only joins at the end.</div>
+        </div>
+        <div class="stake-row">
+          <div class="stake-name">End User</div>
+          <div class="stake-desc">Will actually use the product. Opinion matters, but often doesn't decide.</div>
+        </div>
+        <div class="stake-row">
+          <div class="stake-name">Technical / Security</div>
+          <div class="stake-desc">IT, security, legal. Can kill a deal silently.</div>
+        </div>
+        <div class="stake-row">
+          <div class="stake-name">Procurement</div>
+          <div class="stake-desc">Final negotiator. Their job is to squeeze you on price.</div>
+        </div>
+        <div class="stake-row">
+          <div class="stake-name">The Blocker</div>
+          <div class="stake-desc">Someone who doesn't want this to happen. Often invisible until they kill it.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="frameworks">
+      <h2>The big B2B frameworks</h2>
+
+      <div class="tabs">
+        <div class="tab-buttons">
+          <button class="tab-btn active">SPIN</button>
+          <button class="tab-btn">MEDDIC</button>
+          <button class="tab-btn">Challenger</button>
+          <button class="tab-btn">Sandler</button>
+        </div>
+
+        <div class="tab-panel active">
+          <h3 style="margin-top: 0;">SPIN Selling (Neil Rackham, 1988)</h3>
+          <p>A questioning framework based on actual research into what top reps do. Still gold standard for discovery.</p>
+          <ul>
+            <li><strong>S</strong>ituation — understand current state (sparingly; feels like a quiz)</li>
+            <li><strong>P</strong>roblem — uncover pains and dissatisfactions</li>
+            <li><strong>I</strong>mplication — explore what those problems <em>cost</em> them</li>
+            <li><strong>N</strong>eed-payoff — get the buyer to articulate the benefit of solving it</li>
+          </ul>
+          <p>The genius: by the end, the buyer has explained to you why they need to buy.</p>
+        </div>
+
+        <div class="tab-panel">
+          <h3 style="margin-top: 0;">MEDDIC / MEDDPICC</h3>
+          <p>A qualification framework — answers: "Should I keep spending time on this deal?"</p>
+          <ul>
+            <li><strong>M</strong>etrics — what numerically improves if we win?</li>
+            <li><strong>E</strong>conomic Buyer — have I met the money person?</li>
+            <li><strong>D</strong>ecision Criteria — what will they decide on?</li>
+            <li><strong>D</strong>ecision Process — what's the path to signed?</li>
+            <li><strong>P</strong>aper Process — legal / procurement path</li>
+            <li><strong>I</strong>dentify Pain — what hurts now? How much?</li>
+            <li><strong>C</strong>hampion — who internally is fighting for us?</li>
+            <li><strong>C</strong>ompetition — including "do nothing"</li>
+          </ul>
+        </div>
+
+        <div class="tab-panel">
+          <h3 style="margin-top: 0;">Challenger Sale</h3>
+          <p>Top reps don't just relationship-build — they <em>challenge</em> the buyer's worldview.</p>
+          <ol>
+            <li><strong>Teach</strong> — bring a unique insight about their business</li>
+            <li><strong>Tailor</strong> — adapt the insight to their situation</li>
+            <li><strong>Take control</strong> — push back on price, timeline, process when needed</li>
+          </ol>
+          <p>In complex sales, buyers don't know what they need. The best sellers reframe the problem.</p>
+        </div>
+
+        <div class="tab-panel">
+          <h3 style="margin-top: 0;">Sandler Selling</h3>
+          <p>Emphasizes not chasing every deal, getting "no" early, qualifying brutally.</p>
+          <ul>
+            <li><strong>Up-front contracts</strong> — agree on what each meeting will accomplish</li>
+            <li><strong>Pain funnel</strong> — drill into emotional consequences</li>
+            <li><strong>Reverse selling</strong> — when buyer pushes, you back off; this often pulls them in</li>
+            <li><strong>Pain, Budget, Decision</strong> — qualifying triangle</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="meddic">
+      <h2>Score your deal: MEDDIC checklist</h2>
+      <p>Check the boxes you can confidently answer. If you can't answer one — that's where to focus next.</p>
+
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">Live MEDDIC Scorecard</div>
+          <div class="widget-tag">Interactive</div>
+        </div>
+
+        <div class="meddic-grid" id="meddicGrid">
+          <div class="meddic-row">
+            <div class="meddic-label"><span class="meddic-letter">M</span><span class="meddic-name">Metrics</span><div class="meddic-desc">I know exactly what numerically improves if they buy.</div></div>
+            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
+          </div>
+          <div class="meddic-row">
+            <div class="meddic-label"><span class="meddic-letter">E</span><span class="meddic-name">Economic Buyer</span><div class="meddic-desc">I've met (or am meeting) the person with the budget.</div></div>
+            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
+          </div>
+          <div class="meddic-row">
+            <div class="meddic-label"><span class="meddic-letter">D</span><span class="meddic-name">Decision Criteria</span><div class="meddic-desc">I know the specific factors the decision will be made on.</div></div>
+            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
+          </div>
+          <div class="meddic-row">
+            <div class="meddic-label"><span class="meddic-letter">D</span><span class="meddic-name">Decision Process</span><div class="meddic-desc">I know every step between now and signed contract.</div></div>
+            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
+          </div>
+          <div class="meddic-row">
+            <div class="meddic-label"><span class="meddic-letter">I</span><span class="meddic-name">Identify Pain</span><div class="meddic-desc">I can quantify what their problem costs them today.</div></div>
+            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
+          </div>
+          <div class="meddic-row">
+            <div class="meddic-label"><span class="meddic-letter">C</span><span class="meddic-name">Champion</span><div class="meddic-desc">I have someone internal actively selling for me.</div></div>
+            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
+          </div>
+        </div>
+
+        <div class="meddic-result">
+          <div class="meddic-score" id="meddicScore">0 / 6</div>
+          <div class="callout-label" id="meddicVerdict" style="margin-top: 12px;">Score your deal</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="outbound">
+      <h2>Outbound prospecting in 2026</h2>
+      <p>In B2B you often have to create demand, not just capture it.</p>
+
+      <h3>Cold email</h3>
+      <ul>
+        <li>Personalization is non-negotiable (AI killed generic templates)</li>
+        <li>Subject line: short, specific, no tricks</li>
+        <li>Opening line: about <em>them</em>, not you</li>
+        <li>One clear, low-commitment ask (15-min call, not 60-min demo)</li>
+        <li>5–8 touches over 2–3 weeks</li>
+        <li>Stop when they say no or unsubscribe</li>
+      </ul>
+
+      <h3>Cold calling</h3>
+      <ul>
+        <li>Best times: Tue–Thu, 8–10am or 4–5pm local</li>
+        <li>Opening: pattern interrupt + reason for call + permission</li>
+        <li>Don't pitch — set the meeting</li>
+        <li>Voicemails: short, specific, reason to call back</li>
+      </ul>
+
+      <h3>LinkedIn</h3>
+      <ul>
+        <li>Connect with personalization</li>
+        <li>Don't pitch on the connection request</li>
+        <li>Engage with their content first (comment, share)</li>
+        <li>Then ask for a short conversation</li>
+      </ul>
+    </section>
+
+    <section id="discovery">
+      <h2>The discovery call structure</h2>
+      <p>If discovery is great, the demo and close are easy. If discovery is weak, no amount of pitching saves the deal.</p>
+
+      <div class="sequence">
+        <div class="seq-row"><div class="seq-time">0–2 min</div><div class="seq-content"><h4>Set the agenda</h4><p>"Here's what I'd like to cover: understand your situation, see if there's a fit, decide next steps." Up-front contract.</p></div></div>
+        <div class="seq-row"><div class="seq-time">2–25 min</div><div class="seq-content"><h4>Discover (use SPIN)</h4><p>Current process, what's working / not, what they've tried, cost of status quo, timeline, decision process.</p></div></div>
+        <div class="seq-row"><div class="seq-time">25–30 min</div><div class="seq-content"><h4>Position lightly</h4><p>Brief: how you typically help companies like theirs. Don't full-pitch.</p></div></div>
+        <div class="seq-row"><div class="seq-time">30–33 min</div><div class="seq-content"><h4>Mutual qualification</h4><p>Honestly assess fit out loud. If it's not a fit, say so. Buyers respect this enormously.</p></div></div>
+        <div class="seq-row"><div class="seq-time">33–40 min</div><div class="seq-content"><h4>Next steps</h4><p>Specific: who, what, when. Get it on the calendar before hanging up.</p></div></div>
+      </div>
+
+      <div class="pullquote">
+        Target ratio: you talk 30%, they talk 70%.
+      </div>
+    </section>
+
+    <section id="pipeline">
+      <h2>Pipeline management</h2>
+      <p>A pipeline is a snapshot of every live deal at every stage. CRM (Salesforce, HubSpot, Pipedrive) is the system of record.</p>
+
+      <div class="pipeline">
+        <div class="pipe-stage">
+          <div class="pipe-stage-name">Lead</div>
+          <div class="pipe-stage-count">40</div>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-stage-name">Qualified</div>
+          <div class="pipe-stage-count">22</div>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-stage-name">Discovery</div>
+          <div class="pipe-stage-count">14</div>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-stage-name">Demo</div>
+          <div class="pipe-stage-count">10</div>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-stage-name">Proposal</div>
+          <div class="pipe-stage-count">7</div>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-stage-name">Negotiation</div>
+          <div class="pipe-stage-count">4</div>
+        </div>
+        <div class="pipe-stage" style="border-color: var(--green);">
+          <div class="pipe-stage-name">Won</div>
+          <div class="pipe-stage-count">3</div>
+        </div>
+      </div>
+
+      <h3>Pipeline hygiene rules</h3>
+      <ul>
+        <li>Every deal must have a next step with a date</li>
+        <li>No movement in 14 days = at risk</li>
+        <li>Closed-lost is not failure — it's information. Always do a loss review.</li>
+        <li>Want <strong>3–4× quota in pipeline</strong> for safety</li>
+        <li>Forecast accuracy beats optimism</li>
+      </ul>
+    </section>
+
+    <section id="exercises">
+      <h2>Exercises</h2>
+      <ol>
+        <li><strong>MEDDIC a real deal.</strong> Use the scorecard above. Where are the gaps?</li>
+        <li><strong>SPIN drill.</strong> With a partner, sell a pretend product using only SPIN questions for 10 minutes.</li>
+        <li><strong>Stakeholder map.</strong> Pick a company you'd love to sell to. Map the likely committee with 5 real names from LinkedIn.</li>
+        <li><strong>Mock discovery call</strong> with a friend. Record. Track talk-to-listen ratio. Target 30/70.</li>
+      </ol>
+
+      <div class="callout tip">
+        <div class="callout-label">Further reading</div>
+        <p><em>SPIN Selling</em> — Neil Rackham · <em>The Challenger Sale</em> — Dixon &amp; Adamson · <em>Predictable Revenue</em> — Aaron Ross · <em>Gap Selling</em> — Keenan</p>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<nav class="module-nav">
+  <a href="module-04.html" class="prev">
+    <div class="dir">← Previous · Module 04</div>
+    <div class="next-title">Offline Selling</div>
+  </a>
+  <a href="module-06.html" class="next">
+    <div class="dir">Next · Module 06</div>
+    <div class="next-title">Copywriting &amp; Marketing</div>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  Sales Mastery · MIT License · <a href="index.html">Course index</a>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  const boxes = document.querySelectorAll('.meddic-box');
+  function updateMeddic() {
+    const checked = [...boxes].filter(b => b.checked).length;
+    document.getElementById('meddicScore').textContent = `${checked} / 6`;
+    const v = document.getElementById('meddicVerdict');
+    if (checked === 6) { v.textContent = 'Strong deal · forecast confidently'; v.style.color = 'var(--green)'; }
+    else if (checked >= 4) { v.textContent = 'Promising · close the gaps'; v.style.color = 'var(--gold)'; }
+    else if (checked >= 2) { v.textContent = 'Fragile · go deeper before forecasting'; v.style.color = 'var(--gold)'; }
+    else { v.textContent = 'Speculative · this is hope, not a deal'; v.style.color = 'var(--red)'; }
+  }
+  boxes.forEach(b => b.addEventListener('change', updateMeddic));
+  updateMeddic();
+</script>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 8 · Objection Handling — Sales Mastery</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .step-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 12px;
+  }
+  
+  .five-step {
+    margin: 32px 0;
+    border-left: 2px solid var(--line);
+    padding-left: 32px;
+  }
+  .step-row {
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .step-row::before {
+    content: '';
+    position: absolute;
+    left: -39px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    background: var(--orange);
+    border-radius: 50%;
+    border: 3px solid var(--ink);
+  }
+  .step-name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--paper);
+    margin-bottom: 6px;
+  }
+  .step-num-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 4px;
+  }
+  .step-desc { color: var(--cream); font-size: 15px; }
+  
+  .obj-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .obj-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    background: var(--ink-soft);
+    color: var(--muted);
+    border: 1px solid var(--line);
+  }
+  .obj-tag.real { background: rgba(193,85,74,0.15); color: var(--red); border-color: var(--red); }
+  .obj-tag.fake { background: rgba(212,168,67,0.15); color: var(--gold); border-color: var(--gold); }
+  
+  .response-block {
+    background: var(--ink);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    margin: 12px 0;
+    font-style: italic;
+    font-family: var(--font-display);
+    color: var(--cream);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .real-vs-fake {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 24px 0;
+  }
+  .rvf-col { background: var(--ink); padding: 24px; }
+  .rvf-col h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; }
+  .rvf-col.real h4 { color: var(--red); }
+  .rvf-col.fake h4 { color: var(--gold); }
+  .rvf-col ul { margin-left: 18px; }
+  .rvf-col li { font-size: 14px; color: var(--cream); margin-bottom: 8px; }
+  
+  @media (max-width: 700px) {
+    .real-vs-fake { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-brand"><span class="dot"></span>Sales Mastery</a>
+    <div class="topbar-nav">
+      <a href="index.html">Home</a>
+      <a href="module-01.html" class="active">Modules</a>
+      <a href="exercises.html">Exercises</a>
+      <a href="case-studies.html">Cases</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="eyebrow"><span class="num">08</span>Objection Handling</div>
+  <h1 class="module-title">The seven <em>universal</em> "no"s.</h1>
+  <p class="lede">Most objections aren't roadblocks — they're invitations. The buyer is telling you exactly what's standing between them and yes. Your job is to listen to what they said, not what you wish they said.</p>
+  <div class="meta-strip">
+    <span>25 min read</span>
+    <span>The 5-step framework</span>
+    <span>Scripts for every objection</span>
+  </div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <div class="sidebar-title">In this module</div>
+    <ul>
+      <li><a href="#why-they-exist">Why objections exist</a></li>
+      <li><a href="#real-vs-fake">Real vs. smokescreen</a></li>
+      <li><a href="#framework">The 5-step framework</a></li>
+      <li><a href="#seven">The 7 universal objections</a></li>
+      <li><a href="#prevent">Preventing objections</a></li>
+      <li><a href="#exercises">Exercises</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+
+    <section id="why-they-exist">
+      <h2>Why objections exist</h2>
+      <p>An objection means the buyer is <em>still engaged</em>. They haven't walked away. They're telling you what they need before they can say yes.</p>
+      <p>Most beginners hate objections. Pros welcome them. The deals that close silently with no objections are often the ones that ghost you next week.</p>
+
+      <div class="pullquote">
+        An objection is not a rejection. It's a request for more information.
+      </div>
+    </section>
+
+    <section id="real-vs-fake">
+      <h2>Real vs. smokescreen objections</h2>
+      <p>The biggest mistake in objection handling is taking the first objection at face value. Often it's a polite cover for the real concern.</p>
+
+      <div class="real-vs-fake">
+        <div class="rvf-col fake">
+          <h4>Smokescreen — what they say</h4>
+          <ul>
+            <li>"It's too expensive"</li>
+            <li>"I need to think about it"</li>
+            <li>"Send me more info"</li>
+            <li>"I'll get back to you"</li>
+            <li>"Let me check with my partner"</li>
+          </ul>
+        </div>
+        <div class="rvf-col real">
+          <h4>Real — what they mean</h4>
+          <ul>
+            <li>"I don't see the value"</li>
+            <li>"I'm not sure this works"</li>
+            <li>"I want to avoid saying no to your face"</li>
+            <li>"I'm not the decision-maker"</li>
+            <li>"I'm afraid of making a mistake"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Diagnostic</div>
+        <p>When you get an objection, ask: <strong>"Is that the main thing, or is there something else?"</strong> Often the second answer is the real one.</p>
+      </div>
+    </section>
+
+    <section id="framework">
+      <h2>The universal 5-step framework</h2>
+      <p>Apply this to <em>any</em> objection. Following the order matters — skipping steps is how objections come back.</p>
+
+      <div class="five-step">
+        <div class="step-row">
+          <div class="step-num-label">Step 01</div>
+          <div class="step-name">Acknowledge</div>
+          <p class="step-desc">Show you heard them. Don't dismiss, don't immediately counter. "I hear you" or "That makes sense" — even just nodding. The buyer needs to feel heard before they can listen.</p>
+        </div>
+        <div class="step-row">
+          <div class="step-num-label">Step 02</div>
+          <div class="step-name">Clarify</div>
+          <p class="step-desc">Get specific. "When you say expensive — expensive compared to what?" or "What part specifically concerns you?" Most objections are vague; clarification reveals the real one.</p>
+        </div>
+        <div class="step-row">
+          <div class="step-num-label">Step 03</div>
+          <div class="step-name">Empathize</div>
+          <p class="step-desc">Show you understand. "I get why that matters — most of our customers asked the same thing before they bought." This normalizes the concern.</p>
+        </div>
+        <div class="step-row">
+          <div class="step-num-label">Step 04</div>
+          <div class="step-name">Respond</div>
+          <p class="step-desc">Address the actual concern with specifics — reframe, evidence, comparison, story, or trade-off. Not a pitch dump.</p>
+        </div>
+        <div class="step-row">
+          <div class="step-num-label">Step 05</div>
+          <div class="step-name">Confirm</div>
+          <p class="step-desc">Check: "Does that address your concern, or is there something else?" If yes, move forward. If no, you missed it — go back to step 2.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="seven">
+      <h2>The seven universal objections</h2>
+      <p>Across every industry and channel, almost every "no" reduces to one of these seven. Click to see the breakdown for each.</p>
+
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">01 · PRICE</span> "It's too expensive"</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="obj-meta">
+              <span class="obj-tag fake">Often a smokescreen</span>
+              <span class="obj-tag">~40% of all objections</span>
+            </div>
+            <p><strong>What they probably mean:</strong> "I don't see enough value to justify this price."</p>
+            <h4>Clarifying question</h4>
+            <div class="response-block">Expensive compared to what — another option, or just more than you hoped?</div>
+            <h4>Response options</h4>
+            <ul>
+              <li><strong>Reframe to value:</strong> "If this saved you 10 hours a week, what would that be worth?"</li>
+              <li><strong>Break it down:</strong> "At €2,400/year that's €6.50/day — less than coffee."</li>
+              <li><strong>Comparison:</strong> "Compared to the cost of not solving this — what's that costing you currently?"</li>
+              <li><strong>Trade:</strong> "I can do €X if you commit to two years" — never discount without exchange</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">02 · TIMING</span> "Not right now"</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="obj-meta">
+              <span class="obj-tag fake">Half real, half smokescreen</span>
+            </div>
+            <p><strong>What they probably mean:</strong> "I'm not convinced enough to prioritize this over other things."</p>
+            <h4>Clarifying question</h4>
+            <div class="response-block">What would need to be true for the timing to be right?</div>
+            <h4>Response options</h4>
+            <ul>
+              <li><strong>Cost of delay:</strong> "What does waiting 6 months cost you?"</li>
+              <li><strong>Set future trigger:</strong> "When should I check back? What will be different then?"</li>
+              <li><strong>Calendar it:</strong> "Let's put it on the calendar for 3 months — that way it doesn't fall off your radar."</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">03 · AUTHORITY</span> "I need to check with..."</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="obj-meta">
+              <span class="obj-tag real">Often legitimate</span>
+            </div>
+            <p><strong>What they probably mean:</strong> Either really true (someone else decides) or a polite stall.</p>
+            <h4>Clarifying question</h4>
+            <div class="response-block">Of course. Who needs to be involved, and what do they typically care about?</div>
+            <h4>Response options</h4>
+            <ul>
+              <li>Offer a meeting with the other person</li>
+              <li>Provide materials they can share with the decision-maker</li>
+              <li>Ask: "What would you say if you were in my position?" — often reveals if it's a stall</li>
+              <li>Anticipate: "What questions do you think they'll have?"</li>
+            </ul>
+            <div class="callout warn" style="margin-top: 16px;">
+              <div class="callout-label">Critical</div>
+              <p>Qualify the decision-making process <em>before</em> the pitch. If you find out someone else decides during objection handling, you wasted the pitch.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">04 · FIT</span> "I'm not sure this is right for us"</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="obj-meta">
+              <span class="obj-tag real">Often legitimate</span>
+              <span class="obj-tag">Sometimes you should agree</span>
+            </div>
+            <p><strong>What they probably mean:</strong> Genuine concern about applicability to their specific situation.</p>
+            <h4>Clarifying question</h4>
+            <div class="response-block">What specifically makes you think it might not fit?</div>
+            <h4>Response options</h4>
+            <ul>
+              <li>Find a customer like them, share that story</li>
+              <li>Ask about their situation — match features to specifics</li>
+              <li>Suggest a small trial or proof-of-concept</li>
+              <li><strong>Sometimes:</strong> Agree it's not a fit. Builds enormous trust for the future.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">05 · COMPETITION</span> "We're looking at [competitor]"</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p><strong>What they probably mean:</strong> "Convince me you're better, or just give me your best price."</p>
+            <h4>Clarifying question</h4>
+            <div class="response-block">That's a great company. What's drawing you to them — and what's making you still consider us?</div>
+            <h4>Response options</h4>
+            <ul>
+              <li>Never trash competitors — sounds insecure</li>
+              <li>Acknowledge their strengths, then differentiate</li>
+              <li>Find the criteria <em>they care about</em>, address those</li>
+              <li>If they're truly better for this case, say so</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">06 · TRUST</span> "How do I know this works?"</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p><strong>What they probably mean:</strong> "I'm afraid of making a mistake I'll get blamed for."</p>
+            <h4>Response options</h4>
+            <ul>
+              <li>Case studies and testimonials</li>
+              <li>References they can call</li>
+              <li>Free trial / pilot / money-back</li>
+              <li>Data: numbers, results, third-party validation</li>
+              <li><strong>Risk reversal:</strong> "If this doesn't deliver X in 90 days, full refund."</li>
+            </ul>
+            <p>Trust objections often hide a "fear of looking stupid" — make the decision <em>safe</em> for them personally.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">07 · NEED</span> "I don't really need this"</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="obj-meta">
+              <span class="obj-tag real">Often legitimate</span>
+            </div>
+            <p><strong>What they probably mean:</strong> They either truly don't need it (qualify out — save your time) or haven't realized they do.</p>
+            <h4>Clarifying question</h4>
+            <div class="response-block">Tell me about how you're handling [problem] today.</div>
+            <h4>Response options</h4>
+            <ul>
+              <li>Re-do discovery — find the actual pain</li>
+              <li>Use SPIN's implication questions to amplify pain awareness</li>
+              <li>If pain is genuinely absent, qualify out and move on</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="prevent">
+      <h2>Preventing objections before they arrive</h2>
+      <p>The best objection handling is making them unnecessary. Address them upstream:</p>
+      <ul>
+        <li><strong>Discovery</strong> — uncover budget, authority, timing, fit early so they never become surprises</li>
+        <li><strong>Social proof</strong> — show case studies that match their situation</li>
+        <li><strong>Pre-frame</strong> — "A lot of customers wonder if this would fit a small team. Here's what we typically see..."</li>
+        <li><strong>FAQ in advance</strong> — answer the top 5 objections in your sales page or pitch</li>
+        <li><strong>Risk reversal</strong> — guarantees that pre-empt the trust objection</li>
+      </ul>
+
+      <div class="callout tip">
+        <div class="callout-label">Pro move</div>
+        <p><strong>List your objections, then answer each in your pitch.</strong> If you handled "price" before they brought it up, they often don't bring it up at all.</p>
+      </div>
+    </section>
+
+    <section id="exercises">
+      <h2>Exercises</h2>
+      <ol>
+        <li><strong>Top 5 objection log.</strong> Write down the 5 most common objections you (or your industry) hear. Script the 5-step response for each.</li>
+        <li><strong>Real vs. fake drill.</strong> Take 5 recent objections you've heard. For each, write the surface objection and the likely real one.</li>
+        <li><strong>Role-play.</strong> Partner up. They lob random objections from the 7 categories. You respond with the framework. 15 min.</li>
+        <li><strong>Pre-empt audit.</strong> Take your current pitch / sales page. Which of the 7 objections does it address upstream? Add one more.</li>
+      </ol>
+
+      <div class="callout tip">
+        <div class="callout-label">Further reading</div>
+        <p><em>Objections</em> — Jeb Blount · <em>The Lost Art of Closing</em> — Anthony Iannarino · <em>Never Split the Difference</em> — Chris Voss</p>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<nav class="module-nav">
+  <a href="module-07.html" class="prev">
+    <div class="dir">← Previous · Module 07</div>
+    <div class="next-title">Negotiation</div>
+  </a>
+  <a href="module-09.html" class="next">
+    <div class="dir">Next · Module 09</div>
+    <div class="next-title">Closing Techniques</div>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  Sales Mastery · MIT License · <a href="index.html">Course index</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

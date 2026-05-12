@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 11 · Ethics &amp; Pitfalls — Sales Mastery</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .compare-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 32px 0;
+  }
+  .compare-col { background: var(--ink); padding: 24px; }
+  .compare-col h4 {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .compare-col.good h4 { color: var(--green); }
+  .compare-col.bad h4 { color: var(--red); }
+  .compare-row {
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 15px;
+    color: var(--cream);
+  }
+  .compare-row:last-child { border-bottom: none; }
+  
+  .dark-pattern {
+    background: var(--ink);
+    border-left: 3px solid var(--red);
+    padding: 20px 24px;
+    margin: 16px 0;
+  }
+  .dp-name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--red);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .dp-card p { color: var(--cream); margin-bottom: 8px; font-size: 14px; }
+  .dp-card p.example { font-style: italic; color: var(--muted); font-size: 13px; }
+  
+  .checklist {
+    background: var(--ink);
+    border: 1px solid var(--line);
+    padding: 28px;
+    margin: 32px 0;
+  }
+  .check-row {
+    display: flex;
+    align-items: start;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .check-row:last-child { border-bottom: none; }
+  .check-row input[type="checkbox"] {
+    width: 22px; height: 22px;
+    accent-color: var(--green);
+    margin-top: 2px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  .check-text { color: var(--cream); font-size: 15px; line-height: 1.5; }
+  
+  @media (max-width: 700px) {
+    .compare-split { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-brand"><span class="dot"></span>Sales Mastery</a>
+    <div class="topbar-nav">
+      <a href="index.html">Home</a>
+      <a href="module-01.html" class="active">Modules</a>
+      <a href="exercises.html">Exercises</a>
+      <a href="case-studies.html">Cases</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="eyebrow"><span class="num">11</span>Ethics &amp; Pitfalls</div>
+  <h1 class="module-title">Persuasion vs. <em>manipulation.</em></h1>
+  <p class="lede">Sales gets a bad reputation because some sellers earn it. The techniques in this course are powerful — and the same techniques used differently produce either a long career or a short, ugly one.</p>
+  <div class="meta-strip">
+    <span>20 min read</span>
+    <span>Most important · least taught</span>
+    <span>Long game vs. short game</span>
+  </div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <div class="sidebar-title">In this module</div>
+    <ul>
+      <li><a href="#core-distinction">The core distinction</a></li>
+      <li><a href="#test">The mirror test</a></li>
+      <li><a href="#dark-patterns">Dark patterns to avoid</a></li>
+      <li><a href="#career-mistakes">Career-ending mistakes</a></li>
+      <li><a href="#walk-away">When to walk away</a></li>
+      <li><a href="#long-game">The long game</a></li>
+      <li><a href="#exercises">Exercises</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+
+    <section id="core-distinction">
+      <h2>Persuasion vs. manipulation</h2>
+      <p>Both use the same psychological tools. The difference is in <strong>who benefits</strong> and <strong>what's being hidden</strong>.</p>
+
+      <div class="compare-split">
+        <div class="compare-col good">
+          <h4>✓ Persuasion</h4>
+          <div class="compare-row">Buyer is better off after the sale</div>
+          <div class="compare-row">All material facts are available to them</div>
+          <div class="compare-row">You'd be proud to tell them everything you know</div>
+          <div class="compare-row">Buyer makes the decision, freely</div>
+          <div class="compare-row">If they say no, that's fine</div>
+          <div class="compare-row">You'd sell it to your mother / best friend</div>
+        </div>
+        <div class="compare-col bad">
+          <h4>✗ Manipulation</h4>
+          <div class="compare-row">Seller is better off, buyer isn't</div>
+          <div class="compare-row">Material facts are hidden, distorted, or buried</div>
+          <div class="compare-row">You'd be embarrassed if they knew what you know</div>
+          <div class="compare-row">Buyer is pressured past their judgment</div>
+          <div class="compare-row">"No" is treated as an obstacle to overcome</div>
+          <div class="compare-row">You'd never recommend it to people you love</div>
+        </div>
+      </div>
+
+      <div class="pullquote">
+        Persuasion is helping someone decide what's already in their interest. Manipulation is making them decide what's in yours.
+      </div>
+    </section>
+
+    <section id="test">
+      <h2>The mirror test</h2>
+      <p>Run this checklist before any deal where you have doubts.</p>
+
+      <div class="checklist">
+        <div class="check-row">
+          <input type="checkbox">
+          <div class="check-text">Would I be comfortable if this buyer knew everything I know?</div>
+        </div>
+        <div class="check-row">
+          <input type="checkbox">
+          <div class="check-text">Will they be glad they bought, in 6 months?</div>
+        </div>
+        <div class="check-row">
+          <input type="checkbox">
+          <div class="check-text">Would I recommend this to my own family in the same situation?</div>
+        </div>
+        <div class="check-row">
+          <input type="checkbox">
+          <div class="check-text">Am I hiding any information that would change their mind?</div>
+        </div>
+        <div class="check-row">
+          <input type="checkbox">
+          <div class="check-text">Am I using any pressure that comes from <em>my</em> needs, not theirs?</div>
+        </div>
+        <div class="check-row">
+          <input type="checkbox">
+          <div class="check-text">Would this sale survive being reported on the front page of a newspaper?</div>
+        </div>
+      </div>
+
+      <p>If you can't honestly check every box, you're crossing a line. The career cost compounds — every shady deal makes the next one easier to do, until you find yourself somewhere you didn't mean to be.</p>
+    </section>
+
+    <section id="dark-patterns">
+      <h2>Dark patterns to recognize and avoid</h2>
+
+      <div class="dark-pattern dp-card">
+        <div class="dp-name">Fake scarcity</div>
+        <p>Pretending you're running out when you aren't. Countdown timers that reset. "Only 3 left!" on a digital product.</p>
+        <p class="example">Cost: buyer eventually notices. You become a brand they don't trust. They tell others.</p>
+      </div>
+
+      <div class="dark-pattern dp-card">
+        <div class="dp-name">Fake social proof</div>
+        <p>Fabricated testimonials, fake review counts, AI-generated quotes from people who don't exist.</p>
+        <p class="example">Cost: when discovered (and someone always discovers), reputational damage is permanent.</p>
+      </div>
+
+      <div class="dark-pattern dp-card">
+        <div class="dp-name">Buried terms</div>
+        <p>Hiding auto-renewals, cancellation friction, hidden fees in fine print.</p>
+        <p class="example">Cost: legal exposure, chargebacks, regulatory attention, customer hatred.</p>
+      </div>
+
+      <div class="dark-pattern dp-card">
+        <div class="dp-name">Drip-pricing</div>
+        <p>Showing a low price upfront, then adding mandatory fees at checkout (booking fees, service charges, taxes that should've been included).</p>
+        <p class="example">Cost: high cart-abandonment rates, brand reputation as deceptive.</p>
+      </div>
+
+      <div class="dark-pattern dp-card">
+        <div class="dp-name">Confirm-shaming</div>
+        <p>"No thanks, I don't want to save money" / "I'd rather pay full price." Manipulative opt-outs.</p>
+        <p class="example">Cost: customers experience this as condescending. Conversion uplift comes with brand damage.</p>
+      </div>
+
+      <div class="dark-pattern dp-card">
+        <div class="dp-name">Emotional exploitation</div>
+        <p>Targeting people in crisis (illness, grief, financial desperation) with high-pressure sales.</p>
+        <p class="example">Cost: this is the line between a salesperson and a predator. Sometimes legally — always morally.</p>
+      </div>
+
+      <div class="dark-pattern dp-card">
+        <div class="dp-name">Forced urgency</div>
+        <p>"Decide now or you lose this price forever" — when the offer is renewed weekly.</p>
+        <p class="example">Cost: sophisticated buyers spot it instantly. Trains your audience to never trust your timing claims.</p>
+      </div>
+
+      <div class="dark-pattern dp-card">
+        <div class="dp-name">Bait and switch</div>
+        <p>Advertising one thing, delivering another. Pricing model shifts after signup.</p>
+        <p class="example">Cost: chargebacks, churn, lawsuits in regulated industries.</p>
+      </div>
+    </section>
+
+    <section id="career-mistakes">
+      <h2>Career-ending mistakes</h2>
+      <p>Things that end sales careers — not in one move, but compounding:</p>
+      <ul>
+        <li><strong>Lying about the product</strong> — when discovered, you're done at this company and several others (sales is a small world)</li>
+        <li><strong>Misrepresenting numbers</strong> — fudged results, inflated case studies, made-up metrics</li>
+        <li><strong>Burning customers for short-term commission</strong> — they'll tell others; the industry remembers</li>
+        <li><strong>Bad-mouthing competitors</strong> — signals insecurity, not strength</li>
+        <li><strong>Burning bridges with internal teams</strong> — engineering, support, finance will refuse to back you eventually</li>
+        <li><strong>Failing to follow through</strong> — every broken promise is a deposit in the trust account, withdrawn</li>
+        <li><strong>Selling things you wouldn't buy yourself</strong> — destroys conviction; buyers feel it</li>
+      </ul>
+    </section>
+
+    <section id="walk-away">
+      <h2>When to walk away from a deal</h2>
+      <p>Sometimes the right move is no deal.</p>
+      <ul>
+        <li>The buyer needs something your product can't deliver</li>
+        <li>The fit is wrong; they'll churn or be unhappy</li>
+        <li>The buyer is asking you to misrepresent something</li>
+        <li>The terms are abusive — you're losing money to win revenue</li>
+        <li>Your gut says no</li>
+      </ul>
+
+      <div class="callout tip">
+        <div class="callout-label">The paradox</div>
+        <p>Walking away from a bad-fit deal often <strong>wins</strong> the deal. Buyers trust someone willing to say "we're not right for you." That trust closes the next deal — and gets you referrals.</p>
+      </div>
+    </section>
+
+    <section id="long-game">
+      <h2>The long game</h2>
+      <p>Every interaction is two transactions: <strong>the immediate deal</strong> and <strong>the reputation deposit</strong>.</p>
+      <p>You can win nearly every immediate deal by being aggressive, manipulative, and short-term focused. You will lose every reputation deposit, and over a 20-year career that's the entire game.</p>
+      <p>The salespeople who become legends:</p>
+      <ul>
+        <li>Have customers who follow them across companies</li>
+        <li>Get referrals so often they barely need to prospect</li>
+        <li>Are trusted by buyers <em>and</em> their internal teams</li>
+        <li>Move up because everyone wants to work with them</li>
+        <li>Sleep well at night</li>
+      </ul>
+
+      <div class="pullquote">
+        Play the long game. The short game ends quickly — and usually badly.
+      </div>
+    </section>
+
+    <section id="exercises">
+      <h2>Exercises</h2>
+      <ol>
+        <li><strong>Mirror-test a recent deal.</strong> Run the 6-question checklist above on a deal you closed (or are considering). Honestly — where would you not check the box?</li>
+        <li><strong>Dark-pattern audit.</strong> Visit 5 e-commerce or SaaS sites. Spot the dark patterns. Which would you refuse to use? Where would you draw lines?</li>
+        <li><strong>Walk-away role-play.</strong> With a partner, role-play declining a deal that isn't a fit. Notice how hard or easy it feels. Practice the language.</li>
+        <li><strong>Letter to your future self.</strong> Write the kind of seller you want to be in 10 years. Specific behaviors. Keep it.</li>
+      </ol>
+
+      <div class="callout tip">
+        <div class="callout-label">Further reading</div>
+        <p><em>Influence</em> — Cialdini (ethics chapter) · <em>The Speed of Trust</em> — Stephen Covey · <em>Give and Take</em> — Adam Grant · <em>Dark Patterns</em> research at deceptive.design</p>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<nav class="module-nav">
+  <a href="module-10.html" class="prev">
+    <div class="dir">← Previous · Module 10</div>
+    <div class="next-title">Customer Retention</div>
+  </a>
+  <a href="module-12.html" class="next">
+    <div class="dir">Next · Module 12</div>
+    <div class="next-title">Tools &amp; Resources</div>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  Sales Mastery · MIT License · <a href="index.html">Course index</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 3 · Online Selling — Sales Mastery</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  /* Funnel visualization */
+  .funnel-viz {
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .funnel-step {
+    width: 100%;
+    padding: 18px 24px;
+    background: var(--ink);
+    border: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s;
+  }
+  .funnel-step .fs-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cream);
+  }
+  .funnel-step .fs-value {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--orange);
+    font-weight: 500;
+  }
+  .funnel-step .fs-rate {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    margin-left: 12px;
+  }
+  
+  /* Channel grid */
+  .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 32px 0;
+  }
+  .channel-card { background: var(--ink); padding: 24px; }
+  .channel-name { font-family: var(--font-display); font-size: 20px; color: var(--paper); margin-bottom: 8px; font-weight: 500; }
+  .channel-tag { display: inline-block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; margin-bottom: 12px; }
+  .channel-tag.green { background: rgba(74,157,111,0.2); color: var(--green); }
+  .channel-tag.gold { background: rgba(212,168,67,0.2); color: var(--gold); }
+  .channel-tag.red { background: rgba(193,85,74,0.2); color: var(--red); }
+  .channel-card p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.5; }
+  
+  /* Product page anatomy */
+  .anatomy-diagram {
+    margin: 32px 0;
+    border: 1px solid var(--line);
+    background: var(--ink);
+  }
+  .anatomy-section {
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .anatomy-section:last-child { border-bottom: none; }
+  .anatomy-q {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 36px;
+    color: var(--orange);
+    line-height: 1;
+    font-weight: 300;
+  }
+  .anatomy-q-text {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--paper);
+    margin-bottom: 8px;
+  }
+  .anatomy-q-detail { color: var(--cream); font-size: 14px; margin: 0; }
+  
+  /* Formula display */
+  .formula {
+    background: var(--ink);
+    border: 1px solid var(--line);
+    padding: 32px;
+    text-align: center;
+    margin: 32px 0;
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.5vw, 28px);
+    color: var(--paper);
+    font-weight: 500;
+  }
+  .formula .x { color: var(--orange); margin: 0 8px; }
+  .formula .var { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-brand"><span class="dot"></span>Sales Mastery</a>
+    <div class="topbar-nav">
+      <a href="index.html">Home</a>
+      <a href="module-01.html" class="active">Modules</a>
+      <a href="exercises.html">Exercises</a>
+      <a href="case-studies.html">Cases</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="eyebrow"><span class="num">03</span>Online Selling</div>
+  <h1 class="module-title">Selling on the <em>internet.</em></h1>
+  <p class="lede">Online selling isn't one business — it's a dozen, each with different rules. This module maps the landscape, breaks down the math, and shows what actually moves the numbers.</p>
+  <div class="meta-strip">
+    <span>35 min read</span>
+    <span>Practical · with calculators</span>
+    <span>E-com, SaaS, digital products</span>
+  </div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <div class="sidebar-title">In this module</div>
+    <ul>
+      <li><a href="#landscape">The landscape</a></li>
+      <li><a href="#anatomy">Product page anatomy</a></li>
+      <li><a href="#funnel">The funnel</a></li>
+      <li><a href="#calculator">Funnel calculator</a></li>
+      <li><a href="#traffic">Traffic strategy</a></li>
+      <li><a href="#formula">Conversion formula</a></li>
+      <li><a href="#traps">Common traps</a></li>
+      <li><a href="#exercises">Exercises</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+
+    <section id="landscape">
+      <h2>The online selling landscape</h2>
+      <p>Online selling spans a dozen distinct business models. Each has different mechanics, different metrics, different traps. Start with one channel until you can do it well, then expand. <strong>Five mediocre channels lose to one excellent channel.</strong></p>
+
+      <div class="channel-grid">
+        <div class="channel-card">
+          <div class="channel-name">Own store</div>
+          <span class="channel-tag gold">Brand-building</span>
+          <p>Shopify, WooCommerce. Your site, your rules. But traffic is your problem.</p>
+        </div>
+        <div class="channel-card">
+          <div class="channel-name">Marketplaces</div>
+          <span class="channel-tag green">Volume</span>
+          <p>Amazon, eBay, Etsy. Built-in traffic, but platform owns the customer.</p>
+        </div>
+        <div class="channel-card">
+          <div class="channel-name">Social commerce</div>
+          <span class="channel-tag gold">Impulse</span>
+          <p>TikTok Shop, IG Shopping. Where attention lives. Algorithm-dependent.</p>
+        </div>
+        <div class="channel-card">
+          <div class="channel-name">Dropshipping</div>
+          <span class="channel-tag red">Razor margins</span>
+          <p>Low capital. Quality and shipping issues are constant.</p>
+        </div>
+        <div class="channel-card">
+          <div class="channel-name">Digital products</div>
+          <span class="channel-tag green">High margin</span>
+          <p>Courses, ebooks, SaaS. 90%+ margins. Distribution is the game.</p>
+        </div>
+        <div class="channel-card">
+          <div class="channel-name">Subscriptions</div>
+          <span class="channel-tag green">Predictable</span>
+          <p>Recurring revenue. Churn is fatal — every month is renewal day.</p>
+        </div>
+        <div class="channel-card">
+          <div class="channel-name">High-ticket coaching</div>
+          <span class="channel-tag gold">Quick start</span>
+          <p>You're the product. Doesn't scale without systems.</p>
+        </div>
+        <div class="channel-card">
+          <div class="channel-name">Affiliate</div>
+          <span class="channel-tag red">No asset</span>
+          <p>Sell others' products. No long-term asset, platform risk.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="anatomy">
+      <h2>Anatomy of a converting product page</h2>
+      <p>Every product page answers five buyer questions, in order. If any is missing or weak, the sale leaks out.</p>
+
+      <div class="anatomy-diagram">
+        <div class="anatomy-section">
+          <div class="anatomy-q">Q1</div>
+          <div>
+            <div class="anatomy-q-text">What is this?</div>
+            <p class="anatomy-q-detail">Above the fold: clear hero image, one-line value proposition, price visible, CTA button without scrolling.</p>
+          </div>
+        </div>
+        <div class="anatomy-section">
+          <div class="anatomy-q">Q2</div>
+          <div>
+            <div class="anatomy-q-text">Why should I care?</div>
+            <p class="anatomy-q-detail">Benefits section: top 3–5 outcomes. Outcome-led copy ("Wake up rested" &gt; "8-zone memory foam"). Lifestyle imagery.</p>
+          </div>
+        </div>
+        <div class="anatomy-section">
+          <div class="anatomy-q">Q3</div>
+          <div>
+            <div class="anatomy-q-text">How does it work?</div>
+            <p class="anatomy-q-detail">Features mapped to benefits. Specs, dimensions, materials. Comparison vs. alternatives if relevant.</p>
+          </div>
+        </div>
+        <div class="anatomy-section">
+          <div class="anatomy-q">Q4</div>
+          <div>
+            <div class="anatomy-q-text">Can I trust this?</div>
+            <p class="anatomy-q-detail">Reviews (with photos/video), star ratings, press mentions, certifications, founder story, return policy.</p>
+          </div>
+        </div>
+        <div class="anatomy-section">
+          <div class="anatomy-q">Q5</div>
+          <div>
+            <div class="anatomy-q-text">What if it doesn't work?</div>
+            <p class="anatomy-q-detail">Risk reversal: money-back, free returns, warranty. FAQ on top fears. Clear shipping and support info.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="funnel">
+      <h2>The sales funnel</h2>
+      <p>Buyers move through stages. You can't fix what you don't measure — track conversion at each stage.</p>
+      
+      <div class="formula">
+        <span class="var">Awareness</span> → <span class="var">Interest</span> → <span class="var">Consideration</span> → <span class="var">Conversion</span> → <span class="var">Retention</span> → <span class="var">Advocacy</span>
+      </div>
+    </section>
+
+    <section id="calculator">
+      <h2>Funnel calculator</h2>
+      <p>Plug in your numbers. See where the leverage is — and what doubling each metric does to revenue.</p>
+
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">E-commerce Funnel Simulator</div>
+          <div class="widget-tag">Live</div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label>Monthly visitors</label>
+            <input type="range" id="visitors" min="1000" max="100000" step="500" value="20000" data-prefix="">
+            <div class="range-value"></div>
+          </div>
+          <div class="input-group">
+            <label>Add-to-cart rate</label>
+            <input type="range" id="atc" min="1" max="20" step="0.5" value="5" data-suffix="%">
+            <div class="range-value"></div>
+          </div>
+          <div class="input-group">
+            <label>Cart → purchase</label>
+            <input type="range" id="checkout" min="10" max="80" step="1" value="40" data-suffix="%">
+            <div class="range-value"></div>
+          </div>
+          <div class="input-group">
+            <label>Average order value (€)</label>
+            <input type="range" id="aov" min="10" max="500" step="5" value="60" data-prefix="€">
+            <div class="range-value"></div>
+          </div>
+          <div class="input-group">
+            <label>Repeat rate (next 90 days)</label>
+            <input type="range" id="repeat" min="0" max="60" step="1" value="15" data-suffix="%">
+            <div class="range-value"></div>
+          </div>
+          <div class="input-group">
+            <label>CAC per first buyer (€)</label>
+            <input type="range" id="cac" min="5" max="150" step="1" value="35" data-prefix="€">
+            <div class="range-value"></div>
+          </div>
+        </div>
+
+        <div class="funnel-viz" id="funnelViz"></div>
+
+        <div class="stat-grid" style="margin-top: 24px;">
+          <div class="stat">
+            <div class="stat-num" id="revStat">€0</div>
+            <div class="stat-label">Monthly revenue</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="ltvStat">€0</div>
+            <div class="stat-label">90-day LTV</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="ratioStat">0.0×</div>
+            <div class="stat-label">LTV : CAC ratio</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="healthStat">—</div>
+            <div class="stat-label">Health verdict</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Golden rule</div>
+        <p>LTV must be at least <strong>3× CAC</strong> for a healthy long-term business. If you spend €30 acquiring a customer worth €40 lifetime, you're working for nothing.</p>
+      </div>
+    </section>
+
+    <section id="traffic">
+      <h2>Where traffic actually comes from</h2>
+
+      <div class="tabs">
+        <div class="tab-buttons">
+          <button class="tab-btn active">Paid</button>
+          <button class="tab-btn">Owned</button>
+          <button class="tab-btn">Earned</button>
+        </div>
+        <div class="tab-panel active">
+          <h3 style="margin-top: 0;">Paid traffic — renting attention</h3>
+          <ul>
+            <li><strong>Meta ads</strong> — visual consumer products, interest targeting</li>
+            <li><strong>Google ads</strong> — high-intent (people already searching)</li>
+            <li><strong>TikTok ads</strong> — impulse, trends, younger demos</li>
+            <li><strong>YouTube ads</strong> — considered purchases needing demo</li>
+          </ul>
+          <p>The moment you stop paying, it stops.</p>
+        </div>
+        <div class="tab-panel">
+          <h3 style="margin-top: 0;">Owned traffic — owning attention</h3>
+          <ul>
+            <li><strong>SEO / content marketing</strong> — slow but compounding</li>
+            <li><strong>Email list</strong> — highest-ROI channel in online business</li>
+            <li><strong>SMS list</strong> — even higher engagement; use sparingly</li>
+          </ul>
+          <p>The hardest to build, the most valuable to have.</p>
+        </div>
+        <div class="tab-panel">
+          <h3 style="margin-top: 0;">Earned traffic — receiving attention</h3>
+          <ul>
+            <li><strong>Word of mouth</strong> — most powerful, hardest to manufacture</li>
+            <li><strong>Press &amp; PR</strong></li>
+            <li><strong>Influencer collaborations</strong></li>
+            <li><strong>UGC</strong> — one viral TikTok beats most ads</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pullquote">
+        Use paid to bootstrap. Build email/SMS lists from day one. Work toward earned over time.
+      </div>
+    </section>
+
+    <section id="formula">
+      <h2>The conversion formula</h2>
+      <div class="formula">
+        Revenue = <span class="var">Traffic</span> <span class="x">×</span> <span class="var">CR</span> <span class="x">×</span> <span class="var">AOV</span> <span class="x">×</span> <span class="var">Repeat</span>
+      </div>
+      <p>If any one of these doubles, revenue doubles. Most beginners obsess over traffic. Operators know the leverage is usually in conversion rate or AOV.</p>
+
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">Revenue if you double each lever</div>
+          <div class="widget-tag">From your inputs above</div>
+        </div>
+        <div class="chart-wrap"><canvas id="leverChart"></canvas></div>
+      </div>
+    </section>
+
+    <section id="traps">
+      <h2>Common online selling traps</h2>
+      <ol>
+        <li><strong>Building before validating</strong> — making the product before proving anyone will buy</li>
+        <li><strong>Chasing trends</strong> — by the time it's on YouTube, the window's closing</li>
+        <li><strong>Cheap traffic, expensive funnel</strong> — if your page converts at 0.3%, more traffic won't save you</li>
+        <li><strong>Ignoring email</strong> — leaving 30%+ of revenue on the table</li>
+        <li><strong>Discounting reflexively</strong> — trains buyers to wait for sales</li>
+        <li><strong>Underpricing</strong> — low price signals low quality</li>
+        <li><strong>Treating support as overhead</strong> — it's your highest-leverage retention channel</li>
+        <li><strong>Not knowing the numbers</strong> — running without metrics is gambling</li>
+      </ol>
+    </section>
+
+    <section id="exercises">
+      <h2>Exercises</h2>
+      <ol>
+        <li><strong>Tear down 3 product pages.</strong> Map each to the five buyer questions. Where strong? Where weak?</li>
+        <li><strong>Calculate the funnel.</strong> Use the calculator above with real numbers from a store you can access.</li>
+        <li><strong>Pick your channel.</strong> Which one would you go all-in on for 90 days?</li>
+        <li><strong>Write a product page</strong> for an imaginary product hitting all 5 questions. Friend test it.</li>
+      </ol>
+
+      <div class="callout tip">
+        <div class="callout-label">Further reading</div>
+        <p><em>DotCom Secrets</em> — Russell Brunson · <em>$100M Offers</em> — Alex Hormozi · <em>Building a StoryBrand</em> — Donald Miller</p>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<nav class="module-nav">
+  <a href="module-02.html" class="prev">
+    <div class="dir">← Previous · Module 02</div>
+    <div class="next-title">Psychology of Selling</div>
+  </a>
+  <a href="module-04.html" class="next">
+    <div class="dir">Next · Module 04</div>
+    <div class="next-title">Offline Selling</div>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  Sales Mastery · MIT License · <a href="index.html">Course index</a>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function calc() {
+    const v = +document.getElementById('visitors').value;
+    const atc = +document.getElementById('atc').value / 100;
+    const co = +document.getElementById('checkout').value / 100;
+    const aov = +document.getElementById('aov').value;
+    const rep = +document.getElementById('repeat').value / 100;
+    const cac = +document.getElementById('cac').value;
+    
+    const carts = Math.round(v * atc);
+    const buyers = Math.round(carts * co);
+    const repeaters = Math.round(buyers * rep);
+    const revenue = buyers * aov + repeaters * aov;
+    const ltv = aov + (aov * rep);
+    const ratio = ltv / cac;
+    
+    document.getElementById('funnelViz').innerHTML = `
+      <div class="funnel-step"><span class="fs-label">Visitors</span><span class="fs-value">${v.toLocaleString()}</span></div>
+      <div class="funnel-step" style="width: 90%; opacity: 0.95"><span class="fs-label">Added to cart <span class="fs-rate">${(atc*100).toFixed(1)}%</span></span><span class="fs-value">${carts.toLocaleString()}</span></div>
+      <div class="funnel-step" style="width: 70%; opacity: 0.9; border-color: var(--gold)"><span class="fs-label">First-time buyers <span class="fs-rate">${(atc*co*100).toFixed(2)}% overall</span></span><span class="fs-value">${buyers.toLocaleString()}</span></div>
+      <div class="funnel-step" style="width: 50%; opacity: 0.85; border-color: var(--orange)"><span class="fs-label">Repeat buyers (90d) <span class="fs-rate">${(rep*100).toFixed(0)}% of buyers</span></span><span class="fs-value">${repeaters.toLocaleString()}</span></div>
+    `;
+    
+    document.getElementById('revStat').textContent = fmtMoney(revenue);
+    document.getElementById('ltvStat').textContent = fmtMoney(ltv);
+    document.getElementById('ratioStat').textContent = ratio.toFixed(1) + '×';
+    
+    let verdict = '', color = '';
+    if (ratio >= 3) { verdict = 'Healthy'; color = 'var(--green)'; }
+    else if (ratio >= 1.5) { verdict = 'Tight'; color = 'var(--gold)'; }
+    else if (ratio >= 1) { verdict = 'Break-even'; color = 'var(--gold)'; }
+    else { verdict = 'Losing'; color = 'var(--red)'; }
+    const hs = document.getElementById('healthStat');
+    hs.textContent = verdict;
+    hs.style.color = color;
+    
+    // Lever chart
+    if (window.leverChartInstance) {
+      const base = revenue;
+      window.leverChartInstance.data.datasets[0].data = [
+        base,
+        base * 2,                // 2x traffic
+        v * (atc*2) * co * aov + (v * (atc*2) * co) * rep * aov,  // 2x CR (via atc)
+        v * atc * co * (aov*2) + (v * atc * co) * rep * (aov*2),  // 2x AOV
+        v * atc * co * aov + (v * atc * co) * (rep*2) * aov       // 2x repeat
+      ];
+      window.leverChartInstance.update();
+    }
+  }
+  
+  document.querySelectorAll('#visitors, #atc, #checkout, #aov, #repeat, #cac').forEach(el => el.addEventListener('input', calc));
+  
+  // Init chart
+  const ctx = document.getElementById('leverChart');
+  if (ctx) {
+    Chart.defaults.color = '#6b7480';
+    Chart.defaults.borderColor = '#2a3340';
+    Chart.defaults.font.family = "'JetBrains Mono', monospace";
+    window.leverChartInstance = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Current', '2× Traffic', '2× Conv. Rate', '2× AOV', '2× Repeat'],
+        datasets: [{
+          label: 'Monthly revenue',
+          data: [0,0,0,0,0],
+          backgroundColor: ['#6b7480', '#d4a843', '#ff8855', '#ff6b35', '#4a9d6f'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { ticks: { callback: v => '€' + (v/1000).toFixed(0) + 'K' }, grid: { color: '#2a3340' } },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+  }
+  
+  calc();
+</script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 4 · Offline Selling — Sales Mastery</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 32px 0;
+  }
+  .body-col { background: var(--ink); padding: 24px; }
+  .body-col h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; }
+  .body-col.project h4 { color: var(--green); }
+  .body-col.read h4 { color: var(--gold); }
+  .signal-line {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--line);
+    align-items: start;
+    font-size: 14px;
+  }
+  .signal-line:last-child { border-bottom: none; }
+  .signal-line .sig-trigger { color: var(--paper); font-weight: 500; }
+  .signal-line .sig-meaning { color: var(--muted); }
+  
+  /* Timer / sequence diagram */
+  .sequence {
+    margin: 32px 0;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+  }
+  .seq-row {
+    display: contents;
+  }
+  .seq-time {
+    padding: 16px 16px 16px 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--orange);
+    text-transform: uppercase;
+    border-right: 2px solid var(--line);
+    position: relative;
+  }
+  .seq-time::after {
+    content: '';
+    position: absolute;
+    right: -7px; top: 22px;
+    width: 12px; height: 12px;
+    background: var(--orange);
+    border-radius: 50%;
+    border: 3px solid var(--ink);
+  }
+  .seq-content { padding: 16px 0 16px 24px; }
+  .seq-content h4 { font-family: var(--font-display); font-size: 18px; color: var(--paper); margin-bottom: 4px; font-weight: 500; }
+  .seq-content p { color: var(--cream); font-size: 14px; margin: 0; }
+  
+  @media (max-width: 700px) {
+    .body-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-brand"><span class="dot"></span>Sales Mastery</a>
+    <div class="topbar-nav">
+      <a href="index.html">Home</a>
+      <a href="module-01.html" class="active">Modules</a>
+      <a href="exercises.html">Exercises</a>
+      <a href="case-studies.html">Cases</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="eyebrow"><span class="num">04</span>Offline Selling</div>
+  <h1 class="module-title">Selling <em>face to face.</em></h1>
+  <p class="lede">Online is asynchronous — you publish, they consume, they decide. Offline is synchronous — every second is happening in real time, and your tone, posture, breathing, and pace carry information that no text ever can.</p>
+  <div class="meta-strip">
+    <span>30 min read</span>
+    <span>Retail · D2D · field · events</span>
+    <span>Body language · voice · pace</span>
+  </div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <div class="sidebar-title">In this module</div>
+    <ul>
+      <li><a href="#why-different">Why offline is different</a></li>
+      <li><a href="#first-30">The first 30 seconds</a></li>
+      <li><a href="#body-language">Body language</a></li>
+      <li><a href="#retail">Retail flow</a></li>
+      <li><a href="#d2d">Door-to-door</a></li>
+      <li><a href="#events">Events &amp; conferences</a></li>
+      <li><a href="#voice">Voice &amp; pace</a></li>
+      <li><a href="#exercises">Exercises</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+
+    <section id="why-different">
+      <h2>Why offline is different</h2>
+      <p>The implications of synchronous selling:</p>
+      <ul>
+        <li><strong>Higher bandwidth</strong> — body language, energy, micro-expressions all carry information</li>
+        <li><strong>Higher pressure on both sides</strong> — you can't edit, neither can they</li>
+        <li><strong>Trust forms faster or fails faster</strong> — people decide within 7 seconds, often unconsciously</li>
+        <li><strong>The salesperson IS the medium</strong> — your presentation matters more than your slides</li>
+      </ul>
+      <div class="pullquote">If you can sell in person, you can sell anywhere. If you've only ever sold online, you'll struggle in person until you train it.</div>
+    </section>
+
+    <section id="first-30">
+      <h2>The first 30 seconds</h2>
+      <p>The opening sets everything. The buyer decides whether to trust you before you finish your second sentence.</p>
+
+      <div class="sequence">
+        <div class="seq-row">
+          <div class="seq-time">0–3s</div>
+          <div class="seq-content"><h4>Smile genuinely</h4><p>Not a customer-service smile — a "I'm pleased to see you" smile. The micro-difference is everything.</p></div>
+        </div>
+        <div class="seq-row">
+          <div class="seq-time">3–6s</div>
+          <div class="seq-content"><h4>Open posture</h4><p>Arms uncrossed, hands visible, body squared toward them. Project relaxed confidence.</p></div>
+        </div>
+        <div class="seq-row">
+          <div class="seq-time">6–10s</div>
+          <div class="seq-content"><h4>Confident pace</h4><p>Walk into the encounter, don't drift. Make eye contact for 2–3 seconds, then break naturally.</p></div>
+        </div>
+        <div class="seq-row">
+          <div class="seq-time">10–30s</div>
+          <div class="seq-content"><h4>Open with service, not pitch</h4><p>"How can I help today?" beats "Hi, I'm Mike from [company] and we're offering..."</p></div>
+        </div>
+      </div>
+
+      <div class="callout warn">
+        <div class="callout-label">Common mistake</div>
+        <p>Leading with a pitch. Pros lead with a question or observation: "It looks like you're shopping for someone specific — gift?" works far better than "These are our best sellers."</p>
+      </div>
+    </section>
+
+    <section id="body-language">
+      <h2>Body language — read and use</h2>
+      <p>You're being read whether you mean to or not. Conscious use of body language is half the offline game.</p>
+
+      <div class="body-grid">
+        <div class="body-col project">
+          <h4>↗ What to project</h4>
+          <div class="signal-line"><div class="sig-trigger">Open palms visible</div><div class="sig-meaning">Honesty, no threat</div></div>
+          <div class="signal-line"><div class="sig-trigger">Subtle mirroring</div><div class="sig-meaning">Rapport</div></div>
+          <div class="signal-line"><div class="sig-trigger">Slight lean toward</div><div class="sig-meaning">Interest</div></div>
+          <div class="signal-line"><div class="sig-trigger">Slow, steady breath</div><div class="sig-meaning">Calm authority</div></div>
+          <div class="signal-line"><div class="sig-trigger">Hands in pockets</div><div class="sig-meaning">⚠ Discomfort, low status</div></div>
+          <div class="signal-line"><div class="sig-trigger">Excessive nodding</div><div class="sig-meaning">⚠ Eager-to-please</div></div>
+        </div>
+        <div class="body-col read">
+          <h4>↘ What to read</h4>
+          <div class="signal-line"><div class="sig-trigger">Leans in, holds product</div><div class="sig-meaning">Interest, possible buy</div></div>
+          <div class="signal-line"><div class="sig-trigger">Steps back, looks away</div><div class="sig-meaning">Disengagement</div></div>
+          <div class="signal-line"><div class="sig-trigger">Eyebrows raised</div><div class="sig-meaning">Surprise — what just landed?</div></div>
+          <div class="signal-line"><div class="sig-trigger">Lips pressed together</div><div class="sig-meaning">Unspoken disagreement</div></div>
+          <div class="signal-line"><div class="sig-trigger">Glances at price tag</div><div class="sig-meaning">Sticker shock — address it</div></div>
+          <div class="signal-line"><div class="sig-trigger">Looks at companion</div><div class="sig-meaning">Decision needs that person</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="retail">
+      <h2>Retail selling</h2>
+      <p>The customer walked in. That's a strong signal — they have some level of interest. Your job is to convert it without scaring them off.</p>
+
+      <div class="tabs">
+        <div class="tab-buttons">
+          <button class="tab-btn active">01 · Acknowledge</button>
+          <button class="tab-btn">02 · Open with observation</button>
+          <button class="tab-btn">03 · Guide, don't sell</button>
+        </div>
+        <div class="tab-panel active">
+          <h3 style="margin-top: 0;">Acknowledge, don't ambush</h3>
+          <p>"Welcome — let me know if you'd like a hand." Give them space. Customers hate being attacked at the door.</p>
+        </div>
+        <div class="tab-panel">
+          <h3 style="margin-top: 0;">Open with observation</h3>
+          <p>After they've browsed a minute: "I see you're looking at the [X] — are you replacing one or new to it?" Opens conversation without pressure.</p>
+        </div>
+        <div class="tab-panel">
+          <h3 style="margin-top: 0;">Guide, don't sell</h3>
+          <p>Ask what they're trying to accomplish. Recommend based on that, including options that don't make you the most money. Trust earned here closes today and earns referrals.</p>
+        </div>
+      </div>
+
+      <h3>Retail pro tips</h3>
+      <ul>
+        <li>Stand at a <strong>90-degree angle</strong> to the customer, not facing them directly. Feels less confrontational.</li>
+        <li><strong>Hand them the product.</strong> Endowment effect — once it's in their hands, ownership starts.</li>
+        <li>Ask <em>"How will you be using it?"</em> — tells you everything about which model to suggest.</li>
+        <li>When they say "I'm just looking" — fine. Give them a path back: "Take your time, I'll be right over there."</li>
+      </ul>
+    </section>
+
+    <section id="d2d">
+      <h2>Door-to-door &amp; cold field sales</h2>
+      <p>Brutal but trainable. Used in solar, security, B2B services, fundraising. The difference between top reps and average reps isn't knock count — it's what happens at the door in the first 10 seconds.</p>
+
+      <h3>Opening framework</h3>
+      <ol>
+        <li><strong>Pattern interrupt.</strong> They expect a sales pitch. Don't give one. "Hi, I'm Sara — I'm not selling anything door-to-door, but I was hoping you could help me with something quick."</li>
+        <li><strong>Reason for being there.</strong> Specific, true. "We just installed a system three doors down for the Petersens."</li>
+        <li><strong>Permission.</strong> "Have you got 60 seconds, or is this a bad time?"</li>
+        <li><strong>Qualify fast.</strong> Are they the right person? Any interest?</li>
+        <li><strong>Set next step.</strong> Usually not the sale — a demo, quote, or callback.</li>
+      </ol>
+
+      <div class="callout tip">
+        <div class="callout-label">D2D rules</div>
+        <p><strong>Smile before they open the door</strong> (they see you through the peephole). <strong>Step back from the door</strong> (less threatening). Don't take the first "no" as final — but also don't pester. One graceful reframe, then move on. <strong>Track everything</strong> — your conversion ratios are your career.</p>
+      </div>
+    </section>
+
+    <section id="events">
+      <h2>Events, trade shows, conferences</h2>
+      <p>Different game: people came expecting to be sold to, but with their guard up against the boring booths.</p>
+      <ul>
+        <li><strong>Stand at the edge of your booth, not behind a table.</strong> Tables are barriers.</li>
+        <li><strong>Open with a question, not your product.</strong> "What brought you to the show this year?"</li>
+        <li><strong>Don't pitch in 60 seconds.</strong> Qualify first. 80% of foot traffic won't be your buyer; pitching them all wastes the 20% who are.</li>
+        <li><strong>Capture details for follow-up.</strong> Most deals close in the two weeks after the show, not at it.</li>
+        <li><strong>Free swag should require a micro-commitment</strong> (email, business card) to filter in qualified leads.</li>
+      </ul>
+    </section>
+
+    <section id="voice">
+      <h2>Voice &amp; tone</h2>
+      <p>Your voice is half your in-person presence.</p>
+
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-num">⤓</div>
+          <div class="stat-label">Pace · slower than feels natural. Nervous sellers speed up.</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">⤵</div>
+          <div class="stat-label">End sentences with downward tone. Rising tone sounds uncertain.</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">∅</div>
+          <div class="stat-label">Pauses. After a question, shut up. Silence pulls answers out.</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">∼</div>
+          <div class="stat-label">Match the environment. Loud showroom = louder; quiet office = softer.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="exercises">
+      <h2>Exercises</h2>
+      <ol>
+        <li><strong>Mirror practice.</strong> Watch a video with sound off. Read each person's body language. Then with sound on — check.</li>
+        <li><strong>Pause drill.</strong> Ask a question, count to 5 before saying anything. Notice what fills the silence.</li>
+        <li><strong>Open-handed greeting.</strong> For one week, greet every interaction with palms visible. Notice shifts.</li>
+        <li><strong>Retail observation.</strong> Visit 3 stores as a customer. Rate the salespeople on greeting, listening, recommendation, close attempt. Steal the good moves.</li>
+      </ol>
+
+      <div class="callout tip">
+        <div class="callout-label">Further reading</div>
+        <p><em>How to Win Friends and Influence People</em> — Dale Carnegie · <em>What Every BODY is Saying</em> — Joe Navarro · <em>The Charisma Myth</em> — Olivia Fox Cabane · <em>Pitch Anything</em> — Oren Klaff</p>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<nav class="module-nav">
+  <a href="module-03.html" class="prev">
+    <div class="dir">← Previous · Module 03</div>
+    <div class="next-title">Online Selling</div>
+  </a>
+  <a href="module-05.html" class="next">
+    <div class="dir">Next · Module 05</div>
+    <div class="next-title">B2B Sales</div>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  Sales Mastery · MIT License · <a href="index.html">Course index</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
