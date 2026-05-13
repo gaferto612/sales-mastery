@@ -1,6 +1,49 @@
-// Sales Mastery — shared interactive components
+// Sales Mastery — shared interactive components & language toggle
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Language Toggle
+  const langToggle = document.getElementById('langToggle');
+  const html = document.documentElement;
+  
+  // Check for saved language preference
+  const savedLang = localStorage.getItem('salesMasteryLang') || 'en';
+  setLanguage(savedLang);
+  
+  if (langToggle) {
+    langToggle.addEventListener('click', () => {
+      const currentLang = html.lang === 'ar' ? 'en' : 'ar';
+      setLanguage(currentLang);
+      localStorage.setItem('salesMasteryLang', currentLang);
+    });
+  }
+  
+  function setLanguage(lang) {
+    html.lang = lang;
+    html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    
+    // Update all elements with data-en and data-ar attributes
+    document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+      if (lang === 'ar') {
+        el.innerHTML = el.getAttribute('data-ar');
+      } else {
+        el.innerHTML = el.getAttribute('data-en');
+      }
+    });
+    
+    // Update lang toggle button text
+    if (langToggle) {
+      const enSpan = langToggle.querySelector('.lang-en');
+      const arSpan = langToggle.querySelector('.lang-ar');
+      if (lang === 'ar') {
+        enSpan.style.display = 'none';
+        arSpan.style.display = 'inline';
+      } else {
+        enSpan.style.display = 'inline';
+        arSpan.style.display = 'none';
+      }
+    }
+  }
+
   // Accordion
   document.querySelectorAll('.accordion-trigger').forEach(trigger => {
     const item = trigger.closest('.accordion-item');
