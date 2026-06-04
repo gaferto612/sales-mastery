@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 13 · AI in Sales — Sales Mastery</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .ai-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 32px 0;
+  }
+  .ai-card {
+    background: var(--ink);
+    border: 1px solid var(--line);
+    padding: 24px;
+  }
+  .ai-card h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--paper);
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+  .ai-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .ai-card .tool-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .ai-card .tool-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(200, 67, 26, 0.1);
+    color: var(--orange);
+    padding: 4px 8px;
+    border-radius: 2px;
+  }
+  
+  .premium-box {
+    background: var(--ink);
+    border-left: 4px solid var(--gold);
+    padding: 24px 32px;
+    margin: 32px 0;
+  }
+  .premium-box h3 {
+    color: var(--gold);
+    font-family: var(--font-display);
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+  .premium-box p {
+    color: var(--paper);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-brand"><span class="dot"></span>Sales Mastery</a>
+    <div class="topbar-nav">
+      <a href="index.html">Home</a>
+      <a href="module-01.html" class="active">Modules</a>
+      <a href="exercises.html">Exercises</a>
+      <a href="case-studies.html">Cases</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="eyebrow"><span class="num">13</span>AI in Sales</div>
+  <h1 class="module-title">The era of <em>artificial</em> leverage.</h1>
+  <p class="lede">Generative AI has commoditized average sales tactics. When everyone can send 10,000 perfectly spelled emails a day, the baseline changes. Here is how to use AI for leverage, and how to sell when AI does the busywork.</p>
+  <div class="meta-strip">
+    <span>20 min read</span>
+    <span>Modern tech · Playbooks</span>
+    <span>Advanced</span>
+  </div>
+</header>
+
+<main>
+  <aside class="sidebar">
+    <div class="sidebar-title">In this module</div>
+    <ul>
+      <li><a href="#paradigm">The new paradigm</a></li>
+      <li><a href="#prospecting">AI-Driven Prospecting</a></li>
+      <li><a href="#analysis">Call Analysis &amp; Coaching</a></li>
+      <li><a href="#premium">The Human Premium</a></li>
+      <li><a href="#traps">The laziness trap</a></li>
+    </ul>
+  </aside>
+
+  <article class="content">
+
+    <section id="paradigm">
+      <h2>The new paradigm</h2>
+      <p>Sales has historically been constrained by human labor. To send 100 personalized emails took 10 hours. To review 10 sales calls took 10 hours. AI reduces the marginal cost of these tasks to near zero.</p>
+      <p>This means <strong>average outreach is now spam.</strong> If it looks like an AI wrote it, buyers ignore it. The goal of AI in sales is not to remove the human; it's to automate the research and data gathering so the human can spend 100% of their time on strategy, relationship, and closing.</p>
+    </section>
+
+    <section id="prospecting">
+      <h2>AI-Driven Prospecting</h2>
+      <p>Instead of manually researching prospects, you can now build systems that scrape intent data, analyze 10k reports, and draft emails.</p>
+      
+      <div class="ai-grid">
+        <div class="ai-card">
+          <h3>Hyper-Personalization at Scale</h3>
+          <p>Tools can now ingest a prospect's LinkedIn posts, company press releases, and SEC filings to find specific triggers (e.g., "Just hired a new VP of Sales"). The AI then drafts a highly relevant hook.</p>
+          <div class="tool-tags">
+            <span class="tool-tag">Clay</span>
+            <span class="tool-tag">Apollo</span>
+          </div>
+        </div>
+        <div class="ai-card">
+          <h3>Account Mapping</h3>
+          <p>Provide an AI with a target account's URL and ask it to identify the likely decision-making unit based on industry standards, reporting structures, and recent job postings.</p>
+          <div class="tool-tags">
+            <span class="tool-tag">ChatGPT</span>
+            <span class="tool-tag">Claude</span>
+          </div>
+        </div>
+        <div class="ai-card">
+          <h3>Drafting Copy</h3>
+          <p>Don't ask AI to "write a sales email." Ask it to "extract the top 3 strategic priorities from this company's Q3 earnings call." Use that data to write your own short, punchy email.</p>
+          <div class="tool-tags">
+            <span class="tool-tag">Claude</span>
+            <span class="tool-tag">Perplexity</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="analysis">
+      <h2>Call Analysis &amp; Coaching</h2>
+      <p>The days of managers randomly listening to a call to give feedback are over. Conversational intelligence platforms now transcribe, analyze, and score every word spoken.</p>
+      <ul>
+        <li><strong>Talk-to-Listen Ratio:</strong> AI tracks if you are monologuing. (Ideal in B2B discovery is 46% rep / 54% buyer).</li>
+        <li><strong>Competitor Mentions:</strong> Automatically flags when a competitor is brought up and tracks win rates when that happens.</li>
+        <li><strong>Objection Mapping:</strong> AI categorizes exactly which objections stall your deals, allowing you to prep specific Voss/Sandler pivots.</li>
+        <li><strong>Automated CRM Updates:</strong> AI writes the MEDDIC notes and updates the CRM fields based on the call transcript, saving reps hours of admin work.</li>
+      </ul>
+    </section>
+
+    <section id="premium">
+      <div class="premium-box">
+        <h3>The Human Premium</h3>
+        <p>When digital communication becomes infinitely cheap, humans assign premium value to things that are expensive, unscalable, and strictly human.</p>
+        <p><strong>What AI cannot do (where you win):</strong></p>
+        <ul>
+          <li>Look a buyer in the eye and say, "I promise this will work." (Trust)</li>
+          <li>Take a client to dinner to understand the office politics threatening their job. (Empathy)</li>
+          <li>Navigate a tense, emotionally charged negotiation over price. (Emotional Intelligence)</li>
+          <li>Send a handwritten note or a highly customized physical gift. (Unscalable effort)</li>
+        </ul>
+        <p>The sellers who win this decade will use AI for 80% of the busywork, and lean heavily into old-school, high-EQ human tactics for the remaining 20%.</p>
+      </div>
+    </section>
+
+    <section id="traps">
+      <h2>The Laziness Trap</h2>
+      <p>The biggest risk with AI is outsourcing your thinking. If you let ChatGPT write your emails without heavy editing, you sound like a robot. If you let AI summarize a call and you never listen to the recording, you miss the nuance in the buyer's tone.</p>
+      
+      <div class="callout warn">
+        <div class="callout-label">Warning</div>
+        <p>Do not use AI to replace your judgment. Use it to increase your speed. A bad seller with AI just does bad sales faster.</p>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<nav class="module-nav">
+  <a href="module-12.html" class="prev">
+    <div class="dir">← Previous · Module 12</div>
+    <div class="next-title">Tools &amp; Resources</div>
+  </a>
+  <a href="exercises.html" class="next">
+    <div class="dir">Next</div>
+    <div class="next-title">Practice Exercises</div>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  Sales Mastery · MIT License · <a href="index.html">Course index</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
