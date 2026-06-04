@@ -113,6 +113,26 @@ body {
 .topbar-nav a:hover, .topbar-nav a.active { color: var(--paper); }
 .topbar-nav a.active { color: var(--orange); }
 
+.lang-btn {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+.lang-btn:hover {
+  color: var(--paper);
+  border-color: var(--orange);
+}
+
 /* === Hero / page header === */
 .page-header {
   padding: 80px 32px 60px;
