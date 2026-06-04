@@ -700,3 +700,14 @@ footer.site-footer a { color: var(--orange); text-decoration: none; }
 
 /* === Selection === */
 ::selection { background: var(--orange); color: var(--ink); }
+
+/* Hide Google Translate Banner */
+.VIpgJd-ZVi9od-ORHb-OEVmcd, .goog-te-banner-frame {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
+#google_translate_element {
+  display: none !important;
+}
