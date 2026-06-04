@@ -1,44 +1,58 @@
 // Sales Mastery — shared interactive components & language toggle
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Language Toggle via Google Translate
+  // Language Toggle via Google Translate (Works on file:// and http://)
   const langToggle = document.getElementById('langToggle');
   
   if (langToggle) {
-    // Check current state from googtrans cookie
-    const isArabic = document.cookie.includes('googtrans=/en/ar');
+    let isArabic = localStorage.getItem('salesMasteryLang') === 'ar';
     
-    // Update UI
-    const enSpan = langToggle.querySelector('.lang-en');
-    const arSpan = langToggle.querySelector('.lang-ar');
+    const updateUI = (toArabic) => {
+      document.documentElement.lang = toArabic ? 'ar' : 'en';
+      document.documentElement.dir = toArabic ? 'rtl' : 'ltr';
+      const enSpan = langToggle.querySelector('.lang-en');
+      const arSpan = langToggle.querySelector('.lang-ar');
+      if (enSpan && arSpan) {
+        enSpan.style.display = toArabic ? 'none' : 'inline';
+        arSpan.style.display = toArabic ? 'inline' : 'none';
+      }
+    };
+
+    updateUI(isArabic);
+
+    // If Arabic is selected, auto-trigger the Google Translate dropdown once it loads
     if (isArabic) {
-      document.documentElement.lang = 'ar';
-      document.documentElement.dir = 'rtl';
-      if (enSpan && arSpan) {
-        enSpan.style.display = 'none';
-        arSpan.style.display = 'inline';
-      }
-    } else {
-      document.documentElement.lang = 'en';
-      document.documentElement.dir = 'ltr';
-      if (enSpan && arSpan) {
-        enSpan.style.display = 'inline';
-        arSpan.style.display = 'none';
-      }
+      const interval = setInterval(() => {
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          if (select.value !== 'ar') {
+            select.value = 'ar';
+            select.dispatchEvent(new Event('change'));
+          }
+          clearInterval(interval);
+        }
+      }, 200);
     }
 
     langToggle.addEventListener('click', () => {
-      if (!isArabic) {
-        // Switch to Arabic
-        document.cookie = "googtrans=/en/ar; path=/";
-        document.cookie = "googtrans=/en/ar; domain=" + window.location.hostname + "; path=/";
+      isArabic = !isArabic;
+      localStorage.setItem('salesMasteryLang', isArabic ? 'ar' : 'en');
+      
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        if (isArabic) {
+          // Switch to Arabic instantly
+          select.value = 'ar';
+          select.dispatchEvent(new Event('change'));
+          updateUI(isArabic);
+        } else {
+          // To safely remove all Google Translate DOM changes, reload the page
+          location.reload();
+        }
       } else {
-        // Switch to English and clear Arabic
-        document.cookie = "googtrans=/en/en; path=/";
-        document.cookie = "googtrans=/en/en; domain=" + window.location.hostname + "; path=/";
-        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        // If script hasn't loaded yet, just reload to apply state
+        location.reload();
       }
-      location.reload();
     });
   }
 
