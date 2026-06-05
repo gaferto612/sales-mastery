@@ -331,8 +331,8 @@ main {
   color: var(--ink); 
 }
 
-/* Editorial Drop Cap */
-.content > section:first-of-type > p:first-of-type::first-letter {
+/* Editorial Drop Cap (Disabled in RTL because Arabic is cursive and disconnects) */
+[dir="ltr"] .content > section:first-of-type > p:first-of-type::first-letter {
   font-family: var(--font-display);
   font-size: 4.8em;
   font-weight: 500;
@@ -767,6 +767,11 @@ body {
   background: transparent;
   z-index: 1000;
   pointer-events: none;
+  display: flex;
+  justify-content: flex-start;
+}
+[dir="rtl"] .reading-progress-container {
+  justify-content: flex-end;
 }
 .reading-progress-bar {
   height: 100%;
@@ -797,6 +802,10 @@ body {
   z-index: 90;
   box-shadow: 0 4px 12px rgba(26, 20, 16, 0.08);
   text-decoration: none;
+}
+[dir="rtl"] .back-to-top {
+  right: auto;
+  left: 40px;
 }
 .back-to-top.visible {
   opacity: 1;
