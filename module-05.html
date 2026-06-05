@@ -411,6 +411,21 @@
         </div>
       </div>
 
+      <div class="mermaid" style="margin: 24px 0; padding: 24px; background: var(--ink); border: 1px solid var(--line); border-radius: 4px;">
+flowchart TD
+    Lead(Lead) --> Discovery{Needs Discovered?}
+    Discovery -- No --> Nurture[Nurture / Marketing]
+    Discovery -- Yes --> Qualify{MEDDIC Pass?}
+    Qualify -- No --> Disqualify[Disqualified]
+    Qualify -- Yes --> Demo(Solution Presentation)
+    Demo --> Proposal{Economic Buyer Approves?}
+    Proposal -- No --> Revise[Revise Business Case]
+    Revise --> Proposal
+    Proposal -- Yes --> Negotiation{Legal/Sec Approved?}
+    Negotiation -- No --> Block[Procurement Blocked]
+    Negotiation -- Yes --> Closed(Closed Won)
+      </div>
+
       <h3>Pipeline hygiene rules</h3>
       <ul>
         <li>Every deal must have a next step with a date</li>

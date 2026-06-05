@@ -82,6 +82,19 @@
         <li><strong>Consolidate:</strong> The holy grail of PLS. Noticing that 40 different employees at a large company are using personal credit cards to pay for your tool, and reaching out to the CIO to sell a centralized Enterprise contract.</li>
         <li><strong>Defend:</strong> Proactively reaching out to accounts whose usage has dropped 30% week-over-week to prevent churn.</li>
       </ol>
+      
+      <div class="mermaid" style="margin: 32px 0; padding: 24px; background: var(--ink); border: 1px solid var(--line); border-radius: 4px;">
+flowchart LR
+    A[Free Sign-up] --> B{Usage Threshold?}
+    B -- No --> C[Nurture]
+    B -- Yes --> D(Product Qualified Lead)
+    D --> E{Account Size?}
+    E -- SMB --> F[Self-Serve / Convert]
+    E -- Enterprise --> G[Sales Assist]
+    G --> H{Multiple Users?}
+    H -- No --> I[Expand Seats]
+    H -- Yes --> J(Consolidate Contract)
+      </div>
     </section>
 
     <section id="outreach">

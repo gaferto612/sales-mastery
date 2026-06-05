@@ -176,3 +176,34 @@ window.fmtMoney = (n) => {
 };
 
 window.fmtPct = (n) => (n * 100).toFixed(1) + '%';
+
+// --- Mermaid.js Integration ---
+(function() {
+  const mermaidContainers = document.querySelectorAll('.mermaid');
+  if (mermaidContainers.length > 0) {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+    script.onload = () => {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'base',
+        themeVariables: {
+          fontFamily: 'Inter, sans-serif',
+          primaryColor: '#faf6ec',        // var(--ink)
+          primaryTextColor: '#1a1410',    // var(--paper)
+          primaryBorderColor: '#c8431a',  // var(--orange)
+          lineColor: '#c8431a',           // var(--orange)
+          secondaryColor: '#f1ead7',      // var(--ink-soft)
+          tertiaryColor: '#f1ead7',
+          noteBkgColor: '#f1ead7',
+          noteTextColor: '#3a3228',       // var(--cream)
+          mainBkg: '#faf6ec',
+          nodeBorder: '#c8431a',
+          clusterBkg: 'rgba(241, 234, 215, 0.4)',
+          clusterBorder: '#d8cfb8'        // var(--line)
+        }
+      });
+    };
+    document.head.appendChild(script);
+  }
+})();
