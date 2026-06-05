@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (langToggle) {
     let isArabic = localStorage.getItem('salesMasteryLang') === 'ar';
     
+    // Check if the googtrans cookie is set, sync localStorage if needed
+    if (document.cookie.includes('googtrans=/en/ar')) {
+      isArabic = true;
+      localStorage.setItem('salesMasteryLang', 'ar');
+    }
+    
     const updateUI = (toArabic) => {
       document.documentElement.lang = toArabic ? 'ar' : 'en';
       document.documentElement.dir = toArabic ? 'rtl' : 'ltr';
@@ -22,12 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // If Arabic is selected, auto-trigger the Google Translate dropdown once it loads
     if (isArabic) {
+      document.cookie = "googtrans=/en/ar; path=/";
       const interval = setInterval(() => {
         const select = document.querySelector('.goog-te-combo');
         if (select) {
           if (select.value !== 'ar') {
             select.value = 'ar';
-            select.dispatchEvent(new Event('change'));
+            select.dispatchEvent(new Event('change', { bubbles: true }));
           }
           clearInterval(interval);
         }
@@ -36,21 +43,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     langToggle.addEventListener('click', () => {
       isArabic = !isArabic;
-      localStorage.setItem('salesMasteryLang', isArabic ? 'ar' : 'en');
       
-      const select = document.querySelector('.goog-te-combo');
-      if (select) {
-        if (isArabic) {
-          // Switch to Arabic instantly
+      if (isArabic) {
+        localStorage.setItem('salesMasteryLang', 'ar');
+        document.cookie = "googtrans=/en/ar; path=/";
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
           select.value = 'ar';
-          select.dispatchEvent(new Event('change'));
-          updateUI(isArabic);
+          select.dispatchEvent(new Event('change', { bubbles: true }));
+          updateUI(true);
         } else {
-          // To safely remove all Google Translate DOM changes, reload the page
           location.reload();
         }
       } else {
-        // If script hasn't loaded yet, just reload to apply state
+        localStorage.setItem('salesMasteryLang', 'en');
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname + ";";
         location.reload();
       }
     });
