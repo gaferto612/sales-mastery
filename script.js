@@ -164,7 +164,80 @@ document.addEventListener('DOMContentLoaded', () => {
           cta.setAttribute('href', `module-${nextMod}.html`);
         }
       }
+      }
     }
+  }
+
+  // --- Deep UX/UI Features ---
+  
+  // 1. Reading Progress Bar & Back to Top Injection
+  const body = document.body;
+  if (!document.querySelector('.reading-progress-container')) {
+    const progressContainer = document.createElement('div');
+    progressContainer.className = 'reading-progress-container';
+    progressContainer.innerHTML = '<div class="reading-progress-bar" id="readingProgressBar"></div>';
+    body.prepend(progressContainer);
+  }
+  
+  if (!document.querySelector('.back-to-top')) {
+    const backToTop = document.createElement('a');
+    backToTop.href = '#';
+    backToTop.className = 'back-to-top';
+    backToTop.id = 'backToTop';
+    backToTop.innerHTML = '↑';
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    body.appendChild(backToTop);
+  }
+
+  // Scroll Event for Progress Bar & Back to Top
+  const readingProgressBar = document.getElementById('readingProgressBar');
+  const backToTopBtn = document.getElementById('backToTop');
+  
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (scrollHeight > 0 && readingProgressBar) {
+      const scrolled = (scrollTop / scrollHeight) * 100;
+      readingProgressBar.style.width = scrolled + '%';
+    }
+    
+    if (backToTopBtn) {
+      if (scrollTop > 500) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+  }, { passive: true });
+
+  // 2. Active Sidebar Tracking via IntersectionObserver
+  const sections = document.querySelectorAll('.content section[id]');
+  const sidebarLinks = document.querySelectorAll('.sidebar ul li a');
+
+  if (sections.length > 0 && sidebarLinks.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          sidebarLinks.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`.sidebar ul li a[href="#${id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
   }
 });
 
