@@ -153,14 +153,19 @@
     padding: 40px 32px;
     text-decoration: none;
     color: var(--paper);
-    transition: background 0.3s;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     gap: 16px;
     min-height: 280px;
     position: relative;
   }
-  .mod-card:hover { background: var(--ink-soft); }
+  .mod-card:hover { 
+    background: var(--ink-soft); 
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(26, 20, 16, 0.08), 0 0 0 1px var(--orange);
+    z-index: 2;
+  }
   .mod-card:hover .mod-arrow { transform: translateX(8px); color: var(--orange); }
   .mod-num {
     font-family: var(--font-mono);

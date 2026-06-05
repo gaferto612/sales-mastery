@@ -31,6 +31,22 @@
 
 html { scroll-behavior: smooth; }
 
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--ink); border-left: 1px solid var(--line); }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 5px; border: 2px solid var(--ink); }
+::-webkit-scrollbar-thumb:hover { background: var(--orange-soft); }
+
+/* Entrance Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-header, .modules-grid, .book-grid, .accordion, .content section {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 /* Headings under sticky topbar need offset so anchor links don't hide under it. */
 :where(h1, h2, h3, h4, section[id]) { scroll-margin-top: 88px; }
 
@@ -66,10 +82,11 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(250, 246, 236, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--line);
+  background: rgba(250, 246, 236, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(216, 207, 184, 0.5);
+  box-shadow: 0 4px 20px rgba(26, 20, 16, 0.03);
   padding: 14px 0;
 }
 .topbar-inner {
@@ -123,14 +140,16 @@ body {
   padding: 4px 8px;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   align-items: center;
   margin-left: 8px;
 }
 .lang-btn:hover {
-  color: var(--paper);
+  color: var(--orange);
   border-color: var(--orange);
+  background: rgba(200, 67, 26, 0.05);
+  transform: translateY(-1px);
 }
 
 /* === Hero / page header === */
@@ -148,10 +167,12 @@ body {
   color: var(--orange);
   margin-bottom: 24px;
   display: inline-block;
+  text-shadow: 0 0 12px rgba(200, 67, 26, 0.2);
 }
 .eyebrow .num {
   color: var(--gold);
   margin-right: 12px;
+  text-shadow: 0 0 12px rgba(154, 116, 22, 0.2);
 }
 h1.module-title {
   font-family: var(--font-display);
@@ -166,6 +187,7 @@ h1.module-title em {
   font-style: italic;
   color: var(--gold);
   font-weight: 300;
+  text-shadow: 0 0 24px rgba(154, 116, 22, 0.25);
 }
 .lede {
   font-family: var(--font-display);
