@@ -140,6 +140,47 @@
     max-width: 800px;
   }
   .section-heading em { font-style: italic; color: var(--gold); }
+
+  .progress-container {
+    background: var(--ink-soft);
+    border: 1px solid var(--line);
+    padding: 24px 32px;
+    margin-bottom: 64px;
+    border-radius: 4px;
+  }
+  .progress-text {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  #progressCount { color: var(--orange); font-weight: 700; }
+  .progress-track {
+    height: 8px;
+    background: var(--ink);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--orange);
+    transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .phase-heading {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--gold);
+    margin: 80px 0 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+    text-shadow: 0 0 16px rgba(154, 116, 22, 0.2);
+  }
+  .phase-heading:first-of-type { margin-top: 0; }
   
   .modules-grid {
     display: grid;
@@ -167,6 +208,21 @@
     z-index: 2;
   }
   .mod-card:hover .mod-arrow { transform: translateX(8px); color: var(--orange); }
+  .mod-card.completed { background: rgba(241, 234, 215, 0.4); }
+  .mod-card.completed .mod-title { color: var(--muted); }
+  .mod-card.completed::after {
+    content: '✓ COMPLETED';
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    background: var(--green);
+    color: var(--ink);
+    padding: 4px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+  }
   .mod-num {
     font-family: var(--font-mono);
     font-size: 11px;
@@ -281,6 +337,14 @@
   <div class="section-eyebrow">— The curriculum</div>
   <h2 class="section-heading">Seventeen modules, built to teach <em>and</em> to learn from.</h2>
   
+  <div class="progress-container">
+    <div class="progress-text"><span id="progressCount">0</span> / 17 Modules Completed</div>
+    <div class="progress-track">
+      <div id="progressBar" class="progress-fill" style="width: 0%;"></div>
+    </div>
+  </div>
+
+  <h3 class="phase-heading">Phase 1: Foundations & Psychology</h3>
   <div class="modules-grid">
     <a href="module-00.html" class="mod-card">
       <div class="mod-num">00 · Introduction</div>
@@ -300,6 +364,10 @@
       <div class="mod-desc">Cialdini's 7 principles, cognitive biases, the trust equation, tactical empathy.</div>
       <div class="mod-arrow">→</div>
     </a>
+  </div>
+
+  <h3 class="phase-heading">Phase 2: The Core Disciplines</h3>
+  <div class="modules-grid">
     <a href="module-03.html" class="mod-card">
       <div class="mod-num">03 · Online</div>
       <div class="mod-title">Selling on the internet</div>
@@ -324,6 +392,10 @@
       <div class="mod-desc">Headlines, hooks, AIDA, PAS, content marketing, email, paid ads.</div>
       <div class="mod-arrow">→</div>
     </a>
+  </div>
+
+  <h3 class="phase-heading">Phase 3: The Deal Mechanics</h3>
+  <div class="modules-grid">
     <a href="module-07.html" class="mod-card">
       <div class="mod-num">07 · Negotiation</div>
       <div class="mod-title">Bargaining without losing</div>
@@ -348,6 +420,10 @@
       <div class="mod-desc">LTV math, onboarding, expansion, referrals, win-back, advocacy.</div>
       <div class="mod-arrow">→</div>
     </a>
+  </div>
+
+  <h3 class="phase-heading">Phase 4: Modern SaaS & The Future</h3>
+  <div class="modules-grid">
     <a href="module-11.html" class="mod-card">
       <div class="mod-num">11 · Ethics</div>
       <div class="mod-title">Persuasion vs. manipulation</div>
