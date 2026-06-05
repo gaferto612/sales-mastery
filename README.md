@@ -2,7 +2,7 @@
 
 A practical, opinionated curriculum on selling — online, offline, B2B, psychology, copywriting, negotiation, retention, and the ethics of the craft.
 
-**15 modules · 20 drills · 14 case studies · ~25,000 words**
+**16 modules · 20 drills · 15 case studies · ~25,000 words**
 
 ---
 
@@ -35,11 +35,12 @@ Otherwise, clone the repo and open `index.html` in a browser — everything is s
 | 12 | Tools & Resources — reading list, career paths, 90-day plan |
 | 13 | AI in Sales — prospecting, call analysis, human premium |
 | 14 | Selling AI Products — positioning, pricing, GTM for AI apps |
+| 15 | Founder-Led Sales — zero to one, first 10 customers, design partners |
 
 Plus:
 
 - **Exercises** — 20 drills tied to the modules
-- **Case Studies** — 14 real-world scenarios broken down
+- **Case Studies** — 15 real-world scenarios broken down
 
 ---
 
