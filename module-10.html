@@ -3,69 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 10 · Customer Retention — Sales Mastery</title>
+<title>Module 9 · Closing Techniques — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
-  .pillar-card {
-    background: var(--ink);
+  .close-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--line);
     border: 1px solid var(--line);
-    padding: 28px;
-    margin: 16px 0;
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    gap: 24px;
-    align-items: start;
-  }
-  .pillar-num-big {
-    font-family: var(--font-display);
-    font-size: 48px;
-    font-weight: 300;
-    color: var(--orange);
-    line-height: 0.9;
-    font-style: italic;
-  }
-  .pillar-card h3 {
-    margin-top: 0;
-    color: var(--paper);
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 500;
-  }
-  .pillar-card p { color: var(--cream); font-size: 15px; margin-bottom: 12px; }
-  .pillar-card ul { margin-left: 18px; }
-  .pillar-card li { color: var(--cream); font-size: 14px; margin-bottom: 6px; }
-  
-  /* Sequence styling, reused */
-  .sequence {
     margin: 32px 0;
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 0;
   }
-  .seq-row { display: contents; }
-  .seq-time {
-    padding: 16px 16px 16px 0;
+  .close-card {
+    background: var(--ink);
+    padding: 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+    position: relative;
+  }
+  .close-card:hover { background: var(--ink-soft); }
+  .close-card.active {
+    background: var(--ink-soft);
+    border-left: 3px solid var(--orange);
+  }
+  .close-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--orange);
+    letter-spacing: 0.2em;
+    margin-bottom: 8px;
+  }
+  .close-name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--paper);
+    margin-bottom: 8px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .close-when {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .close-desc { font-size: 14px; color: var(--cream); line-height: 1.5; }
+  .close-script {
+    margin-top: 12px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--gold);
+    border-left: 2px solid var(--gold);
+    padding-left: 12px;
+  }
+  .close-card.ethics-warn { border-left: 3px solid var(--red); }
+  .close-card.ethics-warn .close-num { color: var(--red); }
+  
+  .matrix {
+    margin: 32px 0;
+    width: 100%;
+  }
+  .matrix table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .matrix th, .matrix td {
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    font-size: 14px;
+    text-align: left;
+  }
+  .matrix th {
+    background: var(--ink-soft);
+    color: var(--gold);
     font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.15em;
-    color: var(--orange);
     text-transform: uppercase;
-    border-right: 2px solid var(--line);
-    position: relative;
   }
-  .seq-time::after {
-    content: '';
-    position: absolute;
-    right: -7px; top: 22px;
-    width: 12px; height: 12px;
-    background: var(--orange);
-    border-radius: 50%;
-    border: 3px solid var(--ink);
-  }
-  .seq-content { padding: 16px 0 16px 24px; }
-  .seq-content h4 { font-family: var(--font-display); font-size: 17px; color: var(--paper); margin-bottom: 4px; font-weight: 500; }
-  .seq-content p { color: var(--cream); font-size: 14px; margin: 0; }
+  .matrix .col-context { color: var(--cream); font-weight: 500; }
+  .matrix .col-close { color: var(--orange); font-family: var(--font-mono); font-size: 13px; }
 </style>
 </head>
 <body>
@@ -84,13 +104,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">10</span>Customer Retention</div>
-  <h1 class="module-title">Keeping <em>what you won.</em></h1>
-  <p class="lede">Acquiring a new customer costs 5–7× more than keeping an existing one. The first sale is the introduction. The actual business is everything that follows.</p>
+  <div class="eyebrow"><span class="num">10</span>Closing Techniques</div>
+  <h1 class="module-title">Asking for the <em>decision.</em></h1>
+  <p class="lede">The close is not a moment — it's the natural conclusion of a conversation done well. If you've done the previous steps right, closing is just clarifying the next step.</p>
   <div class="meta-strip">
     <span>30 min read</span>
-    <span>LTV · NRR · cohorts</span>
-    <span>Where real businesses are built</span>
+    <span>17 named closes</span>
+    <span>Context-fit matrix</span>
   </div>
 </header>
 
@@ -98,283 +118,309 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#why">Why retention is the game</a></li>
-      <li><a href="#metrics">The retention metrics</a></li>
-      <li><a href="#ltv-calc">LTV calculator</a></li>
-      <li><a href="#pillars">5 pillars of retention</a></li>
-      <li><a href="#onboarding">Onboarding sequence</a></li>
-      <li><a href="#winback">Win-back</a></li>
-      <li><a href="#advocacy">Turning customers into advocates</a></li>
+      <li><a href="#mindset">Closing mindset</a></li>
+      <li><a href="#when">When to close</a></li>
+      <li><a href="#the-ask">The actual ask</a></li>
+      <li><a href="#seventeen">The 17 closes</a></li>
+      <li><a href="#matrix">Context matrix</a></li>
+      <li><a href="#post">After the close</a></li>
+      <li><a href="#mistakes">Common mistakes</a></li>
       <li><a href="#exercises">Exercises</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="why">
-      <h2>Why retention is the actual game</h2>
-      <div class="stat-grid">
-        <div class="stat">
-          <div class="stat-num">5–7×</div>
-          <div class="stat-label">Cost to acquire a new customer vs. keep one</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">5%</div>
-          <div class="stat-label">Retention improvement = 25–95% profit increase (Bain study)</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">60–70%</div>
-          <div class="stat-label">Probability of selling to an existing customer</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">5–20%</div>
-          <div class="stat-label">Probability of selling to a new prospect</div>
-        </div>
-      </div>
-
-      <p>If you're spending most of your time acquiring and very little keeping, you've built a leaky bucket — and you're fighting math.</p>
+    <section id="mindset">
+      <h2>The closing mindset</h2>
+      <p>Most failed closes aren't tactical failures — they're conviction failures. If you secretly think your product isn't worth the price, the buyer hears it.</p>
+      <ol>
+        <li><strong>Believe in the offer.</strong> If you don't think they should buy, why are you asking?</li>
+        <li><strong>The close is a service.</strong> You're helping them make a decision they're already considering.</li>
+        <li><strong>"No" is fine.</strong> A confident close that gets a no is better than a wishy-washy close that gets a "maybe" you'll chase for 3 months.</li>
+      </ol>
 
       <div class="pullquote">
-        Retention is where the actual business lives. Acquisition just pays for the introduction.
+        Beginners are afraid to ask for the close. Pros realize the close is what the buyer is waiting for.
       </div>
     </section>
 
-    <section id="metrics">
-      <h2>The numbers you need to know</h2>
-
-      <h3>LTV — Lifetime Value</h3>
-      <p>Total revenue from a customer over their entire relationship.</p>
-      <div class="formula">LTV = <span class="var">Avg revenue/month</span> <span class="x">×</span> <span class="var">Avg lifetime in months</span></div>
-      <p>Or for non-subscription: LTV = Avg order value × Repeat purchases × Margin %</p>
-
-      <h3>CAC — Customer Acquisition Cost</h3>
-      <div class="formula">CAC = <span class="var">Total sales + marketing</span> ÷ <span class="var">New customers</span></div>
-
-      <h3>LTV : CAC ratio</h3>
+    <section id="when">
+      <h2>When to close</h2>
+      <p>Stop pitching the moment you see a buying signal. Continuing after the buyer is sold is the #1 way deals are lost.</p>
       <ul>
-        <li><strong>&lt; 1 :</strong> losing money on every customer</li>
-        <li><strong>1–3 :</strong> tight, hard to scale</li>
-        <li><strong>3+ :</strong> healthy</li>
-        <li><strong>5+ :</strong> excellent (or undermarketed)</li>
+        <li>They start asking implementation questions</li>
+        <li>They switch from "if" to "when"</li>
+        <li>They ask about pricing details, delivery, guarantee</li>
+        <li>They reference future use ("when we have this...")</li>
+        <li>They go quiet and look like they're thinking</li>
       </ul>
+      <p>When these appear: trial close, then full close.</p>
 
-      <h3>Churn rate</h3>
-      <div class="formula">Churn = <span class="var">Customers lost</span> ÷ <span class="var">Total customers</span> (in a period)</div>
-      <p>5% monthly churn = nearly 50% annual churn. The math compounds against you brutally.</p>
-
-      <h3>NRR — Net Revenue Retention</h3>
-      <p>For subscription businesses, the single most important metric.</p>
-      <div class="formula">NRR = (<span class="var">Start MRR</span> + <span class="var">Expansion</span> − <span class="var">Churn</span> − <span class="var">Downgrades</span>) ÷ <span class="var">Start MRR</span></div>
-      <p><strong>NRR &gt; 100%</strong> means your existing customers grow you even with zero new customers. That's the dream.</p>
-    </section>
-
-    <section id="ltv-calc">
-      <h2>Live LTV calculator</h2>
-
-      <div class="widget">
-        <div class="widget-header">
-          <div class="widget-title">Subscription LTV Simulator</div>
-          <div class="widget-tag">Live</div>
-        </div>
-
-        <div class="input-row">
-          <div class="input-group">
-            <label>Monthly revenue per customer (€)</label>
-            <input type="range" id="mrr" min="10" max="2000" step="10" value="80" data-prefix="€">
-            <div class="range-value"></div>
-          </div>
-          <div class="input-group">
-            <label>Monthly churn rate</label>
-            <input type="range" id="churn" min="0.5" max="20" step="0.5" value="5" data-suffix="%">
-            <div class="range-value"></div>
-          </div>
-          <div class="input-group">
-            <label>Gross margin</label>
-            <input type="range" id="margin" min="20" max="95" step="1" value="75" data-suffix="%">
-            <div class="range-value"></div>
-          </div>
-          <div class="input-group">
-            <label>CAC per customer (€)</label>
-            <input type="range" id="cac10" min="20" max="2000" step="10" value="200" data-prefix="€">
-            <div class="range-value"></div>
-          </div>
-        </div>
-
-        <div class="chart-wrap"><canvas id="cohortChart"></canvas></div>
-
-        <div class="stat-grid" style="margin-top: 24px;">
-          <div class="stat">
-            <div class="stat-num" id="avgLifeStat">0 mo</div>
-            <div class="stat-label">Avg customer lifetime</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num" id="grossLtvStat">€0</div>
-            <div class="stat-label">Gross LTV</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num" id="netLtvStat">€0</div>
-            <div class="stat-label">Net LTV (after margin)</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num" id="ratioStat10">0×</div>
-            <div class="stat-label">LTV : CAC ratio</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="pillars">
-      <h2>The 5 pillars of customer retention</h2>
-
-      <div class="pillar-card">
-        <div class="pillar-num-big">01.</div>
-        <div>
-          <h3>Deliver on the promise (immediately)</h3>
-          <p>The first 30 days set the entire relationship. Onboarding is not paperwork — it's the second sale.</p>
-          <ul>
-            <li>Get them to "first value" as fast as possible</li>
-            <li>Proactive welcome — don't make them search</li>
-            <li>Quick wins in the first session</li>
-            <li>Clear documentation, video walkthroughs</li>
-            <li>Real human check-in within 7 days</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="pillar-card">
-        <div class="pillar-num-big">02.</div>
-        <div>
-          <h3>Stay valuable over time</h3>
-          <ul>
-            <li>Ship improvements visibly</li>
-            <li>Educational content keeps them growing</li>
-            <li>Regular check-ins, not just at renewal time</li>
-            <li>Customer-only perks: early access, community, exclusive content</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="pillar-card">
-        <div class="pillar-num-big">03.</div>
-        <div>
-          <h3>Make problems easy to solve</h3>
-          <p>Support isn't overhead — it's retention. One bad support experience can erase years of goodwill.</p>
-          <ul>
-            <li>Fast response times (in the medium they prefer)</li>
-            <li>Empower agents to actually solve, not just escalate</li>
-            <li>Track NPS and CSAT continuously</li>
-            <li>Treat complaints as gifts — they're the ones who didn't leave silently</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="pillar-card">
-        <div class="pillar-num-big">04.</div>
-        <div>
-          <h3>Build emotional connection</h3>
-          <ul>
-            <li>Remember details that matter to them</li>
-            <li>Celebrate their milestones, not just yours</li>
-            <li>Apologize properly and fast when you fail</li>
-            <li>Surprise them occasionally — a card, an upgrade, recognition</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="pillar-card">
-        <div class="pillar-num-big">05.</div>
-        <div>
-          <h3>Expand the relationship</h3>
-          <p>Retention isn't just keeping — it's growing. Existing customers buy more from you than new ones, if you give them reasons.</p>
-          <ul>
-            <li>Upsells: more value, higher tier</li>
-            <li>Cross-sells: adjacent products</li>
-            <li>Multi-year contracts: lock in price, ease their planning</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="onboarding">
-      <h2>Onboarding sequence — first 30 days</h2>
-      <p>Standardize this. Top-performing companies onboard with the same care they sell with.</p>
-
-      <div class="sequence">
-        <div class="seq-row">
-          <div class="seq-time">Day 0</div>
-          <div class="seq-content"><h4>Welcome — set the tone</h4><p>Immediate thank-you (real, not "your purchase has been received"). Confirm what they bought, what happens next, who to contact.</p></div>
-        </div>
-        <div class="seq-row">
-          <div class="seq-time">Day 1</div>
-          <div class="seq-content"><h4>First-value action</h4><p>Their first meaningful win with the product. Make it dead simple. Track who completes it — that's your activation metric.</p></div>
-        </div>
-        <div class="seq-row">
-          <div class="seq-time">Day 3–7</div>
-          <div class="seq-content"><h4>Human check-in</h4><p>Real person reaches out. "How's it going? Any questions?" Don't pitch upgrades yet.</p></div>
-        </div>
-        <div class="seq-row">
-          <div class="seq-time">Day 14</div>
-          <div class="seq-content"><h4>Education push</h4><p>Send tutorials for the next-level features they haven't discovered. Each email = one feature.</p></div>
-        </div>
-        <div class="seq-row">
-          <div class="seq-time">Day 30</div>
-          <div class="seq-content"><h4>Outcome check</h4><p>"Are you getting what you hoped for?" If yes — ask for testimonial or referral. If no — engage support, save the relationship.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="winback">
-      <h2>Win-back: when they leave</h2>
-      <p>Customers churn. The question is what you do next.</p>
-
-      <h3>Exit interview</h3>
-      <p>Every churned customer gets a real conversation, not a survey. Ask:</p>
+      <h3>Trial closes (test the temperature)</h3>
       <ul>
-        <li>What's the actual reason you're leaving?</li>
-        <li>Was there a specific moment things went wrong?</li>
-        <li>What would have changed your mind?</li>
-        <li>Would you come back if [specific change]?</li>
+        <li>"How does this sound so far?"</li>
+        <li>"If we could start next week, would that work for your timeline?"</li>
+        <li>"Based on what we've discussed, does this seem like a fit?"</li>
       </ul>
+    </section>
 
-      <h3>Win-back campaign</h3>
-      <p>3–6 months later, reach out. Things often change:</p>
-      <ul>
-        <li>Their situation may have shifted</li>
-        <li>You may have shipped the feature they needed</li>
-        <li>The competitor they switched to may have disappointed</li>
-      </ul>
-
-      <div class="callout tip">
-        <div class="callout-label">Honest reach-out</div>
-        <p>"Hi [Name], it's been 6 months since you left us. I wanted to honestly check in — are things working with [Competitor]? We've made some changes you might find interesting. Worth a quick chat?"</p>
+    <section id="the-ask">
+      <h2>The actual ask</h2>
+      <p>After the trial close gets a green light, ask for the decision. <strong>Then shut up.</strong></p>
+      <p>Whoever speaks first after "Are you ready to move forward?" usually loses. If you fill the silence, you'll often re-open a settled deal or offer a concession that wasn't needed.</p>
+      <div class="callout">
+        <div class="callout-label">Drill</div>
+        <p>Ask the close, count to 10 silently before speaking again. It feels like an eternity. It's not.</p>
       </div>
     </section>
 
-    <section id="advocacy">
-      <h2>Turning customers into advocates</h2>
-      <p>Your best customers should sell for you. Build the systems:</p>
+    <section id="seventeen">
+      <h2>The 17 closes</h2>
+      <p>Below are the most-used closes across selling. Some are powerful; some are dated; some are bordering on manipulative. Match the close to the context. Click a card for an example script.</p>
+
+      <div class="close-grid" id="closeGrid">
+
+        <div class="close-card" data-close="1">
+          <div class="close-num">01</div>
+          <div class="close-name">Direct Close</div>
+          <div class="close-when">When · obvious fit, mature buyer</div>
+          <div class="close-desc">Just ask. "Want to move forward?" The most underused close in sales.</div>
+          <div class="close-script">Are you ready to move forward?</div>
+        </div>
+
+        <div class="close-card" data-close="2">
+          <div class="close-num">02</div>
+          <div class="close-name">Assumptive Close</div>
+          <div class="close-when">When · strong buying signals shown</div>
+          <div class="close-desc">Skip to logistics. Assumes they've decided.</div>
+          <div class="close-script">Great — should we start the paperwork, or do you want to walk through it once more?</div>
+        </div>
+
+        <div class="close-card" data-close="3">
+          <div class="close-num">03</div>
+          <div class="close-name">Alternative Close</div>
+          <div class="close-when">When · multiple options exist</div>
+          <div class="close-desc">Offer two yeses instead of yes/no. Assumes the buy.</div>
+          <div class="close-script">Would you prefer the annual or monthly plan?</div>
+        </div>
+
+        <div class="close-card" data-close="4">
+          <div class="close-num">04</div>
+          <div class="close-name">Summary Close</div>
+          <div class="close-when">When · complex, multi-feature deals</div>
+          <div class="close-desc">Recap the value, then ask. Makes the yes feel earned.</div>
+          <div class="close-script">So we've agreed it'll save 10 hours a week, integrate with your stack, and ROI in 6 months. Want to start?</div>
+        </div>
+
+        <div class="close-card" data-close="5">
+          <div class="close-num">05</div>
+          <div class="close-name">Trial Close</div>
+          <div class="close-when">When · testing temperature</div>
+          <div class="close-desc">Soft probe before the real ask.</div>
+          <div class="close-script">If we could start Monday, would that work?</div>
+        </div>
+
+        <div class="close-card" data-close="6">
+          <div class="close-num">06</div>
+          <div class="close-name">Question Close</div>
+          <div class="close-when">When · they're 80% there</div>
+          <div class="close-desc">Ask what's left between them and yes.</div>
+          <div class="close-script">Is there anything else you need to know before we proceed?</div>
+        </div>
+
+        <div class="close-card" data-close="7">
+          <div class="close-num">07</div>
+          <div class="close-name">Silent Close</div>
+          <div class="close-when">When · price is on the table</div>
+          <div class="close-desc">State the offer, go silent. Pressure of silence does the work.</div>
+          <div class="close-script">The total is €4,800. [Wait.]</div>
+        </div>
+
+        <div class="close-card" data-close="8">
+          <div class="close-num">08</div>
+          <div class="close-name">Puppy Dog Close</div>
+          <div class="close-when">When · physical or trial product</div>
+          <div class="close-desc">Let them try it. Endowment effect closes for you.</div>
+          <div class="close-script">Take it home for a week. If you don't love it, bring it back.</div>
+        </div>
+
+        <div class="close-card" data-close="9">
+          <div class="close-num">09</div>
+          <div class="close-name">Takeaway Close</div>
+          <div class="close-when">When · they're being indecisive</div>
+          <div class="close-desc">Suggest they're not a fit. Often triggers them to convince <em>you</em>.</div>
+          <div class="close-script">Honestly — maybe this isn't the right fit for you. Should we hold off?</div>
+        </div>
+
+        <div class="close-card" data-close="10">
+          <div class="close-num">10</div>
+          <div class="close-name">Ben Franklin Close</div>
+          <div class="close-when">When · analytical buyers</div>
+          <div class="close-desc">Write pros and cons together. Helps logical decision-making.</div>
+          <div class="close-script">Let's write down the reasons for and against — together.</div>
+        </div>
+
+        <div class="close-card ethics-warn" data-close="11">
+          <div class="close-num">11</div>
+          <div class="close-name">Scarcity Close</div>
+          <div class="close-when">When · genuinely limited only</div>
+          <div class="close-desc">Use only when scarcity is real. Fake scarcity destroys trust.</div>
+          <div class="close-script">We have two spots left in this cohort. Should I save one?</div>
+        </div>
+
+        <div class="close-card ethics-warn" data-close="12">
+          <div class="close-num">12</div>
+          <div class="close-name">Urgency Close</div>
+          <div class="close-when">When · genuine deadline exists</div>
+          <div class="close-desc">Real time pressure works. Manufactured urgency feels gross fast.</div>
+          <div class="close-script">The Q4 pricing ends Friday. Worth deciding before then?</div>
+        </div>
+
+        <div class="close-card" data-close="13">
+          <div class="close-num">13</div>
+          <div class="close-name">Next-Step Close</div>
+          <div class="close-when">When · long B2B cycles</div>
+          <div class="close-desc">Not "buy now" — "what's the next step?" Always have one.</div>
+          <div class="close-script">What's the right next step from here?</div>
+        </div>
+
+        <div class="close-card" data-close="14">
+          <div class="close-num">14</div>
+          <div class="close-name">1-2-3 Close</div>
+          <div class="close-when">When · summarizing simple offer</div>
+          <div class="close-desc">Brain loves threes. Recap in 3 benefits, then ask.</div>
+          <div class="close-script">So: saves time, saves money, removes risk. Ready?</div>
+        </div>
+
+        <div class="close-card" data-close="15">
+          <div class="close-num">15</div>
+          <div class="close-name">Empathy Close</div>
+          <div class="close-when">When · sensitive or emotional buyers</div>
+          <div class="close-desc">Acknowledge how they're feeling, then ask.</div>
+          <div class="close-script">I can see this is a big decision. What feels right?</div>
+        </div>
+
+        <div class="close-card" data-close="16">
+          <div class="close-num">16</div>
+          <div class="close-name">Conditional Close</div>
+          <div class="close-when">When · objections remain</div>
+          <div class="close-desc">"If I can solve X, will you buy?" — surfaces real blockers.</div>
+          <div class="close-script">If we could include onboarding at no extra cost, would you sign today?</div>
+        </div>
+
+        <div class="close-card" data-close="17">
+          <div class="close-num">17</div>
+          <div class="close-name">Walk-Away Close</div>
+          <div class="close-when">When · the deal isn't a fit</div>
+          <div class="close-desc">Honestly walking away. Builds enormous long-term trust. Often closes anyway.</div>
+          <div class="close-script">I don't think we're the right fit. Let me suggest someone who might be.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="matrix">
+      <h2>Which close fits which situation?</h2>
+
+      <div class="matrix">
+        <table>
+          <thead>
+            <tr>
+              <th>Situation</th>
+              <th>Best close</th>
+              <th>Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-context">Simple consumer purchase</td>
+              <td class="col-close">Assumptive, Alternative</td>
+              <td>Reduces decision friction</td>
+            </tr>
+            <tr>
+              <td class="col-context">Long B2B cycle</td>
+              <td class="col-close">Summary, Next-Step</td>
+              <td>Anchors agreement, advances deal</td>
+            </tr>
+            <tr>
+              <td class="col-context">Analytical buyer</td>
+              <td class="col-close">Ben Franklin, Summary</td>
+              <td>Respects their decision style</td>
+            </tr>
+            <tr>
+              <td class="col-context">Indecisive prospect</td>
+              <td class="col-close">Takeaway, Direct</td>
+              <td>Forces a decision, removes "maybe"</td>
+            </tr>
+            <tr>
+              <td class="col-context">High-emotion (real estate, weddings)</td>
+              <td class="col-close">Empathy, Puppy Dog</td>
+              <td>Validates emotion, lets product sell itself</td>
+            </tr>
+            <tr>
+              <td class="col-context">Price objection lingering</td>
+              <td class="col-close">Conditional</td>
+              <td>Surfaces real blocker, trades cleanly</td>
+            </tr>
+            <tr>
+              <td class="col-context">Genuine deadline exists</td>
+              <td class="col-close">Urgency, Scarcity</td>
+              <td>Truthful time pressure works</td>
+            </tr>
+            <tr>
+              <td class="col-context">Not a fit</td>
+              <td class="col-close">Walk-Away</td>
+              <td>Right thing to do, plus often closes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warn">
+        <div class="callout-label">Ethics watch</div>
+        <p>Closes 11 (scarcity) and 12 (urgency) work only when they're <strong>true</strong>. Fake scarcity creates short-term sales and long-term distrust. If a customer ever finds out the deadline was manufactured, you've lost them and their referrals forever.</p>
+      </div>
+    </section>
+
+    <section id="post">
+      <h2>After the close</h2>
+      <p>The moment after "yes" is when most reps mess up.</p>
       <ul>
-        <li><strong>Referral programs</strong> — incentivize for both giver and receiver</li>
-        <li><strong>Testimonial requests</strong> — at peak satisfaction moments (right after a win, not in a generic email)</li>
-        <li><strong>Case studies</strong> — co-created, makes them look good too</li>
-        <li><strong>Community</strong> — give them somewhere to meet other customers</li>
-        <li><strong>VIP / power user programs</strong> — recognize the top 5%</li>
-        <li><strong>Public recognition</strong> — feature them on social, in case studies</li>
+        <li><strong>Stop selling.</strong> Don't keep extolling features. Confirm and move to logistics.</li>
+        <li><strong>Reduce buyer's remorse.</strong> Briefly reinforce they made a great choice. Specific, not generic.</li>
+        <li><strong>Set expectations.</strong> What happens next: delivery, onboarding, first invoice, etc.</li>
+        <li><strong>Ask for referrals if appropriate.</strong> Buyers feel best about you right after the close.</li>
+        <li><strong>Follow through faster than they expect.</strong> Onboarding speed sets the tone for the whole relationship.</li>
+      </ul>
+    </section>
+
+    <section id="mistakes">
+      <h2>Common closing mistakes</h2>
+      <ul>
+        <li>Never actually asking for the sale</li>
+        <li>Asking and then immediately speaking again (the silent close fail)</li>
+        <li>Continuing to pitch after the buyer is sold</li>
+        <li>Closing too early (before discovery is done)</li>
+        <li>Closing too late (buyer has cooled)</li>
+        <li>Using high-pressure tactics on uncertain buyers</li>
+        <li>Conceding without trading</li>
+        <li>Forgetting to confirm the next step</li>
       </ul>
     </section>
 
     <section id="exercises">
       <h2>Exercises</h2>
       <ol>
-        <li><strong>LTV calculation.</strong> Use the calculator above with real numbers from your business or one you can access. What's the ratio? Where's the leverage?</li>
-        <li><strong>Onboarding audit.</strong> Walk through the first 30 days of being a new customer somewhere you bought recently. What was good? Bad? Missing?</li>
-        <li><strong>Exit interview practice.</strong> Talk to a customer (or pretend) who left a service. Ask the 4 questions above. Notice the patterns.</li>
-        <li><strong>Referral ask.</strong> Pick 3 happy customers. Ask each, in a personal way, who else might benefit. Track results.</li>
+        <li><strong>Close inventory.</strong> Pick 5 of the 17 closes that match your context. Write the exact script for each — in your own voice.</li>
+        <li><strong>Silent close drill.</strong> Today: in one conversation, state a price/proposal, then count 10 seconds silently. Track what happens.</li>
+        <li><strong>Trial close drill.</strong> Before any full close this week, use a trial close first. Notice the difference.</li>
+        <li><strong>Buying-signal log.</strong> For one week, log every buying signal you notice in any sales conversation (yours or others). Build the pattern recognition.</li>
       </ol>
 
       <div class="callout tip">
         <div class="callout-label">Further reading</div>
-        <p><em>Never Lose a Customer Again</em> — Joey Coleman · <em>The Effortless Experience</em> — Dixon, Toman &amp; DeLisi · <em>Customer Success</em> — Mehta, Steinman, Murphy</p>
+        <p><em>The Closer's Survival Guide</em> — Grant Cardone · <em>The Lost Art of Closing</em> — Anthony Iannarino · <em>Secrets of Closing the Sale</em> — Zig Ziglar (dated but classic)</p>
       </div>
     </section>
 
@@ -384,11 +430,11 @@
 <nav class="module-nav">
   <a href="module-09.html" class="prev">
     <div class="dir">← Previous · Module 09</div>
-    <div class="next-title">Closing Techniques</div>
+    <div class="next-title">Objections</div>
   </a>
   <a href="module-11.html" class="next">
     <div class="dir">Next · Module 11</div>
-    <div class="next-title">Ethics &amp; Pitfalls</div>
+    <div class="next-title">Retention</div>
   </a>
 </nav>
 
@@ -397,68 +443,12 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-  Chart.defaults.color = '#6b7480';
-  Chart.defaults.borderColor = '#2a3340';
-  Chart.defaults.font.family = "'JetBrains Mono', monospace";
-  
-  const ctx = document.getElementById('cohortChart');
-  const cohortChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['M0', 'M3', 'M6', 'M9', 'M12', 'M18', 'M24', 'M36'],
-      datasets: [{
-        label: '% of cohort retained',
-        data: [],
-        borderColor: '#ff6b35',
-        backgroundColor: 'rgba(255, 107, 53, 0.15)',
-        fill: true,
-        tension: 0.3,
-        pointBackgroundColor: '#ff6b35'
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        y: { min: 0, max: 100, ticks: { callback: v => v + '%' }, grid: { color: '#2a3340' } },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-  
-  function calcLTV() {
-    const mrr = +document.getElementById('mrr').value;
-    const churn = +document.getElementById('churn').value / 100;
-    const margin = +document.getElementById('margin').value / 100;
-    const cac = +document.getElementById('cac10').value;
-    
-    const avgLife = 1 / churn;
-    const grossLtv = mrr / churn;
-    const netLtv = grossLtv * margin;
-    const ratio = netLtv / cac;
-    
-    document.getElementById('avgLifeStat').textContent = avgLife.toFixed(1) + ' mo';
-    document.getElementById('grossLtvStat').textContent = fmtMoney(grossLtv);
-    document.getElementById('netLtvStat').textContent = fmtMoney(netLtv);
-    document.getElementById('ratioStat10').textContent = ratio.toFixed(1) + '×';
-    
-    // Cohort curve - exponential decay
-    const months = [0, 3, 6, 9, 12, 18, 24, 36];
-    cohortChart.data.datasets[0].data = months.map(m => Math.pow(1 - churn, m) * 100);
-    cohortChart.update();
-  }
-  
-  document.querySelectorAll('#mrr, #churn, #margin, #cac10').forEach(el => el.addEventListener('input', calcLTV));
-  calcLTV();
-</script>
 
 <!-- Google Translate -->
 <div id="google_translate_element" style="display:none;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar', autoDisplay: false}, 'google_translate_element');
+  new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false}, 'google_translate_element');
 }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

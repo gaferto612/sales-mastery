@@ -3,77 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 11 · Ethics &amp; Pitfalls — Sales Mastery</title>
+<title>Module 11 · Customer Retention — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
-  .compare-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    margin: 32px 0;
-  }
-  .compare-col { background: var(--ink); padding: 24px; }
-  .compare-col h4 {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  .compare-col.good h4 { color: var(--green); }
-  .compare-col.bad h4 { color: var(--red); }
-  .compare-row {
-    padding: 12px 0;
-    border-bottom: 1px dashed var(--line);
-    font-size: 15px;
-    color: var(--cream);
-  }
-  .compare-row:last-child { border-bottom: none; }
-  
-  .dark-pattern {
-    background: var(--ink);
-    border-left: 3px solid var(--red);
-    padding: 20px 24px;
-    margin: 16px 0;
-  }
-  .dp-name {
-    font-family: var(--font-display);
-    font-size: 20px;
-    color: var(--red);
-    margin-bottom: 8px;
-    font-weight: 500;
-  }
-  .dp-card p { color: var(--cream); margin-bottom: 8px; font-size: 14px; }
-  .dp-card p.example { font-style: italic; color: var(--muted); font-size: 13px; }
-  
-  .checklist {
+  .pillar-card {
     background: var(--ink);
     border: 1px solid var(--line);
     padding: 28px;
-    margin: 32px 0;
-  }
-  .check-row {
-    display: flex;
+    margin: 16px 0;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
     align-items: start;
-    gap: 16px;
-    padding: 12px 0;
-    border-bottom: 1px dashed var(--line);
   }
-  .check-row:last-child { border-bottom: none; }
-  .check-row input[type="checkbox"] {
-    width: 22px; height: 22px;
-    accent-color: var(--green);
-    margin-top: 2px;
-    flex-shrink: 0;
-    cursor: pointer;
+  .pillar-num-big {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--orange);
+    line-height: 0.9;
+    font-style: italic;
   }
-  .check-text { color: var(--cream); font-size: 15px; line-height: 1.5; }
+  .pillar-card h3 {
+    margin-top: 0;
+    color: var(--paper);
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .pillar-card p { color: var(--cream); font-size: 15px; margin-bottom: 12px; }
+  .pillar-card ul { margin-left: 18px; }
+  .pillar-card li { color: var(--cream); font-size: 14px; margin-bottom: 6px; }
   
-  @media (max-width: 700px) {
-    .compare-split { grid-template-columns: 1fr; }
+  /* Sequence styling, reused */
+  .sequence {
+    margin: 32px 0;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 0;
   }
+  .seq-row { display: contents; }
+  .seq-time {
+    padding: 16px 16px 16px 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--orange);
+    text-transform: uppercase;
+    border-right: 2px solid var(--line);
+    position: relative;
+  }
+  .seq-time::after {
+    content: '';
+    position: absolute;
+    right: -7px; top: 22px;
+    width: 12px; height: 12px;
+    background: var(--orange);
+    border-radius: 50%;
+    border: 3px solid var(--ink);
+  }
+  .seq-content { padding: 16px 0 16px 24px; }
+  .seq-content h4 { font-family: var(--font-display); font-size: 17px; color: var(--paper); margin-bottom: 4px; font-weight: 500; }
+  .seq-content p { color: var(--cream); font-size: 14px; margin: 0; }
 </style>
 </head>
 <body>
@@ -92,13 +84,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">11</span>Ethics &amp; Pitfalls</div>
-  <h1 class="module-title">Persuasion vs. <em>manipulation.</em></h1>
-  <p class="lede">Sales gets a bad reputation because some sellers earn it. The techniques in this course are powerful — and the same techniques used differently produce either a long career or a short, ugly one.</p>
+  <div class="eyebrow"><span class="num">11</span>Customer Retention</div>
+  <h1 class="module-title">Keeping <em>what you won.</em></h1>
+  <p class="lede">Acquiring a new customer costs 5–7× more than keeping an existing one. The first sale is the introduction. The actual business is everything that follows.</p>
   <div class="meta-strip">
-    <span>20 min read</span>
-    <span>Most important · least taught</span>
-    <span>Long game vs. short game</span>
+    <span>30 min read</span>
+    <span>LTV · NRR · cohorts</span>
+    <span>Where real businesses are built</span>
   </div>
 </header>
 
@@ -106,195 +98,283 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#core-distinction">The core distinction</a></li>
-      <li><a href="#test">The mirror test</a></li>
-      <li><a href="#dark-patterns">Dark patterns to avoid</a></li>
-      <li><a href="#career-mistakes">Career-ending mistakes</a></li>
-      <li><a href="#walk-away">When to walk away</a></li>
-      <li><a href="#long-game">The long game</a></li>
+      <li><a href="#why">Why retention is the game</a></li>
+      <li><a href="#metrics">The retention metrics</a></li>
+      <li><a href="#ltv-calc">LTV calculator</a></li>
+      <li><a href="#pillars">5 pillars of retention</a></li>
+      <li><a href="#onboarding">Onboarding sequence</a></li>
+      <li><a href="#winback">Win-back</a></li>
+      <li><a href="#advocacy">Turning customers into advocates</a></li>
       <li><a href="#exercises">Exercises</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="core-distinction">
-      <h2>Persuasion vs. manipulation</h2>
-      <p>Both use the same psychological tools. The difference is in <strong>who benefits</strong> and <strong>what's being hidden</strong>.</p>
-
-      <div class="compare-split">
-        <div class="compare-col good">
-          <h4>✓ Persuasion</h4>
-          <div class="compare-row">Buyer is better off after the sale</div>
-          <div class="compare-row">All material facts are available to them</div>
-          <div class="compare-row">You'd be proud to tell them everything you know</div>
-          <div class="compare-row">Buyer makes the decision, freely</div>
-          <div class="compare-row">If they say no, that's fine</div>
-          <div class="compare-row">You'd sell it to your mother / best friend</div>
+    <section id="why">
+      <h2>Why retention is the actual game</h2>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-num">5–7×</div>
+          <div class="stat-label">Cost to acquire a new customer vs. keep one</div>
         </div>
-        <div class="compare-col bad">
-          <h4>✗ Manipulation</h4>
-          <div class="compare-row">Seller is better off, buyer isn't</div>
-          <div class="compare-row">Material facts are hidden, distorted, or buried</div>
-          <div class="compare-row">You'd be embarrassed if they knew what you know</div>
-          <div class="compare-row">Buyer is pressured past their judgment</div>
-          <div class="compare-row">"No" is treated as an obstacle to overcome</div>
-          <div class="compare-row">You'd never recommend it to people you love</div>
+        <div class="stat">
+          <div class="stat-num">5%</div>
+          <div class="stat-label">Retention improvement = 25–95% profit increase (Bain study)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">60–70%</div>
+          <div class="stat-label">Probability of selling to an existing customer</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5–20%</div>
+          <div class="stat-label">Probability of selling to a new prospect</div>
         </div>
       </div>
+
+      <p>If you're spending most of your time acquiring and very little keeping, you've built a leaky bucket — and you're fighting math.</p>
 
       <div class="pullquote">
-        Persuasion is helping someone decide what's already in their interest. Manipulation is making them decide what's in yours.
+        Retention is where the actual business lives. Acquisition just pays for the introduction.
       </div>
     </section>
 
-    <section id="test">
-      <h2>The mirror test</h2>
-      <p>Run this checklist before any deal where you have doubts.</p>
+    <section id="metrics">
+      <h2>The numbers you need to know</h2>
 
-      <div class="checklist">
-        <div class="check-row">
-          <input type="checkbox">
-          <div class="check-text">Would I be comfortable if this buyer knew everything I know?</div>
-        </div>
-        <div class="check-row">
-          <input type="checkbox">
-          <div class="check-text">Will they be glad they bought, in 6 months?</div>
-        </div>
-        <div class="check-row">
-          <input type="checkbox">
-          <div class="check-text">Would I recommend this to my own family in the same situation?</div>
-        </div>
-        <div class="check-row">
-          <input type="checkbox">
-          <div class="check-text">Am I hiding any information that would change their mind?</div>
-        </div>
-        <div class="check-row">
-          <input type="checkbox">
-          <div class="check-text">Am I using any pressure that comes from <em>my</em> needs, not theirs?</div>
-        </div>
-        <div class="check-row">
-          <input type="checkbox">
-          <div class="check-text">Would this sale survive being reported on the front page of a newspaper?</div>
-        </div>
-      </div>
+      <h3>LTV — Lifetime Value</h3>
+      <p>Total revenue from a customer over their entire relationship.</p>
+      <div class="formula">LTV = <span class="var">Avg revenue/month</span> <span class="x">×</span> <span class="var">Avg lifetime in months</span></div>
+      <p>Or for non-subscription: LTV = Avg order value × Repeat purchases × Margin %</p>
 
-      <p>If you can't honestly check every box, you're crossing a line. The career cost compounds — every shady deal makes the next one easier to do, until you find yourself somewhere you didn't mean to be.</p>
-    </section>
+      <h3>CAC — Customer Acquisition Cost</h3>
+      <div class="formula">CAC = <span class="var">Total sales + marketing</span> ÷ <span class="var">New customers</span></div>
 
-    <section id="dark-patterns">
-      <h2>Dark patterns to recognize and avoid</h2>
-
-      <div class="dark-pattern dp-card">
-        <div class="dp-name">Fake scarcity</div>
-        <p>Pretending you're running out when you aren't. Countdown timers that reset. "Only 3 left!" on a digital product.</p>
-        <p class="example">Cost: buyer eventually notices. You become a brand they don't trust. They tell others.</p>
-      </div>
-
-      <div class="dark-pattern dp-card">
-        <div class="dp-name">Fake social proof</div>
-        <p>Fabricated testimonials, fake review counts, AI-generated quotes from people who don't exist.</p>
-        <p class="example">Cost: when discovered (and someone always discovers), reputational damage is permanent.</p>
-      </div>
-
-      <div class="dark-pattern dp-card">
-        <div class="dp-name">Buried terms</div>
-        <p>Hiding auto-renewals, cancellation friction, hidden fees in fine print.</p>
-        <p class="example">Cost: legal exposure, chargebacks, regulatory attention, customer hatred.</p>
-      </div>
-
-      <div class="dark-pattern dp-card">
-        <div class="dp-name">Drip-pricing</div>
-        <p>Showing a low price upfront, then adding mandatory fees at checkout (booking fees, service charges, taxes that should've been included).</p>
-        <p class="example">Cost: high cart-abandonment rates, brand reputation as deceptive.</p>
-      </div>
-
-      <div class="dark-pattern dp-card">
-        <div class="dp-name">Confirm-shaming</div>
-        <p>"No thanks, I don't want to save money" / "I'd rather pay full price." Manipulative opt-outs.</p>
-        <p class="example">Cost: customers experience this as condescending. Conversion uplift comes with brand damage.</p>
-      </div>
-
-      <div class="dark-pattern dp-card">
-        <div class="dp-name">Emotional exploitation</div>
-        <p>Targeting people in crisis (illness, grief, financial desperation) with high-pressure sales.</p>
-        <p class="example">Cost: this is the line between a salesperson and a predator. Sometimes legally — always morally.</p>
-      </div>
-
-      <div class="dark-pattern dp-card">
-        <div class="dp-name">Forced urgency</div>
-        <p>"Decide now or you lose this price forever" — when the offer is renewed weekly.</p>
-        <p class="example">Cost: sophisticated buyers spot it instantly. Trains your audience to never trust your timing claims.</p>
-      </div>
-
-      <div class="dark-pattern dp-card">
-        <div class="dp-name">Bait and switch</div>
-        <p>Advertising one thing, delivering another. Pricing model shifts after signup.</p>
-        <p class="example">Cost: chargebacks, churn, lawsuits in regulated industries.</p>
-      </div>
-    </section>
-
-    <section id="career-mistakes">
-      <h2>Career-ending mistakes</h2>
-      <p>Things that end sales careers — not in one move, but compounding:</p>
+      <h3>LTV : CAC ratio</h3>
       <ul>
-        <li><strong>Lying about the product</strong> — when discovered, you're done at this company and several others (sales is a small world)</li>
-        <li><strong>Misrepresenting numbers</strong> — fudged results, inflated case studies, made-up metrics</li>
-        <li><strong>Burning customers for short-term commission</strong> — they'll tell others; the industry remembers</li>
-        <li><strong>Bad-mouthing competitors</strong> — signals insecurity, not strength</li>
-        <li><strong>Burning bridges with internal teams</strong> — engineering, support, finance will refuse to back you eventually</li>
-        <li><strong>Failing to follow through</strong> — every broken promise is a deposit in the trust account, withdrawn</li>
-        <li><strong>Selling things you wouldn't buy yourself</strong> — destroys conviction; buyers feel it</li>
+        <li><strong>&lt; 1 :</strong> losing money on every customer</li>
+        <li><strong>1–3 :</strong> tight, hard to scale</li>
+        <li><strong>3+ :</strong> healthy</li>
+        <li><strong>5+ :</strong> excellent (or undermarketed)</li>
       </ul>
+
+      <h3>Churn rate</h3>
+      <div class="formula">Churn = <span class="var">Customers lost</span> ÷ <span class="var">Total customers</span> (in a period)</div>
+      <p>5% monthly churn = nearly 50% annual churn. The math compounds against you brutally.</p>
+
+      <h3>NRR — Net Revenue Retention</h3>
+      <p>For subscription businesses, the single most important metric.</p>
+      <div class="formula">NRR = (<span class="var">Start MRR</span> + <span class="var">Expansion</span> − <span class="var">Churn</span> − <span class="var">Downgrades</span>) ÷ <span class="var">Start MRR</span></div>
+      <p><strong>NRR &gt; 100%</strong> means your existing customers grow you even with zero new customers. That's the dream.</p>
     </section>
 
-    <section id="walk-away">
-      <h2>When to walk away from a deal</h2>
-      <p>Sometimes the right move is no deal.</p>
+    <section id="ltv-calc">
+      <h2>Live LTV calculator</h2>
+
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">Subscription LTV Simulator</div>
+          <div class="widget-tag">Live</div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label>Monthly revenue per customer (€)</label>
+            <input type="range" id="mrr" min="10" max="2000" step="10" value="80" data-prefix="€">
+            <div class="range-value"></div>
+          </div>
+          <div class="input-group">
+            <label>Monthly churn rate</label>
+            <input type="range" id="churn" min="0.5" max="20" step="0.5" value="5" data-suffix="%">
+            <div class="range-value"></div>
+          </div>
+          <div class="input-group">
+            <label>Gross margin</label>
+            <input type="range" id="margin" min="20" max="95" step="1" value="75" data-suffix="%">
+            <div class="range-value"></div>
+          </div>
+          <div class="input-group">
+            <label>CAC per customer (€)</label>
+            <input type="range" id="cac10" min="20" max="2000" step="10" value="200" data-prefix="€">
+            <div class="range-value"></div>
+          </div>
+        </div>
+
+        <div class="chart-wrap"><canvas id="cohortChart"></canvas></div>
+
+        <div class="stat-grid" style="margin-top: 24px;">
+          <div class="stat">
+            <div class="stat-num" id="avgLifeStat">0 mo</div>
+            <div class="stat-label">Avg customer lifetime</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="grossLtvStat">€0</div>
+            <div class="stat-label">Gross LTV</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="netLtvStat">€0</div>
+            <div class="stat-label">Net LTV (after margin)</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" id="ratioStat10">0×</div>
+            <div class="stat-label">LTV : CAC ratio</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pillars">
+      <h2>The 5 pillars of customer retention</h2>
+
+      <div class="pillar-card">
+        <div class="pillar-num-big">01.</div>
+        <div>
+          <h3>Deliver on the promise (immediately)</h3>
+          <p>The first 30 days set the entire relationship. Onboarding is not paperwork — it's the second sale.</p>
+          <ul>
+            <li>Get them to "first value" as fast as possible</li>
+            <li>Proactive welcome — don't make them search</li>
+            <li>Quick wins in the first session</li>
+            <li>Clear documentation, video walkthroughs</li>
+            <li>Real human check-in within 7 days</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num-big">02.</div>
+        <div>
+          <h3>Stay valuable over time</h3>
+          <ul>
+            <li>Ship improvements visibly</li>
+            <li>Educational content keeps them growing</li>
+            <li>Regular check-ins, not just at renewal time</li>
+            <li>Customer-only perks: early access, community, exclusive content</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num-big">03.</div>
+        <div>
+          <h3>Make problems easy to solve</h3>
+          <p>Support isn't overhead — it's retention. One bad support experience can erase years of goodwill.</p>
+          <ul>
+            <li>Fast response times (in the medium they prefer)</li>
+            <li>Empower agents to actually solve, not just escalate</li>
+            <li>Track NPS and CSAT continuously</li>
+            <li>Treat complaints as gifts — they're the ones who didn't leave silently</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num-big">04.</div>
+        <div>
+          <h3>Build emotional connection</h3>
+          <ul>
+            <li>Remember details that matter to them</li>
+            <li>Celebrate their milestones, not just yours</li>
+            <li>Apologize properly and fast when you fail</li>
+            <li>Surprise them occasionally — a card, an upgrade, recognition</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num-big">05.</div>
+        <div>
+          <h3>Expand the relationship</h3>
+          <p>Retention isn't just keeping — it's growing. Existing customers buy more from you than new ones, if you give them reasons.</p>
+          <ul>
+            <li>Upsells: more value, higher tier</li>
+            <li>Cross-sells: adjacent products</li>
+            <li>Multi-year contracts: lock in price, ease their planning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="onboarding">
+      <h2>Onboarding sequence — first 30 days</h2>
+      <p>Standardize this. Top-performing companies onboard with the same care they sell with.</p>
+
+      <div class="sequence">
+        <div class="seq-row">
+          <div class="seq-time">Day 0</div>
+          <div class="seq-content"><h4>Welcome — set the tone</h4><p>Immediate thank-you (real, not "your purchase has been received"). Confirm what they bought, what happens next, who to contact.</p></div>
+        </div>
+        <div class="seq-row">
+          <div class="seq-time">Day 1</div>
+          <div class="seq-content"><h4>First-value action</h4><p>Their first meaningful win with the product. Make it dead simple. Track who completes it — that's your activation metric.</p></div>
+        </div>
+        <div class="seq-row">
+          <div class="seq-time">Day 3–7</div>
+          <div class="seq-content"><h4>Human check-in</h4><p>Real person reaches out. "How's it going? Any questions?" Don't pitch upgrades yet.</p></div>
+        </div>
+        <div class="seq-row">
+          <div class="seq-time">Day 14</div>
+          <div class="seq-content"><h4>Education push</h4><p>Send tutorials for the next-level features they haven't discovered. Each email = one feature.</p></div>
+        </div>
+        <div class="seq-row">
+          <div class="seq-time">Day 30</div>
+          <div class="seq-content"><h4>Outcome check</h4><p>"Are you getting what you hoped for?" If yes — ask for testimonial or referral. If no — engage support, save the relationship.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="winback">
+      <h2>Win-back: when they leave</h2>
+      <p>Customers churn. The question is what you do next.</p>
+
+      <h3>Exit interview</h3>
+      <p>Every churned customer gets a real conversation, not a survey. Ask:</p>
       <ul>
-        <li>The buyer needs something your product can't deliver</li>
-        <li>The fit is wrong; they'll churn or be unhappy</li>
-        <li>The buyer is asking you to misrepresent something</li>
-        <li>The terms are abusive — you're losing money to win revenue</li>
-        <li>Your gut says no</li>
+        <li>What's the actual reason you're leaving?</li>
+        <li>Was there a specific moment things went wrong?</li>
+        <li>What would have changed your mind?</li>
+        <li>Would you come back if [specific change]?</li>
+      </ul>
+
+      <h3>Win-back campaign</h3>
+      <p>3–6 months later, reach out. Things often change:</p>
+      <ul>
+        <li>Their situation may have shifted</li>
+        <li>You may have shipped the feature they needed</li>
+        <li>The competitor they switched to may have disappointed</li>
       </ul>
 
       <div class="callout tip">
-        <div class="callout-label">The paradox</div>
-        <p>Walking away from a bad-fit deal often <strong>wins</strong> the deal. Buyers trust someone willing to say "we're not right for you." That trust closes the next deal — and gets you referrals.</p>
+        <div class="callout-label">Honest reach-out</div>
+        <p>"Hi [Name], it's been 6 months since you left us. I wanted to honestly check in — are things working with [Competitor]? We've made some changes you might find interesting. Worth a quick chat?"</p>
       </div>
     </section>
 
-    <section id="long-game">
-      <h2>The long game</h2>
-      <p>Every interaction is two transactions: <strong>the immediate deal</strong> and <strong>the reputation deposit</strong>.</p>
-      <p>You can win nearly every immediate deal by being aggressive, manipulative, and short-term focused. You will lose every reputation deposit, and over a 20-year career that's the entire game.</p>
-      <p>The salespeople who become legends:</p>
+    <section id="advocacy">
+      <h2>Turning customers into advocates</h2>
+      <p>Your best customers should sell for you. Build the systems:</p>
       <ul>
-        <li>Have customers who follow them across companies</li>
-        <li>Get referrals so often they barely need to prospect</li>
-        <li>Are trusted by buyers <em>and</em> their internal teams</li>
-        <li>Move up because everyone wants to work with them</li>
-        <li>Sleep well at night</li>
+        <li><strong>Referral programs</strong> — incentivize for both giver and receiver</li>
+        <li><strong>Testimonial requests</strong> — at peak satisfaction moments (right after a win, not in a generic email)</li>
+        <li><strong>Case studies</strong> — co-created, makes them look good too</li>
+        <li><strong>Community</strong> — give them somewhere to meet other customers</li>
+        <li><strong>VIP / power user programs</strong> — recognize the top 5%</li>
+        <li><strong>Public recognition</strong> — feature them on social, in case studies</li>
       </ul>
-
-      <div class="pullquote">
-        Play the long game. The short game ends quickly — and usually badly.
-      </div>
     </section>
 
     <section id="exercises">
       <h2>Exercises</h2>
       <ol>
-        <li><strong>Mirror-test a recent deal.</strong> Run the 6-question checklist above on a deal you closed (or are considering). Honestly — where would you not check the box?</li>
-        <li><strong>Dark-pattern audit.</strong> Visit 5 e-commerce or SaaS sites. Spot the dark patterns. Which would you refuse to use? Where would you draw lines?</li>
-        <li><strong>Walk-away role-play.</strong> With a partner, role-play declining a deal that isn't a fit. Notice how hard or easy it feels. Practice the language.</li>
-        <li><strong>Letter to your future self.</strong> Write the kind of seller you want to be in 10 years. Specific behaviors. Keep it.</li>
+        <li><strong>LTV calculation.</strong> Use the calculator above with real numbers from your business or one you can access. What's the ratio? Where's the leverage?</li>
+        <li><strong>Onboarding audit.</strong> Walk through the first 30 days of being a new customer somewhere you bought recently. What was good? Bad? Missing?</li>
+        <li><strong>Exit interview practice.</strong> Talk to a customer (or pretend) who left a service. Ask the 4 questions above. Notice the patterns.</li>
+        <li><strong>Referral ask.</strong> Pick 3 happy customers. Ask each, in a personal way, who else might benefit. Track results.</li>
       </ol>
 
       <div class="callout tip">
         <div class="callout-label">Further reading</div>
-        <p><em>Influence</em> — Cialdini (ethics chapter) · <em>The Speed of Trust</em> — Stephen Covey · <em>Give and Take</em> — Adam Grant · <em>Dark Patterns</em> research at deceptive.design</p>
+        <p><em>Never Lose a Customer Again</em> — Joey Coleman · <em>The Effortless Experience</em> — Dixon, Toman &amp; DeLisi · <em>Customer Success</em> — Mehta, Steinman, Murphy</p>
       </div>
     </section>
 
@@ -304,11 +384,11 @@
 <nav class="module-nav">
   <a href="module-10.html" class="prev">
     <div class="dir">← Previous · Module 10</div>
-    <div class="next-title">Customer Retention</div>
+    <div class="next-title">Closing</div>
   </a>
   <a href="module-12.html" class="next">
     <div class="dir">Next · Module 12</div>
-    <div class="next-title">Tools &amp; Resources</div>
+    <div class="next-title">Ethics</div>
   </a>
 </nav>
 
@@ -317,12 +397,68 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  Chart.defaults.color = '#6b7480';
+  Chart.defaults.borderColor = '#2a3340';
+  Chart.defaults.font.family = "'JetBrains Mono', monospace";
+  
+  const ctx = document.getElementById('cohortChart');
+  const cohortChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['M0', 'M3', 'M6', 'M9', 'M12', 'M18', 'M24', 'M36'],
+      datasets: [{
+        label: '% of cohort retained',
+        data: [],
+        borderColor: '#ff6b35',
+        backgroundColor: 'rgba(255, 107, 53, 0.15)',
+        fill: true,
+        tension: 0.3,
+        pointBackgroundColor: '#ff6b35'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { min: 0, max: 100, ticks: { callback: v => v + '%' }, grid: { color: '#2a3340' } },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+  
+  function calcLTV() {
+    const mrr = +document.getElementById('mrr').value;
+    const churn = +document.getElementById('churn').value / 100;
+    const margin = +document.getElementById('margin').value / 100;
+    const cac = +document.getElementById('cac10').value;
+    
+    const avgLife = 1 / churn;
+    const grossLtv = mrr / churn;
+    const netLtv = grossLtv * margin;
+    const ratio = netLtv / cac;
+    
+    document.getElementById('avgLifeStat').textContent = avgLife.toFixed(1) + ' mo';
+    document.getElementById('grossLtvStat').textContent = fmtMoney(grossLtv);
+    document.getElementById('netLtvStat').textContent = fmtMoney(netLtv);
+    document.getElementById('ratioStat10').textContent = ratio.toFixed(1) + '×';
+    
+    // Cohort curve - exponential decay
+    const months = [0, 3, 6, 9, 12, 18, 24, 36];
+    cohortChart.data.datasets[0].data = months.map(m => Math.pow(1 - churn, m) * 100);
+    cohortChart.update();
+  }
+  
+  document.querySelectorAll('#mrr, #churn, #margin, #cac10').forEach(el => el.addEventListener('input', calcLTV));
+  calcLTV();
+</script>
 
 <!-- Google Translate -->
 <div id="google_translate_element" style="display:none;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar', autoDisplay: false}, 'google_translate_element');
+  new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false}, 'google_translate_element');
 }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

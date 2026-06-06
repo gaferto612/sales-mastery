@@ -3,133 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 7 · Negotiation — Sales Mastery</title>
+<title>Module 6 · Copywriting &amp; Marketing — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-  /* BATNA / ZOPA visualizer */
-  .zopa-viz {
-    margin: 32px 0;
-    padding: 32px 24px;
+  .framework-card {
     background: var(--ink);
     border: 1px solid var(--line);
-  }
-  .zopa-bar {
-    position: relative;
-    height: 80px;
-    background: var(--ink-soft);
-    margin: 40px 0 32px;
-    border-radius: 4px;
-  }
-  .zopa-range {
-    position: absolute;
-    top: 0; bottom: 0;
-    background: linear-gradient(90deg, rgba(74,157,111,0.2), rgba(74,157,111,0.5));
-    border-left: 2px solid var(--green);
-    border-right: 2px solid var(--green);
-  }
-  .zopa-marker {
-    position: absolute;
-    top: -28px; bottom: -28px;
-    width: 2px;
-    background: var(--orange);
-  }
-  .zopa-marker.gold { background: var(--gold); }
-  .zopa-marker .lbl {
-    position: absolute;
-    bottom: -22px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--orange);
-    white-space: nowrap;
-  }
-  .zopa-marker.gold .lbl { color: var(--gold); }
-  .zopa-marker .val {
-    position: absolute;
-    top: -22px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--paper);
-    white-space: nowrap;
-  }
-  .zopa-zone-label {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-display);
-    font-size: 14px;
-    color: var(--green);
-    font-style: italic;
-  }
-  
-  /* Concession curve */
-  .concession-chart {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 16px;
+    padding: 28px;
     margin: 24px 0;
-    align-items: center;
   }
-  .conc-label {
+  .framework-name {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--paper);
+    margin-bottom: 8px;
+  }
+  .framework-letters {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .letter-box {
+    background: var(--ink-soft);
+    border: 1px solid var(--line);
+    padding: 12px 16px;
+    flex: 1;
+    min-width: 140px;
+  }
+  .letter-box .letter {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--orange);
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .letter-box .word {
     font-family: var(--font-mono);
     font-size: 11px;
-    color: var(--muted);
-    text-align: right;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 4px;
   }
-  .conc-bar {
-    height: 32px;
-    background: linear-gradient(90deg, var(--orange), var(--gold));
-    position: relative;
-  }
-  .conc-bar.bad {
-    background: linear-gradient(90deg, var(--red), var(--gold));
-  }
-  .conc-bar .val {
-    position: absolute;
-    top: 50%; transform: translateY(-50%);
-    right: 12px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--ink);
-    font-weight: 600;
+  .letter-box .desc { font-size: 13px; color: var(--cream); line-height: 1.4; }
+  
+  .headline-output {
+    background: var(--ink);
+    border: 2px dashed var(--orange);
+    padding: 32px;
+    margin: 16px 0;
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--paper);
+    font-weight: 500;
+    line-height: 1.2;
   }
   
-  /* Script accordion */
-  .script-block {
-    background: var(--ink);
-    border-left: 3px solid var(--gold);
-    padding: 18px 22px;
+  .copy-example {
+    background: var(--ink-soft);
+    border-left: 3px solid var(--orange);
+    padding: 20px 24px;
     margin: 16px 0;
     font-family: var(--font-display);
-    font-style: italic;
     font-size: 17px;
-    color: var(--cream);
     line-height: 1.5;
+    color: var(--cream);
   }
-  .script-block::before {
-    content: '"';
-    font-size: 32px;
-    color: var(--gold);
-    line-height: 0;
-    position: relative;
-    top: 8px;
-    margin-right: 4px;
+  .copy-example.bad { border-left-color: var(--red); }
+  .copy-example .label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 8px;
+    display: block;
   }
-  .script-block::after {
-    content: '"';
-    font-size: 32px;
-    color: var(--gold);
-    line-height: 0;
-    position: relative;
-    top: 8px;
-    margin-left: 4px;
+  .copy-example.bad .label { color: var(--red); }
+  
+  .trigger-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin: 32px 0;
+  }
+  .trigger {
+    background: var(--ink);
+    padding: 20px;
+    text-align: center;
+  }
+  .trigger-name {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--orange);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .trigger-desc { font-size: 12px; color: var(--muted); }
+  
+  /* Banned words */
+  .banned-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+  .banned {
+    background: rgba(193,85,74,0.15);
+    color: var(--red);
+    border: 1px solid var(--red);
+    padding: 6px 14px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: lowercase;
+    border-radius: 2px;
+    text-decoration: line-through;
   }
 </style>
 </head>
@@ -149,13 +143,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">07</span>Negotiation</div>
-  <h1 class="module-title">Bargaining <em>without losing.</em></h1>
-  <p class="lede">Negotiation isn't winning at the other side's expense. The best negotiators leave both parties feeling they got the deal they needed — and willing to work together again.</p>
+  <div class="eyebrow"><span class="num">07</span>Copywriting &amp; Marketing</div>
+  <h1 class="module-title">Salesmanship <em>in print.</em></h1>
+  <p class="lede">Copywriting is salesmanship in print — John E. Kennedy's 1904 definition, still the cleanest one. Every piece of marketing has the same goal as a salesperson in a conversation: move someone, one decision at a time.</p>
   <div class="meta-strip">
-    <span>30 min read</span>
-    <span>BATNA · ZOPA · anchoring</span>
-    <span>Voss · Fisher &amp; Ury</span>
+    <span>35 min read</span>
+    <span>AIDA · PAS · BAB · StoryBrand</span>
+    <span>Headlines · email · ads · content</span>
   </div>
 </header>
 
@@ -163,270 +157,249 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#mindset">The mindset</a></li>
-      <li><a href="#batna">BATNA &amp; ZOPA</a></li>
-      <li><a href="#anchoring">Anchoring</a></li>
-      <li><a href="#concessions">Concession patterns</a></li>
-      <li><a href="#voss">Tactical empathy</a></li>
-      <li><a href="#scripts">Power scripts</a></li>
-      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#one-person">Write to one person</a></li>
+      <li><a href="#hierarchy">Copy hierarchy</a></li>
+      <li><a href="#headlines">Headlines</a></li>
+      <li><a href="#frameworks">Core frameworks</a></li>
+      <li><a href="#triggers">Buying triggers</a></li>
+      <li><a href="#content">Content marketing</a></li>
+      <li><a href="#email">Email marketing</a></li>
+      <li><a href="#voice">Voice &amp; tone</a></li>
       <li><a href="#exercises">Exercises</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="mindset">
-      <h2>The negotiator's mindset</h2>
-      <p>Three internal shifts to make before any negotiation:</p>
+    <section id="one-person">
+      <h2>The single most important rule</h2>
+      <div class="pullquote">Write to one person.</div>
+      <p>Not "audiences." Not "users." Not "marketers aged 25–45." <strong>One specific human.</strong> Picture them. Name them. Imagine them reading.</p>
+
+      <div class="copy-example bad">
+        <span class="label">Generic marketing speak</span>
+        Our platform empowers teams to streamline workflows.
+      </div>
+      <div class="copy-example">
+        <span class="label">Written to one person</span>
+        If you've ever lost an hour finding a file someone Slacked you three weeks ago, you'll get why we built this.
+      </div>
+
+      <p>The second is also for everyone, but it feels <em>for someone</em>.</p>
+    </section>
+
+    <section id="hierarchy">
+      <h2>The hierarchy of copy</h2>
+      <p>Every piece of writing has parts that matter unequally:</p>
       <ol>
-        <li><strong>You're not adversaries.</strong> You're problem-solvers trying to find a deal that works for both. The other side isn't your enemy — the failed deal is.</li>
-        <li><strong>You can walk away.</strong> The single biggest source of leverage is being willing to leave. If you can't walk, you'll get walked on.</li>
-        <li><strong>It's not personal.</strong> Even if they push hard, their behavior is a tactic, not an attack on you.</li>
+        <li><strong>Headline</strong> — 80% of the work. If the headline fails, the rest never gets read.</li>
+        <li><strong>Subhead / hook</strong> — confirms the promise, earns the next read</li>
+        <li><strong>Lead</strong> — sells the rest of the copy, not the product</li>
+        <li><strong>Body</strong> — proof, mechanism, benefits, story</li>
+        <li><strong>Offer</strong> — what they get, why now, risk reversal</li>
+        <li><strong>CTA</strong> — what to do next, exactly</li>
       </ol>
-
-      <div class="pullquote">
-        He who needs the deal least, wins.
-      </div>
+      <p>Amateurs spend 90% of effort on body. Pros spend 50% on headline and lead alone.</p>
     </section>
 
-    <section id="batna">
-      <h2>BATNA &amp; ZOPA — the two terms that matter</h2>
-      <p><strong>BATNA</strong> = Best Alternative To a Negotiated Agreement. What happens if this deal doesn't happen? Your BATNA is your leverage.</p>
-      <p><strong>ZOPA</strong> = Zone Of Possible Agreement. The range where both sides could plausibly say yes — between your walk-away and theirs.</p>
+    <section id="headlines">
+      <h2>Headlines that work</h2>
 
       <div class="widget">
         <div class="widget-header">
-          <div class="widget-title">ZOPA Visualizer</div>
-          <div class="widget-tag">Where a deal is possible</div>
-        </div>
-        <div class="zopa-viz">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; font-size: 13px; color: var(--muted);">
-            <div>← <strong style="color: var(--paper);">Seller's side</strong> — you want higher</div>
-            <div style="text-align: right;"><strong style="color: var(--paper);">Buyer's side</strong> — they want lower →</div>
-          </div>
-          <div class="zopa-bar">
-            <div class="zopa-range" style="left: 35%; right: 30%;"></div>
-            <div class="zopa-zone-label" style="left: 50%;">ZOPA</div>
-            
-            <div class="zopa-marker" style="left: 15%;">
-              <span class="val">€8K</span>
-              <span class="lbl">Seller opens</span>
-            </div>
-            <div class="zopa-marker gold" style="left: 35%;">
-              <span class="val">€5K</span>
-              <span class="lbl">Seller walks</span>
-            </div>
-            <div class="zopa-marker gold" style="left: 70%;">
-              <span class="val">€7K</span>
-              <span class="lbl">Buyer walks</span>
-            </div>
-            <div class="zopa-marker" style="left: 90%;">
-              <span class="val">€3K</span>
-              <span class="lbl">Buyer opens</span>
-            </div>
-          </div>
-          <p style="font-size: 14px; color: var(--muted); margin-top: 40px;">If seller's minimum is €5K and buyer's maximum is €7K, the deal exists somewhere between. If both walk-aways flip (seller wants &gt;€7K, buyer maxes at €5K) — no ZOPA, no deal, save your breath.</p>
-        </div>
-      </div>
-
-      <div class="callout">
-        <div class="callout-label">Before any negotiation</div>
-        <p>Write down: (1) Your ideal outcome. (2) Your walk-away. (3) Your best guess at <em>their</em> walk-away. (4) Your BATNA. <strong>Without these you're negotiating blind.</strong></p>
-      </div>
-    </section>
-
-    <section id="anchoring">
-      <h2>Anchoring</h2>
-      <p>The first number in a negotiation pulls the final number toward it. <strong>Studies consistently show the anchor moves the outcome by 30–50%.</strong></p>
-
-      <h3>Who anchors first?</h3>
-      <ul>
-        <li><strong>You</strong> — if you have good info on the market and they don't</li>
-        <li><strong>Them</strong> — if you have no idea what's fair (let them reveal range)</li>
-      </ul>
-
-      <h3>Defending against their anchor</h3>
-      <ul>
-        <li><strong>Name it.</strong> "That's quite high — what's that based on?" — refuses to accept the anchor as legitimate</li>
-        <li><strong>Counter-anchor immediately.</strong> Don't accept; bring your own number</li>
-        <li><strong>Range, not point.</strong> "We typically see deals close between X and Y" — sets implicit anchor without committing</li>
-      </ul>
-    </section>
-
-    <section id="concessions">
-      <h2>The concession pattern</h2>
-      <p>How you give ground matters more than how much. <strong>Smaller, slower, more reluctant</strong> concessions signal you're near your limit.</p>
-
-      <div class="widget">
-        <div class="widget-header">
-          <div class="widget-title">Concession Patterns Compared</div>
-          <div class="widget-tag">Same total · different signal</div>
+          <div class="widget-title">Headline Formula Generator</div>
+          <div class="widget-tag">Click to cycle</div>
         </div>
         
-        <h4 style="margin-top: 0; color: var(--green);">✓ Decreasing concessions — "I'm near my limit"</h4>
-        <div class="concession-chart">
-          <div class="conc-label">Round 1</div><div class="conc-bar" style="width: 80%;"><span class="val">€800 off</span></div>
-          <div class="conc-label">Round 2</div><div class="conc-bar" style="width: 50%;"><span class="val">€300 off</span></div>
-          <div class="conc-label">Round 3</div><div class="conc-bar" style="width: 30%;"><span class="val">€150 off</span></div>
-          <div class="conc-label">Round 4</div><div class="conc-bar" style="width: 15%;"><span class="val">€50 off</span></div>
+        <div class="headline-output" id="headlineOutput">How to wake up rested without going to bed early</div>
+        
+        <div class="tabs" style="margin-top: 24px;">
+          <div class="tab-buttons" id="headlineFormulas">
+            <button class="tab-btn active" data-formula="0">How to / without</button>
+            <button class="tab-btn" data-formula="1">Number ways to</button>
+            <button class="tab-btn" data-formula="2">The boring way to</button>
+            <button class="tab-btn" data-formula="3">What X knows about Y</button>
+            <button class="tab-btn" data-formula="4">Stop / start</button>
+            <button class="tab-btn" data-formula="5">Big result in short time</button>
+            <button class="tab-btn" data-formula="6">Why counterintuitive claim</button>
+          </div>
         </div>
-
-        <h4 style="margin-top: 32px; color: var(--red);">✗ Equal concessions — "Plenty more where that came from"</h4>
-        <div class="concession-chart">
-          <div class="conc-label">Round 1</div><div class="conc-bar bad" style="width: 60%;"><span class="val">€325 off</span></div>
-          <div class="conc-label">Round 2</div><div class="conc-bar bad" style="width: 60%;"><span class="val">€325 off</span></div>
-          <div class="conc-label">Round 3</div><div class="conc-bar bad" style="width: 60%;"><span class="val">€325 off</span></div>
-          <div class="conc-label">Round 4</div><div class="conc-bar bad" style="width: 60%;"><span class="val">€325 off</span></div>
-        </div>
-
-        <p style="margin-top: 32px; color: var(--muted); font-size: 14px;">Both total €1,300 off. The decreasing pattern tells the buyer they've already gotten most of what's possible. The flat pattern invites them to keep pushing.</p>
+        
+        <p style="margin-top: 24px; font-family: var(--font-mono); font-size: 13px; color: var(--muted);">
+          Click a formula above to see headlines in that style.
+        </p>
       </div>
 
-      <h3>The trading rule</h3>
-      <p>Never give a concession without getting one. "I can do €X, but I'd need you to commit to a 2-year term." This:</p>
-      <ul>
-        <li>Trains them: every ask costs something</li>
-        <li>Lets you walk away while feeling fair</li>
-        <li>Often reveals what they <em>actually</em> care about</li>
-      </ul>
+      <div class="pullquote">
+        When you have written your headline, you have spent eighty cents of your dollar.
+        <cite>— David Ogilvy</cite>
+      </div>
     </section>
 
-    <section id="voss">
-      <h2>Tactical empathy (Chris Voss)</h2>
-      <p>Chris Voss, former FBI hostage negotiator, brought a different lens: emotion isn't an obstacle to negotiation — it's the medium. His core techniques:</p>
+    <section id="frameworks">
+      <h2>The core copywriting frameworks</h2>
 
-      <h3>Labels</h3>
-      <p>Naming the emotion the other side is feeling. Reduces its intensity by ~50%.</p>
-      <div class="script-block">It sounds like you're worried this won't work for your team specifically.</div>
-      <div class="script-block">It seems like timing is the real issue here.</div>
-
-      <h3>Mirrors</h3>
-      <p>Repeat the last 1–3 words they said, with rising tone. Triggers them to elaborate.</p>
-      <p style="color: var(--muted); font-style: italic; margin-bottom: 8px;">Them: "We just don't have budget for this in Q3."</p>
-      <p style="color: var(--cream); font-style: italic;">You: "...budget in Q3?"</p>
-
-      <h3>Calibrated questions</h3>
-      <p>"How" and "what" questions that force them to think and solve <em>with</em> you. Avoid "why" — sounds accusatory.</p>
-      <div class="script-block">How am I supposed to do that?</div>
-      <div class="script-block">What about this is important to you?</div>
-      <div class="script-block">How would your team feel if we did it this way?</div>
-
-      <h3>The "No" reframe</h3>
-      <p>Most negotiators chase "yes." Voss says <strong>"no" is safer for the other side</strong> — they feel in control. Ask questions that invite "no" early:</p>
-      <div class="script-block">Is now a bad time to talk?</div>
-      <div class="script-block">Have you given up on solving this problem?</div>
-    </section>
-
-    <section id="scripts">
-      <h2>Power scripts</h2>
-      <p>Phrases that diffuse pressure and create space.</p>
-
-      <div class="accordion">
-        <div class="accordion-item">
-          <button class="accordion-trigger">
-            <span><span class="acc-num">01</span> When they push hard on price</span>
-            <span class="acc-icon">+</span>
-          </button>
-          <div class="accordion-content">
-            <div class="script-block">I hear that the price is a stretch. Let me ask — if price weren't an issue, would this be the right solution for you?</div>
-            <p>This separates two objections: <em>price</em> and <em>fit</em>. You can only solve one at a time.</p>
-          </div>
+      <div class="framework-card">
+        <div class="framework-name">AIDA</div>
+        <p style="color: var(--muted); margin-bottom: 16px;">The oldest, still works.</p>
+        <div class="framework-letters">
+          <div class="letter-box"><div class="letter">A</div><div class="word">Attention</div><div class="desc">Grab them</div></div>
+          <div class="letter-box"><div class="letter">I</div><div class="word">Interest</div><div class="desc">Make them want to keep reading</div></div>
+          <div class="letter-box"><div class="letter">D</div><div class="word">Desire</div><div class="desc">Make them want the outcome</div></div>
+          <div class="letter-box"><div class="letter">A</div><div class="word">Action</div><div class="desc">Tell them exactly what to do</div></div>
         </div>
+      </div>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger">
-            <span><span class="acc-num">02</span> When they demand a discount</span>
-            <span class="acc-icon">+</span>
-          </button>
-          <div class="accordion-content">
-            <div class="script-block">I appreciate you asking. What part of the offer would we adjust to bring the price down?</div>
-            <p>Forces a trade. Discounts without trade-offs train them to ask again.</p>
-          </div>
+      <div class="framework-card">
+        <div class="framework-name">PAS</div>
+        <p style="color: var(--muted); margin-bottom: 16px;">Devastatingly effective for direct response.</p>
+        <div class="framework-letters">
+          <div class="letter-box"><div class="letter">P</div><div class="word">Problem</div><div class="desc">Name the pain</div></div>
+          <div class="letter-box"><div class="letter">A</div><div class="word">Agitate</div><div class="desc">Make them feel it</div></div>
+          <div class="letter-box"><div class="letter">S</div><div class="word">Solve</div><div class="desc">Offer your solution</div></div>
         </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger">
-            <span><span class="acc-num">03</span> When they go silent</span>
-            <span class="acc-icon">+</span>
-          </button>
-          <div class="accordion-content">
-            <div class="script-block">Just want to check — have you decided against moving forward? No is a perfectly fine answer.</div>
-            <p>Voss-style. Invites the no, often gets a "no, no, we're still thinking..." with the real reason.</p>
-          </div>
+        <div class="copy-example" style="margin-top: 20px;">
+          Your invoices take 4 hours a week to chase.<br>
+          That's 200 hours a year. Time you'll never get back.<br>
+          Tally automates invoice chasing in 6 minutes a month.
         </div>
+      </div>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger">
-            <span><span class="acc-num">04</span> When they're stalling</span>
-            <span class="acc-icon">+</span>
-          </button>
-          <div class="accordion-content">
-            <div class="script-block">It sounds like the timing isn't right. What would need to be true for this to move forward?</div>
-            <p>Names the stall + opens path. Don't push for "next week" — ask what changes their mind.</p>
-          </div>
+      <div class="framework-card">
+        <div class="framework-name">BAB</div>
+        <p style="color: var(--muted); margin-bottom: 16px;">Before-After-Bridge — perfect for transformation stories.</p>
+        <div class="framework-letters">
+          <div class="letter-box"><div class="letter">B</div><div class="word">Before</div><div class="desc">Their current sucky state</div></div>
+          <div class="letter-box"><div class="letter">A</div><div class="word">After</div><div class="desc">The dream state</div></div>
+          <div class="letter-box"><div class="letter">B</div><div class="word">Bridge</div><div class="desc">Your product is the bridge</div></div>
         </div>
+      </div>
 
-        <div class="accordion-item">
-          <button class="accordion-trigger">
-            <span><span class="acc-num">05</span> When they invoke a competitor</span>
-            <span class="acc-icon">+</span>
-          </button>
-          <div class="accordion-content">
-            <div class="script-block">That's a good option. Help me understand — what would have to be different here for you to choose us?</div>
-            <p>Respect competitor, ask what's missing. Often you can solve it.</p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger">
-            <span><span class="acc-num">06</span> When you need to anchor</span>
-            <span class="acc-icon">+</span>
-          </button>
-          <div class="accordion-content">
-            <div class="script-block">Most customers we work with at this size invest somewhere between €X and €Y per year. Where you land depends on...</div>
-            <p>Range anchor with conditional. Sets reference without committing.</p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger">
-            <span><span class="acc-num">07</span> When walking away</span>
-            <span class="acc-icon">+</span>
-          </button>
-          <div class="accordion-content">
-            <div class="script-block">It sounds like this isn't the right fit right now. I'd rather you wait until it is. Can I check back in three months?</div>
-            <p>Cleanest exit. Keeps the door open. Often triggers them to come back faster.</p>
-          </div>
+      <div class="framework-card">
+        <div class="framework-name">The 4 Ps</div>
+        <div class="framework-letters">
+          <div class="letter-box"><div class="letter">P</div><div class="word">Promise</div><div class="desc">The outcome</div></div>
+          <div class="letter-box"><div class="letter">P</div><div class="word">Picture</div><div class="desc">Paint it vividly</div></div>
+          <div class="letter-box"><div class="letter">P</div><div class="word">Proof</div><div class="desc">Show it's real</div></div>
+          <div class="letter-box"><div class="letter">P</div><div class="word">Push</div><div class="desc">Call to action</div></div>
         </div>
       </div>
     </section>
 
-    <section id="mistakes">
-      <h2>Common mistakes</h2>
+    <section id="triggers">
+      <h2>The big buying triggers</h2>
+      <p>Most copy is some combination of these emotional drivers:</p>
+      <div class="trigger-grid">
+        <div class="trigger"><div class="trigger-name">Greed</div><div class="trigger-desc">Make more</div></div>
+        <div class="trigger"><div class="trigger-name">Fear</div><div class="trigger-desc">Lose less</div></div>
+        <div class="trigger"><div class="trigger-name">Love</div><div class="trigger-desc">Belong, connect</div></div>
+        <div class="trigger"><div class="trigger-name">Status</div><div class="trigger-desc">Be admired</div></div>
+        <div class="trigger"><div class="trigger-name">Curiosity</div><div class="trigger-desc">Find out</div></div>
+        <div class="trigger"><div class="trigger-name">Convenience</div><div class="trigger-desc">Save effort</div></div>
+        <div class="trigger"><div class="trigger-name">Time</div><div class="trigger-desc">Save it, get more</div></div>
+        <div class="trigger"><div class="trigger-name">Health</div><div class="trigger-desc">Feel better, live longer</div></div>
+        <div class="trigger"><div class="trigger-name">Guilt</div><div class="trigger-desc">Fix something</div></div>
+        <div class="trigger"><div class="trigger-name">Identity</div><div class="trigger-desc">This is who I am</div></div>
+      </div>
+      <p>The best copy doesn't pretend the reader is noble. It speaks to the actual driver in plain language without shaming it.</p>
+    </section>
+
+    <section id="content">
+      <h2>Content marketing pyramid</h2>
+      <p>Instead of paying for attention, you earn it by publishing things people actually want to consume.</p>
+
+      <div class="formula" style="font-size: 18px; padding: 24px;">
+        <div style="margin-bottom: 12px;"><span class="var">1× Pillar piece</span> (long-form video, podcast, blog) per week</div>
+        <div style="margin-bottom: 12px; color: var(--muted);">↓ atomized into</div>
+        <div style="margin-bottom: 12px;"><span class="var">3–5× Mid-form</span> (threads, LinkedIn posts, carousels)</div>
+        <div style="margin-bottom: 12px; color: var(--muted);">↓ atomized into</div>
+        <div><span class="var">Daily Short-form</span> (tweets, reels, shorts, stories)</div>
+      </div>
+
+      <p>One pillar piece becomes 20 atomized posts. This is how solo creators look prolific.</p>
+
+      <div class="callout">
+        <div class="callout-label">Rules</div>
+        <p><strong>Solve &gt; sell</strong> · Teach for free, charge for done-for-you<br>
+        <strong>One topic per piece</strong> · Confusion kills<br>
+        <strong>Consistency &gt; virality</strong> · Show up weekly for a year before judging<br>
+        <strong>Distribution &gt; production</strong> · A great post no one sees doesn't exist<br>
+        <strong>Repurpose ruthlessly</strong> · Your audience doesn't see 80% of what you publish</p>
+      </div>
+    </section>
+
+    <section id="email">
+      <h2>Email marketing — the highest-ROI channel</h2>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-num">36×</div>
+          <div class="stat-label">Average reported email marketing ROI per €1 spent</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">80%</div>
+          <div class="stat-label">Healthy ratio of engagement emails to promotional</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5–7</div>
+          <div class="stat-label">Emails in a welcome sequence after signup</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">P.S.</div>
+          <div class="stat-label">Second-most-read line of any email. Use it.</div>
+        </div>
+      </div>
+
+      <h3>Anatomy of a high-performing email</h3>
       <ul>
-        <li>Negotiating against yourself ("I could probably do €X... or even less")</li>
-        <li>Caving the moment they push back</li>
-        <li>Discounting without trading</li>
-        <li>Splitting the difference automatically (it's almost never optimal)</li>
-        <li>Letting emotion drive — yours, not theirs</li>
-        <li>Negotiating without writing down your walk-away first</li>
-        <li>Showing weakness early ("we really need this deal")</li>
+        <li><strong>Subject line</strong> — 4–8 words, curiosity or specificity, no salesy hype</li>
+        <li><strong>Preview text</strong> — extends the subject, adds intrigue</li>
+        <li><strong>Opening line</strong> — relevant to <em>them</em>, not "Hope you're well"</li>
+        <li><strong>Single message</strong> — one idea, one CTA</li>
+        <li><strong>Plain text often beats HTML</strong> — people reply to emails that look like emails</li>
       </ul>
+    </section>
+
+    <section id="voice">
+      <h2>Voice &amp; tone</h2>
+      <p>The single biggest copy differentiator in 2026 isn't tactics — it's voice.</p>
+
+      <h3>To find your voice</h3>
+      <ul>
+        <li>Write the way you actually talk</li>
+        <li>Read it out loud — if you wouldn't say it, don't write it</li>
+        <li>Use specific words, not corporate ones</li>
+        <li>Have opinions; bland is invisible</li>
+        <li>Repeat your phrases; consistency builds recognition</li>
+      </ul>
+
+      <h3>Words banned from sales copy</h3>
+      <div class="banned-list">
+        <span class="banned">innovative</span>
+        <span class="banned">solutions</span>
+        <span class="banned">cutting-edge</span>
+        <span class="banned">world-class</span>
+        <span class="banned">synergy</span>
+        <span class="banned">best-in-class</span>
+        <span class="banned">empowering</span>
+        <span class="banned">leverage</span>
+        <span class="banned">seamless</span>
+        <span class="banned">disruptive</span>
+      </div>
+      <p style="font-size: 14px; color: var(--muted);">Replace each with a <strong>specific</strong> claim and <strong>proof</strong>.</p>
     </section>
 
     <section id="exercises">
       <h2>Exercises</h2>
       <ol>
-        <li><strong>BATNA audit.</strong> Pick a real upcoming negotiation. Write your BATNA, walk-away, and best guess at theirs. Do this <em>before</em> you talk.</li>
-        <li><strong>Labels drill.</strong> In your next 3 conversations, use one label ("It sounds like..."). Notice what happens.</li>
-        <li><strong>Silent close drill.</strong> After stating a price, count to 10 in your head before saying anything more. Practice the silence.</li>
-        <li><strong>Trade-not-give drill.</strong> Next ask for concession, respond with a trade. Track outcomes vs. just saying yes.</li>
+        <li><strong>Headline drill.</strong> Pick a product. Write 25 headlines using different formulas. Pick the top 3 with a friend.</li>
+        <li><strong>PAS one-pager.</strong> Write a one-page PAS sales letter. Read it out loud — does it sound human?</li>
+        <li><strong>Email teardown.</strong> Subscribe to 5 brands you admire. Save their welcome sequences. What do they share?</li>
+        <li><strong>Voice audit.</strong> Write 100 words about something you care about. Then 100 words about a product. Bring them closer.</li>
       </ol>
 
       <div class="callout tip">
         <div class="callout-label">Further reading</div>
-        <p><em>Never Split the Difference</em> — Chris Voss (essential) · <em>Getting to Yes</em> — Fisher &amp; Ury · <em>Bargaining for Advantage</em> — Richard Shell · <em>Pre-Suasion</em> — Cialdini</p>
+        <p><em>The Boron Letters</em> — Gary Halbert (free online) · <em>Cashvertising</em> — Drew Eric Whitman · <em>Ogilvy on Advertising</em> · <em>Breakthrough Advertising</em> — Eugene Schwartz · <em>$100M Offers</em> — Alex Hormozi</p>
       </div>
     </section>
 
@@ -436,11 +409,11 @@
 <nav class="module-nav">
   <a href="module-06.html" class="prev">
     <div class="dir">← Previous · Module 06</div>
-    <div class="next-title">Copywriting &amp; Marketing</div>
+    <div class="next-title">B2B</div>
   </a>
   <a href="module-08.html" class="next">
     <div class="dir">Next · Module 08</div>
-    <div class="next-title">Objection Handling</div>
+    <div class="next-title">Negotiation</div>
   </a>
 </nav>
 
@@ -449,12 +422,47 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  const headlines = [
+    ["How to wake up rested without going to bed early", "How to write a book without quitting your job", "How to lose 10kg without dieting", "How to get clients without cold calling"],
+    ["7 emails that closed €1.2M in deals", "12 ways to double your open rate", "5 questions that close 80% of demos", "23 cold email templates that actually work"],
+    ["The boring way to get rich", "The unsexy framework for building a brand", "The simple system top reps use to forecast", "The dull truth about viral growth"],
+    ["What enterprise CFOs know about SaaS pricing", "What top freelancers know about contracts", "What real estate pros know about cold calls", "What top YouTubers know about thumbnails"],
+    ["Stop coding alone. Start shipping.", "Stop chasing leads. Start qualifying.", "Stop discounting. Start trading.", "Stop pitching. Start listening."],
+    ["From idea to first sale in 14 days", "First €10K MRR in 90 days", "Closed deal in 3 calls", "Doubled conversion in one week"],
+    ["Why I stopped tracking my time (and earn more)", "Why your best customer is killing your business", "Why discounts cost more than they save", "Why most cold emails fail in the first 6 words"]
+  ];
+  
+  let currentFormula = 0;
+  let cycleIndex = 0;
+  const outputEl = document.getElementById('headlineOutput');
+  
+  document.querySelectorAll('#headlineFormulas .tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentFormula = +btn.dataset.formula;
+      cycleIndex = 0;
+      outputEl.textContent = headlines[currentFormula][cycleIndex];
+    });
+  });
+  
+  outputEl.addEventListener('click', () => {
+    cycleIndex = (cycleIndex + 1) % headlines[currentFormula].length;
+    outputEl.style.opacity = 0;
+    setTimeout(() => {
+      outputEl.textContent = headlines[currentFormula][cycleIndex];
+      outputEl.style.opacity = 1;
+    }, 200);
+  });
+  outputEl.style.cursor = 'pointer';
+  outputEl.style.transition = 'opacity 0.3s';
+  outputEl.title = 'Click for next example';
+</script>
 
 <!-- Google Translate -->
 <div id="google_translate_element" style="display:none;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar', autoDisplay: false}, 'google_translate_element');
+  new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false}, 'google_translate_element');
 }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

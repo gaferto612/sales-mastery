@@ -3,66 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 13 · AI in Sales — Sales Mastery</title>
+<title>Module 13 · Tools &amp; Resources — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-  .ai-grid {
+  .stack-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 200px 1fr;
     gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+  .stack-row:last-child { border-bottom: none; }
+  .stack-cat {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .stack-tools { color: var(--cream); font-size: 15px; }
+  .stack-tools strong { color: var(--paper); }
+  
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 24px 0;
+  }
+  .filter-btn {
+    background: var(--ink);
+    border: 1px solid var(--line);
+    color: var(--muted);
+    padding: 8px 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover { color: var(--paper); border-color: var(--orange); }
+  .filter-btn.active { background: var(--orange); color: var(--ink); border-color: var(--orange); }
+  
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .book {
+    background: var(--ink);
+    border: 1px solid var(--line);
+    padding: 20px;
+    transition: all 0.2s;
+  }
+  .book.hidden { display: none; }
+  .book-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 8px;
+  }
+  .book-title { font-family: var(--font-display); font-size: 18px; color: var(--paper); margin-bottom: 4px; font-weight: 500; line-height: 1.2; }
+  .book-author { font-size: 13px; color: var(--muted); margin-bottom: 8px; font-style: italic; }
+  .book-why { font-size: 13px; color: var(--cream); line-height: 1.5; }
+  
+  /* Career ladder */
+  .ladder {
     margin: 32px 0;
   }
-  .ai-card {
+  .ladder-step {
+    display: grid;
+    grid-template-columns: 100px 1fr 200px;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: center;
+  }
+  .ladder-role {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--paper);
+    font-weight: 500;
+  }
+  .ladder-yrs {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--orange);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .ladder-comp {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--gold);
+    text-align: right;
+  }
+  
+  /* 90-day plan */
+  .plan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .plan-col {
     background: var(--ink);
     border: 1px solid var(--line);
     padding: 24px;
   }
-  .ai-card h3 {
-    font-family: var(--font-display);
-    font-size: 20px;
-    color: var(--paper);
-    margin-top: 0;
-    margin-bottom: 12px;
-  }
-  .ai-card p {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 16px;
-  }
-  .ai-card .tool-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .ai-card .tool-tag {
+  .plan-col h4 {
     font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    background: rgba(200, 67, 26, 0.1);
+    font-size: 11px;
     color: var(--orange);
-    padding: 4px 8px;
-    border-radius: 2px;
-  }
-  
-  .premium-box {
-    background: var(--ink);
-    border-left: 4px solid var(--gold);
-    padding: 24px 32px;
-    margin: 32px 0;
-  }
-  .premium-box h3 {
-    color: var(--gold);
-    font-family: var(--font-display);
-    font-size: 24px;
-    margin-top: 0;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
     margin-bottom: 16px;
   }
-  .premium-box p {
-    color: var(--paper);
-    font-size: 16px;
-    line-height: 1.6;
+  .plan-col p { font-family: var(--font-display); font-size: 18px; color: var(--paper); margin-bottom: 12px; font-weight: 500; line-height: 1.3; }
+  .plan-col ul { margin-left: 18px; }
+  .plan-col li { color: var(--cream); font-size: 14px; margin-bottom: 6px; }
+  
+  @media (max-width: 700px) {
+    .plan-grid { grid-template-columns: 1fr; }
+    .ladder-step { grid-template-columns: 80px 1fr; }
+    .ladder-comp { grid-column: 2; text-align: left; }
+    .stack-row { grid-template-columns: 1fr; gap: 4px; }
   }
 </style>
 </head>
@@ -82,13 +152,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">13</span>AI in Sales</div>
-  <h1 class="module-title">The era of <em>artificial</em> leverage.</h1>
-  <p class="lede">Generative AI has commoditized average sales tactics. When everyone can send 10,000 perfectly spelled emails a day, the baseline changes. Here is how to use AI for leverage, and how to sell when AI does the busywork.</p>
+  <div class="eyebrow"><span class="num">13</span>Tools &amp; Resources</div>
+  <h1 class="module-title">Stack, books, <em>career.</em></h1>
+  <p class="lede">The final module. Everything you need to actually go do this: the modern tech stack, the canonical reading list, the career path, and a 90-day plan to start.</p>
   <div class="meta-strip">
     <span>20 min read</span>
-    <span>Modern tech · Playbooks</span>
-    <span>Advanced</span>
+    <span>Tools · books · career · 90-day plan</span>
+    <span>Use as ongoing reference</span>
   </div>
 </header>
 
@@ -96,87 +166,257 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#paradigm">The new paradigm</a></li>
-      <li><a href="#prospecting">AI-Driven Prospecting</a></li>
-      <li><a href="#analysis">Call Analysis &amp; Coaching</a></li>
-      <li><a href="#premium">The Human Premium</a></li>
-      <li><a href="#traps">The laziness trap</a></li>
+      <li><a href="#stack">The sales tech stack</a></li>
+      <li><a href="#books">Reading list (40+)</a></li>
+      <li><a href="#career">Career ladder</a></li>
+      <li><a href="#plan">90-day starter plan</a></li>
+      <li><a href="#metrics">Metrics dashboard</a></li>
+      <li><a href="#community">Communities &amp; people</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="paradigm">
-      <h2>The new paradigm</h2>
-      <p>Sales has historically been constrained by human labor. To send 100 personalized emails took 10 hours. To review 10 sales calls took 10 hours. AI reduces the marginal cost of these tasks to near zero.</p>
-      <p>This means <strong>average outreach is now spam.</strong> If it looks like an AI wrote it, buyers ignore it. The goal of AI in sales is not to remove the human; it's to automate the research and data gathering so the human can spend 100% of their time on strategy, relationship, and closing.</p>
-    </section>
+    <section id="stack">
+      <h2>The modern sales tech stack</h2>
+      <p>You don't need everything. You do need the right things for your stage.</p>
 
-    <section id="prospecting">
-      <h2>AI-Driven Prospecting</h2>
-      <p>Instead of manually researching prospects, you can now build systems that scrape intent data, analyze 10k reports, and draft emails.</p>
-      
-      <div class="ai-grid">
-        <div class="ai-card">
-          <h3>Hyper-Personalization at Scale</h3>
-          <p>Tools can now ingest a prospect's LinkedIn posts, company press releases, and SEC filings to find specific triggers (e.g., "Just hired a new VP of Sales"). The AI then drafts a highly relevant hook.</p>
-          <div class="tool-tags">
-            <span class="tool-tag">Clay</span>
-            <span class="tool-tag">Apollo</span>
-          </div>
-        </div>
-        <div class="ai-card">
-          <h3>Account Mapping</h3>
-          <p>Provide an AI with a target account's URL and ask it to identify the likely decision-making unit based on industry standards, reporting structures, and recent job postings.</p>
-          <div class="tool-tags">
-            <span class="tool-tag">ChatGPT</span>
-            <span class="tool-tag">Claude</span>
-          </div>
-        </div>
-        <div class="ai-card">
-          <h3>Drafting Copy</h3>
-          <p>Don't ask AI to "write a sales email." Ask it to "extract the top 3 strategic priorities from this company's Q3 earnings call." Use that data to write your own short, punchy email.</p>
-          <div class="tool-tags">
-            <span class="tool-tag">Claude</span>
-            <span class="tool-tag">Perplexity</span>
-          </div>
-        </div>
+      <div class="stack-row">
+        <div class="stack-cat">CRM</div>
+        <div class="stack-tools"><strong>HubSpot</strong> (free tier excellent), <strong>Salesforce</strong> (enterprise standard), <strong>Pipedrive</strong> (small business sweet spot), <strong>Close</strong>, <strong>Attio</strong></div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-cat">Outbound</div>
+        <div class="stack-tools"><strong>Apollo</strong>, <strong>Outreach</strong>, <strong>Salesloft</strong>, <strong>Lemlist</strong>, <strong>Smartlead</strong>, <strong>Instantly</strong></div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-cat">Data &amp; prospecting</div>
+        <div class="stack-tools"><strong>LinkedIn Sales Navigator</strong> (essential), <strong>ZoomInfo</strong>, <strong>Apollo</strong>, <strong>Clay</strong>, <strong>Lusha</strong></div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-cat">Meetings &amp; calls</div>
+        <div class="stack-tools"><strong>Calendly</strong> / <strong>SavvyCal</strong> for booking · <strong>Gong</strong> / <strong>Chorus</strong> / <strong>Fathom</strong> for call recording &amp; AI analysis · <strong>Zoom</strong> / <strong>Google Meet</strong></div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-cat">Proposals &amp; contracts</div>
+        <div class="stack-tools"><strong>PandaDoc</strong>, <strong>DocuSign</strong>, <strong>Proposify</strong>, <strong>Qwilr</strong></div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-cat">E-commerce</div>
+        <div class="stack-tools"><strong>Shopify</strong> (standard), <strong>WooCommerce</strong>, <strong>BigCommerce</strong> + <strong>Klaviyo</strong> for email/SMS</div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-cat">Email marketing</div>
+        <div class="stack-tools"><strong>Klaviyo</strong> (e-com), <strong>ConvertKit</strong> / <strong>Beehiiv</strong> (creators), <strong>MailerLite</strong>, <strong>Customer.io</strong></div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-cat">Analytics</div>
+        <div class="stack-tools"><strong>GA4</strong>, <strong>Mixpanel</strong>, <strong>Amplitude</strong>, <strong>Hotjar</strong> (session recordings)</div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-cat">AI assistants</div>
+        <div class="stack-tools"><strong>Claude</strong> (writing, analysis), <strong>ChatGPT</strong>, <strong>Gong AI</strong> (call summaries), <strong>Clay</strong> (AI-enriched outbound)</div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Rule</div>
+        <p>Tools amplify. They don't replace skill. A €0 stack with great fundamentals beats a €5K/mo stack with bad fundamentals every time.</p>
       </div>
     </section>
 
-    <section id="analysis">
-      <h2>Call Analysis &amp; Coaching</h2>
-      <p>The days of managers randomly listening to a call to give feedback are over. Conversational intelligence platforms now transcribe, analyze, and score every word spoken.</p>
+    <section id="books">
+      <h2>The reading list</h2>
+      <p>40+ books that genuinely move the needle. Click a category to filter.</p>
+
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-tag="all">All</button>
+        <button class="filter-btn" data-tag="foundations">Foundations</button>
+        <button class="filter-btn" data-tag="psych">Psychology</button>
+        <button class="filter-btn" data-tag="copy">Copywriting</button>
+        <button class="filter-btn" data-tag="b2b">B2B</button>
+        <button class="filter-btn" data-tag="neg">Negotiation</button>
+        <button class="filter-btn" data-tag="online">Online</button>
+        <button class="filter-btn" data-tag="tech">Modern SaaS</button>
+        <button class="filter-btn" data-tag="career">Career</button>
+      </div>
+
+      <div class="book-grid" id="bookGrid">
+        <div class="book" data-tag="foundations"><span class="book-tag">Foundations</span><div class="book-title">To Sell Is Human</div><div class="book-author">Daniel Pink</div><div class="book-why">Modern definition of selling. Best starting book if you've never read a sales book.</div></div>
+        <div class="book" data-tag="foundations"><span class="book-tag">Foundations</span><div class="book-title">How to Win Friends and Influence People</div><div class="book-author">Dale Carnegie</div><div class="book-why">From 1936, still works. The human-relations baseline every seller needs.</div></div>
+        <div class="book" data-tag="foundations"><span class="book-tag">Foundations</span><div class="book-title">The Psychology of Selling</div><div class="book-author">Brian Tracy</div><div class="book-why">Classic process-and-mindset book. Useful for retail and field sales.</div></div>
+        <div class="book" data-tag="foundations"><span class="book-tag">Foundations</span><div class="book-title">Selling 101</div><div class="book-author">Zig Ziglar</div><div class="book-why">Old-school, foundational. Some dated, some timeless.</div></div>
+        
+        <div class="book" data-tag="psych"><span class="book-tag">Psychology</span><div class="book-title">Influence</div><div class="book-author">Robert Cialdini</div><div class="book-why">Mandatory. The 7 principles every persuader knows.</div></div>
+        <div class="book" data-tag="psych"><span class="book-tag">Psychology</span><div class="book-title">Pre-Suasion</div><div class="book-author">Robert Cialdini</div><div class="book-why">Cialdini's follow-up: the moment before the pitch matters more than the pitch.</div></div>
+        <div class="book" data-tag="psych"><span class="book-tag">Psychology</span><div class="book-title">Thinking, Fast and Slow</div><div class="book-author">Daniel Kahneman</div><div class="book-why">Heavy but essential. Understanding how buyers really decide.</div></div>
+        <div class="book" data-tag="psych"><span class="book-tag">Psychology</span><div class="book-title">Predictably Irrational</div><div class="book-author">Dan Ariely</div><div class="book-why">More accessible than Kahneman. Pricing experiments are gold.</div></div>
+        <div class="book" data-tag="psych"><span class="book-tag">Psychology</span><div class="book-title">Drive</div><div class="book-author">Daniel Pink</div><div class="book-why">What actually motivates people. Useful for selling internal change.</div></div>
+        
+        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">Breakthrough Advertising</div><div class="book-author">Eugene Schwartz</div><div class="book-why">Bible of direct response. Out of print so it costs €200+ but worth every euro.</div></div>
+        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">The Boron Letters</div><div class="book-author">Gary Halbert</div><div class="book-why">Letters from prison to his son. Free online. Required reading.</div></div>
+        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">Cashvertising</div><div class="book-author">Drew Eric Whitman</div><div class="book-why">8 LF8 (life-force) desires. Practical and applicable.</div></div>
+        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">Ogilvy on Advertising</div><div class="book-author">David Ogilvy</div><div class="book-why">Beautiful book on craft. Worth owning physically.</div></div>
+        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">$100M Offers</div><div class="book-author">Alex Hormozi</div><div class="book-why">How to construct an offer so good people feel stupid saying no. Modern essential.</div></div>
+        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">$100M Leads</div><div class="book-author">Alex Hormozi</div><div class="book-why">Companion to Offers. How to get the leads in the first place.</div></div>
+        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">Building a StoryBrand</div><div class="book-author">Donald Miller</div><div class="book-why">The customer is the hero, you're the guide. Reframes most marketing.</div></div>
+        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">DotCom Secrets</div><div class="book-author">Russell Brunson</div><div class="book-why">Funnel mechanics. Marketing-heavy but useful.</div></div>
+        
+        <div class="book" data-tag="b2b"><span class="book-tag">B2B</span><div class="book-title">SPIN Selling</div><div class="book-author">Neil Rackham</div><div class="book-why">Research-backed B2B framework. Still the gold standard for discovery.</div></div>
+        <div class="book" data-tag="b2b"><span class="book-tag">B2B</span><div class="book-title">The Challenger Sale</div><div class="book-author">Dixon &amp; Adamson</div><div class="book-why">Why top reps challenge buyers' thinking instead of just relationship-building.</div></div>
+        <div class="book" data-tag="b2b"><span class="book-tag">B2B</span><div class="book-title">Predictable Revenue</div><div class="book-author">Aaron Ross</div><div class="book-why">SaaS outbound playbook from the Salesforce era. Still applicable.</div></div>
+        <div class="book" data-tag="b2b"><span class="book-tag">B2B</span><div class="book-title">Gap Selling</div><div class="book-author">Keenan</div><div class="book-why">Selling the gap between current and desired state. Practical and pointed.</div></div>
+        <div class="book" data-tag="b2b"><span class="book-tag">B2B</span><div class="book-title">New Sales. Simplified.</div><div class="book-author">Mike Weinberg</div><div class="book-why">Practical guide to building outbound from scratch.</div></div>
+        <div class="book" data-tag="b2b"><span class="book-tag">B2B</span><div class="book-title">The JOLT Effect</div><div class="book-author">Matthew Dixon</div><div class="book-why">How to overcome customer indecision in B2B sales.</div></div>
+        
+        <div class="book" data-tag="neg"><span class="book-tag">Negotiation</span><div class="book-title">Never Split the Difference</div><div class="book-author">Chris Voss</div><div class="book-why">FBI hostage negotiator's playbook. Practical, immediately applicable.</div></div>
+        <div class="book" data-tag="neg"><span class="book-tag">Negotiation</span><div class="book-title">Getting to Yes</div><div class="book-author">Fisher &amp; Ury</div><div class="book-why">Principled negotiation: separate people from problems.</div></div>
+        <div class="book" data-tag="neg"><span class="book-tag">Negotiation</span><div class="book-title">Bargaining for Advantage</div><div class="book-author">G. Richard Shell</div><div class="book-why">Academic but practical. Wharton-level rigor.</div></div>
+        <div class="book" data-tag="neg"><span class="book-tag">Negotiation</span><div class="book-title">Pitch Anything</div><div class="book-author">Oren Klaff</div><div class="book-why">Frame control. Best book on high-stakes pitches.</div></div>
+        
+        <div class="book" data-tag="online"><span class="book-tag">Online</span><div class="book-title">Hooked</div><div class="book-author">Nir Eyal</div><div class="book-why">Habit formation in product. Useful for retention.</div></div>
+        <div class="book" data-tag="online"><span class="book-tag">Online</span><div class="book-title">Traction</div><div class="book-author">Weinberg &amp; Mares</div><div class="book-why">19 channels for getting to your first customers.</div></div>
+        <div class="book" data-tag="online"><span class="book-tag">Online</span><div class="book-title">Don't Make Me Think</div><div class="book-author">Steve Krug</div><div class="book-why">Usability basics. Stops product pages from leaking.</div></div>
+        <div class="book" data-tag="online"><span class="book-tag">Online</span><div class="book-title">Made to Stick</div><div class="book-author">Chip &amp; Dan Heath</div><div class="book-why">Why some ideas spread. Useful for messaging and content.</div></div>
+        <div class="book" data-tag="online"><span class="book-tag">Online</span><div class="book-title">Contagious</div><div class="book-author">Jonah Berger</div><div class="book-why">What makes things spread. STEPPS framework.</div></div>
+        
+        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">Atomic Habits</div><div class="book-author">James Clear</div><div class="book-why">Daily habits beat sporadic motivation. Sales is a daily-habits game.</div></div>
+        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">Deep Work</div><div class="book-author">Cal Newport</div><div class="book-why">How to focus in an attention-shredded world. Career multiplier.</div></div>
+        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">Give and Take</div><div class="book-author">Adam Grant</div><div class="book-why">Why givers (not pushovers) win long-term in any career.</div></div>
+        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">The Speed of Trust</div><div class="book-author">Stephen M.R. Covey</div><div class="book-why">Trust as an economic accelerator. Sales career foundation.</div></div>
+        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">Mindset</div><div class="book-author">Carol Dweck</div><div class="book-why">Growth mindset. Necessary for handling rejection without burnout.</div></div>
+        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">The Sales Acceleration Formula</div><div class="book-author">Mark Roberge</div><div class="book-why">How to build and scale a sales team (former HubSpot CRO).</div></div>
+        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">From Impossible to Inevitable</div><div class="book-author">Aaron Ross &amp; Jason Lemkin</div><div class="book-why">Scaling sales from €1M to €100M+.</div></div>
+        
+        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">Fanatical Prospecting</div><div class="book-author">Jeb Blount</div><div class="book-why">The 30-day rule. Pipeline discipline in an age of AI noise.</div></div>
+        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">COMBO Prospecting</div><div class="book-author">Tony J. Hughes</div><div class="book-why">Omnichannel outreach for modern, hard-to-reach buyers.</div></div>
+        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">Product-Led Growth</div><div class="book-author">Wes Bush</div><div class="book-why">The handbook for making the product sell itself. Bridge to Module 16.</div></div>
+        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">Mastering Product Experience</div><div class="book-author">Mehta, Steinman, Murphy</div><div class="book-why">Aligning product experience with customer success and sales.</div></div>
+        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">The Qualified Sales Leader</div><div class="book-author">John McMahon</div><div class="book-why">The harsh reality of complex enterprise forecasting, by a 5-time CRO.</div></div>
+        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">MEDDICC</div><div class="book-author">Andy Whyte</div><div class="book-why">The undisputed industry-standard qualification framework for enterprise deals.</div></div>
+        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">Let's Get Real or Let's Not Play</div><div class="book-author">Mahan Khalsa</div><div class="book-why">Masterclass in consultative, high-integrity B2B selling.</div></div>
+      </div>
+    </section>
+
+    <section id="career">
+      <h2>Sales career ladder</h2>
+      <p>Rough European market ranges for tech/B2B. Commission-heavy roles can exceed these substantially.</p>
+
+      <div class="ladder">
+        <div class="ladder-step">
+          <div class="ladder-yrs">Year 0–2</div>
+          <div class="ladder-role">SDR / BDR · Sales / Business Development Rep</div>
+          <div class="ladder-comp">€35–65K OTE</div>
+        </div>
+        <div class="ladder-step">
+          <div class="ladder-yrs">Year 2–5</div>
+          <div class="ladder-role">AE · Account Executive</div>
+          <div class="ladder-comp">€60–150K OTE</div>
+        </div>
+        <div class="ladder-step">
+          <div class="ladder-yrs">Year 4–8</div>
+          <div class="ladder-role">Senior AE / Enterprise AE</div>
+          <div class="ladder-comp">€100–250K+ OTE</div>
+        </div>
+        <div class="ladder-step">
+          <div class="ladder-yrs">Year 6–10</div>
+          <div class="ladder-role">Sales Manager · Team Lead</div>
+          <div class="ladder-comp">€120–250K OTE</div>
+        </div>
+        <div class="ladder-step">
+          <div class="ladder-yrs">Year 8–15</div>
+          <div class="ladder-role">Director of Sales · VP Sales</div>
+          <div class="ladder-comp">€180–400K+ OTE</div>
+        </div>
+        <div class="ladder-step">
+          <div class="ladder-yrs">Year 12+</div>
+          <div class="ladder-role">CRO · Chief Revenue Officer</div>
+          <div class="ladder-comp">€300K–€1M+ OTE</div>
+        </div>
+      </div>
+
+      <h3>Adjacent roles worth knowing</h3>
       <ul>
-        <li><strong>Talk-to-Listen Ratio:</strong> AI tracks if you are monologuing. (Ideal in B2B discovery is 46% rep / 54% buyer).</li>
-        <li><strong>Competitor Mentions:</strong> Automatically flags when a competitor is brought up and tracks win rates when that happens.</li>
-        <li><strong>Objection Mapping:</strong> AI categorizes exactly which objections stall your deals, allowing you to prep specific Voss/Sandler pivots.</li>
-        <li><strong>Automated CRM Updates:</strong> AI writes the MEDDIC notes and updates the CRM fields based on the call transcript, saving reps hours of admin work.</li>
+        <li><strong>Sales Engineer</strong> — technical demos, deal architecture (often €150K+)</li>
+        <li><strong>Customer Success Manager</strong> — post-sale relationship + expansion</li>
+        <li><strong>RevOps</strong> — process, tools, data for sales team (high demand)</li>
+        <li><strong>Sales enablement</strong> — training, coaching, content for sellers</li>
       </ul>
     </section>
 
-    <section id="premium">
-      <div class="premium-box">
-        <h3>The Human Premium</h3>
-        <p>When digital communication becomes infinitely cheap, humans assign premium value to things that are expensive, unscalable, and strictly human.</p>
-        <p><strong>What AI cannot do (where you win):</strong></p>
-        <ul>
-          <li>Look a buyer in the eye and say, "I promise this will work." (Trust)</li>
-          <li>Take a client to dinner to understand the office politics threatening their job. (Empathy)</li>
-          <li>Navigate a tense, emotionally charged negotiation over price. (Emotional Intelligence)</li>
-          <li>Send a handwritten note or a highly customized physical gift. (Unscalable effort)</li>
-        </ul>
-        <p>The sellers who win this decade will use AI for 80% of the busywork, and lean heavily into old-school, high-EQ human tactics for the remaining 20%.</p>
+    <section id="plan">
+      <h2>The 90-day starter plan</h2>
+      <p>If you finished this course and want to actually <em>do</em> the thing — here's a structure.</p>
+
+      <div class="plan-grid">
+        <div class="plan-col">
+          <h4>Days 1–30 · Foundation</h4>
+          <p>Build the base skills before chasing leads.</p>
+          <ul>
+            <li>Modules 0–2, daily</li>
+            <li>Read 2 books: <em>Influence</em> + <em>To Sell Is Human</em></li>
+            <li>Pick your niche / product / vertical</li>
+            <li>Define your ideal customer in one sentence</li>
+            <li>Write your offer using $100M Offers framework</li>
+            <li>Build a simple lead-tracking sheet</li>
+          </ul>
+        </div>
+        <div class="plan-col">
+          <h4>Days 31–60 · Outreach</h4>
+          <p>Start making real contact. Volume matters now.</p>
+          <ul>
+            <li>Modules 3–6, daily</li>
+            <li>50 prospect contacts/week minimum</li>
+            <li>Track conversation → meeting conversion</li>
+            <li>Record every call you legally can</li>
+            <li>Run 5 discovery calls/week</li>
+            <li>Get 3 demos / pitches done</li>
+          </ul>
+        </div>
+        <div class="plan-col">
+          <h4>Days 61–90 · Close</h4>
+          <p>Convert the pipeline. Refine, double down on what works.</p>
+          <ul>
+            <li>Modules 7–11</li>
+            <li>Run negotiation drills weekly</li>
+            <li>Close first deals — small ones count</li>
+            <li>Loss-review every failed deal</li>
+            <li>Implement basic onboarding sequence</li>
+            <li>Ask first customer for referral / testimonial</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-label">After 90 days</div>
+        <p>Audit. What worked? What didn't? Where's the leverage? Most beginners quit at day 60 — the ones who push through to day 90 have a real shot at building a career.</p>
       </div>
     </section>
 
-    <section id="traps">
-      <h2>The Laziness Trap</h2>
-      <p>The biggest risk with AI is outsourcing your thinking. If you let ChatGPT write your emails without heavy editing, you sound like a robot. If you let AI summarize a call and you never listen to the recording, you miss the nuance in the buyer's tone.</p>
-      
-      <div class="callout warn">
-        <div class="callout-label">Warning</div>
-        <p>Do not use AI to replace your judgment. Use it to increase your speed. A bad seller with AI just does bad sales faster.</p>
+    <section id="metrics">
+      <h2>The metrics dashboard</h2>
+      <p>Track these weekly. What gets measured gets improved.</p>
+      <ul>
+        <li><strong>Activity</strong> — calls made, emails sent, meetings booked</li>
+        <li><strong>Conversion rates</strong> — at each stage of your funnel</li>
+        <li><strong>Pipeline coverage</strong> — open pipeline ÷ quota (target: 3–4×)</li>
+        <li><strong>Win rate</strong> — closed-won ÷ (closed-won + closed-lost)</li>
+        <li><strong>Avg deal size</strong> — and trend over time</li>
+        <li><strong>Sales cycle length</strong> — first contact to close</li>
+        <li><strong>Forecast accuracy</strong> — what you committed vs. delivered</li>
+      </ul>
+    </section>
+
+    <section id="community">
+      <h2>Communities &amp; people to follow</h2>
+      <ul>
+        <li><strong>Communities</strong> — Pavilion (sales leaders), Wynter (B2B marketing), RevGenius, Sales Hacker</li>
+        <li><strong>Newsletters</strong> — Lenny's Newsletter (product/sales), Sales Source, Justin Welsh (solopreneur)</li>
+        <li><strong>Podcasts</strong> — 30 Minutes to President's Club, The Sales Hacker Podcast, Founders, Acquired</li>
+        <li><strong>People worth following</strong> — Chris Voss, Alex Hormozi, Justin Welsh, Adam Robinson, Sahil Bloom (general influence), Anthony Iannarino</li>
+      </ul>
+
+      <div class="pullquote">
+        Selling is a craft. Crafts take a decade to master. Start now.
       </div>
     </section>
 
@@ -186,11 +426,11 @@
 <nav class="module-nav">
   <a href="module-12.html" class="prev">
     <div class="dir">← Previous · Module 12</div>
-    <div class="next-title">Tools &amp; Resources</div>
+    <div class="next-title">Ethics</div>
   </a>
   <a href="module-14.html" class="next">
     <div class="dir">Next · Module 14</div>
-    <div class="next-title">Selling AI Products</div>
+    <div class="next-title">AI in Sales</div>
   </a>
 </nav>
 
@@ -199,12 +439,28 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  document.querySelectorAll('#filterBar .filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#filterBar .filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tag = btn.dataset.tag;
+      document.querySelectorAll('#bookGrid .book').forEach(book => {
+        if (tag === 'all' || book.dataset.tag === tag) {
+          book.classList.remove('hidden');
+        } else {
+          book.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
 
 <!-- Google Translate -->
 <div id="google_translate_element" style="display:none;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar', autoDisplay: false}, 'google_translate_element');
+  new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false}, 'google_translate_element');
 }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

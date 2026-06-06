@@ -7,12 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (langToggle) {
     let isArabic = localStorage.getItem('salesMasteryLang') === 'ar';
     
-    // Check if the googtrans cookie is set, sync localStorage if needed
-    if (document.cookie.includes('googtrans=/en/ar')) {
-      isArabic = true;
-      localStorage.setItem('salesMasteryLang', 'ar');
-    }
-    
     const updateUI = (toArabic) => {
       document.documentElement.lang = toArabic ? 'ar' : 'en';
       document.documentElement.dir = toArabic ? 'rtl' : 'ltr';
@@ -26,40 +20,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateUI(isArabic);
 
-    // If Arabic is selected, auto-trigger the Google Translate dropdown once it loads
-    if (isArabic) {
-      document.cookie = "googtrans=/en/ar; path=/";
+    // Robust trigger: wait for the Google Translate combo box to exist in the DOM
+    const triggerTranslate = (targetLang) => {
+      let attempts = 0;
       const interval = setInterval(() => {
         const select = document.querySelector('.goog-te-combo');
         if (select) {
-          if (select.value !== 'ar') {
-            select.value = 'ar';
+          clearInterval(interval);
+          if (select.value !== targetLang) {
+            select.value = targetLang;
             select.dispatchEvent(new Event('change', { bubbles: true }));
           }
-          clearInterval(interval);
         }
+        attempts++;
+        if (attempts > 50) clearInterval(interval); // Give up after 10 seconds
       }, 200);
+    };
+
+    if (isArabic) {
+      triggerTranslate('ar');
     }
 
     langToggle.addEventListener('click', () => {
       isArabic = !isArabic;
+      localStorage.setItem('salesMasteryLang', isArabic ? 'ar' : 'en');
+      updateUI(isArabic);
       
       if (isArabic) {
-        localStorage.setItem('salesMasteryLang', 'ar');
-        document.cookie = "googtrans=/en/ar; path=/";
-        const select = document.querySelector('.goog-te-combo');
-        if (select) {
-          select.value = 'ar';
-          select.dispatchEvent(new Event('change', { bubbles: true }));
-          updateUI(true);
-        } else {
-          location.reload();
-        }
+        triggerTranslate('ar');
       } else {
-        localStorage.setItem('salesMasteryLang', 'en');
+        // Clear cookies just in case, then reload
         document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname + ";";
-        location.reload();
+        let url = window.location.href.split('#')[0];
+        window.location.replace(url);
       }
     });
   }
@@ -137,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const progressCount = document.getElementById('progressCount');
   const progressBar = document.getElementById('progressBar');
   if (progressCount && progressBar) {
-    const totalModules = 17;
+    const totalModules = 19;
     const completedCount = completedModules.length;
     progressCount.textContent = completedCount;
     progressBar.style.width = (completedCount / totalModules * 100) + '%';
@@ -163,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const nextMod = (maxCompleted + 1).toString().padStart(2, '0');
           cta.setAttribute('href', `module-${nextMod}.html`);
         }
-      }
       }
     }
   }

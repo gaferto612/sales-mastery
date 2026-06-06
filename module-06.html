@@ -3,127 +3,120 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 6 · Copywriting &amp; Marketing — Sales Mastery</title>
+<title>Module 5 · B2B Sales — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
-  .framework-card {
-    background: var(--ink);
-    border: 1px solid var(--line);
-    padding: 28px;
+  .compare-table th, .compare-table td { vertical-align: top; }
+  .compare-table .col-label { font-family: var(--font-mono); font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; }
+  
+  /* MEDDIC scorecard */
+  .meddic-grid {
+    display: grid;
+    grid-template-columns: 1fr 60px;
+    gap: 12px 20px;
     margin: 24px 0;
   }
-  .framework-name {
-    font-family: var(--font-display);
-    font-size: 32px;
-    font-weight: 500;
-    color: var(--paper);
-    margin-bottom: 8px;
+  .meddic-row {
+    display: contents;
   }
-  .framework-letters {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-  }
-  .letter-box {
-    background: var(--ink-soft);
-    border: 1px solid var(--line);
-    padding: 12px 16px;
-    flex: 1;
-    min-width: 140px;
-  }
-  .letter-box .letter {
-    font-family: var(--font-display);
-    font-size: 28px;
-    color: var(--orange);
-    font-weight: 600;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-  .letter-box .word {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 4px;
-  }
-  .letter-box .desc { font-size: 13px; color: var(--cream); line-height: 1.4; }
-  
-  .headline-output {
+  .meddic-label {
+    padding: 14px 16px;
     background: var(--ink);
-    border: 2px dashed var(--orange);
-    padding: 32px;
-    margin: 16px 0;
-    text-align: center;
-    min-height: 100px;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--orange);
+  }
+  .meddic-letter {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--orange);
+    font-weight: 500;
+    display: inline-block;
+    width: 32px;
+  }
+  .meddic-name {
+    font-family: var(--font-display);
+    font-size: 17px;
+    color: var(--paper);
+    font-weight: 500;
+  }
+  .meddic-desc {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .meddic-check {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-display);
-    font-size: 28px;
-    color: var(--paper);
-    font-weight: 500;
-    line-height: 1.2;
   }
-  
-  .copy-example {
-    background: var(--ink-soft);
-    border-left: 3px solid var(--orange);
-    padding: 20px 24px;
-    margin: 16px 0;
-    font-family: var(--font-display);
-    font-size: 17px;
-    line-height: 1.5;
-    color: var(--cream);
-  }
-  .copy-example.bad { border-left-color: var(--red); }
-  .copy-example .label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--orange);
-    margin-bottom: 8px;
-    display: block;
-  }
-  .copy-example.bad .label { color: var(--red); }
-  
-  .trigger-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    margin: 32px 0;
-  }
-  .trigger {
+  .meddic-check input { width: 28px; height: 28px; cursor: pointer; accent-color: var(--orange); }
+  .meddic-result {
+    margin-top: 24px;
+    padding: 24px;
     background: var(--ink);
-    padding: 20px;
+    border: 1px solid var(--line);
     text-align: center;
   }
-  .trigger-name {
+  .meddic-score {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--orange);
+    line-height: 1;
+  }
+  
+  /* Stakeholder hex grid */
+  .stakeholder-list {
+    margin: 24px 0;
+  }
+  .stake-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+  .stake-name {
     font-family: var(--font-display);
     font-size: 18px;
-    color: var(--orange);
-    margin-bottom: 6px;
+    color: var(--gold);
     font-weight: 500;
   }
-  .trigger-desc { font-size: 12px; color: var(--muted); }
+  .stake-desc { color: var(--cream); font-size: 15px; line-height: 1.5; }
   
-  /* Banned words */
-  .banned-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
-  .banned {
-    background: rgba(193,85,74,0.15);
-    color: var(--red);
-    border: 1px solid var(--red);
-    padding: 6px 14px;
+  /* Pipeline visualization */
+  .pipeline {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin: 24px 0;
+  }
+  .pipe-stage {
+    padding: 20px 12px;
+    background: var(--ink);
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+  .pipe-stage-name {
     font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.05em;
-    text-transform: lowercase;
-    border-radius: 2px;
-    text-decoration: line-through;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .pipe-stage-count {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--orange);
+    font-weight: 500;
+  }
+  
+  @media (max-width: 700px) {
+    .pipeline { grid-template-columns: repeat(2, 1fr); }
+    .stake-row { grid-template-columns: 1fr; gap: 8px; }
   }
 </style>
 </head>
@@ -143,13 +136,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">06</span>Copywriting &amp; Marketing</div>
-  <h1 class="module-title">Salesmanship <em>in print.</em></h1>
-  <p class="lede">Copywriting is salesmanship in print — John E. Kennedy's 1904 definition, still the cleanest one. Every piece of marketing has the same goal as a salesperson in a conversation: move someone, one decision at a time.</p>
+  <div class="eyebrow"><span class="num">06</span>B2B Sales</div>
+  <h1 class="module-title">Selling to <em>businesses.</em></h1>
+  <p class="lede">B2B isn't about convincing a buyer. It's about helping a coalition of buyers convince each other internally — often without you in the room.</p>
   <div class="meta-strip">
-    <span>35 min read</span>
-    <span>AIDA · PAS · BAB · StoryBrand</span>
-    <span>Headlines · email · ads · content</span>
+    <span>40 min read</span>
+    <span>SPIN · MEDDIC · Challenger</span>
+    <span>Enterprise · SaaS · services</span>
   </div>
 </header>
 
@@ -157,249 +150,304 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#one-person">Write to one person</a></li>
-      <li><a href="#hierarchy">Copy hierarchy</a></li>
-      <li><a href="#headlines">Headlines</a></li>
-      <li><a href="#frameworks">Core frameworks</a></li>
-      <li><a href="#triggers">Buying triggers</a></li>
-      <li><a href="#content">Content marketing</a></li>
-      <li><a href="#email">Email marketing</a></li>
-      <li><a href="#voice">Voice &amp; tone</a></li>
+      <li><a href="#different">How B2B differs</a></li>
+      <li><a href="#committee">The buying committee</a></li>
+      <li><a href="#frameworks">Big frameworks</a></li>
+      <li><a href="#meddic">MEDDIC scorecard</a></li>
+      <li><a href="#outbound">Outbound prospecting</a></li>
+      <li><a href="#discovery">The discovery call</a></li>
+      <li><a href="#pipeline">Pipeline management</a></li>
       <li><a href="#exercises">Exercises</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="one-person">
-      <h2>The single most important rule</h2>
-      <div class="pullquote">Write to one person.</div>
-      <p>Not "audiences." Not "users." Not "marketers aged 25–45." <strong>One specific human.</strong> Picture them. Name them. Imagine them reading.</p>
-
-      <div class="copy-example bad">
-        <span class="label">Generic marketing speak</span>
-        Our platform empowers teams to streamline workflows.
-      </div>
-      <div class="copy-example">
-        <span class="label">Written to one person</span>
-        If you've ever lost an hour finding a file someone Slacked you three weeks ago, you'll get why we built this.
-      </div>
-
-      <p>The second is also for everyone, but it feels <em>for someone</em>.</p>
+    <section id="different">
+      <h2>How B2B differs from B2C</h2>
+      <table class="compare-table">
+        <thead><tr><th>Dimension</th><th>B2C</th><th>B2B</th></tr></thead>
+        <tbody>
+          <tr><td class="col-label">Buyer</td><td>Individual, emotional</td><td>Committee, mostly rational</td></tr>
+          <tr><td class="col-label">Cycle</td><td>Minutes to days</td><td>Weeks to years</td></tr>
+          <tr><td class="col-label">Deal size</td><td>€1–€1,000</td><td>€1,000–€10M+</td></tr>
+          <tr><td class="col-label">Buyer count</td><td>1</td><td>3–10+ in enterprise</td></tr>
+          <tr><td class="col-label">Channels</td><td>Ads, content, retail</td><td>Outbound, content, events</td></tr>
+          <tr><td class="col-label">Decision drivers</td><td>Price, brand, emotion</td><td>ROI, fit, risk, politics</td></tr>
+          <tr><td class="col-label">Churn cost</td><td>Low per customer</td><td>Catastrophic</td></tr>
+        </tbody>
+      </table>
     </section>
 
-    <section id="hierarchy">
-      <h2>The hierarchy of copy</h2>
-      <p>Every piece of writing has parts that matter unequally:</p>
-      <ol>
-        <li><strong>Headline</strong> — 80% of the work. If the headline fails, the rest never gets read.</li>
-        <li><strong>Subhead / hook</strong> — confirms the promise, earns the next read</li>
-        <li><strong>Lead</strong> — sells the rest of the copy, not the product</li>
-        <li><strong>Body</strong> — proof, mechanism, benefits, story</li>
-        <li><strong>Offer</strong> — what they get, why now, risk reversal</li>
-        <li><strong>CTA</strong> — what to do next, exactly</li>
-      </ol>
-      <p>Amateurs spend 90% of effort on body. Pros spend 50% on headline and lead alone.</p>
-    </section>
+    <section id="committee">
+      <h2>The B2B buying committee &amp; Multithreading</h2>
+      <p>In any deal over ~€10K, you're never selling to one person. Map the committee or your deal will die from a stakeholder you didn't know existed.</p>
+      <p><strong>Multithreading</strong> is the practice of building relationships with multiple stakeholders simultaneously. Single-threaded deals (where you only talk to the Champion) are extremely fragile. If they leave the company or lose political capital, your deal dies. You must weave threads to the Economic Buyer and Technical Buyer early.</p>
 
-    <section id="headlines">
-      <h2>Headlines that work</h2>
-
-      <div class="widget">
-        <div class="widget-header">
-          <div class="widget-title">Headline Formula Generator</div>
-          <div class="widget-tag">Click to cycle</div>
+      <div class="stakeholder-list">
+        <div class="stake-row">
+          <div class="stake-name">Champion</div>
+          <div class="stake-desc">Internal advocate. Believes in you. Sells on your behalf when you're not in the room.</div>
         </div>
-        
-        <div class="headline-output" id="headlineOutput">How to wake up rested without going to bed early</div>
-        
-        <div class="tabs" style="margin-top: 24px;">
-          <div class="tab-buttons" id="headlineFormulas">
-            <button class="tab-btn active" data-formula="0">How to / without</button>
-            <button class="tab-btn" data-formula="1">Number ways to</button>
-            <button class="tab-btn" data-formula="2">The boring way to</button>
-            <button class="tab-btn" data-formula="3">What X knows about Y</button>
-            <button class="tab-btn" data-formula="4">Stop / start</button>
-            <button class="tab-btn" data-formula="5">Big result in short time</button>
-            <button class="tab-btn" data-formula="6">Why counterintuitive claim</button>
-          </div>
+        <div class="stake-row">
+          <div class="stake-name">Economic Buyer</div>
+          <div class="stake-desc">Controls the budget. VP, Director, CFO. Often only joins at the end.</div>
         </div>
-        
-        <p style="margin-top: 24px; font-family: var(--font-mono); font-size: 13px; color: var(--muted);">
-          Click a formula above to see headlines in that style.
-        </p>
-      </div>
-
-      <div class="pullquote">
-        When you have written your headline, you have spent eighty cents of your dollar.
-        <cite>— David Ogilvy</cite>
+        <div class="stake-row">
+          <div class="stake-name">End User</div>
+          <div class="stake-desc">Will actually use the product. Opinion matters, but often doesn't decide.</div>
+        </div>
+        <div class="stake-row">
+          <div class="stake-name">Technical / Security</div>
+          <div class="stake-desc">IT, security, legal. Can kill a deal silently.</div>
+        </div>
+        <div class="stake-row">
+          <div class="stake-name">Procurement</div>
+          <div class="stake-desc">Final negotiator. Their job is to squeeze you on price.</div>
+        </div>
+        <div class="stake-row">
+          <div class="stake-name">The Blocker</div>
+          <div class="stake-desc">Someone who doesn't want this to happen. Often invisible until they kill it.</div>
+        </div>
       </div>
     </section>
 
     <section id="frameworks">
-      <h2>The core copywriting frameworks</h2>
+      <h2>The big B2B frameworks</h2>
 
-      <div class="framework-card">
-        <div class="framework-name">AIDA</div>
-        <p style="color: var(--muted); margin-bottom: 16px;">The oldest, still works.</p>
-        <div class="framework-letters">
-          <div class="letter-box"><div class="letter">A</div><div class="word">Attention</div><div class="desc">Grab them</div></div>
-          <div class="letter-box"><div class="letter">I</div><div class="word">Interest</div><div class="desc">Make them want to keep reading</div></div>
-          <div class="letter-box"><div class="letter">D</div><div class="word">Desire</div><div class="desc">Make them want the outcome</div></div>
-          <div class="letter-box"><div class="letter">A</div><div class="word">Action</div><div class="desc">Tell them exactly what to do</div></div>
+      <div class="tabs">
+        <div class="tab-buttons">
+          <button class="tab-btn active">SPIN</button>
+          <button class="tab-btn">MEDDIC</button>
+          <button class="tab-btn">Challenger</button>
+          <button class="tab-btn">Sandler</button>
         </div>
-      </div>
 
-      <div class="framework-card">
-        <div class="framework-name">PAS</div>
-        <p style="color: var(--muted); margin-bottom: 16px;">Devastatingly effective for direct response.</p>
-        <div class="framework-letters">
-          <div class="letter-box"><div class="letter">P</div><div class="word">Problem</div><div class="desc">Name the pain</div></div>
-          <div class="letter-box"><div class="letter">A</div><div class="word">Agitate</div><div class="desc">Make them feel it</div></div>
-          <div class="letter-box"><div class="letter">S</div><div class="word">Solve</div><div class="desc">Offer your solution</div></div>
+        <div class="tab-panel active">
+          <h3 style="margin-top: 0;">SPIN Selling (Neil Rackham, 1988)</h3>
+          <p>A questioning framework based on actual research into what top reps do. Still gold standard for discovery.</p>
+          <ul>
+            <li><strong>S</strong>ituation — understand current state (sparingly; feels like a quiz)</li>
+            <li><strong>P</strong>roblem — uncover pains and dissatisfactions</li>
+            <li><strong>I</strong>mplication — explore what those problems <em>cost</em> them</li>
+            <li><strong>N</strong>eed-payoff — get the buyer to articulate the benefit of solving it</li>
+          </ul>
+          <p>The genius: by the end, the buyer has explained to you why they need to buy.</p>
         </div>
-        <div class="copy-example" style="margin-top: 20px;">
-          Your invoices take 4 hours a week to chase.<br>
-          That's 200 hours a year. Time you'll never get back.<br>
-          Tally automates invoice chasing in 6 minutes a month.
-        </div>
-      </div>
 
-      <div class="framework-card">
-        <div class="framework-name">BAB</div>
-        <p style="color: var(--muted); margin-bottom: 16px;">Before-After-Bridge — perfect for transformation stories.</p>
-        <div class="framework-letters">
-          <div class="letter-box"><div class="letter">B</div><div class="word">Before</div><div class="desc">Their current sucky state</div></div>
-          <div class="letter-box"><div class="letter">A</div><div class="word">After</div><div class="desc">The dream state</div></div>
-          <div class="letter-box"><div class="letter">B</div><div class="word">Bridge</div><div class="desc">Your product is the bridge</div></div>
+        <div class="tab-panel">
+          <h3 style="margin-top: 0;">MEDDPICC</h3>
+          <p>The enterprise evolution of MEDDIC. A qualification framework — answers: "Should I keep spending time on this deal?"</p>
+          <ul>
+            <li><strong>M</strong>etrics — what numerically improves if we win?</li>
+            <li><strong>E</strong>conomic Buyer — have I met the money person?</li>
+            <li><strong>D</strong>ecision Criteria — what will they decide on?</li>
+            <li><strong>D</strong>ecision Process — what's the path to signed?</li>
+            <li><strong>P</strong>aper Process — legal, procurement, and vendor onboarding path.</li>
+            <li><strong>I</strong>dentify Pain — what hurts now? How much?</li>
+            <li><strong>C</strong>hampion — who internally is fighting for us?</li>
+            <li><strong>C</strong>ompetition — including internal builds and "do nothing".</li>
+          </ul>
         </div>
-      </div>
 
-      <div class="framework-card">
-        <div class="framework-name">The 4 Ps</div>
-        <div class="framework-letters">
-          <div class="letter-box"><div class="letter">P</div><div class="word">Promise</div><div class="desc">The outcome</div></div>
-          <div class="letter-box"><div class="letter">P</div><div class="word">Picture</div><div class="desc">Paint it vividly</div></div>
-          <div class="letter-box"><div class="letter">P</div><div class="word">Proof</div><div class="desc">Show it's real</div></div>
-          <div class="letter-box"><div class="letter">P</div><div class="word">Push</div><div class="desc">Call to action</div></div>
+        <div class="tab-panel">
+          <h3 style="margin-top: 0;">Challenger Sale</h3>
+          <p>Top reps don't just relationship-build — they <em>challenge</em> the buyer's worldview.</p>
+          <ol>
+            <li><strong>Teach</strong> — bring a unique insight about their business</li>
+            <li><strong>Tailor</strong> — adapt the insight to their situation</li>
+            <li><strong>Take control</strong> — push back on price, timeline, process when needed</li>
+          </ol>
+          <p>In complex sales, buyers don't know what they need. The best sellers reframe the problem.</p>
+        </div>
+
+        <div class="tab-panel">
+          <h3 style="margin-top: 0;">Sandler Selling</h3>
+          <p>Emphasizes not chasing every deal, getting "no" early, qualifying brutally.</p>
+          <ul>
+            <li><strong>Up-front contracts</strong> — agree on what each meeting will accomplish</li>
+            <li><strong>Pain funnel</strong> — drill into emotional consequences</li>
+            <li><strong>Reverse selling</strong> — when buyer pushes, you back off; this often pulls them in</li>
+            <li><strong>Pain, Budget, Decision</strong> — qualifying triangle</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="triggers">
-      <h2>The big buying triggers</h2>
-      <p>Most copy is some combination of these emotional drivers:</p>
-      <div class="trigger-grid">
-        <div class="trigger"><div class="trigger-name">Greed</div><div class="trigger-desc">Make more</div></div>
-        <div class="trigger"><div class="trigger-name">Fear</div><div class="trigger-desc">Lose less</div></div>
-        <div class="trigger"><div class="trigger-name">Love</div><div class="trigger-desc">Belong, connect</div></div>
-        <div class="trigger"><div class="trigger-name">Status</div><div class="trigger-desc">Be admired</div></div>
-        <div class="trigger"><div class="trigger-name">Curiosity</div><div class="trigger-desc">Find out</div></div>
-        <div class="trigger"><div class="trigger-name">Convenience</div><div class="trigger-desc">Save effort</div></div>
-        <div class="trigger"><div class="trigger-name">Time</div><div class="trigger-desc">Save it, get more</div></div>
-        <div class="trigger"><div class="trigger-name">Health</div><div class="trigger-desc">Feel better, live longer</div></div>
-        <div class="trigger"><div class="trigger-name">Guilt</div><div class="trigger-desc">Fix something</div></div>
-        <div class="trigger"><div class="trigger-name">Identity</div><div class="trigger-desc">This is who I am</div></div>
+    <section id="meddic">
+      <h2>Score your deal: MEDDIC checklist</h2>
+      <p>Check the boxes you can confidently answer. If you can't answer one — that's where to focus next.</p>
+
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">Live MEDDIC Scorecard</div>
+          <div class="widget-tag">Interactive</div>
+        </div>
+
+        <div class="meddic-grid" id="meddicGrid">
+          <div class="meddic-row">
+            <div class="meddic-label"><span class="meddic-letter">M</span><span class="meddic-name">Metrics</span><div class="meddic-desc">I know exactly what numerically improves if they buy.</div></div>
+            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
+          </div>
+          <div class="meddic-row">
+            <div class="meddic-label"><span class="meddic-letter">E</span><span class="meddic-name">Economic Buyer</span><div class="meddic-desc">I've met (or am meeting) the person with the budget.</div></div>
+            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
+          </div>
+          <div class="meddic-row">
+            <div class="meddic-label"><span class="meddic-letter">D</span><span class="meddic-name">Decision Criteria</span><div class="meddic-desc">I know the specific factors the decision will be made on.</div></div>
+            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
+          </div>
+          <div class="meddic-row">
+            <div class="meddic-label"><span class="meddic-letter">D</span><span class="meddic-name">Decision Process</span><div class="meddic-desc">I know every step between now and signed contract.</div></div>
+            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
+          </div>
+          <div class="meddic-row">
+            <div class="meddic-label"><span class="meddic-letter">I</span><span class="meddic-name">Identify Pain</span><div class="meddic-desc">I can quantify what their problem costs them today.</div></div>
+            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
+          </div>
+          <div class="meddic-row">
+            <div class="meddic-label"><span class="meddic-letter">C</span><span class="meddic-name">Champion</span><div class="meddic-desc">I have someone internal actively selling for me.</div></div>
+            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
+          </div>
+        </div>
+
+        <div class="meddic-result">
+          <div class="meddic-score" id="meddicScore">0 / 6</div>
+          <div class="callout-label" id="meddicVerdict" style="margin-top: 12px;">Score your deal</div>
+        </div>
       </div>
-      <p>The best copy doesn't pretend the reader is noble. It speaks to the actual driver in plain language without shaming it.</p>
     </section>
 
-    <section id="content">
-      <h2>Content marketing pyramid</h2>
-      <p>Instead of paying for attention, you earn it by publishing things people actually want to consume.</p>
+    <section id="outbound">
+      <h2>Outbound prospecting in 2026</h2>
+      <p>In B2B you often have to create demand, not just capture it.</p>
 
-      <div class="formula" style="font-size: 18px; padding: 24px;">
-        <div style="margin-bottom: 12px;"><span class="var">1× Pillar piece</span> (long-form video, podcast, blog) per week</div>
-        <div style="margin-bottom: 12px; color: var(--muted);">↓ atomized into</div>
-        <div style="margin-bottom: 12px;"><span class="var">3–5× Mid-form</span> (threads, LinkedIn posts, carousels)</div>
-        <div style="margin-bottom: 12px; color: var(--muted);">↓ atomized into</div>
-        <div><span class="var">Daily Short-form</span> (tweets, reels, shorts, stories)</div>
-      </div>
-
-      <p>One pillar piece becomes 20 atomized posts. This is how solo creators look prolific.</p>
-
-      <div class="callout">
-        <div class="callout-label">Rules</div>
-        <p><strong>Solve &gt; sell</strong> · Teach for free, charge for done-for-you<br>
-        <strong>One topic per piece</strong> · Confusion kills<br>
-        <strong>Consistency &gt; virality</strong> · Show up weekly for a year before judging<br>
-        <strong>Distribution &gt; production</strong> · A great post no one sees doesn't exist<br>
-        <strong>Repurpose ruthlessly</strong> · Your audience doesn't see 80% of what you publish</p>
-      </div>
-    </section>
-
-    <section id="email">
-      <h2>Email marketing — the highest-ROI channel</h2>
-      <div class="stat-grid">
-        <div class="stat">
-          <div class="stat-num">36×</div>
-          <div class="stat-label">Average reported email marketing ROI per €1 spent</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">80%</div>
-          <div class="stat-label">Healthy ratio of engagement emails to promotional</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">5–7</div>
-          <div class="stat-label">Emails in a welcome sequence after signup</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">P.S.</div>
-          <div class="stat-label">Second-most-read line of any email. Use it.</div>
-        </div>
-      </div>
-
-      <h3>Anatomy of a high-performing email</h3>
+      <h3>Cold email</h3>
       <ul>
-        <li><strong>Subject line</strong> — 4–8 words, curiosity or specificity, no salesy hype</li>
-        <li><strong>Preview text</strong> — extends the subject, adds intrigue</li>
-        <li><strong>Opening line</strong> — relevant to <em>them</em>, not "Hope you're well"</li>
-        <li><strong>Single message</strong> — one idea, one CTA</li>
-        <li><strong>Plain text often beats HTML</strong> — people reply to emails that look like emails</li>
+        <li>Personalization is non-negotiable (AI killed generic templates)</li>
+        <li>Subject line: short, specific, no tricks</li>
+        <li>Opening line: about <em>them</em>, not you</li>
+        <li>One clear, low-commitment ask (15-min call, not 60-min demo)</li>
+        <li>5–8 touches over 2–3 weeks</li>
+        <li>Stop when they say no or unsubscribe</li>
+      </ul>
+
+      <h3>Cold calling</h3>
+      <ul>
+        <li>Best times: Tue–Thu, 8–10am or 4–5pm local</li>
+        <li>Opening: pattern interrupt + reason for call + permission</li>
+        <li>Don't pitch — set the meeting</li>
+        <li>Voicemails: short, specific, reason to call back</li>
+      </ul>
+
+      <h3>LinkedIn</h3>
+      <ul>
+        <li>Connect with personalization</li>
+        <li>Don't pitch on the connection request</li>
+        <li>Engage with their content first (comment, share)</li>
+        <li>Then ask for a short conversation</li>
       </ul>
     </section>
 
-    <section id="voice">
-      <h2>Voice &amp; tone</h2>
-      <p>The single biggest copy differentiator in 2026 isn't tactics — it's voice.</p>
+    <section id="discovery">
+      <h2>The discovery call structure</h2>
+      <p>If discovery is great, the demo and close are easy. If discovery is weak, no amount of pitching saves the deal.</p>
 
-      <h3>To find your voice</h3>
-      <ul>
-        <li>Write the way you actually talk</li>
-        <li>Read it out loud — if you wouldn't say it, don't write it</li>
-        <li>Use specific words, not corporate ones</li>
-        <li>Have opinions; bland is invisible</li>
-        <li>Repeat your phrases; consistency builds recognition</li>
-      </ul>
-
-      <h3>Words banned from sales copy</h3>
-      <div class="banned-list">
-        <span class="banned">innovative</span>
-        <span class="banned">solutions</span>
-        <span class="banned">cutting-edge</span>
-        <span class="banned">world-class</span>
-        <span class="banned">synergy</span>
-        <span class="banned">best-in-class</span>
-        <span class="banned">empowering</span>
-        <span class="banned">leverage</span>
-        <span class="banned">seamless</span>
-        <span class="banned">disruptive</span>
+      <div class="sequence">
+        <div class="seq-row"><div class="seq-time">0–2 min</div><div class="seq-content"><h4>Set the agenda</h4><p>"Here's what I'd like to cover: understand your situation, see if there's a fit, decide next steps." Up-front contract.</p></div></div>
+        <div class="seq-row"><div class="seq-time">2–25 min</div><div class="seq-content"><h4>Discover (use SPIN)</h4><p>Current process, what's working / not, what they've tried, cost of status quo, timeline, decision process.</p></div></div>
+        <div class="seq-row"><div class="seq-time">25–30 min</div><div class="seq-content"><h4>Position lightly</h4><p>Brief: how you typically help companies like theirs. Don't full-pitch.</p></div></div>
+        <div class="seq-row"><div class="seq-time">30–33 min</div><div class="seq-content"><h4>Mutual qualification</h4><p>Honestly assess fit out loud. If it's not a fit, say so. Buyers respect this enormously.</p></div></div>
+        <div class="seq-row"><div class="seq-time">33–40 min</div><div class="seq-content"><h4>Next steps</h4><p>Specific: who, what, when. Get it on the calendar before hanging up.</p></div></div>
       </div>
-      <p style="font-size: 14px; color: var(--muted);">Replace each with a <strong>specific</strong> claim and <strong>proof</strong>.</p>
+
+      <div class="pullquote">
+        Target ratio: you talk 30%, they talk 70%.
+      </div>
+    </section>
+
+    <section id="plg">
+      <h2>PLG vs. SLG</h2>
+      <p>Modern SaaS companies operate on two distinct funnels.</p>
+      <ul>
+        <li><strong>Product-Led Growth (PLG):</strong> Users sign up for a free trial or freemium tier without talking to sales. Sales teams (often called "Product-Led Sales") monitor product usage data and only reach out to users showing high engagement ("Product Qualified Leads").</li>
+        <li><strong>Sales-Led Growth (SLG):</strong> Traditional enterprise motion. You prospect into cold accounts, run discovery, and demonstrate value before they ever touch the software.</li>
+      </ul>
+      <p>The best modern reps can execute SLG for massive enterprise deals while simultaneously harvesting low-hanging PLG accounts.</p>
+    </section>
+
+    <section id="pipeline">
+      <h2>Pipeline management</h2>
+      <p>A pipeline is a snapshot of every live deal at every stage. CRM (Salesforce, HubSpot, Pipedrive) is the system of record.</p>
+
+      <div class="pipeline">
+        <div class="pipe-stage">
+          <div class="pipe-stage-name">Lead</div>
+          <div class="pipe-stage-count">40</div>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-stage-name">Qualified</div>
+          <div class="pipe-stage-count">22</div>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-stage-name">Discovery</div>
+          <div class="pipe-stage-count">14</div>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-stage-name">Demo</div>
+          <div class="pipe-stage-count">10</div>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-stage-name">Proposal</div>
+          <div class="pipe-stage-count">7</div>
+        </div>
+        <div class="pipe-stage">
+          <div class="pipe-stage-name">Negotiation</div>
+          <div class="pipe-stage-count">4</div>
+        </div>
+        <div class="pipe-stage" style="border-color: var(--green);">
+          <div class="pipe-stage-name">Won</div>
+          <div class="pipe-stage-count">3</div>
+        </div>
+      </div>
+
+      <div class="mermaid" style="margin: 24px 0; padding: 24px; background: var(--ink); border: 1px solid var(--line); border-radius: 4px;">
+flowchart TD
+    Lead(Lead) --> Discovery{Needs Discovered?}
+    Discovery -- No --> Nurture[Nurture / Marketing]
+    Discovery -- Yes --> Qualify{MEDDIC Pass?}
+    Qualify -- No --> Disqualify[Disqualified]
+    Qualify -- Yes --> Demo(Solution Presentation)
+    Demo --> Proposal{Economic Buyer Approves?}
+    Proposal -- No --> Revise[Revise Business Case]
+    Revise --> Proposal
+    Proposal -- Yes --> Negotiation{Legal/Sec Approved?}
+    Negotiation -- No --> Block[Procurement Blocked]
+    Negotiation -- Yes --> Closed(Closed Won)
+      </div>
+
+      <h3>Pipeline hygiene rules</h3>
+      <ul>
+        <li>Every deal must have a next step with a date</li>
+        <li>No movement in 14 days = at risk</li>
+        <li>Closed-lost is not failure — it's information. Always do a loss review.</li>
+        <li>Want <strong>3–4× quota in pipeline</strong> for safety</li>
+        <li>Forecast accuracy beats optimism</li>
+      </ul>
     </section>
 
     <section id="exercises">
       <h2>Exercises</h2>
       <ol>
-        <li><strong>Headline drill.</strong> Pick a product. Write 25 headlines using different formulas. Pick the top 3 with a friend.</li>
-        <li><strong>PAS one-pager.</strong> Write a one-page PAS sales letter. Read it out loud — does it sound human?</li>
-        <li><strong>Email teardown.</strong> Subscribe to 5 brands you admire. Save their welcome sequences. What do they share?</li>
-        <li><strong>Voice audit.</strong> Write 100 words about something you care about. Then 100 words about a product. Bring them closer.</li>
+        <li><strong>MEDDIC a real deal.</strong> Use the scorecard above. Where are the gaps?</li>
+        <li><strong>SPIN drill.</strong> With a partner, sell a pretend product using only SPIN questions for 10 minutes.</li>
+        <li><strong>Stakeholder map.</strong> Pick a company you'd love to sell to. Map the likely committee with 5 real names from LinkedIn.</li>
+        <li><strong>Mock discovery call</strong> with a friend. Record. Track talk-to-listen ratio. Target 30/70.</li>
       </ol>
 
       <div class="callout tip">
         <div class="callout-label">Further reading</div>
-        <p><em>The Boron Letters</em> — Gary Halbert (free online) · <em>Cashvertising</em> — Drew Eric Whitman · <em>Ogilvy on Advertising</em> · <em>Breakthrough Advertising</em> — Eugene Schwartz · <em>$100M Offers</em> — Alex Hormozi</p>
+        <p><em>SPIN Selling</em> — Neil Rackham · <em>The Challenger Sale</em> — Dixon &amp; Adamson · <em>Predictable Revenue</em> — Aaron Ross · <em>Gap Selling</em> — Keenan</p>
       </div>
     </section>
 
@@ -409,11 +457,11 @@
 <nav class="module-nav">
   <a href="module-05.html" class="prev">
     <div class="dir">← Previous · Module 05</div>
-    <div class="next-title">B2B Sales</div>
+    <div class="next-title">Prospecting</div>
   </a>
   <a href="module-07.html" class="next">
     <div class="dir">Next · Module 07</div>
-    <div class="next-title">Negotiation</div>
+    <div class="next-title">Copywriting</div>
   </a>
 </nav>
 
@@ -423,46 +471,25 @@
 
 <script src="script.js"></script>
 <script>
-  const headlines = [
-    ["How to wake up rested without going to bed early", "How to write a book without quitting your job", "How to lose 10kg without dieting", "How to get clients without cold calling"],
-    ["7 emails that closed €1.2M in deals", "12 ways to double your open rate", "5 questions that close 80% of demos", "23 cold email templates that actually work"],
-    ["The boring way to get rich", "The unsexy framework for building a brand", "The simple system top reps use to forecast", "The dull truth about viral growth"],
-    ["What enterprise CFOs know about SaaS pricing", "What top freelancers know about contracts", "What real estate pros know about cold calls", "What top YouTubers know about thumbnails"],
-    ["Stop coding alone. Start shipping.", "Stop chasing leads. Start qualifying.", "Stop discounting. Start trading.", "Stop pitching. Start listening."],
-    ["From idea to first sale in 14 days", "First €10K MRR in 90 days", "Closed deal in 3 calls", "Doubled conversion in one week"],
-    ["Why I stopped tracking my time (and earn more)", "Why your best customer is killing your business", "Why discounts cost more than they save", "Why most cold emails fail in the first 6 words"]
-  ];
-  
-  let currentFormula = 0;
-  let cycleIndex = 0;
-  const outputEl = document.getElementById('headlineOutput');
-  
-  document.querySelectorAll('#headlineFormulas .tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentFormula = +btn.dataset.formula;
-      cycleIndex = 0;
-      outputEl.textContent = headlines[currentFormula][cycleIndex];
-    });
-  });
-  
-  outputEl.addEventListener('click', () => {
-    cycleIndex = (cycleIndex + 1) % headlines[currentFormula].length;
-    outputEl.style.opacity = 0;
-    setTimeout(() => {
-      outputEl.textContent = headlines[currentFormula][cycleIndex];
-      outputEl.style.opacity = 1;
-    }, 200);
-  });
-  outputEl.style.cursor = 'pointer';
-  outputEl.style.transition = 'opacity 0.3s';
-  outputEl.title = 'Click for next example';
+  const boxes = document.querySelectorAll('.meddic-box');
+  function updateMeddic() {
+    const checked = [...boxes].filter(b => b.checked).length;
+    document.getElementById('meddicScore').textContent = `${checked} / 6`;
+    const v = document.getElementById('meddicVerdict');
+    if (checked === 6) { v.textContent = 'Strong deal · forecast confidently'; v.style.color = 'var(--green)'; }
+    else if (checked >= 4) { v.textContent = 'Promising · close the gaps'; v.style.color = 'var(--gold)'; }
+    else if (checked >= 2) { v.textContent = 'Fragile · go deeper before forecasting'; v.style.color = 'var(--gold)'; }
+    else { v.textContent = 'Speculative · this is hope, not a deal'; v.style.color = 'var(--red)'; }
+  }
+  boxes.forEach(b => b.addEventListener('change', updateMeddic));
+  updateMeddic();
 </script>
 
 <!-- Google Translate -->
 <div id="google_translate_element" style="display:none;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar', autoDisplay: false}, 'google_translate_element');
+  new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false}, 'google_translate_element');
 }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

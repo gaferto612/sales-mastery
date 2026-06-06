@@ -3,89 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 9 · Closing Techniques — Sales Mastery</title>
+<title>Module 8 · Objection Handling — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-  .close-grid {
+  .step-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 12px;
+  }
+  
+  .five-step {
+    margin: 32px 0;
+    border-left: 2px solid var(--line);
+    padding-left: 32px;
+  }
+  .step-row {
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .step-row::before {
+    content: '';
+    position: absolute;
+    left: -39px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    background: var(--orange);
+    border-radius: 50%;
+    border: 3px solid var(--ink);
+  }
+  .step-name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--paper);
+    margin-bottom: 6px;
+  }
+  .step-num-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 4px;
+  }
+  .step-desc { color: var(--cream); font-size: 15px; }
+  
+  .obj-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .obj-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    background: var(--ink-soft);
+    color: var(--muted);
+    border: 1px solid var(--line);
+  }
+  .obj-tag.real { background: rgba(193,85,74,0.15); color: var(--red); border-color: var(--red); }
+  .obj-tag.fake { background: rgba(212,168,67,0.15); color: var(--gold); border-color: var(--gold); }
+  
+  .response-block {
+    background: var(--ink);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    margin: 12px 0;
+    font-style: italic;
+    font-family: var(--font-display);
+    color: var(--cream);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .real-vs-fake {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 1px;
     background: var(--line);
     border: 1px solid var(--line);
-    margin: 32px 0;
+    margin: 24px 0;
   }
-  .close-card {
-    background: var(--ink);
-    padding: 24px;
-    cursor: pointer;
-    transition: background 0.2s;
-    position: relative;
-  }
-  .close-card:hover { background: var(--ink-soft); }
-  .close-card.active {
-    background: var(--ink-soft);
-    border-left: 3px solid var(--orange);
-  }
-  .close-num {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--orange);
-    letter-spacing: 0.2em;
-    margin-bottom: 8px;
-  }
-  .close-name {
-    font-family: var(--font-display);
-    font-size: 20px;
-    color: var(--paper);
-    margin-bottom: 8px;
-    font-weight: 500;
-    line-height: 1.2;
-  }
-  .close-when {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  .close-desc { font-size: 14px; color: var(--cream); line-height: 1.5; }
-  .close-script {
-    margin-top: 12px;
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 15px;
-    color: var(--gold);
-    border-left: 2px solid var(--gold);
-    padding-left: 12px;
-  }
-  .close-card.ethics-warn { border-left: 3px solid var(--red); }
-  .close-card.ethics-warn .close-num { color: var(--red); }
+  .rvf-col { background: var(--ink); padding: 24px; }
+  .rvf-col h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; }
+  .rvf-col.real h4 { color: var(--red); }
+  .rvf-col.fake h4 { color: var(--gold); }
+  .rvf-col ul { margin-left: 18px; }
+  .rvf-col li { font-size: 14px; color: var(--cream); margin-bottom: 8px; }
   
-  .matrix {
-    margin: 32px 0;
-    width: 100%;
+  @media (max-width: 700px) {
+    .real-vs-fake { grid-template-columns: 1fr; }
   }
-  .matrix table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  .matrix th, .matrix td {
-    padding: 12px 16px;
-    border: 1px solid var(--line);
-    font-size: 14px;
-    text-align: left;
-  }
-  .matrix th {
-    background: var(--ink-soft);
-    color: var(--gold);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-  .matrix .col-context { color: var(--cream); font-weight: 500; }
-  .matrix .col-close { color: var(--orange); font-family: var(--font-mono); font-size: 13px; }
 </style>
 </head>
 <body>
@@ -104,13 +126,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">09</span>Closing Techniques</div>
-  <h1 class="module-title">Asking for the <em>decision.</em></h1>
-  <p class="lede">The close is not a moment — it's the natural conclusion of a conversation done well. If you've done the previous steps right, closing is just clarifying the next step.</p>
+  <div class="eyebrow"><span class="num">09</span>Objection Handling</div>
+  <h1 class="module-title">The seven <em>universal</em> "no"s.</h1>
+  <p class="lede">Most objections aren't roadblocks — they're invitations. The buyer is telling you exactly what's standing between them and yes. Your job is to listen to what they said, not what you wish they said.</p>
   <div class="meta-strip">
-    <span>30 min read</span>
-    <span>17 named closes</span>
-    <span>Context-fit matrix</span>
+    <span>25 min read</span>
+    <span>The 5-step framework</span>
+    <span>Scripts for every objection</span>
   </div>
 </header>
 
@@ -118,309 +140,292 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#mindset">Closing mindset</a></li>
-      <li><a href="#when">When to close</a></li>
-      <li><a href="#the-ask">The actual ask</a></li>
-      <li><a href="#seventeen">The 17 closes</a></li>
-      <li><a href="#matrix">Context matrix</a></li>
-      <li><a href="#post">After the close</a></li>
-      <li><a href="#mistakes">Common mistakes</a></li>
+      <li><a href="#why-they-exist">Why objections exist</a></li>
+      <li><a href="#real-vs-fake">Real vs. smokescreen</a></li>
+      <li><a href="#framework">The 5-step framework</a></li>
+      <li><a href="#seven">The 7 universal objections</a></li>
+      <li><a href="#prevent">Preventing objections</a></li>
       <li><a href="#exercises">Exercises</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="mindset">
-      <h2>The closing mindset</h2>
-      <p>Most failed closes aren't tactical failures — they're conviction failures. If you secretly think your product isn't worth the price, the buyer hears it.</p>
-      <ol>
-        <li><strong>Believe in the offer.</strong> If you don't think they should buy, why are you asking?</li>
-        <li><strong>The close is a service.</strong> You're helping them make a decision they're already considering.</li>
-        <li><strong>"No" is fine.</strong> A confident close that gets a no is better than a wishy-washy close that gets a "maybe" you'll chase for 3 months.</li>
-      </ol>
+    <section id="why-they-exist">
+      <h2>Why objections exist</h2>
+      <p>An objection means the buyer is <em>still engaged</em>. They haven't walked away. They're telling you what they need before they can say yes.</p>
+      <p>Most beginners hate objections. Pros welcome them. The deals that close silently with no objections are often the ones that ghost you next week.</p>
 
       <div class="pullquote">
-        Beginners are afraid to ask for the close. Pros realize the close is what the buyer is waiting for.
+        An objection is not a rejection. It's a request for more information.
       </div>
     </section>
 
-    <section id="when">
-      <h2>When to close</h2>
-      <p>Stop pitching the moment you see a buying signal. Continuing after the buyer is sold is the #1 way deals are lost.</p>
-      <ul>
-        <li>They start asking implementation questions</li>
-        <li>They switch from "if" to "when"</li>
-        <li>They ask about pricing details, delivery, guarantee</li>
-        <li>They reference future use ("when we have this...")</li>
-        <li>They go quiet and look like they're thinking</li>
-      </ul>
-      <p>When these appear: trial close, then full close.</p>
+    <section id="real-vs-fake">
+      <h2>Real vs. smokescreen objections</h2>
+      <p>The biggest mistake in objection handling is taking the first objection at face value. Often it's a polite cover for the real concern.</p>
 
-      <h3>Trial closes (test the temperature)</h3>
-      <ul>
-        <li>"How does this sound so far?"</li>
-        <li>"If we could start next week, would that work for your timeline?"</li>
-        <li>"Based on what we've discussed, does this seem like a fit?"</li>
-      </ul>
-    </section>
+      <div class="real-vs-fake">
+        <div class="rvf-col fake">
+          <h4>Smokescreen — what they say</h4>
+          <ul>
+            <li>"It's too expensive"</li>
+            <li>"I need to think about it"</li>
+            <li>"Send me more info"</li>
+            <li>"I'll get back to you"</li>
+            <li>"Let me check with my partner"</li>
+          </ul>
+        </div>
+        <div class="rvf-col real">
+          <h4>Real — what they mean</h4>
+          <ul>
+            <li>"I don't see the value"</li>
+            <li>"I'm not sure this works"</li>
+            <li>"I want to avoid saying no to your face"</li>
+            <li>"I'm not the decision-maker"</li>
+            <li>"I'm afraid of making a mistake"</li>
+          </ul>
+        </div>
+      </div>
 
-    <section id="the-ask">
-      <h2>The actual ask</h2>
-      <p>After the trial close gets a green light, ask for the decision. <strong>Then shut up.</strong></p>
-      <p>Whoever speaks first after "Are you ready to move forward?" usually loses. If you fill the silence, you'll often re-open a settled deal or offer a concession that wasn't needed.</p>
       <div class="callout">
-        <div class="callout-label">Drill</div>
-        <p>Ask the close, count to 10 silently before speaking again. It feels like an eternity. It's not.</p>
+        <div class="callout-label">Diagnostic</div>
+        <p>When you get an objection, ask: <strong>"Is that the main thing, or is there something else?"</strong> Often the second answer is the real one.</p>
       </div>
     </section>
 
-    <section id="seventeen">
-      <h2>The 17 closes</h2>
-      <p>Below are the most-used closes across selling. Some are powerful; some are dated; some are bordering on manipulative. Match the close to the context. Click a card for an example script.</p>
+    <section id="framework">
+      <h2>The universal 5-step framework</h2>
+      <p>Apply this to <em>any</em> objection. Following the order matters — skipping steps is how objections come back.</p>
 
-      <div class="close-grid" id="closeGrid">
+      <div class="five-step">
+        <div class="step-row">
+          <div class="step-num-label">Step 01</div>
+          <div class="step-name">Acknowledge</div>
+          <p class="step-desc">Show you heard them. Don't dismiss, don't immediately counter. "I hear you" or "That makes sense" — even just nodding. The buyer needs to feel heard before they can listen.</p>
+        </div>
+        <div class="step-row">
+          <div class="step-num-label">Step 02</div>
+          <div class="step-name">Clarify</div>
+          <p class="step-desc">Get specific. "When you say expensive — expensive compared to what?" or "What part specifically concerns you?" Most objections are vague; clarification reveals the real one.</p>
+        </div>
+        <div class="step-row">
+          <div class="step-num-label">Step 03</div>
+          <div class="step-name">Empathize</div>
+          <p class="step-desc">Show you understand. "I get why that matters — most of our customers asked the same thing before they bought." This normalizes the concern.</p>
+        </div>
+        <div class="step-row">
+          <div class="step-num-label">Step 04</div>
+          <div class="step-name">Respond</div>
+          <p class="step-desc">Address the actual concern with specifics — reframe, evidence, comparison, story, or trade-off. Not a pitch dump.</p>
+        </div>
+        <div class="step-row">
+          <div class="step-num-label">Step 05</div>
+          <div class="step-name">Confirm</div>
+          <p class="step-desc">Check: "Does that address your concern, or is there something else?" If yes, move forward. If no, you missed it — go back to step 2.</p>
+        </div>
+      </div>
+    </section>
 
-        <div class="close-card" data-close="1">
-          <div class="close-num">01</div>
-          <div class="close-name">Direct Close</div>
-          <div class="close-when">When · obvious fit, mature buyer</div>
-          <div class="close-desc">Just ask. "Want to move forward?" The most underused close in sales.</div>
-          <div class="close-script">Are you ready to move forward?</div>
+    <section id="seven">
+      <h2>The seven universal objections</h2>
+      <p>Across every industry and channel, almost every "no" reduces to one of these seven. Click to see the breakdown for each.</p>
+
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">01 · PRICE</span> "It's too expensive"</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="obj-meta">
+              <span class="obj-tag fake">Often a smokescreen</span>
+              <span class="obj-tag">~40% of all objections</span>
+            </div>
+            <p><strong>What they probably mean:</strong> "I don't see enough value to justify this price."</p>
+            <h4>Clarifying question</h4>
+            <div class="response-block">Expensive compared to what — another option, or just more than you hoped?</div>
+            <h4>Response options</h4>
+            <ul>
+              <li><strong>Reframe to value:</strong> "If this saved you 10 hours a week, what would that be worth?"</li>
+              <li><strong>Break it down:</strong> "At €2,400/year that's €6.50/day — less than coffee."</li>
+              <li><strong>Comparison:</strong> "Compared to the cost of not solving this — what's that costing you currently?"</li>
+              <li><strong>Trade:</strong> "I can do €X if you commit to two years" — never discount without exchange</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="close-card" data-close="2">
-          <div class="close-num">02</div>
-          <div class="close-name">Assumptive Close</div>
-          <div class="close-when">When · strong buying signals shown</div>
-          <div class="close-desc">Skip to logistics. Assumes they've decided.</div>
-          <div class="close-script">Great — should we start the paperwork, or do you want to walk through it once more?</div>
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">02 · TIMING</span> "Not right now"</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="obj-meta">
+              <span class="obj-tag fake">Half real, half smokescreen</span>
+            </div>
+            <p><strong>What they probably mean:</strong> "I'm not convinced enough to prioritize this over other things."</p>
+            <h4>Clarifying question</h4>
+            <div class="response-block">What would need to be true for the timing to be right?</div>
+            <h4>Response options</h4>
+            <ul>
+              <li><strong>Cost of delay:</strong> "What does waiting 6 months cost you?"</li>
+              <li><strong>Set future trigger:</strong> "When should I check back? What will be different then?"</li>
+              <li><strong>Calendar it:</strong> "Let's put it on the calendar for 3 months — that way it doesn't fall off your radar."</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="close-card" data-close="3">
-          <div class="close-num">03</div>
-          <div class="close-name">Alternative Close</div>
-          <div class="close-when">When · multiple options exist</div>
-          <div class="close-desc">Offer two yeses instead of yes/no. Assumes the buy.</div>
-          <div class="close-script">Would you prefer the annual or monthly plan?</div>
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">03 · AUTHORITY</span> "I need to check with..."</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="obj-meta">
+              <span class="obj-tag real">Often legitimate</span>
+            </div>
+            <p><strong>What they probably mean:</strong> Either really true (someone else decides) or a polite stall.</p>
+            <h4>Clarifying question</h4>
+            <div class="response-block">Of course. Who needs to be involved, and what do they typically care about?</div>
+            <h4>Response options</h4>
+            <ul>
+              <li>Offer a meeting with the other person</li>
+              <li>Provide materials they can share with the decision-maker</li>
+              <li>Ask: "What would you say if you were in my position?" — often reveals if it's a stall</li>
+              <li>Anticipate: "What questions do you think they'll have?"</li>
+            </ul>
+            <div class="callout warn" style="margin-top: 16px;">
+              <div class="callout-label">Critical</div>
+              <p>Qualify the decision-making process <em>before</em> the pitch. If you find out someone else decides during objection handling, you wasted the pitch.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="close-card" data-close="4">
-          <div class="close-num">04</div>
-          <div class="close-name">Summary Close</div>
-          <div class="close-when">When · complex, multi-feature deals</div>
-          <div class="close-desc">Recap the value, then ask. Makes the yes feel earned.</div>
-          <div class="close-script">So we've agreed it'll save 10 hours a week, integrate with your stack, and ROI in 6 months. Want to start?</div>
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">04 · FIT</span> "I'm not sure this is right for us"</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="obj-meta">
+              <span class="obj-tag real">Often legitimate</span>
+              <span class="obj-tag">Sometimes you should agree</span>
+            </div>
+            <p><strong>What they probably mean:</strong> Genuine concern about applicability to their specific situation.</p>
+            <h4>Clarifying question</h4>
+            <div class="response-block">What specifically makes you think it might not fit?</div>
+            <h4>Response options</h4>
+            <ul>
+              <li>Find a customer like them, share that story</li>
+              <li>Ask about their situation — match features to specifics</li>
+              <li>Suggest a small trial or proof-of-concept</li>
+              <li><strong>Sometimes:</strong> Agree it's not a fit. Builds enormous trust for the future.</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="close-card" data-close="5">
-          <div class="close-num">05</div>
-          <div class="close-name">Trial Close</div>
-          <div class="close-when">When · testing temperature</div>
-          <div class="close-desc">Soft probe before the real ask.</div>
-          <div class="close-script">If we could start Monday, would that work?</div>
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">05 · COMPETITION</span> "We're looking at [competitor]"</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p><strong>What they probably mean:</strong> "Convince me you're better, or just give me your best price."</p>
+            <h4>Clarifying question</h4>
+            <div class="response-block">That's a great company. What's drawing you to them — and what's making you still consider us?</div>
+            <h4>Response options</h4>
+            <ul>
+              <li>Never trash competitors — sounds insecure</li>
+              <li>Acknowledge their strengths, then differentiate</li>
+              <li>Find the criteria <em>they care about</em>, address those</li>
+              <li>If they're truly better for this case, say so</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="close-card" data-close="6">
-          <div class="close-num">06</div>
-          <div class="close-name">Question Close</div>
-          <div class="close-when">When · they're 80% there</div>
-          <div class="close-desc">Ask what's left between them and yes.</div>
-          <div class="close-script">Is there anything else you need to know before we proceed?</div>
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">06 · TRUST</span> "How do I know this works?"</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p><strong>What they probably mean:</strong> "I'm afraid of making a mistake I'll get blamed for."</p>
+            <h4>Response options</h4>
+            <ul>
+              <li>Case studies and testimonials</li>
+              <li>References they can call</li>
+              <li>Free trial / pilot / money-back</li>
+              <li>Data: numbers, results, third-party validation</li>
+              <li><strong>Risk reversal:</strong> "If this doesn't deliver X in 90 days, full refund."</li>
+            </ul>
+            <p>Trust objections often hide a "fear of looking stupid" — make the decision <em>safe</em> for them personally.</p>
+          </div>
         </div>
 
-        <div class="close-card" data-close="7">
-          <div class="close-num">07</div>
-          <div class="close-name">Silent Close</div>
-          <div class="close-when">When · price is on the table</div>
-          <div class="close-desc">State the offer, go silent. Pressure of silence does the work.</div>
-          <div class="close-script">The total is €4,800. [Wait.]</div>
-        </div>
-
-        <div class="close-card" data-close="8">
-          <div class="close-num">08</div>
-          <div class="close-name">Puppy Dog Close</div>
-          <div class="close-when">When · physical or trial product</div>
-          <div class="close-desc">Let them try it. Endowment effect closes for you.</div>
-          <div class="close-script">Take it home for a week. If you don't love it, bring it back.</div>
-        </div>
-
-        <div class="close-card" data-close="9">
-          <div class="close-num">09</div>
-          <div class="close-name">Takeaway Close</div>
-          <div class="close-when">When · they're being indecisive</div>
-          <div class="close-desc">Suggest they're not a fit. Often triggers them to convince <em>you</em>.</div>
-          <div class="close-script">Honestly — maybe this isn't the right fit for you. Should we hold off?</div>
-        </div>
-
-        <div class="close-card" data-close="10">
-          <div class="close-num">10</div>
-          <div class="close-name">Ben Franklin Close</div>
-          <div class="close-when">When · analytical buyers</div>
-          <div class="close-desc">Write pros and cons together. Helps logical decision-making.</div>
-          <div class="close-script">Let's write down the reasons for and against — together.</div>
-        </div>
-
-        <div class="close-card ethics-warn" data-close="11">
-          <div class="close-num">11</div>
-          <div class="close-name">Scarcity Close</div>
-          <div class="close-when">When · genuinely limited only</div>
-          <div class="close-desc">Use only when scarcity is real. Fake scarcity destroys trust.</div>
-          <div class="close-script">We have two spots left in this cohort. Should I save one?</div>
-        </div>
-
-        <div class="close-card ethics-warn" data-close="12">
-          <div class="close-num">12</div>
-          <div class="close-name">Urgency Close</div>
-          <div class="close-when">When · genuine deadline exists</div>
-          <div class="close-desc">Real time pressure works. Manufactured urgency feels gross fast.</div>
-          <div class="close-script">The Q4 pricing ends Friday. Worth deciding before then?</div>
-        </div>
-
-        <div class="close-card" data-close="13">
-          <div class="close-num">13</div>
-          <div class="close-name">Next-Step Close</div>
-          <div class="close-when">When · long B2B cycles</div>
-          <div class="close-desc">Not "buy now" — "what's the next step?" Always have one.</div>
-          <div class="close-script">What's the right next step from here?</div>
-        </div>
-
-        <div class="close-card" data-close="14">
-          <div class="close-num">14</div>
-          <div class="close-name">1-2-3 Close</div>
-          <div class="close-when">When · summarizing simple offer</div>
-          <div class="close-desc">Brain loves threes. Recap in 3 benefits, then ask.</div>
-          <div class="close-script">So: saves time, saves money, removes risk. Ready?</div>
-        </div>
-
-        <div class="close-card" data-close="15">
-          <div class="close-num">15</div>
-          <div class="close-name">Empathy Close</div>
-          <div class="close-when">When · sensitive or emotional buyers</div>
-          <div class="close-desc">Acknowledge how they're feeling, then ask.</div>
-          <div class="close-script">I can see this is a big decision. What feels right?</div>
-        </div>
-
-        <div class="close-card" data-close="16">
-          <div class="close-num">16</div>
-          <div class="close-name">Conditional Close</div>
-          <div class="close-when">When · objections remain</div>
-          <div class="close-desc">"If I can solve X, will you buy?" — surfaces real blockers.</div>
-          <div class="close-script">If we could include onboarding at no extra cost, would you sign today?</div>
-        </div>
-
-        <div class="close-card" data-close="17">
-          <div class="close-num">17</div>
-          <div class="close-name">Walk-Away Close</div>
-          <div class="close-when">When · the deal isn't a fit</div>
-          <div class="close-desc">Honestly walking away. Builds enormous long-term trust. Often closes anyway.</div>
-          <div class="close-script">I don't think we're the right fit. Let me suggest someone who might be.</div>
+        <div class="accordion-item">
+          <button class="accordion-trigger">
+            <span><span class="acc-num">07 · NEED</span> "I don't really need this"</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="obj-meta">
+              <span class="obj-tag real">Often legitimate</span>
+            </div>
+            <p><strong>What they probably mean:</strong> They either truly don't need it (qualify out — save your time) or haven't realized they do.</p>
+            <h4>Clarifying question</h4>
+            <div class="response-block">Tell me about how you're handling [problem] today.</div>
+            <h4>Response options</h4>
+            <ul>
+              <li>Re-do discovery — find the actual pain</li>
+              <li>Use SPIN's implication questions to amplify pain awareness</li>
+              <li>If pain is genuinely absent, qualify out and move on</li>
+            </ul>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <section id="matrix">
-      <h2>Which close fits which situation?</h2>
-
-      <div class="matrix">
-        <table>
-          <thead>
-            <tr>
-              <th>Situation</th>
-              <th>Best close</th>
-              <th>Why</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="col-context">Simple consumer purchase</td>
-              <td class="col-close">Assumptive, Alternative</td>
-              <td>Reduces decision friction</td>
-            </tr>
-            <tr>
-              <td class="col-context">Long B2B cycle</td>
-              <td class="col-close">Summary, Next-Step</td>
-              <td>Anchors agreement, advances deal</td>
-            </tr>
-            <tr>
-              <td class="col-context">Analytical buyer</td>
-              <td class="col-close">Ben Franklin, Summary</td>
-              <td>Respects their decision style</td>
-            </tr>
-            <tr>
-              <td class="col-context">Indecisive prospect</td>
-              <td class="col-close">Takeaway, Direct</td>
-              <td>Forces a decision, removes "maybe"</td>
-            </tr>
-            <tr>
-              <td class="col-context">High-emotion (real estate, weddings)</td>
-              <td class="col-close">Empathy, Puppy Dog</td>
-              <td>Validates emotion, lets product sell itself</td>
-            </tr>
-            <tr>
-              <td class="col-context">Price objection lingering</td>
-              <td class="col-close">Conditional</td>
-              <td>Surfaces real blocker, trades cleanly</td>
-            </tr>
-            <tr>
-              <td class="col-context">Genuine deadline exists</td>
-              <td class="col-close">Urgency, Scarcity</td>
-              <td>Truthful time pressure works</td>
-            </tr>
-            <tr>
-              <td class="col-context">Not a fit</td>
-              <td class="col-close">Walk-Away</td>
-              <td>Right thing to do, plus often closes</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="callout warn">
-        <div class="callout-label">Ethics watch</div>
-        <p>Closes 11 (scarcity) and 12 (urgency) work only when they're <strong>true</strong>. Fake scarcity creates short-term sales and long-term distrust. If a customer ever finds out the deadline was manufactured, you've lost them and their referrals forever.</p>
-      </div>
-    </section>
-
-    <section id="post">
-      <h2>After the close</h2>
-      <p>The moment after "yes" is when most reps mess up.</p>
+    <section id="prevent">
+      <h2>Preventing objections before they arrive</h2>
+      <p>The best objection handling is making them unnecessary. Address them upstream:</p>
       <ul>
-        <li><strong>Stop selling.</strong> Don't keep extolling features. Confirm and move to logistics.</li>
-        <li><strong>Reduce buyer's remorse.</strong> Briefly reinforce they made a great choice. Specific, not generic.</li>
-        <li><strong>Set expectations.</strong> What happens next: delivery, onboarding, first invoice, etc.</li>
-        <li><strong>Ask for referrals if appropriate.</strong> Buyers feel best about you right after the close.</li>
-        <li><strong>Follow through faster than they expect.</strong> Onboarding speed sets the tone for the whole relationship.</li>
+        <li><strong>Discovery</strong> — uncover budget, authority, timing, fit early so they never become surprises</li>
+        <li><strong>Social proof</strong> — show case studies that match their situation</li>
+        <li><strong>Pre-frame</strong> — "A lot of customers wonder if this would fit a small team. Here's what we typically see..."</li>
+        <li><strong>FAQ in advance</strong> — answer the top 5 objections in your sales page or pitch</li>
+        <li><strong>Risk reversal</strong> — guarantees that pre-empt the trust objection</li>
       </ul>
-    </section>
 
-    <section id="mistakes">
-      <h2>Common closing mistakes</h2>
-      <ul>
-        <li>Never actually asking for the sale</li>
-        <li>Asking and then immediately speaking again (the silent close fail)</li>
-        <li>Continuing to pitch after the buyer is sold</li>
-        <li>Closing too early (before discovery is done)</li>
-        <li>Closing too late (buyer has cooled)</li>
-        <li>Using high-pressure tactics on uncertain buyers</li>
-        <li>Conceding without trading</li>
-        <li>Forgetting to confirm the next step</li>
-      </ul>
+
+      <div class="callout">
+        <div class="callout-label">AI Roleplay Prompt</div>
+        <p>Copy and paste this into ChatGPT or Claude to practice objection handling:</p>
+        <div class="script-block" style="font-size: 13px; font-style: normal; font-family: var(--font-mono); margin-top: 12px; border-color: var(--orange); color: var(--paper);">
+          "Act as a skeptical prospect. We are at the end of a discovery call. I try to set up next steps, and you hit me with the 'We don't have the budget right now' objection. I will practice the 5-step framework (Listen, Acknowledge, Explore, Answer, Confirm) to see if it's a real objection or a smokescreen. Don't make it easy for me. Start by giving me the objection."
+        </div>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-label">Pro move</div>
+        <p><strong>List your objections, then answer each in your pitch.</strong> If you handled "price" before they brought it up, they often don't bring it up at all.</p>
+      </div>
     </section>
 
     <section id="exercises">
       <h2>Exercises</h2>
       <ol>
-        <li><strong>Close inventory.</strong> Pick 5 of the 17 closes that match your context. Write the exact script for each — in your own voice.</li>
-        <li><strong>Silent close drill.</strong> Today: in one conversation, state a price/proposal, then count 10 seconds silently. Track what happens.</li>
-        <li><strong>Trial close drill.</strong> Before any full close this week, use a trial close first. Notice the difference.</li>
-        <li><strong>Buying-signal log.</strong> For one week, log every buying signal you notice in any sales conversation (yours or others). Build the pattern recognition.</li>
+        <li><strong>Top 5 objection log.</strong> Write down the 5 most common objections you (or your industry) hear. Script the 5-step response for each.</li>
+        <li><strong>Real vs. fake drill.</strong> Take 5 recent objections you've heard. For each, write the surface objection and the likely real one.</li>
+        <li><strong>Role-play.</strong> Partner up. They lob random objections from the 7 categories. You respond with the framework. 15 min.</li>
+        <li><strong>Pre-empt audit.</strong> Take your current pitch / sales page. Which of the 7 objections does it address upstream? Add one more.</li>
       </ol>
 
       <div class="callout tip">
         <div class="callout-label">Further reading</div>
-        <p><em>The Closer's Survival Guide</em> — Grant Cardone · <em>The Lost Art of Closing</em> — Anthony Iannarino · <em>Secrets of Closing the Sale</em> — Zig Ziglar (dated but classic)</p>
+        <p><em>Objections</em> — Jeb Blount · <em>The Lost Art of Closing</em> — Anthony Iannarino · <em>Never Split the Difference</em> — Chris Voss</p>
       </div>
     </section>
 
@@ -430,11 +435,11 @@
 <nav class="module-nav">
   <a href="module-08.html" class="prev">
     <div class="dir">← Previous · Module 08</div>
-    <div class="next-title">Objection Handling</div>
+    <div class="next-title">Negotiation</div>
   </a>
   <a href="module-10.html" class="next">
     <div class="dir">Next · Module 10</div>
-    <div class="next-title">Customer Retention</div>
+    <div class="next-title">Closing</div>
   </a>
 </nav>
 
@@ -448,7 +453,7 @@
 <div id="google_translate_element" style="display:none;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar', autoDisplay: false}, 'google_translate_element');
+  new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false}, 'google_translate_element');
 }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
