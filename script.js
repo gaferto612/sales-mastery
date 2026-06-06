@@ -5,8 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const langToggle = document.getElementById('langToggle');
   
   if (langToggle) {
-    let isArabic = localStorage.getItem('salesMasteryLang') === 'ar';
+    // Sync state: check hash, cookie, or localStorage
+    let isArabic = window.location.hash.includes('googtrans(en|ar)') || 
+                   document.cookie.includes('googtrans=/en/ar') || 
+                   localStorage.getItem('salesMasteryLang') === 'ar';
     
+    // If it should be Arabic but hash is missing (e.g. they clicked a link to a new page), add hash and reload
+    if (isArabic && !window.location.hash.includes('googtrans(en|ar)')) {
+      window.location.hash = '#googtrans(en|ar)';
+      location.reload();
+    }
+
     const updateUI = (toArabic) => {
       document.documentElement.lang = toArabic ? 'ar' : 'en';
       document.documentElement.dir = toArabic ? 'rtl' : 'ltr';
@@ -20,38 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateUI(isArabic);
 
-    // Robust trigger: wait for the Google Translate combo box to exist in the DOM
-    const triggerTranslate = (targetLang) => {
-      let attempts = 0;
-      const interval = setInterval(() => {
-        const select = document.querySelector('.goog-te-combo');
-        if (select) {
-          clearInterval(interval);
-          if (select.value !== targetLang) {
-            select.value = targetLang;
-            select.dispatchEvent(new Event('change', { bubbles: true }));
-          }
-        }
-        attempts++;
-        if (attempts > 50) clearInterval(interval); // Give up after 10 seconds
-      }, 200);
-    };
-
-    if (isArabic) {
-      triggerTranslate('ar');
-    }
-
     langToggle.addEventListener('click', () => {
       isArabic = !isArabic;
       localStorage.setItem('salesMasteryLang', isArabic ? 'ar' : 'en');
-      updateUI(isArabic);
       
       if (isArabic) {
-        triggerTranslate('ar');
+        document.cookie = "googtrans=/en/ar; path=/";
+        window.location.hash = '#googtrans(en|ar)';
+        location.reload();
       } else {
-        // Clear cookies just in case, then reload
         document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname + ";";
+        // Clear hash and reload
         let url = window.location.href.split('#')[0];
         window.location.replace(url);
       }
