@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const langToggle = document.getElementById('langToggle');
   
   if (langToggle) {
-    // Sync state: check hash, cookie, or localStorage
-    let isArabic = window.location.hash.includes('googtrans(en|ar)') || 
-                   document.cookie.includes('googtrans=/en/ar') || 
+    // Sync state: check cookie or localStorage
+    let isArabic = document.cookie.includes('googtrans=/en/ar') || 
                    localStorage.getItem('salesMasteryLang') === 'ar';
     
-    // If it should be Arabic but hash is missing (e.g. they clicked a link to a new page), add hash and reload
-    if (isArabic && !window.location.hash.includes('googtrans(en|ar)')) {
-      window.location.hash = '#googtrans(en|ar)';
+    // Auto-set cookie if missing but localStorage says Arabic
+    if (isArabic && !document.cookie.includes('googtrans=/en/ar')) {
+      document.cookie = "googtrans=/en/ar; path=/";
+      document.cookie = "googtrans=/en/ar; path=/; domain=" + location.hostname;
       location.reload();
     }
 
@@ -35,14 +35,18 @@ document.addEventListener('DOMContentLoaded', () => {
       
       if (isArabic) {
         document.cookie = "googtrans=/en/ar; path=/";
-        window.location.hash = '#googtrans(en|ar)';
+        document.cookie = "googtrans=/en/ar; path=/; domain=" + location.hostname;
         location.reload();
       } else {
-        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname + ";";
-        // Clear hash and reload
-        let url = window.location.href.split('#')[0];
-        window.location.replace(url);
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
+        // clear hash if it exists
+        if (window.location.hash.includes('googtrans')) {
+           let url = window.location.href.split('#')[0];
+           window.location.replace(url);
+        } else {
+           location.reload();
+        }
       }
     });
   }
