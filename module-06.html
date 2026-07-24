@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 5 · B2B Sales — Sales Mastery</title>
+<title>Module 06 · B2B Sales — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
@@ -138,11 +138,11 @@
 <header class="page-header">
   <div class="eyebrow"><span class="num">06</span>B2B Sales</div>
   <h1 class="module-title">Selling to <em>businesses.</em></h1>
-  <p class="lede">B2B isn't about convincing a buyer. It's about helping a coalition of buyers convince each other internally — often without you in the room.</p>
+  <p class="lede">B2B isn't about convincing a buyer. It's about navigating complex organizational psychology to help a coalition of buyers convince each other internally—often without you in the room.</p>
   <div class="meta-strip">
-    <span>40 min read</span>
-    <span>SPIN · MEDDIC · Challenger</span>
-    <span>Enterprise · SaaS · services</span>
+    <span>45 min read</span>
+    <span>Organizational Psychology · Game Theory</span>
+    <span>PhD Level Masterclass</span>
   </div>
 </header>
 
@@ -150,94 +150,77 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#different">How B2B differs</a></li>
-      <li><a href="#committee">The buying committee</a></li>
-      <li><a href="#frameworks">Big frameworks</a></li>
-      <li><a href="#meddic">MEDDIC scorecard</a></li>
-      <li><a href="#outbound">Outbound prospecting</a></li>
-      <li><a href="#discovery">The discovery call</a></li>
-      <li><a href="#pipeline">Pipeline management</a></li>
-      <li><a href="#exercises">Exercises</a></li>
+      <li><a href="#academic-foundation">1. Academic Foundation</a></li>
+      <li><a href="#the-buying-committee">2. The Buying Committee</a></li>
+      <li><a href="#multithreading">3. Multithreading & Alignment</a></li>
+      <li><a href="#frameworks">4. Discovery Frameworks</a></li>
+      <li><a href="#case-studies">5. Clinical Case Studies</a></li>
+      <li><a href="#roleplay">6. Tactical Application</a></li>
+      <li><a href="#troubleshooting">7. Troubleshooting Pitfalls</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="different">
-      <h2>How B2B differs from B2C</h2>
-      <table class="compare-table">
-        <thead><tr><th>Dimension</th><th>B2C</th><th>B2B</th></tr></thead>
-        <tbody>
-          <tr><td class="col-label">Buyer</td><td>Individual, emotional</td><td>Committee, mostly rational</td></tr>
-          <tr><td class="col-label">Cycle</td><td>Minutes to days</td><td>Weeks to years</td></tr>
-          <tr><td class="col-label">Deal size</td><td>€1–€1,000</td><td>€1,000–€10M+</td></tr>
-          <tr><td class="col-label">Buyer count</td><td>1</td><td>3–10+ in enterprise</td></tr>
-          <tr><td class="col-label">Channels</td><td>Ads, content, retail</td><td>Outbound, content, events</td></tr>
-          <tr><td class="col-label">Decision drivers</td><td>Price, brand, emotion</td><td>ROI, fit, risk, politics</td></tr>
-          <tr><td class="col-label">Churn cost</td><td>Low per customer</td><td>Catastrophic</td></tr>
-        </tbody>
-      </table>
+    <section id="academic-foundation">
+      <h2>1. Academic Foundation: Transaction Cost Economics & Game Theory</h2>
+      <p>Selling to a business is fundamentally different from selling to an individual. The framework for understanding B2B dynamics relies on <strong>Transaction Cost Economics (Williamson, 1981)</strong> and <strong>Cooperative Game Theory</strong>. In a B2B environment, organizations do not act as monolithic entities; they are networks of individual actors, each trying to minimize their personal transaction costs (effort, risk, and cognitive load) while maximizing their departmental status.</p>
+      <p>When a company makes a $1M software purchase, the "company" isn't buying anything. A coalition of humans is deciding to allocate resources. If the perceived risk of the transaction (a failed deployment, a data breach, a career-ending mistake) outweighs the collective payoff, the system defaults to the status quo.</p>
     </section>
 
-    <section id="committee">
-      <h2>The Modern Buying Committee & RevOps (2026 Shift)</h2>
-      <p>In any deal over ~€10K, you're never selling to one person. In 2026, the average B2B buying committee has expanded to <strong>6.8+ decision-makers</strong>, often involving intense internal conflict. Furthermore, because buyers conduct extensive independent research using AI tools, sellers are entering the deal much later in the cycle.</p>
-      <p><strong>Multithreading</strong> is the practice of building relationships with multiple stakeholders simultaneously. Single-threaded deals (where you only talk to the Mobilizer) are extremely fragile. If they leave the company or lose political capital, your deal dies. You must weave threads to the Economic Buyer, Technical Buyer, and navigate the increasingly mainstream <strong>Revenue Operations (RevOps)</strong> teams early.</p>
-
+    <section id="the-buying-committee">
+      <h2>2. The Buying Committee</h2>
+      <p>In modern enterprise sales, the average buying committee consists of <strong>6.8+ decision-makers</strong>. You are never selling to one person. You are managing a distributed consensus process.</p>
+      
       <div class="stakeholder-list">
         <div class="stake-row">
-          <div class="stake-name">Mobilizer (formerly Champion)</div>
+          <div class="stake-name">Mobilizer (Champion)</div>
           <div class="stake-desc">Internal advocate with political capital. A standard 'Champion' just likes your product; a 'Mobilizer' can actually drive consensus across a conflicted buying committee and force a decision.</div>
         </div>
         <div class="stake-row">
           <div class="stake-name">Economic Buyer</div>
-          <div class="stake-desc">Controls the budget. VP, Director, CFO. Often only joins at the end.</div>
+          <div class="stake-desc">Controls the budget. VP, Director, CFO. Often only joins at the end to validate the financial ROI and negotiate terms.</div>
         </div>
         <div class="stake-row">
           <div class="stake-name">End User</div>
-          <div class="stake-desc">Will actually use the product. Opinion matters, but often doesn't decide.</div>
+          <div class="stake-desc">Will actually use the product. Opinion matters for adoption, but they often lack the authority to sign the contract.</div>
         </div>
         <div class="stake-row">
           <div class="stake-name">Technical / Security</div>
-          <div class="stake-desc">IT, security, legal. Can kill a deal silently.</div>
+          <div class="stake-desc">IT, security, legal. Their mandate is risk mitigation. They can kill a deal silently if their loss-aversion triggers are hit.</div>
         </div>
         <div class="stake-row">
           <div class="stake-name">Procurement</div>
-          <div class="stake-desc">Final negotiator. Their job is to squeeze you on price.</div>
+          <div class="stake-desc">Final negotiator. Their job is to squeeze you on price and protect the company's margin.</div>
         </div>
         <div class="stake-row">
-          <div class="stake-name">The Blocker</div>
-          <div class="stake-desc">Someone who doesn't want this to happen. Often invisible until they kill it.</div>
+          <div class="stake-name">The Saboteur</div>
+          <div class="stake-desc">Someone whose status or budget is threatened by your solution. Often invisible until they derail the deal.</div>
         </div>
       </div>
     </section>
 
+    <section id="multithreading">
+      <h2>3. Multithreading & Biological Alignment</h2>
+      <p>Because the buying committee is a tribe of diverse individuals, they frequently operate in opposing biological states. Marketing might be in a Ventral Vagal state (excited for growth), while IT is in a Sympathetic state (anxious about implementation risk). </p>
+      <p><strong>Multithreading</strong> is the practice of building relationships with multiple stakeholders simultaneously to manage these competing biological states. Single-threaded deals (where you only talk to the Mobilizer) are extremely fragile. If they lose political capital, your deal dies.</p>
+      <p>Elite sellers map the political hierarchy and execute targeted co-regulation for each stakeholder: they bring high energy to the End User, rigorous logic to the Economic Buyer, and extreme physiological grounding (safety) to the Technical/Security buyer.</p>
+    </section>
+
     <section id="frameworks">
-      <h2>The big B2B frameworks</h2>
+      <h2>4. Discovery Frameworks & Qualification</h2>
+      <p>To navigate this complexity, elite reps rely on established frameworks to enforce discipline.</p>
 
       <div class="tabs">
         <div class="tab-buttons">
-          <button class="tab-btn active">SPIN</button>
-          <button class="tab-btn">MEDDIC</button>
+          <button class="tab-btn active">MEDDPICC</button>
+          <button class="tab-btn">SPIN</button>
           <button class="tab-btn">Challenger</button>
-          <button class="tab-btn">Sandler</button>
         </div>
 
         <div class="tab-panel active">
-          <h3 style="margin-top: 0;">SPIN Selling (Neil Rackham, 1988)</h3>
-          <p>A questioning framework based on actual research into what top reps do. Still gold standard for discovery.</p>
-          <ul>
-            <li><strong>S</strong>ituation — understand current state (sparingly; feels like a quiz)</li>
-            <li><strong>P</strong>roblem — uncover pains and dissatisfactions</li>
-            <li><strong>I</strong>mplication — explore what those problems <em>cost</em> them</li>
-            <li><strong>N</strong>eed-payoff — get the buyer to articulate the benefit of solving it</li>
-          </ul>
-          <p>The genius: by the end, the buyer has explained to you why they need to buy.</p>
-        </div>
-
-        <div class="tab-panel">
           <h3 style="margin-top: 0;">MEDDPICC</h3>
-          <p>The enterprise evolution of MEDDIC. A qualification framework — answers: "Should I keep spending time on this deal?"</p>
+          <p>The enterprise standard for qualification. It answers the question: "Should I keep spending time on this deal?"</p>
           <ul>
             <li><strong>M</strong>etrics — what numerically improves if we win?</li>
             <li><strong>E</strong>conomic Buyer — have I met the money person?</li>
@@ -249,6 +232,17 @@
             <li><strong>C</strong>ompetition — including internal builds and "do nothing".</li>
           </ul>
         </div>
+        
+        <div class="tab-panel">
+          <h3 style="margin-top: 0;">SPIN Selling (Neil Rackham, 1988)</h3>
+          <p>A questioning framework based on actual research into what top reps do.</p>
+          <ul>
+            <li><strong>S</strong>ituation — understand current state (sparingly)</li>
+            <li><strong>P</strong>roblem — uncover pains and dissatisfactions</li>
+            <li><strong>I</strong>mplication — explore what those problems <em>cost</em> them</li>
+            <li><strong>N</strong>eed-payoff — get the buyer to articulate the benefit</li>
+          </ul>
+        </div>
 
         <div class="tab-panel">
           <h3 style="margin-top: 0;">Challenger Sale</h3>
@@ -256,27 +250,10 @@
           <ol>
             <li><strong>Teach</strong> — bring a unique insight about their business</li>
             <li><strong>Tailor</strong> — adapt the insight to their situation</li>
-            <li><strong>Take control</strong> — push back on price, timeline, process when needed</li>
+            <li><strong>Take control</strong> — push back on price, timeline, process</li>
           </ol>
-          <p>In complex sales, buyers don't know what they need. The best sellers reframe the problem.</p>
-        </div>
-
-        <div class="tab-panel">
-          <h3 style="margin-top: 0;">Sandler Selling</h3>
-          <p>Emphasizes not chasing every deal, getting "no" early, qualifying brutally.</p>
-          <ul>
-            <li><strong>Up-front contracts</strong> — agree on what each meeting will accomplish</li>
-            <li><strong>Pain funnel</strong> — drill into emotional consequences</li>
-            <li><strong>Reverse selling</strong> — when buyer pushes, you back off; this often pulls them in</li>
-            <li><strong>Pain, Budget, Decision</strong> — qualifying triangle</li>
-          </ul>
         </div>
       </div>
-    </section>
-
-    <section id="meddic">
-      <h2>Score your deal: MEDDIC checklist</h2>
-      <p>Check the boxes you can confidently answer. If you can't answer one — that's where to focus next.</p>
 
       <div class="widget">
         <div class="widget-header">
@@ -290,7 +267,7 @@
             <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
           </div>
           <div class="meddic-row">
-            <div class="meddic-label"><span class="meddic-letter">E</span><span class="meddic-name">Economic Buyer</span><div class="meddic-desc">I've met (or am meeting) the person with the budget.</div></div>
+            <div class="meddic-label"><span class="meddic-letter">E</span><span class="meddic-name">Economic Buyer</span><div class="meddic-desc">I've met the person with the budget.</div></div>
             <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
           </div>
           <div class="meddic-row">
@@ -318,137 +295,52 @@
       </div>
     </section>
 
-    <section id="outbound">
-      <h2>Outbound prospecting in 2026</h2>
-      <p>In B2B you often have to create demand, not just capture it.</p>
+    <section id="case-studies">
+      <h2>5. Clinical Case Studies</h2>
+      
+      <h3>Case Study 1: The $1.2M SaaS Migration (Mobilizer vs Economic Buyer)</h3>
+      <p><strong>Background:</strong> A mid-market HR tech company was selling a complete platform overhaul to a logistics firm. The VP of HR (Mobilizer) loved the product and promised the deal was closed.</p>
+      <p><strong>The Incident:</strong> The seller relied entirely on the VP of HR (single-threaded). When the proposal reached the CFO (Economic Buyer), it was immediately vetoed because the CFO's primary mandate was cash preservation, not HR efficiency.</p>
+      <p><strong>The Fix:</strong> The seller initiated multithreading late, requesting a joint meeting. By applying Game Theory, the seller mapped the CFO's incentive structure and proved that the new platform would reduce compliance audit penalties by $400K annually—a metric the CFO cared about.</p>
+      <p><strong>The Result:</strong> The CFO approved the $1.2M CapEx because the seller aligned the solution with the Economic Buyer's specific transaction costs, rather than relying on the Mobilizer's emotional excitement.</p>
 
-      <h3>Cold email</h3>
-      <ul>
-        <li>Personalization is non-negotiable (AI killed generic templates)</li>
-        <li>Subject line: short, specific, no tricks</li>
-        <li>Opening line: about <em>them</em>, not you</li>
-        <li>One clear, low-commitment ask (15-min call, not 60-min demo)</li>
-        <li>5–8 touches over 2–3 weeks</li>
-        <li>Stop when they say no or unsubscribe</li>
-      </ul>
+      <h3>Case Study 2: The $3.5M Industrial Robotics CapEx (Saboteur Neutralization)</h3>
+      <p><strong>Background:</strong> An industrial robotics firm was pitching an automated sorting arm to a massive warehouse operator. The VP of Operations was eager to modernize.</p>
+      <p><strong>The Incident:</strong> The Floor Manager (Saboteur) began actively blocking the deployment, fabricating safety concerns. The amateur rep tried to argue with the Floor Manager using data (logic).</p>
+      <p><strong>The Biological Reality:</strong> The Floor Manager felt an intense status threat; the robots would make his manual scheduling expertise obsolete. His Sympathetic nervous system viewed the rep as a predator.</p>
+      <p><strong>The Result:</strong> The elite rep co-regulated the Saboteur by offering him an exclusive certification in "Robotic Fleet Management," elevating his status from manual supervisor to tech manager. The Saboteur became a Co-Champion, and the $3.5M deal cleared.</p>
 
-      <h3>Cold calling</h3>
-      <ul>
-        <li>Best times: Tue–Thu, 8–10am or 4–5pm local</li>
-        <li>Opening: pattern interrupt + reason for call + permission</li>
-        <li>Don't pitch — set the meeting</li>
-        <li>Voicemails: short, specific, reason to call back</li>
-      </ul>
-
-      <h3>LinkedIn</h3>
-      <ul>
-        <li>Connect with personalization</li>
-        <li>Don't pitch on the connection request</li>
-        <li>Engage with their content first (comment, share)</li>
-        <li>Then ask for a short conversation</li>
-      </ul>
+      <h3>Case Study 3: The $800K Enterprise Data Pipeline (Procurement Lock-Out)</h3>
+      <p><strong>Background:</strong> A data startup was at the finish line of an $800K deal. Procurement stepped in and demanded a 30% discount, citing a competitor's pricing.</p>
+      <p><strong>The Incident:</strong> The startup's AE panicked (Fight/Flight) and offered 20% off. Procurement immediately demanded 25%.</p>
+      <p><strong>The Re-Orientation:</strong> The AE realized they were playing Procurement's game. They paused, grounded themselves (Ventral Vagal), and multithreaded back to the CTO (Mobilizer): <em>"Procurement is forcing us to strip out the real-time analytics module to meet their price. Do you want to proceed without real-time?"</em></p>
+      <p><strong>The Result:</strong> The CTO, furious at losing critical features, bypassed Procurement and authorized the purchase at full price. The AE weaponized internal alignment to neutralize the Procurement threat.</p>
     </section>
 
-    <section id="discovery">
-      <h2>The discovery call structure</h2>
-      <p>If discovery is great, the demo and close are easy. If discovery is weak, no amount of pitching saves the deal.</p>
-
-      <div class="sequence">
-        <div class="seq-row"><div class="seq-time">0–2 min</div><div class="seq-content"><h4>Set the agenda</h4><p>"Here's what I'd like to cover: understand your situation, see if there's a fit, decide next steps." Up-front contract.</p></div></div>
-        <div class="seq-row"><div class="seq-time">2–25 min</div><div class="seq-content"><h4>Discover (use SPIN)</h4><p>Current process, what's working / not, what they've tried, cost of status quo, timeline, decision process.</p></div></div>
-        <div class="seq-row"><div class="seq-time">25–30 min</div><div class="seq-content"><h4>Position lightly</h4><p>Brief: how you typically help companies like theirs. Don't full-pitch.</p></div></div>
-        <div class="seq-row"><div class="seq-time">30–33 min</div><div class="seq-content"><h4>Mutual qualification</h4><p>Honestly assess fit out loud. If it's not a fit, say so. Buyers respect this enormously.</p></div></div>
-        <div class="seq-row"><div class="seq-time">33–40 min</div><div class="seq-content"><h4>Next steps</h4><p>Specific: who, what, when. Get it on the calendar before hanging up.</p></div></div>
+    <section id="roleplay">
+      <h2>6. Tactical Application: The Multithreading Pivot</h2>
+      <p>When you are talking to a mid-level manager who cannot sign the contract, you must gently bypass them without triggering their ego (status threat).</p>
+      
+      <div class="callout">
+        <div class="callout-label">Transcript Analysis</div>
+        <p><strong>Mid-Level Manager (Proud):</strong> "I have the authority to make the technical recommendation for this project. If I say yes, we buy."</p>
+        <p><strong>Amateur Seller (Sympathetic):</strong> "Great! But who actually signs the check? I need to talk to them." <em>(Result: The manager's ego is crushed; they feel demoted and become a Saboteur.)</em></p>
+        <p><strong>Elite Seller (Adult Ego State - Nurturing Tone):</strong> "That's fantastic. I know you've put a ton of work into evaluating this architecture. Usually, when I work with leaders like yourself on a project of this scale, the CFO eventually taps us on the shoulder to ask about the ROI model."</p>
+        <p><strong>Elite Seller (3-second pause):</strong> "How do we make sure that when the CFO comes to you, you and I have a bulletproof business case ready for them?"</p>
       </div>
-
-      <div class="pullquote">
-        Target ratio: you talk 30%, they talk 70%.
-      </div>
+      <p><strong>The Breakdown:</strong> The elite seller validates the manager's status ("leaders like yourself"), predicts the future obstacle (the CFO), and positions themselves as an ally helping the manager look good in front of their boss. They have successfully initiated multithreading while protecting the Mobilizer's ego.</p>
     </section>
 
-    <section id="plg">
-      <h2>PLG vs. SLG</h2>
-      <p>Modern SaaS companies operate on two distinct funnels.</p>
+    <section id="troubleshooting">
+      <h2>7. Troubleshooting Pitfalls</h2>
+      <p>In B2B enterprise sales, cognitive biases and biological reactions destroy deals:</p>
       <ul>
-        <li><strong>Product-Led Growth (PLG):</strong> Users sign up for a free trial or freemium tier without talking to sales. Sales teams (often called "Product-Led Sales") monitor product usage data and only reach out to users showing high engagement ("Product Qualified Leads").</li>
-        <li><strong>Sales-Led Growth (SLG):</strong> Traditional enterprise motion. You prospect into cold accounts, run discovery, and demonstrate value before they ever touch the software.</li>
+        <li><strong>Single-Threading (The Isolation Trap):</strong> Relying on one person to sell your product internally is a death sentence. If you haven't spoken to at least three people on the buying committee, you do not have a deal.</li>
+        <li><strong>Happy Ears (Confirmation Bias):</strong> A rep hears "We love it!" from an End User and immediately forecasts the deal as 'Commit'. The rep ignores the fact that they haven't met the Economic Buyer and have no established Decision Process (failing MEDDPICC).</li>
+        <li><strong>Pitching the Wrong Value:</strong> Pitching "ease of use" to a CFO, or pitching "ROI" to an End User. You must tailor the transaction cost and value proposition to the specific ego and biological needs of the stakeholder you are speaking to.</li>
+        <li><strong>Fear of Procurement:</strong> Reps view Procurement as a terrifying authority figure (Parent ego state) and instantly regress into an Adapted Child posture, giving away margins without fighting. Procurement is just doing their job; stay in your Adult ego state.</li>
+        <li><strong>Ignoring the Paper Process:</strong> A verbal "yes" means nothing if legal takes 60 days to redline the MSA. Elite reps run the 'Paper Process' in parallel with the technical evaluation to compress the sales cycle.</li>
       </ul>
-      <p>The best modern reps can execute SLG for massive enterprise deals while simultaneously harvesting low-hanging PLG accounts.</p>
-    </section>
-
-    <section id="pipeline">
-      <h2>Pipeline management</h2>
-      <p>A pipeline is a snapshot of every live deal at every stage. CRM (Salesforce, HubSpot, Pipedrive) is the system of record.</p>
-
-      <div class="pipeline">
-        <div class="pipe-stage">
-          <div class="pipe-stage-name">Lead</div>
-          <div class="pipe-stage-count">40</div>
-        </div>
-        <div class="pipe-stage">
-          <div class="pipe-stage-name">Qualified</div>
-          <div class="pipe-stage-count">22</div>
-        </div>
-        <div class="pipe-stage">
-          <div class="pipe-stage-name">Discovery</div>
-          <div class="pipe-stage-count">14</div>
-        </div>
-        <div class="pipe-stage">
-          <div class="pipe-stage-name">Demo</div>
-          <div class="pipe-stage-count">10</div>
-        </div>
-        <div class="pipe-stage">
-          <div class="pipe-stage-name">Proposal</div>
-          <div class="pipe-stage-count">7</div>
-        </div>
-        <div class="pipe-stage">
-          <div class="pipe-stage-name">Negotiation</div>
-          <div class="pipe-stage-count">4</div>
-        </div>
-        <div class="pipe-stage" style="border-color: var(--green);">
-          <div class="pipe-stage-name">Won</div>
-          <div class="pipe-stage-count">3</div>
-        </div>
-      </div>
-
-      <div class="mermaid" style="margin: 24px 0; padding: 24px; background: var(--ink); border: 1px solid var(--line); border-radius: 4px;">
-flowchart TD
-    Lead(Lead) --> Discovery{Needs Discovered?}
-    Discovery -- No --> Nurture[Nurture / Marketing]
-    Discovery -- Yes --> Qualify{MEDDIC Pass?}
-    Qualify -- No --> Disqualify[Disqualified]
-    Qualify -- Yes --> Demo(Solution Presentation)
-    Demo --> Proposal{Economic Buyer Approves?}
-    Proposal -- No --> Revise[Revise Business Case]
-    Revise --> Proposal
-    Proposal -- Yes --> Negotiation{Legal/Sec Approved?}
-    Negotiation -- No --> Block[Procurement Blocked]
-    Negotiation -- Yes --> Closed(Closed Won)
-      </div>
-
-      <h3>Pipeline hygiene rules</h3>
-      <ul>
-        <li>Every deal must have a next step with a date</li>
-        <li>No movement in 14 days = at risk</li>
-        <li>Closed-lost is not failure — it's information. Always do a loss review.</li>
-        <li>Want <strong>3–4× quota in pipeline</strong> for safety</li>
-        <li>Forecast accuracy beats optimism</li>
-      </ul>
-    </section>
-
-    <section id="exercises">
-      <h2>Exercises</h2>
-      <ol>
-        <li><strong>MEDDIC a real deal.</strong> Use the scorecard above. Where are the gaps?</li>
-        <li><strong>SPIN drill.</strong> With a partner, sell a pretend product using only SPIN questions for 10 minutes.</li>
-        <li><strong>Stakeholder map.</strong> Pick a company you'd love to sell to. Map the likely committee with 5 real names from LinkedIn.</li>
-        <li><strong>Mock discovery call</strong> with a friend. Record. Track talk-to-listen ratio. Target 30/70.</li>
-      </ol>
-
-      <div class="callout tip">
-        <div class="callout-label">Further reading</div>
-        <p><em>SPIN Selling</em> — Neil Rackham · <em>The Challenger Sale</em> — Dixon &amp; Adamson · <em>Predictable Revenue</em> — Aaron Ross · <em>Gap Selling</em> — Keenan</p>
-      </div>
     </section>
 
   </article>
@@ -471,6 +363,19 @@ flowchart TD
 
 <script src="script.js"></script>
 <script>
+  // Tab logic
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  tabBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      tabPanels[index].classList.add('active');
+    });
+  });
+
+  // MEDDIC logic
   const boxes = document.querySelectorAll('.meddic-box');
   function updateMeddic() {
     const checked = [...boxes].filter(b => b.checked).length;
@@ -482,9 +387,8 @@ flowchart TD
     else { v.textContent = 'Speculative · this is hope, not a deal'; v.style.color = 'var(--red)'; }
   }
   boxes.forEach(b => b.addEventListener('change', updateMeddic));
-  updateMeddic();
+  if (boxes.length > 0) updateMeddic();
 </script>
-
 <!-- Google Translate -->
 <div id="google_translate_element" style="position:absolute; top:-9999px; left:-9999px; z-index:-9999;"></div>
 <script type="text/javascript">
