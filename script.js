@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const progressCount = document.getElementById('progressCount');
   const progressBar = document.getElementById('progressBar');
   if (progressCount && progressBar) {
-    const totalModules = 27;
+    const totalModules = 31;
     const completedCount = completedModules.length;
     progressCount.textContent = completedCount;
     progressBar.style.width = (completedCount / totalModules * 100) + '%';
