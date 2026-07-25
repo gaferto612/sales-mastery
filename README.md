@@ -58,7 +58,7 @@ Plus:
 - **Private study tools** — device-local notes, bookmarks, and progress
 - **Exercises** — 20 drills tied to the modules
 - **Capstones** — four role-based projects with a shared scoring rubric
-- **Case Studies** — 16 real-world scenarios broken down
+- **Case Studies** — 17 real-world scenarios broken down
 
 ---
 
