@@ -56,3 +56,47 @@
 
 - The existing learning layer injects objectives, research notes, source links, study notes, and mastery checkpoints.
 - The scaffold generator now preserves completed depth editions of Modules 31–33.
+
+## Program Batch 1 — Curriculum consistency and learner-state integrity
+
+### Files reviewed
+
+- Authoritative curriculum structures in `course-data.js` and every generated module target
+- Homepage counts, card inventory, level placement, and role-path controls
+- Exercise and case-study module references and navigation targets
+- Legacy and current browser-storage keys for progress, checks, notes, bookmarks, path, and language
+- Static-site validation, local link integrity, and responsive card rules
+
+### Main improvements
+
+- Established `course-data.js` as the single authoritative source for 43 modules, 6 levels, 5 role paths, 20 drills, 4 capstones, and 17 cases.
+- Rebuilt the static homepage curriculum from that source so all 43 modules appear in the correct six-level sequence without JavaScript-dependent card generation.
+- Replaced the conflicting completion systems with one versioned six-state learning record: Not started, In progress, Read, Knowledge check passed, Practice completed, and Skill demonstrated.
+- Stopped page-opening from marking a module complete. A module open now records only `started` and `lastOpenedAt`.
+- Migrated legacy opens conservatively to In progress, preserved stronger prior evidence separately, and left notes, bookmarks, language, and path preferences untouched.
+- Reframed practice and skill demonstration as self-assessed evidence rather than mastery or certification.
+- Corrected stale exercise references, the Module 13/14 AI navigation error, and 30 case-study reference or evidence-language problems.
+- Made related-module references in exercises and cases clickable.
+- Replaced contradictory public counts, including the stale 16-case claim.
+- Added repeatable curriculum generation, link/reference transforms, authoritative validation, and state-migration regression tests.
+
+### Unsupported or overstated claims corrected
+
+- Replaced universal claims about retention, churn prevention, storytelling, negotiation firmness, free-user validation, executive pitching, pricing, LTV, and product-led consolidation with bounded decision guidance.
+- Removed language that implied a single checkpoint or page view demonstrated mastery.
+- Distinguished self-assessment from reviewed performance evidence.
+
+### Verification
+
+- 43 module files and research notes; all modules placed exactly once across 6 levels.
+- 5 role paths, 20 numbered drills, 4 capstones, and 17 unique cases.
+- Homepage contains exactly 43 linked module cards and accurate public counts.
+- Every local HTML target referenced by the site exists.
+- Legacy migration, module-opening behavior, and preservation of user notes/bookmarks/path pass automated regression tests.
+
+### Remaining gaps for the next batches
+
+- Modules 34–38 need full production-grade expansion and multi-question assessment sets.
+- Modules 39–42 need the same depth pass for revenue systems, channels, enablement, and global/public-sector selling.
+- The 20 drills, 4 capstones, and 17 cases need a common scenario/rubric/debrief architecture.
+- All 43 modules need a final cross-course evidence, duplication, tone, terminology, and professional Arabic review.
