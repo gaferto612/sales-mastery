@@ -346,15 +346,17 @@
   .modules-grid .mod-num {
     width: fit-content;
     max-width: calc(100% - 112px);
-    padding: 7px 11px;
+    padding: 9px 13px;
     border-radius: 7px;
     background: linear-gradient(100deg, var(--card-rust), var(--card-copper));
     box-shadow: 0 0 18px rgba(185,79,47,.22);
     color: #21150f;
-    font-size: 10px;
+    font-size: 13px;
+    line-height: 1.35;
     font-weight: 700;
-    letter-spacing: .16em;
+    letter-spacing: .08em;
   }
+  [dir="rtl"] .modules-grid .mod-num { letter-spacing: .04em; }
   .modules-grid .mod-title {
     color: #fff7ea;
     font-size: 29px;
@@ -393,7 +395,9 @@
     color: #ddc8b6;
     background: #35261f;
     border-color: #5b4032;
-    padding: 6px 9px;
+    padding: 7px 10px;
+    font-size: 12px;
+    line-height: 1.25;
   }
   .modules-grid .mod-card .card-tags span:first-child { color: #e3b762; border-color: rgba(227,183,98,.38); }
   .modules-grid .mod-card .card-tags span:last-child { color: #e0a15d; border-color: rgba(224,161,93,.36); }
@@ -413,13 +417,17 @@
     border-radius: 6px;
     background: #7d9858;
     color: #25170f;
+    font-size: 11px;
     box-shadow: 0 0 18px rgba(125,152,88,.25);
   }
   [dir="rtl"] .modules-grid .mod-card:hover .mod-arrow { transform: translateX(-5px); }
   @media (max-width: 560px) {
     .modules-grid .mod-card { min-height: 260px; padding: 28px 22px 22px; }
     .modules-grid .mod-title { font-size: 25px; }
-    .modules-grid .mod-num { max-width: calc(100% - 84px); }
+    .modules-grid .mod-num {
+      max-width: calc(100% - 96px);
+      font-size: 12px;
+    }
   }
 </style>
 </head>
