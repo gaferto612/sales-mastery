@@ -2,7 +2,7 @@
 
 A practical, opinionated curriculum on selling — online, offline, B2B, psychology, copywriting, negotiation, retention, and the ethics of the craft.
 
-**31 modules · 5 role-based paths · 20 drills · 4 capstones · 16 case studies · ~31,000 words**
+**43 modules · 6 competency levels · 5 role-based paths · 20 drills · 4 capstones · 16 case studies · 40,000+ words**
 
 ---
 
@@ -37,7 +37,19 @@ Otherwise, clone the repo and open `index.html` in a browser — everything is s
 | 14 | AI in Sales — prospecting, review, governance, human judgment |
 | 15 | Selling AI Products — positioning, proof, pricing, GTM |
 | 16 | Founder-Led Sales — zero to one, first 10 customers, design partners |
-| 17–30 | Leadership, narrative, enterprise, demos, performance, and advanced lenses |
+| 17–30 | Product-led sales, management, narrative, enterprise, performance, and optional lenses |
+| 31 | Customer & Market Research — interviews, evidence synthesis, win/loss |
+| 32 | Segmentation, ICP & Positioning — alternatives, category, proof |
+| 33 | Consultative Discovery & Diagnosis — causal maps, listening, mutual qualification |
+| 34 | Value-Based Selling & Business Cases — quantification, ranges, finance review |
+| 35 | Account & Territory Strategy — capacity, prioritization, stakeholder maps |
+| 36 | Buying Groups & Decision Enablement — consensus, criteria, sensemaking |
+| 37 | Commercial Acumen, Pricing & Packaging — economics, metrics, discount governance |
+| 38 | Proposals, RFPs, Security & Contracting — due diligence and paper process |
+| 39 | Revenue Operations, Pipeline & Forecasting — stages, flow, calibration |
+| 40 | Partnerships, Channels & Ecosystems — models, economics, rules, enablement |
+| 41 | Sales Enablement, Hiring & Compensation — work samples, coaching, incentives |
+| 42 | Global, Regulated & Public-Sector Selling — localization, procurement, compliance |
 
 Plus:
 

@@ -24,6 +24,18 @@ Avoid unsourced viral statistics, neurological explanations inferred from behavi
 - Webster & Wind, organizational buying behavior: https://journals.sagepub.com/doi/10.1177/002224297203600204
 - B2B customer journeys integrative framework (2023): https://www.sciencedirect.com/science/article/pii/S0019850123000974
 
+### Markets, value and revenue systems
+
+- Churchill et al., classic salesperson performance meta-analysis: https://journals.sagepub.com/doi/10.1177/002224378502200201
+- Market orientation meta-analysis: https://doi.org/10.1509/jmkg.69.2.24.60761
+- Salesperson listening meta-analysis: https://www.sciencedirect.com/science/article/abs/pii/S0148296319303017
+- Value-based selling capability: https://www.sciencedirect.com/science/article/pii/S0019850115000449
+- Value quantification capabilities: https://www.sciencedirect.com/science/article/pii/S0148296317300024
+- Key account management systematic review: https://www.sciencedirect.com/science/article/pii/S0148296322010062
+- Sales training review: https://www.sciencedirect.com/science/article/pii/S2077188615000025
+- Formal salesforce controls meta-analysis: https://www.tandfonline.com/doi/abs/10.1080/08853134.2014.977796
+- Sales forecasting accuracy field study: https://www.sciencedirect.com/science/article/abs/pii/S0377221799000855
+
 ### Decisions, narrative and learning
 
 - Tversky & Kahneman, framing of decisions: https://pubmed.ncbi.nlm.nih.gov/7455683/
@@ -42,6 +54,11 @@ Avoid unsourced viral statistics, neurological explanations inferred from behavi
 - US FTC, Bringing Dark Patterns to Light: https://www.ftc.gov/reports/bringing-dark-patterns-light
 - US FTC, CAN-SPAM guide: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
 - UK ICO, direct marketing guidance: https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/direct-marketing-guidance/
+
+### Institutional selling and risk
+
+- US Federal Acquisition Regulation, solicitation, evaluation, and award: https://www.acquisition.gov/far/12.203
+- NIST cybersecurity supply-chain risk management: https://csrc.nist.gov/projects/cyber-supply-chain-risk-management
 
 ### AI, software and contested frameworks
 
