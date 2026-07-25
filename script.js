@@ -267,12 +267,18 @@ window.fmtPct = (n) => (n * 100).toFixed(1) + '%';
   }
 })();
 
-// Load the shared curriculum and mastery layer after the legacy components.
+// Load curriculum, research notes, then the mastery layer.
 const learningLayer = document.createElement('script');
 learningLayer.src = 'course-data.js';
 learningLayer.defer = true;
 learningLayer.onload = () => {
-  const learningApp = document.createElement('script');
-  learningApp.src = 'learning.js';
-  document.head.appendChild(learningApp);
+  const researchLayer = document.createElement('script');
+  researchLayer.src = 'research-data.js';
+  researchLayer.onload = () => {
+    const learningApp = document.createElement('script');
+    learningApp.src = 'learning.js';
+    document.head.appendChild(learningApp);
+  };
+  document.head.appendChild(researchLayer);
 };
+document.head.appendChild(learningLayer);
