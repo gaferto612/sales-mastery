@@ -2,7 +2,7 @@
 
 A practical, opinionated curriculum on selling — online, offline, B2B, psychology, copywriting, negotiation, retention, and the ethics of the craft.
 
-**17 modules · 20 drills · 16 case studies · ~25,000 words**
+**31 modules · 5 role-based paths · 20 drills · 4 capstones · 16 case studies · ~31,000 words**
 
 ---
 
@@ -25,22 +25,27 @@ Otherwise, clone the repo and open `index.html` in a browser — everything is s
 | 02 | Psychology — Cialdini's principles, biases, the Trust Equation |
 | 03 | Online Selling — funnels, e-commerce, paid vs. owned traffic |
 | 04 | Offline Selling — retail, in-person, body language, voice |
-| 05 | B2B & Enterprise — SPIN, MEDDIC, Challenger, Sandler |
-| 06 | Copywriting — headlines, frameworks, triggers, banned words |
-| 07 | Negotiation — BATNA, ZOPA, anchors, concession patterns |
-| 08 | Objection Handling — the 7 universal objections, scripts |
-| 09 | Closing Techniques — 17 named closes, when to use which |
-| 10 | Customer Retention — LTV, NRR, win-back, cohort thinking |
-| 11 | Ethics & Pitfalls — persuasion vs. manipulation, dark patterns |
-| 12 | Tools & Resources — reading list, career paths, 90-day plan |
-| 13 | AI in Sales — prospecting, call analysis, human premium |
-| 14 | Selling AI Products — positioning, pricing, GTM for AI apps |
-| 15 | Founder-Led Sales — zero to one, first 10 customers, design partners |
-| 16 | Product-Led Sales — bridging PLG and enterprise, activation, triggers |
+| 05 | Outbound Prospecting — ICP, cold calls, email, social selling |
+| 06 | B2B & Enterprise — SPIN, MEDDIC, Challenger, buying committees |
+| 07 | Copywriting — headlines, frameworks, triggers, banned words |
+| 08 | Negotiation — BATNA, ZOPA, anchors, concession patterns |
+| 09 | Objection Handling — concerns, indecision, scripts |
+| 10 | Closing Techniques — commitment, decision readiness, next steps |
+| 11 | Customer Retention — LTV, NRR, win-back, cohort thinking |
+| 12 | Ethics & Pitfalls — persuasion vs. manipulation, dark patterns |
+| 13 | Tools & Resources — reading list, career paths, 90-day plan |
+| 14 | AI in Sales — prospecting, review, governance, human judgment |
+| 15 | Selling AI Products — positioning, proof, pricing, GTM |
+| 16 | Founder-Led Sales — zero to one, first 10 customers, design partners |
+| 17–30 | Leadership, narrative, enterprise, demos, performance, and advanced lenses |
 
 Plus:
 
+- **Learning paths** — Core Seller, B2C & Retail, B2B & Enterprise, Founder & SaaS, and Sales Leader
+- **Mastery checkpoints** — one applied knowledge check in every module
+- **Private study tools** — device-local notes, bookmarks, and progress
 - **Exercises** — 20 drills tied to the modules
+- **Capstones** — four role-based projects with a shared scoring rubric
 - **Case Studies** — 16 real-world scenarios broken down
 
 ---

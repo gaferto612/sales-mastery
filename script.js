@@ -266,3 +266,13 @@ window.fmtPct = (n) => (n * 100).toFixed(1) + '%';
     document.head.appendChild(script);
   }
 })();
+
+// Load the shared curriculum and mastery layer after the legacy components.
+const learningLayer = document.createElement('script');
+learningLayer.src = 'course-data.js';
+learningLayer.defer = true;
+learningLayer.onload = () => {
+  const learningApp = document.createElement('script');
+  learningApp.src = 'learning.js';
+  document.head.appendChild(learningApp);
+};
