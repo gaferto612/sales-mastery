@@ -2,7 +2,7 @@
 
 A practical, opinionated curriculum on selling — online, offline, B2B, psychology, copywriting, negotiation, retention, and the ethics of the craft.
 
-**43 modules · 6 competency levels · 5 role-based paths · 20 drills · 4 capstones · 16 case studies · 40,000+ words**
+**43 modules · 6 competency levels · 5 role-based paths · 20 drills · 4 capstones · 17 case studies · 40,000+ words**
 
 ---
 
@@ -54,7 +54,7 @@ Otherwise, clone the repo and open `index.html` in a browser — everything is s
 Plus:
 
 - **Learning paths** — Core Seller, B2C & Retail, B2B & Enterprise, Founder & SaaS, and Sales Leader
-- **Mastery checkpoints** — one applied knowledge check in every module
+- **Applied knowledge checks** — one scenario-based retrieval check in every module
 - **Private study tools** — device-local notes, bookmarks, and progress
 - **Exercises** — 20 drills tied to the modules
 - **Capstones** — four role-based projects with a shared scoring rubric

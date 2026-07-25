@@ -106,53 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Progress Tracking ---
-  let completedModules = JSON.parse(localStorage.getItem('salesMasteryProgress') || '[]');
-  
-  // 1. If on a module page, mark complete
-  const path = window.location.pathname;
-  const match = path.match(/module-(\d+)\.html/);
-  if (match) {
-    const modId = match[1];
-    if (!completedModules.includes(modId)) {
-      completedModules.push(modId);
-      localStorage.setItem('salesMasteryProgress', JSON.stringify(completedModules));
-    }
-  }
-
-  // 2. If on index, update the UI
-  const progressCount = document.getElementById('progressCount');
-  const progressBar = document.getElementById('progressBar');
-  if (progressCount && progressBar) {
-    const totalModules = window.SALES_MASTERY?.modules?.length || 43;
-    const completedCount = completedModules.length;
-    progressCount.textContent = completedCount;
-    progressBar.style.width = (completedCount / totalModules * 100) + '%';
-    
-    // Mark cards as completed
-    document.querySelectorAll('.mod-card').forEach(card => {
-      const href = card.getAttribute('href');
-      if (!href) return;
-      const cardMatch = href.match(/module-(\d+)\.html/);
-      if (cardMatch && completedModules.includes(cardMatch[1])) {
-        card.classList.add('completed');
-      }
-    });
-
-    // Update Hero CTA
-    if (completedCount > 0 && completedCount < totalModules) {
-      const cta = document.querySelector('.hero-cta');
-      if (cta) {
-        cta.textContent = 'Continue course';
-        // Find highest completed module and go to the next one
-        const maxCompleted = Math.max(...completedModules.map(n => parseInt(n, 10)));
-        if (maxCompleted < totalModules - 1) {
-          const nextMod = (maxCompleted + 1).toString().padStart(2, '0');
-          cta.setAttribute('href', `module-${nextMod}.html`);
-        }
-      }
-    }
-  }
+  // Learning state is owned by learning.js. Opening a module never marks it complete.
 
   // --- Deep UX/UI Features ---
   
