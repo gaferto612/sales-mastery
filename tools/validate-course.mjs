@@ -5,12 +5,40 @@ const context = {window: {}};
 vm.createContext(context);
 vm.runInContext(fs.readFileSync('course-data.js', 'utf8'), context);
 vm.runInContext(fs.readFileSync('research-data.js', 'utf8'), context);
+vm.runInContext(fs.readFileSync('assessment-data.js', 'utf8'), context);
 
-const {modules, paths, capstones, research, levels, stats} = context.window.SALES_MASTERY;
+const {modules, paths, capstones, research, assessments, levels, stats} = context.window.SALES_MASTERY;
 const errors = [];
 const assert = (condition, message) => { if (!condition) errors.push(message); };
 const count = (text, pattern) => [...text.matchAll(pattern)].length;
 const moduleFile = id => `module-${String(id).padStart(2, '0')}.html`;
+
+const distAssessmentPath = 'dist/static/assessment-data.js';
+assert(fs.existsSync(distAssessmentPath), `${distAssessmentPath} does not exist`);
+
+if (fs.existsSync(distAssessmentPath)) {
+  const rootAssessmentBuffer = fs.readFileSync('assessment-data.js');
+  const distAssessmentBuffer = fs.readFileSync(distAssessmentPath);
+  assert(
+    rootAssessmentBuffer.equals(distAssessmentBuffer),
+    'dist/static/assessment-data.js is not byte-for-byte identical to root assessment-data.js'
+  );
+
+  const distContext = { window: { SALES_MASTERY: {} } };
+  vm.createContext(distContext);
+  try {
+    vm.runInContext(distAssessmentBuffer.toString('utf8'), distContext);
+    assert(
+      distContext.window.SALES_MASTERY &&
+      distContext.window.SALES_MASTERY.assessments &&
+      typeof distContext.window.SALES_MASTERY.assessments === 'object' &&
+      Object.keys(distContext.window.SALES_MASTERY.assessments).length > 0,
+      'dist/static/assessment-data.js did not populate window.SALES_MASTERY.assessments'
+    );
+  } catch (err) {
+    assert(false, `dist/static/assessment-data.js failed VM execution: ${err.message}`);
+  }
+}
 
 assert(modules.length === stats.modules, `Module source has ${modules.length}; stats says ${stats.modules}`);
 assert(levels.length === stats.levels, `Level source has ${levels.length}; stats says ${stats.levels}`);
@@ -29,6 +57,9 @@ for (const module of modules) {
   assert(fs.existsSync(file), `Missing ${file}`);
   assert(levelIds.includes(module.id), `Module ${module.id} is absent from levels`);
   assert(research[module.id], `Missing research note for module ${module.id}`);
+  if (Number(module.id) >= 31 && Number(module.id) <= 42) {
+    assert(assessments[module.id] && assessments[module.id].length >= 3 && assessments[module.id].length <= 5, `Module ${module.id} is missing required assessment questions (expected 3-5)`);
+  }
   assert(module.objectives?.length === 3, `Module ${module.id} needs three objectives`);
   assert(module.artifact, `Module ${module.id} has no artifact`);
   assert(module.check?.[1]?.length === 3, `Module ${module.id} checkpoint is malformed`);
@@ -74,7 +105,7 @@ const learning = fs.readFileSync('learning.js', 'utf8');
 const bootstrap = fs.readFileSync('script.js', 'utf8');
 assert(learning.includes("const STATE_KEY='salesMasteryLearningState'"), 'Authoritative learning-state key is missing');
 assert(learning.includes('function migrateState()'), 'Legacy-state migration is missing');
-assert(learning.includes("started:true"), 'Legacy opens are not migrated safely to started');
+assert(learning.includes("m.started"), 'Legacy opens are not migrated safely to started');
 assert(learning.includes('knowledgePassed'), 'Knowledge-check state is missing');
 assert(learning.includes('practiceCompleted'), 'Practice-completed state is missing');
 assert(learning.includes('demonstrated'), 'Skill-demonstrated state is missing');
@@ -107,3 +138,4 @@ if (errors.length) {
     status: 'pass',
   }, null, 2));
 }
+

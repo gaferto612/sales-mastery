@@ -229,10 +229,16 @@ learningLayer.onload = () => {
   const researchLayer = document.createElement('script');
   researchLayer.src = 'research-data.js';
   researchLayer.onload = () => {
-    const learningApp = document.createElement('script');
-    learningApp.src = 'learning.js';
-    document.head.appendChild(learningApp);
+    const assessmentLayer = document.createElement('script');
+    assessmentLayer.src = 'assessment-data.js';
+    assessmentLayer.onload = () => {
+      const learningApp = document.createElement('script');
+      learningApp.src = 'learning.js';
+      document.head.appendChild(learningApp);
+    };
+    document.head.appendChild(assessmentLayer);
   };
   document.head.appendChild(researchLayer);
 };
 document.head.appendChild(learningLayer);
+

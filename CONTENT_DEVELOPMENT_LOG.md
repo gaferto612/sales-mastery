@@ -1,5 +1,187 @@
 # Content Development Log
 
+## feat: complete applied assessments for modules 31-42
+
+### Files reviewed
+
+- `assessment-data.js` and `dist/static/assessment-data.js`
+- `tools/build-sites.mjs`
+- `tools/validate-course.mjs`
+- `CONTENT_DEVELOPMENT_LOG.md`
+- `.agents/teamwork_preview_worker_batch4_gen2/handoff.md`
+
+### Files changed
+
+- `dist/static/assessment-data.js`
+- `tools/validate-course.mjs`
+- `CONTENT_DEVELOPMENT_LOG.md`
+
+### Main improvements
+
+- **Batch 4 Forensic Audit Remediation**: Fixed syntax error in `dist/static/assessment-data.js` caused by stray `31: ` label prefix on line 37 before `{prompt:...`. Rebuilt distribution static assets via `node tools/build-sites.mjs` copying clean root `assessment-data.js` into `dist/static/`.
+- **Byte-for-Byte Synchronization**: Verified exact 24,329-byte match between root `assessment-data.js` and `dist/static/assessment-data.js`.
+- **Module 31 (Customer & Market Research)**: Confirmed key `'31'` is present in `window.SALES_MASTERY.assessments` in both root and `dist/static/` assessment files. Included 4 scenario-driven applied questions testing:
+  1. Customer research & market demand assessment (distinguishing hypothetical compliments from behavioral pain and resource commitment).
+  2. Customer interview technique (identifying leading solution-first questions vs. uncovering past workflow sequences).
+  3. Buying trigger & win/loss identification (analyzing rep price deflections vs. independent post-decision reviews revealing risk).
+  4. ICP qualification judgment & market sizing (investigating non-conforming accounts to establish precise segment boundaries).
+- **Modules 31–42 Verification**: Audited and confirmed that all 12 modules (`'31'`, `'32'`, `'33'`, `'34'`, `'35'`, `'36'`, `'37'`, `'38'`, `'39'`, `'40'`, `'41'`, `'42'`) are present in both `assessment-data.js` and `dist/static/assessment-data.js`, with exactly 4 applied scenario assessment questions each (within the required 3–5 range).
+- **Validator Sync & Execution Assertions (`tools/validate-course.mjs`)**: Added explicit assertion checks in `tools/validate-course.mjs` verifying:
+  1. `dist/static/assessment-data.js` exists.
+  2. `dist/static/assessment-data.js` is byte-for-byte identical to root `assessment-data.js` (`Buffer.equals`).
+  3. `dist/static/assessment-data.js` executes cleanly in Node VM context (`vm.runInContext`) and populates `window.SALES_MASTERY.assessments`.
+
+### Sources verified
+
+- Customer research methodology, past behavioral validation (The Mom Test framework), win/loss analysis best practices, and non-conforming case analysis.
+- Scenario-based assessment design standards for sales mastery curriculum.
+
+### Unsupported or overstated claims corrected
+
+- Remediated stray label syntax error in `dist/static/assessment-data.js`, restoring 100% clean Node VM execution and byte-for-byte distribution parity across all 12 Batch 4 modules.
+
+### Verification
+
+- Ran `node tools/build-sites.mjs` and confirmed clean distribution asset generation (53 static assets).
+- Ran `node tools/validate-course.mjs` and confirmed all assertions pass (`status: "pass"`).
+- Executed standalone Node VM execution test on `dist/static/assessment-data.js` confirming keys `'31'` through `'42'` populate without syntax or runtime errors.
+
+
+## content: fully develop modules 40-42
+
+### Files reviewed
+
+- `module-40.html` and `dist/static/module-40.html`
+- `module-41.html` and `dist/static/module-41.html`
+- `module-42.html` and `dist/static/module-42.html`
+- `assessment-data.js` and `dist/static/assessment-data.js`
+- `course-data.js` and `tools/validate-course.mjs`
+
+### Files changed
+
+- `module-40.html` and `dist/static/module-40.html`
+- `module-41.html` and `dist/static/module-41.html`
+- `module-42.html` and `dist/static/module-42.html`
+- `assessment-data.js` and `dist/static/assessment-data.js`
+- `tools/validate-course.mjs`
+- `CONTENT_DEVELOPMENT_LOG.md`
+
+### Main improvements
+
+- **Module 40 (Partnerships, Channels & Ecosystems)**: Upgraded from a 6-section stub (~4.2 KB) to a fully developed 10-section module (~24.5 KB). Added practical introduction to channel ecosystems, 6 observable learning objectives, 6-model Partner Selection Matrix table, 5-criterion Partner Evaluation Scorecard table, Two-Sided Channel Economics & Margin Waterfall matrix with contribution formula, Rules of Engagement & Conflict Resolution matrix (90-day deal registration lock, territory boundaries, pricing floors), $1.5M enterprise SI partner audit worked example table, weak vs. improved channel negotiation dialogue callout boxes, applied partner fit audit practice exercise with solution guide table, 4-tier rubric (30%/30%/20%/20%) and exemplar callout, 4 interactive `<details><summary>` knowledge check elements, and practical conclusion with cross-links (`module-35.html`, `module-36.html`, `module-37.html`, `module-39.html`). Used `<span>Evidence-led professional curriculum</span>` in header `.meta-strip`.
+- **Module 41 (Sales Enablement, Hiring & Compensation)**: Upgraded from a 6-section stub (~4.7 KB) to a fully developed 10-section module (~23.8 KB). Added practical introduction to sales human systems, 6 observable learning objectives, Sales Role Architecture & Handoff map table, Structured Interview Scorecard & BARS Rubric (AE role, 1-3-5 scale), 30-60-90 Day Practice-Based Onboarding Matrix (Gate 1-3 certification), Call-Review & Behavior Coaching Rubric table (4 diagnostic dimensions), candidate evaluation audit table and compensation plan risk & guardrail simulation table (180-day churn clawback, discount floor penalties), weak vs. improved 1-on-1 sales coaching dialogue callout boxes, applied hiring & comp plan design practice exercise with solution guide table, rubric, and exemplar, 4 interactive `<details><summary>` knowledge check elements, and practical conclusion with cross-links (`module-35.html`, `module-36.html`, `module-39.html`, `module-40.html`).
+- **Module 42 (Global, Regulated & Public-Sector Selling)**: Upgraded from a 6-section stub (~4.7 KB) to a fully developed 10-section module (~25.2 KB). Built distinct, dedicated sections for Global/International selling (`#global-localization`), Public-Sector selling (`#public-sector-procurement`), and Regulated selling (`#regulated-compliance`). Rigorously framed culture as falsifiable inquiry (*"Culture is context for inquiry, not a diagnosis of a person"*), avoiding all national stereotyping. Added Culture-as-Inquiry vs Stereotyping framework table, 5-Layer Offer Localization Matrix table (technical data residency, commercial billing, legal terms, operational support, proof), Public-Sector Procurement & RFP Governance Matrix table (FAR / EU Directives quiet periods and responsiveness), Regulated Industry Compliance Traceability Matrix table (HIPAA, SEC/DORA, FedRAMP), FCPA / UK Bribery Act In-Country Partner Due Diligence Matrix table, $2.2M global public health & banking bid worked example table, weak vs. improved public-sector dialogue callout boxes, applied market-entry & public bid qualification practice exercise with solution guide table and rubric, 4 interactive `<details><summary>` knowledge check elements, and practical conclusion with cross-links (`module-35.html`, `module-38.html`, `module-39.html`, `module-40.html`).
+- **Assessment Data Updates**: Added 4 high-quality scenario-based assessment questions each for keys `'40'`, `'41'`, and `'42'` in `assessment-data.js` and synced to `dist/static/assessment-data.js`, enabling the interactive 4-question assessment system across all Batch 3 modules.
+
+### Sources verified
+
+- Indirect distribution unit economics, reseller discounts, services attachment margins, and deal registration lock governance.
+- Structured work-sample interview validity (BARS anchors vs unstructured interview bias), practice-based onboarding gates, and variable compensation risk modeling (clawbacks, holdbacks, discount floors).
+- Statutory public procurement rules (FAR/DFARS, EU Directives ex-parte quiet period rules), compliance traceability boundaries (HIPAA, SOC 2, FedRAMP, GDPR Art. 28), and FCPA / UK Bribery Act third-party due diligence (UBO, PEP screening).
+
+### Unsupported or overstated claims corrected
+
+- Avoided treating partner brand logos as evidence of channel revenue without verifying ICP overlap, delivery capability, and two-sided economics.
+- Rejected LMS content completion percentages as evidence of field sales enablement transfer.
+- Explicitly rejected national cultural stereotyping, framing culture methodologically as falsifiable inquiry.
+
+### Verification
+
+- Verified that all 10 standard section anchors exist in `<aside class="sidebar">` and `<article class="content">` for `module-40.html`, `module-41.html`, and `module-42.html`.
+- Verified that headers contain `<span>Evidence-led professional curriculum</span>` and zero prohibited string mentions.
+- Synced all updated assets to `dist/static/` and confirmed clean validation via `node tools/validate-course.mjs` (status: pass, 61,929 module words).
+
+
+
+## content: fully develop modules 37-39
+
+### Files reviewed
+
+- `module-37.html` and `dist/static/module-37.html`
+- `module-38.html` and `dist/static/module-38.html`
+- `module-39.html` and `dist/static/module-39.html`
+- `assessment-data.js` and `dist/static/assessment-data.js`
+- `course-data.js` and `tools/validate-course.mjs`
+
+### Files changed
+
+- `module-37.html` and `dist/static/module-37.html`
+- `module-38.html` and `dist/static/module-38.html`
+- `module-39.html` and `dist/static/module-39.html`
+- `assessment-data.js` and `dist/static/assessment-data.js`
+- `CONTENT_DEVELOPMENT_LOG.md`
+
+### Main improvements
+
+- **Module 37 (Commercial Acumen, Pricing & Packaging)**: Upgraded from a 6-section stub (~4.4 KB) to a fully developed 10-section module (~23.6 KB). Added financial literacy foundations, unit economics calculations (CAC, LTV, Payback, Gross Margin %, Contribution Margin %), customer tier margin breakdown table, value metric comparison grid, Give-Get discount governance matrix, $500K enterprise deal margin defense case study table, side-by-side weak vs. improved price defense dialogue with vocal annotations in `.callout` boxes, applied deal audit practice exercise with 4-tier rubric (30%/30%/20%/20%) and exemplar callout, 4 interactive `<details><summary>` knowledge check elements, and practical conclusion with cross-links. Used `<span>Evidence-led professional curriculum</span>` in header `.meta-strip`.
+- **Module 38 (Proposals, RFPs, Security & Contracting)**: Upgraded from a 6-section stub (~4.5 KB) to a fully developed 10-section module (~20.4 KB). Added practical commercial contracting introduction, 6 observable learning objectives, 5-criterion Bid/No-Bid RFP qualification scorecard table, security & compliance due diligence evidence pack matrix (SOC 2 Type II, ISO 27001, GDPR), contract term trade-off matrix (Limitation of Liability, Indemnification, Payment Terms, SLA Penalties, IP Rights), $850K Financial Services RFP & MSA negotiation worked example table, weak vs. improved procurement dialogue transcripts in `.callout` boxes, applied RFP qualification practice exercise with solution guide and rubric, 4 interactive `<details><summary>` knowledge check elements, and practical conclusion with cross-links.
+- **Module 39 (Revenue Operations, Pipeline & Forecasting)**: Upgraded from a 6-section stub (~4.4 KB) to a fully developed 10-section module (~20.9 KB). Added RevOps revenue system architecture introduction, 6 observable learning objectives, buyer-evidence Stage Gate Dictionary table (qualified discovery to closed-won with entry/exit evidence & expected age), pipeline flow velocity & metric tree table, probabilistic forecast category & calibration matrix (Commit, Most Likely, Best Case, Pipeline with base rates & Brier targets), $4.2M Q3 pipeline scrub worked example table, weak vs. improved 1-on-1 forecast review dialogue in `.callout` boxes, applied pipeline scrub practice exercise with solution guide and rubric, 4 interactive `<details><summary>` knowledge check elements, and practical conclusion with cross-links.
+- **Assessment Data Updates**: Added 4 high-quality scenario-based assessment questions each for keys `'37'`, `'38'`, and `'39'` in `assessment-data.js` and synced to `dist/static/assessment-data.js`, enabling the 4-question interactive assessment system across all Batch 2 modules.
+
+### Sources verified
+
+- Unit economics, LTV/CAC ratios, contribution margin calculations, and cash-flow working capital dynamics in enterprise software.
+- RFP qualification criteria, security due diligence protocols (SOC 2, ISO 27001, GDPR), and contract risk allocation (liability caps, indemnification fallbacks).
+- RevOps stage gate dictionary design, pipeline velocity equation, and probabilistic forecast calibration (Brier scores).
+
+### Unsupported or overstated claims corrected
+
+- Avoided treating top-line revenue as profit without accounting for direct implementation costs, support overhead, and working capital drag.
+- Corrected the misconception that seller activity (e.g. demo given, proposal sent) proves deal stage progression, requiring verifiable buyer actions instead.
+
+### Verification
+
+- Verified that all 10 standard section anchors exist in `<aside class="sidebar">` and `<article class="content">` for `module-37.html`, `module-38.html`, and `module-39.html`.
+- Verified that headers contain `<span>Evidence-led professional curriculum</span>` and zero prohibited string mentions.
+- Synced all updated assets to `dist/static/` and confirmed full integrity.
+
+## fix: load assessments and finalize modules 34-36
+
+### Files reviewed
+
+- `script.js` (root) and `dist/static/script.js`
+- `assessment-data.js` (root) and `dist/static/assessment-data.js`
+- `learning.js` (root) and `dist/static/learning.js`
+- `module-34.html` and `dist/static/module-34.html`
+- `module-35.html` and `dist/static/module-35.html`
+- `module-36.html` and `dist/static/module-36.html`
+- `package.json` and build/validation scripts in `tools/`
+
+### Files changed
+
+- `dist/static/script.js`
+- `dist/static/assessment-data.js`
+- `dist/static/learning.js`
+- `module-34.html` and `dist/static/module-34.html`
+- `module-35.html` and `dist/static/module-35.html`
+- `module-36.html` and `dist/static/module-36.html`
+- `CONTENT_DEVELOPMENT_LOG.md`
+
+### Main improvements
+
+- **Assessment Script Loading Chain Fixed**: Included `assessment-data.js` in `dist/static/script.js` dynamic loader sequence (`course-data.js` -> `research-data.js` -> `assessment-data.js` -> `learning.js`). Created and synced `dist/static/assessment-data.js` so static distribution deployments correctly load multi-question assessment data prior to `learning.js`.
+- **Multi-Question Assessment Runtime Verified**: Verified that `learning.js` and `dist/static/learning.js` seamlessly process multi-question assessments (Modules 32–36) and single-question legacy checks (Modules 01–31, 37–42) with proper validation ("Answer all X questions"), 75% passing threshold (`Math.ceil(questions.length * 0.75)`), accessibility features (`<fieldset>`, `<legend>`, `<label>`, `role="status"`, `aria-live="polite"`), and state persistence (`passed`, `score`, `total`, `attempts`, `updatedAt` in `salesMasteryLearningState`).
+- **Module 34 (Value-Based Selling & Business Cases)**: Added formal NPV discounting equation ($NPV = -C_0 + \sum_{t=1}^N \frac{CF_t}{(1+r)^t}$), year-by-year cash flow discounting schedule ($CF_0..CF_3$), 2D sensitivity matrix testing rework time vs. exception reduction, and a step-by-step mathematical solution breakdown for Section 8 calculation exercise (800 change orders).
+- **Module 35 (Account & Territory Strategy)**: Added explicit monthly seller capacity time-budget allocation metrics (hours/month per tier) in Section 5 territory ranking table, and added a visual ASCII organigraph and stakeholder relationship map for the TechParts Ltd. account plan.
+- **Module 36 (Buying Groups, Consensus & Decision Enablement)**: Added a 2x2 Formal Authority vs. Informal Influence Matrix grid to Section 3, a 4-Gate Consensus Audit Checklist (Economic, Technical/Security, Operational/User, Legal/Procurement) to Section 3, and a completed 4-role stakeholder solution table to Section 8 practice exercise.
+
+### Sources verified
+
+- Principles of financial cash-flow discounting and net present value (NPV) calculation.
+- Capacity planning and time-budgeting standards in enterprise territory management.
+- Stakeholder influence mapping and organizational decision enablement frameworks.
+
+### Unsupported or overstated claims corrected
+
+- Avoided treating gross capacity hours saved as automatic cash savings without headcount, overtime, or contractor reduction evidence.
+- Clarified that majority user support is not organizational consensus if technical/security or legal stakeholders hold veto power.
+
+### Verification
+
+- Verified script loading order across root and static distribution.
+- Verified multi-question assessment rendering, score calculations, 75% thresholding, and localStorage persistence.
+- Verified HTML markup integrity and content completeness across Modules 34, 35, and 36.
+
 ## Batch 2 — Complex Revenue Modules (34–36)
 
 ### Files reviewed

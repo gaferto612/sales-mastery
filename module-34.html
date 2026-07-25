@@ -58,7 +58,25 @@
 <tr><td>Base</td><td>€28,900</td><td>€20,000</td><td>€8,900</td><td>13.5 months</td><td>≈ €12,900</td></tr>
 <tr><td>Upside</td><td>€43,400</td><td>€20,000</td><td>€23,400</td><td>5.1 months</td><td>≈ €50,300</td></tr>
 </tbody></table>
-<p>Simple payback = initial change cost ÷ monthly net benefit. The simplified NPV is −€10,000 plus three annual net benefits discounted at 8%. A real model would use actual cash timing, tax treatment where appropriate, contract terms, ramp, residual value, and finance-approved discount rate. The downside recommends no rollout. The base case may justify a measured pilot, not an immediate enterprise-wide claim.</p>
+<p>Simple payback = initial change cost ÷ monthly net benefit. The Net Present Value ($NPV$) is calculated using the formal discounting formula:</p>
+<p>$$NPV = -C_0 + \sum_{t=1}^{N} \frac{CF_t}{(1 + r)^t}$$</p>
+<p>where $C_0 = €10,000$ initial implementation cost, $CF_t$ is the net annual cash benefit in year $t$, $r = 8\%$ (0.08) discount rate, and $N = 3$ years.</p>
+
+<h4>Year-by-Year Cash Flow Discounting Schedule ($r = 8\%$)</h4>
+<table><thead><tr><th>Scenario</th><th>Year 0 ($CF_0$)</th><th>Year 1 ($CF_1$)</th><th>Year 2 ($CF_2$)</th><th>Year 3 ($CF_3$)</th><th>Discounted Cash Flow Sum</th><th>3-Year NPV</th></tr></thead><tbody>
+<tr><td>Downside</td><td>−€10,000</td><td>−€5,500 ($DCF$: −€5,093)</td><td>−€5,500 ($DCF$: −€4,715)</td><td>−€5,500 ($DCF$: −€4,366)</td><td>−€14,174</td><td>−€24,174 (≈ −€24,200)</td></tr>
+<tr><td>Base</td><td>−€10,000</td><td>+€8,900 ($DCF$: +€8,241)</td><td>+€8,900 ($DCF$: +€7,630)</td><td>+€8,900 ($DCF$: +€7,065)</td><td>+€22,936</td><td>+€12,936 (≈ +€12,900)</td></tr>
+<tr><td>Upside</td><td>−€10,000</td><td>+€23,400 ($DCF$: +€21,667)</td><td>+€23,400 ($DCF$: +€20,062)</td><td>+€23,400 ($DCF$: +€18,576)</td><td>+€60,304</td><td>+€50,304 (≈ +€50,300)</td></tr>
+</tbody></table>
+
+<h3>2D Sensitivity Matrix: Rework Time vs. Exception Reduction</h3>
+<p>To test model fragility against simultaneous operational changes, the matrix below evaluates Net Annual Benefit (Gross Benefit − €20,000 recurring cost) and Simple Payback across combinations of rework time per exception (20m, 35m, 50m) and exception reduction rate (20%, 40%, 60%):</p>
+<table><thead><tr><th>Rework Time per Exception</th><th>20% Exception Reduction (Downside)</th><th>40% Exception Reduction (Base)</th><th>60% Exception Reduction (Upside)</th></tr></thead><tbody>
+<tr><td><strong>20 min</strong> (0.33 hrs)</td><td>Annual Net: −€5,571<br>Payback: None</td><td>Annual Net: +€8,858<br>Payback: 13.5 mos</td><td>Annual Net: +€23,286<br>Payback: 5.2 mos</td></tr>
+<tr><td><strong>35 min</strong> (0.58 hrs - Base)</td><td>Annual Net: −€5,500<br>Payback: None</td><td>Annual Net: +€8,900<br>Payback: 13.5 mos</td><td>Annual Net: +€23,400<br>Payback: 5.1 mos</td></tr>
+<tr><td><strong>50 min</strong> (0.83 hrs)</td><td>Annual Net: −€128<br>Payback: None</td><td>Annual Net: +€19,744<br>Payback: 6.1 mos</td><td>Annual Net: +€39,616<br>Payback: 3.0 mos</td></tr>
+</tbody></table>
+
 <h3>Sensitivity and non-financial value</h3>
 <p>The case breaks even on recurring economics when gross annual benefit reaches €20,000. The highest-leverage uncertainty is exception reduction; rework time and realizable contractor reduction follow. Change one input at a time, then test plausible combinations. Non-financial value—cleaner audit evidence, fewer escalations, and clearer ownership—should be described and measured separately rather than converted into invented euros.</p>
 <p><strong>Risks:</strong> exceptions may originate upstream; adoption may be low; the integration may create new failures; contractor spend may be fixed; and returned capacity may not be redeployed. The pilot should measure exception mix, adoption, time per case, external invoices, and unintended effects.</p></section>
@@ -87,6 +105,49 @@
 <section id="practice"><h2>8. Practice: build a finance-reviewable case</h2>
 <p><strong>Objective:</strong> produce a transparent decision model and recommend proceed, pilot, reduce scope, investigate, or stop.</p>
 <p><strong>Scenario and inputs:</strong> A construction-services firm processes 800 change orders monthly. Operations reports 12% rework and 50 minutes per reworked order; finance supplies a €48 loaded hourly cost. A proposed tool costs €24,000 annually, €8,000 to implement, and 120 internal hours. The seller assumes 35% rework reduction. Customer delay penalties vary and are not verified.</p>
+
+<div class="solution-guide">
+<h3>Step-by-Step Mathematical Solution Breakdown</h3>
+<ol>
+<li><strong>Baseline Rework &amp; Capacity Calculation:</strong>
+  <ul>
+    <li>Monthly Change Orders = 800 | Rework Rate = 12% &rarr; 800 &times; 0.12 = 96 reworked change orders/month (1,152/yr).</li>
+    <li>Rework Time per Order = 50 minutes (0.8333 hours).</li>
+    <li>Monthly Rework Hours = 96 &times; 50 &divide; 60 = 80 hours/month (960 hours/year).</li>
+    <li>Gross Capacity Value = 960 hours &times; €48/hour = <strong>€46,080 / year</strong> (€3,840 / month).</li>
+  </ul>
+</li>
+<li><strong>Total Cost Structure:</strong>
+  <ul>
+    <li>Year 0 Initial Implementation Cost ($C_0$) = €8,000 cash + (120 hours &times; €48/hr internal labor) = <strong>€13,760 total change cost</strong> (€8,000 cash outlay).</li>
+    <li>Annual Recurring License/Admin Cost = <strong>€24,000 / year</strong>.</li>
+  </ul>
+</li>
+<li><strong>Modeled Gross Savings vs Realized Cash Flow (35% Rework Reduction):</strong>
+  <ul>
+    <li>Gross Capacity Saved = 960 hours &times; 35% = 336 hours/year (28 hours/month).</li>
+    <li>Gross Capacity Value Saved = 336 hours &times; €48/hr = <strong>€16,128 / year</strong>.</li>
+    <li><strong>Critical Finance Check:</strong> If internal hours freed (336 hrs) cannot reduce headcount, overtime, or contractor spend, cash realized = <strong>€0</strong>.</li>
+    <li><strong>Net Annual Cash Flow (Optimistic - Monetized Capacity):</strong> €16,128 gross saving &minus; €24,000 recurring cost = <strong>&minus;€7,872 / year</strong>.</li>
+    <li><strong>Net Annual Cash Flow (Conservative - Pure Cash):</strong> €0 gross saving &minus; €24,000 recurring cost = <strong>&minus;€24,000 / year</strong>.</li>
+  </ul>
+</li>
+<li><strong>Financial Metrics (3-Year Horizon at r = 8%):</strong>
+  <ul>
+    <li>Simple Payback = None (annual cash flow is negative under both capacity-monetized and cash-only assumptions).</li>
+    <li>3-Year NPV (Capacity Monetized): $NPV = -\text{€}8,000 + \sum_{t=1}^3 \frac{-\text{€}7,872}{(1.08)^t} = -\text{€}8,000 - \text{€}20,287 = \mathbf{-\text{€}28,287}$.</li>
+    <li>3-Year NPV (Pure Cash): $NPV = -\text{€}8,000 + \sum_{t=1}^3 \frac{-\text{€}24,000}{(1.08)^t} = -\text{€}8,000 - \text{€}61,850 = \mathbf{-\text{€}69,850}$.</li>
+  </ul>
+</li>
+<li><strong>Decision Recommendation &amp; Stop Rule:</strong>
+  <ul>
+    <li><strong>Recommendation:</strong> DISQUALIFY full purchase rollout immediately. The seller's 35% rework reduction hypothesis produces a negative net recurring cash flow (&minus;€7,872/yr) against the €24,000 license fee.</li>
+    <li><strong>Stop Rule / Pivot:</strong> Only proceed to a bounded pilot if customer delay penalties (unverified) or external contractor spend exceed €15,744/year to bridge the break-even gap.</li>
+  </ul>
+</li>
+</ol>
+</div>
+
 <ol><li>Define the decision, alternatives, stakeholders, and missing evidence.</li><li>Classify each input as observed, reported, calculated, or assumed.</li><li>Build a capability-to-value driver tree.</li><li>Calculate the baseline without treating capacity as cash.</li><li>Create downside, base, and upside scenarios, total cost, payback, and a simple three-year NPV using an explained discount rate.</li><li>Run sensitivity on the two assumptions most likely to change the recommendation.</li><li>Write five customer validation questions and a pilot measurement plan.</li><li>Prepare a one-page recommendation that includes risks and a stop rule.</li></ol>
 <p><strong>Required output:</strong> source ledger, formulas, scenario table, sensitivity note, proof plan, executive memo, and decision recommendation. <strong>Time:</strong> 90 minutes plus peer review.</p>
 <p><strong>Rubric:</strong> evidence classification 20%; formula and unit accuracy 20%; realization logic and de-duplication 20%; scenario/sensitivity quality 15%; decision usefulness 15%; uncertainty and ethics 10%.</p>

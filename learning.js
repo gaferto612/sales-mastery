@@ -382,10 +382,43 @@ function exerciseCapstones(){
   if(!location.pathname.endsWith('exercises.html'))return;
   const article=document.querySelector('article.content');
   if(!article||document.getElementById('capstones'))return;
+  const capstoneDetails={
+    b2c:{
+      objective:"Produce a complete B2C sales & conversion blueprint combining profile, messaging, objection handling, and retention experiments.",
+      scenario:"A consumer brand is launching a new product line with high website traffic but low checkout conversion and weak repeat purchases.",
+      inputs:"Customer profile data, existing landing page URL/copy, product feature list, customer feedback logs.",
+      rubric:"Buyer relevance (25%), Messaging clarity & value prop (30%), Objection & retention strategy (25%), Measurement & ethics (20%).",
+      variations:"<strong>Beginner:</strong> Focus on single product page critique, 1 in-person opener, and 3 top objections. | <strong>Advanced:</strong> Build an omnichannel buyer journey including post-purchase onboarding, win-back sequence, and retention metrics."
+    },
+    enterprise:{
+      objective:"Build an enterprise deal strategy and buyer consensus package to navigate complex buying committees and procurement.",
+      scenario:"Selling a €150k/yr SaaS platform to a 1,000-person enterprise with 6 decision makers across IT, Security, Finance, and Operations.",
+      inputs:"Account background, stakeholder personas, champion interview notes, technical requirements, competitor comparison.",
+      rubric:"Account mapping & stakeholder coverage (30%), Economic business case & evidence (25%), Demo & mutual action plan (25%), Risk mitigation & ethics (20%).",
+      variations:"<strong>Beginner:</strong> Map 3 key stakeholders and produce a 1-page business case and discovery brief. | <strong>Advanced:</strong> Complete full deal room portfolio including mutual action plan, security evidence grid, procurement concession strategy, and executive sponsor deck."
+    },
+    founder:{
+      objective:"Execute a 0-to-1 outbound and design-partner acquisition process to secure the first 10 paying customers for an early-stage venture.",
+      scenario:"Early-stage B2B software startup with zero brand awareness, no dedicated sales team, and an unproven pricing model seeking early adopters.",
+      inputs:"ICP target criteria, value hypothesis, draft email sequence templates, interview scripts, product demo outline.",
+      rubric:"ICP definition & market signal (25%), Outbound & interview execution (30%), Offer structure & proof strategy (25%), Iteration & learning cadence (20%).",
+      variations:"<strong>Beginner:</strong> Define ICP, write 3-touch cold email sequence, and run 5 customer discovery interviews. | <strong>Advanced:</strong> Execute campaign securing 3 paid design partners, validate 2 pricing tiers, and document a scalable sales playbook."
+    },
+    leader:{
+      objective:"Design a comprehensive sales management framework covering hiring, pipeline review, coaching, and performance management.",
+      scenario:"A growing sales team of 8 reps is missing targets due to inconsistent discovery quality, lumpy pipeline forecasting, and lack of structured coaching.",
+      inputs:"Rep quota attainment data, win/loss conversion rates, call recording samples, pipeline velocity metrics.",
+      rubric:"Hiring & competency scorecard (25%), Cadence & forecasting accuracy (25%), Coaching framework & skill improvement (30%), Systemic enablement & metrics (20%).",
+      variations:"<strong>Beginner:</strong> Create a rep hiring rubric, 1-on-1 coaching template, and bi-weekly pipeline review agenda. | <strong>Advanced:</strong> Implement full manager operating cadence including skills matrix, rep ramp plan, forecast variance model, and enablement experiment."
+    }
+  };
   const section=document.createElement('section');
   section.id='capstones';
   section.className='capstone-briefs';
-  section.innerHTML=`<div class="section-kicker">Integrated assessment</div><h2>Capstone projects</h2><p>Choose the project closest to your work. Use real or clearly fictionalized data. Completion is not professional certification; ask a peer or manager to review the artifact where possible.</p>${capstones.map(([id,title,brief])=>`<article class="capstone-brief"><span>${paths[id][0]}</span><h3>${title}</h3><p>${brief}</p><h4>Required evidence</h4><ul><li>Buyer or account context and assumptions</li><li>Decisions tied to relevant course modules</li><li>One tested script, message, or workflow</li><li>Risks, ethical constraints, and disconfirming evidence</li><li>A 30-day implementation and measurement plan</li></ul></article>`).join('')}<div class="rubric"><h3>Shared scoring rubric</h3><div><span>Evidence & accuracy <strong>30%</strong></span><span>Buyer relevance <strong>25%</strong></span><span>Execution quality <strong>25%</strong></span><span>Ethics & reflection <strong>20%</strong></span></div><p>Suggested self-assessment threshold: 70/100 overall and no score below 50% in ethics and reflection. This is not certification.</p></div>`;
+  section.innerHTML=`<div class="section-kicker">Integrated assessment</div><h2>Capstone projects</h2><p>Choose the project closest to your work. Use real or clearly fictionalized data. Completion is not professional certification; ask a peer or manager to review the artifact where possible.</p>${capstones.map(([id,title,brief])=>{
+    const d=capstoneDetails[id]||{};
+    return `<article class="capstone-brief"><span>${paths[id]?.[0]||id}</span><h3>${title}</h3><p>${brief}</p><p><strong>Objective:</strong> ${d.objective||''}</p><p><strong>Scenario:</strong> ${d.scenario||''}</p><p><strong>Inputs:</strong> ${d.inputs||''}</p><p><strong>Rubric:</strong> ${d.rubric||''}</p><p><strong>Variations:</strong> ${d.variations||''}</p><h4>Required evidence</h4><ul><li>Buyer or account context and assumptions</li><li>Decisions tied to relevant course modules</li><li>One tested script, message, or workflow</li><li>Risks, ethical constraints, and disconfirming evidence</li><li>A 30-day implementation and measurement plan</li></ul></article>`;
+  }).join('')}<div class="rubric"><h3>Shared scoring rubric</h3><div><span>Evidence & accuracy <strong>30%</strong></span><span>Buyer relevance <strong>25%</strong></span><span>Execution quality <strong>25%</strong></span><span>Ethics & reflection <strong>20%</strong></span></div><p>Suggested self-assessment threshold: 70/100 overall and no score below 50% in ethics and reflection. This is not certification.</p></div>`;
   article.appendChild(section);
   if(location.hash==='#capstones')requestAnimationFrame(()=>section.scrollIntoView());
 }

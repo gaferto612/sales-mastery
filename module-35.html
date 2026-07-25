@@ -47,16 +47,17 @@
 <p><strong>Illustrative example.</strong> A regional sales director for an industrial automation firm must prioritize a list of 40 assigned manufacturing plants. They have capacity to actively work only 5 accounts this quarter.</p>
 
 <h3>Territory ranking table</h3>
+<div class="callout"><div class="callout-label">Capacity allocation rule</div><p>Seller capacity is capped at 60 active strategy &amp; discovery hours per month. Allocating 15 hrs/mo to each Tier 1 account limits active pursuit to 3 Tier 1 accounts (45 hrs/mo), leaving 12.5 hrs/mo for 5 Tier 2 accounts (2.5 hrs/mo each) and 2.5 hrs/mo for Tier 3 monitoring (0.25 hrs/mo each across 10 accounts).</p></div>
 <div class="table-wrapper">
 <table>
-<thead><tr><th>Account</th><th>Estimated Potential</th><th>Fit</th><th>Propensity & Timing</th><th>Existing Access</th><th>Competition</th><th>Recommended Tier</th><th>Next Action</th></tr></thead>
+<thead><tr><th>Account</th><th>Estimated Potential</th><th>Fit</th><th>Propensity & Timing</th><th>Existing Access</th><th>Time Budget (hrs/mo)</th><th>Recommended Tier</th><th>Next Action</th></tr></thead>
 <tbody>
-<tr><td><strong>Global Motors (Plant A)</strong></td><td>€2.5M</td><td>High</td><td>Low (recently renewed incumbent)</td><td>None</td><td>Incumbent locked in</td><td>Tier 3 (Monitor)</td><td>Set alert for incumbent contract expiration in 18 months.</td></tr>
-<tr><td><strong>TechParts Ltd.</strong></td><td>€400K</td><td>High</td><td>High (expanding facility next month)</td><td>Strong (VP Operations)</td><td>Fragmented</td><td>Tier 1 (Active)</td><td>Present workflow diagnostic to VP this week.</td></tr>
-<tr><td><strong>Apex Industrial</strong></td><td>€1.2M</td><td>Medium</td><td>Medium (exploring upgrades)</td><td>Weak (Procurement only)</td><td>Two active rivals</td><td>Tier 2 (Nurture)</td><td>Seek introduction to plant manager via LinkedIn shared connection.</td></tr>
-<tr><td><strong>SteelCorp Inc.</strong></td><td>€800K</td><td>High</td><td>High (frequent safety citations)</td><td>Medium (Safety Director)</td><td>In-house tools</td><td>Tier 1 (Active)</td><td>Draft account plan focused on compliance reporting.</td></tr>
-<tr><td><strong>Legacy Manufacturing</strong></td><td>€3M</td><td>Low (unsupported legacy tech)</td><td>Unknown</td><td>None</td><td>None</td><td>Disqualify</td><td>Remove from active territory; poor strategic fit.</td></tr>
-<tr><td><strong>Precision CNC</strong></td><td>€600K</td><td>High</td><td>High (competitor price hike)</td><td>Strong (CEO)</td><td>Vulnerable incumbent</td><td>Tier 1 (Active)</td><td>Co-author business case with CEO.</td></tr>
+<tr><td><strong>Global Motors (Plant A)</strong></td><td>€2.5M</td><td>High</td><td>Low (recently renewed incumbent)</td><td>None</td><td>0.25 hr/mo</td><td>Tier 3 (Monitor)</td><td>Set alert for incumbent contract expiration in 18 months.</td></tr>
+<tr><td><strong>TechParts Ltd.</strong></td><td>€400K</td><td>High</td><td>High (expanding facility next month)</td><td>Strong (VP Operations)</td><td>15.0 hrs/mo</td><td>Tier 1 (Active)</td><td>Present workflow diagnostic to VP this week.</td></tr>
+<tr><td><strong>Apex Industrial</strong></td><td>€1.2M</td><td>Medium</td><td>Medium (exploring upgrades)</td><td>Weak (Procurement only)</td><td>2.5 hrs/mo</td><td>Tier 2 (Nurture)</td><td>Seek introduction to plant manager via LinkedIn shared connection.</td></tr>
+<tr><td><strong>SteelCorp Inc.</strong></td><td>€800K</td><td>High</td><td>High (frequent safety citations)</td><td>Medium (Safety Director)</td><td>15.0 hrs/mo</td><td>Tier 1 (Active)</td><td>Draft account plan focused on compliance reporting.</td></tr>
+<tr><td><strong>Legacy Manufacturing</strong></td><td>€3M</td><td>Low (unsupported legacy tech)</td><td>Unknown</td><td>None</td><td>0.0 hrs/mo</td><td>Disqualify</td><td>Remove from active territory; poor strategic fit.</td></tr>
+<tr><td><strong>Precision CNC</strong></td><td>€600K</td><td>High</td><td>High (competitor price hike)</td><td>Strong (CEO)</td><td>15.0 hrs/mo</td><td>Tier 1 (Active)</td><td>Co-author business case with CEO.</td></tr>
 </tbody>
 </table>
 </div>
@@ -76,7 +77,38 @@
 <li><strong>Evidence gaps:</strong> We do not know the cost of a delayed shipment or IT's security requirements.</li>
 <li><strong>Review date:</strong> Oct 25.</li>
 <li><strong>Exit criteria:</strong> If Sarah cannot secure a meeting with IT and the economic buyer by Oct 25, demote to Tier 2 and pause active pursuit.</li>
-</ul></section>
+</ul>
+
+<h3>Visual Organigraph &amp; Stakeholder Relationship Map</h3>
+<div class="organigraph-container" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:16px; margin:16px 0; font-family:monospace; line-height:1.4;">
+<pre style="margin:0; overflow-x:auto;">
+                      ┌─────────────────────────────────┐
+                      │    Marcus Vance (CEO)           │
+                      │    Role: Economic Buyer          │
+                      │    Stance: Neutral / ROI Focused│
+                      └────────────────┬────────────────┘
+                                       │
+            ┌──────────────────────────┴──────────────────────────┐
+            │                                                     │
+┌───────────▼─────────────────────┐                     ┌─────────▼──────────────────────┐
+│  Sarah Chen (VP Operations)     │──(Influence Pair)──►│  David Ross (VP IT)            │
+│  Role: Champion                 │                     │  Role: Technical Gatekeeper    │
+│  Stance: Highly Favorable       │◄─(Security Check)───│  Stance: Hesitant / Skeptical  │
+└───────────┬─────────────────────┘                     └────────────────────────────────┘
+            │
+            │ (Direct Supervision &amp; Workflow Pain)
+            ▼
+┌─────────────────────────────────┐                     ┌────────────────────────────────┐
+│  Elena Rostova (QA Lead)        │                     │  Thomas Wright (Finance Dir)   │
+│  Role: User Buyer / Evaluator   │                     │  Role: Financial Gatekeeper    │
+│  Stance: Enthusiastic (Overworked)                    │  Stance: Neutral (Needs NPV)   │
+└─────────────────────────────────┘                     └────────────────────────────────┘
+
+Relationship Key:
+──► Strong Influence / Trust Line
+◄── Barrier / Security &amp; Compliance Gate
+</pre>
+</div></section>
 
 <section id="execution"><h2>6. Weak versus improved account plan</h2>
 <p><strong>Weak plan:</strong><br>
