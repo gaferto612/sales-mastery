@@ -1,0 +1,9 @@
+{
+  "name": "sales-mastery",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build-sites.mjs",
+    "validate": "node tools/validate-course.mjs && node tools/test-learning-state.mjs"
+  }
+}
