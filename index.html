@@ -191,11 +191,12 @@
   
   .modules-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1px;
     background: var(--line);
     border: 1px solid var(--line);
   }
+  .modules-grid .mod-card.grid-wide { grid-column: 1 / -1; }
   .mod-card {
     background: var(--ink);
     padding: 30px 28px;
