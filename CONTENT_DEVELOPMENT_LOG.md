@@ -1,5 +1,39 @@
 # Content Development Log
 
+## Batch 2 — Complex Revenue Modules (34–36)
+
+### Files reviewed
+
+- `module-34.html`
+- `module-35.html`
+- `module-36.html`
+- `course-data.js` and `assessment-data.js`
+
+### Files changed
+
+- `module-34.html`
+- `module-35.html`
+- `module-36.html`
+- `assessment-data.js`
+
+### Main improvements
+
+- Replaced underdeveloped stubs in Modules 35 and 36 with deep, structured instructional content matching the strict standard of Modules 31-33.
+- Module 34: Migrated hardcoded knowledge check `<details>` blocks to the central `assessment-data.js` interactive system, preserving the strict 6-state model.
+- Module 35: Added complete territory-ranking worked examples, capacity limits, explicit exit criteria, weak-vs-improved plans, and practice scenarios for Account and Territory Strategy.
+- Module 36: Added exploration of buying groups, consensus building, false champions, and weak-vs-improved multithreading dialogues for Decision Enablement.
+- Added 4 applied multiple-choice knowledge checks per module (35 and 36) to `assessment-data.js` with structured explanations for all answers.
+
+### Sources verified
+
+- Principles of complex B2B selling, stakeholder mapping, and opportunity qualification logic.
+- Avoided treating majority support as consensus, and clarified influence versus authority.
+
+### Remaining gaps
+
+- Modules 37–42 remain substantially too brief for their complexity and require a similar deep development pass.
+
+
 ## Batch 1 — Customer evidence to diagnosis (Modules 31–33)
 
 ### Files reviewed
