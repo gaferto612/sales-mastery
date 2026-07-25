@@ -102,7 +102,10 @@ const modules = [
 ].map(([id,short,title,headline,lede,sections])=>({id,short,title,headline,lede,sections}));
 
 const nav=`<nav class="topbar"><div class="topbar-inner"><a href="index.html" class="topbar-brand"><span class="dot"></span>Sales Mastery</a><div class="topbar-nav"><a href="index.html">Home</a><a href="module-01.html" class="active">Modules</a><a href="exercises.html">Exercises</a><a href="case-studies.html">Cases</a><button id="langToggle" class="lang-btn notranslate"><span class="lang-en">عربي</span><span class="lang-ar" style="display:none;">EN</span></button></div></div></nav>`;
+// Modules 31–33 have completed depth editions maintained directly in their HTML files.
+const completedDepthModules=new Set(['31','32','33']);
 for(const [index,mod] of modules.entries()){
+  if(completedDepthModules.has(mod.id)&&fs.existsSync(`module-.html`)) continue;
   const previous=String(Number(mod.id)-1).padStart(2,'0'),next=modules[index+1];
   const toc=mod.sections.map(([id,title],i)=>`<li><a href="#${id}">${i+1}. ${title}</a></li>`).join('');
   const body=mod.sections.map(([id,title,html],i)=>`<section id="${id}"><h2>${i+1}. ${title}</h2><p>${html}</p></section>`).join('\n');
