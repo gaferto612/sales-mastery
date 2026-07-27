@@ -1,5 +1,70 @@
 # Content Development Log
 
+## qa: validate course content assessments and learner state
+
+### Files reviewed
+
+- `assessment-data.js` and `dist/static/assessment-data.js`
+- `learning.js` and `dist/static/learning.js`
+- `script.js` and `dist/static/script.js`
+- `exercises.html` and `dist/static/exercises.html`
+- `module-32.html` and `dist/static/module-32.html`
+- `module-37.html` through `module-42.html` (root and `dist/static/`)
+- `tools/validate-course.mjs`
+
+### Files changed
+
+- `exercises.html` and `dist/static/exercises.html`
+- `module-32.html` and `dist/static/module-32.html`
+- `module-37.html`, `module-38.html`, `module-39.html`, `module-40.html`, `module-41.html`, `module-42.html` (root and `dist/static/`)
+- `CONTENT_DEVELOPMENT_LOG.md`
+
+### Main improvements
+
+- **Assessments & Learner State Validation**: Validated `assessment-data.js` multi-question assessment data (Modules 31–42), legacy 1-question check fallback handling in `learning.js`, script loading chain order in `script.js`, explicit `read` state toggling, `knowledge_check_passed` threshold rules, and strict isolation of learner state from notes/bookmarks in `localStorage`.
+- **Practice Variations Remediation (Modules 37–42)**: Added explicit `<p><strong>Beginner variation:</strong> ...</p>` and `<p><strong>Advanced variation:</strong> ...</p>` paragraphs to Section 8 (Practice) in `module-37.html`, `module-38.html`, `module-39.html`, `module-40.html`, `module-41.html`, and `module-42.html` (both root and `dist/static/`).
+- **DOM & Structural Repair (Module 32)**: Repaired `module-32.html` and `dist/static/module-32.html` by removing an embedded duplicate `<!DOCTYPE html>...` document header block, ensuring exactly 1 `<h1>` tag and zero duplicate HTML element IDs.
+- **Distribution & File Synchronization**: Synchronized `dist/static/exercises.html` byte-for-byte with root `exercises.html` (updating outdated module link titles), and synchronized all updated HTML files to `dist/static/`.
+
+### Verification
+
+- Executed `node tools/validate-course.mjs` confirming status `"pass"` across all 43 modules, 20 drills, 17 cases, 4 capstones, 43 research notes, and 62,453 module words.
+- Confirmed single `<h1>` tag and unique HTML IDs in `module-32.html`.
+- Confirmed presence of Beginner and Advanced variations in section 8 of Modules 37–42.
+- Verified byte-for-byte synchronization between root files and `dist/static/` counterparts.
+
+## docs: align course claims counts and terminology
+
+### Files reviewed
+
+- `README.md`
+- `index.html`
+- `exercises.html`
+- `module-06.html`
+- `module-31.html`, `module-32.html`, `module-33.html`, `module-34.html`
+- `course-data.js`
+- `tools/validate-course.mjs`
+
+### Files changed
+
+- `README.md`
+- `exercises.html`
+- `module-06.html`
+- `module-31.html`, `module-32.html`, `module-33.html`, `module-34.html`
+- `CONTENT_DEVELOPMENT_LOG.md`
+
+### Main improvements
+
+- **Course Claim Alignment (`README.md`)**: Updated `README.md` line 5 word count claim from `40,000+ words` to `60,000+ words` (aligning with `index.html` line 476 `60K+ Words` and actual codebase module count of ~62,453 words).
+- **Navigation Link Title Fixes (`module-31.html` – `module-34.html`)**: Replaced generic "Previous lesson" title text in `<div class="next-title">` for `<a class="prev">` navigation buttons in Modules 31, 32, 33, and 34 with their exact canonical predecessor module titles (`Evolutionary Psychology`, `Customer & Market Research`, `Segmentation, ICP & Positioning`, `Consultative Discovery & Diagnosis`).
+- **Parenthetical Related-Module Title Alignment (`exercises.html`)**: Standardized parenthetical related-module titles across 18 drills in `exercises.html` to match canonical titles defined in `course-data.js` (e.g. `Foundations of Selling`, `Psychology of Selling`, `Online Selling`, `Offline Selling`, `B2B Sales`, `Copywriting & Marketing`, `Negotiation`, `Objection Handling`, `Closing Techniques`, `Customer Retention`, `Ethics & Pitfalls`, `Tools & Resources`, `MEDDPICC & Mutual Action Plans`, `Working with Procurement`, `Transactional Analysis`, `Customer & Market Research`, `Segmentation, ICP & Positioning`, `Consultative Discovery & Diagnosis`, `Proposals, RFPs, Security & Contracting`, `Revenue Operations, Pipeline & Forecasting`).
+- **Framework Terminology Scope Correction (`module-06.html`)**: Fixed tab button (line 216) and `<h3>` header (line 222) in `module-06.html` to read `MEDDIC` instead of `MEDDPICC`, aligning the framework introduction with the 6-letter MEDDIC interactive scorecard widget on line 260 and reserving full `MEDDPICC` coverage for Module 23 (`module-23.html`).
+
+### Verification
+
+- Executed `node tools/validate-course.mjs` confirming status `"pass"` across all 43 modules, 20 drills, 17 cases, 4 capstones, 43 research notes, and ~62,453 module words.
+- Confirmed zero occurrences of `40,000+ words` in `README.md`, zero generic "Previous lesson" strings in module navigation links, and exact match for all drill related-module titles against `course-data.js`.
+
 ## content: strengthen capstones and evidence
 
 ### Files reviewed

@@ -2,7 +2,7 @@
 
 A practical, opinionated curriculum on selling — online, offline, B2B, psychology, copywriting, negotiation, retention, and the ethics of the craft.
 
-**43 modules · 6 competency levels · 5 role-based paths · 20 drills · 4 capstones · 17 case studies · 40,000+ words**
+**43 modules · 6 competency levels · 5 role-based paths · 20 drills · 4 capstones · 17 case studies · 60,000+ words**
 
 ---
 
