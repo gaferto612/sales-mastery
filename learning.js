@@ -384,41 +384,132 @@ function exerciseCapstones(){
   if(!article||document.getElementById('capstones'))return;
   const capstoneDetails={
     b2c:{
-      objective:"Produce a complete B2C sales & conversion blueprint combining profile, messaging, objection handling, and retention experiments.",
-      scenario:"A consumer brand is launching a new product line with high website traffic but low checkout conversion and weak repeat purchases.",
-      inputs:"Customer profile data, existing landing page URL/copy, product feature list, customer feedback logs.",
-      rubric:"Buyer relevance (25%), Messaging clarity & value prop (30%), Objection & retention strategy (25%), Measurement & ethics (20%).",
-      variations:"<strong>Beginner:</strong> Focus on single product page critique, 1 in-person opener, and 3 top objections. | <strong>Advanced:</strong> Build an omnichannel buyer journey including post-purchase onboarding, win-back sequence, and retention metrics."
+      title:"B2C conversion sprint",
+      badge:"Practice portfolio item",
+      statusLabel:"Capstone completed (Self-assessed)",
+      scenario:"A D2C ergonomic workspace brand with 120,000 monthly website visits faces a 1.2% checkout conversion rate and 8% 90-day repeat purchase rate. Paid ad acquisition costs have risen 35%, making paid channels unprofitable without improving conversion and customer lifetime value.",
+      learnerRole:"Lead E-Commerce & B2C Sales Growth Consultant.",
+      customerContext:"Mid-career remote knowledge workers experiencing physical posture fatigue; product price point €180–€450; primary traffic from social ad campaigns and organic search.",
+      availableEvidence:"Google Analytics conversion funnel drop-off logs, 50 recorded user session replays, post-purchase survey responses (N=240), competitor landing page tear-downs, and customer support ticket transcripts.",
+      missingInformation:"Quantitative data on exact checkout step drop-off causes (mobile payment gateway vs hidden shipping fee friction), customer willingness-to-pay for bundled accessories, and post-purchase onboarding email open rates.",
+      constraints:"Must deliver recommendations within a €5,000 implementation budget, zero changes to core product manufacturing, and full compliance with GDPR/ePrivacy consent regulations.",
+      requiredAssumptions:"Assume customer support response times remain under 4 hours, website traffic volume stays stable over the next 90 days, and logistics delivery windows remain 3–5 business days.",
+      deliverables:"Ideal Customer Profile (ICP) & persona map, Value proposition matrix & hero copy critique, Live-chat/in-person opening script & objection handling matrix, Post-purchase retention experiment & email sequence design, 30-day implementation & measurement roadmap.",
+      evaluationRubric:"Buyer relevance & empathy (25%), Value proposition & messaging clarity (30%), Objection & retention strategy (25%), Ethics & measurement rigor (20%). Passing threshold: >=70% overall with no dimension <50%.",
+      beginnerVersion:"Focus on single product page copy critique, 1 live-chat opening script, and objection responses for top 3 customer hesitations.",
+      advancedVersion:"Build an end-to-end B2C conversion & retention engine including pre-purchase interactive quiz, post-purchase onboarding workflow, win-back sequence, and 90-day LTV simulation model.",
+      partialStrongSubmission:"\"Customer Profile: 'Desk-Bound Knowledge Worker' (Age 28-45). Primary Pain: Lower back fatigue after 6+ hours of remote desk work. Unaddressed Concern: 'Will this fit my small home office setup without complex assembly?' Solution Opener: 'Rather than listing desk dimensions, replace the hero banner with a 15-second video showing unboxing-to-setup in under 3 minutes, paired with a 30-day risk-free trial guarantee.'\"",
+      selfAssessmentQuestions:"1. Did your value proposition isolate a specific customer struggle rather than listing generic product specifications? 2. How did your objection script distinguish between price sensitivity and lack of risk mitigation? 3. What disconfirming metric would prove your retention experiment failed?",
+      relatedModules:'<a class="module-ref" href="module-01.html"><em>Module 1</em></a>, <a class="module-ref" href="module-03.html"><em>Module 3</em></a>, <a class="module-ref" href="module-05.html"><em>Module 5</em></a>, <a class="module-ref" href="module-09.html"><em>Module 9</em></a>, <a class="module-ref" href="module-11.html"><em>Module 11</em></a>',
+      riskAnalysis:"False scarcity or fake countdown timers destroy brand trust; dark patterns in checkout violate consumer protection laws; over-promising ergonomic health outcomes risks regulatory compliance issues."
     },
     enterprise:{
-      objective:"Build an enterprise deal strategy and buyer consensus package to navigate complex buying committees and procurement.",
-      scenario:"Selling a €150k/yr SaaS platform to a 1,000-person enterprise with 6 decision makers across IT, Security, Finance, and Operations.",
-      inputs:"Account background, stakeholder personas, champion interview notes, technical requirements, competitor comparison.",
-      rubric:"Account mapping & stakeholder coverage (30%), Economic business case & evidence (25%), Demo & mutual action plan (25%), Risk mitigation & ethics (20%).",
-      variations:"<strong>Beginner:</strong> Map 3 key stakeholders and produce a 1-page business case and discovery brief. | <strong>Advanced:</strong> Complete full deal room portfolio including mutual action plan, security evidence grid, procurement concession strategy, and executive sponsor deck."
+      title:"Enterprise deal room",
+      badge:"Practice portfolio item",
+      statusLabel:"Capstone completed (Self-assessed)",
+      scenario:"Selling a €150k/year enterprise B2B workflow & compliance software platform to a 1,200-employee financial services firm. The sales cycle has reached month 4 with 6 distinct stakeholders across IT, Cyber Security, Legal, Procurement, Operations, and Business Leadership.",
+      learnerRole:"Enterprise Account Executive (AE) / Commercial Lead.",
+      customerContext:"Heavily regulated financial institution using legacy premise software; experiencing operational audit delays costing €400k annually; high security governance and strict vendor onboarding requirements.",
+      availableEvidence:"Champion interview transcripts, IT security questionnaire (80 questions), technical architecture diagram, competitor ROI slide deck, past 3-year audit findings report.",
+      missingInformation:"True economic buyer decision criteria, internal political dynamics between IT and Business Ops, legal liability cap limits, and budget allocation timeline for the upcoming fiscal quarter.",
+      constraints:"Must achieve SOC 2 Type II compliance validation, adhere to a strict 90-day deal registration window, and operate within a 12% maximum discount governance policy.",
+      requiredAssumptions:"Procurement will mandate a legal redline review cycle, executive sponsorship requires a quantified NPV business case, and implementation drag must not exceed 30 engineering hours.",
+      deliverables:"Stakeholder account map & 2x2 influence grid, Discovery brief & diagnostic question plan, Security & compliance evidence grid, Economic business case & payback model, Mutual Action Plan (MAP) storyboard, Negotiation give-get trade sheet.",
+      evaluationRubric:"Account mapping & consensus coverage (30%), Economic business case & evidence rigor (25%), Demo storyboard & Mutual Action Plan (25%), Risk mitigation & ethical contracting (20%). Passing threshold: >=70% overall with no dimension <50%.",
+      beginnerVersion:"Map 3 core stakeholders (Champion, IT, Economic Buyer), produce a 1-page executive summary business case, and draft a 5-step Mutual Action Plan.",
+      advancedVersion:"Complete full enterprise deal room package: 6-stakeholder map, 3-year NPV cash flow model with 2D sensitivity matrix, SOC 2 compliance mapping, legal redline trade log, and executive alignment deck.",
+      partialStrongSubmission:"\"Economic Business Case: 'The current manual compliance audit requires 1,200 staff hours per quarter @ €85/hr (€408k/yr). Platform automation reduces audit prep time by 65%, generating €265k annual savings. At €150k ARR, Payback is achieved in Month 6.8 with a 3-year NPV of €412k at an 8% discount rate. Sensitivity analysis shows payback remains under 10 months even if audit efficiency gains drop to 40%.'\"",
+      selfAssessmentQuestions:"1. Have you identified an Economic Buyer with budget authority, or are you relying solely on a friendly Champion? 2. How does your Mutual Action Plan bind both buyer and seller to verifiable milestone dates? 3. What tradeable concessions have you prepared to defend price against procurement discounting pressure?",
+      relatedModules:'<a class="module-ref" href="module-06.html"><em>Module 6</em></a>, <a class="module-ref" href="module-23.html"><em>Module 23</em></a>, <a class="module-ref" href="module-24.html"><em>Module 24</em></a>, <a class="module-ref" href="module-34.html"><em>Module 34</em></a>, <a class="module-ref" href="module-36.html"><em>Module 36</em></a>, <a class="module-ref" href="module-37.html"><em>Module 37</em></a>',
+      riskAnalysis:"Single-threaded deals stall when champions leave; over-committing custom features damages engineering roadmap; discounting without getting term commitments erodes gross margin."
     },
     founder:{
-      objective:"Execute a 0-to-1 outbound and design-partner acquisition process to secure the first 10 paying customers for an early-stage venture.",
-      scenario:"Early-stage B2B software startup with zero brand awareness, no dedicated sales team, and an unproven pricing model seeking early adopters.",
-      inputs:"ICP target criteria, value hypothesis, draft email sequence templates, interview scripts, product demo outline.",
-      rubric:"ICP definition & market signal (25%), Outbound & interview execution (30%), Offer structure & proof strategy (25%), Iteration & learning cadence (20%).",
-      variations:"<strong>Beginner:</strong> Define ICP, write 3-touch cold email sequence, and run 5 customer discovery interviews. | <strong>Advanced:</strong> Execute campaign securing 3 paid design partners, validate 2 pricing tiers, and document a scalable sales playbook."
+      title:"First ten customers",
+      badge:"Practice portfolio item",
+      statusLabel:"Capstone completed (Self-assessed)",
+      scenario:"An early-stage B2B SaaS startup with zero brand awareness, no dedicated sales team, and $15k monthly burn is seeking its first 10 paying design partners for a developer automation tool.",
+      learnerRole:"Founder / CEO carrying the primary sales motion.",
+      customerContext:"Engineering leads and CTOs at Series A/B tech startups (50-200 employees); high technical skepticism; overwhelmed by vendor cold outreach.",
+      availableEvidence:"Product demo video recording, technical documentation, list of 100 ICP target accounts on LinkedIn, preliminary user feedback from 5 free beta testers.",
+      missingInformation:"Willingness-to-pay threshold for commercial software vs open-source alternatives, exact buyer job title responsible for software budget, and primary channel for reaching engineering leaders.",
+      constraints:"Zero marketing budget, sales cycle must close within 45 days, founder can dedicate maximum 15 hours/week to outbound sales.",
+      requiredAssumptions:"The product MVP is functional for core use cases, setup takes under 30 minutes, and founders can offer direct 1-on-1 slack channel support to early design partners.",
+      deliverables:"ICP definition & market signal diagnostic, Customer discovery interview script & question bank, 3-touch outbound cold outreach email sequence, Design-partner offer package & pricing hypothesis, Customer proof plan & learning dashboard.",
+      evaluationRubric:"ICP definition & market signal clarity (25%), Outbound message relevance & interview rigor (30%), Offer packaging & proof plan (25%), Learning velocity & iteration discipline (20%). Passing threshold: >=70% overall with no dimension <50%.",
+      beginnerVersion:"Define ICP, write a 3-email cold outreach campaign, and execute 5 customer discovery interviews.",
+      advancedVersion:"Complete full 0-to-1 playbook: ICP qualification matrix, 15 discovery call tear-downs, paid design-partner agreement framework ($500/mo setup + feedback SLA), pricing validation model, and scalable outbound playbook.",
+      partialStrongSubmission:"\"Design Partner Offer: 'Instead of offering a free pilot, we invite 5 Series A CTOs to join as Paid Design Partners at $500/month. In exchange, they receive priority feature requests, weekly founder engineering office hours, and a guaranteed 50% discount on commercial launch pricing. This filters out curiosity seekers and validates actual budget commitment.'\"",
+      selfAssessmentQuestions:"1. Did your outreach message pitch product features or focus on a specific, observable engineering bottleneck? 2. How did you test willingness-to-pay without resorting to un-monetized free trials? 3. What feedback signals indicate your ICP definition is too broad?",
+      relatedModules:'<a class="module-ref" href="module-02.html"><em>Module 2</em></a>, <a class="module-ref" href="module-04.html"><em>Module 4</em></a>, <a class="module-ref" href="module-07.html"><em>Module 7</em></a>, <a class="module-ref" href="module-08.html"><em>Module 8</em></a>, <a class="module-ref" href="module-13.html"><em>Module 13</em></a>, <a class="module-ref" href="module-15.html"><em>Module 15</em></a>',
+      riskAnalysis:"Customizing the core product for one noisy design partner creates a dead-end product; offering free pilots yields false usage signals; aggressive cold outreach burns domain reputation."
     },
     leader:{
-      objective:"Design a comprehensive sales management framework covering hiring, pipeline review, coaching, and performance management.",
-      scenario:"A growing sales team of 8 reps is missing targets due to inconsistent discovery quality, lumpy pipeline forecasting, and lack of structured coaching.",
-      inputs:"Rep quota attainment data, win/loss conversion rates, call recording samples, pipeline velocity metrics.",
-      rubric:"Hiring & competency scorecard (25%), Cadence & forecasting accuracy (25%), Coaching framework & skill improvement (30%), Systemic enablement & metrics (20%).",
-      variations:"<strong>Beginner:</strong> Create a rep hiring rubric, 1-on-1 coaching template, and bi-weekly pipeline review agenda. | <strong>Advanced:</strong> Implement full manager operating cadence including skills matrix, rep ramp plan, forecast variance model, and enablement experiment."
+      title:"Manager operating system",
+      badge:"Practice portfolio item",
+      statusLabel:"Capstone completed (Self-assessed)",
+      scenario:"A mid-market B2B software company with 8 Account Executives (AEs) and 2 SDRs has missed revenue targets for 2 consecutive quarters. Win rates have dropped from 28% to 19%, forecast variance is +/-35%, rep ramp time is 8 months, and discovery call quality is inconsistent.",
+      learnerRole:"VP of Sales / Sales Operations & Enablement Director.",
+      customerContext:"Enterprise mid-market buyers facing economic budget scrutiny; sales team selling across 3 distinct sub-verticals without standardized playbooks.",
+      availableEvidence:"CRM pipeline stage reports, rep quota attainment history, 20 recorded Gong/Chorus discovery call recordings, win/loss audit survey results, existing comp plan documents.",
+      missingInformation:"Root cause of deal slippage (rep discovery skill vs buyer budget freezes), individual AE competency gaps, and accuracy of stage-exit criteria in CRM.",
+      constraints:"No increase in sales headcount budget, comp plan changes can only take effect next quarter, manager time dedicated to coaching capped at 8 hours/week per rep.",
+      requiredAssumptions:"Product-market fit is established in core verticals, lead flow remains constant, and current AE base possesses basic sales baseline skills.",
+      deliverables:"Structured rep hiring scorecard & BARS evaluation rubric, Forecast governance framework & Brier score calibration model, Pipeline review agenda & stage-gate exit criteria dictionary, 1-on-1 coaching framework & call review rubric, 30-60-90 day practice-based onboarding matrix, Enablement experiment & telemetry dashboard.",
+      evaluationRubric:"Hiring scorecard & competency framework (25%), Forecast calibration & pipeline discipline (25%), Coaching framework & behavior rubric (30%), Enablement system & telemetry design (20%). Passing threshold: >=70% overall with no dimension <50%.",
+      beginnerVersion:"Create rep hiring scorecard, 1-on-1 coaching template, and weekly pipeline review agenda.",
+      advancedVersion:"Build full Manager Operating Cadence: rep competency matrix across 8 dimensions, 30-60-90 onboarding gate system with work-sample certifications, forecast variance model, call recording audit framework, and comp plan guardrail design.",
+      partialStrongSubmission:"\"Coaching Framework: 'Replace vague pipeline reviews with a 4-dimension call audit rubric (Diagnostic Probing, Consensus Building, Commercial Defense, Next Steps). Managers review 1 call per rep bi-weekly using BARS scoring (1-5 scale). Reps scoring <3 on Diagnostic Probing undergo 2 mandatory roleplay practice sessions before attending live enterprise meetings.'\"",
+      selfAssessmentQuestions:"1. Does your management cadence measure activity volume (vanity) or observable skill execution and buyer evidence? 2. How does your forecast model eliminate rep 'happy ears' and unverified close dates? 3. What guardrails in your comp plan prevent reps from discounting margin to hit short-term quotas?",
+      relatedModules:'<a class="module-ref" href="module-35.html"><em>Module 35</em></a>, <a class="module-ref" href="module-38.html"><em>Module 38</em></a>, <a class="module-ref" href="module-39.html"><em>Module 39</em></a>, <a class="module-ref" href="module-40.html"><em>Module 40</em></a>, <a class="module-ref" href="module-41.html"><em>Module 41</em></a>, <a class="module-ref" href="module-42.html"><em>Module 42</em></a>',
+      riskAnalysis:"Over-monitoring creates rep disengagement; rigid forecasting gates without seller coaching leads to CRM sandbagging; changing comp plans mid-year destroys team trust."
     }
   };
   const section=document.createElement('section');
   section.id='capstones';
   section.className='capstone-briefs';
-  section.innerHTML=`<div class="section-kicker">Integrated assessment</div><h2>Capstone projects</h2><p>Choose the project closest to your work. Use real or clearly fictionalized data. Completion is not professional certification; ask a peer or manager to review the artifact where possible.</p>${capstones.map(([id,title,brief])=>{
-    const d=capstoneDetails[id]||{};
-    return `<article class="capstone-brief"><span>${paths[id]?.[0]||id}</span><h3>${title}</h3><p>${brief}</p><p><strong>Objective:</strong> ${d.objective||''}</p><p><strong>Scenario:</strong> ${d.scenario||''}</p><p><strong>Inputs:</strong> ${d.inputs||''}</p><p><strong>Rubric:</strong> ${d.rubric||''}</p><p><strong>Variations:</strong> ${d.variations||''}</p><h4>Required evidence</h4><ul><li>Buyer or account context and assumptions</li><li>Decisions tied to relevant course modules</li><li>One tested script, message, or workflow</li><li>Risks, ethical constraints, and disconfirming evidence</li><li>A 30-day implementation and measurement plan</li></ul></article>`;
-  }).join('')}<div class="rubric"><h3>Shared scoring rubric</h3><div><span>Evidence & accuracy <strong>30%</strong></span><span>Buyer relevance <strong>25%</strong></span><span>Execution quality <strong>25%</strong></span><span>Ethics & reflection <strong>20%</strong></span></div><p>Suggested self-assessment threshold: 70/100 overall and no score below 50% in ethics and reflection. This is not certification.</p></div>`;
+  section.innerHTML=`
+    <div class="section-kicker">Integrated assessment · Practice portfolio item</div>
+    <h2>Capstone projects</h2>
+    <div class="callout non-accreditation-disclaimer" style="margin-bottom: 24px; border-left: 4px solid var(--orange); background: var(--surface-subtle); padding: 16px;">
+      <div class="callout-label" style="font-weight: bold; margin-bottom: 4px;">Non-Accreditation Disclosure</div>
+      <p style="margin: 0; font-size: 14px;">Completion of these capstones produces self-assessed practice portfolio items. They are designed for self-directed skill application and peer/manager review. Completion does NOT constitute formal, academic, or professional certification.</p>
+    </div>
+    ${capstones.map(([id,briefTitle,briefSummary])=>{
+      const d=capstoneDetails[id]||{};
+      return `
+        <article class="capstone-brief" id="capstone-${id}" style="margin-bottom: 36px; padding: 24px; border: 1px solid var(--border); border-radius: 8px;">
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span class="capstone-tag" style="background: var(--surface-subtle); padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;">${paths[id]?.[0]||id}</span>
+            <span class="capstone-tag" style="background: var(--surface-subtle); padding: 2px 8px; border-radius: 4px; font-size: 12px;">${d.badge||'Practice portfolio item'}</span>
+            <span class="capstone-tag" style="background: var(--surface-subtle); padding: 2px 8px; border-radius: 4px; font-size: 12px; color: var(--text-muted);">${d.statusLabel||'Capstone completed (Self-assessed)'}</span>
+            <span class="capstone-tag" style="background: var(--surface-subtle); padding: 2px 8px; border-radius: 4px; font-size: 12px; color: var(--text-muted);">Artifact self-assessed</span>
+          </div>
+          <h3 style="margin-top: 0;">${d.title||briefTitle}</h3>
+          <p class="capstone-summary"><strong>Summary:</strong> ${briefSummary}</p>
+          <p><strong>1. Learner Role:</strong> ${d.learnerRole||''}</p>
+          <p><strong>2. Scenario:</strong> ${d.scenario||''}</p>
+          <p><strong>3. Customer Context:</strong> ${d.customerContext||''}</p>
+          <p><strong>4. Available Evidence:</strong> ${d.availableEvidence||''}</p>
+          <p><strong>5. Missing Information:</strong> ${d.missingInformation||''}</p>
+          <p><strong>6. Constraints:</strong> ${d.constraints||''}</p>
+          <p><strong>7. Required Assumptions:</strong> ${d.requiredAssumptions||''}</p>
+          <p><strong>8. Deliverables:</strong> ${d.deliverables||''}</p>
+          <p><strong>9. Evaluation Rubric:</strong> ${d.evaluationRubric||''}</p>
+          <p><strong>10. Beginner Version:</strong> ${d.beginnerVersion||''}</p>
+          <p><strong>11. Advanced Version:</strong> ${d.advancedVersion||''}</p>
+          <p><strong>12. Partial Strong Submission Excerpt:</strong> <em>${d.partialStrongSubmission||''}</em></p>
+          <p><strong>13. Self-Assessment Questions:</strong> ${d.selfAssessmentQuestions||''}</p>
+          <p><strong>14. Related Modules:</strong> ${d.relatedModules||''}</p>
+          <p><strong>15. Risk Analysis:</strong> ${d.riskAnalysis||''}</p>
+        </article>
+      `;
+    }).join('')}
+    <div class="rubric" style="margin-top: 24px;">
+      <h3>Shared scoring rubric (Self-Assessed)</h3>
+      <div><span>Evidence & accuracy <strong>30%</strong></span><span>Buyer relevance <strong>25%</strong></span><span>Execution quality <strong>25%</strong></span><span>Ethics & reflection <strong>20%</strong></span></div>
+      <p>Suggested self-assessment threshold: 70/100 overall and no score below 50% in ethics and reflection. Artifacts are self-assessed portfolio items; this is not professional accreditation.</p>
+    </div>
+  `;
   article.appendChild(section);
   if(location.hash==='#capstones')requestAnimationFrame(()=>section.scrollIntoView());
 }

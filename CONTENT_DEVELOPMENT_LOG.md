@@ -1,5 +1,71 @@
 # Content Development Log
 
+## content: strengthen capstones and evidence
+
+### Files reviewed
+
+- `learning.js` and `dist/static/learning.js`
+- `case-studies.html`
+- `module-05.html`, `module-07.html`, `module-09.html`, `module-10.html`, `module-12.html`, `module-15.html`, `module-16.html`, `module-17.html`, `module-19.html`, `module-21.html`, `module-24.html`, `module-32.html`, `module-37.html`
+- `tools/validate-course.mjs`
+- `tools/build-sites.mjs`
+
+### Files changed
+
+- `learning.js`
+- `dist/static/learning.js`
+- `case-studies.html`
+- `module-05.html`, `module-07.html`, `module-09.html`, `module-10.html`, `module-12.html`, `module-15.html`, `module-16.html`, `module-17.html`, `module-19.html`, `module-21.html`, `module-24.html`, `module-32.html`, `module-37.html`
+- `CONTENT_DEVELOPMENT_LOG.md`
+
+### Main improvements
+
+- **15-Element Capstone Upgrade (`learning.js`)**: Upgraded all 4 capstone project briefs (`b2c`, `enterprise`, `founder`, `leader`) rendered on `exercises.html#capstones` to include all 15 required structural elements: Scenario, Learner role, Customer context, Available evidence, Missing information, Constraints, Required assumptions, Deliverables, Evaluation rubric, Beginner version, Advanced version, Partial strong submission excerpt, Self-assessment questions, Related modules, and Risk analysis.
+- **Non-Accreditation Integrity Disclaimers & Status Badges**: Added explicit Non-Accreditation Disclosure callouts and clear status tags (`"Practice portfolio item"`, `"Capstone completed (Self-assessed)"`, `"Artifact self-assessed"`) to prevent false impressions of formal academic or professional certification.
+- **Repo-Wide Evidence Remediation**: Replaced 17 un-cited, absolute, or overstated claims ("Research shows", "Always", "Never", "Guaranteed", "Doubled conversion in one week") across 14 module/case-study files (`case-studies.html`, `module-05`, `module-07`, `module-09`, `module-10`, `module-12`, `module-15`, `module-16`, `module-17`, `module-19`, `module-21`, `module-24`, `module-32`, `module-37`) with conditional, evidence-grounded commercial language.
+- **Distribution Synchronization**: Synchronized root HTML and JavaScript changes to `dist/static/` via `node tools/build-sites.mjs`.
+
+### Verification
+
+- Executed `node tools/validate-course.mjs` confirming status "pass" across all 43 modules, 20 drills, 17 cases, 4 capstones, and 43 research notes.
+
+## content: rebuild exercises and correct case studies
+
+### Files reviewed
+
+- `exercises.html`
+- `case-studies.html`
+- `module-06.html` through `module-42.html`
+- `module-08.html`, `module-23.html`, `module-24.html`, `module-27.html`, `module-38.html`, `module-39.html`
+- `tools/validate-course.mjs`
+- `tools/check-exercises.mjs`
+
+### Files changed
+
+- `exercises.html`
+- `case-studies.html`
+- `module-06.html`, `module-08.html`, `module-09.html`, `module-10.html`, `module-23.html`, `module-24.html`, `module-27.html`, `module-28.html`, `module-29.html`, `module-30.html`, `module-31.html`, `module-32.html`, `module-33.html`, `module-34.html`, `module-35.html`, `module-36.html`, `module-37.html`, `module-38.html`, `module-39.html`, `module-40.html`, `module-41.html`, `module-42.html`
+- `CONTENT_DEVELOPMENT_LOG.md`
+
+### Main improvements
+
+- **Rebuilt Standalone Exercise Library (`exercises.html`)**: Fully expanded all 20 drills (Drill 01 through Drill 20) to strictly adhere to the 14-section schema standard: `Skill trained`, `Objective`, `Scenario`, `Inputs`, `Constraints`, `Instructions`, `Required output`, `Time estimate`, `Evaluation rubric`, `Common mistakes`, `Beginner variation`, `Advanced variation`, `Partial exemplar`, `Self-review questions`, and `Related modules`. Container `id="drill-XX"` attributes and `drill-meta` headers with hyperlinked module tags were systematically added.
+- **Remediated Exaggerated & Silver-Bullet Claims**: Replaced absolute, guaranteed, or aggressive claims with conditional, evidence-aware phrasing across `exercises.html` (e.g. pullquote on line 90 and Drill 15 performance targets), `case-studies.html` (Cases 03, 04, 10, 11, 13, 14, 16), `module-08.html` (surrendering BATNA / begging phrasing), `module-23.html` (guaranteeing sales predictability), `module-24.html` (begging framing in negotiations), `module-27.html` (Parent-Child guaranteed loss claims), `module-38.html` (guaranteeing time-to-value), and `module-39.html` (transformational RevOps guarantees).
+- **Added Explicit Nature Badges & Qualified Statistics**: Added explicit `<span class="case-tag nature">...</span>` badges across all 17 case study cards in `case-studies.html` (`Composite Case Study`, `Illustrative Fictional Scenario`, `Real Case Study`) and scenario blocks across modules 06 through 42. Qualified unsourced precise figures with benchmark context notes.
+
+### Sources verified
+
+- Deliberate practice framework and structured exercise design principles.
+- Evidence-based selling methodology, conditional claim framing, and MEDDPICC / TA / Voss negotiation mechanics.
+
+### Unsupported or overstated claims corrected
+
+- Replaced absolute guarantees and silver-bullet assertions ("guarantees extreme predictability", "guarantees they will never buy from you", "transforms sales into a reliable financial engine") with conditional, realistic commercial outcomes.
+
+### Verification
+
+- Executed `node tools/validate-course.mjs` confirming status "pass" across all 43 modules, 20 drills, 17 cases, and 4 capstones.
+
 ## feat: complete applied assessments for modules 31-42
 
 ### Files reviewed
