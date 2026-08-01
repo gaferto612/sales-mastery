@@ -3,122 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 06 · B2B Sales — Sales Mastery</title>
+<title>Module 06 · B2B &amp; Enterprise Sales — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<style>
-  .compare-table th, .compare-table td { vertical-align: top; }
-  .compare-table .col-label { font-family: var(--font-mono); font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 0.15em; }
-  
-  /* MEDDIC scorecard */
-  .meddic-grid {
-    display: grid;
-    grid-template-columns: 1fr 60px;
-    gap: 12px 20px;
-    margin: 24px 0;
-  }
-  .meddic-row {
-    display: contents;
-  }
-  .meddic-label {
-    padding: 14px 16px;
-    background: var(--ink);
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--orange);
-  }
-  .meddic-letter {
-    font-family: var(--font-display);
-    font-size: 22px;
-    color: var(--orange);
-    font-weight: 500;
-    display: inline-block;
-    width: 32px;
-  }
-  .meddic-name {
-    font-family: var(--font-display);
-    font-size: 17px;
-    color: var(--paper);
-    font-weight: 500;
-  }
-  .meddic-desc {
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 4px;
-  }
-  .meddic-check {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .meddic-check input { width: 28px; height: 28px; cursor: pointer; accent-color: var(--orange); }
-  .meddic-result {
-    margin-top: 24px;
-    padding: 24px;
-    background: var(--ink);
-    border: 1px solid var(--line);
-    text-align: center;
-  }
-  .meddic-score {
-    font-family: var(--font-display);
-    font-size: 48px;
-    font-weight: 500;
-    color: var(--orange);
-    line-height: 1;
-  }
-  
-  /* Stakeholder hex grid */
-  .stakeholder-list {
-    margin: 24px 0;
-  }
-  .stake-row {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 24px;
-    padding: 18px 0;
-    border-bottom: 1px solid var(--line);
-    align-items: start;
-  }
-  .stake-name {
-    font-family: var(--font-display);
-    font-size: 18px;
-    color: var(--gold);
-    font-weight: 500;
-  }
-  .stake-desc { color: var(--cream); font-size: 15px; line-height: 1.5; }
-  
-  /* Pipeline visualization */
-  .pipeline {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
-    margin: 24px 0;
-  }
-  .pipe-stage {
-    padding: 20px 12px;
-    background: var(--ink);
-    border: 1px solid var(--line);
-    text-align: center;
-  }
-  .pipe-stage-name {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 8px;
-  }
-  .pipe-stage-count {
-    font-family: var(--font-display);
-    font-size: 28px;
-    color: var(--orange);
-    font-weight: 500;
-  }
-  
-  @media (max-width: 700px) {
-    .pipeline { grid-template-columns: repeat(2, 1fr); }
-    .stake-row { grid-template-columns: 1fr; gap: 8px; }
-  }
-</style>
 </head>
 <body>
 
@@ -136,13 +22,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">06</span>B2B Sales</div>
-  <h1 class="module-title">Selling to <em>businesses.</em></h1>
-  <p class="lede">B2B isn't about convincing a buyer. It's about navigating complex organizational psychology to help a coalition of buyers convince each other internally—often without you in the room.</p>
+  <div class="eyebrow"><span class="num">06</span>Complex B2B</div>
+  <h1 class="module-title">You get <em>5% of their time.</em> Design for the other 95%.</h1>
+  <p class="lede">Enterprise buying groups run six to ten people and spend roughly 17% of the purchase cycle with any supplier at all. This module covers buying-centre roles, the major discovery methodologies graded honestly, and the artifacts that sell for you when you are not in the room.</p>
   <div class="meta-strip">
-    <span>45 min read</span>
-    <span>Organizational Psychology · Game Theory</span>
-    <span>Advanced professional curriculum</span>
+    <span>50 min lesson + practice</span>
+    <span>Evidence-led professional curriculum</span>
+    <span>Level 4</span>
   </div>
 </header>
 
@@ -150,200 +36,225 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#academic-foundation">1. Academic Foundation</a></li>
-      <li><a href="#the-buying-committee">2. The Buying Committee</a></li>
-      <li><a href="#multithreading">3. Multithreading & Alignment</a></li>
-      <li><a href="#frameworks">4. Discovery Frameworks</a></li>
-      <li><a href="#case-studies">5. Composite Practice Scenarios</a></li>
-      <li><a href="#roleplay">6. Tactical Application</a></li>
-      <li><a href="#troubleshooting">7. Troubleshooting Pitfalls</a></li>
+      <li><a href="#introduction">1. The structural facts of complex buying</a></li>
+      <li><a href="#objectives">2. Observable learning objectives</a></li>
+      <li><a href="#buying-centre">3. The buying centre: roles, not job titles</a></li>
+      <li><a href="#methodologies">4. The methodologies, graded honestly</a></li>
+      <li><a href="#sensemaking">5. Sense-making and the artifact that travels</a></li>
+      <li><a href="#worked-example">6. Worked example: mapping a stalled enterprise deal</a></li>
+      <li><a href="#execution">7. Weak versus improved multi-threading</a></li>
+      <li><a href="#practice">8. Practice: stakeholder and decision map</a></li>
+      <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
+      <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="academic-foundation">
-      <h2>1. Academic Foundation: Transaction Cost Economics & Game Theory</h2>
-      <p>Selling to a business is fundamentally different from selling to an individual. The framework for understanding B2B dynamics relies on <strong>Transaction Cost Economics (Williamson, 1981)</strong> and <strong>Cooperative Game Theory</strong>. In a B2B environment, organizations do not act as monolithic entities; they are networks of individual actors, each trying to minimize their personal transaction costs (effort, risk, and cognitive load) while maximizing their departmental status.</p>
-      <p>When a company makes a $1M software purchase, the "company" isn't buying anything. A coalition of humans is deciding to allocate resources. If the perceived risk of the transaction (a failed deployment, a data breach, a career-ending mistake) outweighs the collective payoff, the system defaults to the status quo.</p>
+    <section id="introduction">
+      <h2>1. The structural facts of complex buying</h2>
+      <p>Three findings define the terrain, and every technique in this module is a response to one of them.</p>
+      <p><strong>The decision is collective.</strong> Gartner's buying research puts typical enterprise buying groups at six to ten people, rising past fifteen in large or regulated purchases. Webster &amp; Wind established the conceptual foundation for this in 1972 and it has only intensified since. A "yes" from your champion is not a decision; it is one input to a process you cannot see.</p>
+      <p><strong>Your access is minimal.</strong> The same research finds buying groups spend around <strong>17% of total purchase time</strong> meeting with potential suppliers — and once that is divided across a shortlist, a single vendor may receive around <strong>5%</strong>. Most of the decision happens in meetings you are not in, using documents you did not write.</p>
+      <p><strong>The constraint is comprehension, not information.</strong> Roughly 55% of buyers report encountering an overwhelming volume of trustworthy-but-conflicting information. Sending more material to an overwhelmed group makes their problem worse. The scarce good is not information; it is a way to reconcile it.</p>
+      <p>These are class <strong>V/F</strong> findings from survey research with an enterprise-technology skew, and the exact percentages should be held loosely. The <em>direction</em> is not in doubt, and the design implication is severe: <strong>the artifact you leave behind does more of your selling than you do.</strong> A seller who optimizes only for the meetings they attend is optimizing 5% of the process.</p>
     </section>
 
-    <section id="the-buying-committee">
-      <h2>2. The Buying Committee</h2>
-      <p>In modern enterprise sales, the average buying committee consists of <strong>6.8+ decision-makers</strong>. You are never selling to one person. You are managing a distributed consensus process.</p>
-      
-      <div class="stakeholder-list">
-        <div class="stake-row">
-          <div class="stake-name">Mobilizer (Champion)</div>
-          <div class="stake-desc">Internal advocate with political capital. A standard 'Champion' just likes your product; a 'Mobilizer' can actually drive consensus across a conflicted buying committee and force a decision.</div>
-        </div>
-        <div class="stake-row">
-          <div class="stake-name">Economic Buyer</div>
-          <div class="stake-desc">Controls the budget. VP, Director, CFO. Often only joins at the end to validate the financial ROI and negotiate terms.</div>
-        </div>
-        <div class="stake-row">
-          <div class="stake-name">End User</div>
-          <div class="stake-desc">Will actually use the product. Opinion matters for adoption, but they often lack the authority to sign the contract.</div>
-        </div>
-        <div class="stake-row">
-          <div class="stake-name">Technical / Security</div>
-          <div class="stake-desc">IT, security, legal. Their mandate is risk mitigation. They can kill a deal silently if their loss-aversion triggers are hit.</div>
-        </div>
-        <div class="stake-row">
-          <div class="stake-name">Procurement</div>
-          <div class="stake-desc">Final negotiator. Their job is to squeeze you on price and protect the company's margin.</div>
-        </div>
-        <div class="stake-row">
-          <div class="stake-name">The Saboteur</div>
-          <div class="stake-desc">Someone whose status or budget is threatened by your solution. Often invisible until they derail the deal.</div>
-        </div>
+    <section id="objectives">
+      <h2>2. Observable learning objectives</h2>
+      <p>By completing this module you will be able to demonstrate the following:</p>
+      <p>Map a buying centre by role rather than by job title, and identify which roles are unrepresented in your current coverage.</p>
+      <p>Select and apply a discovery methodology appropriate to the deal, understanding what each one is good at and what it omits.</p>
+      <p>Distinguish a champion from a coach and from an enthusiastic contact, using behavioral evidence.</p>
+      <p>Build a decision-support artifact designed to be circulated without you present.</p>
+      <p>Produce a stakeholder and decision map that exposes coverage gaps and unsurfaced disagreement.</p>
+    </section>
+
+    <section id="buying-centre">
+      <h2>3. The buying centre: roles, not job titles</h2>
+      <p>The single most common enterprise error is mapping the org chart instead of the decision. Roles are functions in a process; one person may hold three, and three people may share one. Titles tell you almost nothing — a "Director of IT" may be the economic buyer at one company and a gatekeeper at another.</p>
+
+      <h3>Table 1: Buying-centre roles and how to detect them</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Role</th><th>Function in the decision</th><th>What they are actually optimizing</th><th>Detection question</th><th>Failure if unmapped</th></tr></thead>
+      <tbody>
+      <tr><td><strong>User</strong></td><td>Lives with the outcome daily.</td><td>Their own workflow not getting worse.</td><td>"Who would be using this on a Tuesday morning?"</td><td>Adoption collapses post-purchase; renewal fails eighteen months later.</td></tr>
+      <tr><td><strong>Influencer / technical evaluator</strong></td><td>Shapes criteria and assesses feasibility.</td><td>Being right, and not being blamed for a bad recommendation.</td><td>"Who writes the requirements, and who reviews them?"</td><td>Criteria get written around a competitor's architecture before you see them.</td></tr>
+      <tr><td><strong>Economic buyer</strong></td><td>Can approve the expenditure and reallocate budget.</td><td>Portfolio-level return and risk across competing priorities.</td><td>"If this needs another £200k, whose signature is that?"</td><td>Late-stage collapse: the deal was never funded, only wanted.</td></tr>
+      <tr><td><strong>Gatekeeper</strong></td><td>Controls access and process — procurement, exec assistants, PMO.</td><td>Process integrity and their own workload.</td><td>"What's the correct route for something like this here?"</td><td>Being routed to a formal process late, on the incumbent's terms.</td></tr>
+      <tr><td><strong>Veto holder</strong></td><td>Can stop the deal unilaterally — security, legal, compliance, works council, clinical governance.</td><td>Risk avoidance. They are rewarded for saying no, never for saying yes.</td><td>"Who has to sign off before this can go live, even if everyone else agrees?"</td><td>The most common cause of deals dying at 90% confidence. Engage early; they cannot be persuaded at the end.</td></tr>
+      <tr><td><strong>Champion</strong></td><td>Sells internally when you are absent.</td><td>A personal or professional win tied to this change succeeding.</td><td>See the champion test below.</td><td>You mistake enthusiasm for advocacy and forecast a deal nobody is pushing.</td></tr>
+      <tr><td><strong>Blocker</strong></td><td>Actively prefers a different outcome.</td><td>An existing relationship, a competing project, or protecting a decision they made.</td><td>"Who would rather we solved this a different way, and what's their reasoning?"</td><td>Invisible opposition surfaces as unexplained delay. Ask directly; blockers usually have legitimate reasons.</td></tr>
+      </tbody>
+      </table>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-label">The champion test — behavioral, not emotional</div>
+        <p>A real champion does three things you can observe: <strong>(1)</strong> they give you access to people above them, <strong>(2)</strong> they tell you inconvenient truths — the competitor's advantage, the budget risk, the internal opposition — and <strong>(3)</strong> they take action when you are not there and can describe what they did. Someone who loves your product, replies quickly, and will not introduce you to their VP is a <em>coach</em>: valuable for information, useless for advocacy. Confusing the two is the single most common cause of a confident forecast on a dead deal.</p>
+      </div>
+      <p>Map coverage explicitly: for each role, name the person, the last direct contact, and the evidence for their position. Roles with no named person are your risk register. In most stalled enterprise deals the missing entry is the veto holder or the economic buyer — and it was missing for months before anyone noticed.</p>
+    </section>
+
+    <section id="methodologies">
+      <h2>4. The methodologies, graded honestly</h2>
+      <p>Sales methodologies are class <strong>F</strong>: structures for organizing work. They are neither true nor false. The professional question is which one fits the deal in front of you, and what each one systematically ignores.</p>
+
+      <h3>Table 2: Major B2B methodologies compared</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Methodology</th><th>Core mechanism</th><th>Genuine strength</th><th>What it omits or gets wrong</th><th>Best fit</th></tr></thead>
+      <tbody>
+      <tr><td><strong>SPIN</strong> (Rackham)</td><td>Situation → Problem → Implication → Need-payoff questioning.</td><td>The <em>implication</em> question remains the most underused instrument in selling: it converts an acknowledged annoyance into a quantified consequence.</td><td>Built from a large practitioner research program, not a controlled trial. Mechanically applied, it becomes an interrogation. Says little about multi-stakeholder consensus.</td><td>Complex discovery with an individual or small group.</td></tr>
+      <tr><td><strong>MEDDIC / MEDDPICC</strong></td><td>A qualification checklist: Metrics, Economic buyer, Decision criteria, Decision process, Identify pain, Champion (+ Paper process, Competition).</td><td>Excellent inspection tool. Makes gaps visible and forecast conversations objective.</td><td>It is a <em>qualification</em> framework, not a selling method — it tells you what you do not know, not how to find out. Teams routinely fill in the letters with assertions and call the deal qualified.</td><td>Enterprise pipeline inspection and forecast discipline. See Module 23.</td></tr>
+      <tr><td><strong>Challenger</strong></td><td>Teach a commercial insight, tailor to the stakeholder, take control of the conversation.</td><td>The teaching posture is genuinely valuable, and "constructive tension" is a real skill.</td><td>Based on vendor survey research with contested methodology; the profile taxonomy has not replicated independently. "Take control" is routinely misread as licence to be adversarial.</td><td>Markets where the buyer's framing of the problem is genuinely wrong.</td></tr>
+      <tr><td><strong>Sense-making</strong> (Gartner)</td><td>Help the group reconcile conflicting information rather than adding to it.</td><td>Directly addresses the measured constraint — buyers overwhelmed by trustworthy conflicting information.</td><td>Newer, less codified into practice; easy to confuse with simply being helpful.</td><td>Crowded categories with heavy analyst and peer-review noise.</td></tr>
+      <tr><td><strong>Command of the Message / value frameworks</strong></td><td>Structured articulation of required capabilities, differentiation, and proof.</td><td>Creates consistency across a team; forces proof to be attached to claims.</td><td>Degenerates into a pitch script if discovery is skipped. Consistency is not the same as relevance.</td><td>Scaling a team beyond the founders' instincts.</td></tr>
+      <tr><td><strong>JOLT</strong> (Dixon &amp; McKenna)</td><td>Judge indecision, Offer a recommendation, Limit exploration, Take risk off the table.</td><td>Targets the ~56% of no-decision losses driven by indecision rather than preference. Inverts the pressure reflex.</td><td>Proprietary dataset, not peer reviewed. Requires the seller to have earned the standing to make a recommendation.</td><td>Late-stage deals that have stalled after agreement.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p>The professional posture is to hold two or three of these and switch by situation. A team that adopts one methodology as doctrine will systematically miss whatever that methodology omits — most commonly consensus (MEDDIC), diagnosis (Challenger), or the possibility that the buyer simply cannot decide (everything except JOLT).</p>
+    </section>
+
+    <section id="sensemaking">
+      <h2>5. Sense-making and the artifact that travels</h2>
+      <p>If you get 5% of the buying group's time, the highest-leverage thing you can build is not a better meeting. It is a <strong>document that survives circulation without you</strong> — one your champion can forward to the CFO, the security lead, and the two people you have never met, and that does not degrade when they read it alone.</p>
+
+      <h3>Table 3: What a circulating artifact must contain</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Element</th><th>Why it must be there</th><th>Test of adequacy</th></tr></thead>
+      <tbody>
+      <tr><td><strong>The problem in their words</strong></td><td>Readers who were not in your meetings must recognise their own situation, not your category.</td><td>Contains at least three phrases quoted directly from the buyer's own descriptions.</td></tr>
+      <tr><td><strong>The options considered, including doing nothing</strong></td><td>A document that presents only your solution reads as a brochure and is discounted accordingly.</td><td>Do-nothing is costed, and at least one alternative is described fairly enough that its advocate would agree.</td></tr>
+      <tr><td><strong>Decision criteria with weights</strong></td><td>Groups disagree because they are optimizing different things without saying so. Weights surface it.</td><td>The weights were set by the buying group, not by you.</td></tr>
+      <tr><td><strong>Assumptions, ranges, and what would change the answer</strong></td><td>A single-point estimate invites a fight about the number. A range invites a conversation about the assumption.</td><td>Every financial figure has a stated source and a sensitivity.</td></tr>
+      <tr><td><strong>Honest weaknesses</strong></td><td>Every group contains someone whose job is to find the flaw. Better they find it in your document.</td><td>Names at least one thing your solution does badly, and what to do about it.</td></tr>
+      <tr><td><strong>The decision the reader is being asked to make</strong></td><td>Choice overload and omission bias both feed on ambiguity about what is actually being decided.</td><td>One sentence, near the top: what is being approved, by whom, by when, and what it costs to reverse.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <div class="callout warning">
+        <div class="callout-label">The test that most vendor material fails</div>
+        <p>Give your document to someone who has never met you and ask them to explain the decision back. If they can only describe your product, the artifact is a brochure and it will not travel. If they can describe <em>the choice, its stakes, and the honest arguments on each side</em>, you have built something that works in the 95% of the process you cannot attend.</p>
       </div>
     </section>
 
-    <section id="multithreading">
-      <h2>3. Multithreading & Stakeholder Alignment</h2>
-      <p>Buying committees include people with different goals, evidence standards, authority, and implementation exposure. Marketing may prioritize growth while IT prioritizes security and operational risk. </p>
-      <p><strong>Multithreading</strong> is the practice of building relationships with multiple stakeholders simultaneously to understand and align these competing requirements. Single-threaded deals (where you only talk to the Mobilizer) are extremely fragile. If they lose political capital, your deal dies.</p>
-      <p>Elite sellers map the political hierarchy and execute targeted co-regulation for each stakeholder: they bring high energy to the End User, rigorous logic to the Economic Buyer, and extreme physiological grounding (safety) to the Technical/Security buyer.</p>
-    </section>
-
-    <section id="frameworks">
-      <h2>4. Discovery Frameworks & Qualification</h2>
-      <p>To navigate this complexity, elite reps rely on established frameworks to enforce discipline.</p>
-
-      <div class="tabs">
-        <div class="tab-buttons">
-          <button class="tab-btn active">MEDDIC</button>
-          <button class="tab-btn">SPIN</button>
-          <button class="tab-btn">Challenger</button>
-        </div>
-
-        <div class="tab-panel active">
-          <h3 style="margin-top: 0;">MEDDIC</h3>
-          <p>The enterprise standard for qualification. It answers the question: "Should I keep spending time on this deal?"</p>
-          <ul>
-            <li><strong>M</strong>etrics — what numerically improves if we win?</li>
-            <li><strong>E</strong>conomic Buyer — have I met the money person?</li>
-            <li><strong>D</strong>ecision Criteria — what will they decide on?</li>
-            <li><strong>D</strong>ecision Process — what's the path to signed?</li>
-            <li><strong>P</strong>aper Process — legal, procurement, and vendor onboarding path.</li>
-            <li><strong>I</strong>dentify Pain — what hurts now? How much?</li>
-            <li><strong>C</strong>hampion — who internally is fighting for us?</li>
-            <li><strong>C</strong>ompetition — including internal builds and "do nothing".</li>
-          </ul>
-        </div>
-        
-        <div class="tab-panel">
-          <h3 style="margin-top: 0;">SPIN Selling (Neil Rackham, 1988)</h3>
-          <p>A questioning framework based on actual research into what top reps do.</p>
-          <ul>
-            <li><strong>S</strong>ituation — understand current state (sparingly)</li>
-            <li><strong>P</strong>roblem — uncover pains and dissatisfactions</li>
-            <li><strong>I</strong>mplication — explore what those problems <em>cost</em> them</li>
-            <li><strong>N</strong>eed-payoff — get the buyer to articulate the benefit</li>
-          </ul>
-        </div>
-
-        <div class="tab-panel">
-          <h3 style="margin-top: 0;">Challenger Sale</h3>
-          <p>Top reps don't just relationship-build — they <em>challenge</em> the buyer's worldview.</p>
-          <ol>
-            <li><strong>Teach</strong> — bring a unique insight about their business</li>
-            <li><strong>Tailor</strong> — adapt the insight to their situation</li>
-            <li><strong>Take control</strong> — push back on price, timeline, process</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="widget">
-        <div class="widget-header">
-          <div class="widget-title">Live MEDDIC Scorecard</div>
-          <div class="widget-tag">Interactive</div>
-        </div>
-
-        <div class="meddic-grid" id="meddicGrid">
-          <div class="meddic-row">
-            <div class="meddic-label"><span class="meddic-letter">M</span><span class="meddic-name">Metrics</span><div class="meddic-desc">I know exactly what numerically improves if they buy.</div></div>
-            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
-          </div>
-          <div class="meddic-row">
-            <div class="meddic-label"><span class="meddic-letter">E</span><span class="meddic-name">Economic Buyer</span><div class="meddic-desc">I've met the person with the budget.</div></div>
-            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
-          </div>
-          <div class="meddic-row">
-            <div class="meddic-label"><span class="meddic-letter">D</span><span class="meddic-name">Decision Criteria</span><div class="meddic-desc">I know the specific factors the decision will be made on.</div></div>
-            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
-          </div>
-          <div class="meddic-row">
-            <div class="meddic-label"><span class="meddic-letter">D</span><span class="meddic-name">Decision Process</span><div class="meddic-desc">I know every step between now and signed contract.</div></div>
-            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
-          </div>
-          <div class="meddic-row">
-            <div class="meddic-label"><span class="meddic-letter">I</span><span class="meddic-name">Identify Pain</span><div class="meddic-desc">I can quantify what their problem costs them today.</div></div>
-            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
-          </div>
-          <div class="meddic-row">
-            <div class="meddic-label"><span class="meddic-letter">C</span><span class="meddic-name">Champion</span><div class="meddic-desc">I have someone internal actively selling for me.</div></div>
-            <div class="meddic-check"><input type="checkbox" class="meddic-box"></div>
-          </div>
-        </div>
-
-        <div class="meddic-result">
-          <div class="meddic-score" id="meddicScore">0 / 6</div>
-          <div class="callout-label" id="meddicVerdict" style="margin-top: 12px;">Score your deal</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="case-studies">
-      <h2>5. Composite Practice Scenarios</h2>
-      
-      <h3>Composite Scenario 1: The $1.2M SaaS Migration (Mobilizer vs Economic Buyer)</h3>
+    <section id="worked-example">
+      <h2>6. Worked example: mapping a stalled enterprise deal</h2>
       <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
-      <p><strong>Background:</strong> A mid-market HR tech company was selling a complete platform overhaul to a logistics firm. The VP of HR (Mobilizer) loved the product and promised the deal was closed.</p>
-      <p><strong>The Incident:</strong> The seller relied entirely on the VP of HR (single-threaded). When the proposal reached the CFO (Economic Buyer), it was immediately vetoed because the CFO's primary mandate was cash preservation, not HR efficiency.</p>
-      <p><strong>The Fix:</strong> The seller initiated multithreading late, requesting a joint meeting. By applying Game Theory, the seller mapped the CFO's incentive structure and proved that the new platform would reduce compliance audit penalties by $400K annually—a metric the CFO cared about.</p>
-      <p><strong>The Result:</strong> The CFO approved the $1.2M CapEx because the seller aligned the solution with the Economic Buyer's specific transaction costs, rather than relying on the Mobilizer's emotional excitement.</p>
+      <p><strong>Scenario:</strong> A £680k workforce-management deal at a hospital group has been at 80% forecast confidence for two quarters. The champion is enthusiastic and responsive. The AE cannot explain why nothing moves. A deal review maps roles rather than titles.</p>
 
-      <h3>Composite Scenario 2: The $3.5M Industrial Robotics CapEx (Saboteur Neutralization)</h3>
-      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
-      <p><strong>Background:</strong> An industrial robotics firm was pitching an automated sorting arm to a massive warehouse operator. The VP of Operations was eager to modernize.</p>
-      <p><strong>The Incident:</strong> The Floor Manager (Saboteur) began actively blocking the deployment, fabricating safety concerns. The amateur rep tried to argue with the Floor Manager using data (logic).</p>
-      <p><strong>A hypothesis to test:</strong> The manager may fear loss of role, control, or safety—or the safety concerns may be valid. The seller should investigate the evidence and implementation impact before assigning motive.</p>
-      <p><strong>The Result:</strong> The seller involved the manager in implementation planning and offered an exclusive certification in "Robotic Fleet Management," elevating his status from manual supervisor to tech manager. The Saboteur became a Co-Champion, and the $3.5M deal cleared.</p>
-
-      <h3>Composite Scenario 3: The $800K Enterprise Data Pipeline (Procurement Lock-Out)</h3>
-      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
-      <p><strong>Background:</strong> A data startup was at the finish line of an $800K deal. Procurement stepped in and demanded a 30% discount, citing a competitor's pricing.</p>
-      <p><strong>The Incident:</strong> The startup's AE panicked (Fight/Flight) and offered 20% off. Procurement immediately demanded 25%.</p>
-      <p><strong>The Re-Orientation:</strong> The AE realized they were playing Procurement's game. They paused, reviewed their alternatives, and reconnected back to the CTO (Mobilizer): <em>"Procurement is forcing us to strip out the real-time analytics module to meet their price. Do you want to proceed without real-time?"</em></p>
-      <p><strong>The Result:</strong> The CTO, furious at losing critical features, bypassed Procurement and authorized the purchase at full price. The AE weaponized internal alignment to neutralize the Procurement threat.</p>
-    </section>
-
-    <section id="roleplay">
-      <h2>6. Tactical Application: The Multithreading Pivot</h2>
-      <p>When you are talking to a mid-level manager who cannot sign the contract, you must gently bypass them without triggering their ego (status threat).</p>
-      
-      <div class="callout">
-        <div class="callout-label">Transcript Analysis</div>
-        <p><strong>Mid-Level Manager (Proud):</strong> "I have the authority to make the technical recommendation for this project. If I say yes, we buy."</p>
-        <p><strong>Amateur Seller (Sympathetic):</strong> "Great! But who actually signs the check? I need to talk to them." <em>(Result: The manager's ego is crushed; they feel demoted and become a Saboteur.)</em></p>
-        <p><strong>Elite Seller (Adult Ego State - Nurturing Tone):</strong> "That's fantastic. I know you've put a ton of work into evaluating this architecture. Usually, when I work with leaders like yourself on a project of this scale, the CFO eventually taps us on the shoulder to ask about the ROI model."</p>
-        <p><strong>Elite Seller (3-second pause):</strong> "How do we make sure that when the CFO comes to you, you and I have a bulletproof business case ready for them?"</p>
+      <h3>Table 4: Role coverage audit</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Role</th><th>Named person</th><th>Last direct contact</th><th>Evidence of position</th><th>Risk</th></tr></thead>
+      <tbody>
+      <tr><td>User</td><td>Ward managers (3 spoken to)</td><td>4 months ago</td><td>Positive; described the current rota process as "two evenings a week of my life."</td><td>Low, but stale. Two have since changed role.</td></tr>
+      <tr><td>Influencer</td><td>Head of Workforce Systems</td><td>3 weeks</td><td>Wrote the requirements. Favourable but has not shared the scoring model.</td><td><strong>Medium — criteria exist and we have not seen them.</strong></td></tr>
+      <tr><td>Economic buyer</td><td><strong>Unknown</strong></td><td><strong>Never</strong></td><td>Champion says "the Director of Ops signs it off." Unverified for two quarters.</td><td><strong>CRITICAL — the deal may never have been funded.</strong></td></tr>
+      <tr><td>Gatekeeper</td><td>Procurement lead</td><td>Never</td><td>None. Public-sector framework may apply, which would change the entire route.</td><td><strong>CRITICAL — process route unknown.</strong></td></tr>
+      <tr><td>Veto holder</td><td><strong>Unknown</strong></td><td><strong>Never</strong></td><td>Clinical governance and information governance both plausible. Neither identified.</td><td><strong>CRITICAL — a rostering system touching clinical staffing will face IG review.</strong></td></tr>
+      <tr><td>Champion</td><td>Head of Workforce Systems</td><td>3 weeks</td><td>Fails the test: has declined two requests for an introduction upward, has never reported bad news, cannot describe any action taken between meetings.</td><td><strong>Not a champion — a coach.</strong></td></tr>
+      <tr><td>Blocker</td><td>Suspected: incumbent supplier's internal sponsor</td><td>Never</td><td>Incumbent contract renewal date unknown.</td><td>Medium — unverified.</td></tr>
+      </tbody>
+      </table>
       </div>
-      <p><strong>The Breakdown:</strong> The elite seller validates the manager's status ("leaders like yourself"), predicts the future obstacle (the CFO), and positions themselves as an ally helping the manager look good in front of their boss. They have successfully initiated multithreading while protecting the Mobilizer's ego.</p>
+      <p><strong>Diagnosis:</strong> the deal was never at 80%. Three critical roles were unnamed, and the "champion" was a coach who had been quietly unable to move it. Forecast corrected to 20%.</p>
+      <p><strong>Actions taken:</strong> the AE asked the coach directly — "I've been treating you as the person driving this, and I think that's unfair to you; who actually owns the budget line, and what would make it easier for you to introduce me?" The answer: the coach had no standing to approach the Director of Ops and had been embarrassed to say so. The AE built a two-page decision brief the coach could forward without personal risk. That brief reached the Director of Ops in nine days, surfaced an information-governance review nobody had scheduled, and moved the deal into a real — slower — process. It closed at £510k eleven months later. <strong>The reduced value and extended timeline were the accurate picture, and having it early was worth more than the optimistic one.</strong></p>
     </section>
 
-    <section id="troubleshooting">
-      <h2>7. Troubleshooting Pitfalls</h2>
-      <p>In B2B enterprise sales, unchecked assumptions and stakeholder misalignment damage deals:</p>
+    <section id="execution">
+      <h2>7. Weak versus improved multi-threading</h2>
+      <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> The AE needs access to the economic buyer, and the single contact is protective.</p>
+
+      <div class="callout warning">
+        <div class="callout-label">Weak execution (demanding access, or going around)</div>
+        <p><em>AE:</em> "I really need to get in front of your Director of Operations before we can move forward. Can you set that up this week?"<br>
+        <em>Contact:</em> "She's extremely busy. Let me handle the internal side — I'll take it to her."<br>
+        <em>AE:</em> "Okay, no problem." <em>[Two weeks later, emails the Director directly, copying the contact.]</em></p>
+        <p><em>Why it fails:</em> The request is framed entirely around the seller's need — "before <em>we</em> can move forward" — which gives the contact no reason to spend political capital. When it is refused, the AE goes around, which is the one move that reliably converts a supportive contact into a blocker. Worse, it never asked <em>why</em> the contact was reluctant, so the actual obstacle — that they lacked the standing to make the introduction — remained invisible.</p>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-label">Improved execution (make the introduction serve them, and surface the real obstacle)</div>
+        <p><em>AE:</em> "Can I check an assumption? I've been working as though you'd be taking this to the Director of Ops yourself. Is that a fair thing for me to be assuming, or am I putting you in an awkward position?"<br>
+        <em>Contact:</em> "Honestly — I don't really have a route to her. It'd go through my head of department first."<br>
+        <em>AE:</em> "That's really useful and I'd rather know now. Two things then. First, what does your head of department need to see to be willing to take it up? Second — the risk I'd flag is that projects like this usually get stopped late by information governance rather than by budget, and if we surface that now it's a three-week conversation instead of a three-month one at the end. Would it help if I wrote a two-page brief you could forward without it looking like a vendor document — problem in your words, the options including doing nothing, the IG questions we'd expect, and what we're weak at?"<br>
+        <em>Contact:</em> "That would actually help a lot."</p>
+        <p><em>Why it succeeds:</em> The AE tested an assumption rather than making a demand, which let the contact admit a limitation without losing face. It reframed access as a risk-reduction step for the buyer, not a stage gate for the seller. It named a specific, credible late-stage risk — the veto holder — which gives the internal case urgency that does not come from the vendor's quarter. And it offered to do the work in a form the contact could use safely.</p>
+      </div>
+    </section>
+
+    <section id="practice">
+      <h2>8. Practice: stakeholder and decision map</h2>
+      <p><strong>Exercise goal:</strong> produce a role-based map of a live enterprise opportunity that exposes coverage gaps, unsurfaced disagreement, and a corrected forecast.</p>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
+      <ol>
+        <li>Take a live deal over your median value. List every buying-centre role from Table 1, with named people, last direct contact date, and the evidence for their position. Write "unknown" where it is unknown.</li>
+        <li>Apply the champion test to your primary contact. Record which of the three behaviors they have actually demonstrated, with an example. If fewer than two, they are a coach — relabel them.</li>
+        <li>Identify the veto holders. In regulated environments there are usually at least two. State when you will engage each and what they will need.</li>
+        <li>Write the decision criteria as the <em>buying group</em> would write them, with weights. Then mark which weights you know versus assume.</li>
+        <li>Name one point of genuine disagreement inside the buying group. If you cannot name one, you do not have enough access — that is the finding.</li>
+        <li>Draft the two-page circulating artifact against the six elements in Table 3, including the honest weakness.</li>
+        <li>Restate your forecast confidence in light of the map, and write one sentence explaining the change.</li>
+      </ol>
+
+      <div class="solution-guide">
+        <h3>Completed exemplar (manufacturing ERP add-on, £340k)</h3>
+        <table>
+        <thead><tr><th>Element</th><th>Entry</th></tr></thead>
+        <tbody>
+        <tr><td><strong>Coverage</strong></td><td>User: 4 named, 2 met. Influencer: IT architect, met twice, wrote 60% of requirements. Economic buyer: CFO — <em>named but never met</em>. Gatekeeper: procurement, engaged. Veto: InfoSec (engaged, questionnaire returned) and Works Council (<em>not identified until this exercise</em>). Blocker: plant manager at site 2, prefers the incumbent.</td></tr>
+        <tr><td><strong>Champion test</strong></td><td>Ops Director. Access upward: yes, arranged CFO briefing. Inconvenient truth: yes, disclosed the competitor was preferred by site 2. Independent action: yes, presented at the capital committee without us. <strong>3/3 — genuine champion.</strong></td></tr>
+        <tr><td><strong>Veto holders</strong></td><td>InfoSec cleared. <strong>Works Council is the discovery of this exercise</strong> — German site, employee-representation consultation is legally required for systems monitoring work patterns. Engaging now; would have killed the deal at signature otherwise.</td></tr>
+        <tr><td><strong>Criteria &amp; weights</strong></td><td>Integration with existing MES 30% (known — stated in RFI), total cost of ownership 25% (known), implementation risk 20% (<em>assumed</em>), vendor viability 15% (<em>assumed</em>), UI/usability 10% (known, low). Two of five weights are assumptions — flagged as a gap.</td></tr>
+        <tr><td><strong>Named disagreement</strong></td><td>The IT architect wants a single-vendor stack; the Ops Director wants best-of-breed. This is unresolved and neither has said it in a joint meeting. <strong>Surfacing it is the next action</strong>, not avoiding it.</td></tr>
+        <tr><td><strong>Circulating artifact</strong></td><td>Two pages: problem in the Ops Director's own words; three options including do-nothing (costed at €180k/yr of manual reconciliation); weighted criteria table; sensitivity on the two assumed weights; honest weakness ("our MES connector is 6 months old and has two known gaps, listed"); the decision being asked for, with reversal cost.</td></tr>
+        <tr><td><strong>Forecast change</strong></td><td>75% → 45%. "An unengaged works council in a German site is a hard legal gate, and two of the five decision weights are assumptions rather than knowledge."</td></tr>
+        </tbody>
+        </table>
+      </div>
+
+      <p><strong>Evaluation rubric:</strong> Role coverage completeness including honest "unknown" entries (20%); rigorous behavioral application of the champion test (20%); veto-holder identification and engagement plan (20%); criteria weights with known/assumed marking (15%); a genuinely named internal disagreement (15%); artifact quality including the honest weakness (10%).</p>
+      <p><strong>Beginner variation:</strong> Map roles for a purchase your own organization made recently, interviewing two people who were involved. Seeing a buying centre from the inside is the fastest way to understand how little the vendor could see.</p>
+      <p><strong>Advanced variation:</strong> Build the map for three deals in the same segment and look for the pattern in which role is habitually unmapped. That pattern is a team-level coaching finding, and it is usually more valuable than any individual deal review.</p>
+    </section>
+
+    <section id="knowledge-check">
+      <h2>9. Applied knowledge check</h2>
+
+      <details><summary>1. Your contact loves the product, replies within an hour, and will not introduce you to their VP. What are they?</summary>
+      <p>A coach, not a champion. The behavioral test has three parts — grants access upward, tells you inconvenient truths, and acts independently when you are absent. Someone failing the access test is almost always failing it for a reason worth knowing: they may lack standing, may have burned capital on a previous project, or may not actually believe the case survives scrutiny. Ask directly and without blame. Coaches are genuinely valuable for information; treating one as a champion is what produces confident forecasts on dead deals.</p></details>
+
+      <details><summary>2. Why does sending more material to an overwhelmed buying group make things worse?</summary>
+      <p>Because their constraint is comprehension, not information. Around 55% of buyers report already facing an overwhelming volume of trustworthy but conflicting information, and adding to it raises the cost of deciding — which, combined with omission bias, pushes the group toward doing nothing. The useful move is sense-making: helping the group reconcile what they already have, name where sources genuinely conflict, and see which differences actually matter for their situation.</p></details>
+
+      <details><summary>3. A deal is at 90% and dies suddenly at security review. What was the mapping error?</summary>
+      <p>A veto holder was left unmapped and unengaged. Security, legal, compliance, works councils, and clinical or information governance functions can stop a deal unilaterally, and they are rewarded for caution rather than for enabling purchases. They also cannot be persuaded late — a security team asked to approve in week 40 of a 42-week cycle will default to no, because they have no time to do the work properly and every incentive not to take the risk. Engage them early, treat their questionnaire as a real deliverable, and expect a genuine review.</p></details>
+
+      <details><summary>4. Should you adopt one sales methodology across your team?</summary>
+      <p>Adopt one for <em>inspection</em> and several for <em>execution</em>. A shared qualification vocabulary — MEDDPICC or equivalent — makes forecasts and deal reviews objective, and that consistency is worth a lot. But a team that treats one methodology as doctrine will systematically miss whatever it omits: MEDDIC is silent on how to run discovery, Challenger says little about consensus, and nearly all of them assume the buyer's problem is being unconvinced rather than being unable to decide. Teach the grading in Table 2 so sellers can name what their default framework is not telling them.</p></details>
+
+      <details><summary>5. What single test tells you whether your proposal document will survive circulation?</summary>
+      <p>Give it to someone who has never met you and ask them to explain the decision back to you. If they can only describe your product, it is a brochure and it will be skimmed and discarded in the meetings you do not attend. If they can describe the choice, the stakes, the honest arguments on each side, and what would change the answer, it is a decision-support artifact — and it works in the roughly 95% of the buying process where you are not present.</p></details>
+    </section>
+
+    <section id="conclusion">
+      <h2>10. Practical conclusion &amp; next action</h2>
+      <p>Complex B2B selling is the discipline of being useful to a group you cannot fully see, in meetings you will not attend, through documents you do not control once you send them. Everything else follows from taking that seriously.</p>
       <ul>
-        <li><strong>Single-Threading (The Isolation Trap):</strong> Relying on one person to sell your product internally is a death sentence. If you haven't spoken to at least three people on the buying committee, you do not have a deal.</li>
-        <li><strong>Happy Ears (Confirmation Bias):</strong> A rep hears "We love it!" from an End User and immediately forecasts the deal as 'Commit'. The rep ignores the fact that they haven't met the Economic Buyer and have no established Decision Process (failing MEDDPICC).</li>
-        <li><strong>Pitching the Wrong Value:</strong> Pitching "ease of use" to a CFO, or pitching "ROI" to an End User. You must tailor the transaction cost and value proposition to the specific role, evidence needs, and constraints of the stakeholder you are speaking to.</li>
-        <li><strong>Fear of Procurement:</strong> Reps view Procurement as a terrifying authority figure (Parent ego state) and instantly regress into an Adapted Child posture, giving away margins without fighting. Procurement is just doing their job; stay in your Adult ego state.</li>
-        <li><strong>Ignoring the Paper Process:</strong> A verbal "yes" means nothing if legal takes 60 days to redline the MSA. Elite reps run the 'Paper Process' in parallel with the technical evaluation to compress the sales cycle.</li>
+        <li>Map roles, not titles. Unmapped roles are your risk register, and the missing entry is usually the veto holder or the economic buyer.</li>
+        <li>Test the champion behaviorally: access upward, inconvenient truths, independent action. Two of three or it is a coach.</li>
+        <li>Engage veto holders early. They cannot be persuaded in the final fortnight and are not incentivized to try.</li>
+        <li>Hold two or three methodologies and switch by situation; adopt one only for inspection.</li>
+        <li>The constraint is comprehension, not information. Reconcile rather than add.</li>
+        <li>Build the artifact that travels — options including do-nothing, weighted criteria, ranges, and an honest weakness.</li>
       </ul>
+      <p><strong>Immediate action:</strong> Take your largest open deal and write down the named person for every role in Table 1, plus the date you last spoke to each directly. Every "unknown" and every date older than six weeks is a forecast risk you are currently carrying without pricing it.</p>
+      <p><strong>Related modules:</strong> <a href="module-36.html">36 · Buying Groups &amp; Decision Enablement</a>, <a href="module-23.html">23 · MEDDPICC &amp; Mutual Action Plans</a>, <a href="module-33.html">33 · Consultative Discovery &amp; Diagnosis</a>, and <a href="module-38.html">38 · Proposals, RFPs, Security &amp; Contracting</a>.</p>
     </section>
 
   </article>
@@ -352,11 +263,11 @@
 <nav class="module-nav">
   <a href="module-05.html" class="prev">
     <div class="dir">← Previous · Module 05</div>
-    <div class="next-title">Prospecting</div>
+    <div class="next-title">Outbound Prospecting</div>
   </a>
   <a href="module-07.html" class="next">
     <div class="dir">Next · Module 07</div>
-    <div class="next-title">Copywriting</div>
+    <div class="next-title">Copywriting &amp; Messaging</div>
   </a>
 </nav>
 
@@ -365,34 +276,6 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-  // Tab logic
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const tabPanels = document.querySelectorAll('.tab-panel');
-  tabBtns.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
-      tabPanels.forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      tabPanels[index].classList.add('active');
-    });
-  });
-
-  // MEDDIC logic
-  const boxes = document.querySelectorAll('.meddic-box');
-  function updateMeddic() {
-    const checked = [...boxes].filter(b => b.checked).length;
-    document.getElementById('meddicScore').textContent = `${checked} / 6`;
-    const v = document.getElementById('meddicVerdict');
-    if (checked === 6) { v.textContent = 'Strong deal · forecast confidently'; v.style.color = 'var(--green)'; }
-    else if (checked >= 4) { v.textContent = 'Promising · close the gaps'; v.style.color = 'var(--gold)'; }
-    else if (checked >= 2) { v.textContent = 'Fragile · go deeper before forecasting'; v.style.color = 'var(--gold)'; }
-    else { v.textContent = 'Speculative · this is hope, not a deal'; v.style.color = 'var(--red)'; }
-  }
-  boxes.forEach(b => b.addEventListener('change', updateMeddic));
-  if (boxes.length > 0) updateMeddic();
-</script>
-<!-- Google Translate -->
 <div id="google_translate_element" style="position:absolute; top:-9999px; left:-9999px; z-index:-9999;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
