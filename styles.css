@@ -854,3 +854,117 @@ body {
 .level-heading span{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);white-space:nowrap}
 .level-promise{max-width:760px;margin:0 0 24px;color:var(--muted);font-size:16px;line-height:1.65}
 @media(max-width:700px){.level-heading{display:block}.level-heading span{display:block;margin-bottom:6px}.level-promise{font-size:14px}}
+
+/* =========================================================
+   Depth-edition module components
+   Used by every module: scrollable tables, worked-solution
+   guides, evidence tags, warning callouts, and the
+   progressive-disclosure applied knowledge check.
+   ========================================================= */
+
+/* Wide tables scroll inside their own container so the page
+   body never scrolls horizontally on small screens. */
+.content .table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 32px 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--ink);
+}
+.content .table-wrapper table { margin: 0; min-width: 640px; }
+.content .table-wrapper th:first-child,
+.content .table-wrapper td:first-child { position: relative; }
+
+/* Worked solutions: visually distinct from the exercise brief
+   so a learner can attempt first and reveal the model answer. */
+.content .solution-guide {
+  border: 2px solid var(--green);
+  border-radius: 4px;
+  padding: 28px;
+  margin: 32px 0;
+  background: rgba(45, 122, 79, 0.05);
+  overflow-x: auto;
+}
+.content .solution-guide h3 {
+  margin-top: 0;
+  color: var(--green);
+  font-size: 20px;
+}
+.content .solution-guide table { min-width: 640px; }
+
+/* Evidence-provenance tags. Every scenario in the course is
+   labelled so a learner never mistakes a teaching composite
+   for a documented case. */
+.case-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.case-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--ink-soft);
+  color: var(--muted);
+}
+.case-tag.nature { border-color: var(--gold); color: var(--gold); }
+.case-tag.evidence { border-color: var(--green); color: var(--green); }
+.case-tag.contested { border-color: var(--red); color: var(--red); }
+
+.callout.warning { border-left-color: var(--red); }
+.callout.warning .callout-label { color: var(--red); }
+
+/* Applied knowledge check: answers stay collapsed so the
+   learner retrieves before reading (test-enhanced learning). */
+.content details {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold);
+  border-radius: 4px;
+  background: var(--ink-soft);
+  padding: 0;
+  margin: 14px 0;
+}
+.content details[open] { background: var(--ink); }
+.content details > summary {
+  cursor: pointer;
+  padding: 18px 22px;
+  font-weight: 600;
+  line-height: 1.5;
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.content details > summary::-webkit-details-marker { display: none; }
+.content details > summary::before {
+  content: '+';
+  font-family: var(--font-mono);
+  color: var(--orange);
+  font-weight: 700;
+  flex: 0 0 auto;
+}
+.content details[open] > summary::before { content: '−'; }
+.content details > summary:hover { color: var(--orange); }
+.content details > summary:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: -3px;
+}
+.content details > *:not(summary) {
+  padding: 0 22px 20px 22px;
+  margin: 0;
+}
+.content details > p:not(:last-child) { padding-bottom: 12px; }
+
+/* Reference lists rendered at the foot of a module. */
+.content .source-list { font-size: 14px; color: var(--muted); }
+.content .source-list li { margin: 8px 0; }
+.content .source-list a { word-break: break-word; }
+
+@media (max-width: 700px) {
+  .content .table-wrapper table,
+  .content .solution-guide table { min-width: 520px; font-size: 14px; }
+  .content th, .content td { padding: 12px 14px; }
+  .content .solution-guide { padding: 20px; }
+}

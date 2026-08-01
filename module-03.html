@@ -3,112 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 3 · Online Selling — Sales Mastery</title>
+<title>Module 03 · Online Selling — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<style>
-  /* Funnel visualization */
-  .funnel-viz {
-    margin: 32px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
-  .funnel-step {
-    width: 100%;
-    padding: 18px 24px;
-    background: var(--ink);
-    border: 1px solid var(--line);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.4s;
-  }
-  .funnel-step .fs-label {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--cream);
-  }
-  .funnel-step .fs-value {
-    font-family: var(--font-display);
-    font-size: 22px;
-    color: var(--orange);
-    font-weight: 500;
-  }
-  .funnel-step .fs-rate {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    margin-left: 12px;
-  }
-  
-  /* Channel grid */
-  .channel-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    margin: 32px 0;
-  }
-  .channel-card { background: var(--ink); padding: 24px; }
-  .channel-name { font-family: var(--font-display); font-size: 20px; color: var(--paper); margin-bottom: 8px; font-weight: 500; }
-  .channel-tag { display: inline-block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; margin-bottom: 12px; }
-  .channel-tag.green { background: rgba(74,157,111,0.2); color: var(--green); }
-  .channel-tag.gold { background: rgba(212,168,67,0.2); color: var(--gold); }
-  .channel-tag.red { background: rgba(193,85,74,0.2); color: var(--red); }
-  .channel-card p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.5; }
-  
-  /* Product page anatomy */
-  .anatomy-diagram {
-    margin: 32px 0;
-    border: 1px solid var(--line);
-    background: var(--ink);
-  }
-  .anatomy-section {
-    padding: 24px 28px;
-    border-bottom: 1px solid var(--line);
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 24px;
-    align-items: start;
-  }
-  .anatomy-section:last-child { border-bottom: none; }
-  .anatomy-q {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 36px;
-    color: var(--orange);
-    line-height: 1;
-    font-weight: 300;
-  }
-  .anatomy-q-text {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 500;
-    color: var(--paper);
-    margin-bottom: 8px;
-  }
-  .anatomy-q-detail { color: var(--cream); font-size: 14px; margin: 0; }
-  
-  /* Formula display */
-  .formula {
-    background: var(--ink);
-    border: 1px solid var(--line);
-    padding: 32px;
-    text-align: center;
-    margin: 32px 0;
-    font-family: var(--font-display);
-    font-size: clamp(20px, 2.5vw, 28px);
-    color: var(--paper);
-    font-weight: 500;
-  }
-  .formula .x { color: var(--orange); margin: 0 8px; }
-  .formula .var { color: var(--gold); }
-</style>
 </head>
 <body>
 
@@ -126,13 +22,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">03</span>Online Selling</div>
-  <h1 class="module-title">Selling on the <em>internet.</em></h1>
-  <p class="lede">Online selling isn't one business — it's a dozen, each with different rules. This module maps the landscape, breaks down the math, and shows what actually moves the numbers.</p>
+  <div class="eyebrow"><span class="num">03</span>Digital Conversion</div>
+  <h1 class="module-title">Fix the <em>constrained stage</em> before you buy more traffic.</h1>
+  <p class="lede">Almost every underperforming online business is buying traffic to compensate for a leak it has not diagnosed. This module teaches funnel arithmetic, constraint identification, honest experiment design, and the unit economics that decide whether a channel is a business or a subsidy.</p>
   <div class="meta-strip">
-    <span>35 min read</span>
-    <span>Practical · with calculators</span>
-    <span>E-com, SaaS, digital products</span>
+    <span>45 min lesson + practice</span>
+    <span>Evidence-led professional curriculum</span>
+    <span>Level 3</span>
   </div>
 </header>
 
@@ -140,285 +36,212 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#b2c-style">B2C-Style Buying (2026)</a></li>
-      <li><a href="#landscape">The online selling landscape</a></li>
-      <li><a href="#anatomy">Anatomy of a converting page</a></li>
-      <li><a href="#funnel">The funnel</a></li>
-      <li><a href="#calculator">Funnel calculator</a></li>
-      <li><a href="#traffic">Traffic strategy</a></li>
-      <li><a href="#formula">Conversion formula</a></li>
-      <li><a href="#traps">Common traps</a></li>
-      <li><a href="#exercises">Exercises</a></li>
+      <li><a href="#introduction">1. The traffic reflex and why it is expensive</a></li>
+      <li><a href="#objectives">2. Observable learning objectives</a></li>
+      <li><a href="#arithmetic">3. Funnel arithmetic and constraint identification</a></li>
+      <li><a href="#leaks">4. Where conversion actually leaks: the evidence</a></li>
+      <li><a href="#channels">5. Channel economics: paid, owned, and earned</a></li>
+      <li><a href="#worked-example">6. Worked example: a full funnel diagnosis</a></li>
+      <li><a href="#execution">7. Weak versus improved experiment design</a></li>
+      <li><a href="#practice">8. Practice: one-page funnel diagnosis</a></li>
+      <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
+      <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="b2c-style">
-      <h2>Digital-First & B2C-Style Buying (2026 Shift)</h2>
-      <p>The line between B2B and consumer e-commerce has vanished. B2B buyers now expect Amazon-like, self-service experiences, real-time pricing, and seamless mobile commerce capabilities.</p>
-      <p>Furthermore, traditional static content like generic PDFs is losing its effectiveness. Engagement now demands interactive elements—calculators, quizzes, personalized interactive demos—to drive lead capture and guide the buyer journey before sales ever steps in.</p>
-      <div class="pullquote">If they can't trial it, price it, or touch it on their own, you've already lost the top of the funnel.</div>
+    <section id="introduction">
+      <h2>1. The traffic reflex and why it is expensive</h2>
+      <p>When online revenue is below plan, the default response in most organizations is to buy more traffic. It is the most available lever, it produces visible activity within hours, and it requires no argument with anyone about the product. It is also, in the majority of cases, the most expensive way to buy the missing revenue.</p>
+      <p>The arithmetic is unforgiving. A funnel is a product of rates, so improving the <em>constrained</em> stage multiplies through every stage below it, while adding volume at the top multiplies through the same leak. If your checkout converts at 40% against an achievable 55%, every additional visitor you buy is purchased at a 27% discount to its potential value. Baymard Institute — whose estimates come from sixteen years of large-scale checkout usability testing across more than 300 top-grossing sites — puts the average recoverable gain from checkout redesign alone at roughly <strong>35%</strong>. There is no traffic channel that delivers a 35% cost reduction on demand.</p>
+      <p>The reason organizations reach for traffic anyway is organizational, not analytical: traffic is somebody's job, checkout is somebody else's, and no one owns the funnel as a single object. The first contribution of a good commercial thinker is usually not a clever growth tactic. It is a shared diagram with real numbers on it that forces the conversation to happen.</p>
     </section>
 
-    <section id="landscape">
-      <h2>The online selling landscape</h2>
-      <p>Online selling spans a dozen distinct business models. Each has different mechanics, different metrics, different traps. Start with one channel until you can do it well, then expand. <strong>Five mediocre channels lose to one excellent channel.</strong></p>
+    <section id="objectives">
+      <h2>2. Observable learning objectives</h2>
+      <p>By completing this module you will be able to demonstrate the following:</p>
+      <p>Build a funnel model with explicit denominators and identify the constrained stage by expected value, not by intuition.</p>
+      <p>Distinguish leaks caused by traffic quality from leaks caused by experience friction, using segmented evidence.</p>
+      <p>Diagnose a checkout or signup flow against the documented abandonment causes.</p>
+      <p>Compare paid, owned, and earned channels on contribution margin and payback rather than on volume.</p>
+      <p>Design an experiment with a pre-registered primary metric, a sample-size floor, and a stopping rule.</p>
+    </section>
 
-      <div class="channel-grid">
-        <div class="channel-card">
-          <div class="channel-name">Own store</div>
-          <span class="channel-tag gold">Brand-building</span>
-          <p>Shopify, WooCommerce. Your site, your rules. But traffic is your problem.</p>
-        </div>
-        <div class="channel-card">
-          <div class="channel-name">Marketplaces</div>
-          <span class="channel-tag green">Volume</span>
-          <p>Amazon, eBay, Etsy. Built-in traffic, but platform owns the customer.</p>
-        </div>
-        <div class="channel-card">
-          <div class="channel-name">Social commerce</div>
-          <span class="channel-tag gold">Impulse</span>
-          <p>TikTok Shop, IG Shopping. Where attention lives. Algorithm-dependent.</p>
-        </div>
-        <div class="channel-card">
-          <div class="channel-name">Dropshipping</div>
-          <span class="channel-tag red">Razor margins</span>
-          <p>Low capital. Quality and shipping issues are constant.</p>
-        </div>
-        <div class="channel-card">
-          <div class="channel-name">Digital products</div>
-          <span class="channel-tag green">High margin</span>
-          <p>Courses, ebooks, and SaaS can have low replication costs, but support, acquisition, refunds, fees, taxes, and maintenance still determine contribution margin.</p>
-        </div>
-        <div class="channel-card">
-          <div class="channel-name">Subscriptions</div>
-          <span class="channel-tag green">Predictable</span>
-          <p>Recurring revenue. Churn is fatal — every month is renewal day.</p>
-        </div>
-        <div class="channel-card">
-          <div class="channel-name">High-ticket coaching</div>
-          <span class="channel-tag gold">Quick start</span>
-          <p>You're the product. Doesn't scale without systems.</p>
-        </div>
-        <div class="channel-card">
-          <div class="channel-name">Affiliate</div>
-          <span class="channel-tag red">No asset</span>
-          <p>Sell others' products. No long-term asset, platform risk.</p>
-        </div>
+    <section id="arithmetic">
+      <h2>3. Funnel arithmetic and constraint identification</h2>
+      <p>A funnel is not a picture. It is a chain of conditional rates, and the discipline that makes it useful is <strong>naming the denominator at every stage</strong>. Most disputes about funnel performance are actually disputes about denominators that nobody wrote down.</p>
+
+      <h3>Table 1: A funnel with explicit denominators and improvement leverage</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Stage</th><th>Denominator (must be stated)</th><th>Example rate</th><th>Common measurement error</th><th>Revenue effect of +10% relative</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Reach → Session</strong></td><td>Impressions or sends delivered</td><td>2.1% CTR</td><td>Counting impressions the user never saw; bot traffic inflating the denominator.</td><td>+10% revenue, but you also pay 10% more for media.</td></tr>
+      <tr><td><strong>Session → Engaged</strong></td><td>Sessions, excluding bounces under 3s</td><td>44%</td><td>Bounce definitions that vary by analytics tool, making trends meaningless.</td><td>+10% revenue at zero media cost.</td></tr>
+      <tr><td><strong>Engaged → Add to cart / lead</strong></td><td>Engaged sessions</td><td>9.4%</td><td>Mixing new and returning users, which hides that returning users carry the whole rate.</td><td>+10% revenue at zero media cost.</td></tr>
+      <tr><td><strong>Cart → Checkout started</strong></td><td>Carts created</td><td>52%</td><td>Counting a cart per session rather than per user, double-counting comparison shoppers.</td><td>+10% revenue at zero media cost.</td></tr>
+      <tr><td><strong>Checkout → Purchase</strong></td><td>Checkouts started</td><td>61%</td><td>Excluding payment failures, which hides an infrastructure problem as a "decision" problem.</td><td>+10% revenue at zero media cost, and it compounds with every upstream gain.</td></tr>
+      <tr><td><strong>Purchase → Repeat (90d)</strong></td><td>First-time purchasers in cohort</td><td>18%</td><td>Measuring on all customers rather than by acquisition cohort, so improvements are invisible.</td><td>Compounds into LTV and therefore into how much traffic you can afford.</td></tr>
+      </tbody>
+      </table>
+      </div>
+
+      <p>To find the constraint, do not look for the lowest rate. Look for the largest gap between the current rate and a <strong>defensible achievable rate</strong> for your context, weighted by the traffic passing through it. A 61% checkout completion against an achievable 75% on 40,000 checkouts is worth vastly more than lifting a 2.1% click-through to 2.4%.</p>
+      <div class="callout tip">
+        <div class="callout-label">The one calculation that reorders most roadmaps</div>
+        <p>For each stage compute <code>Expected value = (achievable rate − current rate) × volume through the stage × downstream conversion × margin per conversion</code>. Then divide by the estimated effort. Ranking by this ratio routinely inverts a roadmap that was ordered by which team shouted loudest — and it gives you a defensible answer when someone asks why checkout is being prioritized over a homepage redesign.</p>
       </div>
     </section>
 
-    <section id="anatomy">
-      <h2>Anatomy of a converting product page</h2>
-      <p>Every product page answers five buyer questions, in order. If any is missing or weak, the sale leaks out.</p>
+    <section id="leaks">
+      <h2>4. Where conversion actually leaks: the evidence</h2>
+      <p>You do not have to guess where digital funnels fail. The failure modes are well documented and remarkably stable across studies.</p>
 
-      <div class="anatomy-diagram">
-        <div class="anatomy-section">
-          <div class="anatomy-q">Q1</div>
-          <div>
-            <div class="anatomy-q-text">What is this?</div>
-            <p class="anatomy-q-detail">Above the fold: clear hero image, one-line value proposition, price visible, CTA button without scrolling.</p>
-          </div>
-        </div>
-        <div class="anatomy-section">
-          <div class="anatomy-q">Q2</div>
-          <div>
-            <div class="anatomy-q-text">Why should I care?</div>
-            <p class="anatomy-q-detail">Benefits section: top 3–5 outcomes. Outcome-led copy ("Wake up rested" &gt; "8-zone memory foam"). Lifestyle imagery.</p>
-          </div>
-        </div>
-        <div class="anatomy-section">
-          <div class="anatomy-q">Q3</div>
-          <div>
-            <div class="anatomy-q-text">How does it work?</div>
-            <p class="anatomy-q-detail">Features mapped to benefits. Specs, dimensions, materials. Comparison vs. alternatives if relevant.</p>
-          </div>
-        </div>
-        <div class="anatomy-section">
-          <div class="anatomy-q">Q4</div>
-          <div>
-            <div class="anatomy-q-text">Can I trust this?</div>
-            <p class="anatomy-q-detail">Reviews (with photos/video), star ratings, press mentions, certifications, founder story, return policy.</p>
-          </div>
-        </div>
-        <div class="anatomy-section">
-          <div class="anatomy-q">Q5</div>
-          <div>
-            <div class="anatomy-q-text">What if it doesn't work?</div>
-            <p class="anatomy-q-detail">Risk reversal: money-back, free returns, warranty. FAQ on top fears. Clear shipping and support info.</p>
-          </div>
-        </div>
+      <h3>Table 2: Documented abandonment causes and their fixes</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Stated cause</th><th>Approx. share of abandoners</th><th>What it really signals</th><th>Fix, in order of cost</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Unexpected extra costs</strong> (shipping, tax, fees)</td><td>~48%</td><td>A trust violation, not a price objection. The buyer accepted a price and was shown a different one.</td><td>Show the total early; give a shipping estimator on the product page; make thresholds explicit.</td></tr>
+      <tr><td><strong>Forced account creation</strong></td><td>~26%</td><td>You asked for a commitment before delivering value.</td><td>Guest checkout with an optional account offer <em>after</em> purchase.</td></tr>
+      <tr><td><strong>Payment security concerns</strong></td><td>~25%</td><td>The page does not look like it can be trusted with a card.</td><td>Recognized payment marks, no layout shifts at payment, a visible returns policy, a real support route.</td></tr>
+      <tr><td><strong>Delivery too slow / unclear</strong></td><td>~23%</td><td>An unresolved question at the moment of commitment.</td><td>Show a date, not a duration. "Arrives Thursday 12th" beats "3–5 business days."</td></tr>
+      <tr><td><strong>Checkout too long or complex</strong></td><td>~22%</td><td>Form burden. Average US checkout carries ~23 form elements against an optimal 12–14.</td><td>Delete fields. Every field is a small tax charged at the moment of highest intent.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p>Documented cart abandonment averages around <strong>70%</strong> across studies — roughly 80% on mobile and 66% on desktop. That mobile–desktop gap is the single most reliable early diagnostic available: if your gap is much wider than that, the problem is almost certainly form burden and input friction on small screens rather than intent.</p>
+      <div class="callout warning">
+        <div class="callout-label">Boundary condition on every benchmark in this section</div>
+        <p>These are class <strong>V/R</strong> aggregates. They differ by category — documented abandonment runs from roughly 53% in pet supplies to 82% in beauty — and by traffic mix. A site running heavy discovery-driven social traffic will abandon more than one running branded search, and neither is "broken." Benchmarks tell you which hypothesis to test first. Your own segmented data tells you whether it was right.</p>
       </div>
     </section>
 
-    <section id="funnel">
-      <h2>The sales funnel</h2>
-      <p>Buyers move through stages. You can't fix what you don't measure — track conversion at each stage.</p>
-      
-      <div class="formula">
-        <span class="var">Awareness</span> → <span class="var">Interest</span> → <span class="var">Consideration</span> → <span class="var">Conversion</span> → <span class="var">Retention</span> → <span class="var">Advocacy</span>
+    <section id="channels">
+      <h2>5. Channel economics: paid, owned, and earned</h2>
+      <p>Channels are usually compared on volume and cost per click, which are the two least decision-relevant numbers available. Compare them on <strong>contribution after variable cost</strong> and on <strong>payback period</strong>, because those determine whether a channel funds itself or is quietly subsidised by another.</p>
+
+      <h3>Table 3: Channel comparison on the terms that matter</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Channel type</th><th>Cost behavior</th><th>Compounding?</th><th>Structural risk</th><th>Correct use</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Paid acquisition</strong> (search, social, marketplace)</td><td>Linear and rising. You rent the audience; costs increase with competition.</td><td>No. Stop paying and volume stops within days.</td><td>Platform policy and auction dynamics you do not control. Margin compresses over time by default.</td><td>Buying <em>speed</em> and buying <em>learning</em>. Excellent for testing demand; dangerous as a permanent foundation.</td></tr>
+      <tr><td><strong>Owned</strong> (email, SMS, community, app, content you host)</td><td>High fixed cost to build, near-zero marginal cost to reach.</td><td>Yes, if list health and consent are maintained.</td><td>Deliverability, consent expiry, and list decay. Legally the most regulated — see Module 05.</td><td>The asset that makes paid acquisition affordable by raising LTV.</td></tr>
+      <tr><td><strong>Earned</strong> (organic search, referral, word of mouth, PR)</td><td>Indirect cost through product quality and effort.</td><td>Strongly, with long lag.</td><td>Algorithm dependence; slow to build and slow to detect when decaying.</td><td>Compounds only if the product genuinely produces a result worth mentioning.</td></tr>
+      <tr><td><strong>Retention as a channel</strong></td><td>Cost of service and success motion.</td><td>The most strongly compounding of all.</td><td>Under-measured because it appears as absent churn rather than as visible revenue.</td><td>Every point of repeat rate raises the price you can afford to pay for a new customer.</td></tr>
+      </tbody>
+      </table>
       </div>
+      <p>The decision rule follows directly: <strong>a channel is viable when contribution margin per customer exceeds fully-loaded acquisition cost within a payback period your cash position can survive.</strong> Not when ROAS looks good — ROAS uses revenue, not margin, and revenue-based targets have destroyed more consumer brands than any competitor. For subscription businesses the equivalent instruments are CAC payback and net revenue retention; 2025 SaaS medians put CAC payback near 16 months with top quartile at 6 or better, though those medians come from survivor-biased vendor surveys and are useless as targets for a business with different gross margins.</p>
     </section>
 
-    <section id="calculator">
-      <h2>Funnel calculator</h2>
-      <p>Plug in your numbers. See where the leverage is — and what doubling each metric does to revenue.</p>
+    <section id="worked-example">
+      <h2>6. Worked example: a full funnel diagnosis</h2>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
+      <p><strong>Scenario:</strong> A direct-to-consumer ergonomic furniture brand has 120,000 monthly sessions, a 1.2% overall conversion rate, and a paid CPC that rose 35% year on year. The growth team's proposal is to expand into two new paid channels. The analyst runs a constraint diagnosis first.</p>
 
-      <div class="widget">
-        <div class="widget-header">
-          <div class="widget-title">E-commerce Funnel Simulator</div>
-          <div class="widget-tag">Live</div>
-        </div>
-
-        <div class="input-row">
-          <div class="input-group">
-            <label>Monthly visitors</label>
-            <input type="range" id="visitors" min="1000" max="100000" step="500" value="20000" data-prefix="">
-            <div class="range-value"></div>
-          </div>
-          <div class="input-group">
-            <label>Add-to-cart rate</label>
-            <input type="range" id="atc" min="1" max="20" step="0.5" value="5" data-suffix="%">
-            <div class="range-value"></div>
-          </div>
-          <div class="input-group">
-            <label>Cart → purchase</label>
-            <input type="range" id="checkout" min="10" max="80" step="1" value="40" data-suffix="%">
-            <div class="range-value"></div>
-          </div>
-          <div class="input-group">
-            <label>Average order value (€)</label>
-            <input type="range" id="aov" min="10" max="500" step="5" value="60" data-prefix="€">
-            <div class="range-value"></div>
-          </div>
-          <div class="input-group">
-            <label>Repeat rate (next 90 days)</label>
-            <input type="range" id="repeat" min="0" max="60" step="1" value="15" data-suffix="%">
-            <div class="range-value"></div>
-          </div>
-          <div class="input-group">
-            <label>CAC per first buyer (€)</label>
-            <input type="range" id="cac" min="5" max="150" step="1" value="35" data-prefix="€">
-            <div class="range-value"></div>
-          </div>
-        </div>
-
-        <div class="funnel-viz" id="funnelViz"></div>
-
-        <div class="stat-grid" style="margin-top: 24px;">
-          <div class="stat">
-            <div class="stat-num" id="revStat">€0</div>
-            <div class="stat-label">Monthly revenue</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num" id="ltvStat">€0</div>
-            <div class="stat-label">90-day LTV</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num" id="ratioStat">0.0×</div>
-            <div class="stat-label">LTV : CAC ratio</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num" id="healthStat">—</div>
-            <div class="stat-label">Health verdict</div>
-          </div>
-        </div>
+      <h3>Table 4: Stage-by-stage diagnosis and expected value ranking</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Stage</th><th>Current</th><th>Defensible achievable</th><th>Evidence for the target</th><th>Annual contribution if achieved</th><th>Effort</th></tr></thead>
+      <tbody>
+      <tr><td>Session → Product view</td><td>38%</td><td>42%</td><td>Weak — no specific defect identified; target is aspirational.</td><td>~£310k</td><td>High (navigation rebuild)</td></tr>
+      <tr><td>Product view → Add to cart</td><td>7.1%</td><td>8.0%</td><td>Moderate — session replays show 41% of users scroll past the size guide and return to it.</td><td>~£240k</td><td>Medium</td></tr>
+      <tr><td><strong>Cart → Checkout started</strong></td><td><strong>44%</strong></td><td><strong>62%</strong></td><td><strong>Strong — shipping cost first revealed at this step; 48% of surveyed abandoners cite extra costs. Mobile gap is 31 points vs. the documented ~14.</strong></td><td><strong>~£1.42m</strong></td><td><strong>Low (surface shipping earlier)</strong></td></tr>
+      <tr><td>Checkout → Purchase</td><td>72%</td><td>78%</td><td>Moderate — 19 form fields against an optimal 12–14; guest checkout already enabled.</td><td>~£390k</td><td>Low–Medium</td></tr>
+      <tr><td>90-day repeat</td><td>8%</td><td>14%</td><td>Moderate — no post-purchase sequence exists at all; category supports accessory attach.</td><td>~£680k (LTV effect)</td><td>Medium</td></tr>
+      <tr><td colspan="6"><strong>Proposal under review: two new paid channels, +18% sessions.</strong> Applied to the current 1.2% conversion: ~£520k contribution, at £310k incremental media spend and a 4-month payback — <em>and it multiplies through the same 44% cart leak.</em></td></tr>
+      </tbody>
+      </table>
       </div>
-
-      <div class="callout">
-        <div class="callout-label">Golden rule</div>
-        <p>LTV must be at least <strong>3× CAC</strong> for a healthy long-term business. If you spend €30 acquiring a customer worth €40 lifetime, you're working for nothing.</p>
-      </div>
+      <p><strong>Decision:</strong> The cart-to-checkout constraint is worth roughly 2.7× the paid expansion, costs almost nothing, and improves the return on every future media pound. Sequence: fix the shipping disclosure, then reduce form fields, then build the post-purchase sequence, then expand paid channels against the repaired funnel.</p>
+      <p><strong>What made the diagnosis credible:</strong> not the size of the numbers, but the <em>evidence column</em>. Two of the five targets were marked weak or moderate and were explicitly deprioritized despite attractive contribution figures. A funnel model where every stage is confidently achievable is a wish list.</p>
     </section>
 
-    <section id="traffic">
-      <h2>Where traffic actually comes from</h2>
+    <section id="execution">
+      <h2>7. Weak versus improved experiment design</h2>
+      <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> The team wants to test surfacing shipping cost earlier.</p>
 
-      <div class="tabs">
-        <div class="tab-buttons">
-          <button class="tab-btn active">Paid</button>
-          <button class="tab-btn">Owned</button>
-          <button class="tab-btn">Earned</button>
-        </div>
-        <div class="tab-panel active">
-          <h3 style="margin-top: 0;">Paid traffic — renting attention</h3>
-          <ul>
-            <li><strong>Meta ads</strong> — visual consumer products, interest targeting</li>
-            <li><strong>Google ads</strong> — high-intent (people already searching)</li>
-            <li><strong>TikTok ads</strong> — impulse, trends, younger demos</li>
-            <li><strong>YouTube ads</strong> — considered purchases needing demo</li>
-          </ul>
-          <p>The moment you stop paying, it stops.</p>
-        </div>
-        <div class="tab-panel">
-          <h3 style="margin-top: 0;">Owned traffic — owning attention</h3>
-          <ul>
-            <li><strong>SEO / content marketing</strong> — slow but compounding</li>
-            <li><strong>Email list</strong> — highest-ROI channel in online business</li>
-            <li><strong>SMS list</strong> — even higher engagement; use sparingly</li>
-          </ul>
-          <p>The hardest to build, the most valuable to have.</p>
-        </div>
-        <div class="tab-panel">
-          <h3 style="margin-top: 0;">Earned traffic — receiving attention</h3>
-          <ul>
-            <li><strong>Word of mouth</strong> — most powerful, hardest to manufacture</li>
-            <li><strong>Press &amp; PR</strong></li>
-            <li><strong>Influencer collaborations</strong></li>
-            <li><strong>UGC</strong> — one viral TikTok beats most ads</li>
-          </ul>
-        </div>
+      <div class="callout warning">
+        <div class="callout-label">Weak execution (a test that cannot produce knowledge)</div>
+        <p><em>Growth lead:</em> "Let's ship a new cart page with the shipping estimator, a trust-badge row, a countdown timer, and a redesigned button, and see if conversion goes up. We'll check on Monday and roll it out if it's winning."</p>
+        <p><em>Why it fails:</em> Four changes in one variant means a positive result identifies nothing — you cannot tell which change caused it, or whether one change is winning while another loses. "Check on Monday and roll out if winning" is optional stopping, which inflates false positives dramatically; with peeking, a coin-flip test wins about a third of the time. No primary metric was pre-registered, so any of six numbers can be declared the winner after the fact. And the countdown timer is a manufactured scarcity claim that fails the Module 02 compression test regardless of its effect on conversion.</p>
       </div>
-
-      <div class="pullquote">
-        Use paid to bootstrap. Build email/SMS lists from day one. Work toward earned over time.
-      </div>
-    </section>
-
-    <section id="formula">
-      <h2>The conversion formula</h2>
-      <div class="formula">
-        Revenue = <span class="var">Traffic</span> <span class="x">×</span> <span class="var">CR</span> <span class="x">×</span> <span class="var">AOV</span> <span class="x">×</span> <span class="var">Repeat</span>
-      </div>
-      <p>If any one of these doubles, revenue doubles. Most beginners obsess over traffic. Operators know the leverage is usually in conversion rate or AOV.</p>
-
-      <div class="widget">
-        <div class="widget-header">
-          <div class="widget-title">Revenue if you double each lever</div>
-          <div class="widget-tag">From your inputs above</div>
-        </div>
-        <div class="chart-wrap"><canvas id="leverChart"></canvas></div>
-      </div>
-    </section>
-
-    <section id="traps">
-      <h2>Common online selling traps</h2>
-      <ol>
-        <li><strong>Building before validating</strong> — making the product before proving anyone will buy</li>
-        <li><strong>Chasing trends</strong> — by the time it's on YouTube, the window's closing</li>
-        <li><strong>Cheap traffic, expensive funnel</strong> — if your page converts at 0.3%, more traffic won't save you</li>
-        <li><strong>Ignoring retention channels</strong> — test permission-based email against incremental revenue, unsubscribe rates, and customer value</li>
-        <li><strong>Discounting reflexively</strong> — trains buyers to wait for sales</li>
-        <li><strong>Underpricing</strong> — low price signals low quality</li>
-        <li><strong>Treating support as overhead</strong> — it's your highest-leverage retention channel</li>
-        <li><strong>Not knowing the numbers</strong> — running without metrics is gambling</li>
-      </ol>
-    </section>
-
-    <section id="exercises">
-      <h2>Exercises</h2>
-      <ol>
-        <li><strong>Tear down 3 product pages.</strong> Map each to the five buyer questions. Where strong? Where weak?</li>
-        <li><strong>Calculate the funnel.</strong> Use the calculator above with real numbers from a store you can access.</li>
-        <li><strong>Pick your channel.</strong> Which one would you go all-in on for 90 days?</li>
-        <li><strong>Write a product page</strong> for an imaginary product hitting all 5 questions. Friend test it.</li>
-      </ol>
 
       <div class="callout tip">
-        <div class="callout-label">Further reading</div>
-        <p><em>DotCom Secrets</em> — Russell Brunson · <em>$100M Offers</em> — Alex Hormozi · <em>Building a StoryBrand</em> — Donald Miller</p>
+        <div class="callout-label">Improved execution (pre-registered, powered, one variable)</div>
+        <p><em>Analyst:</em> "Primary metric: cart-to-checkout-started rate. Single change: shipping cost and estimated arrival date shown on the cart page. Nothing else moves. Current rate 44%; the minimum effect worth acting on is +4 points, which needs roughly 2,400 carts per arm — about 11 days at current volume, so we run 14 days to cover a full weekly cycle and we do not look at significance before day 14. Secondary metrics logged but not decision-eligible: AOV, refund rate, support contacts about shipping. Guardrail: if AOV drops more than 6%, we stop early and investigate, because moving shipping forward may suppress threshold-chasing. Segmented readout by device, because the mobile gap is the reason we believe this hypothesis at all."</p>
+        <p><em>Why it succeeds:</em> One variable, a pre-registered primary metric, a stated minimum effect, a sample-size floor derived from that effect, a fixed horizon that removes optional stopping, a guardrail metric with a pre-committed action, and a segmentation plan tied to the original hypothesis. The result will be interpretable whichever way it goes — including a null result, which this design can actually detect rather than explain away.</p>
       </div>
+    </section>
+
+    <section id="practice">
+      <h2>8. Practice: one-page funnel diagnosis</h2>
+      <p><strong>Exercise goal:</strong> produce a diagnosis that identifies the constrained stage with evidence and ranks interventions by expected value per unit of effort.</p>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
+      <ol>
+        <li>Draw your funnel with every stage, and write the <strong>denominator</strong> beside each rate. If you cannot state a denominator, that is your first finding.</li>
+        <li>Segment at least one stage by device and by new-versus-returning. Report where the two segments diverge most.</li>
+        <li>For each stage, propose a defensible achievable rate and grade the evidence for that target: strong, moderate, or weak. Be willing to write "weak."</li>
+        <li>Compute expected annual contribution for each stage and divide by an effort estimate in person-weeks.</li>
+        <li>Name the constraint. State the single intervention you would run first and the one you are deliberately <em>not</em> running.</li>
+        <li>Design the experiment: primary metric, minimum effect worth acting on, sample-size floor, fixed horizon, guardrail, and stopping rule.</li>
+      </ol>
+
+      <div class="solution-guide">
+        <h3>Completed exemplar (B2B SaaS free-trial funnel)</h3>
+        <table>
+        <thead><tr><th>Element</th><th>Entry</th></tr></thead>
+        <tbody>
+        <tr><td><strong>Funnel &amp; denominators</strong></td><td>Visitor→trial 3.4% (unique visitors); trial→activated 31% (trials started); activated→paid 44% (activated trials, 30-day window); paid→retained-90d 81% (paid cohort).</td></tr>
+        <tr><td><strong>Segmentation finding</strong></td><td>Trial→activated is 52% for users who connect a data source in session one, 11% for those who do not. Only 38% connect in session one. <strong>The funnel is really two funnels.</strong></td></tr>
+        <tr><td><strong>Constraint &amp; evidence grade</strong></td><td>First-session data-source connection. Evidence: <strong>strong</strong> — the 41-point gap is stable across four monthly cohorts and survives controlling for company size and source.</td></tr>
+        <tr><td><strong>Expected value</strong></td><td>Raising first-session connection 38%→55% ≈ +£1.1m ARR at current volumes. Effort ≈ 3 person-weeks (guided onboarding with sample dataset fallback).</td></tr>
+        <tr><td><strong>Deliberately not doing</strong></td><td>Pricing-page redesign (£240k estimate, weak evidence, 6 person-weeks) and a second paid channel until activation is repaired.</td></tr>
+        <tr><td><strong>Experiment design</strong></td><td>Primary: first-session data-source connection rate. Single change: guided connection step with a sample dataset fallback. Minimum effect: +8 points. Floor: 1,900 trials per arm ≈ 18 days; fixed 21-day horizon, no interim looks. Guardrail: trial→paid must not fall (a sample dataset could produce hollow activation). Stopping rule: if connection rises but trial→paid falls, the metric is being gamed — revert and re-diagnose.</td></tr>
+        </tbody>
+        </table>
+      </div>
+
+      <p><strong>Evaluation rubric:</strong> Denominator discipline (20%); quality of segmentation and willingness to report divergence (20%); honesty of evidence grading, including at least one "weak" (20%); expected-value ranking arithmetic (20%); experiment design with pre-registered metric, floor, and stopping rule (20%).</p>
+      <p><strong>Beginner variation:</strong> Diagnose a public checkout flow you use as a customer. Document the form-field count, when total cost first appears, and where you would leak. You do not need internal data to practise the reasoning.</p>
+      <p><strong>Advanced variation:</strong> Add a cohort LTV model and re-rank the interventions on lifetime contribution rather than first-order revenue. Retention improvements usually move several places up the list, which is the point.</p>
+    </section>
+
+    <section id="knowledge-check">
+      <h2>9. Applied knowledge check</h2>
+
+      <details><summary>1. Traffic is strong but checkout completion is weak. What should you test first — more traffic, checkout friction, or more social posts?</summary>
+      <p>Checkout friction. Adding traffic multiplies revenue through the existing leak, so you pay full price for a discounted visitor; fixing the constrained stage multiplies every visitor you already have and every visitor you buy later. Baymard's checkout usability work puts the average recoverable gain from checkout redesign alone near 35% — larger than most channel expansions, at a fraction of the cost, with no ongoing media spend attached.</p></details>
+
+      <details><summary>2. Your mobile cart abandonment is 31 points worse than desktop. What is the most likely cause?</summary>
+      <p>Form and input friction, not intent. The documented mobile–desktop abandonment gap is roughly 80% versus 66% — about 14 points. A 31-point gap is roughly double the expected difference, which points at something specific to the small-screen experience: too many form fields, no autofill or digital-wallet support, keyboard type mismatches on numeric inputs, layout shift at the payment step, or a validation error that is rendered off-screen. Start by completing a purchase on a real mid-range device on a slow connection, not in a desktop emulator.</p></details>
+
+      <details><summary>3. Why is ROAS a poor decision metric for channel viability?</summary>
+      <p>Because it uses revenue rather than contribution margin, so it is silent on whether the revenue is profitable. A 4× ROAS on a 22%-margin product is a loss; a 1.8× ROAS on an 80%-margin subscription with 90% annual retention can be excellent. ROAS also ignores payback period, so it cannot tell you whether the business survives the cash gap between spending and being paid. Judge a channel on contribution after variable cost, and on payback against your cash position.</p></details>
+
+      <details><summary>4. A test shows +6% conversion after four days. Should you roll it out?</summary>
+      <p>Not on that evidence. Four days is unlikely to reach the pre-registered sample floor, does not cover a full weekly cycle (weekday and weekend traffic differ in composition, not just volume), and stopping when the number looks good is optional stopping — which inflates the false-positive rate to roughly a third for a fixed-horizon design that is peeked at repeatedly. Run to the pre-committed horizon. If you genuinely need to look early, use a sequential design that budgets for interim analyses in advance.</p></details>
+
+      <details><summary>5. Unexpected extra costs drive ~48% of stated abandonment. Why is this a trust problem rather than a price problem?</summary>
+      <p>Because the buyer had already accepted a price. They evaluated a number, decided it was acceptable, invested effort, and were then shown a different number at the moment of commitment. The emotional content is not "too expensive" but "I was misled" — which is why discounting rarely fixes it while transparency does. It also explains why the fix is cheap: showing shipping and tax on the product or cart page costs almost nothing and removes the violation entirely, whereas subsidising shipping costs margin on every order forever.</p></details>
+    </section>
+
+    <section id="conclusion">
+      <h2>10. Practical conclusion &amp; next action</h2>
+      <p>Online selling rewards diagnosis over enthusiasm. The organizations that compound are not the ones with the cleverest campaigns; they are the ones that know, with evidence, which stage is constraining them this quarter — and are willing to leave attractive-looking work undone until that stage is fixed.</p>
+      <ul>
+        <li>State the denominator at every stage. Most funnel disputes are undeclared-denominator disputes.</li>
+        <li>Find the constraint by expected value against a <em>defensible</em> achievable rate, not by lowest number.</li>
+        <li>Grade the evidence for each target and be willing to write "weak" — that column is what makes the model credible.</li>
+        <li>Unexpected costs, forced accounts, and form burden dominate documented abandonment. Check those before theorizing.</li>
+        <li>Judge channels on contribution margin and payback, never on ROAS or volume.</li>
+        <li>Pre-register the primary metric, the sample floor, the horizon, the guardrail, and the stopping rule — before you look.</li>
+      </ul>
+      <p><strong>Immediate action:</strong> Complete a purchase or signup on your own product using a mid-range mobile device on a throttled connection. Count the form fields, note the exact moment total cost first appears, and time the whole flow. Nearly everyone who does this finds their constraint in under ten minutes.</p>
+      <p><strong>Related modules:</strong> <a href="module-07.html">07 · Copywriting &amp; Messaging</a>, <a href="module-11.html">11 · Customer Retention</a>, <a href="module-17.html">17 · Product-Led Sales</a>, and <a href="module-37.html">37 · Commercial Acumen, Pricing &amp; Packaging</a>.</p>
     </section>
 
   </article>
@@ -427,11 +250,11 @@
 <nav class="module-nav">
   <a href="module-02.html" class="prev">
     <div class="dir">← Previous · Module 02</div>
-    <div class="next-title">Psychology</div>
+    <div class="next-title">Psychology of Selling</div>
   </a>
   <a href="module-04.html" class="next">
     <div class="dir">Next · Module 04</div>
-    <div class="next-title">Offline</div>
+    <div class="next-title">Offline Selling</div>
   </a>
 </nav>
 
@@ -440,91 +263,6 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-  function calc() {
-    const v = +document.getElementById('visitors').value;
-    const atc = +document.getElementById('atc').value / 100;
-    const co = +document.getElementById('checkout').value / 100;
-    const aov = +document.getElementById('aov').value;
-    const rep = +document.getElementById('repeat').value / 100;
-    const cac = +document.getElementById('cac').value;
-    
-    const carts = Math.round(v * atc);
-    const buyers = Math.round(carts * co);
-    const repeaters = Math.round(buyers * rep);
-    const revenue = buyers * aov + repeaters * aov;
-    const ltv = aov + (aov * rep);
-    const ratio = ltv / cac;
-    
-    document.getElementById('funnelViz').innerHTML = `
-      <div class="funnel-step"><span class="fs-label">Visitors</span><span class="fs-value">${v.toLocaleString()}</span></div>
-      <div class="funnel-step" style="width: 90%; opacity: 0.95"><span class="fs-label">Added to cart <span class="fs-rate">${(atc*100).toFixed(1)}%</span></span><span class="fs-value">${carts.toLocaleString()}</span></div>
-      <div class="funnel-step" style="width: 70%; opacity: 0.9; border-color: var(--gold)"><span class="fs-label">First-time buyers <span class="fs-rate">${(atc*co*100).toFixed(2)}% overall</span></span><span class="fs-value">${buyers.toLocaleString()}</span></div>
-      <div class="funnel-step" style="width: 50%; opacity: 0.85; border-color: var(--orange)"><span class="fs-label">Repeat buyers (90d) <span class="fs-rate">${(rep*100).toFixed(0)}% of buyers</span></span><span class="fs-value">${repeaters.toLocaleString()}</span></div>
-    `;
-    
-    document.getElementById('revStat').textContent = fmtMoney(revenue);
-    document.getElementById('ltvStat').textContent = fmtMoney(ltv);
-    document.getElementById('ratioStat').textContent = ratio.toFixed(1) + '×';
-    
-    let verdict = '', color = '';
-    if (ratio >= 3) { verdict = 'Healthy'; color = 'var(--green)'; }
-    else if (ratio >= 1.5) { verdict = 'Tight'; color = 'var(--gold)'; }
-    else if (ratio >= 1) { verdict = 'Break-even'; color = 'var(--gold)'; }
-    else { verdict = 'Losing'; color = 'var(--red)'; }
-    const hs = document.getElementById('healthStat');
-    hs.textContent = verdict;
-    hs.style.color = color;
-    
-    // Lever chart
-    if (window.leverChartInstance) {
-      const base = revenue;
-      window.leverChartInstance.data.datasets[0].data = [
-        base,
-        base * 2,                // 2x traffic
-        v * (atc*2) * co * aov + (v * (atc*2) * co) * rep * aov,  // 2x CR (via atc)
-        v * atc * co * (aov*2) + (v * atc * co) * rep * (aov*2),  // 2x AOV
-        v * atc * co * aov + (v * atc * co) * (rep*2) * aov       // 2x repeat
-      ];
-      window.leverChartInstance.update();
-    }
-  }
-  
-  document.querySelectorAll('#visitors, #atc, #checkout, #aov, #repeat, #cac').forEach(el => el.addEventListener('input', calc));
-  
-  // Init chart
-  const ctx = document.getElementById('leverChart');
-  if (ctx) {
-    Chart.defaults.color = '#6b7480';
-    Chart.defaults.borderColor = '#2a3340';
-    Chart.defaults.font.family = "'JetBrains Mono', monospace";
-    window.leverChartInstance = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Current', '2× Traffic', '2× Conv. Rate', '2× AOV', '2× Repeat'],
-        datasets: [{
-          label: 'Monthly revenue',
-          data: [0,0,0,0,0],
-          backgroundColor: ['#6b7480', '#d4a843', '#ff8855', '#ff6b35', '#4a9d6f'],
-          borderWidth: 0
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-          y: { ticks: { callback: v => '€' + (v/1000).toFixed(0) + 'K' }, grid: { color: '#2a3340' } },
-          x: { grid: { display: false } }
-        }
-      }
-    });
-  }
-  
-  calc();
-</script>
-
-<!-- Google Translate -->
 <div id="google_translate_element" style="position:absolute; top:-9999px; left:-9999px; z-index:-9999;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
