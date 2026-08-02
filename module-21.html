@@ -22,13 +22,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">21</span>Behavioral Economics</div>
-  <h1 class="module-title">The irrational <em>buyer.</em></h1>
-  <p class="lede">B2B buyers pride themselves on making logical, spreadsheet-driven decisions. Nobel Prize-winning research proves otherwise. Here is how to ethically use cognitive biases, anchoring, and choice architecture to nudge buyers toward a closed won deal.</p>
+  <div class="eyebrow"><span class="num">21</span>Contested Lens · Level 6</div>
+  <h1 class="module-title">Some of it replicated. <em>Know which.</em></h1>
+  <p class="lede">Behavioral economics entered sales training in its most confident decade and stayed there while the field revised itself. This module separates the findings that survived replication from the ones that did not, and shows how to use the survivors to reduce friction rather than to exploit it.</p>
   <div class="meta-strip">
-    <span>18 min read</span>
-    <span>Behavioral Economics · Choice Architecture</span>
-    <span>Masterclass</span>
+    <span>45 min lesson + practice</span>
+    <span>Contested lens — use as hypothesis</span>
+    <span>Level 6</span>
   </div>
 </header>
 
@@ -36,46 +36,218 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#anchoring">The Anchoring Effect</a></li>
-      <li><a href="#loss-aversion">Loss Aversion</a></li>
-      <li><a href="#choice-arch">Choice Architecture</a></li>
-      <li><a href="#contrast">The Contrast Principle</a></li>
+      <li><a href="#introduction">1. Why this module is a filter, not a toolkit</a></li>
+      <li><a href="#objectives">2. Observable learning objectives</a></li>
+      <li><a href="#survivors">3. What survived replication</a></li>
+      <li><a href="#casualties">4. What did not, and what to do about it</a></li>
+      <li><a href="#friction">5. Friction audits: the honest application</a></li>
+      <li><a href="#worked-example">6. Worked example: a decision-friction audit</a></li>
+      <li><a href="#execution">7. Weak versus improved use of framing</a></li>
+      <li><a href="#practice">8. Practice: the decision-friction audit</a></li>
+      <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
+      <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="anchoring">
-      <h2>The Anchoring Effect</h2>
-      <p>Human beings are terrible at assessing absolute value. We only understand value in relative terms. <strong>Anchoring</strong> is the cognitive bias where an individual depends too heavily on an initial piece of information (the "anchor") when making decisions.</p>
-      <p>If you present a €50,000 proposal cold, it feels expensive. But if you first discuss how building the solution in-house would cost €250,000 in engineering time and delayed time-to-market, that €250k becomes the anchor. Suddenly, the €50,000 proposal is framed as a massive saving.</p>
-      <div class="callout">
-        <div class="callout-label">Tactical Application</div>
-        <p>Consider establishing an initial anchor value (such as total cost of the problem, competitor baseline, or premium package) when appropriate to set a reference point.</p>
+    <section id="introduction">
+      <h2>1. Why this module is a filter, not a toolkit</h2>
+      <p>Behavioral economics arrived in commercial training around 2010, at the height of the field's confidence, and much of that material is still taught unchanged. In the intervening years psychology went through a replication crisis that revised several of its most-cited results — some effects shrank substantially, some failed to reproduce, and some were shown to have been inflated by publication bias.</p>
+      <p>Sales training largely did not update. The result is a body of confident practice built partly on findings the originating field has since qualified or abandoned. A seller who deploys "the decoy effect" or "priming" as reliable levers is working from a 2010 snapshot.</p>
+      <p>This module is therefore organized as a <strong>filter</strong>. Its purpose is to tell you which ideas are robust enough to build on, which are real but smaller than advertised, and which should be dropped. And it takes a definite position on application: the honest use of this material is <strong>reducing friction in decisions the buyer already wants to make</strong>, not engineering decisions they do not.</p>
+      <p>That position is not merely ethical. Choice architecture that exploits rather than assists is now an enforcement area — the FTC's dark-patterns work and equivalent European action have moved a set of these techniques from clever to actionable. The same knowledge that lets you design a cleaner decision lets you recognise when your own organization has built a trap.</p>
+    </section>
+
+    <section id="objectives">
+      <h2>2. Observable learning objectives</h2>
+      <p>By completing this module you will be able to demonstrate the following:</p>
+      <p>State which behavioral findings survived replication and which did not, with the reasons.</p>
+      <p>Apply framing honestly — describing what is already true rather than manufacturing a comparison.</p>
+      <p>Diagnose status quo bias and choice overload in a stalled decision.</p>
+      <p>Distinguish friction reduction from choice manipulation, and identify the regulatory line.</p>
+      <p>Produce a decision-friction audit of a real buying process with prioritized fixes.</p>
+    </section>
+
+    <section id="survivors">
+      <h2>3. What survived replication</h2>
+
+      <h3>Table 1: Robust findings and their commercial application</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Finding</th><th>Status</th><th>What it actually says</th><th>Honest application</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Loss aversion</strong></td><td><strong>Robust, but smaller than often taught.</strong> A 2024 meta-analysis places the coefficient well below the frequently-quoted 2:1, and it is context-dependent.</td><td>Losses generally weigh more than equivalent gains in evaluation. The magnitude varies with domain, stakes, and framing.</td><td>Describe what the buyer is <em>already</em> losing, factually and with a running total. Do not invent a loss.</td></tr>
+      <tr><td><strong>Framing effects</strong></td><td><strong>Robust.</strong> Tversky &amp; Kahneman's core framing work has held up well.</td><td>Logically equivalent descriptions produce different evaluations.</td><td>Choose the frame that most accurately represents the buyer's situation — and disclose the alternative frame when it materially changes the picture.</td></tr>
+      <tr><td><strong>Status quo bias</strong></td><td><strong>Robust.</strong> Samuelson &amp; Zeckhauser, widely replicated in field settings.</td><td>Disproportionate preference for the current state, independent of its merits.</td><td>Make the cost of the current state visible and cumulative. This is the single most useful item in the table.</td></tr>
+      <tr><td><strong>Default effects</strong></td><td><strong>Robust in field settings.</strong></td><td>Whatever happens without a decision is very likely to happen.</td><td>Set defaults that serve the customer — a sensible starting configuration, a reasonable plan. <strong>Never a pre-ticked consent or an auto-added upsell.</strong></td></tr>
+      <tr><td><strong>Choice overload</strong></td><td><strong>Real but conditional.</strong> The famous jam study did not replicate cleanly; meta-analysis finds an effect near zero on average, with genuine effects under specific conditions.</td><td>More options raise decision cost when options are complex, the chooser lacks expertise, and preferences are unformed — which describes most enterprise evaluations.</td><td>Reduce and recommend. Say which option you would take and why.</td></tr>
+      <tr><td><strong>Anchoring</strong></td><td><strong>Robust in the lab, moderate in the field.</strong></td><td>First numbers influence subsequent judgments; the effect shrinks as counterpart expertise rises.</td><td>See Module 08. Anchor with a rationale, or the number invites an arbitrary counter.</td></tr>
+      <tr><td><strong>Omission bias</strong></td><td><strong>Robust.</strong></td><td>Errors of commission feel worse than errors of omission at equal cost.</td><td>Shrink the reversible bet. This is the mechanism behind most no-decision losses (Module 09).</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <div class="callout tip">
+        <div class="callout-label">The three that do most of the work</div>
+        <p><strong>Status quo bias, omission bias, and default effects.</strong> All three describe the same underlying commercial reality from different angles: doing nothing is the strongest competitor in most markets, and it wins by not requiring a decision. Almost everything useful in this module follows from taking that seriously — which is why the counter-moves are making inaction visibly costly and making action small and reversible.</p>
       </div>
     </section>
 
-    <section id="loss-aversion">
-      <h2>Loss Aversion (Prospect Theory)</h2>
-      <p>Daniel Kahneman and Amos Tversky proved that the psychological pain of losing something is approximately twice as powerful as the pleasure of gaining something of equal value.</p>
-      <p>Most amateur salespeople sell the <em>gain</em>: "Our software will increase your revenue by 10%."</p>
-      <p>Elite salespeople sell the <em>loss avoidance</em>: "By continuing to use your legacy system, you are actively leaking 10% of your revenue to your competitors every single month."</p>
-      <p>Quantify the cost of inaction. Make the status quo feel incredibly expensive and painful to maintain.</p>
+    <section id="casualties">
+      <h2>4. What did not, and what to do about it</h2>
+
+      <h3>Table 2: Findings that failed, shrank, or never generalized</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Claim as taught in sales training</th><th>What happened</th><th>What to do instead</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Social/behavioral priming</strong> — exposing people to words or images reliably shifts subsequent behavior.</td><td>Multiple high-profile failures to replicate. This is the area the replication crisis hit hardest.</td><td>Drop it. Do not build "prime them with words about growth" into a script.</td></tr>
+      <tr><td><strong>Ego depletion</strong> — willpower is a depletable resource, so schedule the ask for the morning.</td><td>Large multi-lab replications found effects near zero.</td><td>Drop the mechanism. Scheduling for the buyer's convenience is still good manners.</td></tr>
+      <tr><td><strong>The decoy effect</strong> — add a deliberately inferior option to steer choice.</td><td>Replicates inconsistently, and often disappears with realistic products and real money.</td><td>Do not build a pricing tier whose only purpose is to be rejected. Sophisticated buyers detect it, and it undermines the pricing logic you do have.</td></tr>
+      <tr><td><strong>Choice overload as a universal law</strong> — fewer options always sell more.</td><td>Meta-analysis finds a near-zero average effect; real effects are conditional on complexity and expertise.</td><td>Reduce options because the buyer cannot evaluate them, not because fewer is inherently better. Then <em>recommend</em>.</td></tr>
+      <tr><td><strong>"Loss aversion is 2:1"</strong></td><td>The specific ratio is not a constant; a 2024 meta-analysis places it lower and shows heavy context dependence.</td><td>Keep the direction, drop the number. Never present a 2:1 multiplier in a business case.</td></tr>
+      <tr><td><strong>Power posing</strong> — postural changes produce hormonal and behavioral effects.</td><td>The physiological claims failed to replicate; one original author publicly withdrew confidence in them.</td><td>Preparation and rehearsal produce the confidence effect. Skip the mechanism.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <div class="callout warning">
+        <div class="callout-label">How to hold this without becoming a nihilist</div>
+        <p>The correct response to the replication crisis is not "psychology is worthless." It is <strong>calibration</strong>: prefer meta-analyses to single striking studies, expect field effects to be smaller than lab effects, treat any effect quoted as a clean ratio with suspicion, and check whether a finding has been tested with real stakes. That posture is the same one Module 00 asks you to apply to sales claims generally — this module is simply the same filter pointed at a specific literature.</p>
+      </div>
     </section>
 
-    <section id="choice-arch">
-      <h2>Choice Architecture (Nudging)</h2>
-      <p>When buyers are presented with too many options, they experience <strong>decision fatigue</strong> and will often default to doing nothing (the JOLT effect). As a seller, you are the Choice Architect.</p>
+    <section id="friction">
+      <h2>5. Friction audits: the honest application</h2>
+      <p>The distinction that keeps this material usable: <strong>friction reduction</strong> removes obstacles from a decision the buyer wants to make; <strong>choice manipulation</strong> engineers a decision they would not otherwise make. Same body of knowledge, opposite direction.</p>
+
+      <h3>Table 3: The same mechanism, both directions</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Mechanism</th><th>Friction reduction (legitimate)</th><th>Choice manipulation (dark pattern)</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Defaults</strong></td><td>A sensible starting configuration the customer would likely choose, clearly labelled and easily changed.</td><td>Pre-ticked marketing consent; auto-added support tiers; auto-renewal with a buried opt-out.</td></tr>
+      <tr><td><strong>Option reduction</strong></td><td>"Two of these five aren't worth your time, and here's why." A recommendation with reasons.</td><td>Hiding the cheaper plan; making the exit option hard to find.</td></tr>
+      <tr><td><strong>Framing</strong></td><td>"You're currently spending £14k a month on this" — a true statement in the frame most relevant to the decision.</td><td>Presenting a best case as typical; "up to" claims; comparisons against a strawman.</td></tr>
+      <tr><td><strong>Scarcity</strong></td><td>A real capacity or calendar constraint, stated neutrally.</td><td>Countdown timers that reset; "only 2 left" that never depletes.</td></tr>
+      <tr><td><strong>Loss framing</strong></td><td>Quantifying an ongoing, documented cost.</td><td>Manufacturing fear about a loss that is not occurring.</td></tr>
+      <tr><td><strong>Effort</strong></td><td>Removing steps from the path the buyer chose.</td><td>Adding steps to the path away from you — cancellation by phone only, 90-day notice.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p>The test in each row is the same one from Module 12: <strong>would you be comfortable if the buyer could see exactly what you were doing and why?</strong> A default you would explain proudly is friction reduction. A default you would rather they did not notice is a dark pattern, and increasingly a regulatory exposure.</p>
+    </section>
+
+    <section id="worked-example">
+      <h2>6. Worked example: a decision-friction audit</h2>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
+      <p><strong>Scenario:</strong> A B2B software company has a 34% no-decision rate on qualified late-stage deals. Rather than adding urgency, they audit the buyer's decision process for friction.</p>
+
+      <h3>Table 4: Friction found, mechanism, and fix</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Friction point</th><th>Mechanism</th><th>Fix applied</th><th>Effect</th></tr></thead>
+      <tbody>
+      <tr><td>Six packages with overlapping features; no recommendation given.</td><td>Choice overload, under the conditions where it genuinely bites — complex options, unformed preferences.</td><td>Reduced to three; sellers instructed to recommend one explicitly and say why the others are worse for that buyer.</td><td>Time from proposal to decision fell 22 days at the median.</td></tr>
+      <tr><td>Cost of the status quo never quantified; proposals led with projected benefit.</td><td>Status quo bias — inaction is evaluated as free.</td><td>Every business case now opens with a running monthly cost of the current process, using the buyer's own numbers.</td><td>Buyers began supplying their own figures unprompted in roughly half of conversations.</td></tr>
+      <tr><td>The decision was framed as a full multi-site rollout.</td><td>Omission bias — a large irreversible commitment maximizes the fear of being wrong.</td><td>Default proposal became a single-site phase with pre-agreed success criteria and an exit.</td><td>No-decision rate fell from 34% to 19%. Initial contract values fell 40%; total contract value over 18 months rose.</td></tr>
+      <tr><td>Security review began at week 9 of a 12-week cycle.</td><td>Not a bias — ordinary process friction, and the largest single cause of slippage.</td><td>Security pack sent unprompted in week 1.</td><td>Median cycle time fell 17 days. <strong>The largest single improvement in the audit, and the least psychologically interesting.</strong></td></tr>
+      <tr><td>Contract auto-renewal with a 90-day notice period.</td><td>Default effect used against the customer — a roach-motel term.</td><td>Reduced to 30 days.</td><td>Retention unchanged. The term had been protecting nothing.</td></tr>
+      <tr><td>Quarter-end discounts creating a repeating "deadline."</td><td>Fabricated scarcity.</td><td>Removed; replaced with a genuine implementation-calendar constraint stated neutrally.</td><td>Q4 bookings fell 8%; Q1 bookings rose 31% as deals stopped being artificially pulled and pushed.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p><strong>The instructive finding:</strong> the largest single win — sending the security pack in week one — involved no behavioral science at all. Friction audits routinely find that the most expensive obstacles are procedural rather than psychological, and a team that arrives looking only for cognitive biases will walk past them.</p>
+    </section>
+
+    <section id="execution">
+      <h2>7. Weak versus improved use of framing</h2>
+      <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> Presenting the economic case to a buyer who has been deliberating for two months.</p>
+
+      <div class="callout warning">
+        <div class="callout-label">Weak execution (manufactured loss and a fabricated multiplier)</div>
+        <p><em>Seller:</em> "Let me put this in perspective. Behavioral economics tells us people feel losses twice as strongly as gains — so instead of thinking about what you'd gain, think about what you're losing every single day you don't act. That's £470 a day, gone. Over the two months you've been deliberating, that's £28,000 you'll never get back. And every day you wait, that number grows. Can you afford not to move?"</p>
+        <p><em>Why it fails:</em> The 2:1 loss-aversion ratio is not a constant and should not be quoted as one — a 2024 meta-analysis places it lower and shows heavy context dependence. Announcing that you are applying behavioral economics to the buyer is a disclosure failure in itself: you have told them you are working on their cognition rather than their problem. "£28,000 you'll never get back" weaponizes a sunk cost to induce guilt about deliberating carefully, which is the behavior you would want from anyone spending real money. And "can you afford not to move" is pressure applied to a buyer who is quite possibly stalled by indecision — which, per Module 09, makes it worse.</p>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-label">Improved execution (true frame, buyer's numbers, smaller decision)</div>
+        <p><em>Seller:</em> "Can I reframe this, and tell you why I'm reframing it? Most of our proposals lead with what you'd gain, and I think that's the wrong way round for a decision like this — it makes doing nothing look free, and it isn't.<br><br>
+        On your own numbers — the 40 minutes per exception and the nine exceptions a day your ops lead gave me — the current process costs about £11,400 a month. That's happening whether or not you buy anything, and it's the number I'd want on the first page if I were you.<br><br>
+        I'd also say the opposite honestly: that figure assumes every recovered minute is redeployed, and it won't be. Somewhere between half and all of it converts to something real, and which end depends on whether you'd avoid the seasonal temps.<br><br>
+        And I don't think the answer is to move faster on a five-site rollout. If the thing that's hard is committing to something this size, then let's make it smaller — one site, eight weeks, measured against your own baseline, with a clean exit if it doesn't move. Then the decision on your desk is an eight-week test, not a five-site programme."<br>
+        <em>Buyer:</em> "That I can approve myself."</p>
+        <p><em>Why it succeeds:</em> The reframe is disclosed, with the reason — which is the opposite of hiding the technique. The frame is factually true and uses the buyer's own numbers. The seller immediately discounts their own figure by naming the capacity-to-cash assumption. No multiplier is invented. And rather than applying pressure, the seller shrinks the decision, which is the move that actually addresses the mechanism likely to be stalling it.</p>
+      </div>
+    </section>
+
+    <section id="practice">
+      <h2>8. Practice: the decision-friction audit</h2>
+      <p><strong>Exercise goal:</strong> map every point of friction in a real buying process, classify each as procedural or cognitive, and produce prioritized fixes — plus find the dark pattern your own organization is running.</p>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
+      <ol>
+        <li><strong>Map the buyer's actual decision path</strong> from first contact to signature, as <em>they</em> experience it — every step, form, approval, review, and wait. Use a recently closed deal and check the dates.</li>
+        <li>For each step, record the elapsed time and who was waiting for whom.</li>
+        <li><strong>Classify each friction point</strong> as procedural (a step that could be removed or moved earlier) or cognitive (choice overload, status quo bias, omission bias, unclear default).</li>
+        <li><strong>Quantify the cost of the status quo</strong> for a live deal, using the buyer's own numbers, and mark the capacity-to-cash assumption explicitly.</li>
+        <li><strong>Count your options.</strong> How many packages, tiers, and configurations does a buyer choose between? Which would you remove, and what recommendation replaces them?</li>
+        <li><strong>Find the smallest reversible first step</strong> your product genuinely supports, with real success criteria and a real exit.</li>
+        <li><strong>Audit your own dark patterns</strong> against Table 3 — including contract terms, not just interfaces. Name at least one.</li>
+        <li><strong>Prioritize by expected value</strong>: elapsed days saved × deal volume, versus effort. Expect the top item to be procedural.</li>
+      </ol>
+
+      <div class="solution-guide">
+        <h3>Completed exemplar (extract)</h3>
+        <table>
+        <thead><tr><th>Friction point</th><th>Type</th><th>Elapsed cost</th><th>Fix</th><th>Priority</th></tr></thead>
+        <tbody>
+        <tr><td>Security questionnaire requested at week 9; our completion took 11 days.</td><td><strong>Procedural</strong></td><td>Median 19 days added</td><td>Send the security pack unprompted in week 1; pre-answer the standard questionnaire and keep it current.</td><td><strong>1 — highest days saved, lowest effort</strong></td></tr>
+        <tr><td>Five packages, overlapping, no recommendation.</td><td>Cognitive (choice overload, under the conditions where it applies)</td><td>Median 12 days</td><td>Three packages; sellers must recommend one and state why the others are worse <em>for that buyer</em>.</td><td>2</td></tr>
+        <tr><td>Proposal leads with projected benefit; status quo never costed.</td><td>Cognitive (status quo bias)</td><td>Not time — affects the no-decision rate</td><td>Every case opens with the running monthly cost of the current process, in the buyer's numbers, with the capacity assumption flagged.</td><td>3</td></tr>
+        <tr><td>Legal review starts only after commercial agreement.</td><td><strong>Procedural</strong></td><td>Median 14 days</td><td>Send the standard MSA at proposal stage so legal runs in parallel.</td><td>4</td></tr>
+        <tr><td>Default proposal is a full rollout.</td><td>Cognitive (omission bias)</td><td>Affects no-decision rate</td><td>Default becomes a single-site phase with pre-agreed criteria and an exit.</td><td>5</td></tr>
+        <tr><td><strong>Our own dark pattern:</strong> auto-renewal with 90-day written notice by post.</td><td><strong>Dark pattern — roach motel</strong></td><td>—</td><td>30 days, by email. Raised in writing with Legal and the VP.</td><td><strong>Immediate, regardless of priority</strong></td></tr>
+        </tbody>
+        </table>
+      </div>
+
+      <p><strong>Evaluation rubric:</strong> Path mapped from the buyer's perspective with real dates (20%); friction correctly classified as procedural or cognitive (20%); status quo cost quantified in the buyer's numbers with the assumption flagged (20%); smallest reversible step defined with criteria and exit (15%); at least one of your own dark patterns identified, including in contracts (15%); prioritization by days saved versus effort (10%).</p>
+      <p><strong>Beginner variation:</strong> Do steps 1 and 2 only, for one closed deal. Simply writing down where the elapsed days actually went usually finds a procedural fix worth more than any messaging change.</p>
+      <p><strong>Advanced variation:</strong> Run the audit on your renewal and cancellation flows as well as your acquisition flow. Organizations that have carefully removed friction from buying frequently discover they have deliberately added it to leaving — which is the exact pattern regulators now pursue.</p>
+    </section>
+
+    <section id="knowledge-check">
+      <h2>9. Applied knowledge check</h2>
+
+      <details><summary>1. Which behavioral findings should a seller stop using, and why?</summary>
+      <p>Social and behavioral priming (multiple high-profile replication failures), ego depletion (large multi-lab replications found effects near zero), power posing's physiological claims (withdrawn by one original author), the decoy effect as a reliable pricing lever (replicates inconsistently with real products and money), and any specific loss-aversion ratio such as 2:1 (a 2024 meta-analysis places it lower and shows heavy context dependence). The correct posture is calibration rather than nihilism: prefer meta-analyses, expect field effects to be smaller than lab effects, and distrust any effect quoted as a clean constant.</p></details>
+
+      <details><summary>2. Is choice overload real?</summary>
+      <p>Conditionally. The famous jam study did not replicate cleanly and meta-analysis finds an average effect near zero — but genuine effects appear under specific conditions: complex options, non-expert choosers, and unformed preferences. That combination describes most enterprise evaluations quite well. So the practical guidance survives while the universal law does not: reduce options because this particular buyer cannot evaluate them, and then make an explicit recommendation rather than simply offering fewer choices.</p></details>
+
+      <details><summary>3. What distinguishes friction reduction from choice manipulation?</summary>
+      <p>Direction. Friction reduction removes obstacles from a decision the buyer wants to make; manipulation engineers a decision they would not otherwise make. The same mechanisms serve both: a default can be a sensible, clearly-labelled starting configuration or a pre-ticked consent; option reduction can be a reasoned recommendation or a hidden cheaper plan. The test is Module 12's disclosure test — would you be comfortable if the buyer saw exactly what you were doing and why? A default you would explain proudly is legitimate; one you would rather they did not notice is a dark pattern.</p></details>
+
+      <details><summary>4. Why does quantifying the status quo outperform projecting the benefit?</summary>
+      <p>Because status quo bias means inaction is evaluated as free until something makes its cost visible. A projected benefit is a gain competing against a comfortable default that appears to cost nothing; a running monthly total of what the current process is already consuming changes what "doing nothing" feels like. The essential companion move is to shrink the first step — having made inaction expensive without making action small and reversible, you have only raised the stakes on a decision the buyer already feared getting wrong.</p></details>
+
+      <details><summary>5. In a friction audit, why is the biggest win often not psychological?</summary>
+      <p>Because procedural friction is usually larger and cheaper to fix. Security reviews starting at week nine, legal running sequentially after commercial agreement, questionnaires taking eleven days to answer — each of these routinely costs more elapsed time than any framing improvement, and each is fixable by sending something earlier. A team that goes looking only for cognitive biases will walk straight past them, which is why the audit should map the buyer's actual path with real dates before any behavioral analysis begins.</p></details>
+    </section>
+
+    <section id="conclusion">
+      <h2>10. Practical conclusion &amp; next action</h2>
+      <p>Behavioral economics is useful to a seller mainly as a filter and a friction lens. The robust findings all point at the same commercial truth — doing nothing is the strongest competitor, and it wins by not requiring a decision — and the honest response is to make inaction visible and action small.</p>
       <ul>
-        <li><strong>The Rule of 3:</strong> Limit options to 3 or fewer where possible to reduce decision friction. The brain categorizes them as "Cheap", "Safe/Normal", and "Expensive/Luxury".</li>
-        <li><strong>The Center-Stage Effect:</strong> Most buyers will choose the middle option. Use your "Cheap" tier to make the middle tier look feature-rich, and use the "Expensive" tier as an anchor to make the middle tier look reasonably priced.</li>
+        <li>Robust: status quo bias, omission bias, defaults, framing, loss aversion (direction, not ratio), anchoring (moderate in the field).</li>
+        <li>Drop: priming, ego depletion, power-posing mechanisms, the decoy effect as a reliable lever, and any quoted loss-aversion multiplier.</li>
+        <li>Choice overload is conditional — real where options are complex and preferences unformed, which is most enterprise buying.</li>
+        <li>Reduce options <em>and</em> recommend. Fewer choices without a recommendation just moves the burden.</li>
+        <li>Friction reduction assists a decision; manipulation engineers one. Same mechanisms, opposite direction, and one of them is now an enforcement area.</li>
+        <li>Quantify the status quo, then make the first step small and reversible.</li>
+        <li>Audit procedure before psychology. The biggest win is usually a document sent eight weeks earlier.</li>
       </ul>
-    </section>
-
-    <section id="contrast">
-      <h2>The Contrast Principle</h2>
-      <p>If you lift a 20kg weight, and then lift a 10kg weight, the 10kg weight feels incredibly light. If you lift a 2kg weight first, the 10kg weight feels heavy.</p>
-      <p>In sales, sequence matters. If you are selling a €10,000 software license and a €2,000 onboarding package, <strong>sell the €10,000 license first</strong>. Once they have mentally committed to spending €10,000, adding €2,000 feels trivial (like buying floor mats after buying a car). If you try to negotiate them together, or sell the cheap thing first, it creates unnecessary friction.</p>
+      <p><strong>Immediate action:</strong> Take one recently closed deal, write down every step the buyer went through with the actual dates, and find the single longest gap. Then work out what you could have sent earlier to remove it. That is almost always worth more than any framing change you could make this quarter.</p>
+      <p><strong>Related modules:</strong> <a href="module-09.html">09 · Objection Handling</a>, <a href="module-12.html">12 · Ethics &amp; Pitfalls</a>, <a href="module-02.html">02 · Psychology of Selling</a>, and <a href="module-38.html">38 · Proposals, RFPs, Security &amp; Contracting</a>.</p>
     </section>
 
   </article>
@@ -88,7 +260,7 @@
   </a>
   <a href="module-22.html" class="next">
     <div class="dir">Next · Module 22</div>
-    <div class="next-title">Neuro-Linguistics</div>
+    <div class="next-title">Neuro-Linguistic Programming</div>
   </a>
 </nav>
 
@@ -97,7 +269,6 @@
 </footer>
 
 <script src="script.js"></script>
-<!-- Google Translate -->
 <div id="google_translate_element" style="position:absolute; top:-9999px; left:-9999px; z-index:-9999;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {

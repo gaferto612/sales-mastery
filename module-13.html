@@ -5,136 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Module 13 · Tools &amp; Resources — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
-<style>
-  .stack-row {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 24px;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--line);
-    align-items: start;
-  }
-  .stack-row:last-child { border-bottom: none; }
-  .stack-cat {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-  .stack-tools { color: var(--cream); font-size: 15px; }
-  .stack-tools strong { color: var(--paper); }
-  
-  .filter-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 24px 0;
-  }
-  .filter-btn {
-    background: var(--ink);
-    border: 1px solid var(--line);
-    color: var(--muted);
-    padding: 8px 16px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .filter-btn:hover { color: var(--paper); border-color: var(--orange); }
-  .filter-btn.active { background: var(--orange); color: var(--ink); border-color: var(--orange); }
-  
-  .book-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
-    margin: 24px 0;
-  }
-  .book {
-    background: var(--ink);
-    border: 1px solid var(--line);
-    padding: 20px;
-    transition: all 0.2s;
-  }
-  .book.hidden { display: none; }
-  .book-tag {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--orange);
-    margin-bottom: 8px;
-  }
-  .book-title { font-family: var(--font-display); font-size: 18px; color: var(--paper); margin-bottom: 4px; font-weight: 500; line-height: 1.2; }
-  .book-author { font-size: 13px; color: var(--muted); margin-bottom: 8px; font-style: italic; }
-  .book-why { font-size: 13px; color: var(--cream); line-height: 1.5; }
-  
-  /* Career ladder */
-  .ladder {
-    margin: 32px 0;
-  }
-  .ladder-step {
-    display: grid;
-    grid-template-columns: 100px 1fr 200px;
-    gap: 24px;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--line);
-    align-items: center;
-  }
-  .ladder-role {
-    font-family: var(--font-display);
-    font-size: 18px;
-    color: var(--paper);
-    font-weight: 500;
-  }
-  .ladder-yrs {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--orange);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-  .ladder-comp {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    color: var(--gold);
-    text-align: right;
-  }
-  
-  /* 90-day plan */
-  .plan-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin: 24px 0;
-  }
-  .plan-col {
-    background: var(--ink);
-    border: 1px solid var(--line);
-    padding: 24px;
-  }
-  .plan-col h4 {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--orange);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  .plan-col p { font-family: var(--font-display); font-size: 18px; color: var(--paper); margin-bottom: 12px; font-weight: 500; line-height: 1.3; }
-  .plan-col ul { margin-left: 18px; }
-  .plan-col li { color: var(--cream); font-size: 14px; margin-bottom: 6px; }
-  
-  @media (max-width: 700px) {
-    .plan-grid { grid-template-columns: 1fr; }
-    .ladder-step { grid-template-columns: 80px 1fr; }
-    .ladder-comp { grid-column: 2; text-align: left; }
-    .stack-row { grid-template-columns: 1fr; gap: 4px; }
-  }
-</style>
 </head>
 <body>
 
@@ -152,13 +22,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">13</span>Tools &amp; Resources</div>
-  <h1 class="module-title">Stack, books, <em>career.</em></h1>
-  <p class="lede">The final module. Everything you need to actually go do this: the modern tech stack, the canonical reading list, the career path, and a 90-day plan to start.</p>
+  <div class="eyebrow"><span class="num">13</span>Craft &amp; Career</div>
+  <h1 class="module-title">Choose tools from <em>workflow</em>, and skills from evidence.</h1>
+  <p class="lede">Most sales stacks are assembled by accumulation and most development plans by aspiration. This module builds both from the same discipline: name the constraint, choose the intervention that attacks it, and instrument whether it worked.</p>
   <div class="meta-strip">
-    <span>20 min read</span>
-    <span>Tools · books · career · 90-day plan</span>
-    <span>Use as ongoing reference</span>
+    <span>45 min lesson + practice</span>
+    <span>Evidence-led professional curriculum</span>
+    <span>Level 3</span>
   </div>
 </header>
 
@@ -166,258 +36,235 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#stack">The sales tech stack</a></li>
-      <li><a href="#books">Reading list (40+)</a></li>
-      <li><a href="#career">Career ladder</a></li>
-      <li><a href="#plan">90-day starter plan</a></li>
-      <li><a href="#metrics">Metrics dashboard</a></li>
-      <li><a href="#community">Communities &amp; people</a></li>
+      <li><a href="#introduction">1. Tool sprawl and its real cost</a></li>
+      <li><a href="#objectives">2. Observable learning objectives</a></li>
+      <li><a href="#stack">3. Choosing tools from workflow, not from category</a></li>
+      <li><a href="#reading">4. The reading list, classified by use</a></li>
+      <li><a href="#skills">5. A skills dashboard that resists self-deception</a></li>
+      <li><a href="#worked-example">6. Worked example: a stack and skills audit</a></li>
+      <li><a href="#execution">7. Weak versus improved development conversation</a></li>
+      <li><a href="#practice">8. Practice: the 90-day development plan</a></li>
+      <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
+      <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
+    <section id="introduction">
+      <h2>1. Tool sprawl and its real cost</h2>
+      <p>Ask a revenue team how many tools they use and the number is usually higher than anyone estimates. Ask which of those tools changed a decision last quarter and the list collapses. The gap between the two is the cost of buying by category — "we need a sales-engagement platform" — rather than by workflow.</p>
+      <p>The cost is not primarily the licence fee. It is <strong>fragmented truth</strong>. When account data lives in five systems, nobody can answer a simple question — how many qualified opportunities did outbound create last quarter? — without a reconciliation exercise, and so nobody asks. Teams stop measuring the things that matter because measuring them became expensive, and then optimize the things that remained easy to measure. Tool sprawl is one of the main mechanisms by which organizations end up managing activity metrics.</p>
+      <p>The same failure appears in personal development. Sellers accumulate frameworks the way teams accumulate tools: a methodology from one employer, a negotiation course from another, a podcast habit — none of it chosen against a named weakness, none of it instrumented. The result is a seller who knows a great deal and has not measurably improved in three years.</p>
+      <p>Both problems have the same fix, and it is the discipline from Module 00: <strong>name the constraint, choose the intervention that attacks it, and decide in advance what would show it worked.</strong></p>
+    </section>
+
+    <section id="objectives">
+      <h2>2. Observable learning objectives</h2>
+      <p>By completing this module you will be able to demonstrate the following:</p>
+      <p>Audit a sales stack by workflow rather than by category, and identify tools that generate no decisions.</p>
+      <p>Classify sales literature by its proper use, and read accordingly rather than uniformly.</p>
+      <p>Build a skills dashboard that uses observable evidence rather than self-rating.</p>
+      <p>Distinguish deliberate practice from experience, and design the former.</p>
+      <p>Produce a 90-day development plan with a measured baseline, a named coach, and a stopping rule.</p>
+    </section>
+
     <section id="stack">
-      <h2>The modern sales tech stack</h2>
-      <p>You don't need everything. You do need the right things for your stage.</p>
+      <h2>3. Choosing tools from workflow, not from category</h2>
+      <p>The right question is never "what CRM should we use?" It is "which decision are we currently making badly, and what evidence would make it better?"</p>
 
-      <div class="stack-row">
-        <div class="stack-cat">CRM</div>
-        <div class="stack-tools"><strong>HubSpot</strong> (free tier excellent), <strong>Salesforce</strong> (enterprise standard), <strong>Pipedrive</strong> (small business sweet spot), <strong>Close</strong>, <strong>Attio</strong></div>
-      </div>
-      <div class="stack-row">
-        <div class="stack-cat">Outbound</div>
-        <div class="stack-tools"><strong>Apollo</strong>, <strong>Outreach</strong>, <strong>Salesloft</strong>, <strong>Lemlist</strong>, <strong>Smartlead</strong>, <strong>Instantly</strong></div>
-      </div>
-      <div class="stack-row">
-        <div class="stack-cat">Data &amp; prospecting</div>
-        <div class="stack-tools"><strong>LinkedIn Sales Navigator</strong> (essential), <strong>ZoomInfo</strong>, <strong>Apollo</strong>, <strong>Clay</strong>, <strong>Lusha</strong></div>
-      </div>
-      <div class="stack-row">
-        <div class="stack-cat">Meetings &amp; calls</div>
-        <div class="stack-tools"><strong>Calendly</strong> / <strong>SavvyCal</strong> for booking · <strong>Gong</strong> / <strong>Chorus</strong> / <strong>Fathom</strong> for call recording &amp; AI analysis · <strong>Zoom</strong> / <strong>Google Meet</strong></div>
-      </div>
-      <div class="stack-row">
-        <div class="stack-cat">Proposals &amp; contracts</div>
-        <div class="stack-tools"><strong>PandaDoc</strong>, <strong>DocuSign</strong>, <strong>Proposify</strong>, <strong>Qwilr</strong></div>
-      </div>
-      <div class="stack-row">
-        <div class="stack-cat">E-commerce</div>
-        <div class="stack-tools"><strong>Shopify</strong> (standard), <strong>WooCommerce</strong>, <strong>BigCommerce</strong> + <strong>Klaviyo</strong> for email/SMS</div>
-      </div>
-      <div class="stack-row">
-        <div class="stack-cat">Email marketing</div>
-        <div class="stack-tools"><strong>Klaviyo</strong> (e-com), <strong>ConvertKit</strong> / <strong>Beehiiv</strong> (creators), <strong>MailerLite</strong>, <strong>Customer.io</strong></div>
-      </div>
-      <div class="stack-row">
-        <div class="stack-cat">Analytics</div>
-        <div class="stack-tools"><strong>GA4</strong>, <strong>Mixpanel</strong>, <strong>Amplitude</strong>, <strong>Hotjar</strong> (session recordings)</div>
-      </div>
-      <div class="stack-row">
-        <div class="stack-cat">AI assistants</div>
-        <div class="stack-tools"><strong>Claude</strong> (writing, analysis), <strong>ChatGPT</strong>, <strong>Gong AI</strong> (call summaries), <strong>Clay</strong> (AI-enriched outbound)</div>
-      </div>
-
-      <div class="callout">
-        <div class="callout-label">Rule</div>
-        <p>Tools amplify. They don't replace skill. A €0 stack with great fundamentals beats a €5K/mo stack with bad fundamentals every time.</p>
-      </div>
-    </section>
-
-    <section id="books">
-      <h2>The reading list</h2>
-      <p>40+ books that genuinely move the needle. Click a category to filter.</p>
-
-      <div class="filter-bar" id="filterBar">
-        <button class="filter-btn active" data-tag="all">All</button>
-        <button class="filter-btn" data-tag="foundations">Foundations</button>
-        <button class="filter-btn" data-tag="psych">Psychology</button>
-        <button class="filter-btn" data-tag="copy">Copywriting</button>
-        <button class="filter-btn" data-tag="b2b">B2B</button>
-        <button class="filter-btn" data-tag="neg">Negotiation</button>
-        <button class="filter-btn" data-tag="online">Online</button>
-        <button class="filter-btn" data-tag="tech">Modern SaaS</button>
-        <button class="filter-btn" data-tag="career">Career</button>
-      </div>
-
-      <div class="book-grid" id="bookGrid">
-        <div class="book" data-tag="foundations"><span class="book-tag">Foundations</span><div class="book-title">To Sell Is Human</div><div class="book-author">Daniel Pink</div><div class="book-why">Modern definition of selling. Best starting book if you've never read a sales book.</div></div>
-        <div class="book" data-tag="foundations"><span class="book-tag">Foundations</span><div class="book-title">How to Win Friends and Influence People</div><div class="book-author">Dale Carnegie</div><div class="book-why">From 1936, still works. The human-relations baseline every seller needs.</div></div>
-        <div class="book" data-tag="foundations"><span class="book-tag">Foundations</span><div class="book-title">The Psychology of Selling</div><div class="book-author">Brian Tracy</div><div class="book-why">Classic process-and-mindset book. Useful for retail and field sales.</div></div>
-        <div class="book" data-tag="foundations"><span class="book-tag">Foundations</span><div class="book-title">Selling 101</div><div class="book-author">Zig Ziglar</div><div class="book-why">Old-school, foundational. Some dated, some timeless.</div></div>
-        
-        <div class="book" data-tag="psych"><span class="book-tag">Psychology</span><div class="book-title">Influence</div><div class="book-author">Robert Cialdini</div><div class="book-why">Mandatory. The 7 principles every persuader knows.</div></div>
-        <div class="book" data-tag="psych"><span class="book-tag">Psychology</span><div class="book-title">Pre-Suasion</div><div class="book-author">Robert Cialdini</div><div class="book-why">Cialdini's follow-up: the moment before the pitch matters more than the pitch.</div></div>
-        <div class="book" data-tag="psych"><span class="book-tag">Psychology</span><div class="book-title">Thinking, Fast and Slow</div><div class="book-author">Daniel Kahneman</div><div class="book-why">Heavy but essential. Understanding how buyers really decide.</div></div>
-        <div class="book" data-tag="psych"><span class="book-tag">Psychology</span><div class="book-title">Predictably Irrational</div><div class="book-author">Dan Ariely</div><div class="book-why">More accessible than Kahneman. Pricing experiments are gold.</div></div>
-        <div class="book" data-tag="psych"><span class="book-tag">Psychology</span><div class="book-title">Drive</div><div class="book-author">Daniel Pink</div><div class="book-why">What actually motivates people. Useful for selling internal change.</div></div>
-        
-        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">Breakthrough Advertising</div><div class="book-author">Eugene Schwartz</div><div class="book-why">Bible of direct response. Out of print so it costs €200+ but worth every euro.</div></div>
-        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">The Boron Letters</div><div class="book-author">Gary Halbert</div><div class="book-why">Letters from prison to his son. Free online. Required reading.</div></div>
-        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">Cashvertising</div><div class="book-author">Drew Eric Whitman</div><div class="book-why">8 LF8 (life-force) desires. Practical and applicable.</div></div>
-        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">Ogilvy on Advertising</div><div class="book-author">David Ogilvy</div><div class="book-why">Beautiful book on craft. Worth owning physically.</div></div>
-        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">$100M Offers</div><div class="book-author">Alex Hormozi</div><div class="book-why">How to construct an offer so good people feel stupid saying no. Modern essential.</div></div>
-        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">$100M Leads</div><div class="book-author">Alex Hormozi</div><div class="book-why">Companion to Offers. How to get the leads in the first place.</div></div>
-        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">Building a StoryBrand</div><div class="book-author">Donald Miller</div><div class="book-why">The customer is the hero, you're the guide. Reframes most marketing.</div></div>
-        <div class="book" data-tag="copy"><span class="book-tag">Copywriting</span><div class="book-title">DotCom Secrets</div><div class="book-author">Russell Brunson</div><div class="book-why">Funnel mechanics. Marketing-heavy but useful.</div></div>
-        
-        <div class="book" data-tag="b2b"><span class="book-tag">B2B</span><div class="book-title">SPIN Selling</div><div class="book-author">Neil Rackham</div><div class="book-why">Research-backed B2B framework. Still the gold standard for discovery.</div></div>
-        <div class="book" data-tag="b2b"><span class="book-tag">B2B</span><div class="book-title">The Challenger Sale</div><div class="book-author">Dixon &amp; Adamson</div><div class="book-why">Why top reps challenge buyers' thinking instead of just relationship-building.</div></div>
-        <div class="book" data-tag="b2b"><span class="book-tag">B2B</span><div class="book-title">Predictable Revenue</div><div class="book-author">Aaron Ross</div><div class="book-why">SaaS outbound playbook from the Salesforce era. Still applicable.</div></div>
-        <div class="book" data-tag="b2b"><span class="book-tag">B2B</span><div class="book-title">Gap Selling</div><div class="book-author">Keenan</div><div class="book-why">Selling the gap between current and desired state. Practical and pointed.</div></div>
-        <div class="book" data-tag="b2b"><span class="book-tag">B2B</span><div class="book-title">New Sales. Simplified.</div><div class="book-author">Mike Weinberg</div><div class="book-why">Practical guide to building outbound from scratch.</div></div>
-        <div class="book" data-tag="b2b"><span class="book-tag">B2B</span><div class="book-title">The JOLT Effect</div><div class="book-author">Matthew Dixon</div><div class="book-why">How to overcome customer indecision in B2B sales.</div></div>
-        
-        <div class="book" data-tag="neg"><span class="book-tag">Negotiation</span><div class="book-title">Never Split the Difference</div><div class="book-author">Chris Voss</div><div class="book-why">FBI hostage negotiator's playbook. Practical, immediately applicable.</div></div>
-        <div class="book" data-tag="neg"><span class="book-tag">Negotiation</span><div class="book-title">Getting to Yes</div><div class="book-author">Fisher &amp; Ury</div><div class="book-why">Principled negotiation: separate people from problems.</div></div>
-        <div class="book" data-tag="neg"><span class="book-tag">Negotiation</span><div class="book-title">Bargaining for Advantage</div><div class="book-author">G. Richard Shell</div><div class="book-why">Academic but practical. Wharton-level rigor.</div></div>
-        <div class="book" data-tag="neg"><span class="book-tag">Negotiation</span><div class="book-title">Pitch Anything</div><div class="book-author">Oren Klaff</div><div class="book-why">Frame control. Best book on high-stakes pitches.</div></div>
-        
-        <div class="book" data-tag="online"><span class="book-tag">Online</span><div class="book-title">Hooked</div><div class="book-author">Nir Eyal</div><div class="book-why">Habit formation in product. Useful for retention.</div></div>
-        <div class="book" data-tag="online"><span class="book-tag">Online</span><div class="book-title">Traction</div><div class="book-author">Weinberg &amp; Mares</div><div class="book-why">19 channels for getting to your first customers.</div></div>
-        <div class="book" data-tag="online"><span class="book-tag">Online</span><div class="book-title">Don't Make Me Think</div><div class="book-author">Steve Krug</div><div class="book-why">Usability basics. Stops product pages from leaking.</div></div>
-        <div class="book" data-tag="online"><span class="book-tag">Online</span><div class="book-title">Made to Stick</div><div class="book-author">Chip &amp; Dan Heath</div><div class="book-why">Why some ideas spread. Useful for messaging and content.</div></div>
-        <div class="book" data-tag="online"><span class="book-tag">Online</span><div class="book-title">Contagious</div><div class="book-author">Jonah Berger</div><div class="book-why">What makes things spread. STEPPS framework.</div></div>
-        
-        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">Atomic Habits</div><div class="book-author">James Clear</div><div class="book-why">Daily habits beat sporadic motivation. Sales is a daily-habits game.</div></div>
-        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">Deep Work</div><div class="book-author">Cal Newport</div><div class="book-why">How to focus in an attention-shredded world. Career multiplier.</div></div>
-        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">Give and Take</div><div class="book-author">Adam Grant</div><div class="book-why">Why givers (not pushovers) win long-term in any career.</div></div>
-        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">The Speed of Trust</div><div class="book-author">Stephen M.R. Covey</div><div class="book-why">Trust as an economic accelerator. Sales career foundation.</div></div>
-        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">Mindset</div><div class="book-author">Carol Dweck</div><div class="book-why">Growth mindset. Necessary for handling rejection without burnout.</div></div>
-        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">The Sales Acceleration Formula</div><div class="book-author">Mark Roberge</div><div class="book-why">How to build and scale a sales team (former HubSpot CRO).</div></div>
-        <div class="book" data-tag="career"><span class="book-tag">Career</span><div class="book-title">From Impossible to Inevitable</div><div class="book-author">Aaron Ross &amp; Jason Lemkin</div><div class="book-why">Scaling sales from €1M to €100M+.</div></div>
-        
-        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">Fanatical Prospecting</div><div class="book-author">Jeb Blount</div><div class="book-why">The 30-day rule. Pipeline discipline in an age of AI noise.</div></div>
-        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">COMBO Prospecting</div><div class="book-author">Tony J. Hughes</div><div class="book-why">Omnichannel outreach for modern, hard-to-reach buyers.</div></div>
-        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">Product-Led Growth</div><div class="book-author">Wes Bush</div><div class="book-why">The handbook for making the product sell itself. Bridge to Module 16.</div></div>
-        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">Mastering Product Experience</div><div class="book-author">Mehta, Steinman, Murphy</div><div class="book-why">Aligning product experience with customer success and sales.</div></div>
-        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">The Qualified Sales Leader</div><div class="book-author">John McMahon</div><div class="book-why">The harsh reality of complex enterprise forecasting, by a 5-time CRO.</div></div>
-        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">MEDDICC</div><div class="book-author">Andy Whyte</div><div class="book-why">The undisputed industry-standard qualification framework for enterprise deals.</div></div>
-        <div class="book" data-tag="tech"><span class="book-tag">Modern SaaS</span><div class="book-title">Let's Get Real or Let's Not Play</div><div class="book-author">Mahan Khalsa</div><div class="book-why">Masterclass in consultative, high-integrity B2B selling.</div></div>
-      </div>
-    </section>
-
-    <section id="career">
-      <h2>Sales career ladder</h2>
-      <p>Rough European market ranges for tech/B2B. Commission-heavy roles can exceed these substantially.</p>
-
-      <div class="ladder">
-        <div class="ladder-step">
-          <div class="ladder-yrs">Year 0–2</div>
-          <div class="ladder-role">SDR / BDR · Sales / Business Development Rep</div>
-          <div class="ladder-comp">€35–65K OTE</div>
-        </div>
-        <div class="ladder-step">
-          <div class="ladder-yrs">Year 2–5</div>
-          <div class="ladder-role">AE · Account Executive</div>
-          <div class="ladder-comp">€60–150K OTE</div>
-        </div>
-        <div class="ladder-step">
-          <div class="ladder-yrs">Year 4–8</div>
-          <div class="ladder-role">Senior AE / Enterprise AE</div>
-          <div class="ladder-comp">€100–250K+ OTE</div>
-        </div>
-        <div class="ladder-step">
-          <div class="ladder-yrs">Year 6–10</div>
-          <div class="ladder-role">Sales Manager · Team Lead</div>
-          <div class="ladder-comp">€120–250K OTE</div>
-        </div>
-        <div class="ladder-step">
-          <div class="ladder-yrs">Year 8–15</div>
-          <div class="ladder-role">Director of Sales · VP Sales</div>
-          <div class="ladder-comp">€180–400K+ OTE</div>
-        </div>
-        <div class="ladder-step">
-          <div class="ladder-yrs">Year 12+</div>
-          <div class="ladder-role">CRO · Chief Revenue Officer</div>
-          <div class="ladder-comp">€300K–€1M+ OTE</div>
-        </div>
-      </div>
-
-      <h3>Adjacent roles worth knowing</h3>
-      <ul>
-        <li><strong>Sales Engineer</strong> — technical demos, deal architecture (often €150K+)</li>
-        <li><strong>Customer Success Manager</strong> — post-sale relationship + expansion</li>
-        <li><strong>RevOps</strong> — process, tools, data for sales team (high demand)</li>
-        <li><strong>Sales enablement</strong> — training, coaching, content for sellers</li>
-      </ul>
-    </section>
-
-    <section id="plan">
-      <h2>The 90-day starter plan</h2>
-      <p>If you finished this course and want to actually <em>do</em> the thing — here's a structure.</p>
-
-      <div class="plan-grid">
-        <div class="plan-col">
-          <h4>Days 1–30 · Foundation</h4>
-          <p>Build the base skills before chasing leads.</p>
-          <ul>
-            <li>Modules 0–2, daily</li>
-            <li>Read 2 books: <em>Influence</em> + <em>To Sell Is Human</em></li>
-            <li>Pick your niche / product / vertical</li>
-            <li>Define your ideal customer in one sentence</li>
-            <li>Write your offer using $100M Offers framework</li>
-            <li>Build a simple lead-tracking sheet</li>
-          </ul>
-        </div>
-        <div class="plan-col">
-          <h4>Days 31–60 · Outreach</h4>
-          <p>Start making real contact. Volume matters now.</p>
-          <ul>
-            <li>Modules 3–6, daily</li>
-            <li>50 prospect contacts/week minimum</li>
-            <li>Track conversation → meeting conversion</li>
-            <li>Record every call you legally can</li>
-            <li>Run 5 discovery calls/week</li>
-            <li>Get 3 demos / pitches done</li>
-          </ul>
-        </div>
-        <div class="plan-col">
-          <h4>Days 61–90 · Close</h4>
-          <p>Convert the pipeline. Refine, double down on what works.</p>
-          <ul>
-            <li>Modules 7–11</li>
-            <li>Run negotiation drills weekly</li>
-            <li>Close first deals — small ones count</li>
-            <li>Loss-review every failed deal</li>
-            <li>Implement basic onboarding sequence</li>
-            <li>Ask first customer for referral / testimonial</li>
-          </ul>
-        </div>
+      <h3>Table 1: The stack, organized by the decision each tool must improve</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Workflow</th><th>Decision it must improve</th><th>Tool category</th><th>Buy it when…</th><th>Do not buy it when…</th></tr></thead>
+      <tbody>
+      <tr><td><strong>System of record</strong></td><td>What is true about this account, and who touched it?</td><td>CRM</td><td>Always. It is the substrate everything else depends on.</td><td>—. But do not buy a second one, and do not let another tool become a shadow record.</td></tr>
+      <tr><td><strong>Targeting</strong></td><td>Which accounts deserve capacity this quarter?</td><td>Data enrichment, intent, technographics</td><td>You have a validated ICP and the data would change your list order.</td><td>You have no ICP. Enrichment on an undefined target produces expensive noise.</td></tr>
+      <tr><td><strong>Outreach execution</strong></td><td>Did the right message reach the right person at the right moment?</td><td>Sequencing / engagement</td><td>Volume genuinely exceeds manual capacity <em>and</em> targeting is already good.</td><td>Reply rates are low. Automating a bad message produces bad messages faster and damages your domain.</td></tr>
+      <tr><td><strong>Conversation evidence</strong></td><td>What actually happened in the call, versus what the seller remembers?</td><td>Conversation intelligence</td><td>You will use it for <em>coaching</em>. This is the highest-return category for most teams.</td><td>You will use it for surveillance. Adoption collapses and the data becomes untrustworthy.</td></tr>
+      <tr><td><strong>Deal inspection</strong></td><td>Is this deal real, and what evidence says so?</td><td>Revenue intelligence, MEDDPICC fields</td><td>You have a stage dictionary with buyer-evidence criteria.</td><td>Stages are subjective. The tool will faithfully report a fiction.</td></tr>
+      <tr><td><strong>Proposal &amp; paper</strong></td><td>How fast and how consistently can we get to signature?</td><td>CPQ, e-signature, contract lifecycle</td><td>Quoting errors or legal cycle time are measurably costing deals.</td><td>You close twelve deals a year. A spreadsheet and a lawyer are cheaper.</td></tr>
+      <tr><td><strong>Customer evidence</strong></td><td>Is the customer getting the promised value?</td><td>Product analytics, success platform</td><td>You have defined first value and can instrument it.</td><td>First value is undefined. You will measure logins, which predict very little.</td></tr>
+      </tbody>
+      </table>
       </div>
 
       <div class="callout tip">
-        <div class="callout-label">After 90 days</div>
-        <p>Audit. What worked? What didn't? Where's the leverage? Most beginners quit at day 60 — the ones who push through to day 90 have a real shot at building a career.</p>
+        <div class="callout-label">The audit question that removes half a stack</div>
+        <p>For each tool, ask: <strong>"name a decision that was made differently last quarter because of this tool."</strong> Not a report it produced — a decision that changed. Tools that cannot survive this question are usually paid for out of the budget that should be funding the one category most teams under-invest in: conversation evidence used for coaching, which attacks selling-related knowledge and adaptiveness, the two strongest meta-analytic performance drivers.</p>
+      </div>
+      <p>One governance rule matters more than any selection criterion. <strong>Every tool that touches customer data inherits your legal obligations</strong> — data-processing agreements, retention periods, deletion rights, cross-border transfer, and call-recording consent, which varies between one-party and all-party jurisdictions. A conversation-intelligence tool deployed without recording-consent review is a compliance incident in progress. See Modules 14 and 42.</p>
+    </section>
+
+    <section id="reading">
+      <h2>4. The reading list, classified by use</h2>
+      <p>Sales literature is wildly uneven in evidential status, and reading it uniformly is how folklore enters practice. Classify first, then read accordingly.</p>
+
+      <h3>Table 2: Core reading, classified</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Work</th><th>Class</th><th>Best use</th><th>Read it with this caution</th></tr></thead>
+      <tbody>
+      <tr><td>Verbeke, Dietz &amp; Verwaal — sales performance meta-analysis (2011)</td><td><strong>R</strong></td><td>The empirical foundation: what actually predicts performance.</td><td>Effects are moderated by measurement method and sale type. Read the moderators, not just the betas.</td></tr>
+      <tr><td>Webster &amp; Wind — <em>Organizational Buying Behavior</em></td><td><strong>R</strong></td><td>The conceptual basis of buying centres, still unmatched.</td><td>Pre-digital. The roles hold; the information environment does not.</td></tr>
+      <tr><td>Rackham — <em>SPIN Selling</em></td><td><strong>F</strong> (large practitioner research program)</td><td>Discovery question design, especially implication questions.</td><td>Not a controlled trial. Mechanically applied it becomes an interrogation.</td></tr>
+      <tr><td>Cialdini — <em>Influence</em></td><td><strong>R/F</strong> mixed</td><td>Vocabulary for persuasion mechanisms.</td><td>The principles replicate unevenly. See Module 02 for the grading.</td></tr>
+      <tr><td>Kahneman — <em>Thinking, Fast and Slow</em></td><td><strong>R</strong> with replication caveats</td><td>Decision architecture and framing.</td><td>Several cited studies did not survive replication, notably in the priming chapters. The core prospect-theory work stands.</td></tr>
+      <tr><td>Dixon &amp; McKenna — <em>The JOLT Effect</em></td><td><strong>V/F</strong></td><td>The best available treatment of buyer indecision.</td><td>Proprietary dataset, not peer reviewed. Use the mechanism; hold the percentage loosely.</td></tr>
+      <tr><td>Dixon &amp; Adamson — <em>The Challenger Sale</em></td><td><strong>V/F</strong></td><td>The teaching posture and constructive tension.</td><td>Vendor survey research with contested methodology; the profile taxonomy has not independently replicated.</td></tr>
+      <tr><td>Maister, Green &amp; Galford — <em>The Trusted Advisor</em></td><td><strong>F</strong></td><td>Diagnosing why a specific relationship is stuck.</td><td>The trust equation is a heuristic, not a measured model.</td></tr>
+      <tr><td>Fisher &amp; Ury — <em>Getting to Yes</em></td><td><strong>F</strong> with research lineage</td><td>BATNA, interests versus positions, principled negotiation.</td><td>Assumes more good faith than some procurement processes offer. Pair with Module 24.</td></tr>
+      <tr><td>Moore — <em>Crossing the Chasm</em></td><td><strong>F</strong></td><td>Segment sequencing for new categories.</td><td>A narrative model, not a validated adoption theory. Useful for framing choices, not for predicting them.</td></tr>
+      <tr><td>Schmidt, Oh &amp; Shaffer — selection-methods meta-analysis (2016)</td><td><strong>R</strong></td><td>Anything to do with hiring sellers.</td><td>The 2016 update lowered several magnitudes, notably work samples. Cite the update, not the 1998 figures.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p>The reading protocol matters as much as the list. For any <strong>F</strong> or <strong>V</strong> work, write down before you finish: <em>what would I observe in my own deals if this were false?</em> Then look. A framework that survives that test in your context is worth adopting; one that cannot be tested at all should be held as vocabulary rather than as method.</p>
+    </section>
+
+    <section id="skills">
+      <h2>5. A skills dashboard that resists self-deception</h2>
+      <p>Self-rated skill is nearly uncorrelated with performance, and the direction of the error is unhelpful: the least skilled are the most confident. A useful dashboard therefore uses <strong>observable evidence and external scoring</strong>, not a 1–5 self-assessment.</p>
+
+      <h3>Table 3: Skills, their observable evidence, and how to practise</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Skill</th><th>Observable evidence</th><th>Who scores it</th><th>Deliberate practice</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Discovery</strong></td><td>Recorded call: can you produce a written problem statement the buyer confirms in their own words?</td><td>Manager or peer, against the Module 33 rubric, blind.</td><td>Record, score, isolate one two-minute segment, rehearse an alternative, re-run.</td></tr>
+      <tr><td><strong>Value articulation</strong></td><td>Buyer explains the decision back to you accurately, unprompted.</td><td>The buyer, unknowingly. Log whether they could.</td><td>Take three features and climb the value ladder in writing weekly (Module 01).</td></tr>
+      <tr><td><strong>Business acumen</strong></td><td>Can you read the prospect's annual report and name three pressures their CFO faces?</td><td>Someone from finance, ideally not in sales.</td><td>One set of published accounts per week, written to one page.</td></tr>
+      <tr><td><strong>Objection diagnosis</strong></td><td>Tally of objections classified correctly as concern / condition / deflection / indecision, checked against outcome.</td><td>Yourself, against what actually happened.</td><td>The Module 09 decision tree, applied and revised every five conversations.</td></tr>
+      <tr><td><strong>Negotiation</strong></td><td>Concession log: was every concession conditional and decreasing?</td><td>The log itself, reviewed by a manager.</td><td>Prepare the Module 08 sheet for every deal over median value, including ones you expect to be easy.</td></tr>
+      <tr><td><strong>Multi-threading</strong></td><td>Number of buying-centre roles with a named person and a contact date within six weeks.</td><td>CRM data, not memory.</td><td>Run the Module 06 coverage audit monthly on your top five deals.</td></tr>
+      <tr><td><strong>Forecast calibration</strong></td><td>Do your 70%-confidence deals close about 70% of the time, over 20+ deals?</td><td>Arithmetic. This one cannot be argued with.</td><td>Record a probability for every deal at every stage change; score quarterly (Module 39).</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <div class="callout warning">
+        <div class="callout-label">Experience is not practice</div>
+        <p>Ten years of running calls without recording, scoring, or rehearsing produces ten years of experience and roughly one year of skill. Deliberate practice requires a specific sub-skill, immediate feedback, and repetition with correction — which is why the conversation-intelligence category is the highest-return tool investment for most teams, and why it fails entirely when deployed as surveillance rather than as a coaching instrument.</p>
       </div>
     </section>
 
-    <section id="metrics">
-      <h2>The metrics dashboard</h2>
-      <p>Track these weekly. What gets measured gets improved.</p>
-      <ul>
-        <li><strong>Activity</strong> — calls made, emails sent, meetings booked</li>
-        <li><strong>Conversion rates</strong> — at each stage of your funnel</li>
-        <li><strong>Pipeline coverage</strong> — open pipeline ÷ quota (target: 3–4×)</li>
-        <li><strong>Win rate</strong> — closed-won ÷ (closed-won + closed-lost)</li>
-        <li><strong>Avg deal size</strong> — and trend over time</li>
-        <li><strong>Sales cycle length</strong> — first contact to close</li>
-        <li><strong>Forecast accuracy</strong> — what you committed vs. delivered</li>
-      </ul>
+    <section id="worked-example">
+      <h2>6. Worked example: a stack and skills audit</h2>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
+      <p><strong>Scenario:</strong> A 22-person revenue team spends £186k a year on tools and has flat attainment. The new VP runs the decision test on the stack and the evidence test on the skills.</p>
+
+      <h3>Table 4: Audit findings</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Item</th><th>Annual cost</th><th>Decision it changed last quarter</th><th>Verdict</th></tr></thead>
+      <tbody>
+      <tr><td>CRM</td><td>£54k</td><td>Everything routes through it, though stages are subjective.</td><td><strong>Keep</strong>, but build a stage dictionary first (Module 39).</td></tr>
+      <tr><td>Intent data</td><td>£38k</td><td>None. No ICP existed, so intent scores had nothing to prioritise against.</td><td><strong>Cancel.</strong> Revisit after Module 32 work is done.</td></tr>
+      <tr><td>Sequencing platform</td><td>£22k</td><td>Increased send volume 3×. Qualified opportunities flat; unsubscribes up 1.4 points.</td><td><strong>Keep, restrict.</strong> Automating weak targeting was actively harmful.</td></tr>
+      <tr><td>Second enrichment vendor</td><td>£17k</td><td>None. Overlapped 81% with the first.</td><td><strong>Cancel.</strong></td></tr>
+      <tr><td>Conversation intelligence</td><td>£31k</td><td>None — bought 14 months earlier, used by two managers for spot checks, never for structured coaching.</td><td><strong>Keep and actually deploy.</strong> The most valuable unused asset in the stack.</td></tr>
+      <tr><td>Proposal/CPQ</td><td>£16k</td><td>Reduced quote errors from 9% to 2%.</td><td><strong>Keep.</strong> Clear decision impact.</td></tr>
+      <tr><td>Analytics dashboard</td><td>£8k</td><td>Produced reports nobody had opened in 11 weeks (checked in the audit logs).</td><td><strong>Cancel.</strong></td></tr>
+      <tr><td colspan="4"><strong>Result:</strong> £63k cancelled. £40k redirected to a dedicated enablement hire whose sole job was structured call coaching using the already-owned conversation platform. Six months later: discovery-to-proposal conversion +14 points, forecast calibration error halved, attainment up 19%. <strong>The winning move was not a new tool. It was using one they had already bought for the purpose the evidence supports.</strong></td></tr>
+      </tbody>
+      </table>
+      </div>
     </section>
 
-    <section id="community">
-      <h2>Communities &amp; people to follow</h2>
-      <ul>
-        <li><strong>Communities</strong> — Pavilion (sales leaders), Wynter (B2B marketing), RevGenius, Sales Hacker</li>
-        <li><strong>Newsletters</strong> — Lenny's Newsletter (product/sales), Sales Source, Justin Welsh (solopreneur)</li>
-        <li><strong>Podcasts</strong> — 30 Minutes to President's Club, The Sales Hacker Podcast, Founders, Acquired</li>
-        <li><strong>People worth following</strong> — Chris Voss, Alex Hormozi, Justin Welsh, Adam Robinson, Sahil Bloom (general influence), Anthony Iannarino</li>
-      </ul>
+    <section id="execution">
+      <h2>7. Weak versus improved development conversation</h2>
+      <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> A quarterly development conversation between a manager and an account executive at 78% of quota.</p>
 
-      <div class="pullquote">
-        Selling is a craft. Crafts take a decade to master. Start now.
+      <div class="callout warning">
+        <div class="callout-label">Weak execution (aspiration without a constraint)</div>
+        <p><em>Manager:</em> "So, development. What do you want to work on this quarter?"<br>
+        <em>AE:</em> "I think I want to get better at closing. I sometimes feel like I lose deals at the end."<br>
+        <em>Manager:</em> "Great — there's a closing course on the LMS, and I'd recommend <em>The Challenger Sale</em>. Let's check in next quarter."</p>
+        <p><em>Why it fails:</em> "Closing" is a symptom, not a constraint — deals that die at the end are usually lost much earlier, at diagnosis or at stakeholder coverage. No baseline was established, so improvement cannot be detected. The interventions are content consumption, which does not produce skill without practice and feedback. And "check in next quarter" means the conversation will start from scratch, since nobody wrote anything down that could be checked.</p>
       </div>
+
+      <div class="callout tip">
+        <div class="callout-label">Improved execution (locate the constraint in the data, then design practice)</div>
+        <p><em>Manager:</em> "Before we pick anything, let's look at where you actually lose. Your discovery-to-proposal is 61% against a team median of 54% — that's a strength. Proposal-to-close is 29% against 47%. And of the eleven deals you lost after proposal, nine had no recorded contact with anyone above your primary champion.<br><br>
+        So my read is that this isn't a closing skill problem — it's single-threading. You're good enough at discovery that champions like you, and then the decision happens somewhere you're not.<br><br>
+        Here's what I'd propose. Baseline: 1.4 buying-centre roles contacted per deal. Target: 3.0 by end of quarter, measured from CRM not memory. Practice: we take the Module 06 coverage audit on your top five deals, every second Monday, and I'll role-play the access conversation with you until it stops being uncomfortable. Stopping rule: if coverage hits 3.0 and proposal-to-close hasn't moved by ten points after fifteen deals, my diagnosis is wrong and we re-examine. Does that match your own sense of it, or am I missing something you see from the inside?"<br>
+        <em>AE:</em> "It matches. I hate asking for the introduction — I always feel like I'm going over someone's head."<br>
+        <em>Manager:</em> "Then that's the two minutes we rehearse."</p>
+        <p><em>Why it succeeds:</em> The constraint was located in data rather than in feeling, and it was different from what the AE proposed. The baseline is measurable from a system rather than from recall. The practice is specific, scheduled, and rehearsal-based rather than content-based. A stopping rule protects both parties from persisting with a wrong diagnosis. And the manager asked for the AE's view, which surfaced the actual blocker — discomfort with the access conversation — that no course would have addressed.</p>
+      </div>
+    </section>
+
+    <section id="practice">
+      <h2>8. Practice: the 90-day development plan</h2>
+      <p><strong>Exercise goal:</strong> produce a development plan built on a measured constraint, deliberate practice, and a stopping rule — not on aspiration.</p>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
+      <ol>
+        <li><strong>Find the constraint in data.</strong> Compare your stage-to-stage conversion against the team median, or against your own prior periods. Name the stage with the largest negative gap.</li>
+        <li><strong>Test the diagnosis.</strong> Look at your last ten losses at that stage and find the common factor. If there is no pattern, your constraint is elsewhere.</li>
+        <li><strong>Establish the baseline</strong> as a number from a system, not from memory.</li>
+        <li><strong>Choose the intervention</strong> that attacks the named constraint. Prefer practice with feedback over content consumption.</li>
+        <li><strong>Design the deliberate practice:</strong> the specific sub-skill, the feedback source, the repetition schedule. Name the person who will score you.</li>
+        <li><strong>Pick two modules and two artifacts</strong> from this course that support the constraint. Commit to producing the artifacts, not to reading the modules.</li>
+        <li><strong>Set the review cadence</strong> — a specific day and time, not "monthly."</li>
+        <li><strong>Write the stopping rule:</strong> the threshold and sample size at which you conclude the diagnosis was wrong.</li>
+        <li><strong>Add one business-acumen habit</strong> that runs the whole quarter, since selling-related knowledge is the strongest single performance driver.</li>
+      </ol>
+
+      <div class="solution-guide">
+        <h3>Completed exemplar (mid-market AE, quarter plan)</h3>
+        <table>
+        <thead><tr><th>Element</th><th>Entry</th></tr></thead>
+        <tbody>
+        <tr><td><strong>Constraint (from data)</strong></td><td>Proposal→close 29% vs. team median 47%. Largest negative gap by 18 points. Discovery is above median, so the problem is downstream.</td></tr>
+        <tr><td><strong>Diagnosis test</strong></td><td>Of 11 post-proposal losses, 9 had no CRM-recorded contact above the primary champion, and 7 died at "budget wasn't approved." <strong>Pattern: single-threading, not closing technique.</strong></td></tr>
+        <tr><td><strong>Baseline</strong></td><td>1.4 buying-centre roles contacted per deal (CRM contact records, last 20 deals). Economic buyer contacted in 3 of 20.</td></tr>
+        <tr><td><strong>Intervention</strong></td><td>Module 06 stakeholder mapping applied to all open deals; role-play of the access conversation with the manager, weekly, until it is fluent.</td></tr>
+        <tr><td><strong>Deliberate practice</strong></td><td>Sub-skill: asking for upward access in a way that serves the champion. Feedback: manager scores each role-play against three criteria (tests an assumption rather than demanding; frames access as risk reduction for the buyer; offers to do the work). Schedule: 20 minutes every Monday, 12 weeks.</td></tr>
+        <tr><td><strong>Modules &amp; artifacts</strong></td><td>M06 → stakeholder and decision map for the top five deals. M10 → mutual action plan with three buyer-owned tasks on the two largest. <strong>Committed to the artifacts, not to reading.</strong></td></tr>
+        <tr><td><strong>Review cadence</strong></td><td>Every second Monday, 09:00, with the CRM coverage report open.</td></tr>
+        <tr><td><strong>Stopping rule</strong></td><td>"If role coverage reaches 3.0 per deal and proposal→close has not moved 10 points after 15 closed deals, the diagnosis is wrong. Next hypothesis to test: pricing structure versus mid-market budget cycles."</td></tr>
+        <tr><td><strong>Business-acumen habit</strong></td><td>One set of published accounts per week, summarized to one page: three pressures their CFO faces, and one question those pressures make worth asking. Reviewed monthly by the finance business partner.</td></tr>
+        </tbody>
+        </table>
+      </div>
+
+      <p><strong>Evaluation rubric:</strong> Constraint located in data with a stated gap (20%); diagnosis tested against actual losses (20%); baseline drawn from a system rather than memory (15%); practice design specific with a named scorer and schedule (20%); commitment to artifacts rather than consumption (10%); genuine stopping rule with threshold and sample size (15%).</p>
+      <p><strong>Beginner variation:</strong> Do steps 1–3 only. Most sellers have never compared their own stage conversion against a median, and simply seeing where the gap is changes what they work on.</p>
+      <p><strong>Advanced variation:</strong> Run the stack audit alongside the skills audit for a whole team. Apply the decision test to every tool, then redirect the cancelled spend to the intervention your skills audit identified. The pairing is what makes the argument to a CFO — you are not asking for budget, you are reallocating it.</p>
+    </section>
+
+    <section id="knowledge-check">
+      <h2>9. Applied knowledge check</h2>
+
+      <details><summary>1. What single question should you ask about every tool in your stack?</summary>
+      <p>"Name a decision that was made differently last quarter because of this tool." Not a report it generated, not a dashboard someone likes — a decision that changed. Tools that cannot survive this question are usually funding a gap elsewhere. In most audits the survivors are the system of record, one enrichment source, and whichever tool produces conversation evidence — and the biggest finding is typically a tool already owned but never deployed for the purpose the evidence supports.</p></details>
+
+      <details><summary>2. Why is intent data a poor purchase for a team without a defined ICP?</summary>
+      <p>Because intent scores are a prioritisation instrument and prioritisation requires something to prioritise against. Without a validated ICP you cannot distinguish a high-intent account you should pursue from a high-intent account that will never buy — so the data produces activity rather than focus, and often makes targeting worse by making poor-fit accounts look urgent. Define the ICP and anti-ICP first (Module 32), then the same data becomes genuinely useful.</p></details>
+
+      <details><summary>3. An AE says they want to get better at closing. Why is that usually the wrong constraint?</summary>
+      <p>Because deals that die at the end are usually lost much earlier. The common causes of late-stage failure are single-threading, an unmapped veto holder, an economic buyer who never saw the case, and unbounded risk — all of which are diagnosis and coverage problems, not technique problems. The fix is to locate the constraint in data: compare stage-to-stage conversion against a median, then examine the last ten losses at the weak stage for a common factor. That usually names something quite different from what the seller believed.</p></details>
+
+      <details><summary>4. Why should <em>The Challenger Sale</em> and Verbeke's meta-analysis be read differently?</summary>
+      <p>Because they have different evidential status and therefore different proper uses. Verbeke, Dietz &amp; Verwaal is peer-reviewed meta-analysis (class R) — you can take the direction of the findings seriously, provided you read the moderators. <em>The Challenger Sale</em> is vendor survey research with contested methodology whose profile taxonomy has not independently replicated (class V/F) — you can take its teaching posture and constructive tension as a useful framework to test, and you should not treat the profiles as established fact. The reading protocol for any F or V work is to write down what you would observe in your own deals if it were false, and then look.</p></details>
+
+      <details><summary>5. What distinguishes deliberate practice from experience?</summary>
+      <p>Three things: a specific isolated sub-skill, immediate external feedback, and repetition with correction. Running calls for ten years without recording, scoring, or rehearsing produces experience and very little skill, because there is no feedback loop to correct against. This is why conversation intelligence is the highest-return tool category for most teams — and why it fails completely when deployed as surveillance, since sellers then optimize for the observed metric rather than using the recordings to improve.</p></details>
+    </section>
+
+    <section id="conclusion">
+      <h2>10. Practical conclusion &amp; next action</h2>
+      <p>Tools and skills are the same problem wearing different clothes. Both are usually accumulated rather than chosen, both are usually justified by category rather than by constraint, and both respond to the same discipline: find the binding constraint, attack it specifically, and decide in advance what would prove you wrong.</p>
+      <ul>
+        <li>Buy tools against a decision, never against a category. If no decision changed, cancel it.</li>
+        <li>Every tool touching customer data inherits your legal obligations, including recording consent.</li>
+        <li>Classify what you read. Test every F and V work against your own deals before adopting it.</li>
+        <li>Use observable evidence and external scoring for skills. Self-rating is nearly uncorrelated with performance.</li>
+        <li>Deliberate practice needs an isolated sub-skill, immediate feedback, and correction. Experience alone gives none of these.</li>
+        <li>Commit to producing artifacts, not to consuming modules.</li>
+        <li>Selling-related knowledge is the strongest single performance driver — build a business-acumen habit that runs all quarter.</li>
+      </ul>
+      <p><strong>Immediate action:</strong> List every tool your team pays for and, beside each, name a decision that changed last quarter because of it. Then take the largest number you cannot justify and redirect it toward structured call coaching using something you already own.</p>
+      <p><strong>Related modules:</strong> <a href="module-00.html">00 · Introduction</a>, <a href="module-41.html">41 · Sales Enablement, Hiring &amp; Compensation</a>, <a href="module-39.html">39 · Revenue Operations, Pipeline &amp; Forecasting</a>, and <a href="module-14.html">14 · AI in Sales</a>.</p>
     </section>
 
   </article>
@@ -426,7 +273,7 @@
 <nav class="module-nav">
   <a href="module-12.html" class="prev">
     <div class="dir">← Previous · Module 12</div>
-    <div class="next-title">Ethics</div>
+    <div class="next-title">Ethics &amp; Pitfalls</div>
   </a>
   <a href="module-14.html" class="next">
     <div class="dir">Next · Module 14</div>
@@ -439,24 +286,6 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-  document.querySelectorAll('#filterBar .filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('#filterBar .filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const tag = btn.dataset.tag;
-      document.querySelectorAll('#bookGrid .book').forEach(book => {
-        if (tag === 'all' || book.dataset.tag === tag) {
-          book.classList.remove('hidden');
-        } else {
-          book.classList.add('hidden');
-        }
-      });
-    });
-  });
-</script>
-
-<!-- Google Translate -->
 <div id="google_translate_element" style="position:absolute; top:-9999px; left:-9999px; z-index:-9999;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {

@@ -5,66 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Module 14 · AI in Sales — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
-<style>
-  .ai-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    margin: 32px 0;
-  }
-  .ai-card {
-    background: var(--ink);
-    border: 1px solid var(--line);
-    padding: 24px;
-  }
-  .ai-card h3 {
-    font-family: var(--font-display);
-    font-size: 20px;
-    color: var(--paper);
-    margin-top: 0;
-    margin-bottom: 12px;
-  }
-  .ai-card p {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 16px;
-  }
-  .ai-card .tool-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .ai-card .tool-tag {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    background: rgba(200, 67, 26, 0.1);
-    color: var(--orange);
-    padding: 4px 8px;
-    border-radius: 2px;
-  }
-  
-  .premium-box {
-    background: var(--ink);
-    border-left: 4px solid var(--gold);
-    padding: 24px 32px;
-    margin: 32px 0;
-  }
-  .premium-box h3 {
-    color: var(--gold);
-    font-family: var(--font-display);
-    font-size: 24px;
-    margin-top: 0;
-    margin-bottom: 16px;
-  }
-  .premium-box p {
-    color: var(--paper);
-    font-size: 16px;
-    line-height: 1.6;
-  }
-</style>
 </head>
 <body>
 
@@ -82,13 +22,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">14</span>AI in Sales</div>
-  <h1 class="module-title">The era of <em>artificial</em> leverage.</h1>
-  <p class="lede">Generative AI has commoditized average sales tactics. When everyone can send 10,000 perfectly spelled emails a day, the baseline changes. Here is how to use AI for leverage, and how to sell when AI does the busywork.</p>
+  <div class="eyebrow"><span class="num">14</span>AI in the Revenue Workflow</div>
+  <h1 class="module-title">Automate the <em>reversible</em>. Review everything else.</h1>
+  <p class="lede">AI changes the cost of producing sales work, not the standard it must meet. This module gives a task-selection rule, a human-review design, a data-protection floor, and an honest account of where these systems fail in commercial settings.</p>
   <div class="meta-strip">
-    <span>20 min read</span>
-    <span>Modern tech · Playbooks</span>
-    <span>Advanced</span>
+    <span>45 min lesson + practice</span>
+    <span>Evidence-led professional curriculum</span>
+    <span>Level 3</span>
   </div>
 </header>
 
@@ -96,95 +36,226 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#paradigm">The new paradigm</a></li>
-      <li><a href="#agentic">Agentic AI (2026 Shift)</a></li>
-      <li><a href="#prospecting">AI-Driven Prospecting</a></li>
-      <li><a href="#analysis">Call Analysis &amp; Coaching</a></li>
-      <li><a href="#premium">The Human Premium</a></li>
-      <li><a href="#traps">The laziness trap</a></li>
+      <li><a href="#introduction">1. What actually changed</a></li>
+      <li><a href="#objectives">2. Observable learning objectives</a></li>
+      <li><a href="#selection">3. The task-selection rule</a></li>
+      <li><a href="#review">4. Designing human review that is not theatre</a></li>
+      <li><a href="#governance">5. Data protection, disclosure, and the regulatory floor</a></li>
+      <li><a href="#worked-example">6. Worked example: an AI workflow risk review</a></li>
+      <li><a href="#execution">7. Weak versus improved AI-assisted outreach</a></li>
+      <li><a href="#practice">8. Practice: AI workflow risk review</a></li>
+      <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
+      <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="paradigm">
-      <h2>The new paradigm</h2>
-      <p>Sales has historically been constrained by human labor. To send 100 personalized emails took 10 hours. To review 10 sales calls took 10 hours. AI reduces the marginal cost of these tasks to near zero.</p>
-      <p>This means <strong>average outreach is now spam.</strong> If it looks like an AI wrote it, buyers ignore it. The goal of AI in sales is not to remove the human; it's to automate the research and data gathering so the human can spend 100% of their time on strategy, relationship, and closing.</p>
+    <section id="introduction">
+      <h2>1. What actually changed</h2>
+      <p>Generative AI made producing plausible sales artifacts nearly free. It did not make them correct, and it did not lower the standard a buyer applies. That asymmetry is the whole subject: <strong>the cost of production collapsed while the cost of being wrong stayed exactly the same</strong>, which means the constraint moved from writing to verification.</p>
+      <p>Two consequences follow immediately. First, any activity whose value came from the effort it took to produce has been devalued — the "personalized" opening line that proved you had spent three minutes on someone's profile proves nothing now, because a machine can generate ten thousand of them. Relevance has to be carried by something a machine cannot cheaply fake, which in practice means specific knowledge of the buyer's situation and a genuine reason for contact.</p>
+      <p>Second, the volume of low-quality outreach rose sharply, which raised recipients' filtering. This is a collective-action problem with an individual solution: the way to win in a flooded channel is not to send more, but to be the message that could only have been written by someone who understood the situation.</p>
+      <p>Underneath all of it sits an uncomfortable technical fact. These systems produce fluent, confident text regardless of whether the underlying claim is true, and fluency is precisely the signal humans use to judge reliability. A fabricated customer reference reads exactly like a real one. This is why the review design in section 4 matters more than the tool selection.</p>
     </section>
 
-    <section id="agentic">
-      <h2>From Generative to Agentic AI (2026 Shift)</h2>
-      <p>The era of merely using AI to generate text is over. In 2026, high-growth sales organizations have shifted to <strong>Agentic AI</strong>. Rather than just drafting emails, AI agents are now "rewiring" end-to-end commercial workflows.</p>
-      <p>Agentic AI acts autonomously to execute multi-step workflows. For instance, an AI agent can detect a buying signal (like a job change), enrich the prospect's data, categorize their likely objections based on historical CRM data, construct a personalized outreach sequence, and tee up the approval for the human rep—all without manual prompting. This shift from task automation to <em>workflow automation</em> is dramatically lowering the cost-to-serve ratio.</p>
+    <section id="objectives">
+      <h2>2. Observable learning objectives</h2>
+      <p>By completing this module you will be able to demonstrate the following:</p>
+      <p>Apply a task-selection rule that distinguishes appropriate from inappropriate AI delegation by reversibility and verifiability.</p>
+      <p>Design human review proportionate to consequence, rather than a rubber stamp.</p>
+      <p>State the data-protection obligations that attach to putting customer information into a third-party system.</p>
+      <p>Identify where automated outreach crosses into deceptive practice or unlawful processing.</p>
+      <p>Produce a risk review for a live AI-assisted workflow with named owners and controls.</p>
     </section>
 
-    <section id="prospecting">
-      <h2>AI-Driven Prospecting</h2>
-      <p>Instead of manually researching prospects, you can now build systems that scrape intent data, analyze 10k reports, and draft emails.</p>
-      
-      <div class="ai-grid">
-        <div class="ai-card">
-          <h3>Hyper-Personalization at Scale</h3>
-          <p>Tools can now ingest a prospect's LinkedIn posts, company press releases, and SEC filings to find specific triggers (e.g., "Just hired a new VP of Sales"). The AI then drafts a highly relevant hook.</p>
-          <div class="tool-tags">
-            <span class="tool-tag">Clay</span>
-            <span class="tool-tag">Apollo</span>
-          </div>
-        </div>
-        <div class="ai-card">
-          <h3>Account Mapping</h3>
-          <p>Provide an AI with a target account's URL and ask it to identify the likely decision-making unit based on industry standards, reporting structures, and recent job postings.</p>
-          <div class="tool-tags">
-            <span class="tool-tag">ChatGPT</span>
-            <span class="tool-tag">Claude</span>
-          </div>
-        </div>
-        <div class="ai-card">
-          <h3>Drafting Copy</h3>
-          <p>Don't ask AI to "write a sales email." Ask it to "extract the top 3 strategic priorities from this company's Q3 earnings call." Use that data to write your own short, punchy email.</p>
-          <div class="tool-tags">
-            <span class="tool-tag">Claude</span>
-            <span class="tool-tag">Perplexity</span>
-          </div>
-        </div>
+    <section id="selection">
+      <h2>3. The task-selection rule</h2>
+      <p>The useful question is not "can AI do this?" — increasingly it can produce something. It is <strong>"if this output is wrong, how quickly will I know, and what will it cost?"</strong> Two axes decide the answer.</p>
+
+      <h3>Table 1: Task selection by verifiability and reversibility</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Task</th><th>Easy to verify?</th><th>Reversible if wrong?</th><th>Verdict</th></tr></thead>
+      <tbody>
+      <tr><td>Summarizing a call recording you attended</td><td>Yes — you were there</td><td>Yes</td><td><strong>Automate.</strong> High value, cheap to check, low consequence.</td></tr>
+      <tr><td>Drafting a follow-up email you will edit</td><td>Yes</td><td>Yes, before sending</td><td><strong>Automate with review.</strong> The draft is scaffolding, not output.</td></tr>
+      <tr><td>Extracting structured fields from your own notes</td><td>Yes</td><td>Yes</td><td><strong>Automate.</strong> One of the highest-return uses; it removes CRM friction.</td></tr>
+      <tr><td>Researching a prospect's public filings</td><td>Partly — figures are checkable</td><td>Yes</td><td><strong>Automate, then verify every figure at source.</strong> Fabricated numbers read exactly like real ones.</td></tr>
+      <tr><td>Generating a customer reference or case result</td><td>Yes, but only if you check</td><td><strong>No</strong> — it reaches the buyer</td><td><strong>Never generate.</strong> Retrieve from a verified register only. A fabricated reference is a substantiation violation.</td></tr>
+      <tr><td>Scoring or prioritising accounts</td><td>Only over time, in aggregate</td><td>Partly</td><td><strong>Use with monitoring.</strong> Watch for feedback loops: a model trained on past wins will reproduce past biases in targeting.</td></tr>
+      <tr><td>Sending outreach without human review</td><td>No</td><td><strong>No</strong></td><td><strong>Do not.</strong> Unreviewed sending is where legal and reputational failures concentrate.</td></tr>
+      <tr><td>Forecasting deal outcomes</td><td>Only after the fact</td><td>Depends on the decision it drives</td><td><strong>Advisory only.</strong> Useful as a challenge to human optimism; never as the forecast itself.</td></tr>
+      <tr><td>Answering a security questionnaire</td><td>Yes, by the control owner</td><td><strong>No</strong> — becomes a contractual representation</td><td><strong>Draft only.</strong> Every answer must be confirmed by the person accountable for that control.</td></tr>
+      </tbody>
+      </table>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-label">The pattern in the table</div>
+        <p>AI is safest where <strong>you already hold the ground truth</strong> — your own call, your own notes, your own data — and most dangerous where it is asked to supply facts about the outside world that will reach a buyer. The highest-value applications are almost all in the first category and are unglamorous: note extraction, CRM hygiene, summarization, first drafts. The applications that generate the most enthusiasm and the most incidents are in the second.</p>
       </div>
     </section>
 
-    <section id="analysis">
-      <h2>Call Analysis &amp; Coaching</h2>
-      <p>The days of managers randomly listening to a call to give feedback are over. Conversational intelligence platforms now transcribe, analyze, and score every word spoken.</p>
+    <section id="review">
+      <h2>4. Designing human review that is not theatre</h2>
+      <p>"Human in the loop" is meaningless unless the human has the time, the information, and the incentive to say no. A reviewer approving 200 AI-drafted emails an hour is not a control; they are a rubber stamp with a job title.</p>
+
+      <h3>Table 2: Review design proportionate to consequence</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Output</th><th>Consequence if wrong</th><th>Review level</th><th>Specific control</th></tr></thead>
+      <tbody>
+      <tr><td>Internal call summary</td><td>Low — a mis-remembered detail</td><td><strong>Spot check</strong></td><td>Sample 1 in 10; correct the prompt when errors cluster.</td></tr>
+      <tr><td>CRM field extraction</td><td>Medium — corrupts reporting silently</td><td><strong>Confirm on save</strong></td><td>Seller confirms each extracted field once; never auto-write to a forecast field.</td></tr>
+      <tr><td>Outbound email</td><td>High — reaches a buyer, carries legal obligations</td><td><strong>Full read before send</strong></td><td>No bulk-approve UI. Any claim about a customer or a number must trace to the evidence register.</td></tr>
+      <tr><td>Proposal or business case</td><td>High — becomes a commercial representation</td><td><strong>Full review + numeric verification</strong></td><td>Every figure re-derived from source. AI drafts the narrative, never the arithmetic.</td></tr>
+      <tr><td>Security questionnaire</td><td>Very high — a contractual representation</td><td><strong>Control-owner sign-off</strong></td><td>Named owner per control confirms in writing. No exceptions for deadline pressure.</td></tr>
+      <tr><td>Account scoring / prioritisation</td><td>Medium, cumulative</td><td><strong>Periodic audit</strong></td><td>Quarterly review of which accounts the model down-ranked; check for proxies that correlate with protected characteristics or simply with past sales-team habit.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <div class="callout warning">
+        <div class="callout-label">The three failure modes to design against</div>
+        <p><strong>Fabrication:</strong> confident, well-formed statements that are simply untrue — invented customers, invented figures, invented capabilities. <strong>Automation bias:</strong> humans accept machine output more readily than their own judgment, and accept it more as they get busier. <strong>Volume collapse:</strong> review quality degrades non-linearly with throughput, so a control that works at 20 items an hour fails silently at 200. Rate limits are a genuine safety control, not a productivity loss.</p>
+      </div>
+    </section>
+
+    <section id="governance">
+      <h2>5. Data protection, disclosure, and the regulatory floor</h2>
+      <p>Class <strong>L</strong>. Putting customer information into a third-party system is a processing activity with obligations attached, whether or not anyone in the revenue team thought of it that way.</p>
+
+      <h3>Table 3: The obligations that attach</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Area</th><th>Requirement</th><th>What it means in practice</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Lawful basis &amp; purpose</strong></td><td>Under GDPR and equivalents, processing needs a lawful basis and a stated purpose; using data collected for one purpose to train a model is a new purpose.</td><td>Check whether your vendor trains on your inputs. Many enterprise tiers exclude this; many free tiers do not.</td></tr>
+      <tr><td><strong>Processor agreements</strong></td><td>A data-processing agreement is required with any vendor handling personal data on your behalf, covering sub-processors, deletion, and breach notification.</td><td>An AI tool adopted by a team without procurement review is an unpapered processor.</td></tr>
+      <tr><td><strong>Cross-border transfer</strong></td><td>Transfers out of the EEA/UK require an approved mechanism.</td><td>"Where does the inference actually run?" is a question with a legal answer, not a technical curiosity.</td></tr>
+      <tr><td><strong>Call recording &amp; transcription</strong></td><td>Consent requirements vary between one-party and all-party jurisdictions, and between countries.</td><td>A conversation-intelligence rollout without a jurisdiction map is a compliance incident waiting to be discovered.</td></tr>
+      <tr><td><strong>Confidential customer content</strong></td><td>Contractual confidentiality obligations usually restrict disclosure to third parties.</td><td>Pasting a customer's contract or roadmap into a public model may breach an NDA independently of data-protection law.</td></tr>
+      <tr><td><strong>Automated decisions</strong></td><td>GDPR Art. 22 restricts solely automated decisions with legal or similarly significant effects; the EU AI Act adds transparency and risk-tier obligations.</td><td>Mostly relevant to credit, employment, and pricing decisions rather than prioritisation — but check before automating anything that determines who gets an offer.</td></tr>
+      <tr><td><strong>Disclosure to buyers</strong></td><td>Deceptive-practice rules apply to impersonation and misrepresentation.</td><td>An AI agent presented as a named human colleague is a misrepresentation. Disclose that an assistant is automated when a reasonable person would assume otherwise.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p>The NIST AI Risk Management Framework and its generative-AI profile provide a workable structure for organizations that need one: govern, map, measure, manage. For a revenue team the practical minimum is a written inventory of which AI tools touch customer data, under what agreement, with what retention, reviewed at least annually.</p>
+    </section>
+
+    <section id="worked-example">
+      <h2>6. Worked example: an AI workflow risk review</h2>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
+      <p><strong>Scenario:</strong> A 30-person revenue org has adopted six AI-assisted workflows over eighteen months, none through procurement. A risk review is run before an enterprise customer's security audit.</p>
+
+      <h3>Table 4: Findings and remediation</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Workflow</th><th>Finding</th><th>Risk</th><th>Remediation</th></tr></thead>
+      <tbody>
+      <tr><td>Call summarization</td><td>Enterprise tier, DPA in place, no training on inputs, EU inference region. Recording consent captured in the meeting notice.</td><td>Low</td><td><strong>Keep.</strong> Add the jurisdiction map for two new markets.</td></tr>
+      <tr><td>Prospect research</td><td>Three fabricated figures found in a sample of 20 outputs — one an invented funding round, two mis-stated headcounts. All three had reached buyers in emails.</td><td><strong>High</strong> — false statements in outreach</td><td>Mandatory source verification; every figure in an outbound message must carry a link in the draft. Two corrective emails sent.</td></tr>
+      <tr><td>Outbound drafting</td><td>Bulk-approve interface allowed one reviewer to release 340 emails in 25 minutes.</td><td><strong>High</strong> — review is nominal</td><td>Bulk approve removed. Hard rate limit of 40 per reviewer per hour. Any customer name or numeric claim requires a register reference.</td></tr>
+      <tr><td>Security questionnaire drafting</td><td>Answers generated and submitted without control-owner review; two described controls that did not exist.</td><td><strong>Critical</strong> — contractual misrepresentation</td><td>Stopped immediately. Named control owners; written sign-off per answer. Both prior submissions corrected to the customers proactively.</td></tr>
+      <tr><td>Account scoring</td><td>Model trained on three years of closed-won data. Audit showed it systematically down-ranked accounts in two regions where the team had historically had no coverage.</td><td>Medium, cumulative</td><td>Kept as advisory. Quarterly audit of down-ranked accounts added; a fixed share of capacity reserved for model-dissenting accounts.</td></tr>
+      <tr><td>"AI SDR" agent</td><td>Sent outreach under a fictitious human name with a fabricated LinkedIn profile. Sequences ran to EU contacts on a US-designed compliance template.</td><td><strong>Critical</strong> — misrepresentation plus unlawful processing</td><td>Terminated. Disclosure added to all automated assistants; jurisdiction field made mandatory pre-send (Module 05).</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p><strong>Aggregate outcome:</strong> two workflows terminated, three re-controlled, one unchanged. Outbound volume fell 62%; qualified opportunities fell 8%. <strong>The gap between those two numbers is the size of the waste the controls removed</strong> — and the organization passed the customer's security audit, which the pre-review state would not have.</p>
+    </section>
+
+    <section id="execution">
+      <h2>7. Weak versus improved AI-assisted outreach</h2>
+      <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> Using AI assistance to prepare outreach to a prospective customer.</p>
+
+      <div class="callout warning">
+        <div class="callout-label">Weak execution (generation without ground truth)</div>
+        <p><em>Prompt:</em> "Write a personalized cold email to the VP of Operations at [company], referencing their recent challenges and how our platform can help. Make it sound human."<br><br>
+        <em>Output, sent unedited:</em> "Hi Sarah — I saw that [company] recently raised a Series C and is scaling rapidly across your three new facilities. With that kind of growth, operational complexity usually becomes the bottleneck. We've helped companies like [competitor's customer] reduce operational overhead by 35%…"</p>
+        <p><em>Why it fails:</em> The funding round was invented — the company is family-owned and has never raised. "Three new facilities" was inferred from a job posting for one. The named customer belongs to a competitor. The 35% figure has no source. Each of these is individually fatal to credibility; together they are false statements in commercial communication. And "make it sound human" is an instruction to produce the appearance of effort rather than the substance of relevance, which is exactly the thing recipients now filter for.</p>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-label">Improved execution (AI for synthesis, human for ground truth)</div>
+        <p><em>Step 1 — research with verification.</em> "Summarize what these three sources say about [company]'s operations. Quote directly and cite which source each claim comes from. If a source does not support a claim, say so rather than inferring." <em>Sources supplied: their filed accounts, a trade-press article, their careers page.</em><br><br>
+        <em>Step 2 — human check.</em> Every claim traced back. Two dropped as unsupported inferences. One verified and strengthened: they are recruiting six shift supervisors across two sites, which is a checkable fact with a date.<br><br>
+        <em>Step 3 — draft with constraints.</em> "Draft an email using only these three verified facts. No customer names — I will insert one from our reference register. No percentage claims. Under 140 words. Include one specific operational mechanism and an easy way to decline."<br><br>
+        <em>Step 4 — human writes the mechanism and the honest limit</em>, because that is the part that requires knowing what your product actually does badly, and inserts the reference from the verified register.</p>
+        <p><em>Why it succeeds:</em> The model is used for synthesis over sources you supplied — a task where you hold the ground truth and verification is cheap. Facts are traced before use. Customer references come from a register rather than from generation. The parts requiring judgment and honesty stay human. The result is faster than manual research and carries no fabrication risk, which is the actual productivity gain available here.</p>
+      </div>
+    </section>
+
+    <section id="practice">
+      <h2>8. Practice: AI workflow risk review</h2>
+      <p><strong>Exercise goal:</strong> inventory the AI-assisted workflows in your own revenue process and produce a risk review with controls and named owners.</p>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
+      <ol>
+        <li><strong>Inventory.</strong> List every AI-assisted workflow in use, including ones adopted informally by individuals. Ask the team directly; the shadow tools are the point of the exercise.</li>
+        <li>For each, classify on the Table 1 axes: how easily verified, how reversible, and whether the output reaches a buyer.</li>
+        <li><strong>Sample for fabrication.</strong> Take twenty outputs from any workflow that produces facts about the outside world and check every factual claim at source. Record the error rate — do not estimate it.</li>
+        <li><strong>Assess review adequacy.</strong> For each workflow, calculate the actual review throughput per reviewer per hour. If it exceeds what a human could genuinely read, the control is nominal.</li>
+        <li><strong>Data-protection check</strong> per tool: DPA in place, training on inputs, retention period, inference region, sub-processors, and — for any recording tool — a jurisdiction consent map.</li>
+        <li><strong>Disclosure check.</strong> Would a reasonable buyer assume they were dealing with a human? If yes and they are not, that must change.</li>
+        <li><strong>Write the controls:</strong> one per finding, with a named owner and a date.</li>
+        <li><strong>Define the stop conditions:</strong> what error rate or incident causes a workflow to be suspended, decided in advance.</li>
+      </ol>
+
+      <div class="solution-guide">
+        <h3>Completed exemplar (one workflow of six)</h3>
+        <table>
+        <thead><tr><th>Element</th><th>Entry</th></tr></thead>
+        <tbody>
+        <tr><td><strong>Workflow</strong></td><td>AI-drafted follow-up emails after discovery calls, using the call transcript.</td></tr>
+        <tr><td><strong>Classification</strong></td><td>Verifiable: <em>yes</em> (we attended the call). Reversible: <em>yes, before send</em>. Reaches buyer: <em>yes</em>. → Automate with full review.</td></tr>
+        <tr><td><strong>Fabrication sample</strong></td><td>20 drafts checked. 2 contained commitments not made on the call ("we'll include the migration at no cost"). 1 attributed a statement to the wrong stakeholder. <strong>Error rate 15%, all of a type a busy reader would miss.</strong></td></tr>
+        <tr><td><strong>Review adequacy</strong></td><td>Measured throughput 31 drafts/hour/reviewer — under 2 minutes each for a 300-word email referencing a 45-minute call. <strong>Nominal, not real.</strong></td></tr>
+        <tr><td><strong>Data protection</strong></td><td>DPA in place; enterprise tier excludes training on inputs; 30-day retention; EU inference region; two sub-processors listed. Recording consent: covered for UK and Ireland, <strong>gap identified for the German entity</strong> (works council notification required).</td></tr>
+        <tr><td><strong>Disclosure</strong></td><td>N/A — the email is sent by and signed by a named human who reviewed it.</td></tr>
+        <tr><td><strong>Controls</strong></td><td>(1) Prompt constrained to "only summarize commitments explicitly stated in the transcript; list them separately for confirmation" — owner: RevOps, 14 days. (2) Commitments block must be ticked line by line before send — owner: RevOps, 30 days. (3) German recording consent resolved before any further recording at that entity — owner: Legal, immediate. (4) Monthly 10-draft audit — owner: Sales Manager, ongoing.</td></tr>
+        <tr><td><strong>Stop conditions</strong></td><td>Suspend the workflow if a monthly audit shows a fabricated commitment reaching a buyer, or if any single incident results in a customer asserting a commitment we did not make.</td></tr>
+        </tbody>
+        </table>
+      </div>
+
+      <p><strong>Evaluation rubric:</strong> Inventory completeness including shadow tools (15%); correct classification on verifiability and reversibility (15%); fabrication rate <em>measured</em> rather than estimated (25%); review throughput calculated and honestly assessed (15%); data-protection check covering DPA, training, retention, region, and recording consent (20%); pre-committed stop conditions (10%).</p>
+      <p><strong>Beginner variation:</strong> Do step 3 only, on one workflow. Twenty outputs, every factual claim checked at source, error rate written down. Nearly everyone who does this finds a rate higher than they expected, and the number is what changes behavior.</p>
+      <p><strong>Advanced variation:</strong> Map your inventory against the NIST AI RMF generative profile functions — govern, map, measure, manage — and identify which function is weakest across your organization. In most revenue teams it is <em>measure</em>: nobody has ever counted the error rate, so all discussion of AI quality is anecdote.</p>
+    </section>
+
+    <section id="knowledge-check">
+      <h2>9. Applied knowledge check</h2>
+
+      <details><summary>1. What is the right question to ask before delegating a task to AI?</summary>
+      <p>Not "can it do this?" but "if the output is wrong, how quickly will I know and what will it cost?" That resolves into two axes — verifiability and reversibility. Tasks where you hold the ground truth (your own call, your own notes, your own data) and where errors are caught before anything reaches a buyer are safe and usually high-value. Tasks where the system supplies facts about the outside world that then reach a buyer are where incidents concentrate, because a fabricated claim is fluent and confident and reads exactly like a true one.</p></details>
+
+      <details><summary>2. Your team has a human-in-the-loop review for AI-drafted emails. Why might it not be a control?</summary>
+      <p>Because review quality degrades non-linearly with throughput. If one reviewer releases 340 emails in 25 minutes, they are not reading them — a bulk-approve interface has converted a control into a rubber stamp. The test is arithmetic: calculate actual reviewed items per reviewer per hour and ask whether a human could genuinely read that many with the source material open. Rate limits and the removal of bulk-approve are real safety controls, and the productivity they appear to cost was never real.</p></details>
+
+      <details><summary>3. Is it acceptable to run an AI agent that emails prospects under a plausible human name?</summary>
+      <p>No. Presenting an automated system as a named human colleague is a misrepresentation, and deceptive-practice rules apply to commercial communication regardless of the technology used. It also fails the disclosure test from Module 12 immediately — you would not be comfortable with the buyer seeing exactly what you were doing. The workable standard is that disclosure is required whenever a reasonable person would otherwise assume they were dealing with a human, and it costs remarkably little: buyers object to being deceived, not to being contacted by an assistant.</p></details>
+
+      <details><summary>4. What obligations attach to pasting a customer's contract into an AI tool to summarize it?</summary>
+      <p>Potentially several at once. Data protection: if it contains personal data you need a lawful basis, a processor agreement, and clarity on retention, sub-processors, and whether inference happens outside the EEA/UK. Contract: the NDA or confidentiality clause with that customer likely restricts disclosure to third parties, and a public model tier is a third party. Training: many consumer tiers train on inputs, which would mean the customer's confidential terms have left your control permanently. This is why an AI tool adopted by a team without procurement review is an unpapered processor, and why the inventory is the first step of any review.</p></details>
+
+      <details><summary>5. An account-scoring model is trained on three years of closed-won data. What should you watch for?</summary>
+      <p>Feedback loops that reproduce the team's past behavior rather than the market's actual potential. If the team historically had no coverage in two regions, those regions appear as poor prospects in the training data, so the model down-ranks them, so they continue to receive no coverage — and the model's prediction becomes self-fulfilling. The controls are a periodic audit of what the model <em>down-ranked</em> (not just what it promoted), and reserving a fixed share of capacity for model-dissenting accounts so the loop keeps receiving contradicting evidence.</p></details>
+    </section>
+
+    <section id="conclusion">
+      <h2>10. Practical conclusion &amp; next action</h2>
+      <p>AI is a genuine productivity change in the revenue workflow, concentrated almost entirely in unglamorous places: summarization, extraction, first drafts, synthesis over sources you supplied. It becomes a liability at exactly the point where it is asked to supply facts about the world that will reach a buyer.</p>
       <ul>
-        <li><strong>Conversation Balance:</strong> AI can flag long monologues or missed questions. Treat the ratio as a review prompt, not a universal ideal or causal score.</li>
-        <li><strong>Competitor Mentions:</strong> Automatically flags when a competitor is brought up and tracks win rates when that happens.</li>
-        <li><strong>Objection Mapping:</strong> AI categorizes exactly which objections stall your deals, allowing you to prep specific Voss/Sandler pivots.</li>
-        <li><strong>Automated CRM Updates:</strong> AI writes the MEDDIC notes and updates the CRM fields based on the call transcript, saving reps hours of admin work.</li>
+        <li>Ask how quickly a wrong output will be caught and what it will cost — not whether the tool can produce something.</li>
+        <li>Safest where you hold the ground truth; most dangerous where it supplies external facts to a buyer.</li>
+        <li>Never generate customer references or results. Retrieve from a verified register.</li>
+        <li>Review must be proportionate to consequence and possible at the actual throughput. Bulk-approve is not review.</li>
+        <li>Every tool touching customer data needs a DPA, a retention period, an inference region, and — for recordings — a jurisdiction consent map.</li>
+        <li>Disclose automated assistants. Impersonating a human colleague is a misrepresentation.</li>
+        <li>Measure your fabrication rate rather than debating it.</li>
       </ul>
-    </section>
-
-    <section id="premium">
-      <div class="premium-box">
-        <h3>The Human Premium</h3>
-        <p>When digital communication becomes infinitely cheap, humans assign premium value to things that are expensive, unscalable, and strictly human.</p>
-        <p><strong>What AI cannot do (where you win):</strong></p>
-        <ul>
-          <li>Look a buyer in the eye and say, "I promise this will work." (Trust)</li>
-          <li>Take a client to dinner to understand the office politics threatening their job. (Empathy)</li>
-          <li>Navigate a tense, emotionally charged negotiation over price. (Emotional Intelligence)</li>
-          <li>Send a handwritten note or a highly customized physical gift. (Unscalable effort)</li>
-        </ul>
-        <p>Use AI where it produces a verified improvement in speed or quality, and keep accountable human judgment wherever context, trust, privacy, or material decisions are involved.</p>
-      </div>
-    </section>
-
-    <section id="traps">
-      <h2>The Laziness Trap</h2>
-      <p>The biggest risk with AI is outsourcing your thinking. If you let ChatGPT write your emails without heavy editing, you sound like a robot. If you let AI summarize a call and you never listen to the recording, you miss the nuance in the buyer's tone.</p>
-      
-      <div class="callout warn">
-        <div class="callout-label">Warning</div>
-        <p>Do not use AI to replace your judgment. Use it to increase your speed. A bad seller with AI just does bad sales faster.</p>
-      </div>
+      <p><strong>Immediate action:</strong> Take twenty AI-generated outputs from whichever of your workflows makes factual claims, and check every claim at source. Write down the error rate. That single number will settle more internal arguments about AI quality than any policy document.</p>
+      <p><strong>Related modules:</strong> <a href="module-05.html">05 · Outbound Prospecting</a>, <a href="module-15.html">15 · Selling AI Products</a>, <a href="module-13.html">13 · Tools &amp; Resources</a>, and <a href="module-42.html">42 · Global, Regulated &amp; Public-Sector Selling</a>.</p>
     </section>
 
   </article>
@@ -193,11 +264,11 @@
 <nav class="module-nav">
   <a href="module-13.html" class="prev">
     <div class="dir">← Previous · Module 13</div>
-    <div class="next-title">Tools</div>
+    <div class="next-title">Tools &amp; Resources</div>
   </a>
   <a href="module-15.html" class="next">
     <div class="dir">Next · Module 15</div>
-    <div class="next-title">AI Products</div>
+    <div class="next-title">Selling AI Products</div>
   </a>
 </nav>
 
@@ -206,8 +277,6 @@
 </footer>
 
 <script src="script.js"></script>
-
-<!-- Google Translate -->
 <div id="google_translate_element" style="position:absolute; top:-9999px; left:-9999px; z-index:-9999;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {

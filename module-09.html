@@ -5,110 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Module 09 · Objection Handling — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
-<style>
-  .step-circle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--orange);
-    color: var(--ink);
-    font-family: var(--font-mono);
-    font-weight: 700;
-    font-size: 14px;
-    margin-right: 12px;
-  }
-  
-  .five-step {
-    margin: 32px 0;
-    border-left: 2px solid var(--line);
-    padding-left: 32px;
-  }
-  .step-row {
-    margin-bottom: 32px;
-    position: relative;
-  }
-  .step-row::before {
-    content: '';
-    position: absolute;
-    left: -39px;
-    top: 4px;
-    width: 14px;
-    height: 14px;
-    background: var(--orange);
-    border-radius: 50%;
-    border: 3px solid var(--ink);
-  }
-  .step-name {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 500;
-    color: var(--paper);
-    margin-bottom: 6px;
-  }
-  .step-num-label {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--orange);
-    margin-bottom: 4px;
-  }
-  .step-desc { color: var(--cream); font-size: 15px; }
-  
-  .obj-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 16px 0;
-  }
-  .obj-tag {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 2px;
-    background: var(--ink-soft);
-    color: var(--muted);
-    border: 1px solid var(--line);
-  }
-  .obj-tag.real { background: rgba(193,85,74,0.15); color: var(--red); border-color: var(--red); }
-  .obj-tag.fake { background: rgba(212,168,67,0.15); color: var(--gold); border-color: var(--gold); }
-  
-  .response-block {
-    background: var(--ink);
-    border-left: 3px solid var(--gold);
-    padding: 16px 20px;
-    margin: 12px 0;
-    font-style: italic;
-    font-family: var(--font-display);
-    color: var(--cream);
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  .real-vs-fake {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    margin: 24px 0;
-  }
-  .rvf-col { background: var(--ink); padding: 24px; }
-  .rvf-col h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; }
-  .rvf-col.real h4 { color: var(--red); }
-  .rvf-col.fake h4 { color: var(--gold); }
-  .rvf-col ul { margin-left: 18px; }
-  .rvf-col li { font-size: 14px; color: var(--cream); margin-bottom: 8px; }
-  
-  @media (max-width: 700px) {
-    .real-vs-fake { grid-template-columns: 1fr; }
-  }
-</style>
 </head>
 <body>
 
@@ -126,13 +22,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">09</span>Objection Handling</div>
-  <h1 class="module-title">The anatomy of <em>resistance.</em></h1>
-  <p class="lede">Objections can reflect missing evidence, risk, competing priorities, misunderstanding, or genuine mismatch. Diagnose what the concern means before answering it.</p>
+  <div class="eyebrow"><span class="num">09</span>Objections &amp; Indecision</div>
+  <h1 class="module-title">Most "objections" are <em>indecision</em> wearing a disguise.</h1>
+  <p class="lede">A concern, a condition, a deflection, and an inability to decide look identical and require opposite responses. This module teaches the diagnosis first, then the responses — including the counter-intuitive finding that pressure makes the most common failure worse.</p>
   <div class="meta-strip">
-    <span>45 min read</span>
-    <span>Cognitive Dissonance · The JOLT Effect</span>
-    <span>Advanced professional curriculum</span>
+    <span>50 min lesson + practice</span>
+    <span>Evidence-led professional curriculum</span>
+    <span>Level 2</span>
   </div>
 </header>
 
@@ -140,153 +36,221 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#academic-foundation">1. Academic Foundation</a></li>
-      <li><a href="#jolt-effect">2. The JOLT Effect</a></li>
-      <li><a href="#real-vs-fake">3. Real vs Smokescreen</a></li>
-      <li><a href="#the-framework">4. The 5-Step Framework</a></li>
-      <li><a href="#case-studies">5. Composite Practice Scenarios</a></li>
-      <li><a href="#roleplay">6. Verbatim Roleplay</a></li>
-      <li><a href="#troubleshooting">7. Troubleshooting Pitfalls</a></li>
+      <li><a href="#introduction">1. The category error at the heart of objection handling</a></li>
+      <li><a href="#objectives">2. Observable learning objectives</a></li>
+      <li><a href="#taxonomy">3. The four categories and how to tell them apart</a></li>
+      <li><a href="#indecision">4. Indecision: the largest category and the least understood</a></li>
+      <li><a href="#method">5. The clarify-before-respond method</a></li>
+      <li><a href="#worked-example">6. Worked example: an objection decision tree in use</a></li>
+      <li><a href="#execution">7. Weak versus improved objection response</a></li>
+      <li><a href="#practice">8. Practice: build your objection decision tree</a></li>
+      <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
+      <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="academic-foundation">
-      <h2>1. Academic Foundation: Cognitive Dissonance & Omission Bias</h2>
-      <p>The science of objection handling is rooted in <strong>Cognitive Dissonance (Festinger, 1957)</strong>. When a buyer encounters information that conflicts with their existing beliefs (e.g., "our current process is fine" vs. "this software makes our process obsolete"), they experience psychological stress. Objections are the defense mechanism used to resolve that stress.</p>
-      <p>Simultaneously, buyers suffer from <strong>Omission Bias (Ritov & Baron, 1990)</strong>—the tendency to judge harmful actions (buying a tool that fails) as worse than equally harmful inactions (doing nothing while the company bleeds money). Elite sellers recognize that an objection is simply the buyer's amygdala attempting to protect them from the perceived risk of commission.</p>
-      <p>An objection may trigger defensiveness. Pause, summarize what you heard, and ask a clarifying question before responding.</p>
+    <section id="introduction">
+      <h2>1. The category error at the heart of objection handling</h2>
+      <p>Traditional objection handling teaches responses. "It's too expensive" gets the value-reframe script; "send me some information" gets the qualifying question; "we're happy with our current supplier" gets the differentiation pivot. Learn enough scripts and you can respond to anything.</p>
+      <p>The trouble is that the same sentence can mean four incompatible things, and three of the four responses will make it worse. <strong>"It's too expensive" can mean:</strong> I don't understand the value (a concern — more evidence helps); I genuinely have £40k and this costs £90k (a condition — no amount of value framing changes arithmetic); I don't want to tell you the real reason (a deflection — responding to the stated objection wastes both our time); or I believe the value and I still can't get myself to commit (indecision — and here more evidence and more urgency actively hurt).</p>
+      <p>Responding before diagnosing is the category error. It is also why objection-handling training so often produces sellers who are fluent and ineffective: they have learned to answer questions the buyer was not asking.</p>
+      <p>The scale of the fourth category is the finding that should change your practice. Dixon &amp; McKenna's analysis of roughly 2.5 million recorded sales conversations found that in about <strong>56% of deals lost to "no decision," the buyer wanted to change but could not carry the decision through</strong>. Not unconvinced. Not satisfied with the status quo. Unable to act. This is a class <strong>V</strong> proprietary dataset and the percentage deserves scepticism, but the mechanism — omission bias, ambiguity aversion, fear of the error of commission — is independently supported in decision research.</p>
     </section>
 
-    <section id="jolt-effect">
-      <h2>2. The JOLT Effect & Buyer Indecision</h2>
-      <p>Recent research by Dixon and McKenna (2022) revealed a paradigm shift: up to 60% of lost deals aren't lost to competitors—they are lost to "no decision." Buyers are paralyzed by the fear of messing up.</p>
-      <p>When buyers are paralyzed, pushing harder on "value" or "ROI" actually backfires because it increases the perceived risk. To combat customer indecision, top reps use the <strong>JOLT framework</strong> to aggressively remove risk:</p>
+    <section id="objectives">
+      <h2>2. Observable learning objectives</h2>
+      <p>By completing this module you will be able to demonstrate the following:</p>
+      <p>Classify any stated objection as a concern, a condition, a deflection, or indecision, using evidence rather than assumption.</p>
+      <p>Explain why urgency and additional evidence make indecision worse, and name the moves that do not.</p>
+      <p>Apply a clarify-before-respond sequence that surfaces the real issue without interrogating.</p>
+      <p>Confirm resolution explicitly, so a handled objection does not reappear at signature.</p>
+      <p>Build a decision tree covering your five most frequent objections, with diagnosis branches rather than scripts.</p>
+    </section>
+
+    <section id="taxonomy">
+      <h2>3. The four categories and how to tell them apart</h2>
+
+      <h3>Table 1: The objection taxonomy</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Category</th><th>What it actually is</th><th>Diagnostic signal</th><th>Correct response</th><th>Response that makes it worse</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Concern</strong></td><td>A genuine information gap or unresolved doubt. The buyer wants to be convinced.</td><td>They engage with follow-up questions. Their objection has specific content. They can describe what would resolve it.</td><td>Provide the specific evidence. Then confirm it landed.</td><td>Dismissing it, or over-answering with three times the required proof, which signals defensiveness.</td></tr>
+      <tr><td><strong>Condition</strong></td><td>A hard constraint. Budget genuinely absent, a mandated architecture, a legal prohibition, a contract with 26 months to run.</td><td>The constraint has a source outside the conversation. It does not move under discussion because it is not a belief.</td><td>Acknowledge it, test whether it is truly fixed and by when, then either restructure or disqualify honestly.</td><td>Treating it as a concern and "handling" it. This is how sellers become the person the buyer stops taking calls from.</td></tr>
+      <tr><td><strong>Deflection</strong></td><td>A socially acceptable substitute for the real reason.</td><td>Vague, shifts when addressed, or is inconsistent with observed behavior. Answering it produces a new objection.</td><td>Make it safe to say the real thing. Offer the honest exit first.</td><td>Solving the stated objection, which produces the next stated objection indefinitely.</td></tr>
+      <tr><td><strong>Indecision</strong></td><td>The buyer believes the case and cannot commit. Fear of choosing wrongly exceeds the discomfort of the status quo.</td><td>Agreement without action. Repeated "let me just check one more thing." The objection changes each time and none of them is the obstacle.</td><td>Narrow options, make an explicit recommendation, shrink the size of the bet, de-risk the reversal.</td><td><strong>More evidence and more urgency.</strong> Both raise the perceived stakes of getting it wrong, which is exactly the fear driving the paralysis.</td></tr>
+      </tbody>
+      </table>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-label">The fastest diagnostic question in selling</div>
+        <p>"If this particular thing were completely resolved, would you move forward — or is there something else in the way?"<br><br>
+        A <strong>concern</strong> gets "yes, that's the main thing." A <strong>condition</strong> gets "no, because we still couldn't fund it until April." A <strong>deflection</strong> gets a new objection, which is the diagnosis. And <strong>indecision</strong> gets a pause and something like "probably… I'd want to think about it" — the tell being that the buyer cannot name what they would be thinking about.</p>
+      </div>
+    </section>
+
+    <section id="indecision">
+      <h2>4. Indecision: the largest category and the least understood</h2>
+      <p>Indecision is structurally different from every other category because <strong>the buyer already agrees with you</strong>. There is no gap in the argument to fill. What stops them is the asymmetry between the two ways of being wrong: choosing your product and having it fail is an error of commission, visible and attributable; doing nothing and continuing to underperform is an error of omission, invisible and shared. Omission bias means people systematically prefer the second even when it costs more.</p>
+
+      <h3>Table 2: Sources of indecision and the move that addresses each</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Source</th><th>How it sounds</th><th>What is actually happening</th><th>Move</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Valuation problem</strong> — too many options</td><td>"We're still evaluating a couple of others." (For four months.)</td><td>The option set is large enough that comparing is more expensive than deciding is valuable.</td><td><strong>Limit exploration.</strong> "Based on what you've told me, two of the five aren't worth your time and here's why. I'd compare us against one other, not four."</td></tr>
+      <tr><td><strong>Lack of information</strong> — fear of unknown unknowns</td><td>"I just want to be sure we've thought of everything."</td><td>Not a request for more data — a fear that something unconsidered will surface later and be their fault.</td><td><strong>Offer a recommendation.</strong> Say what you would do and why, and name what you would be worried about. Being told what to do relieves the burden of having to be exhaustive.</td></tr>
+      <tr><td><strong>Outcome uncertainty</strong> — fear it will not work here</td><td>"It works for them, but we're different."</td><td>They cannot bound the downside of failure.</td><td><strong>Take risk off the table.</strong> Phased scope, a defined pilot with pre-agreed success criteria, exit terms, an implementation guarantee, staged payment.</td></tr>
+      <tr><td><strong>Personal exposure</strong></td><td>Rarely spoken aloud.</td><td>The buyer is calculating what happens to <em>them</em> if this fails, independently of what happens to the organization.</td><td>Make the decision defensible in writing: documented criteria, a documented process, named alternatives considered. Give them the artifact that protects them.</td></tr>
+      </tbody>
+      </table>
+      </div>
+
+      <p>The general form is the JOLT framework (class <strong>F</strong>, from the same practitioner research): <strong>J</strong>udge the level of indecision, <strong>O</strong>ffer a recommendation, <strong>L</strong>imit the exploration, <strong>T</strong>ake risk off the table. Note how completely it inverts conventional practice. Where traditional training says demonstrate more value and create urgency, this says give less to consider, take a position, and make the decision smaller.</p>
+      <div class="callout warning">
+        <div class="callout-label">The recommendation requires standing you have to have earned</div>
+        <p>"I'd take option B and not C" only works if the buyer believes you would tell them not to buy at all when that were true. A seller who has never recommended against their own interest has no credibility to spend here — the recommendation reads as a close. This is why Module 02's point about self-orientation matters commercially and not just ethically: it is the prerequisite for the most effective move available in a stalled deal.</p>
+      </div>
+    </section>
+
+    <section id="method">
+      <h2>5. The clarify-before-respond method</h2>
+      <p>Four steps, in order. The discipline is doing them <em>in</em> order — most sellers skip straight to step three.</p>
+
+      <h3>Table 3: The method</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Step</th><th>What you do</th><th>Example language</th><th>Why it matters</th></tr></thead>
+      <tbody>
+      <tr><td><strong>1. Acknowledge</strong></td><td>Register the objection as legitimate without agreeing or defending.</td><td>"That's a fair thing to raise."</td><td>Defending immediately signals the objection threatened you, which makes the buyer trust their own doubt more.</td></tr>
+      <tr><td><strong>2. Clarify</strong></td><td>Ask what specifically is behind it. One question, then silence.</td><td>"When you say it's too expensive — is it more than you have, or more than you think it's worth?"</td><td>This single question separates condition from concern, which are the two categories with opposite correct responses.</td></tr>
+      <tr><td><strong>3. Isolate</strong></td><td>Test whether it is the only obstacle.</td><td>"If we resolved that, would you move forward, or is there something else?"</td><td>Prevents solving one objection and meeting a queue behind it. Also the primary deflection detector.</td></tr>
+      <tr><td><strong>4. Respond and confirm</strong></td><td>Answer the diagnosed issue, then explicitly check it is resolved.</td><td>"Does that address it, or is there part of it I've missed?"</td><td>Unconfirmed resolutions reappear at signature, usually via a stakeholder who was never in the room.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p>Two techniques are worth naming because they cost nothing and are rarely used. <strong>Pre-emption:</strong> raise the strongest objection yourself, before the buyer does — "the thing most people push back on is the twelve-week implementation, so let me address it now." You control the framing, you demonstrate you are not hiding it, and the objection loses its force. <strong>Silence:</strong> after asking a clarifying question, stop talking. The average seller waits under two seconds; the answer that matters usually arrives after four.</p>
+    </section>
+
+    <section id="worked-example">
+      <h2>6. Worked example: an objection decision tree in use</h2>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
+      <p><strong>Scenario:</strong> The same stated objection — "we need to think about it" — arrives in four deals in one week. The seller runs the diagnostic rather than the script, and the four deals require four different responses.</p>
+
+      <h3>Table 4: One objection, four diagnoses, four outcomes</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Deal</th><th>Diagnostic response to "if that were resolved, would you move forward?"</th><th>Category</th><th>Action taken</th><th>Outcome</th></tr></thead>
+      <tbody>
+      <tr><td><strong>A</strong> — regional retailer</td><td>"Yes — I just need to understand what happens to our existing integrations."</td><td><strong>Concern</strong></td><td>Sent a two-page integration note and arranged 30 minutes with a solutions engineer. Confirmed resolution explicitly.</td><td>Closed in 3 weeks. The objection was exactly what it appeared to be — the least common case.</td></tr>
+      <tr><td><strong>B</strong> — manufacturing group</td><td>"No, because even if I loved it, capital spend is frozen until the new financial year in April."</td><td><strong>Condition</strong></td><td>Stopped selling. Agreed a February re-engagement, and used the interval to build the business case with the plant manager at no cost.</td><td>Closed in April at full value, with a stronger case than a March push would have produced. <strong>Continuing to sell in January would have burned the relationship.</strong></td></tr>
+      <tr><td><strong>C</strong> — logistics operator</td><td>"Well… also we'd want to see how the pricing compares." (Pricing had been agreed two weeks earlier.)</td><td><strong>Deflection</strong></td><td>"I might be reading this wrong, but it feels like something changed. If this isn't going ahead I'd genuinely rather know — it doesn't cost you anything to tell me."</td><td>Real reason surfaced: the sponsor had been told to consolidate onto an existing vendor's platform. Disqualified in one conversation instead of four months of follow-up.</td></tr>
+      <tr><td><strong>D</strong> — healthcare provider</td><td>"Probably… I just want to be sure we've considered everything." (Third time this had been said. Business case agreed. No new questions in six weeks.)</td><td><strong>Indecision</strong></td><td>Applied all four JOLT moves: told them two of the four shortlisted vendors were not worth their time and why; made an explicit recommendation including what he would be worried about; reduced phase one from five sites to one; added pre-agreed success criteria and an exit at month four.</td><td>Closed at 40% of the original value, expanded to full scope in month nine. <strong>Total contract value ended higher than the original proposal.</strong></td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p><strong>Takeaway:</strong> the same eight words required four incompatible responses, and three of the four would have been actively damaged by the standard script. Deal D is the instructive one — the seller closed a smaller deal on purpose, because shrinking the bet was the only move that addressed the actual obstacle.</p>
+    </section>
+
+    <section id="execution">
+      <h2>7. Weak versus improved objection response</h2>
+      <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> Late-stage deal. The buyer has agreed the business case twice and says, for the second time, "I just want to make sure we've explored all the options."</p>
+
+      <div class="callout warning">
+        <div class="callout-label">Weak execution (more evidence, then urgency)</div>
+        <p><em>Seller:</em> "Absolutely, and I think when you compare us you'll be really pleased. Let me send you our competitive comparison matrix, three more case studies, and the analyst report — that should cover everything. And just so you know, our Q4 pricing does expire at the end of the month, so if we can get a decision by then I can protect the current numbers for you."<br>
+        <em>Buyer:</em> "Understood. Let me review it all and come back to you."<br>
+        <em>[Six weeks of silence.]</em></p>
+        <p><em>Why it fails:</em> The buyer's problem is not a shortage of information — they have agreed the case twice. Sending five more documents increases the volume they must reconcile before they can feel safe, which raises the cost of deciding. The deadline then raises the stakes of choosing wrongly, which is the exact fear producing the paralysis. Both moves are locally reasonable and both make the diagnosed condition worse.</p>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-label">Improved execution (judge, recommend, limit, de-risk)</div>
+        <p><em>Seller:</em> "Can I say something that might be unhelpful commercially? I don't think more information is what's missing here. We've been through the case twice and you've agreed with it both times — so my read is that the hard part isn't whether it works, it's committing to it. Tell me if I've got that wrong."<br>
+        <em>Buyer:</em> "…No, that's about right. If this doesn't land, it's my name on it."<br>
+        <em>Seller:</em> "Then let me be more useful. First — of the four vendors you're looking at, two aren't worth your time: [X] can't do multi-site consolidation and [Y] would need a services engagement you haven't budgeted. I'd compare us against [Z] and nobody else. Second, if you asked me directly, I'd start with the Leeds site only, not all five — the data there is cleanest and you'd know inside eight weeks whether this works. Third, what I'd be worried about in your position is our reporting module; it's genuinely weaker than [Z]'s and if reporting is central you should weight that. Fourth — let's write down now what success looks like at week eight, and put in a clean exit if it doesn't hit. Then the thing with your name on it is an eight-week pilot with defined criteria, not a five-site rollout."<br>
+        <em>Buyer:</em> "That I can take to the board."</p>
+        <p><em>Why it succeeds:</em> Named the real obstacle without accusation and invited correction. Limited the option set with reasons. Made an explicit recommendation, including a genuine weakness that cost the seller something — which is what made the rest credible. And converted an irreversible five-site decision into a bounded, exitable one, which is the only move that actually addresses omission bias.</p>
+      </div>
+    </section>
+
+    <section id="practice">
+      <h2>8. Practice: build your objection decision tree</h2>
+      <p><strong>Exercise goal:</strong> produce a decision tree for your five most frequent objections that branches on <em>diagnosis</em> rather than terminating in scripts.</p>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
+      <ol>
+        <li>List your five most frequent objections, taken from actual call recordings or notes — not from memory, which over-samples the dramatic ones.</li>
+        <li>For each, write the four possible meanings: as a concern, as a condition, as a deflection, and as indecision. All five will support all four readings; this is the point.</li>
+        <li>Write the one clarifying question that best separates the categories for that objection. One question, not three.</li>
+        <li>For each branch, write the response — and for the condition branch, write the honest disqualification language. If you cannot write it, you will not say it.</li>
+        <li>For the indecision branch, write all four JOLT moves specific to your product: which options you would rule out, what you would recommend, what smallest first step exists, and what risk-reduction you can actually offer.</li>
+        <li>Write your genuine weakness — the one you would disclose in the recommendation. It must be real enough to cost you a deal occasionally.</li>
+        <li>Write the confirmation question you will use at step four, and commit to using it every time.</li>
+        <li>Test the tree on three live conversations and record which branch each took. Revise.</li>
+      </ol>
+
+      <div class="solution-guide">
+        <h3>Completed exemplar (one objection of five)</h3>
+        <table>
+        <thead><tr><th>Element</th><th>Entry</th></tr></thead>
+        <tbody>
+        <tr><td><strong>Objection</strong></td><td>"We're happy with our current provider."</td></tr>
+        <tr><td><strong>As concern</strong></td><td>They do not know what they are missing; no basis for comparison.</td></tr>
+        <tr><td><strong>As condition</strong></td><td>26 months remaining on a contract with a punitive exit clause.</td></tr>
+        <tr><td><strong>As deflection</strong></td><td>They are not happy at all; they simply do not want another vendor conversation.</td></tr>
+        <tr><td><strong>As indecision</strong></td><td>They know the incumbent is failing and cannot face the switching risk and internal argument.</td></tr>
+        <tr><td><strong>Clarifying question</strong></td><td>"That's good to hear — what do they do best? And is there anything your team still works around?" <em>(The second half is where the diagnosis lives; the first half makes it safe to answer.)</em></td></tr>
+        <tr><td><strong>Concern branch</strong></td><td>Offer a bounded comparison on the one dimension they named as a workaround. Not a full bake-off.</td></tr>
+        <tr><td><strong>Condition branch</strong></td><td>"Then I'd be wasting your time pushing this now. Can I check the renewal date and come back four months before it? In the meantime I'll send the benchmark data whether or not we ever do business." <em>Disqualify honestly and stay useful.</em></td></tr>
+        <tr><td><strong>Deflection branch</strong></td><td>"Totally fair — vendor conversations are a cost. If the answer is just 'not now', tell me and I'll stop; it genuinely doesn't cost you anything."</td></tr>
+        <tr><td><strong>Indecision branch (JOLT)</strong></td><td><em>Judge:</em> agreement plus no action plus a shifting objection. <em>Offer:</em> "I'd run us in parallel on one workflow rather than switch." <em>Limit:</em> "You don't need to evaluate five — us and [Z]." <em>Take risk off:</em> parallel run, 90 days, no migration, exit with no data lock-in.</td></tr>
+        <tr><td><strong>Disclosed weakness</strong></td><td>"Our mobile app is worse than theirs. If your field team lives in the app, that matters and you should weight it heavily."</td></tr>
+        <tr><td><strong>Confirmation question</strong></td><td>"Does that cover it, or is there a part I've missed?"</td></tr>
+        </tbody>
+        </table>
+      </div>
+
+      <p><strong>Evaluation rubric:</strong> Objections sourced from real recordings (10%); all four readings written for each (20%); clarifying questions that genuinely discriminate between categories (20%); honest disqualification language actually written out (15%); complete and product-specific JOLT branch (20%); a genuine disclosed weakness (15%).</p>
+      <p><strong>Beginner variation:</strong> Do it for one objection — "it's too expensive" — and use the diagnostic question in your next five conversations. Tally which category each turned out to be. Most sellers are surprised by how few are concerns.</p>
+      <p><strong>Advanced variation:</strong> Analyse your last twenty closed-lost deals and categorize the final stated objection in each. Then compare against what you learn from an independent win/loss interview (Module 31). The gap between the objection the seller recorded and the reason the buyer gives is usually the most valuable data your team is not collecting.</p>
+    </section>
+
+    <section id="knowledge-check">
+      <h2>9. Applied knowledge check</h2>
+
+      <details><summary>1. A buyer says "it's too expensive." What is your first move?</summary>
+      <p>Clarify which of two very different things they mean: "Is it more than you have, or more than you think it's worth?" The first is a condition — arithmetic, not belief, and no amount of value framing changes it; the honest responses are restructuring scope or disqualifying. The second is a concern — a value gap that more evidence can genuinely close. Responding with a value reframe to someone who simply does not have the money is how sellers become the person a buyer stops taking calls from.</p></details>
+
+      <details><summary>2. Why do more evidence and more urgency make indecision worse?</summary>
+      <p>Because they treat a problem the buyer does not have and inflame the one they do. An indecisive buyer already agrees with the case; additional evidence adds to the volume they feel obliged to reconcile before it is safe to act, raising the cost of deciding. Urgency raises the stakes of getting it wrong — and since omission bias means errors of commission already feel worse than errors of omission, raising the stakes pushes them further toward inaction. The moves that work invert both: give less to consider, take a position, and make the decision smaller and reversible.</p></details>
+
+      <details><summary>3. You solve an objection and immediately get a new one. What does that pattern tell you?</summary>
+      <p>Deflection. When the stated objection is genuine, resolving it produces movement; when it is a socially acceptable substitute, resolving it produces a replacement, and you can repeat that loop indefinitely. The isolation question at step three catches it early — "if we resolved that, would you move forward, or is there something else?" Once identified, the move is not to solve harder but to make the truth safe and cheap to tell: "if this isn't going ahead, I'd genuinely rather know — it doesn't cost you anything to say so."</p></details>
+
+      <details><summary>4. Why must you confirm resolution explicitly rather than moving on when the buyer stops arguing?</summary>
+      <p>Because silence is not agreement, and an unresolved objection does not disappear — it goes underground and reappears at signature, usually via a stakeholder who was never in the room and heard a partial version. Buyers also frequently stop pressing out of politeness rather than satisfaction. "Does that address it, or is there part of it I've missed?" costs one sentence and either closes the loop or surfaces the remainder while you can still act on it.</p></details>
+
+      <details><summary>5. Making an explicit recommendation is the strongest move against indecision. What is the prerequisite?</summary>
+      <p>Credibility built by having recommended against your own interest before. "I'd take option B and not C" is only useful if the buyer believes you would say "don't buy this at all" when that were true — otherwise the recommendation is read as a close and adds nothing. Practically this means disclosing a genuine weakness, ruling out parts of your own offering that do not fit, and occasionally telling a prospect to stay with their incumbent. The cost is real deals; the return is that in the roughly half of stalled deals driven by indecision, you hold the one instrument that works.</p></details>
+    </section>
+
+    <section id="conclusion">
+      <h2>10. Practical conclusion &amp; next action</h2>
+      <p>Objection handling is a diagnostic discipline that happens to end in a response. A seller who classifies correctly and responds adequately will beat one who responds brilliantly to the wrong category, every time — because three of the four categories are made worse by the standard script.</p>
       <ul>
-        <li><strong>J</strong>udge the level of indecision (Are they negotiating, or just afraid to pull the trigger?)</li>
-        <li><strong>O</strong>ffer your recommendation (Don't give them 5 options; tell them exactly what to buy).</li>
-        <li><strong>L</strong>imit the exploration (Stop answering endless "what if" questions; draw a line).</li>
-        <li><strong>T</strong>ake risk off the table (Opt-out clauses, creative pilots, structured offramps).</li>
+        <li>The same sentence can be a concern, a condition, a deflection, or indecision. Diagnose before responding.</li>
+        <li>"If this were resolved, would you move forward — or is there something else?" separates all four categories in one question.</li>
+        <li>Conditions are arithmetic. Acknowledge, test the timing, restructure or disqualify honestly.</li>
+        <li>Deflections are detected by the objection that replaces the one you solved. Make the truth cheap to tell.</li>
+        <li>Indecision may be the largest category. Judge it, offer a recommendation, limit exploration, take risk off the table.</li>
+        <li>Never add evidence or urgency to an indecisive buyer.</li>
+        <li>Confirm resolution explicitly, or it returns at signature through someone you never met.</li>
       </ul>
-    </section>
-
-    <section id="real-vs-fake">
-      <h2>3. Real vs. Smokescreen Objections</h2>
-      <p>The biggest mistake in objection handling is taking the first objection at face value. Often it's a polite cover (smokescreen) for a deeper, more socially unacceptable concern (the real objection).</p>
-
-      <div class="real-vs-fake">
-        <div class="rvf-col fake">
-          <h4>Smokescreen (The Safe Excuse)</h4>
-          <ul>
-            <li>"It's too expensive."</li>
-            <li>"I need to think about it."</li>
-            <li>"Send me some more information."</li>
-            <li>"Now isn't a good time."</li>
-            <li>"I need to check with my boss."</li>
-          </ul>
-        </div>
-        <div class="rvf-col real">
-          <h4>Possible underlying concern</h4>
-          <ul>
-            <li>"I don't see enough value to risk my budget."</li>
-            <li>"I don't trust you, or I don't trust your product."</li>
-            <li>"I want to get off this call without conflict."</li>
-            <li>"I am overwhelmed by the implementation risk."</li>
-            <li>"I have no political capital to push this internally."</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="callout">
-        <div class="callout-label">Diagnostic Tool</div>
-        <p>When you get an objection, isolate it immediately: <strong>"If we could completely solve [objection], is there anything else that would prevent us from moving forward today?"</strong> If they say "well, also...", the first objection was a smokescreen.</p>
-      </div>
-    </section>
-
-    <section id="the-framework">
-      <h2>4. The 5-Step Clinical Framework</h2>
-      <p>Apply this framework to <em>any</em> objection. Bypassing these steps triggers the buyer's defensive mechanisms.</p>
-
-      <div class="five-step">
-        <div class="step-row">
-          <div class="step-num-label">Step 01</div>
-          <div class="step-name">Acknowledge</div>
-          <p class="step-desc">Show you heard them without instantly fighting back. "I hear you," or "That's a completely fair point." The buyer must feel safe before they can process logic.</p>
-        </div>
-        <div class="step-row">
-          <div class="step-num-label">Step 02</div>
-          <div class="step-name">Clarify</div>
-          <p class="step-desc">Isolate the root cause. "When you say expensive—expensive compared to what you're currently using, or just more than you budgeted?"</p>
-        </div>
-        <div class="step-row">
-          <div class="step-num-label">Step 03</div>
-          <div class="step-name">Empathize</div>
-          <p class="step-desc">Normalize their fear. "I get why that matters. Almost all of our enterprise clients had that exact same concern before we deployed." This removes the stigma of their objection.</p>
-        </div>
-        <div class="step-row">
-          <div class="step-num-label">Step 04</div>
-          <div class="step-name">Respond</div>
-          <p class="step-desc">Provide the reframe, the clinical data, or the risk reversal (JOLT). This is where you actually answer the objection, but only after their brain is primed to accept it.</p>
-        </div>
-        <div class="step-row">
-          <div class="step-num-label">Step 05</div>
-          <div class="step-name">Confirm</div>
-          <p class="step-desc">Close the loop. "Does that address your concern about the implementation timeline?" If yes, advance the deal. If no, loop back to step 2.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="case-studies">
-      <h2>5. Composite Practice Scenarios</h2>
-      
-      <h3>Composite Scenario 1: The $1.5M Enterprise Data Infrastructure (Price as Proxy)</h3>
-      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
-      <p><strong>Background:</strong> An AE was pitching a $1.5M data warehouse upgrade. The CTO objected: "It's way too expensive. We can't justify that to the board."</p>
-      <p><strong>The Incident:</strong> The AE immediately tried to defend the ROI with a spreadsheet. The CTO shut down. The AE failed to clarify, assuming "expensive" meant "lack of funds."</p>
-      <p><strong>The Fix:</strong> The VP of Sales stepped in and used the 5-step framework. They clarified: <em>"When you say expensive, is it the actual dollar amount, or the risk that it won't deliver the speed we promised?"</em> The CTO admitted they had the budget, but feared getting fired if the migration failed.</p>
-      <p><strong>The Result:</strong> The "price" objection was a smokescreen for "trust." The VP offered a phased rollout with performance guarantees (JOLT: Take risk off the table). The CTO signed at full price.</p>
-
-      <h3>Composite Scenario 2: The $3.2M Supply Chain AI (Authority Objection)</h3>
-      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
-      <p><strong>Background:</strong> A Director of Supply Chain loved a $3.2M AI optimization tool but stalled at the 11th hour: "I need to run this by the Global VP of Operations next month."</p>
-      <p><strong>One interpretation:</strong> The Director may have preferred inaction because it diffused responsibility. Buying the tool was a massive career risk; deferring to the VP diffused the blame.</p>
-      <p><strong>The Result:</strong> The seller used Tactical Empathy: <em>"It sounds like you're worried the VP might push back on the integration downtime."</em> The Director agreed. The seller provided an executive summary tailored specifically for the VP's concerns and offered to co-present it. The deal closed two weeks later.</p>
-
-      <h3>Composite Scenario 3: The $900K Cybersecurity SaaS (Timing Stall)</h3>
-      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
-      <p><strong>Background:</strong> A prospect told a security rep, "We love it, but call us back in Q3. We have too many projects right now."</p>
-      <p><strong>The Mistake:</strong> The rep said "Okay, talk in Q3" and hung up. Q3 came, the prospect ghosted.</p>
-      <p><strong>The Reframe:</strong> An elite rep would have clarified the cost of inaction. <em>"I completely understand prioritizing. But during our discovery, you mentioned you're currently failing compliance audits weekly. What is the financial cost of waiting until Q3 to fix that?"</em> By anchoring to the pain of the status quo, the elite rep asks the buyer to evaluate the cost of inaction.</p>
-    </section>
-
-    <section id="roleplay">
-      <h2>6. Verbatim Roleplay: The 5-Step Framework in Action</h2>
-      <p>This transcript shows an elite seller using the 5-step framework to handle a severe "Price" objection during a final negotiation.</p>
-      
-      <div class="callout">
-        <div class="callout-label">Transcript Analysis</div>
-        <p><strong>Buyer (forceful objection):</strong> "I just saw the final quote. There's no way we can do $250K. It's totally out of our budget. We have to pause this."</p>
-        <p><strong>Elite Seller (Adult Ego - 2-second pause):</strong> "I hear you. $250K is a significant investment." <em>(Step 1: Acknowledge)</em></p>
-        <p><strong>Elite Seller:</strong> "Help me understand... when you say it's out of budget, do you mean the funds literally do not exist, or that you aren't convinced the ROI justifies pulling from other departments?" <em>(Step 2: Clarify)</em></p>
-        <p><strong>Buyer:</strong> "We have the money, but my CFO will kill me if I bring her a $250K invoice for a tool she's never heard of."</p>
-        <p><strong>Elite Seller:</strong> "That makes complete sense. If I were in your shoes, I wouldn't want to walk into the CFO's office blind either. Every single one of our enterprise champions feels that exact same pressure." <em>(Step 3: Empathize)</em></p>
-        <p><strong>Elite Seller:</strong> "What if we did this: Instead of you pitching her, we arm you with the exact 1-page business case our last three clients used to get their CFOs on board. We can even do a 90-day opt-out clause so the risk is on us, not you." <em>(Step 4: Respond / JOLT)</em></p>
-        <p><strong>Elite Seller:</strong> "If we structure it that way, would you feel comfortable taking this to her on Thursday?" <em>(Step 5: Confirm)</em></p>
-      </div>
-      <p><strong>The Breakdown:</strong> The seller didn't argue about price. They systematically peeled back the layers to reveal the real objection (political fear of the CFO) and solved that specific problem.</p>
-    </section>
-
-    <section id="troubleshooting">
-      <h2>7. Troubleshooting Pitfalls</h2>
-      <p>If you are losing deals to objections, audit yourself against these failure modes:</p>
-      <ul>
-        <li><strong>Defensive Spiking:</strong> The moment you hear "your competitor is better," you may become defensive. You interrupt the buyer and start aggressively pitching features. You have lost the moral high ground and the deal.</li>
-        <li><strong>Skipping 'Clarify':</strong> A buyer says "We're going in a different direction." The amateur says "Okay, thanks." The elite rep says, "I understand. Just so I can improve, what specifically caused you to choose that direction?"</li>
-        <li><strong>Answering Smokescreens:</strong> You spend 20 minutes proving ROI because they said "it's too expensive," only to find out they literally don't have the authority to sign anyway. Isolate the objection before offering solutions.</li>
-        <li><strong>The "Check-in" Failure:</strong> When buyers stall, amateurs send emails saying "Just checking in!" This adds zero value and annoys the buyer. Elite reps send insights: "Saw this article on compliance changes; thought it might affect your Q3 timeline."</li>
-        <li><strong>Talking Past the Close:</strong> When you successfully handle the objection (Step 5: Confirm), and the buyer says "Okay, that makes sense." STOP TALKING. Do not keep selling. Transition immediately to next steps.</li>
-      </ul>
+      <p><strong>Immediate action:</strong> In your next five conversations, use the isolation question every time an objection appears, and record which of the four categories it turned out to be. Most sellers find that fewer than a third are the concerns they have been trained to answer.</p>
+      <p><strong>Related modules:</strong> <a href="module-10.html">10 · Closing &amp; Commitment</a>, <a href="module-02.html">02 · Psychology of Selling</a>, <a href="module-24.html">24 · Working with Procurement</a>, and <a href="module-31.html">31 · Customer &amp; Market Research</a>.</p>
     </section>
 
   </article>
@@ -299,7 +263,7 @@
   </a>
   <a href="module-10.html" class="next">
     <div class="dir">Next · Module 10</div>
-    <div class="next-title">Closing</div>
+    <div class="next-title">Closing &amp; Commitment</div>
   </a>
 </nav>
 
@@ -308,7 +272,6 @@
 </footer>
 
 <script src="script.js"></script>
-<!-- Google Translate -->
 <div id="google_translate_element" style="position:absolute; top:-9999px; left:-9999px; z-index:-9999;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {

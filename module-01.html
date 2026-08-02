@@ -3,164 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 1 · Foundations of Selling — Sales Mastery</title>
+<title>Module 01 · Foundations of Selling — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
-<style>
-  /* Process diagram */
-  .process-diagram {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
-    margin: 32px 0;
-  }
-  .process-step {
-    background: var(--ink);
-    border: 1px solid var(--line);
-    padding: 16px 12px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s;
-    position: relative;
-  }
-  .process-step:hover { background: var(--ink-soft); border-color: var(--orange); }
-  .process-step.active { background: var(--orange); border-color: var(--orange); color: var(--ink); }
-  .process-step.active .ps-num { color: var(--ink); }
-  .ps-num {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--orange);
-    margin-bottom: 8px;
-    letter-spacing: 0.1em;
-  }
-  .ps-label {
-    font-family: var(--font-display);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.2;
-  }
-  .process-detail {
-    min-height: 120px;
-    padding: 24px;
-    background: var(--ink);
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--orange);
-    margin-top: 4px;
-  }
-  .process-detail h4 {
-    font-family: var(--font-display);
-    font-size: 20px;
-    color: var(--paper);
-    margin-bottom: 8px;
-  }
-  .process-detail p { color: var(--cream); font-size: 15px; margin: 0; }
-  
-  /* Triangle/levels diagram */
-  .levels-diagram {
-    margin: 32px 0;
-  }
-  .level-row {
-    display: grid;
-    grid-template-columns: 140px 1fr 2fr;
-    gap: 24px;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--line);
-    align-items: start;
-  }
-  .level-row:last-child { border-bottom: none; }
-  .level-badge {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 6px 12px;
-    border-radius: 2px;
-    display: inline-block;
-    text-align: center;
-  }
-  .level-badge.feature { background: rgba(107, 116, 128, 0.15); color: var(--muted); border: 1px solid var(--muted); }
-  .level-badge.benefit { background: rgba(212, 168, 67, 0.15); color: var(--gold); border: 1px solid var(--gold); }
-  .level-badge.outcome { background: rgba(255, 107, 53, 0.15); color: var(--orange); border: 1px solid var(--orange); }
-  .level-def {
-    font-family: var(--font-display);
-    font-size: 17px;
-    color: var(--cream);
-    font-weight: 500;
-  }
-  .level-example {
-    font-style: italic;
-    color: var(--paper);
-    font-size: 16px;
-  }
-  
-  /* Awareness levels visualizer */
-  .awareness-chart {
-    margin: 40px 0;
-  }
-  .aw-bar {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 16px;
-    margin-bottom: 12px;
-    align-items: center;
-  }
-  .aw-label {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--cream);
-  }
-  .aw-progress {
-    height: 36px;
-    background: var(--ink);
-    border: 1px solid var(--line);
-    position: relative;
-    overflow: hidden;
-  }
-  .aw-fill {
-    height: 100%;
-    background: linear-gradient(90deg, rgba(255,107,53,0.3), var(--orange));
-    transition: width 0.8s ease;
-  }
-  .aw-pct {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--paper);
-  }
-  
-  /* Value levers */
-  .levers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    margin: 32px 0;
-  }
-  .lever {
-    background: var(--ink);
-    padding: 28px 20px;
-  }
-  .lever-icon {
-    font-family: var(--font-display);
-    font-size: 36px;
-    color: var(--orange);
-    margin-bottom: 12px;
-    font-style: italic;
-    font-weight: 300;
-  }
-  .lever-name {
-    font-family: var(--font-display);
-    font-size: 20px;
-    color: var(--paper);
-    margin-bottom: 8px;
-  }
-  .lever-desc { color: var(--muted); font-size: 14px; line-height: 1.5; }
-</style>
 </head>
 <body>
 
@@ -178,13 +22,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">01</span>Foundations of Selling</div>
-  <h1 class="module-title">What selling <em>actually</em> is.</h1>
-  <p class="lede">Whether you're selling chewing gum at a kiosk or a €2M enterprise contract, the same mechanics apply. This module is the operating system every other module installs on top of.</p>
+  <div class="eyebrow"><span class="num">01</span>Foundations</div>
+  <h1 class="module-title">Value is a <em>changed situation</em>, not a feature list.</h1>
+  <p class="lede">Every failed sales conversation can be traced to a confusion between what a product does, what it gives, and what changes in the buyer's world. This module builds the vocabulary of value, the anatomy of a sale, and the discipline of qualification that the remaining forty-two modules depend on.</p>
   <div class="meta-strip">
-    <span>25 min read</span>
-    <span>Foundational</span>
-    <span>Required for all later modules</span>
+    <span>40 min lesson + practice</span>
+    <span>Evidence-led professional curriculum</span>
+    <span>Level 1</span>
   </div>
 </header>
 
@@ -192,248 +36,222 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#definition">What selling is</a></li>
-      <li><a href="#process">The 7-step process</a></li>
-      <li><a href="#fbo">Features · Benefits · Outcomes</a></li>
-      <li><a href="#journey">Buyer's journey</a></li>
-      <li><a href="#value">Price vs. value</a></li>
-      <li><a href="#currencies">Three currencies</a></li>
-      <li><a href="#mistakes">Common mistakes</a></li>
-      <li><a href="#exercises">Exercises</a></li>
+      <li><a href="#introduction">1. What selling actually is</a></li>
+      <li><a href="#objectives">2. Observable learning objectives</a></li>
+      <li><a href="#value">3. The value ladder: feature, benefit, outcome, impact</a></li>
+      <li><a href="#process">4. The anatomy of a sale and its failure points</a></li>
+      <li><a href="#awareness">5. Buyer awareness and the cost of arriving too early</a></li>
+      <li><a href="#worked-example">6. Worked example: translating a product into value</a></li>
+      <li><a href="#execution">7. Weak versus improved value articulation</a></li>
+      <li><a href="#practice">8. Practice: the outcome-based value statement</a></li>
+      <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
+      <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="definition">
-      <h2>What selling actually is</h2>
-      <p><strong>Selling is the process of helping another person decide to exchange something they have (usually money, time, or attention) for something you have (a product, service, or idea) such that both parties end up better off.</strong></p>
-      <p>Notice what this rules out:</p>
-      <ul>
-        <li>Tricking someone — that's fraud</li>
-        <li>Pressuring someone past their interest — that's manipulation</li>
-        <li>Hiding information — that's deception</li>
-      </ul>
-      <p>And what it requires:</p>
-      <ul>
-        <li>Genuine value on your side</li>
-        <li>Genuine need or want on theirs</li>
-        <li>A bridge of communication between the two</li>
-      </ul>
-      <p>If any of those three are missing, you're not selling. You're either failing or harming.</p>
+    <section id="introduction">
+      <h2>1. What selling actually is</h2>
+      <p>A workable definition: <strong>selling is helping a specific person or group make a decision they can defend, about a change that is worth making, using evidence they can verify.</strong> Every clause in that sentence is load-bearing.</p>
+      <p><em>A specific person or group</em> — because "the market" never signs anything. <em>A decision they can defend</em> — because in organizations the buyer must justify the choice to someone else, and in consumer purchases they must justify it to themselves at 2am. <em>A change worth making</em> — because the true competitor in most deals is not a rival vendor but the status quo, which is free, familiar, and requires no approval. <em>Evidence they can verify</em> — because a claim the buyer cannot check is a claim they must take on faith, and faith is expensive when careers are attached.</p>
+      <p>This definition has an uncomfortable implication that separates professionals from amateurs: <strong>a good seller sometimes concludes that the change is not worth making and says so.</strong> That is not a failure of nerve. A seller who cannot say no has no credibility when they say yes — and the customer knows it.</p>
+      <p>The definition also explains why selling is a knowledge discipline. Verbeke, Dietz &amp; Verwaal's meta-analysis found selling-related knowledge to be the strongest single driver of performance (β = .28). Knowledge of what? Not feature trivia. Knowledge of the buyer's business mechanics, of the problem domain, of how decisions actually get approved in that kind of organization. You cannot help someone make a defensible decision about a domain you do not understand.</p>
     </section>
 
-    <section id="process">
-      <h2>The 7-step universal process</h2>
-      <p>The time you spend in each step varies wildly — minutes at a kiosk, months in B2B — but the sequence is the same everywhere. Click each step to explore it.</p>
-
-      <div class="widget">
-        <div class="widget-header">
-          <div class="widget-title">The Process Walker</div>
-          <div class="widget-tag">Interactive</div>
-        </div>
-        
-        <div class="process-diagram" id="processDiagram">
-          <div class="process-step active" data-step="1">
-            <div class="ps-num">01</div>
-            <div class="ps-label">Prospect</div>
-          </div>
-          <div class="process-step" data-step="2">
-            <div class="ps-num">02</div>
-            <div class="ps-label">Qualify</div>
-          </div>
-          <div class="process-step" data-step="3">
-            <div class="ps-num">03</div>
-            <div class="ps-label">Approach</div>
-          </div>
-          <div class="process-step" data-step="4">
-            <div class="ps-num">04</div>
-            <div class="ps-label">Discover</div>
-          </div>
-          <div class="process-step" data-step="5">
-            <div class="ps-num">05</div>
-            <div class="ps-label">Present</div>
-          </div>
-          <div class="process-step" data-step="6">
-            <div class="ps-num">06</div>
-            <div class="ps-label">Close</div>
-          </div>
-          <div class="process-step" data-step="7">
-            <div class="ps-num">07</div>
-            <div class="ps-label">Retain</div>
-          </div>
-        </div>
-
-        <div class="process-detail" id="processDetail">
-          <h4>01 · Prospect</h4>
-          <p>Finding people who <em>might</em> want what you sell. Sources include cold outreach, ads, referrals, content, foot traffic, marketplaces.</p>
-        </div>
-      </div>
-
-      <div class="pullquote">
-        Beginners obsess over step 6 (the close). Pros obsess over step 4 (discovery).
-      </div>
-    </section>
-
-    <section id="fbo">
-      <h2>Features → Benefits → Outcomes</h2>
-      <p>This is the single most important distinction in selling. Most salespeople sell features. Good ones sell benefits. Great ones sell outcomes.</p>
-
-      <div class="levels-diagram">
-        <div class="level-row">
-          <span class="level-badge feature">Feature</span>
-          <div class="level-def">A factual attribute of the product</div>
-          <div class="level-example">"18-volt lithium battery, ½-inch chuck"</div>
-        </div>
-        <div class="level-row">
-          <span class="level-badge benefit">Benefit</span>
-          <div class="level-def">What that does for the user</div>
-          <div class="level-example">"Drills through hardwood without slowing down"</div>
-        </div>
-        <div class="level-row">
-          <span class="level-badge outcome">Outcome</span>
-          <div class="level-def">The change in the user's life</div>
-          <div class="level-example">"Your shelves are up by Saturday and your spouse is impressed"</div>
-        </div>
-      </div>
-
-      <div class="callout">
-        <div class="callout-label">Drill</div>
-        <p>Take any product near you and write all three levels for it. If you can't, you don't yet know how to sell it.</p>
-      </div>
-    </section>
-
-    <section id="journey">
-      <h2>The buyer's awareness journey</h2>
-      <p>Buyers don't go from "never heard of you" to "give me your credit card" in one leap. They move through stages — and your message must match the stage.</p>
-
-      <div class="widget">
-        <div class="widget-header">
-          <div class="widget-title">Eugene Schwartz's Five Awareness Levels</div>
-          <div class="widget-tag">1960s · still bedrock</div>
-        </div>
-        <div class="awareness-chart">
-          <div class="aw-bar">
-            <div class="aw-label">Unaware</div>
-            <div class="aw-progress"><div class="aw-fill" style="width: 18%"></div><div class="aw-pct">Big audience · zero intent</div></div>
-          </div>
-          <div class="aw-bar">
-            <div class="aw-label">Problem-aware</div>
-            <div class="aw-progress"><div class="aw-fill" style="width: 36%"></div><div class="aw-pct">Knows pain, not solutions</div></div>
-          </div>
-          <div class="aw-bar">
-            <div class="aw-label">Solution-aware</div>
-            <div class="aw-progress"><div class="aw-fill" style="width: 56%"></div><div class="aw-pct">Comparing options</div></div>
-          </div>
-          <div class="aw-bar">
-            <div class="aw-label">Product-aware</div>
-            <div class="aw-progress"><div class="aw-fill" style="width: 78%"></div><div class="aw-pct">Knows your product</div></div>
-          </div>
-          <div class="aw-bar">
-            <div class="aw-label">Most aware</div>
-            <div class="aw-progress"><div class="aw-fill" style="width: 96%"></div><div class="aw-pct">Ready to buy · needs nudge</div></div>
-          </div>
-        </div>
-        <div class="mermaid" style="margin-top: 32px; padding: 24px; background: var(--ink); border: 1px solid var(--line); border-radius: 4px;">
-sequenceDiagram
-    participant Buyer
-    participant Seller
-    Note over Buyer,Seller: 1. Unaware
-    Buyer->>Seller: Ignorant of problem
-    Seller-->>Buyer: Educational Content / Disruptive Ad
-    Note over Buyer,Seller: 2. Problem Aware
-    Buyer->>Seller: Feels the pain
-    Seller-->>Buyer: Agitate pain & name the problem
-    Note over Buyer,Seller: 3. Solution Aware
-    Buyer->>Seller: Looking for answers
-    Seller-->>Buyer: Present frameworks & social proof
-    Note over Buyer,Seller: 4. Product Aware
-    Buyer->>Seller: Considering your tool
-    Seller-->>Buyer: Product Demo & Value Prop
-    Note over Buyer,Seller: 5. Most Aware
-    Buyer->>Seller: Ready to buy
-    Seller-->>Buyer: Direct CTA / Offer / Incentive
-        </div>
-        <p style="margin-top: 24px; color: var(--muted); font-size: 14px;">Pitching product features to someone who doesn't know they have a problem will fail. Educating someone already ready to buy is wasted breath.</p>
-      </div>
+    <section id="objectives">
+      <h2>2. Observable learning objectives</h2>
+      <p>By completing this module you will be able to demonstrate the following:</p>
+      <p>Separate features, benefits, outcomes, and financial impact, and correctly classify any claim in your own material.</p>
+      <p>Map the six stages of a sale and identify which stage a given deal is genuinely in, using buyer evidence rather than seller optimism.</p>
+      <p>Place a buyer on the awareness spectrum and select the appropriate first message for that position.</p>
+      <p>Distinguish qualification from discovery, and state the four conditions under which a deal is real.</p>
+      <p>Write an outcome-based value statement that survives the question "so what?" three times in a row.</p>
     </section>
 
     <section id="value">
-      <h2>Price vs. value</h2>
-      <p><strong>Price</strong> is the number on the tag. <strong>Value</strong> is what the buyer believes they get for that number.</p>
-      <p>A €5,000 watch is "expensive" if value = telling the time. The same watch is "cheap" if value = signaling status to peers worth €50,000 in deals.</p>
-      <p>Your job is <em>not to drop the price</em> — it's to <em>raise the perceived value</em> until value &gt; price in the buyer's mind. When that gap is wide enough, the sale happens.</p>
+      <h2>3. The value ladder: feature, benefit, outcome, impact</h2>
+      <p>Most sales material dies on the first two rungs of a four-rung ladder. Climbing it is mechanical once you see the structure.</p>
 
-      <h3>The four levers of value</h3>
-      <div class="levers-grid">
-        <div class="lever">
-          <div class="lever-icon">i.</div>
-          <div class="lever-name">Outcome</div>
-          <div class="lever-desc">How big is the dream they get?</div>
-        </div>
-        <div class="lever">
-          <div class="lever-icon">ii.</div>
-          <div class="lever-name">Likelihood</div>
-          <div class="lever-desc">How sure are they they'll get it?</div>
-        </div>
-        <div class="lever">
-          <div class="lever-icon">iii.</div>
-          <div class="lever-name">Time</div>
-          <div class="lever-desc">How fast does the dream arrive?</div>
-        </div>
-        <div class="lever">
-          <div class="lever-icon">iv.</div>
-          <div class="lever-name">Effort</div>
-          <div class="lever-desc">How easy is it for them?</div>
-        </div>
+      <h3>Table 1: The four rungs of value</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Rung</th><th>Question it answers</th><th>Example (scheduling software)</th><th>Who cares</th><th>Why it fails alone</th></tr></thead>
+      <tbody>
+      <tr><td><strong>1. Feature</strong></td><td>What is it?</td><td>"Automated shift-swap approval workflow."</td><td>The technical evaluator, briefly.</td><td>Requires the buyer to do the translation work themselves. Most will not.</td></tr>
+      <tr><td><strong>2. Benefit</strong></td><td>What does it do?</td><td>"Managers no longer approve swaps manually."</td><td>The user.</td><td>Still describes your product's behavior, not the buyer's changed world.</td></tr>
+      <tr><td><strong>3. Outcome</strong></td><td>What changes for them?</td><td>"Shift managers recover roughly four hours a week and swap disputes stop reaching HR."</td><td>The user's manager.</td><td>Nothing — this is the minimum professional standard. But it is not yet money.</td></tr>
+      <tr><td><strong>4. Impact</strong></td><td>What is that worth, and to whom?</td><td>"Across 40 stores that is ~8,300 manager hours a year; at a loaded £24/hour and 60% realizable, ~£120k of recovered supervisory capacity, plus a measurable drop in HR escalations."</td><td>The economic buyer and finance.</td><td>Nothing, provided the assumptions are visible and the buyer can challenge them.</td></tr>
+      </tbody>
+      </table>
       </div>
-      <p>Improve any of these four and value goes up without changing the product.</p>
-    </section>
 
-    <section id="currencies">
-      <h2>The three currencies buyers spend</h2>
-      <p>Money is the obvious one. The other two are often more precious.</p>
-      <div class="stat-grid">
-        <div class="stat">
-          <div class="stat-num">€</div>
-          <div class="stat-label">Money · The one most sellers fixate on</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">⌛</div>
-          <div class="stat-label">Time · Every minute they spend with you</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">◉</div>
-          <div class="stat-label">Attention · Finite, expensive, in 2026 priceless</div>
-        </div>
+      <p>The mechanical test for climbing a rung is to ask <strong>"so what?"</strong> and answer honestly. A feature that survives three "so whats" has reached impact. A feature that cannot survive one is not worth saying.</p>
+      <div class="callout warning">
+        <div class="callout-label">The most common failure at rung four</div>
+        <p>Sellers race to a monetary number and quietly convert <em>capacity</em> into <em>cash</em>. Four recovered hours per manager per week is real, but it becomes money only if those hours are redeployed, a hire is avoided, overtime falls, or throughput rises. State it as capacity, then ask the buyer which of those conversions applies in their organization. A CFO who catches you inflating capacity into cash will discount your entire model — and they will be right to. Module 34 treats this in depth.</p>
       </div>
-      <p>Respect all three. Wasting a buyer's time or attention is how you lose them before they ever consider spending money.</p>
+      <p>There is a fifth, unofficial rung that experienced sellers work with quietly: <strong>personal impact</strong>. What does this change mean for the individual approving it — their credibility, their exposure if it fails, their quarter? This is not manipulation to acknowledge; it is a real variable in every organizational decision. Module 36 handles it explicitly. The ethical line, covered in Module 12, is that you may surface personal risk and help reduce it. You may not manufacture it.</p>
     </section>
 
-    <section id="mistakes">
-      <h2>Common beginner mistakes</h2>
-      <ul>
-        <li>Talking more than listening</li>
-        <li>Pitching before discovering</li>
-        <li>Selling features instead of outcomes</li>
-        <li>Competing on price instead of value</li>
-        <li>Trying to convince instead of qualifying out</li>
-        <li>Assuming all buyers are the same</li>
-      </ul>
+    <section id="process">
+      <h2>4. The anatomy of a sale and its failure points</h2>
+      <p>Sales processes are frameworks (class F): useful for making work inspectable, dangerous when a stage is marked complete on seller optimism rather than buyer evidence. The version below is deliberately generic; adapt the stage names, keep the evidence discipline.</p>
+
+      <h3>Table 2: Six stages, their buyer evidence, and their characteristic failure</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Stage</th><th>Seller's job</th><th>Evidence the stage is genuinely complete</th><th>Characteristic failure</th></tr></thead>
+      <tbody>
+      <tr><td><strong>1. Target</strong></td><td>Decide who is worth a conversation and who is not.</td><td>A written ICP with inclusion <em>and</em> exclusion criteria, applied to a scored list.</td><td>Treating anyone reachable as a prospect, which poisons every downstream metric.</td></tr>
+      <tr><td><strong>2. Engage</strong></td><td>Earn attention with relevance.</td><td>The buyer replies, books, or reschedules — an action, not an open rate.</td><td>Measuring activity volume instead of qualified conversations.</td></tr>
+      <tr><td><strong>3. Diagnose</strong></td><td>Understand the situation well enough to be useful or to withdraw.</td><td>A written problem statement the buyer confirms in their own words.</td><td>Pitching inside the first ten minutes; "discovery" that is really a qualification interrogation.</td></tr>
+      <tr><td><strong>4. Prove</strong></td><td>Show, in their context, that the change works.</td><td>Agreed success criteria before the demo or pilot, and results measured against them.</td><td>A feature tour that proves your product exists rather than that it solves their problem.</td></tr>
+      <tr><td><strong>5. Decide</strong></td><td>Help the group commit, or reach an honest no.</td><td>A named decision process, a date, and confirmation of who else must agree.</td><td>Chasing a single enthusiastic contact who has no authority and cannot say so.</td></tr>
+      <tr><td><strong>6. Deliver &amp; expand</strong></td><td>Ensure the promised outcome actually occurs.</td><td>A first measurable result, and a renewal or expansion driven by realized value.</td><td>Handing off at signature; the seller's promise becoming someone else's problem.</td></tr>
+      </tbody>
+      </table>
+      </div>
+
+      <p><strong>Discovery and qualification are not the same activity</strong>, and conflating them is one of the most expensive errors in the profession. Discovery serves the buyer: it builds a shared understanding of their situation. Qualification serves you: it decides whether to invest more of your finite capacity. Both are legitimate. Running qualification while pretending it is discovery — firing budget, authority, and timeline questions at someone who came to talk about their problem — is what makes buyers describe sales calls as interrogations.</p>
+      <div class="callout tip">
+        <div class="callout-label">The four conditions for a real deal</div>
+        <p>A deal is real when all four hold, each supported by buyer evidence rather than seller belief: <strong>(1)</strong> there is a problem the buyer has independently described as worth solving; <strong>(2)</strong> someone in the organization owns the consequence of not solving it; <strong>(3)</strong> a decision process exists and you know its steps; <strong>(4)</strong> the economics work for both parties. Miss one and you have an interesting conversation. Module 23 turns this into an inspectable evidence grid.</p>
+      </div>
     </section>
 
-    <section id="exercises">
-      <h2>Exercises</h2>
-      <ol>
-        <li><strong>Pick a product you own.</strong> Write its features, benefits, and outcomes. Show a friend and ask which level lands strongest for them.</li>
-        <li><strong>Audit a recent sales conversation</strong> (as buyer or seller). Map it onto the 7-step process. Where did it break down?</li>
-        <li><strong>Find an ad</strong> and identify which awareness level it's targeting. Is the targeting correct?</li>
-      </ol>
+    <section id="awareness">
+      <h2>5. Buyer awareness and the cost of arriving too early</h2>
+      <p>The same message succeeds or fails depending entirely on where the buyer already stands. Eugene Schwartz's awareness spectrum is a framework (class F) that has survived seventy years because it maps a real constraint: you cannot answer a question the buyer has not yet asked.</p>
+
+      <h3>Table 3: Awareness stages and the message each one requires</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Stage</th><th>Buyer's internal state</th><th>Message that works</th><th>Message that fails and why</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Unaware</strong></td><td>"Things are normal."</td><td>Evidence that a cost exists which they have normalized. Benchmarks, peer data, a diagnostic.</td><td>A product pitch. There is no perceived problem for it to attach to.</td></tr>
+      <tr><td><strong>Problem-aware</strong></td><td>"This is annoying, but it's just how it is."</td><td>Name the mechanism and its cost. Show that it is solvable, not inevitable.</td><td>Feature comparison. They are not yet comparing anything.</td></tr>
+      <tr><td><strong>Solution-aware</strong></td><td>"I know approaches like this exist."</td><td>Category education: how the approaches differ, and which fits which circumstance.</td><td>Discounting. Price is not the open question.</td></tr>
+      <tr><td><strong>Product-aware</strong></td><td>"I'm comparing you to two others."</td><td>Specific, checkable differentiation and comparable proof.</td><td>Restating the problem. They resolved that two months ago and it wastes their time.</td></tr>
+      <tr><td><strong>Most aware</strong></td><td>"I want to do this; make it easy."</td><td>Terms, risk reduction, and an unambiguous next step.</td><td>Any further persuasion, which reads as pressure and can reopen doubt.</td></tr>
+      </tbody>
+      </table>
+      </div>
+
+      <p>Two operational rules follow. First, <strong>diagnose the stage before choosing the message</strong> — a single question usually does it: "Before we go further, what have you already tried or looked at for this?" Second, <strong>you can move a buyer one stage per interaction, not three.</strong> Attempting to drag an unaware buyer to a signature in a single call is the structural cause of most "they went dark" outcomes.</p>
+    </section>
+
+    <section id="worked-example">
+      <h2>6. Worked example: translating a product into value</h2>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
+      <p><strong>Scenario:</strong> A mid-market logistics software company sells a route-optimization module. Marketing supplies the sales team with a feature sheet. Two sellers work the same 30-account list for a quarter. Seller A uses the sheet. Seller B rewrites it up the value ladder and validates each rung with three customers before using it.</p>
+
+      <h3>Table 4: The same product, four rungs, four outcomes</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>What the seller says</th><th>Rung</th><th>Buyer's unspoken response</th><th>Observed result across 30 accounts</th></tr></thead>
+      <tbody>
+      <tr><td>"Multi-constraint route optimization with real-time traffic ingestion."</td><td>1 · Feature</td><td>"So does everyone. Send a deck."</td><td>4 replies, 1 meeting. Meeting became a feature comparison the incumbent won.</td></tr>
+      <tr><td>"It plans your routes automatically."</td><td>2 · Benefit</td><td>"We already have planning software."</td><td>6 replies, 2 meetings, both stalled at "we'll revisit next year."</td></tr>
+      <tr><td>"Depot planners stop rebuilding routes by hand every morning, and same-day exception re-planning drops from ~40 minutes to under 5."</td><td>3 · Outcome</td><td>"That is our morning. How do you know that?"</td><td>11 replies, 7 meetings. Conversation moved to <em>how</em>, not <em>whether</em>.</td></tr>
+      <tr><td>"In three comparable depots, exception re-planning fell from 40 to 6 minutes. At your 14 depots and ~9 exceptions a day, that is ~11,600 planner-hours a year. Whether that becomes cash depends on whether you'd avoid the two seasonal temps you hired last year — that is the number I'd want to test with your ops director."</td><td>4 · Impact (with assumptions exposed)</td><td>"Come and talk to our ops director and our finance partner."</td><td>11 replies, 7 meetings, 4 progressed to a joint model, 2 closed. <strong>The credibility came from naming the uncertainty, not from hiding it.</strong></td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p><strong>Takeaway:</strong> Notice that rung four did not win by having a bigger number. It won by exposing the conversion assumption — capacity to cash — and inviting the buyer to test it. Seller A's feature sheet was not wrong; it was simply written for a rung nobody buys at.</p>
+    </section>
+
+    <section id="execution">
+      <h2>7. Weak versus improved value articulation</h2>
+      <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> First conversation with an operations director at a 400-person manufacturer. The seller has 20 minutes.</p>
+
+      <div class="callout warning">
+        <div class="callout-label">Weak execution (feature recital plus false urgency)</div>
+        <p><em>Seller:</em> "Thanks for the time! So, we're the leading platform for production visibility. We do real-time OEE tracking, downtime categorization, an Android and iOS app, SAP and Oracle connectors, and a really nice dashboard builder. We're also running an end-of-quarter incentive, so if we can get moving this month there's 20% available. What would it take to get you started?"<br>
+        <em>Buyer:</em> "Send me some information and I'll circulate it."</p>
+        <p><em>Why it fails:</em> Every claim sits on rung one. No question was asked, so no diagnosis exists and the seller cannot know which of those features matters. The discount arrives before value has been established, which prices the product before the buyer has a reason to want it — and signals that the list price is fictional. "Send me information" is not a stall; it is an accurate description of the only thing this conversation earned.</p>
+      </div>
 
       <div class="callout tip">
-        <div class="callout-label">Further reading</div>
-        <p><em>To Sell Is Human</em> — Daniel Pink · <em>The Psychology of Selling</em> — Brian Tracy · <em>Breakthrough Advertising</em> — Eugene Schwartz</p>
+        <div class="callout-label">Improved execution (diagnose, then climb the ladder with the buyer)</div>
+        <p><em>Seller:</em> "Before I describe anything, can I check I'm even in the right area? When plants your size lose a shift's output, the cause is usually one of three things — unplanned downtime nobody catches for an hour, changeovers running long, or quality escapes found too late. Which of those costs you the most, or is it something else entirely?"<br>
+        <em>Buyer:</em> "Downtime detection. We find out when the supervisor walks the floor. Sometimes that's 45 minutes."<br>
+        <em>Seller:</em> "How often, and what does a 45-minute stop cost you on line three?"<br>
+        <em>Buyer:</em> "Maybe twice a week. Line three is about £3,000 an hour, fully loaded."<br>
+        <em>Seller:</em> "So on your own numbers that is roughly £230,000 a year, before scrap. I don't want to take that number at face value — it assumes every minute detected is a minute recovered, and it won't be. What I'd propose is that we instrument line three only, for three weeks, and measure detection-to-response time before and after. If it doesn't move, you've spent three weeks and no capital, and I'd tell you to stop. Who besides you would need to see that result for it to matter?"<br>
+        <em>Buyer:</em> "Plant manager, and finance would want to see it before any rollout."</p>
+        <p><em>Why it succeeds:</em> The seller diagnosed before describing, let the <em>buyer</em> supply the economic inputs (numbers a buyer states are numbers they defend), climbed to impact while explicitly discounting his own case, proposed a bounded test with a stated failure condition, and surfaced the decision group — all in under five minutes and without naming a single feature.</p>
       </div>
+    </section>
+
+    <section id="practice">
+      <h2>8. Practice: the outcome-based value statement</h2>
+      <p><strong>Exercise goal:</strong> produce a value statement for something you actually sell that reaches rung three or four, exposes its own assumptions, and survives hostile questioning.</p>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
+      <ol>
+        <li>Take the three features you mention most often. Write them down verbatim as you currently say them.</li>
+        <li>For each, apply "so what?" three times, writing the answer each time. Stop when the answer is a change in the buyer's situation, not in your product's behavior.</li>
+        <li>For the strongest one, attempt rung four. Write the arithmetic explicitly, with every assumption on its own line.</li>
+        <li>Mark each assumption <strong>observed</strong>, <strong>inferred</strong>, or <strong>guessed</strong>. Guessed assumptions become questions for the buyer, not numbers in a deck.</li>
+        <li>Write the one-sentence outcome statement, under 30 words, in the buyer's vocabulary — not yours.</li>
+        <li>Have someone play a skeptical CFO and attack it three times. Rewrite after each attack.</li>
+      </ol>
+
+      <div class="solution-guide">
+        <h3>Completed exemplar: field-service scheduling tool</h3>
+        <table>
+        <thead><tr><th>Step</th><th>Work product</th></tr></thead>
+        <tbody>
+        <tr><td><strong>Feature (as currently said)</strong></td><td>"Skills-based dispatch with automated re-sequencing."</td></tr>
+        <tr><td><strong>So what? (1)</strong></td><td>The right engineer gets sent the first time.</td></tr>
+        <tr><td><strong>So what? (2)</strong></td><td>Fewer repeat visits for the same fault.</td></tr>
+        <tr><td><strong>So what? (3)</strong></td><td>Each engineer completes more jobs per day and customers wait less — an outcome, in the buyer's world.</td></tr>
+        <tr><td><strong>Rung 4 arithmetic</strong></td><td>60 engineers × 5.2 jobs/day today. First-time-fix 71% → 84% in three comparable deployments. Repeat visits: 1.5/engineer/day → 0.8. Recovered capacity ≈ 42 jobs/day ≈ 9,900 jobs/year.</td></tr>
+        <tr><td><strong>Assumption ledger</strong></td><td><em>Observed:</em> current first-time-fix 71% (their own field report). <em>Inferred:</em> 84% achievable — from three deployments with similar asset mix, not a guarantee. <em>Guessed:</em> that recovered capacity converts to revenue rather than idle time. → <strong>Becomes a question, not a number.</strong></td></tr>
+        <tr><td><strong>Outcome statement (28 words)</strong></td><td>"Your engineers stop making second trips for faults they could have fixed first time — which either serves more customers with the same headcount, or the same customers faster."</td></tr>
+        <tr><td><strong>Survived CFO attack?</strong></td><td>Attack 1: "84% is your number, not ours." → Reframed as a range with a pilot. Attack 2: "Capacity isn't revenue." → Conceded; converted to an explicit question about backlog. Attack 3: "What if utilization is already the constraint?" → Added a pre-check step before any business case.</td></tr>
+        </tbody>
+        </table>
+      </div>
+
+      <p><strong>Evaluation rubric:</strong> Correct rung classification and genuine climb (25%); outcome expressed in the buyer's language, not the vendor's (20%); arithmetic transparency and assumption ledger (25%); honest handling of the capacity-to-cash conversion (15%); survives three hostile questions without inflating (15%).</p>
+      <p><strong>Beginner variation:</strong> Do steps 1–2 and 5 only. Reaching a clean rung-three outcome statement is already better than most published sales material.</p>
+      <p><strong>Advanced variation:</strong> Produce three versions of the same statement for three awareness stages (problem-aware, solution-aware, product-aware) and state which observable signal would tell you which version to use.</p>
+    </section>
+
+    <section id="knowledge-check">
+      <h2>9. Applied knowledge check</h2>
+      <p>Answer before opening each item.</p>
+
+      <details><summary>1. Which of these is an outcome: "automated reporting", "reports run every Friday", or "managers recover four hours each week"?</summary>
+      <p>Only the third. "Automated reporting" is a feature (what it is). "Reports run every Friday" is a benefit (what the product does). "Managers recover four hours each week" describes a change in the buyer's situation — an outcome. Note it is still not <em>impact</em>: four hours becomes money only if those hours are redeployed, a hire avoided, or overtime reduced. Stating it as capacity and asking which conversion applies is the professional move.</p></details>
+
+      <details><summary>2. A buyer says "we already have a tool for that." What does this tell you about their awareness stage, and what should you do?</summary>
+      <p>They are at least solution-aware and probably product-aware — they have a mental model of the category and have already chosen within it. The wrong response is to restate the problem, which they resolved long ago. The right response is to find whether the current tool actually solves the specific mechanism you address: "That makes sense — most teams your size do. What does it handle well, and where do people still work around it?" You are looking for the gap between the tool's coverage and the workaround, which is where an outcome lives.</p></details>
+
+      <details><summary>3. Why is running qualification questions during a first discovery call risky, even though qualification is legitimate?</summary>
+      <p>Because the two activities serve different parties and the buyer can tell which one they are in. Discovery builds a shared understanding of the buyer's situation and pays them back immediately. Qualification decides whether you should invest more capacity and pays only you. Firing budget, authority, and timeline questions at someone who came to discuss a problem converts a consultation into an audit. The workable pattern is to earn qualification information as a by-product of genuine diagnosis — a buyer who has just articulated a £230,000 problem will volunteer who approves spending on it.</p></details>
+
+      <details><summary>4. A deal has an enthusiastic champion, a confirmed problem, and a budget — but you cannot describe the approval steps. Is it real?</summary>
+      <p>No, or at least not yet. Three of the four conditions hold but the decision process is unknown, which is the condition that most often kills late-stage deals. Without it you cannot forecast, you cannot sequence proof for the people who need it, and you have no way to detect a missing veto-holder such as security or legal. The next action is not to push for a close; it is to ask the champion to walk you through how the last comparable purchase actually got approved — a past-event question, which is far more reliable than asking what the process is supposed to be.</p></details>
+
+      <details><summary>5. Your competitor's feature list is longer than yours. How should the value ladder change your response?</summary>
+      <p>Refuse the comparison at rung one, where you lose by arithmetic, and move it to rung three, where the question becomes which outcome the buyer actually needs. The move is diagnostic, not defensive: "They do have more modules. Which of those would you actually turn on in the first year, and what would have to change in your operation for that to be worth it?" This is honest — you are not disputing their feature count — and it returns the conversation to the buyer's situation, where fit rather than breadth decides.</p></details>
+    </section>
+
+    <section id="conclusion">
+      <h2>10. Practical conclusion &amp; next action</h2>
+      <p>Foundations are not the easy part of selling; they are the part that determines whether everything downstream can work. A seller who has not separated feature from outcome cannot build a business case, cannot handle a price objection, and cannot tell the difference between a stalled deal and a deal that never existed.</p>
+      <ul>
+        <li>Selling is helping a specific group make a defensible decision about a change worth making, on evidence they can verify.</li>
+        <li>Climb the ladder: feature → benefit → outcome → impact. Three honest "so whats" get you there.</li>
+        <li>Never convert capacity into cash silently. Expose the assumption and let the buyer test it.</li>
+        <li>Mark a stage complete on buyer evidence, never on seller optimism.</li>
+        <li>Discovery serves the buyer; qualification serves you. Both are legitimate; disguising one as the other is not.</li>
+        <li>Diagnose awareness before choosing a message, and move one stage at a time.</li>
+      </ul>
+      <p><strong>Immediate action:</strong> Take the single sentence you use most often to describe what you sell. Apply three "so whats" in writing today, then use the resulting outcome sentence in your next conversation and note the buyer's first question — it will tell you whether you climbed far enough.</p>
+      <p><strong>Related modules:</strong> <a href="module-33.html">33 · Consultative Discovery &amp; Diagnosis</a>, <a href="module-34.html">34 · Value-Based Selling &amp; Business Cases</a>, <a href="module-07.html">07 · Copywriting &amp; Messaging</a>, and <a href="module-23.html">23 · MEDDPICC &amp; Mutual Action Plans</a>.</p>
     </section>
 
   </article>
@@ -446,7 +264,7 @@ sequenceDiagram
   </a>
   <a href="module-02.html" class="next">
     <div class="dir">Next · Module 02</div>
-    <div class="next-title">Psychology</div>
+    <div class="next-title">Psychology of Selling</div>
   </a>
 </nav>
 
@@ -455,29 +273,6 @@ sequenceDiagram
 </footer>
 
 <script src="script.js"></script>
-<script>
-  // Process diagram interactivity
-  const processData = {
-    1: { title: '01 · Prospect', text: 'Finding people who <em>might</em> want what you sell. Sources include cold outreach, ads, referrals, content, foot traffic, marketplaces.' },
-    2: { title: '02 · Qualify', text: 'Determining if they <em>actually could</em> buy. BANT framework — Budget, Authority, Need, Timeline.' },
-    3: { title: '03 · Approach', text: 'The first meaningful contact. The goal here is permission to continue, not the sale.' },
-    4: { title: '04 · Discover', text: 'Understanding what they actually want, what they fear, what success looks like for them. <strong>The seller who asks the best questions usually wins.</strong>' },
-    5: { title: '05 · Present', text: 'Showing how your offer maps to what you discovered. Not a feature dump — a tailored solution narrative.' },
-    6: { title: '06 · Close', text: 'Asking for the decision. Includes objection handling and negotiation.' },
-    7: { title: '07 · Retain', text: 'Delivering on the promise, expanding the relationship, generating referrals. Often the highest-leverage step.' }
-  };
-  
-  document.querySelectorAll('.process-step').forEach(step => {
-    step.addEventListener('click', () => {
-      document.querySelectorAll('.process-step').forEach(s => s.classList.remove('active'));
-      step.classList.add('active');
-      const data = processData[step.dataset.step];
-      document.getElementById('processDetail').innerHTML = `<h4>${data.title}</h4><p>${data.text}</p>`;
-    });
-  });
-</script>
-
-<!-- Google Translate -->
 <div id="google_translate_element" style="position:absolute; top:-9999px; left:-9999px; z-index:-9999;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {

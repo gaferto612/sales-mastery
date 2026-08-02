@@ -5,68 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Module 11 · Customer Retention — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<style>
-  .pillar-card {
-    background: var(--ink);
-    border: 1px solid var(--line);
-    padding: 28px;
-    margin: 16px 0;
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    gap: 24px;
-    align-items: start;
-  }
-  .pillar-num-big {
-    font-family: var(--font-display);
-    font-size: 48px;
-    font-weight: 300;
-    color: var(--orange);
-    line-height: 0.9;
-    font-style: italic;
-  }
-  .pillar-card h3 {
-    margin-top: 0;
-    color: var(--paper);
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 500;
-  }
-  .pillar-card p { color: var(--cream); font-size: 15px; margin-bottom: 12px; }
-  .pillar-card ul { margin-left: 18px; }
-  .pillar-card li { color: var(--cream); font-size: 14px; margin-bottom: 6px; }
-  
-  /* Sequence styling, reused */
-  .sequence {
-    margin: 32px 0;
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 0;
-  }
-  .seq-row { display: contents; }
-  .seq-time {
-    padding: 16px 16px 16px 0;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    color: var(--orange);
-    text-transform: uppercase;
-    border-right: 2px solid var(--line);
-    position: relative;
-  }
-  .seq-time::after {
-    content: '';
-    position: absolute;
-    right: -7px; top: 22px;
-    width: 12px; height: 12px;
-    background: var(--orange);
-    border-radius: 50%;
-    border: 3px solid var(--ink);
-  }
-  .seq-content { padding: 16px 0 16px 24px; }
-  .seq-content h4 { font-family: var(--font-display); font-size: 17px; color: var(--paper); margin-bottom: 4px; font-weight: 500; }
-  .seq-content p { color: var(--cream); font-size: 14px; margin: 0; }
-</style>
 </head>
 <body>
 
@@ -84,13 +22,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">11</span>Customer Retention</div>
-  <h1 class="module-title">Keeping <em>what you won.</em></h1>
-  <p class="lede">Acquiring a new customer costs 5–7× more than keeping an existing one. The first sale is the introduction. The actual business is everything that follows.</p>
+  <div class="eyebrow"><span class="num">11</span>Retention &amp; Expansion</div>
+  <h1 class="module-title">Churn is a <em>lagging indicator</em> of a decision made months earlier.</h1>
+  <p class="lede">By the time a customer cancels, the cause is usually two quarters old and no longer fixable. This module builds cohort retention measurement, time-to-first-value discipline, honest handling of the famous retention statistics, and expansion driven by realized value rather than by quota.</p>
   <div class="meta-strip">
-    <span>30 min read</span>
-    <span>LTV · NRR · cohorts</span>
-    <span>Where real businesses are built</span>
+    <span>50 min lesson + practice</span>
+    <span>Evidence-led professional curriculum</span>
+    <span>Level 3</span>
   </div>
 </header>
 
@@ -98,268 +36,218 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#why">Why retention is the game</a></li>
-      <li><a href="#metrics">The retention metrics</a></li>
-      <li><a href="#ltv-calc">LTV calculator</a></li>
-      <li><a href="#pillars">5 pillars of retention</a></li>
-      <li><a href="#onboarding">Onboarding sequence</a></li>
-      <li><a href="#winback">Win-back</a></li>
-      <li><a href="#advocacy">Turning customers into advocates</a></li>
-      <li><a href="#exercises">Exercises</a></li>
+      <li><a href="#introduction">1. Why retention is a sales topic</a></li>
+      <li><a href="#objectives">2. Observable learning objectives</a></li>
+      <li><a href="#metrics">3. The metrics, and the ones that mislead</a></li>
+      <li><a href="#slogans">4. Two famous claims, examined honestly</a></li>
+      <li><a href="#value">5. Time-to-first-value and the leading indicators of churn</a></li>
+      <li><a href="#worked-example">6. Worked example: a cohort retention diagnosis</a></li>
+      <li><a href="#execution">7. Weak versus improved renewal conversation</a></li>
+      <li><a href="#practice">8. Practice: the 30-day customer success plan</a></li>
+      <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
+      <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="why">
-      <h2>Why retention changes the economics</h2>
-      <div class="stat-grid">
-        <div class="stat"><div class="stat-num">Cohort</div><div class="stat-label">Compare customers that started in the same period</div></div>
-        <div class="stat"><div class="stat-num">Define</div><div class="stat-label">Separate logo, revenue, gross, and net retention</div></div>
-        <div class="stat"><div class="stat-num">Margin</div><div class="stat-label">Include service and delivery cost</div></div>
-        <div class="stat"><div class="stat-num">Cause</div><div class="stat-label">Diagnose loss, contraction, and expansion separately</div></div>
-      </div>
-      <p>Retention can compound economically, but there is no universal multiplier. Its value depends on gross margin, acquisition cost, service cost, expansion, contraction, timing, and which customers remain.</p>
-      <div class="pullquote">Retention is not one number. It is a set of customer behaviors that must be defined, segmented, and improved.</div>
+    <section id="introduction">
+      <h2>1. Why retention is a sales topic</h2>
+      <p>Retention is usually filed under customer success, which is a mistake with two consequences.</p>
+      <p>The first is economic. <strong>Retention sets the price you can afford to pay for a new customer.</strong> A business retaining 95% annually can spend far more acquiring a customer than one retaining 70%, because the lifetime over which acquisition cost is recovered is more than three times longer. Every conversation about whether a channel is affordable is secretly a conversation about retention.</p>
+      <p>The second is causal. <strong>Most churn is created during the sale.</strong> A customer sold on a use case the product does not serve, or on a timeline the implementation cannot meet, or with a champion who left, was churning at signature — the cancellation twelve months later is administrative. This is why Module 10's readiness conditions and Module 07's disclosed limitations are retention instruments, not merely ethical ones.</p>
+      <p>The practical consequence for a seller is uncomfortable: <strong>your renewal rate is a report card on your qualification.</strong> A seller with strong bookings and weak retention has not been selling well; they have been transferring a cost to a colleague and a future quarter.</p>
+    </section>
+
+    <section id="objectives">
+      <h2>2. Observable learning objectives</h2>
+      <p>By completing this module you will be able to demonstrate the following:</p>
+      <p>Calculate gross and net revenue retention, logo retention, and cohort retention, and state which question each one answers.</p>
+      <p>Explain why the "5% retention increases profits 25–95%" claim and NPS's predictive-validity claim require qualification.</p>
+      <p>Define time-to-first-value for a specific product and instrument it.</p>
+      <p>Identify leading indicators of churn that appear months before cancellation.</p>
+      <p>Design a 30-day success plan with a measurable first result and a named owner on both sides.</p>
     </section>
 
     <section id="metrics">
-      <h2>The numbers you need to know</h2>
+      <h2>3. The metrics, and the ones that mislead</h2>
 
-      <h3>LTV — Lifetime Value</h3>
-      <p>Total revenue from a customer over their entire relationship.</p>
-      <div class="formula">LTV = <span class="var">Avg revenue/month</span> <span class="x">×</span> <span class="var">Avg lifetime in months</span></div>
-      <p>Or for non-subscription: LTV = Avg order value × Repeat purchases × Margin %</p>
+      <h3>Table 1: Retention metrics and what each actually answers</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Metric</th><th>Definition</th><th>Question it answers</th><th>How it misleads</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Logo retention</strong></td><td>Customers retained ÷ customers at period start.</td><td>Are we keeping relationships?</td><td>Treats a £2k customer and a £2m customer identically. Can look healthy while revenue collapses.</td></tr>
+      <tr><td><strong>Gross revenue retention (GRR)</strong></td><td>(Starting revenue − churn − contraction) ÷ starting revenue. <strong>Cannot exceed 100%.</strong></td><td>Are we losing value from the existing base?</td><td>Rarely misleads — this is the honest number, which is why it is the one most often omitted from board decks.</td></tr>
+      <tr><td><strong>Net revenue retention (NRR)</strong></td><td>(Starting revenue − churn − contraction + expansion) ÷ starting revenue.</td><td>Is the existing base growing on its own?</td><td><strong>Expansion masks churn.</strong> NRR of 112% can conceal GRR of 82% if a handful of large accounts are expanding. Always report both.</td></tr>
+      <tr><td><strong>Cohort retention</strong></td><td>Retention of customers grouped by acquisition period, tracked over time.</td><td>Is what we are doing now better than what we did before?</td><td>Almost never misleads. It is the only view that can detect whether a change worked, because aggregate retention blends cohorts and hides improvement for a year or more.</td></tr>
+      <tr><td><strong>LTV</strong></td><td>Contribution margin per period × expected lifetime.</td><td>What is a customer worth?</td><td>Extremely sensitive to the retention assumption; small errors compound. Use contribution margin, never revenue, and state the assumption explicitly.</td></tr>
+      <tr><td><strong>CAC payback</strong></td><td>Fully-loaded acquisition cost ÷ monthly contribution margin.</td><td>How long until this customer has paid for itself?</td><td>Often computed on gross revenue rather than contribution, which flatters it substantially.</td></tr>
+      </tbody>
+      </table>
+      </div>
 
-      <h3>CAC — Customer Acquisition Cost</h3>
-      <div class="formula">CAC = <span class="var">Total sales + marketing</span> ÷ <span class="var">New customers</span></div>
-
-      <h3>LTV : CAC ratio</h3>
-      <ul>
-        <li><strong>&lt; 1 :</strong> gross lifetime value does not cover acquisition cost under these assumptions</li>
-        <li><strong>1–3 :</strong> inspect payback time, cash needs, and service cost</li>
-        <li><strong>3+ :</strong> potentially attractive, subject to the model and growth constraints</li>
-        <li><strong>5+ :</strong> recheck assumptions and whether growth is supply- or demand-constrained</li>
-      </ul>
-
-      <h3>Churn rate</h3>
-      <div class="formula">Churn = <span class="var">Customers lost</span> ÷ <span class="var">Total customers</span> (in a period)</div>
-      <p>5% monthly churn = nearly 50% annual churn. The math compounds against you brutally.</p>
-
-      <h3>NRR — Net Revenue Retention</h3>
-      <p>For subscription businesses, a useful metric when its cohort, period, and calculation are explicit.</p>
-      <div class="formula">NRR = (<span class="var">Start MRR</span> + <span class="var">Expansion</span> − <span class="var">Churn</span> − <span class="var">Downgrades</span>) ÷ <span class="var">Start MRR</span></div>
-      <p><strong>NRR &gt; 100%</strong> means your existing customers grow you even with zero new customers. That means expansion exceeded contraction in the defined cohort and period; it does not describe profitability by itself.</p>
+      <div class="callout warning">
+        <div class="callout-label">The single most common retention deception</div>
+        <p>Reporting NRR without GRR. A company can show 118% NRR — a number that reads as excellent — while losing a third of its customers annually, provided a few large accounts expand fast enough. The two numbers together tell the truth: <strong>GRR measures whether the product holds; NRR measures whether the model compounds.</strong> A board deck showing only NRR is either naive or deliberate, and it is worth knowing which.</p>
+      </div>
+      <p>For context, 2024–2025 vendor benchmark compilations put median SaaS CAC payback near 16 months, improving from around 20–25 months in 2022–24, with top quartile at six or better; the SaaS "magic number" median rose to about 1.37 in 2025. These are class <strong>V</strong> figures from survivor-biased surveys with definitional drift, useful for sanity-checking a model and useless as targets for a business with different gross margins.</p>
     </section>
 
-    <section id="ltv-calc">
-      <h2>Live LTV calculator</h2>
+    <section id="slogans">
+      <h2>4. Two famous claims, examined honestly</h2>
+      <p>Retention has two statistics that appear in nearly every deck on the subject. Both deserve better handling than they usually get.</p>
 
-      <div class="widget">
-        <div class="widget-header">
-          <div class="widget-title">Subscription LTV Simulator</div>
-          <div class="widget-tag">Live</div>
-        </div>
+      <h3>Table 2: The claims and what survives scrutiny</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Claim</th><th>Origin</th><th>What is sound</th><th>What is not</th><th>How to use it</th></tr></thead>
+      <tbody>
+      <tr><td>"A 5% increase in retention increases profits 25–95%."</td><td>Reichheld &amp; Sasser's work at Bain.</td><td>The <em>direction</em> and the <em>mechanism</em> are sound and arithmetically obvious: longer life × compounding expansion × lower re-acquisition cost.</td><td>The range is not a cross-industry law. It came from specific industry models with specific margin structures and has never been established as a general constant.</td><td>Model it for your own business. The arithmetic takes twenty minutes and produces a number you can defend, which the quoted range never will.</td></tr>
+      <tr><td>"NPS is the one number you need to grow."</td><td>Reichheld (2003), <em>Harvard Business Review</em>.</td><td>Asking whether customers would recommend you is a reasonable thing to ask, and NPS explains a moderate share of growth variance in some industries.</td><td>Keiningham, Cooil, Andreassen &amp; Aksoy (2007, <em>Journal of Marketing</em>) failed to reproduce the claim that NPS outperforms other satisfaction measures. The 9–10 / 0–6 cut points are not statistically justified and mask real movement. Pivotal supporting studies were never published in full or peer reviewed.</td><td>Keep it as one weakly-calibrated signal among several. Never make it a compensation metric — the cut points make it trivially gameable.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p>The general lesson is worth more than either statistic. A number that circulates for twenty years without its boundary conditions attached becomes folklore, and folklore is what people reach for instead of measuring their own business. Both claims point at something real; neither substitutes for a cohort chart of your own customers.</p>
+    </section>
 
-        <div class="input-row">
-          <div class="input-group">
-            <label>Monthly revenue per customer (€)</label>
-            <input type="range" id="mrr" min="10" max="2000" step="10" value="80" data-prefix="€">
-            <div class="range-value"></div>
-          </div>
-          <div class="input-group">
-            <label>Monthly churn rate</label>
-            <input type="range" id="churn" min="0.5" max="20" step="0.5" value="5" data-suffix="%">
-            <div class="range-value"></div>
-          </div>
-          <div class="input-group">
-            <label>Gross margin</label>
-            <input type="range" id="margin" min="20" max="95" step="1" value="75" data-suffix="%">
-            <div class="range-value"></div>
-          </div>
-          <div class="input-group">
-            <label>CAC per customer (€)</label>
-            <input type="range" id="cac10" min="20" max="2000" step="10" value="200" data-prefix="€">
-            <div class="range-value"></div>
-          </div>
-        </div>
+    <section id="value">
+      <h2>5. Time-to-first-value and the leading indicators of churn</h2>
+      <p>The single most predictive onboarding variable in most businesses is <strong>time to first value</strong> — the interval between purchase and the customer experiencing a real, attributable result. Not go-live. Not training completed. A result they would notice if you removed it.</p>
+      <p>The mechanism is straightforward: a customer who has experienced value has evidence to defend the purchase internally, and the person who championed it has been proven right. A customer still in implementation at month five has an unproven decision, an exposed champion, and a growing internal argument they cannot win.</p>
 
-        <div class="chart-wrap"><canvas id="cohortChart"></canvas></div>
-
-        <div class="stat-grid" style="margin-top: 24px;">
-          <div class="stat">
-            <div class="stat-num" id="avgLifeStat">0 mo</div>
-            <div class="stat-label">Avg customer lifetime</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num" id="grossLtvStat">€0</div>
-            <div class="stat-label">Gross LTV</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num" id="netLtvStat">€0</div>
-            <div class="stat-label">Net LTV (after margin)</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num" id="ratioStat10">0×</div>
-            <div class="stat-label">LTV : CAC ratio</div>
-          </div>
-        </div>
+      <h3>Table 3: Leading indicators of churn, in the order they appear</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Signal</th><th>Typical lead time before churn</th><th>What it means</th><th>Intervention</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Time-to-first-value exceeded plan by &gt;50%</strong></td><td>9–15 months</td><td>The decision remains unproven and the champion is exposed.</td><td>Reduce scope to produce <em>any</em> measurable result quickly, even a smaller one than promised.</td></tr>
+      <tr><td><strong>Champion departs or changes role</strong></td><td>6–12 months</td><td>The institutional memory of why you were bought has left the building.</td><td>Re-establish the case with the successor <em>immediately</em>. Treat it as a new sale, because it is.</td></tr>
+      <tr><td><strong>Usage concentrated in one team or one person</strong></td><td>6–12 months</td><td>No organizational dependency. Removing you costs nobody anything.</td><td>Broaden deployment deliberately; a single-team deployment is a pilot that was never expanded.</td></tr>
+      <tr><td><strong>Support tickets shift from "how do I" to "why doesn't it"</strong></td><td>4–9 months</td><td>Expectation mismatch surfacing — usually created during the sale.</td><td>Address the mismatch explicitly, including admitting where they were oversold.</td></tr>
+      <tr><td><strong>No executive contact in two quarters</strong></td><td>3–9 months</td><td>You are a line item nobody is defending at budget time.</td><td>Re-establish a business review with the economic buyer, presenting realized value against the original case.</td></tr>
+      <tr><td><strong>Renewal handled entirely by procurement</strong></td><td>1–3 months</td><td>Often too late. The business decision has already been made elsewhere.</td><td>Escalate to the business owner, but expect this to be a salvage operation rather than a save.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <div class="callout tip">
+        <div class="callout-label">The one measurement most companies do not have</div>
+        <p>Ask: <em>what percentage of our customers reached their first measurable result within the promised window, and how do we know?</em> Most organizations cannot answer this, because they instrument go-live rather than value. Adding this single measure — with a definition of "value" specific to your product — usually surfaces more actionable churn risk than any satisfaction survey.</p>
       </div>
     </section>
 
-    <section id="pillars">
-      <h2>The 5 pillars of customer retention</h2>
+    <section id="worked-example">
+      <h2>6. Worked example: a cohort retention diagnosis</h2>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
+      <p><strong>Scenario:</strong> A B2B software company reports 108% NRR and treats retention as solved. A new head of customer success asks for GRR by cohort, segmented by acquisition source and onboarding path.</p>
 
-      <div class="pillar-card">
-        <div class="pillar-num-big">01.</div>
-        <div>
-          <h3>Deliver on the promise (immediately)</h3>
-          <p>The first 30 days set the entire relationship. Onboarding is not paperwork — it's the second sale.</p>
-          <ul>
-            <li>Get them to "first value" as fast as possible</li>
-            <li>Proactive welcome — don't make them search</li>
-            <li>Quick wins in the first session</li>
-            <li>Clear documentation, video walkthroughs</li>
-            <li>Real human check-in within 7 days</li>
-          </ul>
-        </div>
+      <h3>Table 4: What the cohort view exposed</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Cohort segment</th><th>12-month GRR</th><th>12-month NRR</th><th>Median time-to-first-value</th><th>Diagnosis</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Aggregate (reported to board)</strong></td><td><strong>84%</strong></td><td><strong>108%</strong></td><td>Not measured</td><td>The 108% was carried by four enterprise accounts expanding. GRR of 84% had never been shown.</td></tr>
+      <tr><td>Enterprise, guided onboarding</td><td>96%</td><td>134%</td><td>31 days</td><td>Healthy. This segment produced the entire NRR headline.</td></tr>
+      <tr><td>Mid-market, guided onboarding</td><td>91%</td><td>103%</td><td>44 days</td><td>Healthy. Slower to value but the guided path holds.</td></tr>
+      <tr><td>Mid-market, self-serve onboarding</td><td><strong>63%</strong></td><td>68%</td><td><strong>112 days (41% never reached it)</strong></td><td><strong>The problem.</strong> Same product, same segment, different onboarding path — a 28-point GRR gap.</td></tr>
+      <tr><td>SMB, self-serve</td><td>58%</td><td>61%</td><td>Not reached by 54%</td><td>Structurally unprofitable at current CAC. Either the onboarding or the segment must change.</td></tr>
+      <tr><td>Partner-sourced, any path</td><td><strong>49%</strong></td><td>51%</td><td>Not reached by 62%</td><td><strong>Worst cohort.</strong> Partners were selling a use case the product served poorly; nobody had audited partner-sold deals.</td></tr>
+      </tbody>
+      </table>
       </div>
-
-      <div class="pillar-card">
-        <div class="pillar-num-big">02.</div>
-        <div>
-          <h3>Stay valuable over time</h3>
-          <ul>
-            <li>Ship improvements visibly</li>
-            <li>Educational content keeps them growing</li>
-            <li>Regular check-ins, not just at renewal time</li>
-            <li>Customer-only perks: early access, community, exclusive content</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="pillar-card">
-        <div class="pillar-num-big">03.</div>
-        <div>
-          <h3>Make problems easy to solve</h3>
-          <p>Support isn't overhead — it's retention. One bad support experience can erase years of goodwill.</p>
-          <ul>
-            <li>Fast response times (in the medium they prefer)</li>
-            <li>Empower agents to actually solve, not just escalate</li>
-            <li>Track NPS and CSAT continuously</li>
-            <li>Treat complaints as gifts — they're the ones who didn't leave silently</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="pillar-card">
-        <div class="pillar-num-big">04.</div>
-        <div>
-          <h3>Build emotional connection</h3>
-          <ul>
-            <li>Remember details that matter to them</li>
-            <li>Celebrate their milestones, not just yours</li>
-            <li>Apologize properly and fast when you fail</li>
-            <li>Surprise them occasionally — a card, an upgrade, recognition</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="pillar-card">
-        <div class="pillar-num-big">05.</div>
-        <div>
-          <h3>Expand the relationship</h3>
-          <p>Retention isn't just keeping — it's growing. Existing customers buy more from you than new ones, if you give them reasons.</p>
-          <ul>
-            <li>Upsells: more value, higher tier</li>
-            <li>Cross-sells: adjacent products</li>
-            <li>Multi-year contracts: lock in price, ease their planning</li>
-          </ul>
-        </div>
-      </div>
+      <p><strong>Actions and results:</strong> Guided onboarding was extended to all mid-market accounts, costing roughly £180k annually in headcount. Mid-market self-serve GRR moved 63% → 88% over three cohorts, worth about £1.4m in retained revenue. Partner enablement was rebuilt around a work-sample certification (Module 40) and partner-sourced GRR moved to 74%. SMB self-serve was closed to new acquisition rather than fixed — the honest conclusion that the unit economics did not work at any plausible onboarding cost.</p>
+      <p><strong>The methodological point:</strong> none of this was visible in the aggregate, and none of it was visible in NRR. Cohort analysis segmented by the variables you can actually change — onboarding path, source, segment — is the difference between knowing you have churn and knowing what to do about it.</p>
     </section>
 
-    <section id="onboarding">
-      <h2>Onboarding sequence — first 30 days</h2>
-      <p>Standardize this. Top-performing companies onboard with the same care they sell with.</p>
+    <section id="execution">
+      <h2>7. Weak versus improved renewal conversation</h2>
+      <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> A renewal is 60 days out. Usage has been flat, the original champion left four months ago, and the successor has never spoken to the vendor.</p>
 
-      <div class="sequence">
-        <div class="seq-row">
-          <div class="seq-time">Day 0</div>
-          <div class="seq-content"><h4>Welcome — set the tone</h4><p>Immediate thank-you (real, not "your purchase has been received"). Confirm what they bought, what happens next, who to contact.</p></div>
-        </div>
-        <div class="seq-row">
-          <div class="seq-time">Day 1</div>
-          <div class="seq-content"><h4>First-value action</h4><p>Their first meaningful win with the product. Make it dead simple. Track who completes it — that's your activation metric.</p></div>
-        </div>
-        <div class="seq-row">
-          <div class="seq-time">Day 3–7</div>
-          <div class="seq-content"><h4>Human check-in</h4><p>Real person reaches out. "How's it going? Any questions?" Don't pitch upgrades yet.</p></div>
-        </div>
-        <div class="seq-row">
-          <div class="seq-time">Day 14</div>
-          <div class="seq-content"><h4>Education push</h4><p>Send tutorials for the next-level features they haven't discovered. Each email = one feature.</p></div>
-        </div>
-        <div class="seq-row">
-          <div class="seq-time">Day 30</div>
-          <div class="seq-content"><h4>Outcome check</h4><p>"Are you getting what you hoped for?" If yes — ask for testimonial or referral. If no — engage support, save the relationship.</p></div>
-        </div>
+      <div class="callout warning">
+        <div class="callout-label">Weak execution (a transaction dressed as a relationship)</div>
+        <p><em>Account manager:</em> "Hi Tom — I'm reaching out because your contract is up for renewal on 30 April. I've attached the renewal paperwork with a 4% uplift as per the agreement. Also wanted to mention we've just launched three new modules that I'd love to show you! Are you happy to get this signed this month so we can avoid any service interruption?"<br>
+        <em>Tom:</em> "I've only just picked this up. Let me look at what we're actually using."</p>
+        <p><em>Why it fails:</em> It opens with the vendor's calendar and the vendor's price increase. It offers an upsell to someone who does not yet know whether the existing purchase is justified. "Avoid service interruption" is a mild threat dressed as helpfulness. Most critically, it treats a champion transition — the second-strongest leading indicator of churn — as an administrative detail, when it is the entire situation. Tom is now going to evaluate the product from scratch, without the context that justified it, and the vendor has given him nothing to evaluate it with.</p>
       </div>
-    </section>
-
-    <section id="winback">
-      <h2>Win-back: when they leave</h2>
-      <p>Customers churn. The question is what you do next.</p>
-
-      <h3>Exit interview</h3>
-      <p>Every churned customer gets a real conversation, not a survey. Ask:</p>
-      <ul>
-        <li>What's the actual reason you're leaving?</li>
-        <li>Was there a specific moment things went wrong?</li>
-        <li>What would have changed your mind?</li>
-        <li>Would you come back if [specific change]?</li>
-      </ul>
-
-      <h3>Win-back campaign</h3>
-      <p>3–6 months later, reach out. Things often change:</p>
-      <ul>
-        <li>Their situation may have shifted</li>
-        <li>You may have shipped the feature they needed</li>
-        <li>The competitor they switched to may have disappointed</li>
-      </ul>
 
       <div class="callout tip">
-        <div class="callout-label">Honest reach-out</div>
-        <p>"Hi [Name], it's been 6 months since you left us. I wanted to honestly check in — are things working with [Competitor]? We've made some changes you might find interesting. Worth a quick chat?"</p>
+        <div class="callout-label">Improved execution (re-establish the case with the successor)</div>
+        <p><em>Account manager:</em> "Tom — you inherited this from Priya and I don't think anyone's ever walked you through why it was bought, so that's on me. Can I take twenty minutes to do that, and to be honest with you about what has and hasn't worked?<br><br>
+        The original case was that document reconciliation was taking your team about 40 hours a month and creating audit exposure. Two things happened. The reconciliation piece did land — you're at roughly 11 hours a month now, and I can show you the workflow data behind that. The audit reporting we promised didn't; the export still needs a manual step and that was our roadmap slipping, not your team's fault.<br><br>
+        So my honest read is that you're getting about two-thirds of what was sold. Before we talk about renewal at all, I'd like to either fix the reporting gap or reduce your licence count to match what you're actually using — I'd rather have a smaller contract that's clearly worth it than a bigger one you're not sure about. Which of those would be more useful?"<br>
+        <em>Tom:</em> "Let's do both, honestly. Show me the reconciliation data — if that's real, I need to know about it before the budget round."</p>
+        <p><em>Why it succeeds:</em> It treats the champion transition as the primary event and rebuilds the case for someone who never heard it. It presents evidence of realized value rather than asserting it. It discloses the unrealized part before Tom discovers it. And it offers to <em>reduce</em> the contract — which is the move that establishes that the vendor is not simply defending revenue, and which in practice almost never results in the smallest option being taken.</p>
       </div>
     </section>
 
-    <section id="advocacy">
-      <h2>Turning customers into advocates</h2>
-      <p>Your best customers should sell for you. Build the systems:</p>
-      <ul>
-        <li><strong>Referral programs</strong> — incentivize for both giver and receiver</li>
-        <li><strong>Testimonial requests</strong> — at peak satisfaction moments (right after a win, not in a generic email)</li>
-        <li><strong>Case studies</strong> — co-created, makes them look good too</li>
-        <li><strong>Community</strong> — give them somewhere to meet other customers</li>
-        <li><strong>VIP / power user programs</strong> — recognize the top 5%</li>
-        <li><strong>Public recognition</strong> — feature them on social, in case studies</li>
-      </ul>
-    </section>
-
-    <section id="exercises">
-      <h2>Exercises</h2>
+    <section id="practice">
+      <h2>8. Practice: the 30-day customer success plan</h2>
+      <p><strong>Exercise goal:</strong> design an onboarding plan that produces a measurable first result inside 30 days, with named owners on both sides and instrumented leading indicators.</p>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
       <ol>
-        <li><strong>LTV calculation.</strong> Use the calculator above with real numbers from your business or one you can access. What's the ratio? Where's the leverage?</li>
-        <li><strong>Onboarding audit.</strong> Walk through the first 30 days of being a new customer somewhere you bought recently. What was good? Bad? Missing?</li>
-        <li><strong>Exit interview practice.</strong> Talk to a customer (or pretend) who left a service. Ask the 4 questions above. Notice the patterns.</li>
-        <li><strong>Referral ask.</strong> Pick 3 happy customers. Ask each, in a personal way, who else might benefit. Track results.</li>
+        <li><strong>Define first value</strong> for your product in one sentence: a specific, measurable result the customer would notice if it were removed. Not "go-live," not "training complete."</li>
+        <li>Identify the shortest path to it. What is the minimum configuration, data, and adoption required? Everything else is phase two.</li>
+        <li>Write the 30-day plan with dated milestones, an owner for each on both sides, and dependencies. At least three milestones must be customer-owned.</li>
+        <li>Define the measurement: what number proves first value was reached, where it comes from, and who reports it.</li>
+        <li>Instrument the leading indicators from Table 3. For each, state the threshold that triggers action and who acts.</li>
+        <li>Write the champion-transition protocol: what happens within 72 hours of learning that your champion has left.</li>
+        <li>Write the 90-day business review agenda: realized value against the original case, including what has <em>not</em> been achieved.</li>
       </ol>
 
-      <div class="callout tip">
-        <div class="callout-label">Further reading</div>
-        <p><em>Never Lose a Customer Again</em> — Joey Coleman · <em>The Effortless Experience</em> — Dixon, Toman &amp; DeLisi · <em>Customer Success</em> — Mehta, Steinman, Murphy</p>
+      <div class="solution-guide">
+        <h3>Completed exemplar (workforce scheduling platform)</h3>
+        <table>
+        <thead><tr><th>Element</th><th>Entry</th></tr></thead>
+        <tbody>
+        <tr><td><strong>First value defined</strong></td><td>"One complete weekly rota published from the platform, for one department, without manual rebuilding — and the department manager confirms it took less time than their old process."</td></tr>
+        <tr><td><strong>Shortest path</strong></td><td>One department, one site, staff records and skills only (no payroll integration, no forecasting module). Deliberately excludes 80% of what was sold.</td></tr>
+        <tr><td><strong>30-day plan</strong></td><td>D1 kickoff, department chosen (<em>customer</em>). D3 staff data export (<em>customer</em>). D5 import + config (<em>us</em>). D8 manager training, 90 min (<em>us</em>). D10–17 parallel run: rota built both ways, times recorded (<em>customer</em>). D18 review the time comparison (<em>joint</em>). D22 first live published rota (<em>customer</em>). D30 first-value confirmation + phase-two scoping (<em>joint</em>).</td></tr>
+        <tr><td><strong>Measurement</strong></td><td>Minutes to build one weekly rota, recorded by the department manager for four weeks before and four weeks after. Baseline: 214 min. Target: under 90. Reported by the manager, not by us.</td></tr>
+        <tr><td><strong>Leading indicators instrumented</strong></td><td>Time-to-first-value &gt;45 days → CS lead escalates, scope reduced further. Weekly active managers &lt;60% of licensed by D45 → adoption review. Champion role change → 72-hour protocol. Support ticket sentiment shifting to "why doesn't it" → product review with the account.</td></tr>
+        <tr><td><strong>Champion transition protocol</strong></td><td>Within 72 hours: (1) written summary of the original business case and realized value to date, sent to the successor; (2) 30-minute call offered, framed as "you inherited this, let me brief you honestly"; (3) executive sponsor on our side emails their counterpart; (4) account flagged as at-risk in the forecast regardless of contract length.</td></tr>
+        <tr><td><strong>90-day review agenda</strong></td><td>Original case (from the proposal, verbatim) → realized value with the customer's own numbers → <strong>what has not been achieved and why</strong> → phase-two decision → an explicit question: "is this worth what you're paying?" with a genuine willingness to reduce scope.</td></tr>
+        </tbody>
+        </table>
       </div>
+
+      <p><strong>Evaluation rubric:</strong> First value defined as a measurable customer-noticeable result (25%); shortest path genuinely minimal, excluding most of what was sold (15%); plan with three or more customer-owned milestones and real dates (20%); measurement owned and reported by the customer (15%); leading indicators instrumented with thresholds and named actors (15%); champion-transition protocol with a 72-hour window (10%).</p>
+      <p><strong>Beginner variation:</strong> Define first value for your product and ask three colleagues to do the same independently. The variance in their answers is usually the reason onboarding is inconsistent, and it is a finding worth taking to your leadership.</p>
+      <p><strong>Advanced variation:</strong> Build the cohort retention model: GRR and NRR by acquisition cohort, segmented by source, segment, and onboarding path, with median time-to-first-value per cohort. Then identify the one segment you should stop selling to. Most companies have one, and naming it is the hardest and most valuable output of this exercise.</p>
+    </section>
+
+    <section id="knowledge-check">
+      <h2>9. Applied knowledge check</h2>
+
+      <details><summary>1. A company reports 112% NRR. What is the most important follow-up question?</summary>
+      <p>"What is GRR?" Net revenue retention includes expansion, so it can be strong while the underlying base is failing — 112% NRR is fully compatible with 82% GRR if a handful of large accounts are expanding fast. GRR cannot exceed 100% and therefore cannot be flattered; it measures whether the product holds. Reporting NRR alone is the most common retention deception, and the pair together is the only honest picture: GRR says whether the product holds, NRR says whether the model compounds.</p></details>
+
+      <details><summary>2. Why is "a 5% increase in retention increases profits 25–95%" not something to quote in a business case?</summary>
+      <p>Because the range is not a general law. It originates in Reichheld &amp; Sasser's Bain work on specific industries with specific margin structures, and it has never been established as a cross-industry constant. The <em>mechanism</em> is sound and arithmetically obvious — longer life, compounding expansion, lower re-acquisition cost — so model it for your own business instead. That takes about twenty minutes, produces a number tied to your actual margins and churn curve, and survives a CFO asking where it came from, which the quoted range will not.</p></details>
+
+      <details><summary>3. What is time-to-first-value, and why does it predict churn better than go-live date?</summary>
+      <p>It is the interval between purchase and the customer experiencing a real, attributable result they would notice if removed — not deployment, not training completion. It predicts churn because it determines whether the buying decision has been <em>proven</em>. A customer with evidence can defend the purchase internally and the champion who bought it has been vindicated; a customer still waiting at month five has an unproven decision, an exposed champion, and a growing internal argument they cannot win. Most companies instrument go-live because it is easy, and are then surprised by churn among customers who went live on time.</p></details>
+
+      <details><summary>4. Your champion has just left the company. What is the appropriate response window?</summary>
+      <p>72 hours, and treat it as a new sale rather than an account update. The institutional memory of why you were bought has left; the successor has inherited a cost line with no context and will evaluate it from scratch. Within that window: send a written summary of the original business case and realized value to date, offer a briefing framed as "you inherited this, let me be honest about what has and hasn't worked," have an executive sponsor contact their counterpart, and flag the account as at-risk in the forecast regardless of how long the contract has left.</p></details>
+
+      <details><summary>5. Why is your renewal rate a report card on your qualification?</summary>
+      <p>Because most churn is created during the sale, not during the service. A customer sold on a use case the product does not serve, on a timeline implementation cannot meet, or through a champion with no organizational standing was churning at signature — the cancellation a year later is administrative. This is why disclosed limitations, readiness checks, and honest disqualification are retention instruments and not just ethical preferences. A seller with strong bookings and weak retention has transferred a cost to a colleague and a future quarter.</p></details>
+    </section>
+
+    <section id="conclusion">
+      <h2>10. Practical conclusion &amp; next action</h2>
+      <p>Retention is where the honesty of the sale is finally settled. It is also the metric that determines how much you can afford to spend acquiring anyone, which makes it the quiet constraint on every growth plan in the business.</p>
+      <ul>
+        <li>Report GRR alongside NRR, always. NRR alone hides a failing base behind a few expanding accounts.</li>
+        <li>Analyse by cohort, segmented by the variables you can change: source, segment, onboarding path.</li>
+        <li>Treat the famous retention statistics as directionally sound and quantitatively unproven. Model your own.</li>
+        <li>Never make NPS a compensation metric; its cut points are not statistically justified and are trivially gameable.</li>
+        <li>Define and instrument time-to-first-value. It is the strongest early predictor most companies do not measure.</li>
+        <li>A champion departure is a 72-hour event and a new sale, not an account note.</li>
+        <li>Offering to reduce a contract to match realized value is the fastest way to establish that you are not merely defending revenue.</li>
+      </ul>
+      <p><strong>Immediate action:</strong> Write down, in one sentence, what "first value" means for your product — a specific measurable result the customer would notice if removed. Then ask two colleagues to do the same without seeing yours. If the three answers differ, you have found why onboarding is inconsistent.</p>
+      <p><strong>Related modules:</strong> <a href="module-10.html">10 · Closing &amp; Commitment</a>, <a href="module-32.html">32 · Segmentation, ICP &amp; Positioning</a>, <a href="module-37.html">37 · Commercial Acumen, Pricing &amp; Packaging</a>, and <a href="module-17.html">17 · Product-Led Sales</a>.</p>
     </section>
 
   </article>
@@ -368,11 +256,11 @@
 <nav class="module-nav">
   <a href="module-10.html" class="prev">
     <div class="dir">← Previous · Module 10</div>
-    <div class="next-title">Closing</div>
+    <div class="next-title">Closing &amp; Commitment</div>
   </a>
   <a href="module-12.html" class="next">
     <div class="dir">Next · Module 12</div>
-    <div class="next-title">Ethics</div>
+    <div class="next-title">Ethics &amp; Pitfalls</div>
   </a>
 </nav>
 
@@ -381,64 +269,6 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-  Chart.defaults.color = '#6b7480';
-  Chart.defaults.borderColor = '#2a3340';
-  Chart.defaults.font.family = "'JetBrains Mono', monospace";
-  
-  const ctx = document.getElementById('cohortChart');
-  const cohortChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['M0', 'M3', 'M6', 'M9', 'M12', 'M18', 'M24', 'M36'],
-      datasets: [{
-        label: '% of cohort retained',
-        data: [],
-        borderColor: '#ff6b35',
-        backgroundColor: 'rgba(255, 107, 53, 0.15)',
-        fill: true,
-        tension: 0.3,
-        pointBackgroundColor: '#ff6b35'
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        y: { min: 0, max: 100, ticks: { callback: v => v + '%' }, grid: { color: '#2a3340' } },
-        x: { grid: { display: false } }
-      }
-    }
-  });
-  
-  function calcLTV() {
-    const mrr = +document.getElementById('mrr').value;
-    const churn = +document.getElementById('churn').value / 100;
-    const margin = +document.getElementById('margin').value / 100;
-    const cac = +document.getElementById('cac10').value;
-    
-    const avgLife = 1 / churn;
-    const grossLtv = mrr / churn;
-    const netLtv = grossLtv * margin;
-    const ratio = netLtv / cac;
-    
-    document.getElementById('avgLifeStat').textContent = avgLife.toFixed(1) + ' mo';
-    document.getElementById('grossLtvStat').textContent = fmtMoney(grossLtv);
-    document.getElementById('netLtvStat').textContent = fmtMoney(netLtv);
-    document.getElementById('ratioStat10').textContent = ratio.toFixed(1) + '×';
-    
-    // Cohort curve - exponential decay
-    const months = [0, 3, 6, 9, 12, 18, 24, 36];
-    cohortChart.data.datasets[0].data = months.map(m => Math.pow(1 - churn, m) * 100);
-    cohortChart.update();
-  }
-  
-  document.querySelectorAll('#mrr, #churn, #margin, #cac10').forEach(el => el.addEventListener('input', calcLTV));
-  calcLTV();
-</script>
-
-<!-- Google Translate -->
 <div id="google_translate_element" style="position:absolute; top:-9999px; left:-9999px; z-index:-9999;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {

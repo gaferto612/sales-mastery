@@ -3,90 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 10 · Closing Techniques — Sales Mastery</title>
+<title>Module 10 · Closing &amp; Commitment — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
-<style>
-  .close-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    margin: 32px 0;
-  }
-  .close-card {
-    background: var(--ink);
-    padding: 24px;
-    cursor: pointer;
-    transition: background 0.2s;
-    position: relative;
-  }
-  .close-card:hover { background: var(--ink-soft); }
-  .close-card.active {
-    background: var(--ink-soft);
-    border-left: 3px solid var(--orange);
-  }
-  .close-num {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--orange);
-    letter-spacing: 0.2em;
-    margin-bottom: 8px;
-  }
-  .close-name {
-    font-family: var(--font-display);
-    font-size: 20px;
-    color: var(--paper);
-    margin-bottom: 8px;
-    font-weight: 500;
-    line-height: 1.2;
-  }
-  .close-when {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  .close-desc { font-size: 14px; color: var(--cream); line-height: 1.5; }
-  .close-script {
-    margin-top: 12px;
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 15px;
-    color: var(--gold);
-    border-left: 2px solid var(--gold);
-    padding-left: 12px;
-  }
-  .close-card.ethics-warn { border-left: 3px solid var(--red); }
-  .close-card.ethics-warn .close-num { color: var(--red); }
-  
-  .matrix {
-    margin: 32px 0;
-    width: 100%;
-  }
-  .matrix table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  .matrix th, .matrix td {
-    padding: 12px 16px;
-    border: 1px solid var(--line);
-    font-size: 14px;
-    text-align: left;
-  }
-  .matrix th {
-    background: var(--ink-soft);
-    color: var(--gold);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-  .matrix .col-context { color: var(--cream); font-weight: 500; }
-  .matrix .col-close { color: var(--orange); font-family: var(--font-mono); font-size: 13px; }
-</style>
 </head>
 <body>
 
@@ -104,13 +22,13 @@
 </nav>
 
 <header class="page-header">
-  <div class="eyebrow"><span class="num">10</span>Closing</div>
-  <h1 class="module-title">Architecting the <em>decision.</em></h1>
-  <p class="lede">The close is not a forceful event. It is an exercise in Choice Architecture, designed to overcome Ego Depletion and Status Quo Bias by making the path of least resistance lead directly to a signature.</p>
+  <div class="eyebrow"><span class="num">10</span>Commitment</div>
+  <h1 class="module-title">A close is a <em>decision</em>, and an honest no is a result.</h1>
+  <p class="lede">Closing techniques built on social pressure produce signatures that churn, references that never happen, and sellers nobody calls back. This module treats closing as decision readiness: recognizing it, asking clearly, and being willing to hear no early rather than never.</p>
   <div class="meta-strip">
-    <span>45 min read</span>
-    <span>Choice Architecture · Ego Depletion</span>
-    <span>Advanced professional curriculum</span>
+    <span>45 min lesson + practice</span>
+    <span>Evidence-led professional curriculum</span>
+    <span>Level 2</span>
   </div>
 </header>
 
@@ -118,245 +36,227 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#academic-foundation">1. Academic Foundation</a></li>
-      <li><a href="#biological-readiness">2. Decision Readiness</a></li>
-      <li><a href="#the-matrix">3. Tactics & Matrix</a></li>
-      <li><a href="#choice-architecture">4. Choice Architecture</a></li>
-      <li><a href="#case-studies">5. Composite Practice Scenarios</a></li>
-      <li><a href="#roleplay">6. Verbatim Roleplay</a></li>
-      <li><a href="#troubleshooting">7. Troubleshooting Pitfalls</a></li>
+      <li><a href="#introduction">1. What closing is and is not</a></li>
+      <li><a href="#objectives">2. Observable learning objectives</a></li>
+      <li><a href="#readiness">3. Decision readiness: the five conditions</a></li>
+      <li><a href="#techniques">4. Closing techniques, graded</a></li>
+      <li><a href="#commitments">5. Incremental commitment and the mutual action plan</a></li>
+      <li><a href="#worked-example">6. Worked example: two closes, two aftermaths</a></li>
+      <li><a href="#execution">7. Weak versus improved close</a></li>
+      <li><a href="#practice">8. Practice: commitment and next-step plan</a></li>
+      <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
+      <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="academic-foundation">
-      <h2>1. Academic Foundation: Choice Architecture & Ego Depletion</h2>
-      <p>Traditional sales treats the close as a battle of wills. Elite enterprise sales relies on <strong>Choice Architecture (Thaler & Sunstein, 2008)</strong> and the mitigation of <strong>Ego Depletion (Baumeister, 1998)</strong>.</p>
-      <p>By the end of a 6-month enterprise sales cycle, the buying committee is suffering from severe Ego Depletion (decision fatigue). Their prefrontal cortex is exhausted. If you present them with a complex, high-friction close (e.g., "Here are our 14 pricing tiers, which do you want?"), their exhausted brains will default to the <strong>Status Quo Bias (Samuelson & Zeckhauser, 1988)</strong>, resulting in a delayed or abandoned deal.</p>
-      <p>Elite sellers are Choice Architects. They structure the final decision so that saying "yes" requires less cognitive load and less unnecessary effort than saying "no" or "let's wait."</p>
+    <section id="introduction">
+      <h2>1. What closing is and is not</h2>
+      <p>Closing has the worst literature in the profession. Decades of training material treat it as a moment of applied pressure — the assumptive close, the alternative close, the puppy-dog close, the Ben Franklin close — as though the seller's job at the end is to extract a signature the buyer would not otherwise give.</p>
+      <p>That framing was always ethically shaky. What has changed is that it is now commercially wrong as well, for two reasons. First, in subscription and relationship businesses the signature is not the end of the transaction but the start of a cost — a customer who signed under pressure churns, does not expand, will not act as a reference, and consumes support disproportionately. Second, the dominant reason deals fail is not that buyers resist; it is that they cannot decide. Applying pressure to that condition makes it worse, as Module 09 established.</p>
+      <p>The professional definition: <strong>closing is helping a buyer reach and act on a decision they can defend — including the decision not to proceed.</strong> Under this definition an honest, early "no" is a good outcome. It returns your capacity to something real, it preserves the relationship for a later cycle, and it is enormously more valuable than the six months of polite non-response that most sellers accept as the alternative.</p>
+      <p>Iannarino's work on commitment sequences (class <strong>F</strong>) makes the useful structural point: a complex sale is not one close but a series of small, genuine commitments — to explore, to involve others, to invest time, to test, to decide. A seller who has never asked for any of the intermediate commitments has no basis for expecting the final one.</p>
     </section>
 
-    <section id="biological-readiness">
-      <h2>2. Decision Readiness & When to Close</h2>
-      <p>Do not force a decision when material questions, authority, risk, or stakeholder alignment remain unresolved. Readiness must be established through explicit buyer evidence.</p>
-      <p>Stop pitching the moment you see a buying signal. Continuing to pitch after the buyer's brain has already decided introduces new variables, triggering cognitive dissonance and paralyzing the deal.</p>
-      
-      <h3>Observable Decision Signals</h3>
-      <ul>
-        <li>They start asking implementation logistics ("How long does onboarding take?").</li>
-        <li>They switch their pronoun usage from "if" to "when" ("When we roll this out...").</li>
-        <li>Their physical posture relaxes (leaning back, uncrossed arms, dropping the 'Parent' ego state).</li>
-      </ul>
-      <p>When you see these signals, execute a <strong>Trial Close</strong> (e.g., "Based on what we've discussed, does this seem like the right architecture for your team?"). If the response is positive, proceed immediately to the formal close.</p>
+    <section id="objectives">
+      <h2>2. Observable learning objectives</h2>
+      <p>By completing this module you will be able to demonstrate the following:</p>
+      <p>Assess decision readiness against five conditions and identify which is missing before asking for commitment.</p>
+      <p>Grade common closing techniques by whether they aid or subvert a defensible decision.</p>
+      <p>Ask for commitment in clear, unambiguous language without softening it into invisibility.</p>
+      <p>Build a mutual action plan with named owners, dates, and reciprocal obligations.</p>
+      <p>Elicit an honest no, and treat it as a legitimate and valuable outcome.</p>
     </section>
 
-    <section id="the-matrix">
-      <h2>3. The Tactical Matrix & 17 Closes</h2>
-      <p>Amateurs memorize one closing line and use it on everyone. Elite reps match the closing tactic to the buyer's specific psychological profile and the deal context.</p>
+    <section id="readiness">
+      <h2>3. Decision readiness: the five conditions</h2>
+      <p>Asking for commitment before readiness produces one of three bad outcomes: a no you did not need to hear yet, a soft yes that unravels, or an evasion that costs you the ability to ask cleanly again. Check the five conditions first.</p>
 
-      <div class="matrix">
+      <h3>Table 1: The readiness checklist</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Condition</th><th>Evidence it is met</th><th>Evidence it is not</th><th>What to do if missing</th></tr></thead>
+      <tbody>
+      <tr><td><strong>1. The problem is owned</strong></td><td>A named person has described the consequence of not solving it, in their own words and numbers.</td><td>You are the one who keeps restating the problem.</td><td>Return to diagnosis (Module 33). You do not have a deal.</td></tr>
+      <tr><td><strong>2. The solution is understood</strong></td><td>The buyer can explain, without you, what will change and how.</td><td>They describe your product's features rather than their changed situation.</td><td>Rebuild the value articulation (Module 01) and let them explain it back.</td></tr>
+      <tr><td><strong>3. The economics are agreed</strong></td><td>Someone with budget authority has seen and accepted the numbers, including the assumptions.</td><td>The business case exists but has only been seen by your champion.</td><td>Get the case in front of the economic buyer, ideally as a document that travels (Module 06).</td></tr>
+      <tr><td><strong>4. The process is known</strong></td><td>You can name every remaining step, its owner, and its duration.</td><td>"It just needs sign-off." Sign-off by whom, requiring what, taking how long?</td><td>Ask how the last comparable purchase actually got approved — a past-event question beats a process question.</td></tr>
+      <tr><td><strong>5. The risks are bounded</strong></td><td>The buyer can articulate what happens if it fails, and it is survivable.</td><td>Agreement plus repeated delay — the signature of indecision.</td><td>Shrink the bet: phased scope, pilot criteria, exit terms (Module 09).</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <div class="callout tip">
+        <div class="callout-label">The diagnostic that replaces "are they ready?"</div>
+        <p>Ask the buyer to explain the decision back to you: "If you were briefing your board next week, how would you describe what we're proposing and why?" If they can do it fluently, conditions 1–3 are met and you can hear it in their language. If they hesitate or reach for your slides, you have your answer and you have not spent a close to get it.</p>
+      </div>
+    </section>
+
+    <section id="techniques">
+      <h2>4. Closing techniques, graded</h2>
+      <p>Not all closing techniques are equivalent. The dividing line is whether the technique helps the buyer make a decision or engineers agreement around one.</p>
+
+      <h3>Table 2: Techniques graded by whether they support a defensible decision</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Technique</th><th>How it works</th><th>Grade</th><th>Assessment</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Direct ask</strong></td><td>"Based on everything we've covered, I think this is the right move. Are you ready to go ahead?"</td><td><strong>Use</strong></td><td>Clear, honest, easy to decline. Underused because it risks a no — which is exactly its value.</td></tr>
+      <tr><td><strong>Summary close</strong></td><td>Recap the agreed problem, the agreed value, the agreed terms, then ask.</td><td><strong>Use</strong></td><td>Helps the buyer see the whole decision at once. Only works if each element was genuinely agreed, so it doubles as a readiness check.</td></tr>
+      <tr><td><strong>Recommendation close</strong></td><td>"I'd take option B, not C, and here's why — and here's what I'd be worried about."</td><td><strong>Use</strong></td><td>The strongest move against indecision. Requires standing earned by having recommended against yourself before.</td></tr>
+      <tr><td><strong>Next-step close</strong></td><td>"The next step is a security review — shall we get that scheduled for the 14th?"</td><td><strong>Use</strong></td><td>Appropriate mid-cycle. Progresses the process without a premature final ask.</td></tr>
+      <tr><td><strong>Negative / take-away close</strong></td><td>"I'm not sure this is right for you — your data quality may not be ready."</td><td><strong>Conditional</strong></td><td>Legitimate <em>only</em> when true. A genuine concern honestly raised. As a manufactured tactic it is manipulation and buyers recognise it.</td></tr>
+      <tr><td><strong>Assumptive close</strong></td><td>"I'll get the paperwork over — shall we start on the 1st?"</td><td><strong>Avoid</strong></td><td>Requires the buyer to actively resist a stated fact to say no. Converts declining into a social confrontation.</td></tr>
+      <tr><td><strong>Alternative close</strong></td><td>"Would you prefer to start in March or April?"</td><td><strong>Avoid</strong></td><td>Presents a false choice that omits the real option. Transparent to any experienced buyer and damages credibility.</td></tr>
+      <tr><td><strong>Urgency / deadline close</strong></td><td>"This pricing ends Friday."</td><td><strong>Avoid unless real</strong></td><td>A genuine constraint stated neutrally is information. A fabricated one is a deceptive practice and makes indecision worse.</td></tr>
+      <tr><td><strong>Puppy-dog / trial</strong></td><td>"Just try it for 30 days."</td><td><strong>Conditional</strong></td><td>Excellent as genuine risk reduction with agreed success criteria. Manipulative when the trial is engineered to create switching costs the buyer was not told about.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p>The four "Use" techniques share a property: <strong>the buyer can say no without a fight.</strong> The three "Avoid" techniques share the opposite one. That is the whole grading rule, and it generalizes to any technique you encounter that is not on this list.</p>
+    </section>
+
+    <section id="commitments">
+      <h2>5. Incremental commitment and the mutual action plan</h2>
+      <p>In a complex sale the final close is the least interesting one. What determines the outcome is a sequence of smaller commitments, each of which is a genuine test: a buyer who will not commit two hours of a technical evaluator's time will not commit £400k.</p>
+
+      <h3>Table 3: The commitment ladder</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Commitment</th><th>What it tests</th><th>What refusal tells you</th></tr></thead>
+      <tbody>
+      <tr><td>Time for a diagnostic conversation</td><td>Whether the problem is real enough to spend an hour on.</td><td>It is not yet a priority. Nurture, do not push.</td></tr>
+      <tr><td>Access to another stakeholder</td><td>Whether your contact has standing and belief.</td><td>Either they are a coach, not a champion, or they are not convinced. Ask which.</td></tr>
+      <tr><td>Sharing internal data</td><td>Whether they will invest effort in their own case.</td><td>They expect you to build the case alone — a strong predictor of a deal that stalls.</td></tr>
+      <tr><td>Time from a technical evaluator</td><td>Whether the organization is spending real resource.</td><td>The evaluation is notional. Forecast accordingly.</td></tr>
+      <tr><td>Agreement on success criteria in writing</td><td>Whether they intend to judge this on evidence.</td><td>They are avoiding a commitment they would be measured against.</td></tr>
+      <tr><td>A named date for a decision</td><td>Whether a decision process exists at all.</td><td>Very often: there is no process, only interest.</td></tr>
+      </tbody>
+      </table>
+      </div>
+
+      <p>The <strong>mutual action plan</strong> makes this ladder explicit. It is a shared, dated document listing every remaining step to a decision, with an owner on each — and, critically, obligations on both sides. A plan with only seller tasks is a project schedule; a plan with buyer tasks is a commitment.</p>
+      <div class="callout warning">
+        <div class="callout-label">The MAP failure mode</div>
+        <p>Most mutual action plans fail because they are written <em>at</em> the buyer rather than <em>with</em> them, sent as a PDF, and never referenced again. A working MAP is co-authored in the meeting, contains dates the buyer proposed, includes at least three buyer-owned tasks, and is reviewed at the top of every subsequent call. If your buyer has never edited it, it is not mutual — and its predictive value is zero.</p>
+      </div>
+    </section>
+
+    <section id="worked-example">
+      <h2>6. Worked example: two closes, two aftermaths</h2>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
+      <p><strong>Scenario:</strong> Two comparable £180k deals close in the same quarter, one via pressure and one via readiness. Both count identically in the quarter's bookings. Eighteen months later they have produced opposite results.</p>
+
+      <h3>Table 4: The same booking, eighteen months apart</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Dimension</th><th>Deal P — pressure close</th><th>Deal R — readiness close</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Readiness at close</strong></td><td>Conditions 1 and 2 met. Economic buyer had never seen the case; the process was "it just needs sign-off"; risk unbounded.</td><td>All five met. The CFO had reviewed the assumptions and challenged two of them.</td></tr>
+      <tr><td><strong>Technique used</strong></td><td>Assumptive close plus a quarter-end discount expiring in four days.</td><td>Summary close, then a recommendation including a disclosed weakness in the reporting module.</td></tr>
+      <tr><td><strong>Time to signature</strong></td><td>11 days from proposal.</td><td>7 weeks from proposal.</td></tr>
+      <tr><td><strong>Implementation</strong></td><td>Stalled at week 3. The operations team had not been consulted and had no capacity. Go-live slipped 5 months.</td><td>On schedule. The MAP had named the ops lead as an owner in week 1, so capacity was reserved before signature.</td></tr>
+      <tr><td><strong>Support load</strong></td><td>3.1× the account average in year one. Most tickets were expectation mismatches, not defects.</td><td>0.7× average.</td></tr>
+      <tr><td><strong>Expansion</strong></td><td>None. Two attempts refused.</td><td>£95k expansion in month 11, initiated by the customer.</td></tr>
+      <tr><td><strong>Reference</strong></td><td>Declined. "We wouldn't be comfortable recommending them."</td><td>Named case study plus four reference calls, two of which sourced new deals.</td></tr>
+      <tr><td><strong>Renewal</strong></td><td>Churned at month 14, citing "not what we were sold."</td><td>Renewed with a 3-year term.</td></tr>
+      <tr><td><strong>Total contribution</strong></td><td><strong>£180k booked. ~£61k realized after churn, support cost, and the discount.</strong></td><td><strong>£180k booked. ~£412k realized including expansion, renewal, and two referred deals.</strong></td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p><strong>Takeaway:</strong> the two deals were indistinguishable in the quarterly report and differed by roughly 6.7× in realized value. This is the central argument against pressure closing, and it is economic rather than moral. It also explains why the behavior persists: the costs land outside the period in which the seller is measured. Module 41 treats the compensation design that makes Deal P rational for an individual seller.</p>
+    </section>
+
+    <section id="execution">
+      <h2>7. Weak versus improved close</h2>
+      <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> Final proposal meeting. The buyer has been positive throughout. The seller needs to ask for the decision.</p>
+
+      <div class="callout warning">
+        <div class="callout-label">Weak execution (assumptive close, false choice, manufactured deadline)</div>
+        <p><em>Seller:</em> "Great, I think we're all aligned. So what I'll do is get the contract over to you this afternoon — and did you want to start on the 1st or would the 15th work better? Oh, and just a heads-up, the pricing we discussed is Q3 pricing, so I'd need to get it signed by the 30th to protect it for you."<br>
+        <em>Buyer:</em> "Let me talk to a few people and come back to you."</p>
+        <p><em>Why it fails:</em> The assumptive close requires the buyer to resist a stated fact in order to say no, which turns declining into a confrontation — so they evade instead. The alternative close offers two start dates while omitting the real option, which any experienced buyer reads as a manipulation and quietly downgrades the seller for. The deadline is a manufactured constraint. And critically, none of it establishes readiness: "we're all aligned" is the seller's assessment, not the buyer's, and the vague deferral is what an unready buyer sounds like.</p>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-label">Improved execution (check readiness, summarize, recommend, ask, and make no easy)</div>
+        <p><em>Seller:</em> "Before I ask you anything — if you were briefing your board next week, how would you describe what we're proposing and why?"<br>
+        <em>Buyer:</em> "That we're losing about £230k a year to detection delay on line three, this cuts it to near zero within a quarter, and the payback is under two years."<br>
+        <em>Seller:</em> "That's exactly it, and you said it better than I would. So: we agreed the problem in June, agreed the numbers with your finance partner in July, and security signed off last week. The one thing I'd still flag is that our reporting module is weaker than what you have now — you'd lose two of the custom views. I don't think that's decisive, but you should decide it rather than discover it.<br><br>
+        My recommendation is that you go ahead with line three only, not all four lines, and expand once you've seen a quarter of data. That's a smaller decision and it's the one I'd make.<br><br>
+        So — are you ready to go ahead, or is there something still in the way? And genuinely, if the answer is no or not now, I'd rather know today than chase this for three months."<br>
+        <em>Buyer:</em> "The reporting thing I need to check with the plant manager. Give me until Thursday and if he's fine with it, we're going."</p>
+        <p><em>Why it succeeds:</em> Readiness was tested before the ask, and the buyer's own articulation confirmed conditions 1–3. The summary referenced agreements that actually happened. The disclosed weakness cost something and bought credibility. The recommendation shrank the decision. The ask was direct and unambiguous. And the explicit permission to say no is what produced a specific, actionable answer with a date, instead of a polite deferral.</p>
+      </div>
+    </section>
+
+    <section id="practice">
+      <h2>8. Practice: commitment and next-step plan</h2>
+      <p><strong>Exercise goal:</strong> assess a live deal's readiness honestly, and build a mutual action plan the buyer would actually co-sign.</p>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
+      <ol>
+        <li>Take a deal you expect to close this quarter. Score all five readiness conditions as met / partial / not met, citing the specific evidence for each. "Partial" and "not met" are the useful answers.</li>
+        <li>For every condition below "met," write the specific action that would close the gap and who must do it.</li>
+        <li>Write the explain-it-back question you will use, and predict the buyer's answer. Then ask it and compare.</li>
+        <li>List every commitment you have asked for so far and whether it was granted. Look for the pattern — a deal where you have never asked for anything is not advancing, it is drifting.</li>
+        <li>Build the mutual action plan: every remaining step to a decision, with owner, date, and dependency. At least three tasks must be buyer-owned.</li>
+        <li>Write your close: the summary, the disclosed weakness, the recommendation, the direct ask, and the explicit permission to decline.</li>
+        <li>Write the language you will use to elicit an honest no, and mean it.</li>
+      </ol>
+
+      <div class="solution-guide">
+        <h3>Completed exemplar (£240k platform deal)</h3>
         <table>
-          <thead>
-            <tr>
-              <th>Situation</th>
-              <th>Best close</th>
-              <th>Why it may matter</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="col-context">Long B2B enterprise cycle</td>
-              <td class="col-close">Next-Step, Summary</td>
-              <td>Anchors agreement incrementally; reduces cognitive load of a massive decision.</td>
-            </tr>
-            <tr>
-              <td class="col-context">Highly analytical buyer (CFO/CTO)</td>
-              <td class="col-close">Ben Franklin, Summary</td>
-              <td>Respects their Neopsyche (Adult) logic processor; prevents emotional spiking.</td>
-            </tr>
-            <tr>
-              <td class="col-context">Indecisive, fearful prospect</td>
-              <td class="col-close">Assumptive, Alternative</td>
-              <td>Bypasses decision fatigue by presenting the choice as already made.</td>
-            </tr>
-            <tr>
-              <td class="col-context">Price objection lingering</td>
-              <td class="col-close">Conditional</td>
-              <td>Surfaces the real blocker and executes a clean trade without caving.</td>
-            </tr>
-            <tr>
-              <td class="col-context">Genuine fiscal deadline exists</td>
-              <td class="col-close">Urgency, Scarcity</td>
-              <td>Truthful time pressure leverages loss aversion effectively.</td>
-            </tr>
-          </tbody>
+        <thead><tr><th>Element</th><th>Entry</th></tr></thead>
+        <tbody>
+        <tr><td><strong>Readiness scoring</strong></td><td>1. Problem owned: <strong>met</strong> — Ops Director quantified £310k/yr in writing. 2. Solution understood: <strong>met</strong> — she presented it internally without us. 3. Economics agreed: <strong>partial</strong> — finance has seen the model but not challenged the adoption assumption. 4. Process known: <strong>not met</strong> — "board approval" with no date, no agenda, no papers deadline. 5. Risks bounded: <strong>partial</strong> — no exit criteria defined.</td></tr>
+        <tr><td><strong>Gap actions</strong></td><td>(3) 30 minutes with the FP&amp;A analyst to stress-test adoption — <em>we request, champion arranges</em>. (4) Ask how the last £200k+ purchase was approved, get the board calendar and papers deadline — <em>champion</em>. (5) Draft exit criteria for month 4 — <em>us, reviewed by ops</em>.</td></tr>
+        <tr><td><strong>Explain-it-back</strong></td><td>Predicted: she leads with hours saved. Actual: she led with <em>audit exposure</em>, which we had treated as secondary. <strong>Reordered the board summary accordingly — this alone changed the framing of the paper.</strong></td></tr>
+        <tr><td><strong>Commitment history</strong></td><td>Diagnostic hour ✓; access to ops ✓; internal data ✓; technical evaluator time ✓; success criteria ✗ (never asked); decision date ✗ (never asked). <strong>Pattern: strong early commitments, none requested in the last six weeks.</strong></td></tr>
+        <tr><td><strong>Mutual action plan</strong></td><td>Wk1: FP&amp;A session (buyer arranges). Wk1: exit criteria draft (us). Wk2: ops sign-off on criteria (buyer). Wk2: board papers submitted (buyer — hard deadline, 10 days before the board). Wk3: security final questionnaire returned (us). Wk4: board decision. Wk5: contract to legal. <strong>Four buyer-owned tasks, dates proposed by the champion.</strong></td></tr>
+        <tr><td><strong>The close</strong></td><td>Summary of the three agreements → disclosed weakness ("our audit-trail export needs a manual step for the first two quarters; here's the workaround and the roadmap date") → recommendation ("two sites first, not six") → direct ask → "and if the board says no, tell me and I'll stop — I'd rather have a clear no in November than a maybe until March."</td></tr>
+        </tbody>
         </table>
       </div>
 
-      <p>Below is a reference grid of 17 tactical closes. Use them surgically.</p>
-      <div class="close-grid" id="closeGrid">
-
-        <div class="close-card" data-close="1">
-          <div class="close-num">01</div>
-          <div class="close-name">Direct Close</div>
-          <div class="close-when">When · obvious fit, mature buyer</div>
-          <div class="close-script">Are you ready to move forward?</div>
-        </div>
-        <div class="close-card" data-close="2">
-          <div class="close-num">02</div>
-          <div class="close-name">Assumptive Close</div>
-          <div class="close-when">When · strong buying signals shown</div>
-          <div class="close-script">Great — should we start the paperwork, or do you want to walk through it once more?</div>
-        </div>
-        <div class="close-card" data-close="3">
-          <div class="close-num">03</div>
-          <div class="close-name">Alternative Close</div>
-          <div class="close-when">When · multiple options exist</div>
-          <div class="close-script">Would you prefer the annual or monthly plan?</div>
-        </div>
-        <div class="close-card" data-close="4">
-          <div class="close-num">04</div>
-          <div class="close-name">Summary Close</div>
-          <div class="close-when">When · complex, multi-feature deals</div>
-          <div class="close-script">So we've agreed it'll save 10 hours a week and ROI in 6 months. Want to start?</div>
-        </div>
-        <div class="close-card" data-close="5">
-          <div class="close-num">05</div>
-          <div class="close-name">Trial Close</div>
-          <div class="close-when">When · testing temperature</div>
-          <div class="close-script">If we could start Monday, would that work?</div>
-        </div>
-        <div class="close-card" data-close="6">
-          <div class="close-num">06</div>
-          <div class="close-name">Question Close</div>
-          <div class="close-when">When · they're 80% there</div>
-          <div class="close-script">Is there anything else you need to know before we proceed?</div>
-        </div>
-        <div class="close-card" data-close="7">
-          <div class="close-num">07</div>
-          <div class="close-name">Silent Close</div>
-          <div class="close-when">When · price is on the table</div>
-          <div class="close-script">The total is €4,800. [Wait silently.]</div>
-        </div>
-        <div class="close-card" data-close="8">
-          <div class="close-num">08</div>
-          <div class="close-name">Puppy Dog Close</div>
-          <div class="close-when">When · physical or trial product</div>
-          <div class="close-script">Take it home for a week. If you don't love it, bring it back.</div>
-        </div>
-        <div class="close-card" data-close="9">
-          <div class="close-num">09</div>
-          <div class="close-name">Takeaway Close</div>
-          <div class="close-when">When · they're being indecisive</div>
-          <div class="close-script">Honestly — maybe this isn't the right fit for you. Should we hold off?</div>
-        </div>
-        <div class="close-card" data-close="10">
-          <div class="close-num">10</div>
-          <div class="close-name">Ben Franklin Close</div>
-          <div class="close-when">When · analytical buyers</div>
-          <div class="close-script">Let's write down the reasons for and against — together.</div>
-        </div>
-        <div class="close-card ethics-warn" data-close="11">
-          <div class="close-num">11</div>
-          <div class="close-name">Scarcity Close</div>
-          <div class="close-when">When · genuinely limited only</div>
-          <div class="close-script">We have two spots left in this cohort. Should I save one?</div>
-        </div>
-        <div class="close-card ethics-warn" data-close="12">
-          <div class="close-num">12</div>
-          <div class="close-name">Urgency Close</div>
-          <div class="close-when">When · genuine deadline exists</div>
-          <div class="close-script">The Q4 pricing ends Friday. Worth deciding before then?</div>
-        </div>
-        <div class="close-card" data-close="13">
-          <div class="close-num">13</div>
-          <div class="close-name">Next-Step Close</div>
-          <div class="close-when">When · long B2B cycles</div>
-          <div class="close-script">What's the right next step from here?</div>
-        </div>
-        <div class="close-card" data-close="14">
-          <div class="close-num">14</div>
-          <div class="close-name">1-2-3 Close</div>
-          <div class="close-when">When · summarizing simple offer</div>
-          <div class="close-script">So: saves time, saves money, removes risk. Ready?</div>
-        </div>
-        <div class="close-card" data-close="15">
-          <div class="close-num">15</div>
-          <div class="close-name">Empathy Close</div>
-          <div class="close-when">When · sensitive buyers</div>
-          <div class="close-script">I can see this is a big decision. What feels right?</div>
-        </div>
-        <div class="close-card" data-close="16">
-          <div class="close-num">16</div>
-          <div class="close-name">Conditional Close</div>
-          <div class="close-when">When · objections remain</div>
-          <div class="close-script">If we could include onboarding at no extra cost, would you sign today?</div>
-        </div>
-        <div class="close-card" data-close="17">
-          <div class="close-num">17</div>
-          <div class="close-name">Walk-Away Close</div>
-          <div class="close-when">When · the deal isn't a fit</div>
-          <div class="close-script">I don't think we're the right fit. Let me suggest someone who might be.</div>
-        </div>
-
-      </div>
+      <p><strong>Evaluation rubric:</strong> Honest readiness scoring with cited evidence and at least one "not met" (25%); specific gap-closing actions with named owners (15%); explain-it-back question used and the answer compared to prediction (15%); mutual action plan with three or more buyer-owned tasks and buyer-proposed dates (20%); close containing a genuine disclosed weakness and a recommendation (15%); credible language for eliciting an honest no (10%).</p>
+      <p><strong>Beginner variation:</strong> Score readiness on one deal and use the explain-it-back question. Most sellers discover that condition 4 — the process — is unknown on deals they are forecasting confidently.</p>
+      <p><strong>Advanced variation:</strong> Score readiness across your whole pipeline and re-forecast on the results. Then compare your new forecast against your CRM stage-based forecast. The gap between them is a measure of how much of your pipeline is drifting rather than advancing, and it is usually a difficult but valuable number to show your manager.</p>
     </section>
 
-    <section id="choice-architecture">
-      <h2>4. Choice Architecture & The Asymmetric Ask</h2>
-      <p>The actual ask must be asymmetrical. The cognitive load to say "yes" must be near zero, while the load to say "no" must require justifying a massive loss to the company.</p>
-      <p>After you ask for the decision, you must embrace <strong>The Silence</strong>. The negotiator who speaks first after the close loses. Silence creates a void that the buyer's brain naturally wants to fill. If you fill the silence to relieve your own anxiety, you will bid against yourself.</p>
+    <section id="knowledge-check">
+      <h2>9. Applied knowledge check</h2>
+
+      <details><summary>1. Why is the assumptive close ("I'll send the contract over — shall we start on the 1st?") graded avoid?</summary>
+      <p>Because it makes declining a social confrontation. The buyer must actively resist a stated fact in order to say no, so the low-cost path is evasion — "let me talk to a few people" — which is exactly what you get. You have spent your close and learned nothing, and you have lost the ability to ask cleanly again. The four techniques worth using all share the opposite property: the buyer can decline without a fight, which is what makes their yes informative.</p></details>
+
+      <details><summary>2. What is the fastest test of decision readiness?</summary>
+      <p>Ask the buyer to explain the decision back to you as if briefing their board. If they can describe the problem, the change, and the economics fluently and in their own language, conditions 1–3 are met. If they hesitate or reach for your slides, they are not ready — and you have learned it without spending a close. It also frequently surfaces a reframing: buyers often lead with a different driver than the one you have been emphasizing, which tells you what the internal case actually rests on.</p></details>
+
+      <details><summary>3. A mutual action plan contains eight steps, all owned by you. What is wrong?</summary>
+      <p>It is not mutual, so it has no predictive value. A plan with only seller tasks is a project schedule the buyer has no stake in; its completion tells you nothing about whether a decision is coming. A working MAP is co-authored in the meeting, uses dates the buyer proposed, contains at least three buyer-owned tasks, and is reviewed at the top of every call. Buyer-owned tasks are the actual instrument: they are small commitments, and refusal or slippage on them is the earliest reliable signal that the deal is not real.</p></details>
+
+      <details><summary>4. Why is an honest early "no" a good outcome?</summary>
+      <p>Because the realistic alternative is not a yes — it is six months of polite non-response that consumes your capacity, corrupts your forecast, and ends in the same place. An early no returns your time to opportunities that can close, preserves the relationship for a later cycle when circumstances change, and often produces the most useful information you will get about why your offering did not fit. Sellers avoid asking for it because a no feels like a failure in the moment; the pipeline arithmetic says otherwise.</p></details>
+
+      <details><summary>5. Two deals of the same size close in the same quarter, one under pressure. They count identically in the bookings report. What does that tell you about the report?</summary>
+      <p>That bookings are a leading indicator with a long and invisible tail. A pressure-closed deal that churns at month 14, generates three times the support load, refuses to reference, and never expands can realize a small fraction of a comparable readiness-closed deal — the difference is easily several-fold. The report is not wrong, it is simply measuring one moment. The organizational consequence is that any compensation system paying fully at signature makes the worse deal rational for the individual seller, which is a design problem, not a character problem (see Module 41).</p></details>
     </section>
 
-    <section id="case-studies">
-      <h2>5. Composite Practice Scenarios</h2>
-
-      <h3>Composite Scenario 1: The $2.4M VSL Pitch Transformation (Decision Fatigue)</h3>
-      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
-      <p><strong>Background:</strong> A SaaS company was pitching a $2.4M Video Sales Letter (VSL) tech stack to a media conglomerate. The reps ended their pitch by offering 4 different deployment tiers and asking the buyer to choose.</p>
-      <p><strong>The Incident:</strong> The buyer, suffering from Ego Depletion, said "Let me take this back to the team to review." The deal stalled for 4 months (Status Quo Bias).</p>
-      <p><strong>The Fix:</strong> The VP of Sales revised the close using Choice Architecture. They removed all tiers and presented one singular recommendation: <em>"Based on your infrastructure, the Tier 2 deployment is the only one that guarantees 99.9% uptime. Should we spin up the sandbox on Monday?"</em></p>
-      <p><strong>The Result:</strong> By removing the cognitive load of choice, the buyer felt safe and simply agreed to the expert's recommendation. The deal closed in 48 hours.</p>
-
-      <h3>Composite Scenario 2: The $1.1M Legacy Vendor Loyalty (Status Quo Bias)</h3>
-      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
-      <p><strong>Background:</strong> An enterprise software rep was trying to unseat a legacy vendor on a $1.1M contract. The buyer admitted the new software was better, but was terrified of the migration risk (loss aversion).</p>
-      <p><strong>The Tactic:</strong> The rep used a <strong>Conditional Close</strong> combined with a <strong>Walk-Away</strong>. <em>"If we migrate your data in parallel for 30 days so there is zero downtime, would you make the switch? Because if that's still too risky, we should honestly walk away and let you stay with the legacy system."</em></p>
-      <p><strong>The Result:</strong> The buyer's pride was triggered, and the absolute risk reversal (parallel migration) destroyed the status quo bias. The buyer signed.</p>
-
-      <h3>Composite Scenario 3: The $3.1M Multi-Year SaaS (The Silent Close)</h3>
-      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
-      <p><strong>Background:</strong> An AE had just presented a $3.1M proposal to a tough CFO. The CFO was known for aggressive last-minute discounting.</p>
-      <p><strong>The Execution:</strong> The AE presented the price, used the <strong>Summary Close</strong>, and then went completely silent. The CFO stared at the AE for 24 excruciating seconds.</p>
-      <p><strong>The Result:</strong> The AE felt pressure to fill the silence with a discount, but waited for the buyer to respond. At second 25, the CFO sighed and said, <em>"Fine, send the paperwork to legal."</em> If the AE had spoken at second 12, they would have lost $300K.</p>
-    </section>
-
-    <section id="roleplay">
-      <h2>6. Verbatim Roleplay: The Choice Architecture Close</h2>
-      <p>This transcript demonstrates how to bypass Ego Depletion in a complex enterprise deal by heavily structuring the final decision.</p>
-      
-      <div class="callout">
-        <div class="callout-label">Transcript Analysis</div>
-        <p><strong>Elite Seller (Adult Ego State - Calm, grounded):</strong> "Over the last three months, we've aligned with IT on security, we've mapped the integration with your CTO, and we've proven the $1.2M ROI model with your finance team." <em>(Summary Close - Anchoring the sunk cost and value)</em></p>
-        <p><strong>Buyer (Exhausted):</strong> "Yeah, we're aligned. I just need to figure out which of the three rollout plans makes sense for us to start with."</p>
-        <p><strong>Elite Seller (Choice Architect):</strong> "I wouldn't recommend Plan A or C. Based on your team's bandwidth, Plan B is the only one that gets you live before the Q3 blackout period without burning out your engineers." <em>(Removing cognitive load; offering a strong recommendation)</em></p>
-        <p><strong>Elite Seller:</strong> "If we go with Plan B, we can execute the Master Service Agreement today and have the kickoff call on Tuesday. Are you ready to move forward with that?" <em>(Direct Ask)</em></p>
-        <p><strong>Buyer:</strong> [Pauses for 8 seconds] "Yes. Let's do Plan B."</p>
-      </div>
-      <p><strong>The Breakdown:</strong> The seller didn't let the buyer take the decision offline. They recognized the buyer's decision fatigue, removed the friction of choice, and provided a safe, clear path forward, sealing it with a direct close and silence.</p>
-    </section>
-
-    <section id="troubleshooting">
-      <h2>7. Troubleshooting Pitfalls</h2>
-      <p>If your deals are stalling at the 1-yard line, audit for these closing failures:</p>
+    <section id="conclusion">
+      <h2>10. Practical conclusion &amp; next action</h2>
+      <p>Closing is the least mysterious part of selling once you stop treating it as a moment of extraction. Check readiness, summarize what was genuinely agreed, disclose what is weak, recommend what you would actually do, ask clearly, and make it easy to be told no.</p>
       <ul>
-        <li><strong>The Fear of Silence:</strong> You ask the closing question, the buyer pauses to think, and you panic, immediately offering a discount ("...or we could do 10% off!"). You just negotiated against yourself.</li>
-        <li><strong>Closing the Wrong Ego State:</strong> Trying to aggressively close a buyer who is in an Adapted Child state (fearful, anxious). You must co-regulate them back to an Adult state before asking for the signature.</li>
-        <li><strong>Choice Overload:</strong> Sending a proposal with 5 different options. The exhausted buyer's brain will reject the cognitive load and choose "do nothing." Present a clear primary recommendation to reduce cognitive burden.</li>
-        <li><strong>Fake Urgency:</strong> Telling a buyer "This price is only good until Friday" when they know it's a software product with zero marginal cost. You destroy trust and trigger their 'cheater detection' network.</li>
-        <li><strong>Ignoring the Post-Close:</strong> The moment they say yes, they will experience buyer's remorse (cognitive dissonance). You must immediately validate their decision ("You made the right choice, here's exactly what happens next") to prevent them from backing out during the legal review.</li>
+        <li>Closing is helping a buyer reach a decision they can defend — including a decision not to proceed.</li>
+        <li>Check the five readiness conditions before asking. The process condition is the one most often unmet on confidently forecast deals.</li>
+        <li>Ask the buyer to explain the decision back. It is the fastest readiness test available and it costs nothing.</li>
+        <li>Use direct, summary, recommendation, and next-step closes. Avoid assumptive, alternative, and fabricated urgency.</li>
+        <li>The grading rule generalizes: can the buyer say no without a fight?</li>
+        <li>A mutual action plan with no buyer-owned tasks has no predictive value.</li>
+        <li>Ask for the honest no. The alternative is not a yes; it is a slow, expensive silence.</li>
       </ul>
+      <p><strong>Immediate action:</strong> On your next late-stage call, ask the explain-it-back question before you ask for anything else. Then add one sentence to your close: "and if the answer is no or not now, I'd rather know today." Both take seconds and both change what you learn.</p>
+      <p><strong>Related modules:</strong> <a href="module-09.html">09 · Objection Handling</a>, <a href="module-23.html">23 · MEDDPICC &amp; Mutual Action Plans</a>, <a href="module-11.html">11 · Customer Retention</a>, and <a href="module-39.html">39 · Revenue Operations, Pipeline &amp; Forecasting</a>.</p>
     </section>
 
   </article>
@@ -365,11 +265,11 @@
 <nav class="module-nav">
   <a href="module-09.html" class="prev">
     <div class="dir">← Previous · Module 09</div>
-    <div class="next-title">Objections</div>
+    <div class="next-title">Objection Handling</div>
   </a>
   <a href="module-11.html" class="next">
     <div class="dir">Next · Module 11</div>
-    <div class="next-title">Retention</div>
+    <div class="next-title">Customer Retention</div>
   </a>
 </nav>
 
@@ -378,7 +278,6 @@
 </footer>
 
 <script src="script.js"></script>
-<!-- Google Translate -->
 <div id="google_translate_element" style="position:absolute; top:-9999px; left:-9999px; z-index:-9999;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {

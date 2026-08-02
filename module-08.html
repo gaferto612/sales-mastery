@@ -5,133 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Module 08 · Negotiation — Sales Mastery</title>
 <link rel="stylesheet" href="styles.css">
-<style>
-  /* BATNA / ZOPA visualizer */
-  .zopa-viz {
-    margin: 32px 0;
-    padding: 32px 24px;
-    background: var(--ink);
-    border: 1px solid var(--line);
-  }
-  .zopa-bar {
-    position: relative;
-    height: 80px;
-    background: var(--ink-soft);
-    margin: 40px 0 32px;
-    border-radius: 4px;
-  }
-  .zopa-range {
-    position: absolute;
-    top: 0; bottom: 0;
-    background: linear-gradient(90deg, rgba(74,157,111,0.2), rgba(74,157,111,0.5));
-    border-left: 2px solid var(--green);
-    border-right: 2px solid var(--green);
-  }
-  .zopa-marker {
-    position: absolute;
-    top: -28px; bottom: -28px;
-    width: 2px;
-    background: var(--orange);
-  }
-  .zopa-marker.gold { background: var(--gold); }
-  .zopa-marker .lbl {
-    position: absolute;
-    bottom: -22px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--orange);
-    white-space: nowrap;
-  }
-  .zopa-marker.gold .lbl { color: var(--gold); }
-  .zopa-marker .val {
-    position: absolute;
-    top: -22px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--paper);
-    white-space: nowrap;
-  }
-  .zopa-zone-label {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-display);
-    font-size: 14px;
-    color: var(--green);
-    font-style: italic;
-  }
-  
-  /* Concession curve */
-  .concession-chart {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 16px;
-    margin: 24px 0;
-    align-items: center;
-  }
-  .conc-label {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--muted);
-    text-align: right;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-  .conc-bar {
-    height: 32px;
-    background: linear-gradient(90deg, var(--orange), var(--gold));
-    position: relative;
-  }
-  .conc-bar.bad {
-    background: linear-gradient(90deg, var(--red), var(--gold));
-  }
-  .conc-bar .val {
-    position: absolute;
-    top: 50%; transform: translateY(-50%);
-    right: 12px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--ink);
-    font-weight: 600;
-  }
-  
-  /* Script accordion */
-  .script-block {
-    background: var(--ink);
-    border-left: 3px solid var(--gold);
-    padding: 18px 22px;
-    margin: 16px 0;
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 17px;
-    color: var(--cream);
-    line-height: 1.5;
-  }
-  .script-block::before {
-    content: '"';
-    font-size: 32px;
-    color: var(--gold);
-    line-height: 0;
-    position: relative;
-    top: 8px;
-    margin-right: 4px;
-  }
-  .script-block::after {
-    content: '"';
-    font-size: 32px;
-    color: var(--gold);
-    line-height: 0;
-    position: relative;
-    top: 8px;
-    margin-left: 4px;
-  }
-</style>
 </head>
 <body>
 
@@ -150,12 +23,12 @@
 
 <header class="page-header">
   <div class="eyebrow"><span class="num">08</span>Negotiation</div>
-  <h1 class="module-title">Bargaining <em>without losing.</em></h1>
-  <p class="lede">Negotiation isn't a battle of wills. It is an exercise in behavioral economics, anchored in asymmetric loss aversion, emotional regulation, and tactical empathy.</p>
+  <h1 class="module-title">Preparation beats <em>tactics</em>, and it is not close.</h1>
+  <p class="lede">Anchoring is real but smaller and more conditional than folklore claims. What actually determines outcomes is knowing your alternatives, your variables, and your limits before the conversation starts — and never conceding anything without receiving something.</p>
   <div class="meta-strip">
-    <span>45 min read</span>
-    <span>Behavioral Economics · Clinical Psychology</span>
-    <span>Advanced professional curriculum</span>
+    <span>50 min lesson + practice</span>
+    <span>Evidence-led professional curriculum</span>
+    <span>Level 2</span>
   </div>
 </header>
 
@@ -163,160 +36,228 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#academic-foundation">1. Academic Foundation</a></li>
-      <li><a href="#the-baseline">2. The Baseline (BATNA & ZOPA)</a></li>
-      <li><a href="#anchoring">3. Anchoring & Concessions</a></li>
-      <li><a href="#tactical-empathy">4. Tactical Empathy</a></li>
-      <li><a href="#case-studies">5. Composite Practice Scenarios</a></li>
-      <li><a href="#roleplay">6. Verbatim Roleplay</a></li>
-      <li><a href="#troubleshooting">7. Troubleshooting Pitfalls</a></li>
+      <li><a href="#introduction">1. What negotiation is, and when it starts</a></li>
+      <li><a href="#preparation">2. Observable learning objectives</a></li>
+      <li><a href="#foundations">3. BATNA, reservation value, and ZOPA</a></li>
+      <li><a href="#anchoring">4. Anchoring: the evidence and its limits</a></li>
+      <li><a href="#trading">5. Conditional trading and the concession log</a></li>
+      <li><a href="#worked-example">6. Worked example: a procurement negotiation</a></li>
+      <li><a href="#execution">7. Weak versus improved concession handling</a></li>
+      <li><a href="#practice">8. Practice: the negotiation preparation sheet</a></li>
+      <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
+      <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
     </ul>
   </aside>
 
   <article class="content">
 
-    <section id="academic-foundation">
-      <h2>1. Academic Foundation: Game Theory & Loss Aversion</h2>
-      <p>The academic foundation of elite negotiation rests on two pillars: <strong>Non-Cooperative Game Theory (Nash, 1950)</strong> and <strong>Prospect Theory (Kahneman & Tversky, 1979)</strong>. In any B2B negotiation, buyers and sellers are acting out a non-cooperative game where information is asymmetrical.</p>
-      <p>Prospect Theory proves that humans experience <strong>asymmetric loss aversion</strong>: the psychological pain of losing $10,000 is approximately twice as intense as the joy of gaining $10,000. Amateur negotiators pitch the "gain" of their product. Elite negotiators frame their price as the necessary toll to avoid a catastrophic, asymmetrical loss for the buyer's organization.</p>
-      <p>A late discount request can create urgency and fear of loss. Do not assume intent. Slow the process, review authority and alternatives, and answer from objective scope and value rather than panic.</p>
+    <section id="introduction">
+      <h2>1. What negotiation is, and when it starts</h2>
+      <p>Negotiation is the process of reaching agreement when parties have both shared and conflicting interests. Two consequences follow that most sellers get wrong.</p>
+      <p><strong>It is not the discount conversation at the end.</strong> By the time procurement asks for 20%, most of the negotiation has already happened — in how requirements were written, which vendors were shortlisted, what the buyer believes their alternatives are, and whether the value case is strong enough to defend a price. A seller who first thinks about negotiation in week 38 of a 40-week cycle is negotiating from a position they built accidentally.</p>
+      <p><strong>The relationship usually outlives the deal.</strong> Most commercial negotiation is not a one-shot transaction; it is the opening of a multi-year relationship in which the same people will meet again at renewal, at expansion, and during the first serious incident. This matters empirically, not just sentimentally: the recent syntheses on first offers document real costs to aggressive opening positions — worse subjective value for the counterpart, lower satisfaction, and higher impasse rates. In a one-shot sale those costs are externalities. In a subscription business they are your renewal rate.</p>
+      <p>The professional stance is therefore neither soft nor hard. It is <strong>firm on your limits, generous with information about why, and relentlessly conditional about concessions.</strong></p>
     </section>
 
-    <section id="the-baseline">
-      <h2>2. The Baseline: BATNA & ZOPA</h2>
-      <p><strong>BATNA</strong> = Best Alternative To a Negotiated Agreement. Having a credible alternative or walk-away boundary (BATNA) provides essential leverage during negotiation.</p>
-      <p><strong>ZOPA</strong> = Zone Of Possible Agreement. The theoretical mathematical range where both parties can achieve a better outcome than their respective BATNAs.</p>
+    <section id="preparation">
+      <h2>2. Observable learning objectives</h2>
+      <p>By completing this module you will be able to demonstrate the following:</p>
+      <p>Establish and improve a real BATNA, and distinguish it from a reservation value and from a target.</p>
+      <p>State the evidence on first-offer anchoring, including its effect size and the conditions under which it weakens.</p>
+      <p>Build a variable inventory that separates price from the other terms that carry value.</p>
+      <p>Trade conditionally, so that no concession is granted without a corresponding movement.</p>
+      <p>Maintain a concession log that survives internal handover and renewal.</p>
+    </section>
 
-      <div class="widget">
-        <div class="widget-header">
-          <div class="widget-title">ZOPA Visualizer</div>
-          <div class="widget-tag">Clinical Dynamics</div>
-        </div>
-        <div class="zopa-viz">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; font-size: 13px; color: var(--muted);">
-            <div>← <strong style="color: var(--paper);">Seller's side</strong> — you want higher</div>
-            <div style="text-align: right;"><strong style="color: var(--paper);">Buyer's side</strong> — they want lower →</div>
-          </div>
-          <div class="zopa-bar">
-            <div class="zopa-range" style="left: 35%; right: 30%;"></div>
-            <div class="zopa-zone-label" style="left: 50%;">ZOPA</div>
-            
-            <div class="zopa-marker" style="left: 15%;">
-               <span class="val">$1.2M</span>
-               <span class="lbl">Seller Opens</span>
-            </div>
-            <div class="zopa-marker gold" style="left: 35%;">
-               <span class="val">$900K</span>
-               <span class="lbl">Seller BATNA</span>
-            </div>
-            <div class="zopa-marker gold" style="left: 70%;">
-               <span class="val">$1.1M</span>
-               <span class="lbl">Buyer BATNA</span>
-            </div>
-            <div class="zopa-marker" style="left: 90%;">
-               <span class="val">$750K</span>
-               <span class="lbl">Buyer Opens</span>
-            </div>
-          </div>
-          <p style="font-size: 14px; color: var(--muted); margin-top: 40px;">If the seller's minimum is $900K and the buyer's absolute max is $1.1M, the deal mathematically must occur in that $200K window. If BATNAs invert, no ZOPA exists.</p>
-        </div>
+    <section id="foundations">
+      <h2>3. BATNA, reservation value, and ZOPA</h2>
+      <p>These three terms are routinely confused, and confusing them is expensive because they answer different questions.</p>
+
+      <h3>Table 1: The three foundational quantities</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Concept</th><th>Question it answers</th><th>How to establish it</th><th>Common error</th></tr></thead>
+      <tbody>
+      <tr><td><strong>BATNA</strong> (best alternative to a negotiated agreement)</td><td>"What do I actually do if this deal does not happen?"</td><td>Name the specific alternative, with its value and its probability. "Other pipeline" is not a BATNA; "the £180k opportunity at Account X, which I estimate at 40%" is.</td><td>Treating BATNA as a mood. A vague sense of having options provides no leverage because it cannot be reasoned with.</td></tr>
+      <tr><td><strong>Reservation value</strong> (walk-away)</td><td>"At what point is no deal better than this deal?"</td><td>Derived from BATNA plus the cost of servicing this specific customer. Set it in advance, in writing, with the approver's name on it.</td><td>Setting it during the negotiation, when it becomes whatever you need it to be to close.</td></tr>
+      <tr><td><strong>ZOPA</strong> (zone of possible agreement)</td><td>"Does a deal exist that beats both sides' alternatives?"</td><td>The overlap between your reservation value and theirs. Their side must be estimated from evidence, not assumed.</td><td>Assuming a ZOPA exists. Sometimes there is no deal, and discovering that early is a win — it returns your capacity to something real.</td></tr>
+      </tbody>
+      </table>
       </div>
+
+      <div class="callout tip">
+        <div class="callout-label">The highest-return negotiation activity happens before the negotiation</div>
+        <p>Your BATNA is not fixed. Building a second live opportunity, securing an alternative use for the implementation capacity, or getting internal agreement that walking away is acceptable all <em>change the number</em> — and they change it in a way no tactic can. A seller with one deal in the quarter and a manager demanding it will concede, regardless of technique, because their real reservation value is "anything." Pipeline coverage is a negotiation instrument.</p>
+      </div>
+      <p>Estimate the buyer's BATNA with the same discipline. What happens to <em>them</em> if there is no deal? An incumbent renewal they have already criticised internally, a build-it-ourselves project with a real engineering cost, a compliance deadline they will miss — each implies a very different willingness to walk. Buyers routinely overstate the strength of their alternatives, exactly as sellers do; both parties are usually bluffing about the same thing.</p>
     </section>
 
     <section id="anchoring">
-      <h2>3. Anchoring & The Concession Pattern</h2>
-      <p>The <strong>Anchoring Effect (Tversky & Kahneman, 1974)</strong> proves that the initial numerical value introduced into a negotiation permanently biases all subsequent calculations. Elite negotiators use ranges to establish high anchors without triggering the buyer's Amygdala.</p>
-      
-      <h3>The Concession Pattern</h3>
-      <p>How you concede changes the information and expectations in the negotiation. <strong>Smaller, slower, more reluctant</strong> concessions signal that you are approaching your BATNA. Equal concessions signal desperation and trigger predatory behavior from Procurement.</p>
+      <h2>4. Anchoring: the evidence and its limits</h2>
+      <p>Anchoring is the most over-taught idea in commercial negotiation. It is real. It is also smaller and more conditional than the training-room version.</p>
 
-      <div class="widget">
-        <div class="widget-header">
-          <div class="widget-title">Concession Patterns Compared</div>
-          <div class="widget-tag">Concession Pattern</div>
-        </div>
-        
-        <h4 style="margin-top: 0; color: var(--green);">✓ Decreasing concessions — Signals absolute limits</h4>
-        <div class="concession-chart">
-          <div class="conc-label">Round 1</div><div class="conc-bar" style="width: 80%;"><span class="val">10% off</span></div>
-          <div class="conc-label">Round 2</div><div class="conc-bar" style="width: 50%;"><span class="val">4% off</span></div>
-          <div class="conc-label">Round 3</div><div class="conc-bar" style="width: 30%;"><span class="val">2% off</span></div>
-          <div class="conc-label">Round 4</div><div class="conc-bar" style="width: 15%;"><span class="val">0.5% off</span></div>
-        </div>
+      <h3>Table 2: What the anchoring evidence actually says</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Finding</th><th>Source and status</th><th>Practical implication</th></tr></thead>
+      <tbody>
+      <tr><td>First offers correlate with final outcomes at about <em>r</em> = .50.</td><td>Orr &amp; Guthrie (2005) meta-analysis. Class <strong>R</strong>, but built on only ~19 effects and mixing anchors unrelated to first offers.</td><td>Real, and worth acting on — but a moderate correlation, not a lever that determines the outcome.</td></tr>
+      <tr><td>Single lab studies show far larger effects (<em>r</em> ≈ .85 in one chemical-plant simulation).</td><td>Galinsky &amp; Mussweiler (2001). Class <strong>R</strong>, but a controlled simulation with student negotiators and no relationship history.</td><td>The gap between .85 in the lab and .50 in meta-analysis is the gap between a simulation and a procurement team with market data.</td></tr>
+      <tr><td>Anchoring effects shrink as counterpart information and expertise rise.</td><td>Consistent across the literature. Class <strong>R</strong>.</td><td>Against professional procurement with benchmark pricing, your anchor is a starting position, not an influence effect.</td></tr>
+      <tr><td>Aggressive first offers carry costs: lower counterpart satisfaction, worse subjective value, higher impasse rates.</td><td>2023–2025 syntheses. Class <strong>R</strong>.</td><td>In relationship businesses these costs land on renewal and expansion, outside the window where the tactic is evaluated.</td></tr>
+      </tbody>
+      </table>
+      </div>
 
-        <h4 style="margin-top: 32px; color: var(--red);">✗ Equal concessions — May invite continued requests</h4>
-        <div class="concession-chart">
-          <div class="conc-label">Round 1</div><div class="conc-bar bad" style="width: 60%;"><span class="val">5% off</span></div>
-          <div class="conc-label">Round 2</div><div class="conc-bar bad" style="width: 60%;"><span class="val">5% off</span></div>
-          <div class="conc-label">Round 3</div><div class="conc-bar bad" style="width: 60%;"><span class="val">5% off</span></div>
-          <div class="conc-label">Round 4</div><div class="conc-bar bad" style="width: 60%;"><span class="val">5% off</span></div>
-        </div>
+      <p>The workable synthesis: <strong>open first when you have better information about value than they do; let them open when you do not.</strong> If you have run a genuine discovery process and built a quantified business case, you know more about this specific value than a procurement team working from category benchmarks — open, and justify. If you are selling a commodity into a well-benchmarked category, opening first mostly reveals your position.</p>
+      <div class="callout warning">
+        <div class="callout-label">Why an unjustified anchor is worse than no anchor</div>
+        <p>An anchor without a rationale invites a counter-anchor, and the negotiation becomes a split-the-difference exercise in which the party with more patience wins. An anchor <em>with</em> a rationale — "this is priced against the 11,600 planner-hours we modelled together, at a 3.4-year payback" — is harder to counter arbitrarily, because countering it now requires disputing the model rather than simply naming a smaller number. The rationale, not the number, is what does the work.</p>
       </div>
     </section>
 
-    <section id="tactical-empathy">
-      <h2>4. Tactical Empathy Under Pressure</h2>
-      <p>Pressure can narrow attention and reduce the quality of dialogue. Use calm pacing, accurate summaries, and permission-based questions to improve understanding; do not claim to diagnose or regulate a buyer's nervous system.</p>
-      
-      <ul>
-        <li><strong>Labeling:</strong> "It sounds like you're under immense pressure to cut CapEx this quarter." (Bypasses the Amygdala and engages the prefrontal cortex).</li>
-        <li><strong>Mirroring:</strong> Repeating the last 1-3 words of their sentence. Can invite elaboration; it does not reveal a BATNA automatically.</li>
-        <li><strong>Calibrated Questions:</strong> "How am I supposed to do that?" or "What happens if we can't align on this number?" (Invites the buyer to explain constraints and alternatives).</li>
-      </ul>
-    </section>
+    <section id="trading">
+      <h2>5. Conditional trading and the concession log</h2>
+      <p>The single most common negotiation error in selling is granting a concession to build goodwill. It does not build goodwill. It teaches the buyer that pressure produces movement, which guarantees more pressure — and it does so at exactly the moment the buyer is calibrating how hard to push for the next three years.</p>
+      <p>The discipline is <strong>conditional trading</strong>: every concession is granted only in exchange for something, and the exchange is stated as a condition before it is given.</p>
 
-    <section id="case-studies">
-      <h2>5. Composite Practice Scenarios</h2>
-      
-      <h3>Composite Scenario 1: The $1.8M FinTech Contract (BATNA Collapse)</h3>
-      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
-      <p><strong>Background:</strong> A FinTech startup was negotiating a $1.8M API contract with a Tier-1 bank. The bank's Procurement team anchored violently at $1.2M, claiming they could build it internally for that cost.</p>
-      <p><strong>The response:</strong> The startup's CEO reacted to urgency and immediately conceded to $1.5M without reviewing alternatives or authority.</p>
-      <p><strong>The Fix:</strong> The VP of Sales (Adult ego state) took over. They knew the bank's engineering team was drowning in tech debt. The "internal build" was a bluff (fake BATNA). The VP utilized loss aversion: <em>"If you build this internally and it fails PCI compliance, what does that cost the bank in regulatory fines?"</em></p>
-      <p><strong>The Result:</strong> The bank's Procurement team, realizing their BATNA was exposed as catastrophic risk, accepted the deal at $1.75M.</p>
-
-      <h3>Composite Scenario 2: The $3.5M Industrial IoT Deal (ZOPA Manipulation)</h3>
-      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
-      <p><strong>Background:</strong> An IoT sensor company was selling to a manufacturing giant. The buyer's Procurement demanded a 20% discount on hardware.</p>
-      <p><strong>The Tactical Empathy:</strong> The AE used calibrated questions: <em>"It sounds like keeping the initial hardware cost down is the absolute highest priority for your board."</em></p>
-      <p><strong>The Trade:</strong> The AE agreed to the 20% hardware discount, but executed a strict trade: they increased the multi-year software subscription tier, effectively moving the ZOPA from CapEx to OpEx.</p>
-      <p><strong>The Result:</strong> The deal closed at $3.5M total contract value. Procurement looked like heroes for cutting CapEx, while the AE protected the company's high-margin recurring revenue.</p>
-
-      <h3>Composite Scenario 3: The $650K Cybersecurity SLG (Voss-style Mirroring)</h3>
-      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
-      <p><strong>Background:</strong> A mid-market security vendor was stuck in a stalled negotiation. The prospect went dark for two weeks.</p>
-      <p><strong>The Reframe:</strong> The AE sent a single, Voss-style "No-Oriented" email: <em>"Have you given up on securing the Q3 data migration?"</em></p>
-      <p><strong>The Result:</strong> The CISO replied in 4 minutes. The CISO had a clear opportunity to decline and explain the actual constraint. They explained the budget was frozen until next month, but the deal was still priority #1. The deal closed 30 days later.</p>
-    </section>
-
-    <section id="roleplay">
-      <h2>6. Verbatim Roleplay: The Procurement Ambush</h2>
-      <p>This transcript demonstrates a seller slowing down, clarifying the demand, and preserving decision discipline under pressure.</p>
-      
-      <div class="callout">
-        <div class="callout-label">Transcript Analysis</div>
-        <p><strong>Procurement (Parent Ego State / Aggressive Tone):</strong> "I've reviewed your pricing. It's completely out of line with the market. We need a 30% reduction immediately or we are walking away."</p>
-        <p><strong>Elite Seller (Adult Ego State - 4-second pause, Late-Night FM DJ Voice):</strong> "I hear that our pricing is higher than what you initially modeled..."</p>
-        <p><strong>Procurement:</strong> "Yes, it is. Way higher."</p>
-        <p><strong>Elite Seller:</strong> "...way higher?" <em>(Mirroring)</em></p>
-        <p><strong>Procurement:</strong> "Well, your competitor quoted us 25% less for a similar deployment."</p>
-        <p><strong>Elite Seller:</strong> "It sounds like you have a strong alternative on the table. Help me understand... if their pricing is 25% better, why are we on this call today?" <em>(Calibrated Question targeting their BATNA)</em></p>
-        <p><strong>Procurement (Defensive):</strong> "Because the CTO prefers your security architecture. But my job is to protect the budget."</p>
-        <p><strong>Elite Seller:</strong> "How am I supposed to match their price when the CTO specifically selected our architecture because it prevents the $5M compliance breaches the competitor can't cover?"</p>
+      <h3>Table 3: The variable inventory — what you can trade besides price</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Variable</th><th>Cheap for you when…</th><th>Valuable to them when…</th><th>Trade example</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Contract term</strong></td><td>Your churn risk is low and cash is not tight.</td><td>They want budget certainty or fear a price rise.</td><td>"A 12% reduction is available on a three-year term with annual uplift capped at CPI."</td></tr>
+      <tr><td><strong>Payment timing</strong></td><td>You are cash-rich; they are not.</td><td>Their fiscal year or cash cycle is the real constraint.</td><td>"Annual in advance at this price; quarterly at list."</td></tr>
+      <tr><td><strong>Volume / scope</strong></td><td>Marginal delivery cost is low.</td><td>They were going to expand anyway.</td><td>"That price holds at 400 seats, not 250."</td></tr>
+      <tr><td><strong>Reference &amp; case study</strong></td><td>Always cheap; you want it anyway.</td><td>Their marketing wants visibility, or their leadership wants to be seen as innovative.</td><td>"We can do that if you'll do a named case study and two reference calls."</td></tr>
+      <tr><td><strong>Implementation scope</strong></td><td>You can phase without breaking value.</td><td>Their team cannot absorb a full rollout anyway.</td><td>"Phase one only at that number; phase two re-priced at the same rate if you commit by month nine."</td></tr>
+      <tr><td><strong>Speed of decision</strong></td><td>Your implementation calendar has a real gap.</td><td>They have an internal deadline.</td><td>"That rate is tied to a January start — it's about our delivery capacity, not a sales deadline."</td></tr>
+      <tr><td><strong>Product feedback / design partnership</strong></td><td>You genuinely need the input.</td><td>They want influence over the roadmap.</td><td>"Design-partner pricing, in exchange for monthly sessions with our product team and permission to build from your use case."</td></tr>
+      <tr><td><strong>Risk terms</strong> (SLA, liability cap, exit)</td><td>Rarely cheap — treat with care and legal review.</td><td>Very valuable to their risk functions.</td><td>See Module 38. Never trade liability caps casually to close a quarter.</td></tr>
+      </tbody>
+      </table>
       </div>
-      <p><strong>The Breakdown:</strong> The seller refuses to concede a single dollar. By using silence, mirroring, and calibrated questions, the seller forces Procurement to admit that the competitor (their BATNA) is technically inferior, destroying Procurement's leverage.</p>
+
+      <p>Three rules govern the trades. <strong>Concede in decreasing increments</strong> — 8%, then 3%, then 1% — because an increasing or flat pattern signals there is more available. <strong>Never concede twice in a row without movement from them</strong>; if you do, you are bidding against yourself. And <strong>log everything</strong>: what was given, what was received, who approved it, and the rationale. The concession log is what protects the next renewal from a precedent nobody remembers setting.</p>
     </section>
 
-    <section id="troubleshooting">
-      <h2>7. Troubleshooting Pitfalls</h2>
-      <p>Avoid these catastrophic negotiation failures:</p>
+    <section id="worked-example">
+      <h2>6. Worked example: a procurement negotiation</h2>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
+      <p><strong>Scenario:</strong> A £420k three-year software agreement. Business stakeholders are aligned; procurement enters at the end with a mandate to deliver savings. The seller has a quantified business case and one other live opportunity of comparable size.</p>
+
+      <h3>Table 4: Preparation sheet and how the negotiation ran</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Element</th><th>Prepared position</th><th>What happened</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Our BATNA</strong></td><td>£380k opportunity at Account B, estimated 45%, closing next quarter. Implementation capacity would be absorbed either way. Expected value ≈ £171k.</td><td>Made the walk-away credible internally, which mattered more than anything said in the room.</td></tr>
+      <tr><td><strong>Reservation value</strong></td><td>£310k total contract value, approved in writing by the VP before the first procurement call.</td><td>Never disclosed, never breached. Having it pre-approved removed the pressure to invent one under duress.</td></tr>
+      <tr><td><strong>Their BATNA (estimated)</strong></td><td>Incumbent renewal at ~£290k, but the business unit has documented complaints and a failed upgrade. Building in-house was scoped at 14 engineer-months.</td><td>Weaker than procurement implied. The business stakeholders had already ruled out the incumbent.</td></tr>
+      <tr><td><strong>Opening</strong></td><td>Open first, justified by the joint business case: 4,100 recovered hours, £188k annual benefit, 2.7-year payback at list.</td><td>Procurement countered at £250k, citing "market benchmarks" without naming them.</td></tr>
+      <tr><td><strong>Response to the counter</strong></td><td>Ask for the benchmark rather than defending the price.</td><td>"Happy to look at that — which comparable products and what scope? If it's per-seat pricing for a narrower tool, we should compare like with like." <strong>The benchmark was never produced.</strong></td></tr>
+      <tr><td><strong>Trade 1</strong></td><td>Term for price.</td><td>Granted 8% (£420k → £386k) <em>conditional on</em> three years firm with a CPI-capped uplift, rather than the 1+1+1 structure procurement wanted.</td></tr>
+      <tr><td><strong>Trade 2</strong></td><td>Payment timing for price.</td><td>Granted a further 3% (£386k → £374k) <em>conditional on</em> annual in advance rather than quarterly.</td></tr>
+      <tr><td><strong>Trade 3</strong></td><td>Reference for price.</td><td>Granted 1% plus two extra training days <em>conditional on</em> a named case study and two reference calls within six months.</td></tr>
+      <tr><td><strong>Attempted final squeeze</strong></td><td>Pre-planned response to the "one more thing to get it signed" move.</td><td>"I've moved three times and each time we traded. I don't have another move that doesn't change what you get. If £370k is a hard ceiling, we can take out the second training environment — that's £11k of real cost. Which would you rather have?" <strong>Procurement took the price and kept the environment.</strong></td></tr>
+      <tr><td><strong>Outcome</strong></td><td>—</td><td>£370k, three years firm, annual in advance, named case study delivered in month five. Total concession 12%, every point of it traded. Renewed at uplift 34 months later.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p><strong>What did the work:</strong> not a tactic. A credible BATNA, a pre-approved reservation value, a decreasing concession pattern, and the willingness to ask procurement to substantiate a benchmark they had invented. The final squeeze was defeated by offering a real trade rather than a flat refusal — which let procurement report a win without the seller giving anything away.</p>
+    </section>
+
+    <section id="execution">
+      <h2>7. Weak versus improved concession handling</h2>
+      <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> The buyer says, "Your price is 20% higher than the other quote. Can you match it?"</p>
+
+      <div class="callout warning">
+        <div class="callout-label">Weak execution (unconditional concession, then bidding against yourself)</div>
+        <p><em>Seller:</em> "I really want to make this work. Let me see what I can do… I can get you 10% off — how does that sound?"<br>
+        <em>Buyer:</em> "It's a start, but it's still above the other quote."<br>
+        <em>Seller:</em> "Okay — let me go back to my manager… I can stretch to 18%, but that's absolutely my final number."<br>
+        <em>Buyer:</em> "Let me take that to the team and come back to you."</p>
+        <p><em>Why it fails:</em> The first concession was unconditional, which taught the buyer that asking works. The second was <em>larger</em> than the first, which signals there is more available — the pattern should decrease. The seller conceded twice with no movement from the buyer, which is bidding against yourself. Nothing was learned about the competing quote: its scope, its term, or whether it exists. And "absolutely my final number" has now been said once and will be tested.</p>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-label">Improved execution (investigate first, then trade conditionally)</div>
+        <p><em>Seller:</em> "That's a big gap, and gaps that size are usually scope rather than price. Can I ask what's in theirs — is it the same number of sites, the same data migration, and the same support tier? If it's genuinely like-for-like I need to know, because then we have a real problem to solve rather than a comparison problem."<br>
+        <em>Buyer:</em> "It's three sites rather than five, and migration is quoted separately."<br>
+        <em>Seller:</em> "Then we're not comparing the same thing, and I don't want to win this by pretending we are. Two options. I can quote three sites so you have a genuine like-for-like — that'll come out close to theirs. Or if you want all five, here's what I can do: 8% is available on a three-year term rather than annual, because it changes our cost of servicing you. I can't do 20% at any structure — that's below what we can deliver this properly at, and I'd rather tell you now than discover it in month four."<br>
+        <em>Buyer:</em> "Let's look at the three-year number for five sites."</p>
+        <p><em>Why it succeeds:</em> Investigated before conceding, and found the gap was scope. Offered the honest like-for-like comparison even though it was the smaller deal — which is what made the rest credible. The concession that <em>was</em> offered came with an explicit condition and a real rationale. And the refusal was stated with a reason the buyer can respect: not "I can't" but "below that we can't deliver this properly," which is a statement about their outcome, not about your margin.</p>
+      </div>
+    </section>
+
+    <section id="practice">
+      <h2>8. Practice: the negotiation preparation sheet</h2>
+      <p><strong>Exercise goal:</strong> prepare a live negotiation to the standard where the conversation itself becomes execution rather than improvisation.</p>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
+      <ol>
+        <li><strong>Your BATNA.</strong> Name the specific alternative, its value, and its probability. Then write one thing you could do this week to improve it.</li>
+        <li><strong>Your reservation value.</strong> A number, in writing, approved by whoever would have to approve it. Do this <em>before</em> the first pricing conversation.</li>
+        <li><strong>Their BATNA, estimated.</strong> What actually happens to them with no deal? What is the evidence for your estimate, and what would change it?</li>
+        <li><strong>Variable inventory.</strong> At least six variables besides price, each scored: cost to you (low/medium/high) and value to them (low/medium/high). Your trades come from the low-cost, high-value quadrant.</li>
+        <li><strong>Opening position and rationale.</strong> Decide whether to open. Write the justification sentence — the number is the smaller half of the work.</li>
+        <li><strong>Concession plan.</strong> Three planned moves in decreasing increments, each with its required condition written in advance.</li>
+        <li><strong>Pre-planned responses</strong> to: the unsubstantiated benchmark, the final squeeze, the artificial deadline, and the "my boss won't approve it" escalation.</li>
+        <li><strong>Concession log format.</strong> What was given, what was received, who approved, rationale, and expiry.</li>
+      </ol>
+
+      <div class="solution-guide">
+        <h3>Completed exemplar (variable inventory extract)</h3>
+        <table>
+        <thead><tr><th>Variable</th><th>Cost to us</th><th>Value to them</th><th>Trade formulation</th></tr></thead>
+        <tbody>
+        <tr><td>Three-year term (vs. annual)</td><td>Low — churn risk in this segment is 4%</td><td><strong>High</strong> — their CFO wants multi-year budget certainty</td><td>"8% on three years firm, uplift capped at CPI."</td></tr>
+        <tr><td>Annual payment in advance</td><td>Low — we are cash-positive</td><td>Medium — they prefer quarterly but can fund annual</td><td>"A further 3% if it's annual in advance."</td></tr>
+        <tr><td>Named case study + 2 reference calls</td><td><strong>Very low</strong> — we want it</td><td>Medium — their CMO is seeking category visibility</td><td>"1% plus two extra training days for a named study within six months."</td></tr>
+        <tr><td>Phased rollout (2 sites now, 3 later)</td><td>Medium — splits our delivery efficiency</td><td>Medium — their ops team is stretched until Q3</td><td>"Phase one at this rate; phase two locked at the same rate if committed by month nine."</td></tr>
+        <tr><td>Extended liability cap</td><td><strong>High</strong> — legal exposure, requires GC sign-off</td><td><strong>High</strong> — their risk committee will ask</td><td><strong>Do not trade for price.</strong> Trade only against a matching commitment (term + volume), and only with legal approval.</td></tr>
+        <tr><td>January start (delivery gap)</td><td>Low — genuine capacity window</td><td>Medium — they have an April compliance date</td><td>"That rate is tied to a January start; it's our delivery calendar, not a sales deadline."</td></tr>
+        </tbody>
+        </table>
+      </div>
+
+      <p><strong>Evaluation rubric:</strong> BATNA named specifically with value and probability, plus an improvement action (20%); reservation value set and approved in advance (20%); counterpart BATNA estimated from evidence (15%); variable inventory with six or more items correctly scored (20%); decreasing concession plan with pre-written conditions (15%); pre-planned responses to the four standard pressure moves (10%).</p>
+      <p><strong>Beginner variation:</strong> Prepare only the variable inventory for a deal you have already lost or won. Listing six tradeable variables besides price is, for most sellers, the single insight that changes their negotiating behavior permanently.</p>
+      <p><strong>Advanced variation:</strong> Run the same preparation from the buyer's side of the table — their BATNA, their reservation value, their variable inventory, their concession plan. Then negotiate against a colleague who has prepared the seller side. Both parties will discover that most of what they thought was leverage was information the other side already had.</p>
+    </section>
+
+    <section id="knowledge-check">
+      <h2>9. Applied knowledge check</h2>
+
+      <details><summary>1. Should you always make the first offer?</summary>
+      <p>No — the rule is conditional on information. Open first when you have better information about this specific value than the counterpart, which is usually true when you have run genuine discovery and built a quantified business case with them. Let them open when they know the market better than you, as in a commoditised category with published benchmarks, because opening there mostly reveals your position. And note the effect is more modest than folklore suggests: the meta-analytic correlation between first offers and outcomes is around .50, and it shrinks further as counterpart expertise rises.</p></details>
+
+      <details><summary>2. A buyer says your price is 20% above a competing quote. What is your first move?</summary>
+      <p>Investigate the comparison before conceding anything. Gaps that size are usually scope, term, or inclusion differences rather than genuine price gaps — different site counts, migration quoted separately, a different support tier, or a shorter term. Ask specifically what is in the other quote. If it turns out to be genuinely like-for-like, you have a real problem to solve and now you know it; if it is not, you have avoided conceding 20% for a comparison that was never valid. Offering the honest like-for-like quote, even when it is the smaller deal, is also what makes your refusal to match credible.</p></details>
+
+      <details><summary>3. Why is conceding twice in a row without receiving movement a serious error?</summary>
+      <p>Because you are bidding against yourself, and because of what it teaches. The buyer learns that silence and pressure produce movement, so the rational response is to apply more of both. It also destroys your ability to signal a limit — a seller who has moved twice unprompted has demonstrated that "final" is negotiable. Every concession must be conditional and stated as a condition <em>before</em> it is granted: "X is available if Y." And the increments should decrease, because a flat or increasing pattern signals there is more behind it.</p></details>
+
+      <details><summary>4. Your manager needs the deal this quarter and the buyer knows the quarter ends Friday. What is your actual problem?</summary>
+      <p>Your BATNA, not your technique. A seller whose only alternative is missing quota has a reservation value of "almost anything," and no tactic disguises that for long — buyers are experienced at detecting it and many procurement functions explicitly time negotiations to exploit it. The fixes are structural and mostly precede the moment: build enough pipeline that any single deal is not decisive, get the reservation value approved in writing before the pressure arrives, and — where you can influence it — argue against compensation designs that make quarter-end desperation rational. In the moment, the honest move is to stop treating the date as leverage on either side: "the quarter isn't your problem, and I'm not going to pretend it's a reason for you to move."</p></details>
+
+      <details><summary>5. Why keep a concession log after the deal closes?</summary>
+      <p>Because concessions become precedents, and precedents outlive the people who set them. At renewal the buyer will expect every discount and every extra to be the new baseline, and without a log nobody can say what was traded for what — so a discount granted for a three-year commitment silently becomes an entitlement on a one-year renewal. The log also protects against handover loss when the account moves to a new owner, gives the renewal team leverage ("that 8% was for the three-year term you're now asking to shorten"), and lets the organization see, across many deals, which variables it habitually gives away for nothing.</p></details>
+    </section>
+
+    <section id="conclusion">
+      <h2>10. Practical conclusion &amp; next action</h2>
+      <p>Negotiation rewards preparation over performance. The seller who has named their alternative, set their limit in writing, inventoried six tradeable variables, and planned three decreasing concessions will outperform a more charismatic negotiator who did none of those things — reliably, and without needing to be clever in the room.</p>
       <ul>
-        <li><strong>Negotiating Against Yourself:</strong> Offering a discount before the buyer has even asked, because of unexamined urgency or approval-seeking.</li>
-        <li><strong>Splitting the Difference:</strong> If you want $100 and they want $50, splitting at $75 is lazy and leaves money on the table. You are treating negotiation as a math problem rather than a behavioral exchange.</li>
-        <li><strong>Giving Without Trading:</strong> Every time you concede a dollar, a feature, or a term without extracting a concession in return (e.g., faster signature, longer contract, case study), you train the buyer to keep bleeding you.</li>
-        <li><strong>Ignoring the Asymmetry of Time:</strong> Sellers feel intense pressure at the end of the month/quarter. Buyers know this. If you do not have a strong BATNA or pipeline, the buyer's patience will crush your urgency.</li>
-        <li><strong>Fake Empathy:</strong> Saying "I understand" instead of properly labeling the emotion. True tactical empathy requires correctly identifying the buyer's underlying fear without necessarily agreeing with it.</li>
+        <li>Negotiation starts when requirements are written, not when procurement calls.</li>
+        <li>A BATNA is a named alternative with a value and a probability. Improve it before you need it.</li>
+        <li>Set the reservation value in advance, in writing, with an approver's name on it.</li>
+        <li>Anchoring is real (<em>r</em> ≈ .50) and shrinks against informed counterparts. The rationale matters more than the number.</li>
+        <li>Never concede unconditionally, never concede twice in a row, and always decrease the increments.</li>
+        <li>Trade from the low-cost-to-you, high-value-to-them quadrant. Never trade liability terms to close a quarter.</li>
+        <li>Log every concession with its condition and approver, because it will be a precedent at renewal.</li>
       </ul>
+      <p><strong>Immediate action:</strong> For your largest open deal, write down six variables you could trade besides price, scored on cost to you and value to them. Most sellers discover they have been treating a one-variable negotiation as though price were the only currency available.</p>
+      <p><strong>Related modules:</strong> <a href="module-24.html">24 · Working with Procurement</a>, <a href="module-37.html">37 · Commercial Acumen, Pricing &amp; Packaging</a>, <a href="module-38.html">38 · Proposals, RFPs, Security &amp; Contracting</a>, and <a href="module-34.html">34 · Value-Based Selling &amp; Business Cases</a>.</p>
     </section>
 
   </article>
@@ -325,11 +266,11 @@
 <nav class="module-nav">
   <a href="module-07.html" class="prev">
     <div class="dir">← Previous · Module 07</div>
-    <div class="next-title">Copywriting</div>
+    <div class="next-title">Copywriting &amp; Messaging</div>
   </a>
   <a href="module-09.html" class="next">
     <div class="dir">Next · Module 09</div>
-    <div class="next-title">Objections</div>
+    <div class="next-title">Objection Handling</div>
   </a>
 </nav>
 
@@ -338,7 +279,6 @@
 </footer>
 
 <script src="script.js"></script>
-<!-- Google Translate -->
 <div id="google_translate_element" style="position:absolute; top:-9999px; left:-9999px; z-index:-9999;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {

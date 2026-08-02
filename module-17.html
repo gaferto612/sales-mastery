@@ -23,12 +23,12 @@
 
 <header class="page-header">
   <div class="eyebrow"><span class="num">17</span>Product-Led Sales</div>
-  <h1 class="module-title">The <em>hybrid</em> model.</h1>
-  <p class="lede">Historically, you either had a massive sales team dialing for dollars, or you relied entirely on a self-serve checkout page. Today, the most successful companies bridge the gap with Product-Led Sales (PLS) — using behavioral data to know exactly who to call, and exactly when to call them.</p>
+  <h1 class="module-title">A login is not a signal. <em>Realized value</em> is.</h1>
+  <p class="lede">Product-led sales fails when teams treat activity as intent and interrupt users who were succeeding without them. This module defines qualification signals that actually predict revenue, matches signals to motions, and designs assistance a user would thank you for.</p>
   <div class="meta-strip">
-    <span>15 min read</span>
-    <span>B2B SaaS</span>
-    <span>Modern Tech</span>
+    <span>45 min lesson + practice</span>
+    <span>Evidence-led professional curriculum</span>
+    <span>Level 3</span>
   </div>
 </header>
 
@@ -36,76 +36,224 @@
   <aside class="sidebar">
     <div class="sidebar-title">In this module</div>
     <ul>
-      <li><a href="#the-shift">The end of the cold call</a></li>
-      <li><a href="#signals">Product Qualified Leads (PQLs)</a></li>
-      <li><a href="#motions">The 5 PLS Motions</a></li>
-      <li><a href="#outreach">Value-First Outreach</a></li>
+      <li><a href="#introduction">1. What product-led sales actually changes</a></li>
+      <li><a href="#objectives">2. Observable learning objectives</a></li>
+      <li><a href="#signals">3. Defining a PQL that predicts revenue</a></li>
+      <li><a href="#motions">4. Matching signals to motions</a></li>
+      <li><a href="#assistance">5. Designing assistance users would thank you for</a></li>
+      <li><a href="#worked-example">6. Worked example: rebuilding a PQL definition</a></li>
+      <li><a href="#execution">7. Weak versus improved product-triggered outreach</a></li>
+      <li><a href="#practice">8. Practice: the PQL signal specification</a></li>
+      <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
+      <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
     </ul>
   </aside>
 
   <article class="content">
-    <section id="the-shift">
-      <h2>The end of the cold call</h2>
-      <p>In traditional SaaS, an SDR builds a list of prospects based on job titles and blasts them with cold emails. The conversion rate is abysmal because there is zero intent.</p>
-      
-      <p>In Product-Led Growth (PLG), the user signs up for a free tool (like Slack, Notion, or Figma) and starts using it. The product is the primary driver of acquisition.</p>
-      
-      <p><strong>Product-Led Sales (PLS)</strong> is the connective tissue. It means the sales team no longer looks at static lists of names; they look at dashboards of <em>product usage</em>. The "Cold Call" is dead. Every call is now a "Warm Call" backed by behavioral data.</p>
+
+    <section id="introduction">
+      <h2>1. What product-led sales actually changes</h2>
+      <p>In a product-led motion the buyer evaluates by using rather than by being shown. That single change has three consequences that most teams under-appreciate.</p>
+      <p><strong>Evidence replaces assertion.</strong> You no longer have to claim the product works — the user has already found out. This is enormously powerful and it removes most of the demo's purpose. A seller who arrives and pitches capabilities the user has been operating for three weeks is not merely unhelpful; they are signalling that nobody looked.</p>
+      <p><strong>Attention becomes the scarce resource, and it is easy to destroy.</strong> A self-serve user who did not ask for a conversation experiences unsolicited outreach as an interruption to work they are already doing. The bar for contact is therefore higher than in outbound, not lower — you must be able to say something they could not learn from the product.</p>
+      <p><strong>The qualification problem inverts.</strong> In traditional sales the hard part is finding people with the problem. In product-led sales they arrive by themselves, and the hard part is distinguishing the ones with a commercial opportunity from the many who are curious, evaluating, studying, or perfectly happy on the free tier forever. Most PLS programs fail here, by treating volume of activity as evidence of intent.</p>
+      <p>The failure mode is worth naming precisely: <strong>a sales team that interrupts successful self-serve users converts a working revenue channel into an annoyance</strong>, and the damage is invisible in the sales metrics because the users who quietly stop expanding do not appear in any report.</p>
+    </section>
+
+    <section id="objectives">
+      <h2>2. Observable learning objectives</h2>
+      <p>By completing this module you will be able to demonstrate the following:</p>
+      <p>Define a product-qualified lead using signals validated against actual revenue rather than against intuition.</p>
+      <p>Distinguish usage, value, and constraint signals, and explain why only two of the three predict expansion.</p>
+      <p>Match a signal to the appropriate motion — automated, assisted, or full sales engagement.</p>
+      <p>Design outreach that offers something the product cannot tell the user.</p>
+      <p>Produce a PQL specification with thresholds, validation method, and suppression rules.</p>
     </section>
 
     <section id="signals">
-      <h2>Product Qualified Leads (PQLs)</h2>
-      <p>A Marketing Qualified Lead (MQL) is someone who downloaded a whitepaper. A Product Qualified Lead (PQL) is someone who has experienced actual value in your product.</p>
-      
-      <p>You cannot scale PLS without defining what triggers an intervention. These triggers are usually based on <strong>Activation Milestones</strong>:</p>
-      
-      <ul>
-        <li><strong>Usage Thresholds:</strong> A user hits 80% of their free storage limit.</li>
-        <li><strong>Collaboration Hooks:</strong> A user invites 3 teammates to a workspace.</li>
-        <li><strong>High-Value Features:</strong> A user clicks on the "SSO Integration" tab (indicating they are likely an enterprise user).</li>
-      </ul>
-      
-      <div class="callout">
-        <div class="callout-label">Rule of Thumb</div>
-        <p>If your sales team reaches out before the user has hit their "Aha!" moment in the product, you are just doing annoying traditional outbound.</p>
+      <h2>3. Defining a PQL that predicts revenue</h2>
+      <p>The most common PQL definition in circulation is some version of "used the product a lot." It performs poorly because heavy usage is compatible with a user who will never pay, and light usage is compatible with an account about to standardize on you company-wide.</p>
+
+      <h3>Table 1: Three classes of signal, and what each predicts</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Class</th><th>Examples</th><th>Predicts?</th><th>Why</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Usage signals</strong></td><td>Logins, sessions, time in app, features clicked.</td><td><strong>Weakly.</strong> Often not at all.</td><td>Measures activity, not benefit. A student, a competitor, and a customer all generate logins. Correlates with engagement, not with willingness to pay.</td></tr>
+      <tr><td><strong>Value signals</strong></td><td>Completed the core workflow end to end; produced an output used outside the tool; invited a colleague; connected a system of record; imported real production data.</td><td><strong>Strongly.</strong></td><td>Each indicates the user has received something they would miss. Real data and real colleagues mean real dependency.</td></tr>
+      <tr><td><strong>Constraint signals</strong></td><td>Hit a seat, volume, or feature limit; requested an admin function; viewed pricing three times; started a security or SSO configuration; invited a user from a different department.</td><td><strong>Strongly, and with timing.</strong></td><td>The user has encountered the boundary of the free or lower tier. This is the moment a conversation is genuinely useful rather than interruptive.</td></tr>
+      </tbody>
+      </table>
+      </div>
+
+      <p>A usable PQL definition combines a value signal with a constraint signal <em>and</em> an account-fit signal, because a single enthusiastic user at a company you cannot serve is not an opportunity. The combination form matters more than any individual threshold:</p>
+      <p><code>PQL = (value signal reached) AND (constraint signal within 14 days) AND (account matches ICP)</code></p>
+
+      <div class="callout warning">
+        <div class="callout-label">Validate against revenue, not against intuition</div>
+        <p>Every PQL definition must be tested the same way: take the last two quarters of converted accounts, and check what proportion of them would have fired your proposed definition, and how many accounts that fired it did <em>not</em> convert. A definition that catches 80% of converters with a 20% false-positive rate is useful. One that fires on 40% of all signups is a mailing list. Most teams never run this check, which is why so many PQL definitions are elaborate and useless.</p>
       </div>
     </section>
 
     <section id="motions">
-      <h2>The 5 PLS Motions</h2>
-      <p>A modern PLS playbook categorizes outreach into five distinct motions:</p>
-      
-      <ol>
-        <li><strong>Assist:</strong> Reaching out to a new sign-up who is struggling to complete onboarding or integrate a data source. The goal is not to sell, but to unblock them.</li>
-        <li><strong>Convert:</strong> Contacting a highly active free user who has hit specific milestones, guiding them to a paid self-serve tier.</li>
-        <li><strong>Expand:</strong> Identifying power users within an existing paid account and selling them more seats or a higher-tier add-on.</li>
-        <li><strong>Consolidate:</strong> The holy grail of PLS. Noticing that 40 different employees at a large company are using personal credit cards to pay for your tool, and reaching out to the CIO to sell a centralized Enterprise contract.</li>
-        <li><strong>Defend:</strong> Proactively reaching out to accounts whose usage has dropped 30% week-over-week to prevent churn.</li>
-      </ol>
-      
-      <div class="mermaid" style="margin: 32px 0; padding: 24px; background: var(--ink); border: 1px solid var(--line); border-radius: 4px;">
-flowchart LR
-    A[Free Sign-up] --> B{Usage Threshold?}
-    B -- No --> C[Nurture]
-    B -- Yes --> D(Product Qualified Lead)
-    D --> E{Account Size?}
-    E -- SMB --> F[Self-Serve / Convert]
-    E -- Enterprise --> G[Sales Assist]
-    G --> H{Multiple Users?}
-    H -- No --> I[Expand Seats]
-    H -- Yes --> J(Consolidate Contract)
+      <h2>4. Matching signals to motions</h2>
+      <p>Not every signal justifies a human. Matching motion to signal strength protects both the user's attention and your team's capacity.</p>
+
+      <h3>Table 2: The motion ladder</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Signal strength</th><th>Motion</th><th>What it looks like</th><th>Why not more</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Activity only</strong> (usage, no value signal)</td><td><strong>Nothing</strong></td><td>Product education in-app; no human contact.</td><td>Contact here is pure interruption. This is the largest population and the one most often mis-handled.</td></tr>
+      <tr><td><strong>Value reached, no constraint</strong></td><td><strong>Automated help</strong></td><td>In-product guidance to the next useful capability; a genuinely useful email with no ask.</td><td>The user is succeeding. Interrupting a working experience to sell is the definitive PLS error.</td></tr>
+      <tr><td><strong>Value + soft constraint</strong> (approaching a limit, viewed pricing)</td><td><strong>Assisted</strong></td><td>One message from a real person offering something specific the product cannot supply — a configuration answer, a benchmark, an offer to review their setup.</td><td>A full sales cycle is disproportionate. One useful message either lands or does not.</td></tr>
+      <tr><td><strong>Value + hard constraint</strong> (hit a limit, needs SSO, admin controls, invoicing)</td><td><strong>Sales engagement</strong></td><td>A real conversation: procurement, security, rollout, commercial terms.</td><td>This is where humans genuinely add value, because the remaining questions are organizational rather than product.</td></tr>
+      <tr><td><strong>Multi-team spread inside a target account</strong></td><td><strong>Account motion</strong></td><td>Map the org, find the economic buyer, consolidate scattered self-serve usage into an enterprise agreement.</td><td>The highest-value PLS motion, and the one most often missed because each individual signal looks small.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <div class="callout tip">
+        <div class="callout-label">The signal most teams miss entirely</div>
+        <p><strong>Departmental spread.</strong> Three separate paid teams inside one large organization, each on a small plan, each invisible to the others — that is a consolidation opportunity worth more than any of the individual accounts, and it usually surfaces only if someone deliberately aggregates by email domain. Companies routinely discover six-figure enterprise deals sitting inside their self-serve base as a dozen unconnected subscriptions.</p>
       </div>
     </section>
 
-    <section id="outreach">
-      <h2>Value-First Outreach</h2>
-      <p>Because you have data, avoid sending generic "Just checking in" emails; anchor follow-ups to specific account events or insights.</p>
-      
-      <p><strong>Bad:</strong> <em>"Hi, I saw you signed up for our tool. Do you want to jump on a 15-minute call to see a demo?"</em></p>
-      
-      <p><strong>Good:</strong> <em>"Hi, I noticed you successfully invited two teammates to your workspace yesterday, but haven't set up the Slack integration yet. I recorded a quick 60-second Loom video showing you how to do it. Let me know if you want help setting it up for your team."</em></p>
-      
-      <p>The goal of PLS outreach is to act as a highly specialized consultant who guides the user to the next logical step of value.</p>
+    <section id="assistance">
+      <h2>5. Designing assistance users would thank you for</h2>
+      <p>The test for any product-triggered outreach is simple and demanding: <strong>could the user have learned this from the product?</strong> If yes, do not send it. Everything worth sending falls into a small number of categories.</p>
+
+      <h3>Table 3: What is worth interrupting a user for</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Category</th><th>Example</th><th>Why it is welcome</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Configuration insight</strong></td><td>"You've set this up per-project. Teams your size usually regret that at about 40 projects because permissions get unmanageable — here's the alternative structure, and here's how to migrate if you want to."</td><td>It is expertise about the product's use over time, which the product itself cannot convey at the moment of setup.</td></tr>
+      <tr><td><strong>Peer benchmark</strong></td><td>"Teams with your data volume usually run the nightly sync rather than the hourly — it's the same result at a third of the load."</td><td>Comparative knowledge you have and they cannot.</td></tr>
+      <tr><td><strong>Constraint navigation</strong></td><td>"You hit the seat limit twice this week. Before you buy more seats, one option is a shared service account for the read-only users — that might be cheaper for you."</td><td>Advice against your own short-term revenue is the strongest trust signal available.</td></tr>
+      <tr><td><strong>Organizational help</strong></td><td>"Two other teams at your company are using this separately. Do you want me to introduce you — or would a single agreement be easier for procurement?"</td><td>Information the user genuinely cannot see, and which usually solves a problem they were about to hit.</td></tr>
+      <tr><td><strong>Honest limitation</strong></td><td>"You're trying to do X. We handle that badly and I don't want you to discover it in month three — here is what we do instead, and here is when it isn't enough."</td><td>Prevents a churn event and buys credibility for everything else.</td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p>And the corresponding prohibition list: no "I noticed you signed up," no "just checking in," no "wanted to see if you had any questions," no calendar links before value has been offered, and no contacting a user whose only signal is activity. Each of these teaches the user that messages from your company are not worth opening, which is a durable and expensive lesson.</p>
+    </section>
+
+    <section id="worked-example">
+      <h2>6. Worked example: rebuilding a PQL definition</h2>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
+      <p><strong>Scenario:</strong> A collaboration tool with 4,000 monthly signups routes any account with 5+ logins in a week to sales. The team works 600 "PQLs" a month and converts 1.8%. A new definition is validated against two quarters of actual conversions.</p>
+
+      <h3>Table 4: Old definition versus rebuilt definition</h3>
+      <div class="table-wrapper">
+      <table>
+      <thead><tr><th>Dimension</th><th>Old: "5+ logins in a week"</th><th>Rebuilt definition</th><th>Effect</th></tr></thead>
+      <tbody>
+      <tr><td><strong>Signal class</strong></td><td>Usage only.</td><td>Value AND constraint AND fit.</td><td>—</td></tr>
+      <tr><td><strong>Specific rule</strong></td><td>login_count ≥ 5 in 7 days</td><td>(shared a workspace externally OR connected a system of record) AND (hit a limit OR viewed pricing 2+ times OR started SSO setup) within 14 days AND (domain not free-email AND company size ≥ 50)</td><td>—</td></tr>
+      <tr><td><strong>Volume routed to sales</strong></td><td>600/month</td><td>112/month</td><td>−81%</td></tr>
+      <tr><td><strong>Conversion of routed accounts</strong></td><td>1.8%</td><td>19.4%</td><td>+17.6 points</td></tr>
+      <tr><td><strong>Revenue from routed accounts</strong></td><td>£71k/month</td><td>£188k/month</td><td>+165%</td></tr>
+      <tr><td><strong>Recall check</strong></td><td>Caught 91% of converters — but at a false-positive rate that made it meaningless.</td><td>Caught 78% of converters. The missing 22% were mostly enterprise accounts that entered through procurement rather than product.</td><td>Accepted; a separate motion covers those.</td></tr>
+      <tr><td><strong>Unsubscribe / opt-out from product emails</strong></td><td>3.4%/month</td><td>0.6%/month</td><td>The invisible cost of the old definition, finally visible.</td></tr>
+      <tr><td><strong>Domain aggregation (new)</strong></td><td>Not performed.</td><td>Weekly aggregation by email domain surfaced 34 companies with 3+ separate paid teams.</td><td><strong>£2.1m of consolidation pipeline that had always been there and had never been looked for.</strong></td></tr>
+      </tbody>
+      </table>
+      </div>
+      <p><strong>The decisive detail:</strong> the rebuilt definition worked fewer leads and produced more revenue, which is the standard shape of a PQL correction. The second decisive detail is the unsubscribe rate — the old definition was not merely inefficient, it was actively degrading the channel by teaching users that company emails were noise.</p>
+    </section>
+
+    <section id="execution">
+      <h2>7. Weak versus improved product-triggered outreach</h2>
+      <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> A user at a 200-person company has connected their data warehouse, invited four colleagues, and hit the workspace limit twice this week.</p>
+
+      <div class="callout warning">
+        <div class="callout-label">Weak execution (noticed you signed up)</div>
+        <p><em>Email:</em> "Hi Maya — I noticed you've been exploring [product] and wanted to reach out! I'd love to jump on a quick 15-minute call to understand your use case and show you what else the platform can do. Here's my calendar link. Also, are you the right person to speak to about your company's data strategy?"</p>
+        <p><em>Why it fails:</em> "I noticed you've been exploring" tells Maya she is being watched, without offering anything in return for that discomfort. She has already found the use case — she connected a warehouse and invited four people — so "understand your use case" reads as not having looked. "Show you what else the platform can do" offers information the product already provides. The calendar link precedes any value. And "are you the right person" asks her to do the seller's qualification work, after implying she may not matter.</p>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-label">Improved execution (say something the product cannot)</div>
+        <p><em>Email:</em> "Maya — you've hit the workspace limit twice this week, so before you buy more workspaces I want to flag something, because the obvious move is probably the wrong one for you.<br><br>
+        You've got four people in one workspace with a warehouse connection. Teams that grow past that usually split by team rather than by project — splitting by project looks tidier at first and becomes unmanageable at around 40 projects because permissions stop mapping to anything. Migrating later is possible but tedious. Here's the structure most teams your size land on eventually: [link, no gate].<br><br>
+        Two other things you can't see from inside the product. First, there are two other teams at your company already on paid plans — a marketing workspace and something in finance. If you're heading toward a company-wide rollout, one agreement is usually easier for your procurement than three renewals, and it's cheaper. Second, your warehouse connection is on the hourly sync; at your row volume the nightly gives the same result at about a third of the load.<br><br>
+        Happy to just answer questions by email — no call needed unless you want one.<br><br>
+        (If you'd rather I didn't reach out about usage, reply 'no' and I'll turn it off for your account.)"</p>
+        <p><em>Why it succeeds:</em> Every paragraph contains information Maya could not get from the product: forward-looking structural advice, an organizational fact she cannot see, and a configuration optimization. The advice about workspace structure is offered <em>before</em> she spends money, including a suggestion that may reduce what she buys. No calendar link, no ask, and an explicit low-friction opt-out. If she replies, she will do so with a real question rather than out of politeness.</p>
+      </div>
+    </section>
+
+    <section id="practice">
+      <h2>8. Practice: the PQL signal specification</h2>
+      <p><strong>Exercise goal:</strong> produce a PQL definition validated against real conversion data, with motions matched to signal strength and suppression rules that protect the channel.</p>
+      <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
+      <ol>
+        <li><strong>Define first value</strong> for your product — the specific action after which a user has received something they would miss. Use the Module 11 definition if you have already written it.</li>
+        <li><strong>List candidate signals</strong> in the three classes: usage, value, constraint. Be honest about which of your current signals are usage-only.</li>
+        <li><strong>Validate.</strong> Take the last two quarters of converted accounts. For each candidate signal, compute what proportion of converters fired it (recall) and what proportion of accounts that fired it converted (precision).</li>
+        <li><strong>Write the combination rule</strong> using value AND constraint AND fit. State every threshold and the time window.</li>
+        <li><strong>Match motions</strong> to signal strength using Table 2. Define what happens at each rung, including the rung where nothing happens.</li>
+        <li><strong>Write the assistance content</strong> for the assisted rung: three specific things you can tell a user that the product cannot.</li>
+        <li><strong>Write suppression rules:</strong> who is never contacted, how opt-out works across all channels and product lines, and what the maximum contact frequency is.</li>
+        <li><strong>Add domain aggregation:</strong> a weekly job identifying companies with multiple separate accounts or teams.</li>
+        <li><strong>Define the review cadence</strong> for re-validating the definition, since product changes invalidate signals.</li>
+      </ol>
+
+      <div class="solution-guide">
+        <h3>Completed exemplar (analytics product)</h3>
+        <table>
+        <thead><tr><th>Element</th><th>Entry</th></tr></thead>
+        <tbody>
+        <tr><td><strong>First value</strong></td><td>"Published a dashboard that at least one person outside the creator's team viewed twice in a week." (Output used outside the tool, by someone else.)</td></tr>
+        <tr><td><strong>Signal validation</strong></td><td>Logins ≥10/week: recall 88%, precision 2.1% → <em>useless</em>. Connected a production data source: recall 94%, precision 11% → strong value signal. Dashboard shared externally: recall 71%, precision 24% → strongest value signal. Hit row limit: recall 44%, precision 38% → strong constraint. Viewed pricing 2+: recall 52%, precision 19%. Started SSO config: recall 21%, precision <strong>61%</strong> → low recall, exceptional precision, always route.</td></tr>
+        <tr><td><strong>Combination rule</strong></td><td>PQL = (connected production data source OR dashboard shared externally) AND (hit row limit OR viewed pricing 2+ times OR started SSO config) within 14 days AND (business email domain AND company ≥ 50 staff). <strong>Override:</strong> SSO config started → route immediately regardless of other conditions.</td></tr>
+        <tr><td><strong>Motion ladder</strong></td><td>Activity only → <em>nothing</em>, in-product education only. Value, no constraint → automated: one email at day 7 with the "three things teams do next" guide, no ask. Value + soft constraint → assisted: one human email with configuration advice. Value + hard constraint → sales. Multi-team domain → account motion, routed to the enterprise team.</td></tr>
+        <tr><td><strong>Assistance content</strong></td><td>(1) "Your query pattern suggests you'd benefit from a materialized view — here's how, and it will cut your row consumption which may keep you under the limit." (2) "Teams at your scale usually regret dashboard-per-person; here's the folder structure that holds up." (3) "Two other teams at your company are on paid plans — one agreement is usually cheaper and easier for procurement."</td></tr>
+        <tr><td><strong>Suppression</strong></td><td>Never contact: free-email domains; companies under 50 staff; anyone who has opted out of any channel (suppression is global across product lines and permanent); anyone contacted in the last 30 days; anyone with an open support ticket. Max 1 human contact per 30 days per account.</td></tr>
+        <tr><td><strong>Domain aggregation</strong></td><td>Weekly job grouping paid and trial accounts by email domain; any domain with 3+ separate accounts or £15k+ combined ARR routes to the enterprise team with a consolidation brief.</td></tr>
+        <tr><td><strong>Review cadence</strong></td><td>Re-validate precision and recall quarterly, and immediately after any change to onboarding, limits, or pricing tiers — all three invalidate constraint signals.</td></tr>
+        </tbody>
+        </table>
+      </div>
+
+      <p><strong>Evaluation rubric:</strong> First value defined as a specific action with an external beneficiary (15%); signals correctly classified with usage signals honestly identified (15%); precision and recall computed against real conversions (30%); combination rule with thresholds and time window (15%); motions matched including a genuine do-nothing rung (10%); suppression rules with global permanent opt-out (10%); domain aggregation (5%).</p>
+      <p><strong>Beginner variation:</strong> Do step 3 for one signal only — usually "logins." Computing its actual precision against converted accounts is, for most teams, the finding that ends the argument about whether activity is a qualification signal.</p>
+      <p><strong>Advanced variation:</strong> Model the cost of the do-nothing rung. Estimate how many self-serve accounts convert without any human contact, and what would happen to that number if you contacted them. Most teams have never measured the counterfactual and therefore systematically over-attribute self-serve revenue to sales touches.</p>
+    </section>
+
+    <section id="knowledge-check">
+      <h2>9. Applied knowledge check</h2>
+
+      <details><summary>1. Why is "logged in 10 times this week" a poor PQL signal?</summary>
+      <p>Because it measures activity rather than benefit, and activity is generated equally by customers, students, competitors, and people who are stuck. Validated against real conversions it typically shows high recall and terrible precision — it catches most converters because most converters log in, while also catching almost everyone else. The signals that predict are value signals (the user got something they would miss: real data connected, output used by someone else, a colleague invited) combined with constraint signals (they have hit the boundary of what the current tier allows).</p></details>
+
+      <details><summary>2. A user has reached first value and shows no constraint signal. What should sales do?</summary>
+      <p>Nothing, or send genuinely useful automated guidance with no ask. The user is succeeding without you, and interrupting a working experience to sell is the defining product-led sales error — it converts a functioning revenue channel into an annoyance, and the damage shows up as quiet non-expansion rather than in any sales report. Wait for the constraint signal, which is the moment a conversation is actually useful because the user has encountered a boundary you can help with.</p></details>
+
+      <details><summary>3. What is the highest-value signal most PLS teams never look for?</summary>
+      <p>Departmental spread — multiple separate teams inside one organization, each on their own small plan, invisible to one another and to each other's procurement. Each individual account looks trivial, so nobody routes it, while together they represent a consolidation opportunity often worth more than any single new logo. Surfacing it requires nothing more than a weekly job aggregating accounts by email domain, which is why it is such a common and expensive omission.</p></details>
+
+      <details><summary>4. What is the test for whether a product-triggered message is worth sending?</summary>
+      <p>Could the user have learned this from the product? If yes, do not send it. What passes are things you know and they cannot see: how their configuration will behave at ten times the scale, how comparable teams have solved the same thing, an organizational fact such as other teams at their company already paying, or an honest limitation that will bite them in month three. Advice that reduces what they will spend is the strongest of all, because it is the clearest possible signal that the message was not about your quota.</p></details>
+
+      <details><summary>5. Your rebuilt PQL definition routes 80% fewer leads to sales. How do you justify that internally?</summary>
+      <p>With the precision and recall numbers and the revenue outcome. A definition that routes 600 accounts at 1.8% conversion produces less revenue than one routing 112 at 19% — and it consumes far more capacity doing it. Add the invisible cost: opt-out and unsubscribe rates from product-triggered outreach, which the loose definition inflates and which degrade the channel permanently. Also state honestly what the tighter definition misses (recall of 78% rather than 91%) and what separate motion covers those accounts, so nobody discovers the gap later and treats it as a mistake.</p></details>
+    </section>
+
+    <section id="conclusion">
+      <h2>10. Practical conclusion &amp; next action</h2>
+      <p>Product-led sales rewards restraint. The product does the demonstrating; the seller's job is to be the person who knows the thing the product cannot say, and to appear at the moment the user has hit a wall rather than at the moment a dashboard turned green.</p>
+      <ul>
+        <li>Usage signals predict little. Value and constraint signals predict revenue, and only in combination with account fit.</li>
+        <li>Validate every definition against real converted accounts. Compute precision and recall or you are guessing.</li>
+        <li>Match motion to signal strength, and defend the rung where the correct action is nothing.</li>
+        <li>Only send what the product cannot say. Configuration insight, peer benchmarks, organizational facts, honest limits.</li>
+        <li>Advice that reduces what a user spends is the strongest trust signal available in this motion.</li>
+        <li>Aggregate by domain weekly. The largest deal in your self-serve base is usually already there in pieces.</li>
+        <li>Make opt-out global, permanent, and easy — a degraded channel does not recover quickly.</li>
+      </ul>
+      <p><strong>Immediate action:</strong> Take your current qualification signal and compute its precision against the last two quarters of converted accounts — what share of accounts that fired it actually converted. If the number is under 5%, you are not qualifying, you are broadcasting.</p>
+      <p><strong>Related modules:</strong> <a href="module-11.html">11 · Customer Retention</a>, <a href="module-03.html">03 · Online Selling</a>, <a href="module-32.html">32 · Segmentation, ICP &amp; Positioning</a>, and <a href="module-39.html">39 · Revenue Operations, Pipeline &amp; Forecasting</a>.</p>
     </section>
 
   </article>
@@ -127,8 +275,6 @@ flowchart LR
 </footer>
 
 <script src="script.js"></script>
-
-<!-- Google Translate -->
 <div id="google_translate_element" style="position:absolute; top:-9999px; left:-9999px; z-index:-9999;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
