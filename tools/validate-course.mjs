@@ -13,6 +13,11 @@ const assert = (condition, message) => { if (!condition) errors.push(message); }
 const count = (text, pattern) => [...text.matchAll(pattern)].length;
 const moduleFile = id => `module-${String(id).padStart(2, '0')}.html`;
 
+/* Depth floor for the rebuilt curriculum. Every module must carry a full
+   lesson, a worked example, a scored practice brief, and a knowledge check —
+   which no module below this length can do. */
+const MIN_MODULE_WORDS = 1800;
+
 const distAssessmentPath = 'dist/static/assessment-data.js';
 assert(fs.existsSync(distAssessmentPath), `${distAssessmentPath} does not exist`);
 
@@ -57,8 +62,18 @@ for (const module of modules) {
   assert(fs.existsSync(file), `Missing ${file}`);
   assert(levelIds.includes(module.id), `Module ${module.id} is absent from levels`);
   assert(research[module.id], `Missing research note for module ${module.id}`);
-  if (Number(module.id) >= 31 && Number(module.id) <= 42) {
-    assert(assessments[module.id] && assessments[module.id].length >= 3 && assessments[module.id].length <= 5, `Module ${module.id} is missing required assessment questions (expected 3-5)`);
+  const questions = assessments[module.id];
+  assert(
+    Array.isArray(questions) && questions.length >= 3 && questions.length <= 5,
+    `Module ${module.id} is missing required assessment questions (expected 3-5)`
+  );
+  for (const [index, question] of (questions ?? []).entries()) {
+    const where = `Module ${module.id} question ${index + 1}`;
+    assert(typeof question.prompt === 'string' && question.prompt.length > 20, `${where} has no usable prompt`);
+    assert(Array.isArray(question.options) && question.options.length === 3, `${where} must offer exactly three options`);
+    assert(new Set(question.options).size === 3, `${where} repeats an option`);
+    assert(Number.isInteger(question.answer) && question.answer >= 0 && question.answer < 3, `${where} has an out-of-range answer index`);
+    assert(typeof question.explanation === 'string' && question.explanation.length > 20, `${where} has no usable explanation`);
   }
   assert(module.objectives?.length === 3, `Module ${module.id} needs three objectives`);
   assert(module.artifact, `Module ${module.id} has no artifact`);
@@ -70,6 +85,10 @@ for (const module of modules) {
   assert(!html.includes('PhD Level Masterclass'), file + ' contains an inflated PhD-level label');
   assert(html.includes('script.js'), `${file} does not load the shared bootstrap`);
   assert(html.includes('article class="content"'), `${file} lacks the protected content layout`);
+  assert(html.includes('id="practice"'), `${file} has no practice section`);
+  assert(html.includes('id="knowledge-check"'), `${file} has no applied knowledge check`);
+  const words = html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+  assert(words >= MIN_MODULE_WORDS, `${file} is below the depth floor (${words} words, minimum ${MIN_MODULE_WORDS})`);
   if (module.id < stats.modules - 1) {
     assert(html.includes(moduleFile(Number(module.id) + 1)), `${file} next-module link is wrong`);
   }

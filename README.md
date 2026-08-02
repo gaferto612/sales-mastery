@@ -2,7 +2,7 @@
 
 A practical, opinionated curriculum on selling — online, offline, B2B, psychology, copywriting, negotiation, retention, and the ethics of the craft.
 
-**43 modules · 6 competency levels · 5 role-based paths · 20 drills · 4 capstones · 17 case studies · 60,000+ words**
+**43 modules · 6 competency levels · 5 role-based paths · 20 drills · 4 capstones · 17 case studies · 172 applied assessment questions · 149,000+ words**
 
 ---
 
@@ -20,24 +20,31 @@ Otherwise, clone the repo and open `index.html` in a browser — everything is s
 
 | Module | Topic |
 |--------|-------|
-| 00 | Introduction — what this course is, who it's for |
-| 01 | Foundations — the 7-step process, value, awareness |
-| 02 | Psychology — Cialdini's principles, biases, the Trust Equation |
-| 03 | Online Selling — funnels, e-commerce, paid vs. owned traffic |
-| 04 | Offline Selling — retail, in-person, body language, voice |
-| 05 | Outbound Prospecting — ICP, cold calls, email, social selling |
-| 06 | B2B & Enterprise — SPIN, MEDDIC, Challenger, buying committees |
-| 07 | Copywriting — headlines, frameworks, triggers, banned words |
-| 08 | Negotiation — BATNA, ZOPA, anchors, concession patterns |
-| 09 | Objection Handling — concerns, indecision, scripts |
-| 10 | Closing Techniques — commitment, decision readiness, next steps |
-| 11 | Customer Retention — LTV, NRR, win-back, cohort thinking |
-| 12 | Ethics & Pitfalls — persuasion vs. manipulation, dark patterns |
-| 13 | Tools & Resources — reading list, career paths, 90-day plan |
-| 14 | AI in Sales — prospecting, review, governance, human judgment |
-| 15 | Selling AI Products — positioning, proof, pricing, GTM |
-| 16 | Founder-Led Sales — zero to one, first 10 customers, design partners |
-| 17–30 | Product-led sales, management, narrative, enterprise, performance, and optional lenses |
+| 00 | Introduction — what predicts sales performance, and the evidence standard |
+| 01 | Foundations — the value ladder, deal anatomy, buyer awareness |
+| 02 | Psychology — influence principles graded by replication, decision biases, trust |
+| 03 | Online Selling — funnel arithmetic, constraint diagnosis, channel economics |
+| 04 | Offline Selling — behavior sequences over cue-reading, openers, floor audits |
+| 05 | Outbound Prospecting — jurisdiction, list quality, relevance, honest metrics |
+| 06 | B2B & Enterprise — buying centres, methodologies graded, the artifact that travels |
+| 07 | Copywriting — message hierarchy, proof attachment, substantiation limits |
+| 08 | Negotiation — BATNA, reservation value, anchoring evidence, conditional trading |
+| 09 | Objection Handling — concern, condition, deflection, and indecision |
+| 10 | Closing — decision readiness, techniques graded, mutual action plans |
+| 11 | Customer Retention — GRR vs NRR, cohorts, time-to-first-value |
+| 12 | Ethics & Pitfalls — four decision tests, dark patterns, structural pressure |
+| 13 | Tools & Resources — buy by decision, classified reading, deliberate practice |
+| 14 | AI in Sales — task selection, real human review, data governance |
+| 15 | Selling AI Products — workflow positioning, accuracy, abstention, pricing |
+| 16 | Founder-Led Sales — narrowing, design partnerships, the custom-work trap |
+| 17 | Product-Led Sales — PQL signals validated on precision and recall |
+| 18 | Sales Management — role ambiguity, coaching vs. inspection, cadence |
+| 19 | Storytelling — structure, evidence attachment, change narrative |
+| 20–22, 27–30 | Contested lenses — mimetic desire, behavioral economics, NLP, TA, polyvagal, OODA, evolutionary psychology |
+| 23 | MEDDPICC & Mutual Action Plans — the three-state evidence grid |
+| 24 | Working with Procurement — mandate, tactics, the trade matrix |
+| 25 | The Prescriptive Demo — subtraction, tell–show–tell, proof plans |
+| 26 | The Inner Game — process vs. outcome, loss review, sustainable routines |
 | 31 | Customer & Market Research — interviews, evidence synthesis, win/loss |
 | 32 | Segmentation, ICP & Positioning — alternatives, category, proof |
 | 33 | Consultative Discovery & Diagnosis — causal maps, listening, mutual qualification |
@@ -54,11 +61,57 @@ Otherwise, clone the repo and open `index.html` in a browser — everything is s
 Plus:
 
 - **Learning paths** — Core Seller, B2C & Retail, B2B & Enterprise, Founder & SaaS, and Sales Leader
-- **Applied knowledge checks** — one scenario-based retrieval check in every module
+- **Applied knowledge checks** — four scenario-based assessment questions in every module, plus a progressive-disclosure retrieval check inside each lesson
 - **Private study tools** — device-local notes, bookmarks, and progress
 - **Exercises** — 20 drills tied to the modules
 - **Capstones** — four role-based projects with a shared scoring rubric
 - **Case Studies** — 17 real-world scenarios broken down
+
+---
+
+## How the content is built
+
+Every module follows the same ten-section structure: a practical introduction, observable
+learning objectives, three substantive sections carrying the material, a worked example, a
+weak-versus-improved execution comparison, a scored practice brief with a completed
+exemplar, an applied knowledge check, and a single immediate action.
+
+Claims are labelled by evidence class:
+
+| Class | Meaning |
+|-------|---------|
+| **R** | Peer-reviewed research, meta-analysis, or systematic review |
+| **L** | Law, regulator guidance, or official standard |
+| **V** | Vendor or practitioner dataset, not peer reviewed |
+| **F** | Practitioner framework — a structure for thinking, not a law |
+| **X** | A claim that failed replication or never had support |
+
+Three files carry the standard:
+
+- [`RESEARCH.md`](RESEARCH.md) — the evidence policy and the core bibliography
+- [`EVIDENCE.md`](EVIDENCE.md) — the quantified findings the modules rely on, each with its
+  source, its effect size, and the boundary condition that stops it being misused
+- [`SALES_CANON.md`](SALES_CANON.md) — the reading list, classified by proper use
+
+Level 6 is deliberately labelled **contested lenses**. Frameworks whose mechanisms are
+disputed or refuted — NLP, polyvagal theory, mimetic desire, popular evolutionary
+psychology — are taught critically rather than omitted, because learners will meet them
+elsewhere presented as fact.
+
+---
+
+## Validation
+
+```bash
+npm run build     # generate dist/
+npm run validate  # structural checks + learning-state tests
+```
+
+`tools/validate-course.mjs` enforces module count, level placement, research notes,
+navigation links, homepage counts, a depth floor of 1,800 words per module, the presence of
+a practice section and an applied knowledge check in every module, and 3–5 well-formed
+assessment questions per module. `tools/test-learning-state.mjs` covers the local
+progress-state migration, including that reopening a completed module never regresses it.
 
 ---
 

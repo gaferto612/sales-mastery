@@ -1,5 +1,60 @@
 # Content Development Log
 
+## content: rebuild the full curriculum to a single evidence-led depth standard
+
+### Scope
+
+Every module from 00 to 33 rebuilt in the ten-section format previously used only by modules
+34-42, and the supporting evidence, assessment, validation, and documentation layers brought
+up to match.
+
+### Files changed
+
+- `module-00.html` through `module-33.html` — complete rebuilds
+- `EVIDENCE.md` — new: quantified findings with sources, effect sizes, and boundary conditions
+- `RESEARCH.md` — evidence-class table, calibration rules, expanded bibliography
+- `SALES_CANON.md` — reading list reclassified; "use with caution" entries given specific reasons
+- `assessment-data.js` — 124 new scenario questions for modules 00-30 (172 total across the course)
+- `styles.css` — styles for `.table-wrapper`, `.solution-guide`, `.case-tag`, `.callout.warning`, and `details/summary`
+- `tools/validate-course.mjs` — course-wide assessment validation, depth floor, required-section checks
+- `tools/test-learning-state.mjs` — repaired against the v3 state schema; added a no-regression case
+- `README.md`, `index.html` — counts, structure documentation, and hero copy
+
+### Main improvements
+
+- **Uniform depth.** Module word counts ranged from 440 to 2,871 before; the floor is now
+  1,800 and enforced by the validator. Total curriculum length rose from ~62,000 to ~150,000
+  words, with the increase concentrated in the modules that had least.
+- **Evidence classification applied throughout.** Every claim is labelled R (research), L
+  (law/standard), V (vendor dataset), F (framework), or X (refuted). `EVIDENCE.md` records
+  each quantified finding with its source and the condition under which it stops being true.
+- **Contested frameworks taught critically rather than omitted.** Level 6 modules carry an
+  explicit "contested lens" header. NLP's core claims, polyvagal physiology, mimetic theory,
+  and popular evolutionary psychology are documented with the primary literature that
+  challenges them, and the salvageable practices are re-explained on ordinary grounds.
+- **Statistics corrected rather than repeated.** The Reichheld retention range, NPS
+  predictive-validity claims, loss-aversion ratios, first-offer anchoring, and choice
+  overload are all presented with the qualifications the primary literature actually
+  supports.
+- **Every module now ends in a scoreable artifact.** Practice sections carry a completed
+  exemplar, a weighted rubric, and beginner and advanced variations.
+- **Assessment coverage completed.** Modules 00-30 previously fell back to a single
+  checkpoint question; each now has four scenario-based questions, validated structurally.
+- **Component styles supplied.** Modules 34-42 already used `.table-wrapper`,
+  `.solution-guide`, `.case-tag`, `.callout.warning`, and `details/summary`; none were
+  defined in the stylesheet, so tables did not scroll on mobile and knowledge checks
+  rendered unstyled.
+- **Stale test repaired.** `test-learning-state.mjs` asserted state version 2 against a
+  `learning.js` that emits version 3, so `npm run validate` failed before any of this work
+  began. Rewritten against the v3 schema with an added no-regression-on-reopen case.
+
+### Verification
+
+`npm run build && npm run validate` — both suites pass. 43 modules, 6 levels, 5 paths, 20
+drills, 4 capstones, 17 cases, 43 research notes, 149,854 module words.
+
+---
+
 ## qa: validate course content assessments and learner state
 
 ### Files reviewed

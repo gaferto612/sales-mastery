@@ -59,12 +59,16 @@ const migrated = run({
   salesMasteryPath: 'enterprise',
 });
 const state = migrated.salesMasteryLearningState;
-assert(state.version === 2, 'Migration did not produce version 2');
-assert(state.modules['01'].started === true, 'Legacy open was not preserved as started');
-assert(!state.modules['01'].read, 'Legacy open was incorrectly promoted to read');
-assert(!state.modules['01'].knowledgePassed, 'Legacy open was incorrectly promoted to knowledge passed');
-assert(state.modules['02'].read === true && state.modules['02'].knowledgePassed === true, 'Legacy completion was not safely preserved');
-assert(state.modules['03'].knowledgePassed === true, 'Legacy knowledge check was not preserved');
+assert(state.version === 3, `Migration did not produce version 3 (got ${state.version})`);
+assert(state.modules['01'].status === 'in_progress', 'Legacy open was not preserved as in_progress');
+assert(state.modules['01'].lessonRead === false, 'Legacy open was incorrectly promoted to lesson read');
+assert(!state.modules['01'].knowledgeCheck.passed, 'Legacy open was incorrectly promoted to knowledge passed');
+// The v3 migration is deliberately conservative: the old "mastery" array tracked a
+// mix of opens and completions, so it may only raise a module to in_progress.
+assert(state.modules['02'].status === 'in_progress', 'Legacy mastery entry was not preserved as in_progress');
+assert(state.modules['02'].lessonRead === false, 'Legacy mastery entry was incorrectly promoted to lesson read');
+assert(state.modules['03'].status === 'knowledge_check_passed', 'Legacy knowledge check did not raise status');
+assert(state.modules['03'].knowledgeCheck.passed === true, 'Legacy knowledge check was not preserved');
 assert(!('salesMasteryProgress' in migrated), 'Legacy progress key was not removed');
 assert(!('salesMasteryMastery' in migrated), 'Legacy mastery key was not removed');
 assert(!('salesMasteryChecks' in migrated), 'Legacy check key was not removed');
@@ -73,10 +77,36 @@ assert(migrated.salesMasteryBookmarks[0] === '02', 'Bookmarks were changed durin
 assert(migrated.salesMasteryPath === 'enterprise', 'Path preference was changed during migration');
 
 const opened = run({}, '/module-01.html').salesMasteryLearningState.modules['01'];
-assert(opened.started === true, 'Opening a module did not record in-progress state');
-assert(!opened.read, 'Opening a module incorrectly marked it read');
-assert(!opened.knowledgePassed, 'Opening a module incorrectly passed the knowledge check');
-assert(!opened.practiceCompleted, 'Opening a module incorrectly completed practice');
-assert(!opened.demonstrated, 'Opening a module incorrectly recorded skill demonstration');
+assert(opened.status === 'in_progress', 'Opening a module did not record in-progress state');
+assert(opened.lessonRead === false, 'Opening a module incorrectly marked the lesson read');
+assert(!opened.knowledgeCheck.passed, 'Opening a module incorrectly passed the knowledge check');
+assert(!opened.practice.completed, 'Opening a module incorrectly completed practice');
+assert(!opened.practice.selfAssessed, 'Opening a module incorrectly recorded skill demonstration');
 
-console.log(JSON.stringify({migration: 'pass', openingBehavior: 'pass', preservedUserData: 'pass'}, null, 2));
+// A module already at a higher status must not be regressed by simply reopening it.
+const reopened = run(
+  {
+    salesMasteryLearningState: {
+      version: 3,
+      modules: {
+        '01': {
+          status: 'skill_demonstrated',
+          lessonRead: true,
+          knowledgeCheck: {passed: true, score: 4, total: 4, attempts: 1},
+          practice: {completed: true, selfAssessed: true},
+        },
+      },
+    },
+  },
+  '/module-01.html'
+).salesMasteryLearningState.modules['01'];
+assert(reopened.status === 'skill_demonstrated', 'Reopening a completed module regressed its status');
+assert(reopened.knowledgeCheck.passed === true, 'Reopening a completed module discarded knowledge-check state');
+assert(reopened.practice.selfAssessed === true, 'Reopening a completed module discarded practice state');
+
+console.log(JSON.stringify({
+  migration: 'pass',
+  openingBehavior: 'pass',
+  noRegressionOnReopen: 'pass',
+  preservedUserData: 'pass',
+}, null, 2));
