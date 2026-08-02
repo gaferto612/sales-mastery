@@ -234,6 +234,12 @@ main:not(#main-content) {
   grid-template-columns: 240px 1fr;
   gap: 80px;
 }
+/* Grid items default to min-width:auto, so a wide table or code block inside
+   the article widens the track past the viewport and the whole page scrolls
+   sideways. min-width:0 lets the column shrink so overflow stays inside the
+   element that owns it (.table-wrapper, .solution-guide, pre). */
+main:not(#main-content) > .sidebar,
+main:not(#main-content) > .content { min-width: 0; }
 main#main-content {
   display: block;
   max-width: none;
