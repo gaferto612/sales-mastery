@@ -5,7 +5,9 @@
 <li><a href="#security-compliance">4. Security, privacy, and due diligence</a></li>
 <li><a href="#legal-framework">5. The contract map and redline strategy</a></li>
 <li><a href="#worked-example">6. Worked example: enterprise RFP &amp; MSA negotiation</a></li>
+      <li class="aside-entry"><a href="#brayford">Applied to the Brayford deal</a></li>
 <li><a href="#execution">7. Weak versus improved procurement dialogue</a></li>
+      <li class="aside-entry"><a href="#failure-mode">Where this fails</a></li>
 <li><a href="#practice">8. Practice: bid qualification &amp; redline trade log</a></li>
 <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
 <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
@@ -99,6 +101,15 @@
 </div>
 <p><strong>Key Insight:</strong> By qualifying decision access early and enforcing redline fallbacks, the AE avoided a blind submission, secured security clearance, and successfully eliminated an unlimited liability clause.</p></section>
 
+
+<section class="case-thread" id="brayford">
+<span class="thread-marker">The Brayford thread · Weeks 18–27 · the paper that ran in parallel</span>
+<h3>Five weeks of information governance</h3>
+<p>Dev Osei's review was the single longest dependency in the Brayford deal, and it ran alongside the commercial conversation rather than after it — which is the only reason the September go-live survived.</p>
+<p>What he required, none of which existed when he was engaged at week 18: a data-flow map showing where staff working patterns and qualification records travel and rest; a retention schedule; the lawful basis for processing rosters that reveal working-time patterns; sub-processor disclosure; and a Data Protection Impact Assessment, because a system inferring availability from historical acceptance behaviour touches profiling.</p>
+<p>Cadence had three of the five. The DPIA and the data-flow map were produced during the review, which is late and was survivable only because there were seven weeks rather than one.</p>
+<p>The commercial paper ran concurrently: MSA with two clauses contested — liability capped at twelve months' fees with carve-outs, and termination for convenience at ninety days with a wind-down fee — and twelve other amendments accepted without argument. Choosing two battles is what made both winnable.</p>
+</section>
 <section id="execution"><h2>7. Weak versus improved procurement dialogue</h2>
 <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> Buyer Procurement Attorney demands an unlimited liability clause and Net-90 payment terms during MSA review.</p>
 
@@ -115,6 +126,16 @@
 <p><em>Why it succeeds:</em> Validates the buyer's risk concerns, explains corporate risk boundaries rationally, and uses approved fallbacks to reach commercial agreement.</p>
 </div></section>
 
+
+<section class="failure-mode" id="failure-mode">
+<span class="failure-marker">Where this fails</span>
+<h2>Where even experienced sellers get this wrong</h2>
+<p>Experienced sellers prepare a security pack and then discover that <strong>the pack answers the questions they anticipated rather than the ones this buyer's governance function asks</strong>.</p>
+<p>A SOC 2 report, a penetration-test summary, and a completed standard questionnaire cover infrastructure security competently. They say nothing about lawful basis, retention, profiling, or data flows — which is what an information-governance or data-protection function actually reviews, and those are different people with different training and a different statute behind them.</p>
+<p>The mismatch is invisible until week 18, when a vendor who considers themselves well prepared is asked for a DPIA and produces a firewall diagram.</p>
+<p>The distinction is worth learning precisely: <em>security</em> asks whether the data can be stolen; <em>governance</em> asks whether you should have it, for how long, on what basis, and what you infer from it. In regulated buyers the second review is longer, less negotiable, and more likely to be fatal — and a pack that only serves the first is not an evidence room, it is half of one.</p>
+<p class="mechanism"><strong>The mechanism:</strong> Security questionnaires are the visible artifact of enterprise diligence, so vendors optimise for them and infer that diligence is complete. Governance review operates on a different statutory basis with different artifacts, and it is triggered by data categories rather than by contract value — so it is invisible in the deals where it does not apply and unpreparable in the ones where it does.</p>
+</section>
 <section id="practice"><h2>8. Practice: bid qualification &amp; redline trade log</h2>
 <p><strong>Exercise Goal:</strong> Audit an incoming RFP opportunity, score it against Bid/No-Bid criteria, and construct a contract redline trade log for an enterprise MSA negotiation.</p>
 <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
@@ -147,6 +168,20 @@
 </div>
 <p><strong>Beginner variation:</strong> Audit a 20-page RFP with 2 redline clauses (payment terms and warranty period) against standard template fallbacks.</p>
 <p><strong>Advanced variation:</strong> Construct a complete 15-clause contract redline matrix for a multi-party enterprise MSA involving sub-processors, cross-border data transfers, and uncapped IP liability.</p>
+
+<h3>Artifact quality rubric</h3>
+<p>Completing the paper-process room is not the same as producing a good one. Grade your own against these dimensions before you show it to anyone.</p>
+<div class="artifact-rubric">
+<table>
+<thead><tr><th>Dimension</th><th>Weak</th><th>Strong</th></tr></thead>
+<tbody>
+<tr><td><strong>Two-track</strong></td><td>Security evidence only.</td><td>Security and governance evidence held separately — including DPIA, lawful basis, retention, and data-flow map.</td></tr>
+<tr><td><strong>Parallel</strong></td><td>Paper begins after commercial agreement.</td><td>Sent unprompted before procurement formally engages; dependencies run concurrently.</td></tr>
+<tr><td><strong>Two battles</strong></td><td>Every clause negotiated, or all accepted.</td><td>Two or three clauses contested with fallbacks; the rest conceded with grace.</td></tr>
+<tr><td><strong>Timed</strong></td><td>Post-decision duration unknown.</td><td>Elapsed estimate taken from the buyer's own last comparable purchase, with a backward pass.</td></tr>
+</tbody>
+</table>
+</div>
 </section>
 
 <section id="knowledge-check"><h2>9. Applied knowledge check</h2>
@@ -175,6 +210,7 @@
 </ul>
 <p><strong>Immediate action:</strong> Audit your current active deal pipeline for contracting readiness. Verify that every deal in Stage 4 or 5 has an NDA signed, security packets delivered, and key MSA redline limits established with internal counsel.</p>
 <p><strong>Related modules:</strong> <a href="module-33.html">33 · Consultative Discovery &amp; Diagnosis</a>, <a href="module-36.html">36 · Buying Groups, Consensus &amp; Decision Enablement</a>, <a href="module-37.html">37 · Commercial Acumen, Pricing &amp; Packaging</a>, and <a href="module-39.html">39 · Revenue Operations, Pipeline &amp; Forecasting</a>.</p>
+      <p class="practise-it"><strong>Practise it:</strong> Case <a href="case-studies.html#case-2">2 · The B2B SaaS deal that died in legal</a>.</p>
 </section>
 
 </article></main><nav class="module-nav"><a href="module-37.html" class="prev"><div class="dir">← Previous · Module 37</div><div class="next-title">Commercial Acumen, Pricing &amp; Packaging</div></a><a href="module-39.html" class="next"><div class="dir">Next · Module 39</div><div class="next-title">Revenue Operations, Pipeline &amp; Forecasting</div></a></nav><footer class="site-footer">Sales Mastery · MIT License · <a href="index.html">Course index</a></footer><script src="script.js"></script><div id="google_translate_element" style="position:absolute;top:-9999px;left:-9999px;z-index:-9999px"></div><script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',autoDisplay:false},'google_translate_element')}</script><script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></body></html>

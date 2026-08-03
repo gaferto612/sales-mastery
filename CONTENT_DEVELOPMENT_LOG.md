@@ -1,5 +1,73 @@
 # Content Development Log
 
+## content: add the throughline — one continuous deal, named failure modes, rubrics, and a point of view
+
+### Scope
+
+A density upgrade, not a page-count upgrade. The 6-level / 43-module architecture is
+unchanged; what changed is what each module carries. Four elements were added to every
+module, plus a cross-linking pass over the exercises and case studies.
+
+### Files changed
+
+- `module-00.html` through `module-42.html` — case-thread box, failure-mode section, and
+  artifact rubric inserted into all 43; reverse "Practise it" links added to the 24 modules
+  that a drill or case names
+- `CASE_THREAD.md` — new: the continuity reference the case-thread boxes are written against
+- `exercises.html` — a "why this reinforces the module" note on each of the 20 drills
+- `RESEARCH.md` — sources added for claims found unsupported during the audit
+- `styles.css` — `.case-thread`, `.failure-mode`, `.callout.position`, `.artifact-rubric`,
+  `.practise-it`, and the sidebar aside entries
+- `tools/validate-course.mjs` — enforcement for all of the above
+- `README.md` — documents the throughline and the new validator guarantees
+
+### Main improvements
+
+- **One continuous deal across all 43 modules.** Cadence, a workforce-scheduling vendor,
+  selling into Brayford Care Group — 18 sites after an acquisition, an incumbent renewing
+  in September, and a same-day cover cost of roughly £2.4m a year caused by a bank-staff
+  availability spreadsheet updated weekly. Each module's *Applied to the Brayford deal* box
+  applies that module's framework to the deal state at a specific week. The deal is not a
+  success story: the seller mistakes a coach for a champion for twelve weeks, misses a veto
+  holder until week 18, misreads a blocker's actual motive, and lands £312k across 4 sites
+  against a £480k / 18-site proposal. `CASE_THREAD.md` holds the stakeholder map, the
+  numbers, the five decision points, and an assumption ledger separating what was observed
+  from what was inferred from what was guessed — so later modules stay consistent with
+  earlier ones.
+- **A named failure mode in every module.** 150–250 words on one specific way experienced
+  sellers get *this* skill wrong, each ending in the mechanism that produces the failure
+  rather than the symptom. The mechanism is the point: "discovery calls feel good and go
+  nowhere" is a symptom; the reason is what makes it fixable.
+- **Artifact quality rubrics.** Every practice brief now ends in a three-to-four dimension
+  rubric — specific vs vague, buyer-verified vs assumed, actionable vs descriptive — so the
+  learner grades quality rather than completion. A finished artifact that scores badly is a
+  more useful outcome than a tick.
+- **Five explicit positions.** Where the course previously summarised both sides neutrally,
+  it now takes a stance and says so: outbound volume is a confession about targeting
+  (Module 05); ask for the honest no in every deal and measure it (Module 10); AI may draft,
+  summarise, and extract but may not originate a customer-facing assertion (Module 14);
+  refuted frameworks belong in the curriculum (Module 22); discretionary discount authority
+  below management should not exist (Module 37). Each is labelled as the course's opinion
+  and states the strongest counter-argument in one sentence.
+- **Evidence audit.** Unsupported "studies show" / "research indicates" constructions were
+  either given a specific checkable source or relabelled as heuristic, framework, or
+  hypothesis. Sources added to the bibliography include Johnson & Goldstein on defaults
+  (*Science*, 2003), Regan (1971) on reciprocity, and the Zebregs meta-analysis on
+  statistical versus narrative evidence — the last annotated to separate the memory
+  question from the less settled persuasion question.
+- **Throughline closed in both directions.** Each of the 20 drills now says why it
+  reinforces its module instead of only naming it, and 24 modules link back to the drills
+  and cases that practise them. The validator checks reciprocity and that every deep link
+  resolves to an anchor that exists.
+
+### Verification
+
+`npm run build && npm run validate` — both suites pass. 43 modules, 6 levels, 5 paths, 20
+drills, 4 capstones, 17 cases, 43 research notes, 174,954 module words. The new assertions
+were negative-tested: removing a single drill note fails the run.
+
+---
+
 ## content: rebuild the full curriculum to a single evidence-led depth standard
 
 ### Scope

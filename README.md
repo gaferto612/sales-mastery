@@ -76,6 +76,32 @@ learning objectives, three substantive sections carrying the material, a worked 
 weak-versus-improved execution comparison, a scored practice brief with a completed
 exemplar, an applied knowledge check, and a single immediate action.
 
+Three elements run through all forty-three modules and hold the course together:
+
+- **One continuous deal.** Every module carries an *Applied to the Brayford deal* box that
+  takes the module's framework and applies it to the same running B2B opportunity —
+  Cadence selling workforce scheduling into Brayford Care Group, week 0 through signature
+  and beyond. The deal state, stakeholder map, numbers, and the seller's actual mistakes
+  are tracked in [`CASE_THREAD.md`](CASE_THREAD.md) so continuity holds across the course
+  instead of resetting each module.
+- **A named failure mode.** Every module carries a *Where this fails* section describing
+  one specific way experienced sellers get this particular skill wrong, and — importantly —
+  the mechanism that produces the failure, not just the symptom you would notice.
+- **An artifact quality rubric.** Each practice brief ends in a rubric of three to four
+  dimensions (specific vs vague, buyer-verified vs assumed, actionable vs descriptive)
+  so the learner grades the quality of what they produced rather than the fact that they
+  produced it.
+
+In five places the course states an explicit, arguable position rather than a neutral
+textbook summary — on outbound volume, asking for the honest no, what AI may and may not
+originate, whether refuted frameworks belong in a curriculum, and discretionary discount
+authority. Each is labelled as the course's opinion and states the strongest
+counter-argument in the same box.
+
+Exercises and case studies are not standalone pages. Each of the 20 drills and 17 cases
+links to the module it reinforces and says why; each module links back to the drills and
+cases that practise it. The validator enforces both directions.
+
 Claims are labelled by evidence class:
 
 | Class | Meaning |
@@ -110,7 +136,11 @@ npm run validate  # structural checks + learning-state tests
 `tools/validate-course.mjs` enforces module count, level placement, research notes,
 navigation links, homepage counts, a depth floor of 1,800 words per module, the presence of
 a practice section and an applied knowledge check in every module, and 3–5 well-formed
-assessment questions per module. `tools/test-learning-state.mjs` covers the local
+assessment questions per module. It also enforces the throughline: every module must carry
+a case-thread box, a failure-mode section that names its mechanism, and an artifact rubric;
+every drill must explain what it reinforces; every stated position must carry its
+counter-argument; and every module named by a drill or case must link back, with all deep
+links resolving to anchors that exist. `tools/test-learning-state.mjs` covers the local
 progress-state migration, including that reopening a completed module never regresses it.
 
 ---

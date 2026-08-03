@@ -87,11 +87,31 @@ for (const module of modules) {
   assert(html.includes('article class="content"'), `${file} lacks the protected content layout`);
   assert(html.includes('id="practice"'), `${file} has no practice section`);
   assert(html.includes('id="knowledge-check"'), `${file} has no applied knowledge check`);
+  /* Continuity spine: every module applies its framework to the same running
+     deal, names a specific failure mode with its mechanism, and gives the
+     learner a rubric to grade the artifact's quality rather than its existence. */
+  assert(html.includes('id="brayford"'), `${file} has no "Applied to the Brayford deal" case-thread box`);
+  assert(html.includes('id="failure-mode"'), `${file} has no "Where this fails" section`);
+  assert(/class="mechanism"/.test(html), `${file} states a failure mode without naming its mechanism`);
+  assert(html.includes('Artifact quality rubric'), `${file} has no artifact quality rubric`);
+  assert(/class="artifact-rubric"/.test(html), `${file} rubric is not in the gradeable table wrapper`);
   const words = html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
   assert(words >= MIN_MODULE_WORDS, `${file} is below the depth floor (${words} words, minimum ${MIN_MODULE_WORDS})`);
   if (module.id < stats.modules - 1) {
     assert(html.includes(moduleFile(Number(module.id) + 1)), `${file} next-module link is wrong`);
   }
+}
+
+/* The course takes an explicit, arguable stance in a handful of places, and
+   each one must state the counter-argument rather than assert into a vacuum. */
+const positionModules = modules
+  .map(module => moduleFile(module.id))
+  .filter(file => fs.existsSync(file) && fs.readFileSync(file, 'utf8').includes('callout position'));
+assert(positionModules.length >= 5, `Expected at least five stated course positions, found ${positionModules.length}`);
+for (const file of positionModules) {
+  const html = fs.readFileSync(file, 'utf8');
+  assert(html.includes("The course's position"), `${file} states a position without labelling it as the course's opinion`);
+  assert(/class="counter"/.test(html), `${file} states a position without acknowledging the counter-argument`);
 }
 
 const index = fs.readFileSync('index.html', 'utf8');
@@ -110,6 +130,14 @@ const drillNumbers = [...exercises.matchAll(/class="acc-num">(\d{2})</g)].map(ma
 assert(new Set(drillNumbers).size === stats.drills, `Found ${new Set(drillNumbers).size} drills, expected ${stats.drills}`);
 assert(exercises.includes('href="module-14.html" class="prev"'), 'Exercise footer AI link is not Module 14');
 assert(!/<span class="drill-tag module">(?:Module|Modules) \d/.test(exercises), 'An exercise module reference is not linked');
+/* Every drill must say why it reinforces its module, not merely which one. */
+assert(
+  count(exercises, /class="drill-why"/g) === stats.drills,
+  `Only ${count(exercises, /class="drill-why"/g)} of ${stats.drills} drills explain what they reinforce`
+);
+for (const match of exercises.matchAll(/<div class="drill-meta">([\s\S]*?)<\/div>/g)) {
+  assert(/href="module-\d{2}\.html"/.test(match[1]), 'A drill has no linked module reference');
+}
 
 const cases = fs.readFileSync('case-studies.html', 'utf8');
 const caseIds = [...cases.matchAll(/\bid="case-(\d+)"/g)].map(match => Number(match[1]));
@@ -135,6 +163,31 @@ for (const file of htmlFiles) {
   const html = fs.readFileSync(file, 'utf8');
   for (const match of html.matchAll(/href="([^"#?]+\.html)(?:#[^"]*)?"/g)) {
     assert(fs.existsSync(match[1]), `${file} links to missing ${match[1]}`);
+  }
+}
+
+/* The throughline runs both ways: a module points at the drill and case that
+   practise it, and the deep links must land on anchors that actually exist. */
+const modulesNamedByDrills = new Set(
+  [...exercises.matchAll(/<div class="drill-meta">([\s\S]*?)<\/div>/g)]
+    .flatMap(match => [...match[1].matchAll(/href="(module-\d{2}\.html)"/g)].map(href => href[1]))
+);
+const modulesNamedByCases = new Set(
+  [...cases.matchAll(/class="module-ref" href="(module-\d{2}\.html)"/g)].map(match => match[1])
+);
+for (const module of modules) {
+  const file = moduleFile(module.id);
+  if (!fs.existsSync(file)) continue;
+  const html = fs.readFileSync(file, 'utf8');
+  for (const match of html.matchAll(/href="exercises\.html#(drill-\d+)"/g)) {
+    assert(exercises.includes(`id="${match[1]}"`), `${file} deep-links to missing exercise anchor #${match[1]}`);
+  }
+  for (const match of html.matchAll(/href="case-studies\.html#(case-\d+)"/g)) {
+    assert(cases.includes(`id="${match[1]}"`), `${file} deep-links to missing case anchor #${match[1]}`);
+  }
+  /* If a drill or case names this module, the module must point back. */
+  if (modulesNamedByDrills.has(file) || modulesNamedByCases.has(file)) {
+    assert(/class="practise-it"/.test(html), `${file} is referenced by a drill or case but does not link back`);
   }
 }
 

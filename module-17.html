@@ -42,7 +42,9 @@
       <li><a href="#motions">4. Matching signals to motions</a></li>
       <li><a href="#assistance">5. Designing assistance users would thank you for</a></li>
       <li><a href="#worked-example">6. Worked example: rebuilding a PQL definition</a></li>
+      <li class="aside-entry"><a href="#brayford">Applied to the Brayford deal</a></li>
       <li><a href="#execution">7. Weak versus improved product-triggered outreach</a></li>
+      <li class="aside-entry"><a href="#failure-mode">Where this fails</a></li>
       <li><a href="#practice">8. Practice: the PQL signal specification</a></li>
       <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
       <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
@@ -162,7 +164,16 @@
       <p><strong>The decisive detail:</strong> the rebuilt definition worked fewer leads and produced more revenue, which is the standard shape of a PQL correction. The second decisive detail is the unsubscribe rate — the old definition was not merely inefficient, it was actively degrading the channel by teaching users that company emails were noise.</p>
     </section>
 
-    <section id="execution">
+    
+<section class="case-thread" id="brayford">
+<span class="thread-marker">The Brayford thread · Month 6 · the expansion signal Cadence nearly missed</span>
+<h3>Two Brayford sites that had signed up on their own</h3>
+<p>At month 6, a weekly domain-aggregation job flagged something nobody in the account team knew: <strong>two Brayford homes outside the four-site pilot had independently signed up for Cadence's self-serve tier.</strong> Two home managers, a card each, £89 a month.</p>
+<p>Neither had reached the account team. Both had crossed the value signal — a real roster connected, a published rota someone else viewed — and one had hit the seat limit twice in a fortnight, which is a hard constraint signal.</p>
+<p>The wrong response was available and tempting: contact both managers and pitch expansion. It would have cut across an active enterprise motion, alarmed Priya, and put two junior managers in the position of having gone around their own procurement.</p>
+<p>What actually happened was the account motion: the aggregation was raised with Priya as information she could not otherwise see — <em>"two of your homes are paying us separately; one agreement is cheaper for you and simpler for your finance team."</em> That conversation is what put the eighteen-site expansion on the table four months before the renewal.</p>
+</section>
+<section id="execution">
       <h2>7. Weak versus improved product-triggered outreach</h2>
       <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> A user at a 200-person company has connected their data warehouse, invited four colleagues, and hit the workspace limit twice this week.</p>
 
@@ -183,7 +194,17 @@
       </div>
     </section>
 
-    <section id="practice">
+    
+<section class="failure-mode" id="failure-mode">
+<span class="failure-marker">Where this fails</span>
+<h2>Where even experienced sellers get this wrong</h2>
+<p>Experienced product-led teams build a good PQL definition and then apply it <strong>without checking whether the account is already in another motion</strong>. The signal fires, the routing rule executes, and a self-serve user inside an active enterprise account receives an automated expansion nudge from a system that does not know a negotiation is in progress.</p>
+<p>The damage is disproportionate to the message. A home manager who receives a pitch about seat limits while their operations director is negotiating a group agreement will, quite reasonably, forward it to their operations director — who now has evidence that the vendor's left hand does not know what its right is doing, at precisely the moment they are deciding whether to trust it with eighteen sites.</p>
+<p>The failure is architectural, not judgmental: the signal is correct, the routing is correct, and the two systems have no shared view of the account.</p>
+<p>Domain-level suppression is the fix, and it has to be a hard gate rather than a convention — if an account has an open enterprise opportunity, product signals from that domain route to the account owner as intelligence, never to the user as outreach.</p>
+<p class="mechanism"><strong>The mechanism:</strong> Product signals are user-scoped and commercial relationships are account-scoped, so a system optimised on the first is structurally blind to the second. Without domain-level suppression, correct per-user logic produces incorrect per-account behaviour — and the error is most likely precisely where the account is most valuable.</p>
+</section>
+<section id="practice">
       <h2>8. Practice: the PQL signal specification</h2>
       <p><strong>Exercise goal:</strong> produce a PQL definition validated against real conversion data, with motions matched to signal strength and suppression rules that protect the channel.</p>
       <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
@@ -219,7 +240,21 @@
       <p><strong>Evaluation rubric:</strong> First value defined as a specific action with an external beneficiary (15%); signals correctly classified with usage signals honestly identified (15%); precision and recall computed against real conversions (30%); combination rule with thresholds and time window (15%); motions matched including a genuine do-nothing rung (10%); suppression rules with global permanent opt-out (10%); domain aggregation (5%).</p>
       <p><strong>Beginner variation:</strong> Do step 3 for one signal only — usually "logins." Computing its actual precision against converted accounts is, for most teams, the finding that ends the argument about whether activity is a qualification signal.</p>
       <p><strong>Advanced variation:</strong> Model the cost of the do-nothing rung. Estimate how many self-serve accounts convert without any human contact, and what would happen to that number if you contacted them. Most teams have never measured the counterfactual and therefore systematically over-attribute self-serve revenue to sales touches.</p>
-    </section>
+    
+<h3>Artifact quality rubric</h3>
+<p>Completing the PQL signal specification is not the same as producing a good one. Grade your own against these dimensions before you show it to anyone.</p>
+<div class="artifact-rubric">
+<table>
+<thead><tr><th>Dimension</th><th>Weak</th><th>Strong</th></tr></thead>
+<tbody>
+<tr><td><strong>Validated</strong></td><td>Signals chosen by plausibility.</td><td>Precision and recall computed against two quarters of real conversions.</td></tr>
+<tr><td><strong>Composite</strong></td><td>A single usage threshold.</td><td>Value AND constraint AND fit, with thresholds and a time window stated.</td></tr>
+<tr><td><strong>Restraint</strong></td><td>Every signal routes to a human.</td><td>A defended do-nothing rung, and content that says what the product cannot.</td></tr>
+<tr><td><strong>Account-aware</strong></td><td>Signals routed per user.</td><td>Domain aggregation, and hard suppression where an enterprise opportunity is open.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
 
     <section id="knowledge-check">
       <h2>9. Applied knowledge check</h2>
@@ -254,6 +289,7 @@
       </ul>
       <p><strong>Immediate action:</strong> Take your current qualification signal and compute its precision against the last two quarters of converted accounts — what share of accounts that fired it actually converted. If the number is under 5%, you are not qualifying, you are broadcasting.</p>
       <p><strong>Related modules:</strong> <a href="module-11.html">11 · Customer Retention</a>, <a href="module-03.html">03 · Online Selling</a>, <a href="module-32.html">32 · Segmentation, ICP &amp; Positioning</a>, and <a href="module-39.html">39 · Revenue Operations, Pipeline &amp; Forecasting</a>.</p>
+      <p class="practise-it"><strong>Practise it:</strong> Case <a href="case-studies.html#case-16">16 · Bottom-Up Consolidation</a>.</p>
     </section>
 
   </article>

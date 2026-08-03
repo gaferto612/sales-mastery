@@ -42,7 +42,9 @@
       <li><a href="#reliability">4. The accuracy conversation buyers actually need</a></li>
       <li><a href="#pricing">5. Pricing when your cost of goods is variable</a></li>
       <li><a href="#worked-example">6. Worked example: an AI proof plan that survived procurement</a></li>
+      <li class="aside-entry"><a href="#brayford">Applied to the Brayford deal</a></li>
       <li><a href="#execution">7. Weak versus improved reliability conversation</a></li>
+      <li class="aside-entry"><a href="#failure-mode">Where this fails</a></li>
       <li><a href="#practice">8. Practice: the AI product proof plan</a></li>
       <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
       <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
@@ -163,7 +165,16 @@
       </div>
     </section>
 
-    <section id="execution">
+    
+<section class="case-thread" id="brayford">
+<span class="thread-marker">The Brayford thread · Cadence's roadmap · why the reporting gap was disclosed</span>
+<h3>The one number Cadence would not round</h3>
+<p>Cadence's matching engine is probabilistic: it ranks bank staff by predicted availability for a specific shift, drawn from historical acceptance patterns, stated preferences, and working-time constraints.</p>
+<p>The stated accuracy was <strong>81% of ranked suggestions accepted at the first or second call</strong>, measured across 14,000 shift gaps at six customers over ninety days. The degradation was volunteered in the same breath: accuracy falls to about 62% where a site has fewer than forty bank staff on its list, and Brayford's four Marlow homes were below that threshold.</p>
+<p>The abstention behaviour mattered more to Sam Whitfield than the headline. Below a confidence threshold, Cadence declines to rank rather than guessing, and routes the gap straight to the agency workflow with the reason shown. At default settings that was 11% of gaps.</p>
+<p>The pilot's failure condition was written before it started: <em>below 70% acceptance at Ridge over six weeks, Cadence withdraws at no charge.</em> Elaine cited that clause at the capital committee as the reason the proposal was fundable against a fire-safety programme.</p>
+</section>
+<section id="execution">
       <h2>7. Weak versus improved reliability conversation</h2>
       <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> A technical evaluator asks, "How accurate is it, and how do we know it won't hallucinate?"</p>
 
@@ -185,7 +196,17 @@
       </div>
     </section>
 
-    <section id="practice">
+    
+<section class="failure-mode" id="failure-mode">
+<span class="failure-marker">Where this fails</span>
+<h2>Where even experienced sellers get this wrong</h2>
+<p>Experienced AI sellers state accuracy with a denominator and disclose degradation — and then quietly let the <strong>measurement population drift away from the deployment population</strong>.</p>
+<p>Cadence's 81% was measured at six customers with mature bank pools. Brayford's Marlow sites had small, poorly-maintained lists. The number remained true and became irrelevant, and nothing in the way it was stated flagged the mismatch — because the caveat named a threshold (forty bank staff) rather than the buyer's actual position relative to it.</p>
+<p>The honest form is not a caveat but an assignment: <em>"here is the number, here is the condition that moves it, and here is where I estimate you sit on that condition."</em> That last clause is the one sellers omit, because it requires them to predict a worse result for this specific buyer and say so before the pilot.</p>
+<p>The test is whether your accuracy claim has ever caused you to lower a buyer's expectation in writing. If the degradation profile is disclosed but never applied, it is a disclaimer rather than a disclosure — legally safer and commercially useless.</p>
+<p class="mechanism"><strong>The mechanism:</strong> Accuracy figures are properties of a measurement population, and buyers read them as properties of the product. A caveat that names a general boundary condition without locating the buyer relative to it satisfies the seller's honesty requirement while leaving the buyer's expectation unchanged — which is the outcome the caveat was supposed to prevent.</p>
+</section>
+<section id="practice">
       <h2>8. Practice: the AI product proof plan</h2>
       <p><strong>Exercise goal:</strong> build a proof plan for an AI product that a sceptical technical evaluator and a cautious procurement function would both accept.</p>
       <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
@@ -225,7 +246,21 @@
       <p><strong>Evaluation rubric:</strong> Workflow positioning with both halves answered (15%); explicit statement of what you do not do (10%); accuracy with denominator and method (20%); degradation profile with numbers (15%); failure mode and testing for the dangerous class (15%); abstention design (10%); pilot with a real withdrawal condition (10%); governance pack completeness (5%).</p>
       <p><strong>Beginner variation:</strong> Write only elements 1, 3, and 4. If you cannot state your accuracy with a denominator, that is the finding — take it to whoever can measure it, because you are currently selling a number nobody owns.</p>
       <p><strong>Advanced variation:</strong> Build the full governance pack as a standing artifact and measure how much it compresses your security-review cycle time across the next five enterprise deals. In most AI companies this is the single highest-return sales asset available, and it is usually nobody's job.</p>
-    </section>
+    
+<h3>Artifact quality rubric</h3>
+<p>Completing the AI product proof plan is not the same as producing a good one. Grade your own against these dimensions before you show it to anyone.</p>
+<div class="artifact-rubric">
+<table>
+<thead><tr><th>Dimension</th><th>Weak</th><th>Strong</th></tr></thead>
+<tbody>
+<tr><td><strong>Denominated</strong></td><td>A percentage with no population.</td><td>Metric, sample size, task definition, and how ground truth was established.</td></tr>
+<tr><td><strong>Located</strong></td><td>Degradation stated as a general caveat.</td><td>The buyer's own position relative to the degrading condition is estimated in writing.</td></tr>
+<tr><td><strong>Abstention</strong></td><td>System always returns an answer.</td><td>Threshold behaviour, routing, and the proportion abstained at default settings.</td></tr>
+<tr><td><strong>Withdrawable</strong></td><td>Pilot has success criteria only.</td><td>A failure condition under which the vendor withdraws, at no charge, stated before the pilot.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
 
     <section id="knowledge-check">
       <h2>9. Applied knowledge check</h2>
