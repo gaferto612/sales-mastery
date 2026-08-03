@@ -1068,3 +1068,13 @@ body {
   .content .case-thread, .content .failure-mode { padding: 20px; }
   .content .failure-mode .mechanism { padding-left: 14px; font-size: 16px; }
 }
+
+/* Reverse throughline: module → the drill and case that practise it.
+   Sits directly under "Related modules" in the conclusion. */
+.content .practise-it {
+  margin-top: 10px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--gold);
+  background: rgba(201, 162, 39, 0.06);
+  font-size: 15px;
+}

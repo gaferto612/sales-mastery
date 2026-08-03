@@ -71,8 +71,10 @@ their most confident decade:
 - Samuelson & Zeckhauser, status quo bias: https://doi.org/10.1007/BF00055564
 - Roediger & Karpicke, test-enhanced learning: https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.2006.01693.x/
 - Gollwitzer & Sheeran, implementation intentions meta-analysis: https://www.socmot.uni-konstanz.de/publications/implementation-intentions-and-goal-achievement-meta-analysis-effects-and-processes
-- Narrative versus expository memory meta-analysis: https://pmc.ncbi.nlm.nih.gov/articles/PMC8219577/
-- Statistical versus narrative evidence meta-analysis: https://pubmed.ncbi.nlm.nih.gov/24836931/
+- Narrative versus expository memory meta-analysis (2021) — cited in Modules 07 and 19 for the roughly two-fold recall advantage. Note it is a reading-comprehension literature; transfer to commercial retelling is an inference: https://pmc.ncbi.nlm.nih.gov/articles/PMC8219577/
+- Zebregs et al., statistical versus narrative evidence meta-analysis — the persuasion question, which is separate from and less settled than the memory question: https://pubmed.ncbi.nlm.nih.gov/24836931/
+- Johnson & Goldstein, defaults and organ donation (*Science*, 2003) — the standard field demonstration of default effects, cited in Module 21: https://www.science.org/doi/10.1126/science.1091721
+- Regan, reciprocity and liking (1971) — the classic laboratory demonstration cited in Module 02; the commercial generalisation is a framework claim rather than a measured effect.
 
 ### Negotiation, ethics and compliance
 
