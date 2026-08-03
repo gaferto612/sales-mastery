@@ -42,7 +42,9 @@
       <li><a href="#review">4. Designing human review that is not theatre</a></li>
       <li><a href="#governance">5. Data protection, disclosure, and the regulatory floor</a></li>
       <li><a href="#worked-example">6. Worked example: an AI workflow risk review</a></li>
+      <li class="aside-entry"><a href="#brayford">Applied to the Brayford deal</a></li>
       <li><a href="#execution">7. Weak versus improved AI-assisted outreach</a></li>
+      <li class="aside-entry"><a href="#failure-mode">Where this fails</a></li>
       <li><a href="#practice">8. Practice: AI workflow risk review</a></li>
       <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
       <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
@@ -165,7 +167,16 @@
       <p><strong>Aggregate outcome:</strong> two workflows terminated, three re-controlled, one unchanged. Outbound volume fell 62%; qualified opportunities fell 8%. <strong>The gap between those two numbers is the size of the waste the controls removed</strong> — and the organization passed the customer's security audit, which the pre-review state would not have.</p>
     </section>
 
-    <section id="execution">
+    
+<section class="case-thread" id="brayford">
+<span class="thread-marker">The Brayford thread · Week 12 · drafting the Brayford business case</span>
+<h3>Where the model came from, and where it did not</h3>
+<p>AI drafted parts of the week-12 business case. Which parts matters more than the fact.</p>
+<p><strong>Used:</strong> summarising the four discovery recordings into a chronology; extracting the agency-spend figures Priya had quoted, with timestamps so each could be checked against the recording; drafting the narrative sections; producing the first version of the sensitivity table's structure.</p>
+<p><strong>Not used:</strong> the arithmetic — every figure was re-derived from Brayford's own export. The comparable customers, which came from the verified reference register rather than being generated. Anything reaching Dev Osei in the IG review, where every answer was confirmed by the named control owner before submission.</p>
+<p>One catch worth recording: an early draft summary asserted that Cadence had committed to a Q3 audit-export fix. Alex had said the roadmap <em>target</em> was Q3 and that it had slipped once. The distinction is the entire difference between a forecast and a contractual representation, and the draft had flattened it. It was caught because the commitments block is reviewed line by line before sending — a control that exists precisely for this failure.</p>
+</section>
+<section id="execution">
       <h2>7. Weak versus improved AI-assisted outreach</h2>
       <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> Using AI assistance to prepare outreach to a prospective customer.</p>
 
@@ -186,7 +197,17 @@
       </div>
     </section>
 
-    <section id="practice">
+    
+<section class="failure-mode" id="failure-mode">
+<span class="failure-marker">Where this fails</span>
+<h2>Where even experienced sellers get this wrong</h2>
+<p>Experienced teams apply the verifiability test correctly to <em>facts</em> and miss it entirely on <strong>commitments</strong>. Everyone knows to check whether a generated customer reference is real. Almost nobody checks whether a generated follow-up email has upgraded a hedge into a promise.</p>
+<p>The transformation is silent and grammatically tiny: "the roadmap target is Q3" becomes "we'll have that in Q3"; "that's usually included" becomes "that's included". Both readings are plausible summaries of what was said, and only one of them is a contractual representation the customer can hold you to in month four.</p>
+<p>It survives review because reviewers read for accuracy of content, not for modality. The sentence looks like a faithful summary — it names the right feature and the right quarter — and the reviewer, who was on the call and remembers the hedge, mentally supplies it.</p>
+<p>The control is structural rather than attentional: generated follow-ups must list commitments separately from summary, and each must be ticked individually before sending. A block you have to positively affirm is read differently from a paragraph you skim.</p>
+<p class="mechanism"><strong>The mechanism:</strong> Language models produce fluent, confident prose by default, and hedges are the first thing lost in compression. The resulting text is factually accurate and modally wrong — and human reviewers reconstruct the missing hedge from memory, so the error is invisible to precisely the person best placed to catch it.</p>
+</section>
+<section id="practice">
       <h2>8. Practice: AI workflow risk review</h2>
       <p><strong>Exercise goal:</strong> inventory the AI-assisted workflows in your own revenue process and produce a risk review with controls and named owners.</p>
       <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
@@ -221,7 +242,21 @@
       <p><strong>Evaluation rubric:</strong> Inventory completeness including shadow tools (15%); correct classification on verifiability and reversibility (15%); fabrication rate <em>measured</em> rather than estimated (25%); review throughput calculated and honestly assessed (15%); data-protection check covering DPA, training, retention, region, and recording consent (20%); pre-committed stop conditions (10%).</p>
       <p><strong>Beginner variation:</strong> Do step 3 only, on one workflow. Twenty outputs, every factual claim checked at source, error rate written down. Nearly everyone who does this finds a rate higher than they expected, and the number is what changes behavior.</p>
       <p><strong>Advanced variation:</strong> Map your inventory against the NIST AI RMF generative profile functions — govern, map, measure, manage — and identify which function is weakest across your organization. In most revenue teams it is <em>measure</em>: nobody has ever counted the error rate, so all discussion of AI quality is anecdote.</p>
-    </section>
+    
+<h3>Artifact quality rubric</h3>
+<p>Completing the AI workflow risk review is not the same as producing a good one. Grade your own against these dimensions before you show it to anyone.</p>
+<div class="artifact-rubric">
+<table>
+<thead><tr><th>Dimension</th><th>Weak</th><th>Strong</th></tr></thead>
+<tbody>
+<tr><td><strong>Complete</strong></td><td>Lists sanctioned tools.</td><td>Includes shadow tools adopted informally by individuals, obtained by asking.</td></tr>
+<tr><td><strong>Measured</strong></td><td>Error rate estimated or debated.</td><td>Twenty outputs checked at source; the fabrication rate is a written number.</td></tr>
+<tr><td><strong>Honest review</strong></td><td>"Human in the loop" asserted.</td><td>Reviewed items per reviewer per hour calculated and judged against what a human could read.</td></tr>
+<tr><td><strong>Governed</strong></td><td>Vendor security page cited.</td><td>DPA, training-on-inputs, retention, inference region, sub-processors, and recording-consent map all confirmed.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
 
     <section id="knowledge-check">
       <h2>9. Applied knowledge check</h2>

@@ -3,8 +3,10 @@
 <li><a href="#process">2. Build it with the customer</a></li>
 <li><a href="#evidence">3. Classify every input</a></li>
 <li><a href="#worked-example">4. Worked example</a></li>
+      <li class="aside-entry"><a href="#brayford">Applied to the Brayford deal</a></li>
 <li><a href="#challenge">5. Survive finance review</a></li>
 <li><a href="#execution">6. Weak versus credible execution</a></li>
+      <li class="aside-entry"><a href="#failure-mode">Where this fails</a></li>
 <li><a href="#mistakes">7. Failure modes and stop rules</a></li>
 <li><a href="#practice">8. Practice: build the case</a></li>
 <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
@@ -87,6 +89,16 @@
 <p><strong>Finance:</strong> “Why include the contractor budget and labor time—are they the same work?”<br><strong>Seller:</strong> “They may overlap. We need a sample that attributes internal and external work. Until then, the model caps combined benefit to avoid double counting.”</p>
 <p><strong>Finance:</strong> “What would make you recommend against buying?”<br><strong>Seller:</strong> “If exceptions are mostly caused outside the addressable workflow, adoption stays below the agreed threshold, or recurring gross benefit remains under €20,000.”</p></section>
 
+
+<section class="case-thread" id="brayford">
+<span class="thread-marker">The Brayford thread · Week 12 and week 25 · the assumption that saved the case</span>
+<h3>Capacity, cash, and what Elaine actually asked</h3>
+<p>The Brayford model had three inputs and one of them decided everything.</p>
+<p><strong>Observed:</strong> 26 uncovered shifts a week needing same-day cover, from Rotaflow's own export. <strong>Inferred:</strong> a 19–31% reduction, from three comparable deployments — none of which had a post-acquisition dual-system estate, which is stated in the model rather than buried. <strong>Guessed:</strong> that recovered agency spend is cash rather than avoided premium.</p>
+<p>The third was marked as a question, not a number. The model showed both: £412k annual benefit if the spend is genuinely avoidable, £180k if it merely shifts to bank overtime at a lower rate. Payback of 22 months against 51 months.</p>
+<p>At the capital committee Elaine Marsh went straight to it. Her question was not whether the number was right but <em>who had decided which case applied</em>. Because it was flagged as an open question with her name against it rather than resolved in Cadence's favour, she answered it herself — bank overtime capacity existed at twelve of eighteen sites, so roughly two-thirds avoidable — and then defended the resulting figure to her own committee.</p>
+<p><strong>A number the CFO computes is a number the CFO defends.</strong> The competing fire-safety programme had no such number.</p>
+</section>
 <section id="execution"><h2>6. Weak versus credible execution</h2>
 <p><strong>Exaggerated claim:</strong> “Our AI eliminates 80% of errors and delivers 10× ROI in year one.” It treats a vendor estimate as customer fact, hides total cost and timing, and implies certainty.</p>
 <p><strong>Improved claim:</strong> “The current logs show 108 exceptions a month. We have not established how many this workflow can prevent. If a pilot confirms a 40% reduction and finance can realize the contractor savings, the base model produces about €8,900 annual net benefit after recurring cost, with roughly 13.5-month payback on implementation. The downside case is negative, so rollout should depend on agreed evidence.”</p>
@@ -102,6 +114,16 @@
 <li><strong>Ignoring alternatives:</strong> only purchase and status quo are compared. Include process change, internal build, smaller scope, delay, and no action.</li></ul>
 <p>Stop or reduce scope when the causal mechanism is unverified, the customer will not provide material inputs, the implementation owner is absent, downside risk is unacceptable, or the solution cannot plausibly affect the measured driver.</p></section>
 
+
+<section class="failure-mode" id="failure-mode">
+<span class="failure-marker">Where this fails</span>
+<h2>Where even experienced sellers get this wrong</h2>
+<p>Experienced sellers build honest models with visible assumptions and then <strong>present the sensitivity analysis as reassurance rather than as a decision</strong>. The downside case appears on a slide, is described as conservative, and is never used.</p>
+<p>This is subtler than hiding it. The range is there, the arithmetic is sound, and the seller can truthfully say the buyer was shown both. But a range presented without a decision attached invites the reader to average it — and averaged, a fragile case looks like a moderate one.</p>
+<p>The professional form attaches a different action to each end. At Brayford: if two-thirds of the spend is avoidable, proceed at four sites; if it is under a third, the payback exceeds Elaine's 30-month threshold and Cadence would recommend not proceeding. Stating the second half is what converted the sensitivity from decoration into an instrument.</p>
+<p>The check is whether any branch of your sensitivity analysis recommends against the purchase. If every scenario in your model ends in "proceed", you have built a range of good news rather than a decision aid, and a competent CFO will treat it accordingly.</p>
+<p class="mechanism"><strong>The mechanism:</strong> A sensitivity range without branch-specific recommendations is read as an error bar rather than as a decision tree. Because averaging is the default operation on a range, the downside case exerts no influence on the decision — so a model that is honest about uncertainty still produces the same behaviour as one that concealed it.</p>
+</section>
 <section id="practice"><h2>8. Practice: build a finance-reviewable case</h2>
 <p><strong>Objective:</strong> produce a transparent decision model and recommend proceed, pilot, reduce scope, investigate, or stop.</p>
 <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
@@ -154,7 +176,21 @@
 <p><strong>Rubric:</strong> evidence classification 20%; formula and unit accuracy 20%; realization logic and de-duplication 20%; scenario/sensitivity quality 15%; decision usefulness 15%; uncertainty and ethics 10%.</p>
 <p><strong>Beginner variation:</strong> calculate annual capacity only and list what would make it cash-realizable. <strong>Advanced variation:</strong> add ramped monthly cash flows, implementation delay, probability-weighted scenarios, and finance-approved discounting.</p>
 <div class="callout tip"><div class="callout-label">Strong partial response</div><p>“The reported baseline implies 80 rework hours per month, but this is capacity, not a €46,080 cash saving. Before modeling purchase value, sample fifty change orders, verify whether the proposed workflow addresses their causes, and ask finance whether overtime, contractor spend, or avoided hiring can change.”</p></div>
-<p><strong>Self-review:</strong> Can another person reproduce every formula? Which input could reverse the decision? Did you count any benefit twice? Who owns realization? What evidence would make no purchase the right answer?</p></section>
+<p><strong>Self-review:</strong> Can another person reproduce every formula? Which input could reverse the decision? Did you count any benefit twice? Who owns realization? What evidence would make no purchase the right answer?</p>
+<h3>Artifact quality rubric</h3>
+<p>Completing the customer business case is not the same as producing a good one. Grade your own against these dimensions before you show it to anyone.</p>
+<div class="artifact-rubric">
+<table>
+<thead><tr><th>Dimension</th><th>Weak</th><th>Strong</th></tr></thead>
+<tbody>
+<tr><td><strong>Sourced</strong></td><td>Inputs supplied by the vendor.</td><td>Load-bearing inputs come from the buyer's own systems, cited and dated.</td></tr>
+<tr><td><strong>Classified</strong></td><td>All inputs presented uniformly.</td><td>Each marked observed, inferred, or guessed; guessed items are questions, not numbers.</td></tr>
+<tr><td><strong>Branched</strong></td><td>Sensitivity shown as a range.</td><td>Each end of the range carries a different recommendation, including one that says do not proceed.</td></tr>
+<tr><td><strong>Owned</strong></td><td>The vendor computes the answer.</td><td>The economic buyer resolves the decisive assumption themselves and can defend the result.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
 
 <section id="knowledge-check"><h2>9. Applied knowledge check</h2>
 <p>Test your judgment against the business case scenarios below. Evaluate the claims, correct exaggerated ROI, and decide when to recommend a pilot versus a full rollout.</p>

@@ -42,7 +42,9 @@
       <li><a href="#leaks">4. Where conversion actually leaks: the evidence</a></li>
       <li><a href="#channels">5. Channel economics: paid, owned, and earned</a></li>
       <li><a href="#worked-example">6. Worked example: a full funnel diagnosis</a></li>
+      <li class="aside-entry"><a href="#brayford">Applied to the Brayford deal</a></li>
       <li><a href="#execution">7. Weak versus improved experiment design</a></li>
+      <li class="aside-entry"><a href="#failure-mode">Where this fails</a></li>
       <li><a href="#practice">8. Practice: one-page funnel diagnosis</a></li>
       <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
       <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
@@ -160,7 +162,16 @@
       <p><strong>What made the diagnosis credible:</strong> not the size of the numbers, but the <em>evidence column</em>. Two of the five targets were marked weak or moderate and were explicitly deprioritized despite attractive contribution figures. A funnel model where every stage is confidently achievable is a wish list.</p>
     </section>
 
-    <section id="execution">
+    
+<section class="case-thread" id="brayford">
+<span class="thread-marker">The Brayford thread · Cadence's own funnel · the year before Brayford</span>
+<h3>Why Cadence had a self-serve tier at all</h3>
+<p>Brayford arrived through outbound, but Cadence's single-site tier is what made the outbound affordable, and the connection is worth tracing.</p>
+<p>Cadence's self-serve funnel converted visitors to trials at 3.1% and trials to paid at 22%. The constrained stage was neither. It was <strong>trial-to-first-value</strong>: 34% of trials connected a real staff roster in the first session, and those converted at 51%; the other 66% converted at 6%.</p>
+<p>The expected-value calculation put a guided first-session connection step above every other candidate on the roadmap, including a pricing-page redesign with a larger headline number and much weaker evidence. Raising first-session connection from 34% to 52% was worth more than doubling paid traffic, at a fraction of the cost.</p>
+<p>The relevance to Brayford is indirect and real: self-serve gross margin funded an outbound motion that could afford to spend three weeks researching one eighteen-site operator. Funnel work is not a separate discipline from enterprise selling — it is what pays for it.</p>
+</section>
+<section id="execution">
       <h2>7. Weak versus improved experiment design</h2>
       <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> The team wants to test surfacing shipping cost earlier.</p>
 
@@ -177,7 +188,17 @@
       </div>
     </section>
 
-    <section id="practice">
+    
+<section class="failure-mode" id="failure-mode">
+<span class="failure-marker">Where this fails</span>
+<h2>Where even experienced sellers get this wrong</h2>
+<p>Experienced operators find the constrained stage and then fix it <strong>at the wrong altitude</strong>. Having correctly identified that trial-to-activation is the bottleneck, they optimise the activation flow — better empty states, a progress bar, a nudge email — and move the number three points.</p>
+<p>What they skip is the question of who is in the trial. A large share of the 66% who never connected a roster were single-site operators outside the ICP, for whom the product was structurally wrong. No amount of onboarding design converts them; it merely converts a targeting problem into an engineering backlog.</p>
+<p>The tell is that the constraint keeps returning. A stage that has been optimised three times and still constrains is usually not an experience problem — it is receiving the wrong population, and the leak is upstream of everything being measured.</p>
+<p>Before optimising a stage, segment it. If the stage performs acceptably for the ICP and catastrophically for everyone else, the intervention is in acquisition, not in the funnel step where the loss is visible.</p>
+<p class="mechanism"><strong>The mechanism:</strong> A funnel measures where users stop, not why they arrived. Optimising the stage where loss appears treats a selection problem as a design problem — and because the fix produces a small genuine improvement, it confirms the diagnosis and the real cause stays invisible for another cycle.</p>
+</section>
+<section id="practice">
       <h2>8. Practice: one-page funnel diagnosis</h2>
       <p><strong>Exercise goal:</strong> produce a diagnosis that identifies the constrained stage with evidence and ranks interventions by expected value per unit of effort.</p>
       <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag evidence">Applies to your real situation</span></div>
@@ -208,7 +229,21 @@
       <p><strong>Evaluation rubric:</strong> Denominator discipline (20%); quality of segmentation and willingness to report divergence (20%); honesty of evidence grading, including at least one "weak" (20%); expected-value ranking arithmetic (20%); experiment design with pre-registered metric, floor, and stopping rule (20%).</p>
       <p><strong>Beginner variation:</strong> Diagnose a public checkout flow you use as a customer. Document the form-field count, when total cost first appears, and where you would leak. You do not need internal data to practise the reasoning.</p>
       <p><strong>Advanced variation:</strong> Add a cohort LTV model and re-rank the interventions on lifetime contribution rather than first-order revenue. Retention improvements usually move several places up the list, which is the point.</p>
-    </section>
+    
+<h3>Artifact quality rubric</h3>
+<p>Completing the one-page funnel diagnosis is not the same as producing a good one. Grade your own against these dimensions before you show it to anyone.</p>
+<div class="artifact-rubric">
+<table>
+<thead><tr><th>Dimension</th><th>Weak</th><th>Strong</th></tr></thead>
+<tbody>
+<tr><td><strong>Denominators</strong></td><td>Rates quoted without their base.</td><td>Every stage states its denominator, period, and exclusions.</td></tr>
+<tr><td><strong>Segmented</strong></td><td>Aggregate rates only.</td><td>At least one stage split by device, source, or fit — and the divergence reported.</td></tr>
+<tr><td><strong>Evidence graded</strong></td><td>Every achievable target looks attainable.</td><td>Targets graded strong/moderate/weak, and at least one attractive option deprioritised as weak.</td></tr>
+<tr><td><strong>Pre-registered</strong></td><td>Test design decided as results arrive.</td><td>Primary metric, minimum effect, sample floor, fixed horizon, guardrail, and stopping rule set before looking.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
 
     <section id="knowledge-check">
       <h2>9. Applied knowledge check</h2>
