@@ -5,7 +5,9 @@
 <li><a href="#channel-economics">4. Two-sided channel economics &amp; margin modeling</a></li>
 <li><a href="#rules-of-engagement">5. Rules of engagement &amp; conflict resolution</a></li>
 <li><a href="#worked-example">6. Worked example: enterprise SI partner audit</a></li>
+      <li class="aside-entry"><a href="#brayford">Applied to the Brayford deal</a></li>
 <li><a href="#execution">7. Weak versus improved channel negotiation dialogue</a></li>
+      <li class="aside-entry"><a href="#failure-mode">Where this fails</a></li>
 <li><a href="#practice">8. Practice: partner fit audit &amp; economics model</a></li>
 <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
 <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
@@ -112,6 +114,15 @@
 </div>
 <p><strong>Audit Takeaway:</strong> The channel scrub prevented DataMesh from misallocating $100,000 in MDF to Apex Global for unverified deals. Enforcing the deal registration conflict rule on Retail Corp protected direct sales rep trust while establishing a legitimate $680,000 calibrated channel pipeline.</p></section>
 
+
+<section class="case-thread" id="brayford">
+<span class="thread-marker">The Brayford thread · The route Cadence did not take to Brayford</span>
+<h3>Why the reseller would have lost this deal</h3>
+<p>Cadence had a reseller relationship with a care-sector systems integrator who knew Brayford well and could have introduced the deal. Routing it through them was considered at week 0 and declined.</p>
+<p>The scorecard is why. ICP overlap: high. Complementary capability: high — they do the implementation work Cadence does not. <strong>Operational readiness: 2 of 5</strong> — no engineer had passed Cadence's work-sample certification, and the mechanism Cadence sells depends on configuring availability rules correctly at each site. <strong>Governance: 2 of 5</strong> — no rules of engagement existed, and Brayford was already in Cadence's own territory.</p>
+<p>The weighted score was 2.9 against a 3.5 threshold. Declining meant giving up a warm introduction and roughly six weeks of cycle time.</p>
+<p>The counterfactual is worth stating plainly: an uncertified partner configuring availability rules across four homes with poorly-maintained bank lists would have produced the failure case in Cadence's own reference set — the operator whose data never became usable. The partner would have been blamed and Cadence would have owned the outcome.</p>
+</section>
 <section id="execution"><h2>7. Weak versus improved channel negotiation dialogue</h2>
 <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> Channel Director negotiating co-sell terms and deal registration rules with the VP of Alliances at an SI partner.</p>
 
@@ -131,6 +142,16 @@
 <p><em>Why it succeeds:</em> Establishes clear technical certification requirements, enforces registration protection, defines margin splits, and grounds the alliance in verifiable operational gates.</p>
 </div></section>
 
+
+<section class="failure-mode" id="failure-mode">
+<span class="failure-marker">Where this fails</span>
+<h2>Where even experienced sellers get this wrong</h2>
+<p>Experienced channel leaders build selection scorecards and then apply them to <strong>partners rather than to deals</strong>.</p>
+<p>A partner is certified once, scores 4.2, and is thereafter treated as qualified for everything. But readiness is deal-specific: the same partner may be genuinely excellent at standard single-site implementations and entirely unready for a post-acquisition dual-system estate with a governance review attached. The scorecard measured a general capability and is being used to authorise a specific engagement.</p>
+<p>The failure surfaces in delivery, months after the registration was approved, and is nearly always attributed to the partner rather than to the routing decision.</p>
+<p>The correction is a second, much shorter gate at deal registration: does this partner have a certified engineer for <em>this</em> configuration, and has anyone confirmed the customer's data is in a state that partner can work with? Two questions, asked per deal rather than per partner — and they are the questions that would have kept Brayford direct even if the partner had scored 4.5.</p>
+<p class="mechanism"><strong>The mechanism:</strong> Partner certification is a property of an organisation; delivery risk is a property of a deployment. Because certification is expensive to assess it is done once and cached, so a general score authorises specific engagements it was never evidence for — and the mismatch appears only in the deals whose configuration differs most from the certification sample.</p>
+</section>
 <section id="practice"><h2>8. Practice: partner fit audit &amp; economics model</h2>
 <p><strong>Exercise Goal:</strong> Audit candidate channel partners, calculate net partner contribution economics, and establish enforceable Rules of Engagement for a market expansion launch.</p>
 <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
@@ -167,6 +188,20 @@
 </div>
 <p><strong>Beginner variation:</strong> Evaluate a single regional referral partner against basic scorecard criteria and draft a 2-clause co-selling agreement.</p>
 <p><strong>Advanced variation:</strong> Design a complete two-sided ecosystem economics model for a global SI partner, including tier-based margin splits, MDF co-investments, and cross-territory RoE dispute protocols.</p>
+
+<h3>Artifact quality rubric</h3>
+<p>Completing the partner blueprint is not the same as producing a good one. Grade your own against these dimensions before you show it to anyone.</p>
+<div class="artifact-rubric">
+<table>
+<thead><tr><th>Dimension</th><th>Weak</th><th>Strong</th></tr></thead>
+<tbody>
+<tr><td><strong>Scored</strong></td><td>Partner selected on brand or relationship.</td><td>Weighted scorecard across ICP overlap, capability, commitment, readiness, and governance.</td></tr>
+<tr><td><strong>Two-sided</strong></td><td>Economics modelled from the vendor side.</td><td>Partner net contribution modelled including services retention and enablement drag.</td></tr>
+<tr><td><strong>Deal-level gate</strong></td><td>Certification treated as standing authorisation.</td><td>A per-deal readiness check on configuration and customer data state.</td></tr>
+<tr><td><strong>Enforceable</strong></td><td>Rules of engagement described.</td><td>Registration lock, conflict escalation, and penalties written and mechanised in the CRM.</td></tr>
+</tbody>
+</table>
+</div>
 </section>
 
 <section id="knowledge-check"><h2>9. Applied knowledge check</h2>

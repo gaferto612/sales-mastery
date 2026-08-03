@@ -5,7 +5,9 @@
 <li><a href="#flow-metrics">4. Funnel velocity &amp; conversion mechanics</a></li>
 <li><a href="#forecasting">5. Probabilistic forecasting &amp; Brier calibration</a></li>
 <li><a href="#worked-example">6. Worked example: pipeline audit &amp; recalibration</a></li>
+      <li class="aside-entry"><a href="#brayford">Applied to the Brayford deal</a></li>
 <li><a href="#execution">7. Weak versus improved forecast review dialogue</a></li>
+      <li class="aside-entry"><a href="#failure-mode">Where this fails</a></li>
 <li><a href="#practice">8. Practice: pipeline scrub &amp; forecast calibration</a></li>
 <li><a href="#knowledge-check">9. Applied knowledge check</a></li>
 <li><a href="#conclusion">10. Practical conclusion &amp; next action</a></li>
@@ -103,6 +105,15 @@
 </div>
 <p><strong>Scrub Result:</strong> The RevOps audit revealed that the rep's $2.8M Commit was inflated by $1.35M due to unverified stage gates. The true calibrated forecast was $1.95M. Identifying this early allowed executive leadership to adjust quarterly guidance and deploy executive sponsorship to de-risk Beta Logistics and Gamma Financial.</p></section>
 
+
+<section class="case-thread" id="brayford">
+<span class="thread-marker">The Brayford thread · Weeks 6–16 · a deal at 70% that was at 25%</span>
+<h3>What a stage dictionary would have caught</h3>
+<p>Brayford sat at 70% and "Commit" from week 6 to week 16. Under Cadence's stage definitions at the time, that was defensible: a proposal had been delivered, the champion was engaged, and a close date existed.</p>
+<p>Under a buyer-evidence stage dictionary it was not. Commit required — after this deal — a named economic buyer contacted directly, a documented decision process with dates, and at least one artifact returned from the buyer's side. Brayford had none of the three until week 20.</p>
+<p>The calibration data made the case. Across two quarters, Cadence's Commit deals closed at 54% and Best Case at 31% — categories that barely discriminated, which means the forecast carried almost no information. After the dictionary, Commit closed at 89%.</p>
+<p>The Brayford correction, applied at week 16, moved the deal from 70% to 25% before anything about the opportunity itself changed. The number went down and the forecast got better, which is the whole point and the hardest thing to explain to a board.</p>
+</section>
 <section id="execution"><h2>7. Weak versus improved forecast review dialogue</h2>
 <p><span class="case-tag nature" style="margin-right:8px;">Composite Case Study</span><strong>Scenario:</strong> 1-on-1 pipeline review between Sales Director and AE regarding a $650,000 deal forecasted to close in 10 days.</p>
 
@@ -124,6 +135,16 @@
 <p><em>Why it succeeds:</em> Uses objective stage dictionary criteria, enforces forecast discipline, removes false confidence, and focuses on actionable buyer steps.</p>
 </div></section>
 
+
+<section class="failure-mode" id="failure-mode">
+<span class="failure-marker">Where this fails</span>
+<h2>Where even experienced sellers get this wrong</h2>
+<p>Experienced RevOps teams build a buyer-evidence stage dictionary and then discover it is being satisfied <strong>procedurally rather than substantively</strong>.</p>
+<p>The dictionary requires a documented decision process, so sellers document one — from what the champion said, unverified. It requires an artifact returned from the buyer, so a forwarded email counts. Every criterion is met, the audit passes, and the forecast is exactly as unreliable as before, with more paperwork.</p>
+<p>This is not cheating; it is the predictable result of specifying evidence types rather than evidence quality. "A documented decision process" is a checkbox. "A decision process you can name the papers deadline for, cross-checked with a second source" is a standard.</p>
+<p>The diagnostic is calibration rather than compliance. If Commit deals are closing at 60% while the dictionary is being followed, the criteria are being satisfied in form — and the fix is to raise the evidence standard on whichever criterion the losing deals all satisfied most easily, not to add another criterion.</p>
+<p class="mechanism"><strong>The mechanism:</strong> Any stage definition specific enough to enforce is specific enough to satisfy formally. Because compliance is observable and evidence quality is not, audits converge on the former — so a dictionary improves forecast accuracy once, at introduction, and then decays back toward the prior unless calibration rather than compliance is what is monitored.</p>
+</section>
 <section id="practice"><h2>8. Practice: pipeline scrub &amp; forecast calibration</h2>
 <p><strong>Exercise Goal:</strong> Conduct a RevOps pipeline audit across an enterprise AE's pipeline, identify false confidence, apply stage gate rules, and calculate a calibrated forecast.</p>
 <div class="case-tags" style="margin-bottom: 12px;"><span class="case-tag nature">Composite Case Study</span></div>
@@ -163,6 +184,20 @@
 </div>
 <p><strong>Beginner variation:</strong> Audit a 2-deal pipeline and apply binary stage gate criteria to determine commit versus upside status.</p>
 <p><strong>Advanced variation:</strong> Perform a historical cohort conversion audit across a 20-deal multi-rep pipeline, adjusting stage probabilities based on buyer velocity and deal slippage metrics.</p>
+
+<h3>Artifact quality rubric</h3>
+<p>Completing the revenue operating system is not the same as producing a good one. Grade your own against these dimensions before you show it to anyone.</p>
+<div class="artifact-rubric">
+<table>
+<thead><tr><th>Dimension</th><th>Weak</th><th>Strong</th></tr></thead>
+<tbody>
+<tr><td><strong>Buyer evidence</strong></td><td>Stages defined by seller activity.</td><td>Entry and exit criteria are actions the buyer took, verifiable outside the CRM note.</td></tr>
+<tr><td><strong>Quality-specified</strong></td><td>Criteria name evidence types.</td><td>Criteria specify the standard — source, cross-check, and what does not count.</td></tr>
+<tr><td><strong>Calibrated</strong></td><td>Accuracy assessed by aggregate attainment.</td><td>Predicted probabilities scored against outcomes; Commit closes near its stated rate.</td></tr>
+<tr><td><strong>Flow</strong></td><td>Pipeline measured as coverage.</td><td>Aging, slippage, and stage-to-stage conversion tracked; coverage alone is not treated as health.</td></tr>
+</tbody>
+</table>
+</div>
 </section>
 
 <section id="knowledge-check"><h2>9. Applied knowledge check</h2>
