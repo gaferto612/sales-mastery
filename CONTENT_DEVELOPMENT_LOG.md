@@ -570,3 +570,9 @@ drills, 4 capstones, 17 cases, 43 research notes, 149,854 module words.
 - Modules 39–42 need the same depth pass for revenue systems, channels, enablement, and global/public-sector selling.
 - The 20 drills, 4 capstones, and 17 cases need a common scenario/rubric/debrief architecture.
 - All 43 modules need a final cross-course evidence, duplication, tone, terminology, and professional Arabic review.
+
+## 2026-08-27 — audit remediation
+- Repaired Module 35's missing failure-mode section and in-page anchor.
+- Replaced two unsupported exact research statistics with bounded, evidence-appropriate language.
+- Qualified trigger-event guidance so signals are treated as hypotheses, not guarantees.
+- Updated README instructions and case-study wording to match the current build pipeline.
