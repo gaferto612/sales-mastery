@@ -12,7 +12,7 @@ If you've enabled GitHub Pages on this repo, the course is live at:
 
 `https://<your-username>.github.io/<repo-name>/`
 
-Otherwise, clone the repo and open `index.html` in a browser — everything is static, no build step.
+Otherwise, clone the repo and open `index.html` in a browser for source-level browsing. For a release build, run `npm run build` and then `npm run validate`.
 
 ---
 
@@ -65,7 +65,7 @@ Plus:
 - **Private study tools** — device-local notes, bookmarks, and progress
 - **Exercises** — 20 drills tied to the modules
 - **Capstones** — four role-based projects with a shared scoring rubric
-- **Case Studies** — 17 real-world scenarios broken down
+- **Case Studies** — 17 clearly labeled real, composite, and illustrative scenarios
 
 ---
 
@@ -175,7 +175,7 @@ python3 -m http.server 8000
 - Dark editorial aesthetic (navy + cream + orange accent)
 - Typography: Fraunces (display), Inter (body), JetBrains Mono (labels) — all from Google Fonts
 - Chart.js loaded from CDN for the interactive charts
-- No build step, no framework, no dependencies bundled
+- Small static build pipeline; no application framework or runtime dependency bundle
 
 ---
 
@@ -188,3 +188,4 @@ MIT — use, remix, teach from it. Attribution appreciated but not required.
 ## Contributing
 
 This is meant to be a living curriculum. Suggested improvements, additional case studies, and corrections are welcome via pull request.
+
