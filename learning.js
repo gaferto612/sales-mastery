@@ -8,6 +8,9 @@ const currentId=()=>(location.pathname.match(/module-(\d+)\.html/)||[])[1]||null
 const byId=id=>modules.find(item=>item.id===id);
 const bookmarks=()=>read('salesMasteryBookmarks',[]);
 const notes=()=>read('salesMasteryNotes',{});
+const reviews=()=>read('salesMasteryReviews',{});
+function reviewStatus(id){const r=reviews()[id]||{count:0,dueAt:null};if(!r.dueAt)return {count:r.count||0,dueAt:null,due:false,label:'Not scheduled'};const due=new Date(r.dueAt)<=new Date();return {count:r.count||0,dueAt:r.dueAt,due,label:due?'Due now':Due }}
+function recordReview(id){const all=reviews(),r=all[id]||{count:0},intervals=[1,3,7,21];r.count=Math.min((r.count||0)+1,intervals.length);r.dueAt=new Date(Date.now()+intervals[r.count-1]*86400000).toISOString();all[id]=r;write('salesMasteryReviews',all);return reviewStatus(id)}
 
 const STATUS_LEVELS = {
   'not_started': 0,
@@ -188,23 +191,26 @@ function researchNote(item){
 
 function studyTools(item){
   const article=document.querySelector('article.content');if(!article||document.querySelector('.study-tools'))return;
-  const savedNotes=notes()[item.id]||'',state=moduleState(item.id),questions=assessments[item.id]||[{prompt:item.check[0],options:item.check[1],answer:item.check[2],explanation:item.check[3]}],section=document.createElement('section');
+  const savedNotes=notes()[item.id]||'',state=moduleState(item.id),review=reviewStatus(item.id),questions=assessments[item.id]||[{prompt:item.check[0],options:item.check[1],answer:item.check[2],explanation:item.check[3]}],section=document.createElement('section');
   const questionMarkup=questions.map((question,qIndex)=>`<fieldset class="checkpoint-question"><legend>${qIndex+1}. ${question.prompt}</legend>${question.options.map((option,oIndex)=>`<label><input type="radio" name="checkpoint-${item.id}-${qIndex}" value="${oIndex}"><span>${option}</span></label>`).join('')}<p class="question-feedback" role="status"></p></fieldset>`).join('');
   section.className='study-tools';section.id='practice-checkpoint';
-  section.innerHTML=`<div class="section-kicker">Apply and retrieve</div><h2>Learning record</h2><p class="learning-state-summary" role="status" aria-live="polite">${statusOf(item.id)}</p><div class="checkpoint"><div class="checkpoint-set">${questionMarkup}</div><button type="button" class="check-answer">Check answers</button><p class="checkpoint-feedback ${state.knowledgeCheck.passed?'correct':''}" role="status" aria-live="polite">${state.knowledgeCheck.passed?`✓ Knowledge check passed · ${state.knowledgeCheck.score}/${questions.length}`:''}</p></div><div class="study-notes"><label for="module-notes"><span class="section-kicker">Private study notes</span><strong>Capture evidence, questions, and your next experiment.</strong></label><textarea id="module-notes" rows="7" placeholder="What will you apply? What evidence will tell you it worked?">${savedNotes.replace(/</g,'&lt;')}</textarea><p class="save-status" role="status" aria-live="polite">Saved on this device.</p></div><div class="mastery-action learning-actions"><div><span class="section-kicker">Module status</span><h3>Record separate evidence of learning.</h3><p><small>Practice and demonstration are self-assessed unless a teacher, manager, or peer reviews the artifact.</small></p></div><button type="button" class="mark-read">${state.lessonRead?'✓ Lesson read':'Mark lesson as read'}</button><button type="button" class="complete-practice">${state.practice.completed?'✓ Practice completed':'Mark practice completed'}</button><button type="button" class="record-demonstration" ${state.practice.completed?'':'disabled'}>${state.practice.selfAssessed?'✓ Skill self-assessed':'Self-assess skill demonstration'}</button></div>`;
+  section.innerHTML=`<div class="section-kicker">Apply and retrieve</div><h2>Learning record</h2><p class="learning-state-summary" role="status" aria-live="polite">${statusOf(item.id)}</p><div class="review-queue" role="status"><div><span class="section-kicker">Spaced review</span><strong>Review scheduled</strong><p>Recall the model without notes, then apply it to a different situation. Reviews use 1, 3, 7, and 21-day intervals.</p></div><button type="button" class="record-review">Record review</button></div><div class="checkpoint"><div class="checkpoint-set">${questionMarkup}</div><button type="button" class="check-answer">Check answers</button><p class="checkpoint-feedback ${state.knowledgeCheck.passed?'correct':''}" role="status" aria-live="polite">${state.knowledgeCheck.passed?`✓ Knowledge check passed · ${state.knowledgeCheck.score}/${questions.length}`:''}</p></div><div class="study-notes"><label for="module-notes"><span class="section-kicker">Private study notes</span><strong>Capture evidence, questions, and your next experiment.</strong></label><textarea id="module-notes" rows="7" placeholder="What will you apply? What evidence will tell you it worked?">${savedNotes.replace(/</g,'&lt;')}</textarea><p class="save-status" role="status" aria-live="polite">Saved on this device.</p></div><div class="mastery-action learning-actions"><div><span class="section-kicker">Module status</span><h3>Record separate evidence of learning.</h3><p><small>Practice and demonstration are self-assessed unless a teacher, manager, or peer reviews the artifact.</small></p></div><button type="button" class="mark-read">${state.lessonRead?'✓ Lesson read':'Mark lesson as read'}</button><button type="button" class="complete-practice">${state.practice.completed?'✓ Practice completed':'Mark practice completed'}</button><button type="button" class="record-demonstration" ${state.practice.completed?'':'disabled'}>${state.practice.selfAssessed?'✓ Skill self-assessed':'Self-assess skill demonstration'}</button></div>`;
   article.appendChild(section);
   
-  const feedback=section.querySelector('.checkpoint-feedback'),summary=section.querySelector('.learning-state-summary'),readButton=section.querySelector('.mark-read'),practiceButton=section.querySelector('.complete-practice'),demonstrationButton=section.querySelector('.record-demonstration');
+  const feedback=section.querySelector('.checkpoint-feedback'),summary=section.querySelector('.learning-state-summary'),reviewButton=section.querySelector('.record-review'),readButton=section.querySelector('.mark-read'),practiceButton=section.querySelector('.complete-practice'),demonstrationButton=section.querySelector('.record-demonstration');
   
   const refresh=()=>{
     const next=moduleState(item.id);
     summary.textContent=statusOf(item.id);
+    const nextReview=reviewStatus(item.id); reviewButton.textContent=nextReview.due?'Record review':'Review scheduled';
     readButton.textContent=next.lessonRead?'✓ Lesson read':'Mark lesson as read';
     practiceButton.textContent=next.practice.completed?'✓ Practice completed':'Mark practice completed';
     demonstrationButton.disabled=!next.practice.completed;
     demonstrationButton.textContent=next.practice.selfAssessed?'✓ Skill self-assessed':'Self-assess skill demonstration';
   };
   
+  reviewButton.addEventListener('click',()=>{recordReview(item.id);reviewButton.textContent='Review scheduled'});
+
   section.querySelector('.check-answer').addEventListener('click',()=>{
     let score=0,answered=0;
     questions.forEach((question,qIndex)=>{
@@ -540,3 +546,6 @@ function init(){
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 document.addEventListener('keydown',event=>{if(!event.target.classList?.contains('tab-btn')||!['Home','End'].includes(event.key))return;const tabs=[...event.target.closest('.tabs').querySelectorAll('.tab-btn')];event.preventDefault();const target=event.key==='Home'?tabs[0]:tabs.at(-1);target.click();target.focus()});
 })();
+
+
+
